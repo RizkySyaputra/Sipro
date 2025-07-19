@@ -1,0 +1,102 @@
+CRITICAL - 2024-09-20 03:12:20 --> ErrorException: Undefined variable $itemA
+[Method: GET, Route: kawasan]
+in APPPATH/Views/pages/p_kawasan.php on line 43.
+ 1 APPPATH/Views/pages/p_kawasan.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $itemA', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_kawasan.php', 43)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_kawasan.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/p_kawasan', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/p_kawasan', [...])
+ 6 APPPATH/Controllers/Rpiw.php(62): App\Libraries\Template->load('/templates/main', '/pages/p_kawasan', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->kawasan()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-20 04:39:45 --> TypeError: NumberFormatter::formatCurrency(): Argument #1 ($amount) must be of type float, string given
+[Method: GET, Route: detail/51-05-1400]
+in APPPATH/Views/pages/detail.php on line 99.
+ 1 APPPATH/Views/pages/detail.php(99): NumberFormatter->formatCurrency(' 77.200.000 ', 'IDR')
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(53): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('51-05-1400')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-20 08:39:58 --> TypeError: NumberFormatter::formatCurrency(): Argument #1 ($amount) must be of type float, string given
+[Method: GET, Route: detail/51-05-1400]
+in APPPATH/Views/pages/detail.php on line 99.
+ 1 APPPATH/Views/pages/detail.php(99): NumberFormatter->formatCurrency(' 77.200.000 ', 'IDR')
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(53): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('51-05-1400')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-20 09:04:38 --> ErrorException: Undefined variable $geojsonData
+[Method: GET, Route: detail/96-05-3699]
+in APPPATH/Controllers/Rpiw.php on line 50.
+ 1 APPPATH/Controllers/Rpiw.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $geojsonData', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 50)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('96-05-3699')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-20 09:06:21 --> TypeError: NumberFormatter::formatCurrency(): Argument #1 ($amount) must be of type float, string given
+[Method: GET, Route: detail/51-04-1398]
+in APPPATH/Views/pages/detail.php on line 99.
+ 1 APPPATH/Views/pages/detail.php(99): NumberFormatter->formatCurrency(' 818.000.000 ', 'IDR')
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(53): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('51-04-1398')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-20 09:22:03 --> TypeError: NumberFormatter::formatCurrency(): Argument #1 ($amount) must be of type float, string given
+[Method: GET, Route: detail/51-05-1400]
+in APPPATH/Views/pages/detail.php on line 99.
+ 1 APPPATH/Views/pages/detail.php(99): NumberFormatter->formatCurrency(' 77.200.000 ', 'IDR')
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(59): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('51-05-1400')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-20 11:08:08 --> ErrorException: Undefined variable $geojsonData
+[Method: GET, Route: detail/96-06-3388]
+in APPPATH/Controllers/Rpiw.php on line 56.
+ 1 APPPATH/Controllers/Rpiw.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $geojsonData', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 56)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('96-06-3388')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')

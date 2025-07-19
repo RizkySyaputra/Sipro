@@ -1,0 +1,13 @@
+"id","email","username","password_hash","reset_hash","id_unor","id_provinsi","reset_at","reset_expires","activate_hash","status","status_message","active","force_pass_reset","created_at","updated_at","deleted_at"
+"2","adminkp@gmail.com","adminkp","$2y$10$W5UBXYLh/pQh0V8GplOlB.4yoAE7Vc5JCo81POY4nDEz0Bo3FoPmG",NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,"1","0","2024-11-10 13:19:15","2024-11-10 13:19:15",NULL
+"3","superadmin@gmail.com","superadmin","$2y$10$pH60rU8LDQbnFcDI4WmCpuLYI5f9eSOMnPkkkHE9m.zdnCRIPZc.C",NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,"1","0","2024-11-10 13:34:43","2024-11-10 13:34:43",NULL
+"4","puswil1@test.com","puswil1","$2y$10$CxszwcAPuZaHqaoOryV.bOq79jFcYjMQY/spZ8uMdX9K3rvcJYoMe",NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,"1","0","2024-11-10 13:35:59","2024-11-10 13:35:59",NULL
+"5","puswil1@dev.com","desk_puswil1","$2y$10$XBnzO4aZiYhRcsups6kNdepr8e5KVTlLOvBbCf/tKLS2euJIswjZm",NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,"1","0","2024-11-17 19:16:39","2024-11-17 19:16:39",NULL
+"6","puswil2@dev.com","desk_puswil2","$2y$10$pINLjS3mgB55fYcz0JCPdu6kAMz5IOcpsHdf2rTJ7lBPkbs/rVpYS",NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,"1","0","2024-11-17 19:18:35","2024-11-17 19:18:35",NULL
+"7","puswil3@dev.com","desk_puswil3","$2y$10$u2BAjgVyS8yRHh0498ypTeHxTgRO1HsqJ4LzjOCbKpkMPbKfZUHsC",NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,"1","0","2024-11-17 19:19:17","2024-11-17 19:19:17",NULL
+"10","konreg@dev.com","konreg","$2y$10$xdMDedHMucEXAro9rjk7D.mUUfaMbaan5NGL85YsG6meeoOjf4ori",NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,"1","0","2025-04-03 09:08:32","2025-04-03 09:08:32",NULL
+"11","provinsi@dev.com","ACEH","$2y$10$UblaXBxnsYlPpSBjREFPV.DJz/XuUsTg6VFfAiFK//p6EsHDRwuvi",NULL,NULL,"11",NULL,NULL,NULL,NULL,NULL,"1","0","2025-04-11 19:59:13","2025-04-11 19:59:13",NULL
+"12","provinsi2@dev.com","RIAU","$2y$10$N8hR3Hr3sQ7dEfig2Rv3eO0WQK4oqSCJ7pwNqGQC2lQlibOlJxsES",NULL,NULL,"14",NULL,NULL,NULL,NULL,NULL,"1","0","2025-04-11 20:43:00","2025-04-11 20:43:00",NULL
+"13","unor@dev.com","DJBM","$2y$10$TODGfUtu9QvjCgExlgL92O95oyMZTwwO8.maOsk1O6WoVmK05oA1O",NULL,"4",NULL,NULL,NULL,NULL,NULL,NULL,"1","0","2025-04-12 18:09:47","2025-04-12 18:09:47",NULL
+"14","unor@dev2.com","DJBM2","$2y$10$mCumTdAaGIr69kwx0DmnM.M/29Mg6sKd40DE3H56ufx5S7XhSoj/i",NULL,"4",NULL,NULL,NULL,NULL,NULL,NULL,"1","0","2025-04-12 18:12:57","2025-04-12 18:12:57",NULL
+"15","unor@dev32.com","DJBM23","$2y$10$R3XUI1FcUqeX8SmjQaEUTu7VFVBV2Kln/uGZ3Kb4FbN6UcXWwcrz2",NULL,"4",NULL,NULL,NULL,NULL,NULL,NULL,"1","0","2025-04-12 18:13:27","2025-04-12 18:13:27",NULL

@@ -1,0 +1,30 @@
+CRITICAL - 2024-09-05 20:23:31 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/r_rpiw.php"
+[Method: GET, Route: rpiw]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/r_rpiw.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/r_rpiw', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/r_rpiw', [...])
+ 4 APPPATH/Controllers/Rpiw.php(10): App\Libraries\Template->load('/templates/main', '/pages/r_rpiw')
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-05 20:23:58 --> ErrorException: Undefined variable $p_rpiw
+[Method: GET, Route: rpiw]
+in APPPATH/Views/pages/p_rpiw.php on line 42.
+ 1 APPPATH/Views/pages/p_rpiw.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $p_rpiw', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php', 42)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/p_rpiw', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/p_rpiw', [...])
+ 6 APPPATH/Controllers/Rpiw.php(10): App\Libraries\Template->load('/templates/main', '/pages/p_rpiw')
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')

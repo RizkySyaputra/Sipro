@@ -1,0 +1,159 @@
+CRITICAL - 2024-09-21 17:21:32 --> Error: Call to protected method Shapefile\Geometry\GeometryCollection::getGeometry() from scope App\Controllers\Rpiw
+[Method: GET, Route: detail/51-05-1400]
+in APPPATH/Controllers/Rpiw.php on line 54.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('51-05-1400')
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-21 17:23:03 --> Error: Call to undefined method Shapefile\Geometry\MultiPolygon::fetchRecord()
+[Method: GET, Route: detail/51-05-1400]
+in APPPATH/Controllers/Rpiw.php on line 54.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('51-05-1400')
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-21 17:23:25 --> Error: Call to undefined method Shapefile\Geometry\MultiPolygon::getAttributes()
+[Method: GET, Route: detail/51-05-1400]
+in APPPATH/Controllers/Rpiw.php on line 55.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('51-05-1400')
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-21 17:32:02 --> Error: Call to undefined method Shapefile\Geometry\Polygon::getCharset()
+[Method: GET, Route: map]
+in APPPATH/Controllers/MapController.php on line 35.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\MapController->index()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MapController))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-21 17:34:39 --> Error: Call to a member function getGeoJSON() on bool
+[Method: GET, Route: detail/51-05-1400]
+in APPPATH/Controllers/Rpiw.php on line 50.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('51-05-1400')
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-21 17:35:56 --> Error: Call to a member function getGeoJSON() on bool
+[Method: GET, Route: detail/51-05-1400]
+in APPPATH/Controllers/Rpiw.php on line 50.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('51-05-1400')
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-21 17:36:23 --> Error: Call to a member function getGeoJSON() on bool
+[Method: GET, Route: detail/51-05-1400]
+in APPPATH/Controllers/Rpiw.php on line 50.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('51-05-1400')
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-21 17:37:26 --> Error: Call to a member function getGeoJSON() on bool
+[Method: GET, Route: detail/51-05-1400]
+in APPPATH/Controllers/Rpiw.php on line 50.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('51-05-1400')
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-21 17:38:49 --> ErrorException: Array to string conversion
+[Method: GET, Route: detail/51-05-1400]
+in APPPATH/Controllers/Rpiw.php on line 52.
+ 1 APPPATH/Controllers/Rpiw.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 52)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('51-05-1400')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-21 17:39:00 --> TypeError: Unsupported operand types: string + array
+[Method: GET, Route: detail/51-05-1400]
+in APPPATH/Controllers/Rpiw.php on line 52.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('51-05-1400')
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-21 17:41:23 --> ErrorException: Array to string conversion
+[Method: GET, Route: detail/51-05-1400]
+in APPPATH/Views/pages/detail.php on line 170.
+ 1 APPPATH/Views/pages/detail.php(170): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php', 170)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(67): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('51-05-1400')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-21 19:28:56 --> ErrorException: Undefined variable $geoJsonData
+[Method: GET, Route: detail/51-05-1400]
+in APPPATH/Views/pages/detail.php on line 171.
+ 1 APPPATH/Views/pages/detail.php(171): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $geoJsonData', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php', 171)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(62): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('51-05-1400')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-21 19:30:06 --> ErrorException: Undefined variable $geojsonData
+[Method: GET, Route: detail/51-05-1400]
+in APPPATH/Controllers/Rpiw.php on line 57.
+ 1 APPPATH/Controllers/Rpiw.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $geojsonData', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 57)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('51-05-1400')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-21 19:34:15 --> ErrorException: Undefined variable $geoJsonData
+[Method: GET, Route: map]
+in APPPATH/Views/map.php on line 29.
+ 1 APPPATH/Views/map.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $geoJsonData', '/Applications/MAMP/htdocs/sipro24/app/Views/map.php', 29)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/map.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('map', [], true)
+ 5 APPPATH/Controllers/MapController.php(25): view('map', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\MapController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MapController))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')

@@ -1,0 +1,233 @@
+ERROR - 2024-08-23 03:44:02 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'sipro24' in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'sipro24', 3306, '', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /Applications/MAMP/htdocs/sipro24/app/Models/Master/ProgramModel.php(15): CodeIgniter\BaseModel->findAll()
+#7 /Applications/MAMP/htdocs/sipro24/app/Controllers/Master.php(27): App\Models\Master\ProgramModel->getProgram()
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Master->program()
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'sipro24' in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 /Applications/MAMP/htdocs/sipro24/app/Models/Master/ProgramModel.php(15): CodeIgniter\BaseModel->findAll()
+#6 /Applications/MAMP/htdocs/sipro24/app/Controllers/Master.php(27): App\Models\Master\ProgramModel->getProgram()
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Master->program()
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#14 {main}
+CRITICAL - 2024-08-23 03:44:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'sipro24'
+[Method: GET, Route: program]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `m_program`', [], false)
+ 3 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH/Models/Master/ProgramModel.php(15): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH/Controllers/Master.php(27): App\Models\Master\ProgramModel->getProgram()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Master->program()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-08-23 03:47:54 --> ErrorException: Undefined variable $data
+[Method: GET, Route: program]
+in APPPATH/Views/pages/program.php on line 35.
+ 1 APPPATH/Views/pages/program.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/program.php', 35)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/program.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/program', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/program', [...])
+ 6 APPPATH/Controllers/Master.php(29): App\Libraries\Template->load('/templates/main', '/pages/program', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Master->program()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-08-23 04:05:41 --> ErrorException: Undefined variable $title
+[Method: GET, Route: program]
+in APPPATH/Views/templates/main.php on line 10.
+ 1 APPPATH/Views/templates/main.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $title', '/Applications/MAMP/htdocs/sipro24/app/Views/templates/main.php', 10)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/templates/main.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/templates/main', [], true)
+ 5 APPPATH/Libraries/Template.php(110): view('/templates/main', [...], [])
+ 6 APPPATH/Controllers/Master.php(29): App\Libraries\Template->load('/templates/main', '/pages/program', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Master->program()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-08-23 04:30:47 --> BadMethodCallException: Call to undefined method App\Models\Master\ProgramModel::getKegiatan
+[Method: GET, Route: kawasan]
+in SYSTEMPATH/Model.php on line 932.
+ 1 APPPATH/Controllers/Master.php(50): CodeIgniter\Model->__call('getKegiatan', [])
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Master->kawasan()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-08-23 04:32:01 --> Error: Class "App\Models\Master\RaModel" not found
+[Method: GET, Route: kawasan]
+in APPPATH/Controllers/Master.php on line 26.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Master->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-08-23 04:33:06 --> ErrorException: Undefined variable $programs
+[Method: GET, Route: kawasan]
+in APPPATH/Views/pages/kawasan.php on line 36.
+ 1 APPPATH/Views/pages/kawasan.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $programs', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/kawasan.php', 36)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/kawasan.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/kawasan', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/kawasan', [...])
+ 6 APPPATH/Controllers/Master.php(53): App\Libraries\Template->load('/templates/main', '/pages/kawasan', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Master->kawasan()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-08-23 07:48:14 --> ErrorException: Undefined variable $kegiatan
+[Method: GET, Route: kro]
+in APPPATH/Views/pages/kro.php on line 39.
+ 1 APPPATH/Views/pages/kro.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $kegiatan', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/kro.php', 39)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/kro.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/kro', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/kro', [...])
+ 6 APPPATH/Controllers/Master.php(65): App\Libraries\Template->load('/templates/main', '/pages/kro', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Master->kro()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-08-23 07:51:17 --> ErrorException: Undefined variable $ro
+[Method: GET, Route: ro]
+in APPPATH/Views/pages/ro.php on line 34.
+ 1 APPPATH/Views/pages/ro.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ro', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/ro.php', 34)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/ro.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/ro', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/ro', [...])
+ 6 APPPATH/Controllers/Master.php(73): App\Libraries\Template->load('/templates/main', '/pages/ro', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Master->ro()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-08-23 07:52:27 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/user.php"
+[Method: GET, Route: user]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/user.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/user', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/user', [...])
+ 4 APPPATH/Controllers/Master.php(89): App\Libraries\Template->load('/templates/main', '/pages/user', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Master->user()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-08-23 07:53:08 --> ErrorException: Undefined variable $kegiatan
+[Method: GET, Route: user]
+in APPPATH/Views/pages/user.php on line 34.
+ 1 APPPATH/Views/pages/user.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $kegiatan', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/user.php', 34)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/user.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/user', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/user', [...])
+ 6 APPPATH/Controllers/Master.php(89): App\Libraries\Template->load('/templates/main', '/pages/user', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Master->user()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-08-23 07:53:24 --> ErrorException: Undefined array key "kdgiat"
+[Method: GET, Route: user]
+in APPPATH/Views/pages/user.php on line 36.
+ 1 APPPATH/Views/pages/user.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "kdgiat"', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/user.php', 36)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/user.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/user', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/user', [...])
+ 6 APPPATH/Controllers/Master.php(89): App\Libraries\Template->load('/templates/main', '/pages/user', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Master->user()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-08-23 07:56:08 --> ErrorException: Undefined variable $kegiatan
+[Method: GET, Route: provinsi]
+in APPPATH/Views/pages/provinsi.php on line 34.
+ 1 APPPATH/Views/pages/provinsi.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $kegiatan', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/provinsi.php', 34)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/provinsi.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/provinsi', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/provinsi', [...])
+ 6 APPPATH/Controllers/Master.php(81): App\Libraries\Template->load('/templates/main', '/pages/provinsi', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Master->provinsi()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-08-23 07:58:20 --> ErrorException: Undefined array key "logitude"
+[Method: GET, Route: provinsi]
+in APPPATH/Views/pages/provinsi.php on line 41.
+ 1 APPPATH/Views/pages/provinsi.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "logitude"', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/provinsi.php', 41)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/provinsi.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/provinsi', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/provinsi', [...])
+ 6 APPPATH/Controllers/Master.php(81): App\Libraries\Template->load('/templates/main', '/pages/provinsi', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Master->provinsi()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')

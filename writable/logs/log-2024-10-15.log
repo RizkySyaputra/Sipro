@@ -1,0 +1,48 @@
+CRITICAL - 2024-10-15 03:25:16 --> ErrorException: Undefined variable $itemA
+[Method: GET, Route: kawasan]
+in APPPATH/Views/pages/p_kawasan.php on line 43.
+ 1 APPPATH/Views/pages/p_kawasan.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $itemA', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_kawasan.php', 43)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_kawasan.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/p_kawasan', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/p_kawasan', [...])
+ 6 APPPATH/Controllers/Rpiw.php(105): App\Libraries\Template->load('/templates/main', '/pages/p_kawasan', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->kawasan()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-15 03:25:16 --> ErrorException: Undefined variable $itemA
+[Method: GET, Route: kawasan]
+in APPPATH/Views/pages/p_kawasan.php on line 43.
+ 1 APPPATH/Views/pages/p_kawasan.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $itemA', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_kawasan.php', 43)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_kawasan.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/p_kawasan', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/p_kawasan', [...])
+ 6 APPPATH/Controllers/Rpiw.php(105): App\Libraries\Template->load('/templates/main', '/pages/p_kawasan', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->kawasan()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-15 04:37:19 --> ErrorException: Undefined variable $itemA
+[Method: GET, Route: kawasan]
+in APPPATH/Views/pages/p_kawasan.php on line 43.
+ 1 APPPATH/Views/pages/p_kawasan.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $itemA', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_kawasan.php', 43)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_kawasan.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/p_kawasan', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/p_kawasan', [...])
+ 6 APPPATH/Controllers/Rpiw.php(105): App\Libraries\Template->load('/templates/main', '/pages/p_kawasan', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->kawasan()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')

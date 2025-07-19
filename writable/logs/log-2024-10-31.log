@@ -1,0 +1,924 @@
+CRITICAL - 2024-10-31 04:22:36 --> ErrorException: Undefined variable $latitude
+[Method: GET, Route: detail_kawasan/11-001]
+in APPPATH/Views/pages/rpiw/detail_kawasan.php on line 54.
+ 1 APPPATH/Views/pages/rpiw/detail_kawasan.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $latitude', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/rpiw/detail_kawasan.php', 54)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/rpiw/detail_kawasan.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/rpiw/detail_kawasan', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/rpiw/detail_kawasan', [...])
+ 6 APPPATH/Controllers/Rpiw.php(122): App\Libraries\Template->load('/templates/main', '/pages/rpiw/detail_kawasan', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('11-001')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 04:24:06 --> ErrorException: Undefined variable $latitude
+[Method: GET, Route: detail_kawasan/11-001]
+in APPPATH/Views/pages/rpiw/detail_kawasan.php on line 54.
+ 1 APPPATH/Views/pages/rpiw/detail_kawasan.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $latitude', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/rpiw/detail_kawasan.php', 54)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/rpiw/detail_kawasan.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/rpiw/detail_kawasan', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/rpiw/detail_kawasan', [...])
+ 6 APPPATH/Controllers/Rpiw.php(122): App\Libraries\Template->load('/templates/main', '/pages/rpiw/detail_kawasan', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('11-001')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 04:32:27 --> ErrorException: Undefined property: stdClass::$longitude
+[Method: GET, Route: detail_kawasan/11-001]
+in APPPATH/Views/pages/rpiw/detail_kawasan.php on line 42.
+ 1 APPPATH/Views/pages/rpiw/detail_kawasan.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$longitude', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/rpiw/detail_kawasan.php', 42)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/rpiw/detail_kawasan.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/rpiw/detail_kawasan', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/rpiw/detail_kawasan', [...])
+ 6 APPPATH/Controllers/Rpiw.php(122): App\Libraries\Template->load('/templates/main', '/pages/rpiw/detail_kawasan', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('11-001')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 04:34:42 --> ErrorException: Undefined variable $peta_kawasan
+[Method: GET, Route: detail_kawasan/11-001]
+in APPPATH/Views/pages/rpiw/detail_kawasan.php on line 66.
+ 1 APPPATH/Views/pages/rpiw/detail_kawasan.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $peta_kawasan', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/rpiw/detail_kawasan.php', 66)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/rpiw/detail_kawasan.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/rpiw/detail_kawasan', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/rpiw/detail_kawasan', [...])
+ 6 APPPATH/Controllers/Rpiw.php(122): App\Libraries\Template->load('/templates/main', '/pages/rpiw/detail_kawasan', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('11-001')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 04:35:57 --> ErrorException: Undefined variable $peta_program
+[Method: GET, Route: detail_kawasan/11-001]
+in APPPATH/Views/pages/rpiw/detail_kawasan.php on line 83.
+ 1 APPPATH/Views/pages/rpiw/detail_kawasan.php(83): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $peta_program', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/rpiw/detail_kawasan.php', 83)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/rpiw/detail_kawasan.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/rpiw/detail_kawasan', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/rpiw/detail_kawasan', [...])
+ 6 APPPATH/Controllers/Rpiw.php(122): App\Libraries\Template->load('/templates/main', '/pages/rpiw/detail_kawasan', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('11-001')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 05:04:13 --> ErrorException: Undefined variable $peta_kawasan
+[Method: GET, Route: detail_kawasan/51-075]
+in APPPATH/Views/pages/rpiw/detail_kawasan.php on line 67.
+ 1 APPPATH/Views/pages/rpiw/detail_kawasan.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $peta_kawasan', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/rpiw/detail_kawasan.php', 67)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/rpiw/detail_kawasan.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/rpiw/detail_kawasan', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/rpiw/detail_kawasan', [...])
+ 6 APPPATH/Controllers/Rpiw.php(122): App\Libraries\Template->load('/templates/main', '/pages/rpiw/detail_kawasan', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('51-075')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 05:04:21 --> ErrorException: Undefined variable $peta_kawasan
+[Method: GET, Route: detail_kawasan/51-075]
+in APPPATH/Views/pages/rpiw/detail_kawasan.php on line 70.
+ 1 APPPATH/Views/pages/rpiw/detail_kawasan.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $peta_kawasan', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/rpiw/detail_kawasan.php', 70)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/rpiw/detail_kawasan.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/rpiw/detail_kawasan', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/rpiw/detail_kawasan', [...])
+ 6 APPPATH/Controllers/Rpiw.php(122): App\Libraries\Template->load('/templates/main', '/pages/rpiw/detail_kawasan', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('51-075')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 05:07:49 --> ParseError: syntax error, unexpected token "public"
+[Method: GET, Route: detail_kawasan/51-075]
+in APPPATH/Controllers/Rpiw.php on line 139.
+ 1 VENDORPATH/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/Applications/MAMP/htdocs/sipro24/vendor/composer/../../app/Controllers/Rpiw.php')
+ 2 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\Rpiw')
+ 3 SYSTEMPATH/CodeIgniter.php(887): class_exists('\\App\\Controllers\\Rpiw', true)
+ 4 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 05:09:00 --> Error: Call to a member function getKawasanRpiwDetail() on array
+[Method: GET, Route: detail_kawasan/51-075]
+in APPPATH/Controllers/Rpiw.php on line 132.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('51-075')
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 05:11:41 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: detail_kawasan/51-075]
+in APPPATH/Controllers/Rpiw.php on line 133.
+ 1 APPPATH/Controllers/Rpiw.php(133): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 133)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('51-075')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 05:13:32 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: detail_kawasan/51-075]
+in APPPATH/Controllers/Rpiw.php on line 133.
+ 1 APPPATH/Controllers/Rpiw.php(133): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 133)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('51-075')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 05:21:13 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: detail_kawasan/51-075]
+in APPPATH/Controllers/Rpiw.php on line 134.
+ 1 APPPATH/Controllers/Rpiw.php(134): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 134)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('51-075')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 05:21:48 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: detail_kawasan/51-075]
+in APPPATH/Controllers/Rpiw.php on line 128.
+ 1 APPPATH/Controllers/Rpiw.php(128): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 128)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('51-075')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 05:22:12 --> ErrorException: Undefined variable $peta
+[Method: GET, Route: detail_kawasan/51-075]
+in APPPATH/Controllers/Rpiw.php on line 128.
+ 1 APPPATH/Controllers/Rpiw.php(128): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $peta', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 128)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('51-075')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 05:22:42 --> ErrorException: Undefined variable $kode_kawasan
+[Method: GET, Route: detail_kawasan/51-075]
+in APPPATH/Controllers/Rpiw.php on line 128.
+ 1 APPPATH/Controllers/Rpiw.php(128): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $kode_kawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 128)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('51-075')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 05:22:55 --> ErrorException: Undefined variable $kawasan
+[Method: GET, Route: detail_kawasan/51-075]
+in APPPATH/Controllers/Rpiw.php on line 128.
+ 1 APPPATH/Controllers/Rpiw.php(128): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $kawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 128)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('51-075')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 05:23:18 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: detail_kawasan/51-075]
+in APPPATH/Controllers/Rpiw.php on line 134.
+ 1 APPPATH/Controllers/Rpiw.php(134): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 134)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('51-075')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 05:24:16 --> ErrorException: Undefined variable $peta_kawasan
+[Method: GET, Route: detail_kawasan/51-075]
+in APPPATH/Views/pages/rpiw/detail_kawasan.php on line 66.
+ 1 APPPATH/Views/pages/rpiw/detail_kawasan.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $peta_kawasan', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/rpiw/detail_kawasan.php', 66)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/rpiw/detail_kawasan.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/rpiw/detail_kawasan', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/rpiw/detail_kawasan', [...])
+ 6 APPPATH/Controllers/Rpiw.php(122): App\Libraries\Template->load('/templates/main', '/pages/rpiw/detail_kawasan', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('51-075')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 07:32:53 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/memorandum/memorandumProgram.php"
+[Method: GET, Route: daftar_program]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/memorandum/memorandumProgram.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/memorandumProgram', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/memorandumProgram', [...])
+ 4 APPPATH/Controllers/Memorandum.php(154): App\Libraries\Template->load('/templates/main', '/pages/memorandum/memorandumProgram', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 09:28:08 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/master/user.php"
+[Method: GET, Route: user]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/master/user.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/master/user', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/master/user', [...])
+ 4 APPPATH/Controllers/Master.php(90): App\Libraries\Template->load('/templates/main', '/pages/master/user', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Master->user()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 09:30:13 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/memorandum/memorandumProgram.php"
+[Method: GET, Route: daftar_program]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/memorandum/memorandumProgram.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/memorandumProgram', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/memorandumProgram', [...])
+ 4 APPPATH/Controllers/Memorandum.php(154): App\Libraries\Template->load('/templates/main', '/pages/memorandum/memorandumProgram', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 09:30:58 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/memorandum/memorandumProgram.php"
+[Method: GET, Route: daftar_program]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/memorandum/memorandumProgram.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/memorandumProgram', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/memorandumProgram', [...])
+ 4 APPPATH/Controllers/Memorandum.php(154): App\Libraries\Template->load('/templates/main', '/pages/memorandum/memorandumProgram', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 09:30:59 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/memorandum/memorandumProgram.php"
+[Method: GET, Route: daftar_program]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/memorandum/memorandumProgram.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/memorandumProgram', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/memorandumProgram', [...])
+ 4 APPPATH/Controllers/Memorandum.php(154): App\Libraries\Template->load('/templates/main', '/pages/memorandum/memorandumProgram', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 09:30:59 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/memorandum/memorandumProgram.php"
+[Method: GET, Route: daftar_program]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/memorandum/memorandumProgram.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/memorandumProgram', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/memorandumProgram', [...])
+ 4 APPPATH/Controllers/Memorandum.php(154): App\Libraries\Template->load('/templates/main', '/pages/memorandum/memorandumProgram', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 09:31:50 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/memorandum/memorandumProgram.php"
+[Method: GET, Route: daftar_program]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/memorandum/memorandumProgram.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/memorandumProgram', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/memorandumProgram', [...])
+ 4 APPPATH/Controllers/Memorandum.php(154): App\Libraries\Template->load('/templates/main', '/pages/memorandum/memorandumProgram', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 09:32:09 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/memorandum/memorandumProgram.php"
+[Method: GET, Route: daftar_program]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/memorandum/memorandumProgram.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/memorandumProgram', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/memorandumProgram', [...])
+ 4 APPPATH/Controllers/Memorandum.php(154): App\Libraries\Template->load('/templates/main', '/pages/memorandum/memorandumProgram', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 09:32:10 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/memorandum/memorandumProgram.php"
+[Method: GET, Route: daftar_program]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/memorandum/memorandumProgram.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/memorandumProgram', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/memorandumProgram', [...])
+ 4 APPPATH/Controllers/Memorandum.php(154): App\Libraries\Template->load('/templates/main', '/pages/memorandum/memorandumProgram', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 09:32:47 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/memorandum/memorandumProgram.php"
+[Method: GET, Route: daftar_program]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/memorandum/memorandumProgram.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/memorandumProgram', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/memorandumProgram', [...])
+ 4 APPPATH/Controllers/Memorandum.php(154): App\Libraries\Template->load('/templates/main', '/pages/memorandum/memorandumProgram', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 09:33:11 --> ErrorException: file_get_contents(): Read of 8896 bytes failed with errno=21 Is a directory
+[Method: GET, Route: detail_kawasan/11-001]
+in APPPATH/Views/pages/rpiw/detail_kawasan.php on line 46.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'file_get_contents(): Read of 8896 bytes failed with errno=21 Is a directory', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/rpiw/detail_kawasan.php', 46)
+ 2 APPPATH/Views/pages/rpiw/detail_kawasan.php(46): file_get_contents('/Applications/MAMP/htdocs/sipro24/public/geoJson/')
+ 3 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/rpiw/detail_kawasan.php')
+ 4 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/rpiw/detail_kawasan', [], true)
+ 6 APPPATH/Libraries/Template.php(104): view('/pages/rpiw/detail_kawasan', [...])
+ 7 APPPATH/Controllers/Rpiw.php(122): App\Libraries\Template->load('/templates/main', '/pages/rpiw/detail_kawasan', [...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('11-001')
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 09:33:16 --> ErrorException: file_get_contents(): Read of 8896 bytes failed with errno=21 Is a directory
+[Method: GET, Route: detail_kawasan/11-003]
+in APPPATH/Views/pages/rpiw/detail_kawasan.php on line 46.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'file_get_contents(): Read of 8896 bytes failed with errno=21 Is a directory', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/rpiw/detail_kawasan.php', 46)
+ 2 APPPATH/Views/pages/rpiw/detail_kawasan.php(46): file_get_contents('/Applications/MAMP/htdocs/sipro24/public/geoJson/')
+ 3 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/rpiw/detail_kawasan.php')
+ 4 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/rpiw/detail_kawasan', [], true)
+ 6 APPPATH/Libraries/Template.php(104): view('/pages/rpiw/detail_kawasan', [...])
+ 7 APPPATH/Controllers/Rpiw.php(122): App\Libraries\Template->load('/templates/main', '/pages/rpiw/detail_kawasan', [...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('11-003')
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 09:40:22 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/memorandum/memorandumProgram.php"
+[Method: GET, Route: daftar_program]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/memorandum/memorandumProgram.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/memorandumProgram', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/memorandumProgram', [...])
+ 4 APPPATH/Controllers/Memorandum.php(154): App\Libraries\Template->load('/templates/main', '/pages/memorandum/memorandumProgram', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 10:09:23 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/memorandum/memorandumProgram.php"
+[Method: GET, Route: daftar_program]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/memorandum/memorandumProgram.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/memorandumProgram', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/memorandumProgram', [...])
+ 4 APPPATH/Controllers/Memorandum.php(154): App\Libraries\Template->load('/templates/main', '/pages/memorandum/memorandumProgram', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 10:10:07 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/memorandum/memorandumProgram.php"
+[Method: GET, Route: daftar_program]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/memorandum/memorandumProgram.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/memorandumProgram', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/memorandumProgram', [...])
+ 4 APPPATH/Controllers/Memorandum.php(154): App\Libraries\Template->load('/templates/main', '/pages/memorandum/memorandumProgram', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 10:11:15 --> ErrorException: Undefined property: stdClass::$id_program
+[Method: GET, Route: daftar_program]
+in APPPATH/Views/pages/memorandum/listProgram.php on line 82.
+ 1 APPPATH/Views/pages/memorandum/listProgram.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$id_program', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/listProgram.php', 82)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/listProgram.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/listProgram', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/listProgram', [...])
+ 6 APPPATH/Controllers/Memorandum.php(154): App\Libraries\Template->load('/templates/main', '/pages/memorandum/listProgram', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 10:12:34 --> ErrorException: Undefined variable $p_rpiw
+[Method: GET, Route: daftar_program]
+in APPPATH/Views/pages/memorandum/listProgram.php on line 79.
+ 1 APPPATH/Views/pages/memorandum/listProgram.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $p_rpiw', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/listProgram.php', 79)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/listProgram.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/listProgram', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/listProgram', [...])
+ 6 APPPATH/Controllers/Memorandum.php(154): App\Libraries\Template->load('/templates/main', '/pages/memorandum/listProgram', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 10:13:04 --> ErrorException: Undefined property: stdClass::$id_program
+[Method: GET, Route: daftar_program]
+in APPPATH/Views/pages/memorandum/listProgram.php on line 82.
+ 1 APPPATH/Views/pages/memorandum/listProgram.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$id_program', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/listProgram.php', 82)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/listProgram.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/listProgram', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/listProgram', [...])
+ 6 APPPATH/Controllers/Memorandum.php(154): App\Libraries\Template->load('/templates/main', '/pages/memorandum/listProgram', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 10:14:02 --> ErrorException: Undefined property: stdClass::$id_program
+[Method: GET, Route: daftar_program]
+in APPPATH/Views/pages/memorandum/listProgram.php on line 84.
+ 1 APPPATH/Views/pages/memorandum/listProgram.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$id_program', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/listProgram.php', 84)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/listProgram.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/listProgram', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/listProgram', [...])
+ 6 APPPATH/Controllers/Memorandum.php(154): App\Libraries\Template->load('/templates/main', '/pages/memorandum/listProgram', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 10:15:33 --> ErrorException: Undefined variable $p_rpiw
+[Method: GET, Route: daftar_program]
+in APPPATH/Views/pages/memorandum/listProgram.php on line 107.
+ 1 APPPATH/Views/pages/memorandum/listProgram.php(107): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $p_rpiw', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/listProgram.php', 107)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/listProgram.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/listProgram', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/listProgram', [...])
+ 6 APPPATH/Controllers/Memorandum.php(154): App\Libraries\Template->load('/templates/main', '/pages/memorandum/listProgram', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+INFO - 2024-10-31 10:25:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-31 10:31:13 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: memo/RPIW16-16-06-0009]
+in APPPATH/Controllers/Memorandum.php on line 93.
+ 1 APPPATH/Controllers/Memorandum.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 93)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->detail('RPIW16-16-06-0009')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 10:31:13 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: memo/RPIW16-16-06-0009]
+in APPPATH/Controllers/Memorandum.php on line 93.
+ 1 APPPATH/Controllers/Memorandum.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 93)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->detail('RPIW16-16-06-0009')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 10:31:36 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: memo/RPIW16-16-06-0009]
+in APPPATH/Controllers/Memorandum.php on line 93.
+ 1 APPPATH/Controllers/Memorandum.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 93)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->detail('RPIW16-16-06-0009')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 10:31:36 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: memo/RPIW16-16-06-0009]
+in APPPATH/Controllers/Memorandum.php on line 93.
+ 1 APPPATH/Controllers/Memorandum.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 93)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->detail('RPIW16-16-06-0009')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 10:31:37 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: memo/RPIW16-16-06-0009]
+in APPPATH/Controllers/Memorandum.php on line 93.
+ 1 APPPATH/Controllers/Memorandum.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 93)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->detail('RPIW16-16-06-0009')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 10:31:37 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: memo/RPIW16-16-06-0009]
+in APPPATH/Controllers/Memorandum.php on line 93.
+ 1 APPPATH/Controllers/Memorandum.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 93)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->detail('RPIW16-16-06-0009')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 10:31:37 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: memo/RPIW16-16-06-0009]
+in APPPATH/Controllers/Memorandum.php on line 93.
+ 1 APPPATH/Controllers/Memorandum.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 93)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->detail('RPIW16-16-06-0009')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 10:31:38 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: memo/RPIW16-16-06-0009]
+in APPPATH/Controllers/Memorandum.php on line 93.
+ 1 APPPATH/Controllers/Memorandum.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 93)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->detail('RPIW16-16-06-0009')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-10-31 10:33:42 --> mysqli_sql_exception: Column 'nama_program' cannot be null in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `me...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `me...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `me...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `me...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 /Applications/MAMP/htdocs/sipro24/app/Models/Memorandum/ProgramModel.php(92): CodeIgniter\Model->insert(Array)
+#8 /Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php(118): App\Models\Memorandum\ProgramModel->addMemorandumProgram('11', '4', 'RPIW11-11-04-00...', NULL, 'Kota Banda Aceh', '- Dukungan terh...', 'Mohon Dipersiap...', '13.36', '89986000', '12', '1', 'Proyek Priorita...', '2026')
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Memorandum->insert()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+#11 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#16 {main}
+CRITICAL - 2024-10-31 10:33:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'nama_program' cannot be null
+[Method: POST, Route: add_memorandum]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `memorandum_program` (`id_rpiw`, `id_provinsi`, `id_unor`, `nama_program`, `lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `tahun_anggaran`, `created_at`, `updated_at`) VALUES (:id_rpiw:, :id_provinsi:, :id_unor:, :nama_program:, :lokasi:, :justifikasi:, :kesiapan_rc:, :volume:, :biaya:, :id_satuan:, :id_pendanaan:, :tagging_mp:, :tahun_anggaran:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH/Models/Memorandum/ProgramModel.php(92): CodeIgniter\Model->insert([...])
+ 6 APPPATH/Controllers/Memorandum.php(118): App\Models\Memorandum\ProgramModel->addMemorandumProgram('11', '4', 'RPIW11-11-04-0011', null, 'Kota Banda Aceh', '- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati
+ 
+ - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh', 'Mohon Dipersiapkan', '13.36', '89986000', '12', '1', 'Proyek Prioritas', '2026')
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->insert()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 10:33:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'nama_program' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `memorandum_program` (`id_rpiw`, `id_provinsi`, `id_unor`, `nama_program`, `lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `tahun_anggaran`, `created_at`, `updated_at`) VALUES (\'RPIW11-11-04-0011\', \'11\', \'4\', NULL, \'Kota Banda Aceh\', \'- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati\\r\\n \\r\\n - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh\', \'Mohon Dipersiapkan\', \'13.36\', \'89986000\', \'12\', \'1\', \'Proyek Prioritas\', \'2026\', \'2024-10-31 10:33:42\', \'2024-10-31 10:33:42\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `memorandum_program` (`id_rpiw`, `id_provinsi`, `id_unor`, `nama_program`, `lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `tahun_anggaran`, `created_at`, `updated_at`) VALUES (\'RPIW11-11-04-0011\', \'11\', \'4\', NULL, \'Kota Banda Aceh\', \'- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati\\r\\n \\r\\n - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh\', \'Mohon Dipersiapkan\', \'13.36\', \'89986000\', \'12\', \'1\', \'Proyek Prioritas\', \'2026\', \'2024-10-31 10:33:42\', \'2024-10-31 10:33:42\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `memorandum_program` (`id_rpiw`, `id_provinsi`, `id_unor`, `nama_program`, `lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `tahun_anggaran`, `created_at`, `updated_at`) VALUES (:id_rpiw:, :id_provinsi:, :id_unor:, :nama_program:, :lokasi:, :justifikasi:, :kesiapan_rc:, :volume:, :biaya:, :id_satuan:, :id_pendanaan:, :tagging_mp:, :tahun_anggaran:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH/Models/Memorandum/ProgramModel.php(92): CodeIgniter\Model->insert([...])
+ 8 APPPATH/Controllers/Memorandum.php(118): App\Models\Memorandum\ProgramModel->addMemorandumProgram('11', '4', 'RPIW11-11-04-0011', null, 'Kota Banda Aceh', '- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati
+ 
+ - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh', 'Mohon Dipersiapkan', '13.36', '89986000', '12', '1', 'Proyek Prioritas', '2026')
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->insert()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 10:33:42 --> [Caused by] mysqli_sql_exception: Column 'nama_program' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `memorandum_program` (`id_rpiw`, `id_provinsi`, `id_unor`, `nama_program`, `lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `tahun_anggaran`, `created_at`, `updated_at`) VALUES (\'RPIW11-11-04-0011\', \'11\', \'4\', NULL, \'Kota Banda Aceh\', \'- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati\\r\\n \\r\\n - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh\', \'Mohon Dipersiapkan\', \'13.36\', \'89986000\', \'12\', \'1\', \'Proyek Prioritas\', \'2026\', \'2024-10-31 10:33:42\', \'2024-10-31 10:33:42\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `memorandum_program` (`id_rpiw`, `id_provinsi`, `id_unor`, `nama_program`, `lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `tahun_anggaran`, `created_at`, `updated_at`) VALUES (\'RPIW11-11-04-0011\', \'11\', \'4\', NULL, \'Kota Banda Aceh\', \'- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati\\r\\n \\r\\n - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh\', \'Mohon Dipersiapkan\', \'13.36\', \'89986000\', \'12\', \'1\', \'Proyek Prioritas\', \'2026\', \'2024-10-31 10:33:42\', \'2024-10-31 10:33:42\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `memorandum_program` (`id_rpiw`, `id_provinsi`, `id_unor`, `nama_program`, `lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `tahun_anggaran`, `created_at`, `updated_at`) VALUES (\'RPIW11-11-04-0011\', \'11\', \'4\', NULL, \'Kota Banda Aceh\', \'- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati\\r\\n \\r\\n - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh\', \'Mohon Dipersiapkan\', \'13.36\', \'89986000\', \'12\', \'1\', \'Proyek Prioritas\', \'2026\', \'2024-10-31 10:33:42\', \'2024-10-31 10:33:42\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `memorandum_program` (`id_rpiw`, `id_provinsi`, `id_unor`, `nama_program`, `lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `tahun_anggaran`, `created_at`, `updated_at`) VALUES (:id_rpiw:, :id_provinsi:, :id_unor:, :nama_program:, :lokasi:, :justifikasi:, :kesiapan_rc:, :volume:, :biaya:, :id_satuan:, :id_pendanaan:, :tagging_mp:, :tahun_anggaran:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH/Models/Memorandum/ProgramModel.php(92): CodeIgniter\Model->insert([...])
+ 9 APPPATH/Controllers/Memorandum.php(118): App\Models\Memorandum\ProgramModel->addMemorandumProgram('11', '4', 'RPIW11-11-04-0011', null, 'Kota Banda Aceh', '- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati
+ 
+ - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh', 'Mohon Dipersiapkan', '13.36', '89986000', '12', '1', 'Proyek Prioritas', '2026')
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->insert()
+11 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+12 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-10-31 10:34:49 --> mysqli_sql_exception: Column 'id_rpiw' cannot be null in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `me...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `me...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `me...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `me...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 /Applications/MAMP/htdocs/sipro24/app/Models/Memorandum/ProgramModel.php(92): CodeIgniter\Model->insert(Array)
+#8 /Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php(118): App\Models\Memorandum\ProgramModel->addMemorandumProgram('11', '4', NULL, 'Pembangunan Ban...', 'Kota Banda Aceh', '- Dukungan terh...', 'Mohon Dipersiap...', '13.36', '89986000', '12', '1', 'Proyek Priorita...', '2026')
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Memorandum->insert()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+#11 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#16 {main}
+CRITICAL - 2024-10-31 10:34:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'id_rpiw' cannot be null
+[Method: POST, Route: add_memorandum]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `memorandum_program` (`id_rpiw`, `id_provinsi`, `id_unor`, `nama_program`, `lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `tahun_anggaran`, `created_at`, `updated_at`) VALUES (:id_rpiw:, :id_provinsi:, :id_unor:, :nama_program:, :lokasi:, :justifikasi:, :kesiapan_rc:, :volume:, :biaya:, :id_satuan:, :id_pendanaan:, :tagging_mp:, :tahun_anggaran:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH/Models/Memorandum/ProgramModel.php(92): CodeIgniter\Model->insert([...])
+ 6 APPPATH/Controllers/Memorandum.php(118): App\Models\Memorandum\ProgramModel->addMemorandumProgram('11', '4', null, 'Pembangunan Banda Aceh Outer Ring Road (BOOR) Phase 1 (Lingkar Utara)', 'Kota Banda Aceh', '- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati
+ 
+ - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh', 'Mohon Dipersiapkan', '13.36', '89986000', '12', '1', 'Proyek Prioritas', '2026')
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->insert()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 10:34:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'id_rpiw' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `memorandum_program` (`id_rpiw`, `id_provinsi`, `id_unor`, `nama_program`, `lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `tahun_anggaran`, `created_at`, `updated_at`) VALUES (NULL, \'11\', \'4\', \'Pembangunan Banda Aceh Outer Ring Road (BOOR) Phase 1 (Lingkar Utara)\', \'Kota Banda Aceh\', \'- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati\\r\\n \\r\\n - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh\', \'Mohon Dipersiapkan\', \'13.36\', \'89986000\', \'12\', \'1\', \'Proyek Prioritas\', \'2026\', \'2024-10-31 10:34:49\', \'2024-10-31 10:34:49\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `memorandum_program` (`id_rpiw`, `id_provinsi`, `id_unor`, `nama_program`, `lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `tahun_anggaran`, `created_at`, `updated_at`) VALUES (NULL, \'11\', \'4\', \'Pembangunan Banda Aceh Outer Ring Road (BOOR) Phase 1 (Lingkar Utara)\', \'Kota Banda Aceh\', \'- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati\\r\\n \\r\\n - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh\', \'Mohon Dipersiapkan\', \'13.36\', \'89986000\', \'12\', \'1\', \'Proyek Prioritas\', \'2026\', \'2024-10-31 10:34:49\', \'2024-10-31 10:34:49\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `memorandum_program` (`id_rpiw`, `id_provinsi`, `id_unor`, `nama_program`, `lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `tahun_anggaran`, `created_at`, `updated_at`) VALUES (:id_rpiw:, :id_provinsi:, :id_unor:, :nama_program:, :lokasi:, :justifikasi:, :kesiapan_rc:, :volume:, :biaya:, :id_satuan:, :id_pendanaan:, :tagging_mp:, :tahun_anggaran:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH/Models/Memorandum/ProgramModel.php(92): CodeIgniter\Model->insert([...])
+ 8 APPPATH/Controllers/Memorandum.php(118): App\Models\Memorandum\ProgramModel->addMemorandumProgram('11', '4', null, 'Pembangunan Banda Aceh Outer Ring Road (BOOR) Phase 1 (Lingkar Utara)', 'Kota Banda Aceh', '- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati
+ 
+ - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh', 'Mohon Dipersiapkan', '13.36', '89986000', '12', '1', 'Proyek Prioritas', '2026')
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->insert()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 10:34:49 --> [Caused by] mysqli_sql_exception: Column 'id_rpiw' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `memorandum_program` (`id_rpiw`, `id_provinsi`, `id_unor`, `nama_program`, `lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `tahun_anggaran`, `created_at`, `updated_at`) VALUES (NULL, \'11\', \'4\', \'Pembangunan Banda Aceh Outer Ring Road (BOOR) Phase 1 (Lingkar Utara)\', \'Kota Banda Aceh\', \'- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati\\r\\n \\r\\n - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh\', \'Mohon Dipersiapkan\', \'13.36\', \'89986000\', \'12\', \'1\', \'Proyek Prioritas\', \'2026\', \'2024-10-31 10:34:49\', \'2024-10-31 10:34:49\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `memorandum_program` (`id_rpiw`, `id_provinsi`, `id_unor`, `nama_program`, `lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `tahun_anggaran`, `created_at`, `updated_at`) VALUES (NULL, \'11\', \'4\', \'Pembangunan Banda Aceh Outer Ring Road (BOOR) Phase 1 (Lingkar Utara)\', \'Kota Banda Aceh\', \'- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati\\r\\n \\r\\n - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh\', \'Mohon Dipersiapkan\', \'13.36\', \'89986000\', \'12\', \'1\', \'Proyek Prioritas\', \'2026\', \'2024-10-31 10:34:49\', \'2024-10-31 10:34:49\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `memorandum_program` (`id_rpiw`, `id_provinsi`, `id_unor`, `nama_program`, `lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `tahun_anggaran`, `created_at`, `updated_at`) VALUES (NULL, \'11\', \'4\', \'Pembangunan Banda Aceh Outer Ring Road (BOOR) Phase 1 (Lingkar Utara)\', \'Kota Banda Aceh\', \'- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati\\r\\n \\r\\n - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh\', \'Mohon Dipersiapkan\', \'13.36\', \'89986000\', \'12\', \'1\', \'Proyek Prioritas\', \'2026\', \'2024-10-31 10:34:49\', \'2024-10-31 10:34:49\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `memorandum_program` (`id_rpiw`, `id_provinsi`, `id_unor`, `nama_program`, `lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `tahun_anggaran`, `created_at`, `updated_at`) VALUES (:id_rpiw:, :id_provinsi:, :id_unor:, :nama_program:, :lokasi:, :justifikasi:, :kesiapan_rc:, :volume:, :biaya:, :id_satuan:, :id_pendanaan:, :tagging_mp:, :tahun_anggaran:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH/Models/Memorandum/ProgramModel.php(92): CodeIgniter\Model->insert([...])
+ 9 APPPATH/Controllers/Memorandum.php(118): App\Models\Memorandum\ProgramModel->addMemorandumProgram('11', '4', null, 'Pembangunan Banda Aceh Outer Ring Road (BOOR) Phase 1 (Lingkar Utara)', 'Kota Banda Aceh', '- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati
+ 
+ - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh', 'Mohon Dipersiapkan', '13.36', '89986000', '12', '1', 'Proyek Prioritas', '2026')
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->insert()
+11 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+12 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 10:37:25 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: memo/4]
+in APPPATH/Controllers/Memorandum.php on line 93.
+ 1 APPPATH/Controllers/Memorandum.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 93)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->detail('4')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 12:03:53 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: detail_program/1]
+in APPPATH/Controllers/Memorandum.php on line 196.
+ 1 APPPATH/Controllers/Memorandum.php(196): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 196)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programDetail('$i')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 12:03:53 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: detail_program/1]
+in APPPATH/Controllers/Memorandum.php on line 196.
+ 1 APPPATH/Controllers/Memorandum.php(196): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 196)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programDetail('$i')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 12:04:11 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: detail_program/1]
+in APPPATH/Controllers/Memorandum.php on line 196.
+ 1 APPPATH/Controllers/Memorandum.php(196): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 196)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programDetail('$i')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 12:04:11 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: detail_program/1]
+in APPPATH/Controllers/Memorandum.php on line 196.
+ 1 APPPATH/Controllers/Memorandum.php(196): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 196)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programDetail('$i')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 12:04:12 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: detail_program/1]
+in APPPATH/Controllers/Memorandum.php on line 196.
+ 1 APPPATH/Controllers/Memorandum.php(196): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 196)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programDetail('$i')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 12:05:06 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: detail_program/2]
+in APPPATH/Controllers/Memorandum.php on line 196.
+ 1 APPPATH/Controllers/Memorandum.php(196): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 196)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programDetail('$i')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 12:05:06 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: detail_program/2]
+in APPPATH/Controllers/Memorandum.php on line 196.
+ 1 APPPATH/Controllers/Memorandum.php(196): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 196)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programDetail('$i')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 12:12:55 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: detail_program/1]
+in APPPATH/Controllers/Memorandum.php on line 196.
+ 1 APPPATH/Controllers/Memorandum.php(196): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 196)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programDetail('$i')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 16:18:13 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/master/user.php"
+[Method: GET, Route: user]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/master/user.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/master/user', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/master/user', [...])
+ 4 APPPATH/Controllers/Master.php(90): App\Libraries\Template->load('/templates/main', '/pages/master/user', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Master->user()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 16:18:14 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/master/user.php"
+[Method: GET, Route: user]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/master/user.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/master/user', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/master/user', [...])
+ 4 APPPATH/Controllers/Master.php(90): App\Libraries\Template->load('/templates/main', '/pages/master/user', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Master->user()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 16:38:21 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: detail_program/2]
+in APPPATH/Controllers/Memorandum.php on line 196.
+ 1 APPPATH/Controllers/Memorandum.php(196): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 196)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programDetail('$i')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-31 16:38:21 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: detail_program/2]
+in APPPATH/Controllers/Memorandum.php on line 196.
+ 1 APPPATH/Controllers/Memorandum.php(196): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 196)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programDetail('$i')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')

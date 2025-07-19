@@ -1,0 +1,1924 @@
+CRITICAL - 2025-05-14 00:12:22 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 03:03:50 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 03:13:28 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 04:15:53 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpD4C5.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpD4C5.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '18-Peningkatan SPAM Kabupaten / Pengembangan Jaringan Distribusi Utama SPAM IKK Way Sepagasan-ri_1747196153_1747196153_085b5eae4cf91c09fc7d.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 04:17:45 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: POST, Route: memorandum/get_kawasan]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum/get_kawasan', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 04:18:20 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php7C0D.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php7C0D.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '18-Peningkatan SPAM Kabupaten / Pengembangan Jaringan Distribusi Utama SPAM IKK Way Sepagasan-ri_1747196300_1747196300_08eba0aef44a32c565e0.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 04:25:16 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpEBE6.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpEBE6.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '18-Peningkatan SPAM Kabupaten / Pengembangan Jaringan Distribusi Utama SPAM IKK Way Sepagasan-ri_1747196716_1747196716_ec11f62dc5bb8bf21360.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 04:36:33 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 04:36:44 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 04:45:40 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php32D6.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php32D6.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '52-Pembangunan IPA dan Jaringan Perpipaan SPAM Mila Kapasitas100 Ltr/Dtk Kabupaten Dompu-ri_1747197940_1747197940_75bdc899df99a985cbda.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 04:46:02 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpF959.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpF959.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '18-Peningkatan SPAM Kabupaten/Pengembangan Jaringan Distribusi Utama SPAM IKK Way Sepagasan-ri_1747197962_1747197962_f1037e65fbf878a6a568.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 04:46:26 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php2B1.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php2B1.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '52-Pembangunan IPA dan Jaringan Perpipaan SPAM Mila Kapasitas100 Ltr/Dtk Kabupaten Dompu-ri_1747197986_1747197986_87b72974f8e7aff8f929.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 04:47:02 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpC0E8.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpC0E8.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '18-Peningkatan SPAM Kabupaten/Pengembangan Jaringan Distribusi Utama SPAM IKK Way Sepagasan-ri_1747198022_1747198022_f79ddaa63366f9603295.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 04:47:22 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: POST, Route: memorandum/filter_data]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum/filter_data', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 04:47:42 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: POST, Route: memorandum/filter_data]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum/filter_data', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 04:47:59 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: POST, Route: memorandum/get_kawasan]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum/get_kawasan', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 04:50:57 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php9D2E.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php9D2E.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '18-Peningkatan SPAM Kabupaten/Pengembangan Jaringan Distribusi Utama SPAM IKK Way Sepagasan-dokling_1747198257_1747198257_a2902de08ddba6c55a20.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 04:54:54 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: POST, Route: memorandum/filter_data]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum/filter_data', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 04:55:28 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: POST, Route: memorandum/get_kawasan]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum/get_kawasan', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 04:55:41 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: POST, Route: memorandum/filter_data]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum/filter_data', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 04:56:35 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: POST, Route: memorandum/get_kawasan]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum/get_kawasan', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 05:03:03 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: POST, Route: memorandum/get_kawasan]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum/get_kawasan', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 05:11:48 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php9A00.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php9A00.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '18-Peningkatan SPAM Kabupaten/Pengembangan Jaringan Distribusi Utama SPAM IKK Way Sepagasan-ri_1747199508_1747199508_2f279cd37cccc59000b2.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 05:28:11 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 05:28:16 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 05:33:03 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpB365.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpB365.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '52-Pembangunan IPA dan Jaringan Perpipaan SPAM Mila Kapasitas100 Ltr/Dtk Kabupaten Dompu-ri_1747200783_1747200783_d62cd24b159a9a330b4a.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 05:57:28 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php53C.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php53C.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '52-Pembangunan IPA dan Jaringan Perpipaan SPAM Mila Kapasitas100 Ltr/Dtk Kabupaten Dompu-ri_1747202248_1747202248_ad5965f0f2710429f738.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 05:57:40 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php11C3.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php11C3.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '18-Peningkatan SPAM Kabupaten/Pengembangan Jaringan Distribusi Utama SPAM IKK Way Sepagasan-ri_1747202260_1747202260_0dbf67d3dfa48150a6b3.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 05:58:28 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpC401.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpC401.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '52-Pembangunan IPA dan Jaringan Perpipaan SPAM Mila Kapasitas100 Ltr/Dtk Kabupaten Dompu-ri_1747202308_1747202308_b6227868d5173079c871.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 06:10:31 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpC4A.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpC4A.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '52-Pembangunan IPA dan Jaringan PerpipaanSPAM Mila Kapasitas100 Ltr/Dtk KabupatenDompu-fs_1747203031_1747203031_81d2853a1a352f5216fa.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 06:12:48 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpFB.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpFB.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '52-Pembangunan IPA dan Jaringan PerpipaanSPAM Mila Kapasitas100 Ltr/Dtk KabupatenDompu-fs_1747203168_1747203168_abf4b9dbd81d70cb3b8d.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 06:21:07 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpF32.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpF32.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '52-Pembangunan IPA dan Jaringan Perpipaan SPAM Mila Kapasitas100 Ltr/Dtk Kabupaten Dompu-ri_1747203667_1747203667_cf3b8e0f33f9917a2dd4.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 06:21:54 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpC4BD.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpC4BD.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '52-Pembangunan IPA dan Jaringan Perpipaan SPAM Mila Kapasitas100 Ltr/Dtk Kabupaten Dompu-ri_1747203714_1747203714_7e4c818cdafa422b4fa9.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 06:29:04 --> ErrorException: Undefined array key "pasca_kontruksi"
+[Method: POST, Route: input_usulan_provinsi]
+in APPPATH\Controllers\UsulanProvinsi.php on line 137.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "pasca_kontruksi"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 137)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 06:30:59 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: POST, Route: memorandum/filter_data]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum/filter_data', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 06:36:33 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php1CF5.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php1CF5.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '52-Pembangunan IPA dan Jaringan Perpipaan SPAM Mila Kapasitas100 Ltr/Dtk Kabupaten Dompu-ri_1747204593_1747204593_e35595840156bbde88a2.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 06:41:58 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php1CF5.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php1CF5.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '52-Pembangunan IPA dan Jaringan Perpipaan SPAM Mila Kapasitas100 Ltr/Dtk Kabupaten Dompu-ri_1747204918_1747204918_89052487032912e68965.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 06:42:15 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 06:42:23 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 06:42:38 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 06:45:51 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpA1EB.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpA1EB.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '52-Pembangunan IPA dan Jaringan Perpipaan SPAM Mila Kapasitas100 Ltr/Dtk Kabupaten Dompu-ri_1747205151_1747205151_bcc85018e42ed780f206.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 06:47:17 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpFBA5.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpFBA5.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '52-Pembangunan IPA dan Jaringan Perpipaan SPAM Mila Kapasitas100 Ltr/Dtk Kabupaten Dompu-ri_1747205237_1747205237_b6c1002d1fdaa83e4afe.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 06:48:10 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 08:25:06 --> ErrorException: Undefined array key "pasca_kontruksi"
+[Method: POST, Route: input_usulan_provinsi]
+in APPPATH\Controllers\UsulanProvinsi.php on line 137.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "pasca_kontruksi"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 137)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 08:35:49 --> ErrorException: Undefined array key "pasca_kontruksi"
+[Method: POST, Route: input_usulan_provinsi]
+in APPPATH\Controllers\UsulanProvinsi.php on line 137.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "pasca_kontruksi"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 137)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 08:40:40 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 08:40:52 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 08:42:18 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 08:43:20 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 08:44:51 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 08:44:55 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 08:50:26 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php5401.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php5401.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '52-Pembangunan IPA dan Jaringan Perpipaan SPAM Mila kapasitas 100L/Detik-ri_1747212626_1747212626_b6ced6ee79d5d358e867.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 09:00:15 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 09:00:21 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 09:37:21 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpC6B5.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpC6B5.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '52-Pembangunan IPA dan Jaringan Perpipaan SPAM Mila Kapasitas 100 ltr/dtk Kabupaten Dompu-ri_1747215441_1747215441_7880b6562ce6e4b76470.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 09:37:54 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php459D.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php459D.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '52-Pembangunan IPA dan Jaringan Perpipaan SPAM Mila Kapasitas 100 ltr/dtk Kabupaten Dompu-ri_1747215474_1747215474_0007b8a675a530932dab.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 09:42:24 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php587A.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php587A.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '52-Pembangunan IPA dan Jaringan Perpipaan SPAM Mila Kapasitas 100 ltr/dtk Kabupaten Dompu-ri_1747215744_1747215744_8a095b67879db6c1fb92.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 09:46:51 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php7951.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php7951.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '52-Pembangunan IPA dan Jaringan Perpipaan SPAM Mila Kapasitas 100 ltr/dtk Kabupaten Dompu-ri_1747216011_1747216011_9546e311fece8fde74f6.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 09:56:35 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php5F78.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php5F78.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '52-Pembangunan IPA dan Jaringan Perpipaan SPAM Mila Kapasitas 100 ltr/dtk Kabupaten Dompu-ri_1747216595_1747216595_8130c7e7d68a7579de14.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 09:57:10 --> ErrorException: Trying to access array offset on value of type null
+[Method: POST, Route: UsulanProvinsi/get_satuan]
+in APPPATH\Controllers\UsulanProvinsi.php on line 493.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(493): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 493)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->get_satuan()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 10:00:21 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpD365.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpD365.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '52-Pembangunan IPA dan Jaringan Perpipaan SPAM Mila Kapasitas 100 ltr/dtk Kabupaten Dompu-ri_1747216821_1747216821_137bf0caf246485680b4.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 10:03:45 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpEC94.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpEC94.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '52-Pembangunan IPA dan Jaringan Perpipaan SPAM Mila Kapasitas 100 ltr/dtk Kabupaten Dompu-ri_1747217025_1747217025_1d4755cc4d1e741b2513.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 10:06:38 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 10:17:34 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php894B.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php894B.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '52-Pembangunan IPA dan Jaringan Perpipaan SPAM Mila Kapasitas100 Ltr/Dtk Kabupaten Dompu-ri_1747217853_1747217853_e4241baaa157cb76dc1b.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 11:22:27 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 11:57:27 --> ErrorException: Undefined array key "ded"
+[Method: POST, Route: input_usulan_provinsi]
+in APPPATH\Controllers\UsulanProvinsi.php on line 137.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ded"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 137)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 11:57:30 --> ErrorException: Undefined array key "ded"
+[Method: POST, Route: input_usulan_provinsi]
+in APPPATH\Controllers\UsulanProvinsi.php on line 137.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ded"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 137)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 11:57:31 --> ErrorException: Undefined array key "fs"
+[Method: POST, Route: input_usulan_provinsi]
+in APPPATH\Controllers\UsulanProvinsi.php on line 137.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "fs"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 137)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 11:57:31 --> ErrorException: Undefined array key "fs"
+[Method: POST, Route: input_usulan_provinsi]
+in APPPATH\Controllers\UsulanProvinsi.php on line 137.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "fs"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 137)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 11:57:31 --> ErrorException: Undefined array key "fs"
+[Method: POST, Route: input_usulan_provinsi]
+in APPPATH\Controllers\UsulanProvinsi.php on line 137.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "fs"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 137)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 12:46:04 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 12:58:30 --> ErrorException: Undefined array key "dokling"
+[Method: POST, Route: UsulanProvinsi/edit]
+in APPPATH\Controllers\UsulanProvinsi.php on line 347.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(347): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "dokling"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 347)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->prosesEdit()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 13:11:38 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: POST, Route: memorandum/filter_data]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum/filter_data', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 13:11:46 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: POST, Route: memorandum/filter_data]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum/filter_data', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 13:25:15 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php865A.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php865A.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '12-Pembangunan Flyover/Underpass/Terowongan (Simpang KA) - Provinsi Sumatera Utara-ded_1747229115_1747229115_32518f82ac96ad3b4c75.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 13:26:24 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php94DD.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php94DD.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '12-Pembangunan Flyover/Underpass/Terowongan (Simpang KA) - Provinsi Sumatera Utara-ded_1747229184_1747229184_0c2a2c09d21c38bca9d2.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 13:26:44 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpE224.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpE224.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '12-Pembangunan Flyover/Underpass/Terowongan (Simpang KA) - Provinsi Sumatera Utara-ded_1747229204_1747229204_c9191d927d85fe987a5f.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 13:27:29 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php91ED.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php91ED.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '12-Pembangunan Flyover/Underpass/Terowongan (Simpang KA) - Provinsi Sumatera Utara-ded_1747229249_1747229249_b1af6872afffb6f506df.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 13:27:41 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpC08F.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpC08F.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '12-Pembangunan Flyover/Underpass/Terowongan (Simpang KA) - Provinsi Sumatera Utara-ded_1747229261_1747229261_5664eea3f22dc81c8e03.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 13:36:06 --> ErrorException: Undefined array key "pasca_kontruksi"
+[Method: POST, Route: input_usulan_provinsi]
+in APPPATH\Controllers\UsulanProvinsi.php on line 137.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "pasca_kontruksi"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 137)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 13:38:38 --> ErrorException: Undefined array key "pasca_kontruksi"
+[Method: POST, Route: input_usulan_provinsi]
+in APPPATH\Controllers\UsulanProvinsi.php on line 137.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "pasca_kontruksi"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 137)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:01:25 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpAA2D.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpAA2D.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '12-Pembangunan Flyover/Underpass/Terowongan di Simpang Jalur Kereta Api Kawasan Kuala Tanjung – KEK Sei Mangkei-ded_1747231285_1747231285_8a226fd2e226ffac4d74.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:01:36 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpD43E.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpD43E.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '12-Pembangunan Flyover/Underpass/Terowongan di Simpang Jalur Kereta Api Kawasan Kuala Tanjung – KEK Sei Mangkei-ded_1747231296_1747231296_5c3305c95028e2ae4d5b.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:01:49 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php95B.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php95B.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '12-Pembangunan Flyover/Underpass/Terowongan di Simpang Jalur Kereta Api Kawasan Kuala Tanjung – KEK Sei Mangkei-ded_1747231309_1747231309_9e257d54061258c9b888.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:03:08 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php3CCD.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php3CCD.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '12-Pembangunan Flyover/Underpass/Terowongan di Simpang Jalur Kereta Api Kawasan Kuala Tanjung – KEK Sei Mangkei-ded_1747231388_1747231388_cb48a623263d67b30f28.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:04:12 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:04:15 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:06:54 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:06:59 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:07:01 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:07:35 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:07:48 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:07:52 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:08:00 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:08:03 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:08:14 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:09:20 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:10:17 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:12:06 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:13:41 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php9192.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php9192.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '12-Pembangunan Flyover/Underpass/Terowongan di Simpang Jalur Kereta Api Kawasan Kuala Tanjung – KEK Sei Mangkei-ri_1747232021_1747232021_895b1b058e0204fadb7e.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:14:50 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpA836.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpA836.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '12-Pembangunan Flyover/Underpass/Terowongan di Simpang Jalur Kereta Api Kawasan Kuala Tanjung – KEK Sei Mangkei-ri_1747232090_1747232090_ee63f856ec851ca592d0.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:17:03 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 74.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'ini_set(): Session ini settings cannot be changed after headers have already been sent', 'C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Session\\Handlers\\FileHandler.php', 74)
+ 2 SYSTEMPATH\Session\Handlers\FileHandler.php(74): ini_set('session.save_path', 'C:\\xampp\\htdocs\\sipro24\\writable\\session')
+ 3 SYSTEMPATH\Config\Services.php(697): CodeIgniter\Session\Handlers\FileHandler->__construct(Object(Config\Session), '172.62.50.133')
+ 4 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+ 5 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+ 6 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+ 7 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::session()
+ 8 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('session', [])
+ 9 SYSTEMPATH\Common.php(996): CodeIgniter\Config\BaseService::get('session')
+10 SYSTEMPATH\Common.php(969): service('session')
+11 VENDORPATH\myth\auth\src\Authentication\AuthenticationBase.php(128): session('logged_in')
+12 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(67): Myth\Auth\Authentication\AuthenticationBase->isLoggedIn()
+13 VENDORPATH\myth\auth\src\Filters\LoginFilter.php(29): Myth\Auth\Authentication\LocalAuthenticator->check()
+14 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\LoginFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+15 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+16 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('input_usulan_provinsi', 'before')
+17 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:17:58 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 74.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'ini_set(): Session ini settings cannot be changed after headers have already been sent', 'C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Session\\Handlers\\FileHandler.php', 74)
+ 2 SYSTEMPATH\Session\Handlers\FileHandler.php(74): ini_set('session.save_path', 'C:\\xampp\\htdocs\\sipro24\\writable\\session')
+ 3 SYSTEMPATH\Config\Services.php(697): CodeIgniter\Session\Handlers\FileHandler->__construct(Object(Config\Session), '172.62.50.128')
+ 4 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+ 5 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+ 6 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+ 7 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::session()
+ 8 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('session', [])
+ 9 SYSTEMPATH\Common.php(996): CodeIgniter\Config\BaseService::get('session')
+10 SYSTEMPATH\Common.php(969): service('session')
+11 VENDORPATH\myth\auth\src\Authentication\AuthenticationBase.php(128): session('logged_in')
+12 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(67): Myth\Auth\Authentication\AuthenticationBase->isLoggedIn()
+13 VENDORPATH\myth\auth\src\Filters\LoginFilter.php(29): Myth\Auth\Authentication\LocalAuthenticator->check()
+14 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\LoginFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+15 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+16 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('input_usulan_provinsi', 'before')
+17 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:18:33 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 74.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'ini_set(): Session ini settings cannot be changed after headers have already been sent', 'C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Session\\Handlers\\FileHandler.php', 74)
+ 2 SYSTEMPATH\Session\Handlers\FileHandler.php(74): ini_set('session.save_path', 'C:\\xampp\\htdocs\\sipro24\\writable\\session')
+ 3 SYSTEMPATH\Config\Services.php(697): CodeIgniter\Session\Handlers\FileHandler->__construct(Object(Config\Session), '172.62.50.129')
+ 4 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+ 5 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+ 6 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+ 7 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::session()
+ 8 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('session', [])
+ 9 SYSTEMPATH\Common.php(996): CodeIgniter\Config\BaseService::get('session')
+10 SYSTEMPATH\Common.php(969): service('session')
+11 VENDORPATH\myth\auth\src\Authentication\AuthenticationBase.php(128): session('logged_in')
+12 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(67): Myth\Auth\Authentication\AuthenticationBase->isLoggedIn()
+13 VENDORPATH\myth\auth\src\Filters\LoginFilter.php(29): Myth\Auth\Authentication\LocalAuthenticator->check()
+14 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\LoginFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+15 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+16 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('input_usulan_provinsi', 'before')
+17 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:19:57 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 74.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'ini_set(): Session ini settings cannot be changed after headers have already been sent', 'C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Session\\Handlers\\FileHandler.php', 74)
+ 2 SYSTEMPATH\Session\Handlers\FileHandler.php(74): ini_set('session.save_path', 'C:\\xampp\\htdocs\\sipro24\\writable\\session')
+ 3 SYSTEMPATH\Config\Services.php(697): CodeIgniter\Session\Handlers\FileHandler->__construct(Object(Config\Session), '172.62.50.131')
+ 4 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+ 5 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+ 6 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+ 7 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::session()
+ 8 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('session', [])
+ 9 SYSTEMPATH\Common.php(996): CodeIgniter\Config\BaseService::get('session')
+10 SYSTEMPATH\Common.php(969): service('session')
+11 VENDORPATH\myth\auth\src\Authentication\AuthenticationBase.php(128): session('logged_in')
+12 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(67): Myth\Auth\Authentication\AuthenticationBase->isLoggedIn()
+13 VENDORPATH\myth\auth\src\Filters\LoginFilter.php(29): Myth\Auth\Authentication\LocalAuthenticator->check()
+14 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\LoginFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+15 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+16 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('input_usulan_provinsi', 'before')
+17 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:21:55 --> ErrorException: Undefined array key "fs"
+[Method: POST, Route: input_usulan_provinsi]
+in APPPATH\Controllers\UsulanProvinsi.php on line 137.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "fs"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 137)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:22:59 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php7E91.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php7E91.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '12-Pembangunan Flyover/Underpass/Terowongan di Simpang Jalur Kereta Api Kawasan Kuala Tanjung – KEK Sei Mangkei-ri_1747232579_1747232579_8aea7ab1457551065584.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:23:08 --> ErrorException: Undefined array key "menerima_bantuan"
+[Method: POST, Route: UsulanProvinsi/edit]
+in APPPATH\Controllers\UsulanProvinsi.php on line 347.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(347): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "menerima_bantuan"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 347)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->prosesEdit()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:23:52 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php992E.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php992E.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '12-Pembangunan Flyover/Underpass/Terowongan di Simpang Jalur Kereta Api Kawasan Kuala Tanjung – KEK Sei Mangkei-ri_1747232632_1747232632_c2417acdd230dcce6c8c.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:26:03 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpAA14.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpAA14.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '12-Pembangunan Flyover/Underpass/Terowongan di Simpang Jalur Kereta Api Kawasan Kuala Tanjung – KEK Sei Mangkei-ri_1747232763_1747232763_d5119aa1426c20b88684.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:26:31 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 74.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'ini_set(): Session ini settings cannot be changed after headers have already been sent', 'C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Session\\Handlers\\FileHandler.php', 74)
+ 2 SYSTEMPATH\Session\Handlers\FileHandler.php(74): ini_set('session.save_path', 'C:\\xampp\\htdocs\\sipro24\\writable\\session')
+ 3 SYSTEMPATH\Config\Services.php(697): CodeIgniter\Session\Handlers\FileHandler->__construct(Object(Config\Session), '172.62.50.145')
+ 4 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+ 5 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+ 6 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+ 7 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::session()
+ 8 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('session', [])
+ 9 SYSTEMPATH\Common.php(996): CodeIgniter\Config\BaseService::get('session')
+10 SYSTEMPATH\Common.php(969): service('session')
+11 VENDORPATH\myth\auth\src\Authentication\AuthenticationBase.php(128): session('logged_in')
+12 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(67): Myth\Auth\Authentication\AuthenticationBase->isLoggedIn()
+13 VENDORPATH\myth\auth\src\Filters\LoginFilter.php(29): Myth\Auth\Authentication\LocalAuthenticator->check()
+14 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\LoginFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+15 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+16 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('input_usulan_provinsi', 'before')
+17 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:29:38 --> ErrorException: Undefined array key "ded"
+[Method: POST, Route: UsulanProvinsi/edit]
+in APPPATH\Controllers\UsulanProvinsi.php on line 347.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(347): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ded"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 347)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->prosesEdit()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:32:18 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 74.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'ini_set(): Session ini settings cannot be changed after headers have already been sent', 'C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Session\\Handlers\\FileHandler.php', 74)
+ 2 SYSTEMPATH\Session\Handlers\FileHandler.php(74): ini_set('session.save_path', 'C:\\xampp\\htdocs\\sipro24\\writable\\session')
+ 3 SYSTEMPATH\Config\Services.php(697): CodeIgniter\Session\Handlers\FileHandler->__construct(Object(Config\Session), '172.62.50.158')
+ 4 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+ 5 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+ 6 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+ 7 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::session()
+ 8 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('session', [])
+ 9 SYSTEMPATH\Common.php(996): CodeIgniter\Config\BaseService::get('session')
+10 SYSTEMPATH\Common.php(969): service('session')
+11 VENDORPATH\myth\auth\src\Authentication\AuthenticationBase.php(128): session('logged_in')
+12 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(67): Myth\Auth\Authentication\AuthenticationBase->isLoggedIn()
+13 VENDORPATH\myth\auth\src\Filters\LoginFilter.php(29): Myth\Auth\Authentication\LocalAuthenticator->check()
+14 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\LoginFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+15 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+16 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('input_usulan_provinsi', 'before')
+17 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:35:37 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php4961.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php4961.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '12-Pembangunan Flyover/Underpass/Terowongan di Simpang Jalur Kereta Api Kawasan Kuala Tanjung – KEK Sei Mangkei-ri_1747233337_1747233337_c124c273547e3bab72fc.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:37:15 --> ErrorException: Undefined array key "fs"
+[Method: POST, Route: input_usulan_provinsi]
+in APPPATH\Controllers\UsulanProvinsi.php on line 137.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "fs"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 137)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:37:35 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 74.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'ini_set(): Session ini settings cannot be changed after headers have already been sent', 'C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Session\\Handlers\\FileHandler.php', 74)
+ 2 SYSTEMPATH\Session\Handlers\FileHandler.php(74): ini_set('session.save_path', 'C:\\xampp\\htdocs\\sipro24\\writable\\session')
+ 3 SYSTEMPATH\Config\Services.php(697): CodeIgniter\Session\Handlers\FileHandler->__construct(Object(Config\Session), '172.62.50.147')
+ 4 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+ 5 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+ 6 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+ 7 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::session()
+ 8 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('session', [])
+ 9 SYSTEMPATH\Common.php(996): CodeIgniter\Config\BaseService::get('session')
+10 SYSTEMPATH\Common.php(969): service('session')
+11 VENDORPATH\myth\auth\src\Authentication\AuthenticationBase.php(128): session('logged_in')
+12 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(67): Myth\Auth\Authentication\AuthenticationBase->isLoggedIn()
+13 VENDORPATH\myth\auth\src\Filters\LoginFilter.php(29): Myth\Auth\Authentication\LocalAuthenticator->check()
+14 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\LoginFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+15 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+16 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('input_usulan_provinsi', 'before')
+17 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:37:44 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:37:46 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:38:00 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:38:04 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:38:33 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: POST, Route: memorandum/filter_data]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum/filter_data', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:38:37 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: POST, Route: memorandum/get_kawasan]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum/get_kawasan', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:43:24 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php4F8C.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php4F8C.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '12-Pembangunan Flyover/Underpass/Terowongan di Simpang Jalur Kereta Api Kawasan Kuala Tanjung – KEK Sei Mangkei-ri_1747233804_1747233804_b6d81466d3a8c97b9d83.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:52:19 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php8493.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php8493.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '12-Pembangunan Flyover/Underpass/Terowongan di Simpang Jalur Kereta Api Kawasan Kuala Tanjung – KEK Sei Mangkei-ri_1747234339_1747234339_07403b9befe531ad08af.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:53:26 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpDBBB.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpDBBB.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '12-Pembangunan Flyover/Underpass/Terowongan di Simpang Jalur Kereta Api Kawasan Kuala Tanjung – KEK Sei Mangkei-ri_1747234406_1747234406_8f78f05470f5107309b1.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:55:35 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php96BD.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php96BD.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '12-Pembangunan Flyover/Underpass/Terowongan di Simpang Jalur Kereta Api Kawasan Kuala Tanjung – KEK Sei Mangkei-ri_1747234535_1747234535_822a7b9254467503d80b.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 14:58:13 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "phpC36.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('phpC36.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(142): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '12-Pembangunan Flyover/Underpass/Terowongan di Simpang Jalur Kereta Api Kawasan Kuala Tanjung – KEK Sei Mangkei-ri_1747234693_1747234693_3df2a5bf1f220ac84ac7.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 15:02:07 --> ErrorException: Undefined array key "fs"
+[Method: POST, Route: input_usulan_provinsi]
+in APPPATH\Controllers\UsulanProvinsi.php on line 137.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "fs"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 137)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 15:12:51 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php3EF.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: UsulanProvinsi/edit]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php3EF.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(365): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '12-Usulan Pembangunan Flyover/Underpass/Terowongan di Simpang Jalur Kereta Api Kawasan Kuala Tanjung – KEK Sei Mangkei-dokling_1747235571_1747235571_526d1b2ab43dccbb352b.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->prosesEdit()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 15:15:33 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 15:15:35 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 15:16:11 --> CodeIgniter\HTTP\Exceptions\HTTPException: Could not move file "php17F8.tmp" to "C:\xampp\htdocs\sipro24\public\uploads/usulan_dokumen/". Reason: 
+[Method: POST, Route: UsulanProvinsi/edit]
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 154.
+ 1 SYSTEMPATH\HTTP\Files\UploadedFile.php(154): CodeIgniter\HTTP\Exceptions\HTTPException::forMoveFailed('php17F8.tmp', 'C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '')
+ 2 APPPATH\Controllers\UsulanProvinsi.php(365): CodeIgniter\HTTP\Files\UploadedFile->move('C:\\xampp\\htdocs\\sipro24\\public\\uploads/usulan_dokumen/', '12-Usulan Pembangunan Flyover/Underpass/Terowongan di Simpang Jalur Kereta Api Kawasan Kuala Tanjung – KEK Sei Mangkei-dokling_1747235771_1747235771_40eaea0a9a08ad47fa2b.pdf')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->prosesEdit()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 15:38:39 --> ErrorException: Trying to access array offset on value of type null
+[Method: POST, Route: UsulanProvinsi/get_satuan]
+in APPPATH\Controllers\UsulanProvinsi.php on line 516.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(516): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 516)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->get_satuan()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 15:49:19 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 74.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'ini_set(): Session ini settings cannot be changed after headers have already been sent', 'C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Session\\Handlers\\FileHandler.php', 74)
+ 2 SYSTEMPATH\Session\Handlers\FileHandler.php(74): ini_set('session.save_path', 'C:\\xampp\\htdocs\\sipro24\\writable\\session')
+ 3 SYSTEMPATH\Config\Services.php(697): CodeIgniter\Session\Handlers\FileHandler->__construct(Object(Config\Session), '172.62.50.151')
+ 4 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+ 5 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+ 6 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+ 7 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::session()
+ 8 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('session', [])
+ 9 SYSTEMPATH\Common.php(996): CodeIgniter\Config\BaseService::get('session')
+10 SYSTEMPATH\Common.php(969): service('session')
+11 VENDORPATH\myth\auth\src\Authentication\AuthenticationBase.php(128): session('logged_in')
+12 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(67): Myth\Auth\Authentication\AuthenticationBase->isLoggedIn()
+13 VENDORPATH\myth\auth\src\Filters\LoginFilter.php(29): Myth\Auth\Authentication\LocalAuthenticator->check()
+14 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\LoginFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+15 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+16 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('input_usulan_provinsi', 'before')
+17 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 16:09:00 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 16:10:30 --> ErrorException: Undefined array key "pasca_kontruksi"
+[Method: POST, Route: UsulanProvinsi/edit]
+in APPPATH\Controllers\UsulanProvinsi.php on line 355.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(355): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "pasca_kontruksi"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 355)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->prosesEdit()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 16:25:40 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+[Method: POST, Route: UsulanProvinsi/edit]
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 74.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'ini_set(): Session ini settings cannot be changed after headers have already been sent', 'C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Session\\Handlers\\FileHandler.php', 74)
+ 2 SYSTEMPATH\Session\Handlers\FileHandler.php(74): ini_set('session.save_path', 'C:\\xampp\\htdocs\\sipro24\\writable\\session')
+ 3 SYSTEMPATH\Config\Services.php(697): CodeIgniter\Session\Handlers\FileHandler->__construct(Object(Config\Session), '172.62.50.144')
+ 4 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+ 5 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+ 6 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+ 7 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::session()
+ 8 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('session', [])
+ 9 SYSTEMPATH\Common.php(996): CodeIgniter\Config\BaseService::get('session')
+10 SYSTEMPATH\Common.php(969): service('session')
+11 VENDORPATH\myth\auth\src\Authentication\AuthenticationBase.php(128): session('logged_in')
+12 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(67): Myth\Auth\Authentication\AuthenticationBase->isLoggedIn()
+13 VENDORPATH\myth\auth\src\Filters\LoginFilter.php(29): Myth\Auth\Authentication\LocalAuthenticator->check()
+14 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\LoginFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+15 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+16 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('UsulanProvinsi/edit', 'before')
+17 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 16:26:09 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+[Method: POST, Route: UsulanProvinsi/edit]
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 74.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'ini_set(): Session ini settings cannot be changed after headers have already been sent', 'C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Session\\Handlers\\FileHandler.php', 74)
+ 2 SYSTEMPATH\Session\Handlers\FileHandler.php(74): ini_set('session.save_path', 'C:\\xampp\\htdocs\\sipro24\\writable\\session')
+ 3 SYSTEMPATH\Config\Services.php(697): CodeIgniter\Session\Handlers\FileHandler->__construct(Object(Config\Session), '172.62.50.158')
+ 4 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+ 5 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+ 6 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+ 7 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::session()
+ 8 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('session', [])
+ 9 SYSTEMPATH\Common.php(996): CodeIgniter\Config\BaseService::get('session')
+10 SYSTEMPATH\Common.php(969): service('session')
+11 VENDORPATH\myth\auth\src\Authentication\AuthenticationBase.php(128): session('logged_in')
+12 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(67): Myth\Auth\Authentication\AuthenticationBase->isLoggedIn()
+13 VENDORPATH\myth\auth\src\Filters\LoginFilter.php(29): Myth\Auth\Authentication\LocalAuthenticator->check()
+14 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\LoginFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+15 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+16 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('UsulanProvinsi/edit', 'before')
+17 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 16:28:17 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 16:28:24 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 16:30:59 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: POST, Route: memorandum/get_kawasan]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum/get_kawasan', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 16:32:22 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+[Method: POST, Route: UsulanProvinsi/edit]
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 74.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'ini_set(): Session ini settings cannot be changed after headers have already been sent', 'C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Session\\Handlers\\FileHandler.php', 74)
+ 2 SYSTEMPATH\Session\Handlers\FileHandler.php(74): ini_set('session.save_path', 'C:\\xampp\\htdocs\\sipro24\\writable\\session')
+ 3 SYSTEMPATH\Config\Services.php(697): CodeIgniter\Session\Handlers\FileHandler->__construct(Object(Config\Session), '172.62.50.145')
+ 4 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+ 5 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+ 6 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+ 7 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::session()
+ 8 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('session', [])
+ 9 SYSTEMPATH\Common.php(996): CodeIgniter\Config\BaseService::get('session')
+10 SYSTEMPATH\Common.php(969): service('session')
+11 VENDORPATH\myth\auth\src\Authentication\AuthenticationBase.php(128): session('logged_in')
+12 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(67): Myth\Auth\Authentication\AuthenticationBase->isLoggedIn()
+13 VENDORPATH\myth\auth\src\Filters\LoginFilter.php(29): Myth\Auth\Authentication\LocalAuthenticator->check()
+14 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\LoginFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+15 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+16 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('UsulanProvinsi/edit', 'before')
+17 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 16:32:25 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: POST, Route: memorandum/filter_data]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum/filter_data', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 16:42:42 --> ErrorException: Undefined array key "fs"
+[Method: POST, Route: UsulanProvinsi/edit]
+in APPPATH\Controllers\UsulanProvinsi.php on line 355.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(355): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "fs"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 355)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->prosesEdit()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 16:42:46 --> ErrorException: Undefined array key "fs"
+[Method: POST, Route: UsulanProvinsi/edit]
+in APPPATH\Controllers\UsulanProvinsi.php on line 355.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(355): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "fs"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 355)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->prosesEdit()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 16:42:50 --> ErrorException: Undefined array key "fs"
+[Method: POST, Route: UsulanProvinsi/edit]
+in APPPATH\Controllers\UsulanProvinsi.php on line 355.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(355): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "fs"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 355)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->prosesEdit()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 16:42:58 --> ErrorException: Undefined array key "fs"
+[Method: POST, Route: UsulanProvinsi/edit]
+in APPPATH\Controllers\UsulanProvinsi.php on line 355.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(355): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "fs"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 355)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->prosesEdit()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 16:43:01 --> ErrorException: Undefined array key "fs"
+[Method: POST, Route: UsulanProvinsi/edit]
+in APPPATH\Controllers\UsulanProvinsi.php on line 355.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(355): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "fs"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 355)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->prosesEdit()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 16:43:06 --> ErrorException: Undefined array key "fs"
+[Method: POST, Route: UsulanProvinsi/edit]
+in APPPATH\Controllers\UsulanProvinsi.php on line 355.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(355): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "fs"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 355)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->prosesEdit()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 16:43:10 --> ErrorException: Undefined array key "fs"
+[Method: POST, Route: UsulanProvinsi/edit]
+in APPPATH\Controllers\UsulanProvinsi.php on line 355.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(355): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "fs"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 355)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->prosesEdit()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 16:43:18 --> ErrorException: Undefined array key "fs"
+[Method: POST, Route: UsulanProvinsi/edit]
+in APPPATH\Controllers\UsulanProvinsi.php on line 355.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(355): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "fs"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 355)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->prosesEdit()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 16:46:18 --> ErrorException: Undefined array key "fs"
+[Method: POST, Route: UsulanProvinsi/edit]
+in APPPATH\Controllers\UsulanProvinsi.php on line 355.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(355): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "fs"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 355)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->prosesEdit()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 16:46:19 --> ErrorException: Undefined array key "fs"
+[Method: POST, Route: UsulanProvinsi/edit]
+in APPPATH\Controllers\UsulanProvinsi.php on line 355.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(355): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "fs"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 355)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->prosesEdit()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 16:46:20 --> ErrorException: Undefined array key "fs"
+[Method: POST, Route: UsulanProvinsi/edit]
+in APPPATH\Controllers\UsulanProvinsi.php on line 355.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(355): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "fs"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 355)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->prosesEdit()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 16:46:21 --> ErrorException: Undefined array key "fs"
+[Method: POST, Route: UsulanProvinsi/edit]
+in APPPATH\Controllers\UsulanProvinsi.php on line 355.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(355): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "fs"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 355)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->prosesEdit()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 16:57:17 --> ErrorException: Undefined array key "ded"
+[Method: POST, Route: input_usulan_provinsi]
+in APPPATH\Controllers\UsulanProvinsi.php on line 137.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ded"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 137)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 17:12:56 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 17:13:02 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 17:13:34 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 17:17:45 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 74.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'ini_set(): Session ini settings cannot be changed after headers have already been sent', 'C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Session\\Handlers\\FileHandler.php', 74)
+ 2 SYSTEMPATH\Session\Handlers\FileHandler.php(74): ini_set('session.save_path', 'C:\\xampp\\htdocs\\sipro24\\writable\\session')
+ 3 SYSTEMPATH\Config\Services.php(697): CodeIgniter\Session\Handlers\FileHandler->__construct(Object(Config\Session), '172.62.50.135')
+ 4 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+ 5 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+ 6 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+ 7 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::session()
+ 8 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('session', [])
+ 9 SYSTEMPATH\Common.php(996): CodeIgniter\Config\BaseService::get('session')
+10 SYSTEMPATH\Common.php(969): service('session')
+11 VENDORPATH\myth\auth\src\Authentication\AuthenticationBase.php(128): session('logged_in')
+12 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(67): Myth\Auth\Authentication\AuthenticationBase->isLoggedIn()
+13 VENDORPATH\myth\auth\src\Filters\LoginFilter.php(29): Myth\Auth\Authentication\LocalAuthenticator->check()
+14 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\LoginFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+15 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+16 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('input_usulan_provinsi', 'before')
+17 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 18:10:21 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 74.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'ini_set(): Session ini settings cannot be changed after headers have already been sent', 'C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Session\\Handlers\\FileHandler.php', 74)
+ 2 SYSTEMPATH\Session\Handlers\FileHandler.php(74): ini_set('session.save_path', 'C:\\xampp\\htdocs\\sipro24\\writable\\session')
+ 3 SYSTEMPATH\Config\Services.php(697): CodeIgniter\Session\Handlers\FileHandler->__construct(Object(Config\Session), '172.62.50.148')
+ 4 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+ 5 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+ 6 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+ 7 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::session()
+ 8 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('session', [])
+ 9 SYSTEMPATH\Common.php(996): CodeIgniter\Config\BaseService::get('session')
+10 SYSTEMPATH\Common.php(969): service('session')
+11 VENDORPATH\myth\auth\src\Authentication\AuthenticationBase.php(128): session('logged_in')
+12 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(67): Myth\Auth\Authentication\AuthenticationBase->isLoggedIn()
+13 VENDORPATH\myth\auth\src\Filters\LoginFilter.php(29): Myth\Auth\Authentication\LocalAuthenticator->check()
+14 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\LoginFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+15 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+16 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('input_usulan_provinsi', 'before')
+17 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 19:49:24 --> ErrorException: ini_set(): Session ini settings cannot be changed after headers have already been sent
+[Method: POST, Route: input_usulan_provinsi]
+in SYSTEMPATH\Session\Handlers\FileHandler.php on line 74.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'ini_set(): Session ini settings cannot be changed after headers have already been sent', 'C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Session\\Handlers\\FileHandler.php', 74)
+ 2 SYSTEMPATH\Session\Handlers\FileHandler.php(74): ini_set('session.save_path', 'C:\\xampp\\htdocs\\sipro24\\writable\\session')
+ 3 SYSTEMPATH\Config\Services.php(697): CodeIgniter\Session\Handlers\FileHandler->__construct(Object(Config\Session), '172.62.50.149')
+ 4 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+ 5 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+ 6 SYSTEMPATH\Config\Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+ 7 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::session()
+ 8 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('session', [])
+ 9 SYSTEMPATH\Common.php(996): CodeIgniter\Config\BaseService::get('session')
+10 SYSTEMPATH\Common.php(969): service('session')
+11 VENDORPATH\myth\auth\src\Authentication\AuthenticationBase.php(128): session('logged_in')
+12 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(67): Myth\Auth\Authentication\AuthenticationBase->isLoggedIn()
+13 VENDORPATH\myth\auth\src\Filters\LoginFilter.php(29): Myth\Auth\Authentication\LocalAuthenticator->check()
+14 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\LoginFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+15 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+16 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('input_usulan_provinsi', 'before')
+17 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+18 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+19 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+20 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 22:06:37 --> ErrorException: Undefined array key "pasca_kontruksi"
+[Method: POST, Route: input_usulan_provinsi]
+in APPPATH\Controllers\UsulanProvinsi.php on line 137.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "pasca_kontruksi"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 137)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 22:06:37 --> ErrorException: Undefined array key "dokling"
+[Method: POST, Route: input_usulan_provinsi]
+in APPPATH\Controllers\UsulanProvinsi.php on line 137.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(137): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "dokling"', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 137)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->input()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 22:16:59 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 23:18:23 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 23:42:41 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 23:51:19 --> ErrorException: Trying to access array offset on value of type null
+[Method: POST, Route: UsulanProvinsi/get_satuan]
+in APPPATH\Controllers\UsulanProvinsi.php on line 516.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(516): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 516)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->get_satuan()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-14 23:51:24 --> ErrorException: Trying to access array offset on value of type null
+[Method: POST, Route: UsulanProvinsi/get_satuan]
+in APPPATH\Controllers\UsulanProvinsi.php on line 516.
+ 1 APPPATH\Controllers\UsulanProvinsi.php(516): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\sipro24\\app\\Controllers\\UsulanProvinsi.php', 516)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsulanProvinsi->get_satuan()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsulanProvinsi))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

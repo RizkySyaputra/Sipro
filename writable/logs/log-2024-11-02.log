@@ -1,0 +1,16 @@
+CRITICAL - 2024-11-02 16:46:52 --> ErrorException: Undefined variable $p_rpiw
+[Method: GET, Route: memorandum]
+in APPPATH/Views/pages/memorandum/program.php on line 96.
+ 1 APPPATH/Views/pages/memorandum/program.php(96): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $p_rpiw', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/program.php', 96)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/program.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/program', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/program', [...])
+ 6 APPPATH/Controllers/Memorandum.php(49): App\Libraries\Template->load('/templates/main', '/pages/memorandum/program', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->index()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')

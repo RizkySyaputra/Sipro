@@ -1,0 +1,27 @@
+CRITICAL - 2024-11-28 09:42:26 --> Error: Call to a member function getTimestamp() on bool
+[Method: GET, Route: addBak2/11/2024-11-06]
+in APPPATH\Views\pdfTemplate.php on line 209.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('pdfTemplate', [], true)
+ 4 APPPATH\Controllers\DeskController.php(511): view('pdfTemplate', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DeskController->generatePdf2('11', '2024-11-06')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DeskController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-11-28 10:24:57 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: addBak2/null/2024-11-13]
+in APPPATH\Views\pdfTemplate.php on line 109.
+ 1 APPPATH\Views\pdfTemplate.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\sipro24\\app\\Views\\pdfTemplate.php', 109)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sipro24\\app\\Views\\pdfTemplate.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('pdfTemplate', [], true)
+ 5 APPPATH\Controllers\DeskController.php(511): view('pdfTemplate', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\DeskController->generatePdf2('null', '2024-11-13')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DeskController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

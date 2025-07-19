@@ -1,0 +1,502 @@
+CRITICAL - 2024-09-18 02:14:21 --> ErrorException: Attempt to read property "nama_kawasan" on array
+[Method: GET, Route: rpiw]
+in APPPATH/Controllers/Rpiw.php on line 30.
+ 1 APPPATH/Controllers/Rpiw.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama_kawasan" on array', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 30)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-18 03:40:02 --> ErrorException: Attempt to read property "nama_kawasan" on array
+[Method: GET, Route: rpiw]
+in APPPATH/Controllers/Rpiw.php on line 30.
+ 1 APPPATH/Controllers/Rpiw.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama_kawasan" on array', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 30)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-18 03:51:08 --> ErrorException: Attempt to read property "nama_kawasan" on array
+[Method: GET, Route: rpiw]
+in APPPATH/Controllers/Rpiw.php on line 27.
+ 1 APPPATH/Controllers/Rpiw.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama_kawasan" on array', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 27)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-18 03:51:54 --> ErrorException: Undefined array key "nama_kawasan"
+[Method: GET, Route: rpiw]
+in APPPATH/Controllers/Rpiw.php on line 27.
+ 1 APPPATH/Controllers/Rpiw.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_kawasan"', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 27)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-18 03:52:36 --> ErrorException: Undefined array key 1
+[Method: GET, Route: rpiw]
+in APPPATH/Controllers/Rpiw.php on line 27.
+ 1 APPPATH/Controllers/Rpiw.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 27)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-18 04:05:54 --> ErrorException: Attempt to read property "id_program" on array
+[Method: GET, Route: rpiw]
+in APPPATH/Views/pages/p_rpiw.php on line 54.
+ 1 APPPATH/Views/pages/p_rpiw.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id_program" on array', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php', 54)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/p_rpiw', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/p_rpiw', [...])
+ 6 APPPATH/Controllers/Rpiw.php(32): App\Libraries\Template->load('/templates/main', '/pages/p_rpiw', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-18 04:06:50 --> ErrorException: Undefined array key "id_program"
+[Method: GET, Route: rpiw]
+in APPPATH/Views/pages/p_rpiw.php on line 54.
+ 1 APPPATH/Views/pages/p_rpiw.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_program"', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php', 54)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/p_rpiw', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/p_rpiw', [...])
+ 6 APPPATH/Controllers/Rpiw.php(32): App\Libraries\Template->load('/templates/main', '/pages/p_rpiw', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-18 04:07:13 --> ErrorException: Attempt to read property "id_program" on array
+[Method: GET, Route: rpiw]
+in APPPATH/Views/pages/p_rpiw.php on line 54.
+ 1 APPPATH/Views/pages/p_rpiw.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id_program" on array', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php', 54)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/p_rpiw', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/p_rpiw', [...])
+ 6 APPPATH/Controllers/Rpiw.php(32): App\Libraries\Template->load('/templates/main', '/pages/p_rpiw', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-18 04:08:56 --> ErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 69632 bytes)
+[Method: GET, Route: /]
+in SYSTEMPATH/Debug/Toolbar.php on line 313.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-18 04:11:18 --> ErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 69632 bytes)
+[Method: GET, Route: /]
+in SYSTEMPATH/Debug/Toolbar.php on line 313.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-18 04:12:12 --> ErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 69632 bytes)
+[Method: GET, Route: /]
+in SYSTEMPATH/Debug/Toolbar.php on line 313.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-18 04:20:00 --> ErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 69632 bytes)
+[Method: GET, Route: /]
+in SYSTEMPATH/Debug/Toolbar.php on line 313.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-18 05:35:31 --> ErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 69632 bytes)
+[Method: GET, Route: /]
+in SYSTEMPATH/Debug/Toolbar.php on line 313.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-18 05:36:17 --> ErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 69632 bytes)
+[Method: GET, Route: /]
+in SYSTEMPATH/Debug/Toolbar.php on line 313.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-18 05:41:06 --> ErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 69632 bytes)
+[Method: GET, Route: /]
+in SYSTEMPATH/Debug/Toolbar.php on line 313.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-18 06:14:19 --> ErrorException: Undefined property: stdClass::$kode_program
+[Method: GET, Route: rpiw]
+in APPPATH/Controllers/Rpiw.php on line 25.
+ 1 APPPATH/Controllers/Rpiw.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$kode_program', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 25)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-09-18 06:16:52 --> mysqli_sql_exception: Unknown column 'm_kawasan.k' in 'field list' in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_kawas...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_kawas...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_kawas...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_kawas...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Rpiw/KawasanRpiwModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php(22): App\Models\Rpiw\KawasanRpiwModel->getKawasanAll()
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-09-18 06:16:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm_kawasan.k' in 'field list'
+[Method: GET, Route: rpiw]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_kawasan`.`k`, `r_program_kawasan`.*
+FROM `m_kawasan`
+LEFT JOIN `r_program_kawasan` ON `r_program_kawasan`.`kode_kawasan` = `m_kawasan`.`kode_kawasan`', [], false)
+ 2 APPPATH/Models/Rpiw/KawasanRpiwModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Rpiw.php(22): App\Models\Rpiw\KawasanRpiwModel->getKawasanAll()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-18 06:16:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm_kawasan.k' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_kawasan`.`k`, `r_program_kawasan`.*
+FROM `m_kawasan`
+LEFT JOIN `r_program_kawasan` ON `r_program_kawasan`.`kode_kawasan` = `m_kawasan`.`kode_kawasan`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_kawasan`.`k`, `r_program_kawasan`.*
+FROM `m_kawasan`
+LEFT JOIN `r_program_kawasan` ON `r_program_kawasan`.`kode_kawasan` = `m_kawasan`.`kode_kawasan`')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_kawasan`.`k`, `r_program_kawasan`.*
+FROM `m_kawasan`
+LEFT JOIN `r_program_kawasan` ON `r_program_kawasan`.`kode_kawasan` = `m_kawasan`.`kode_kawasan`', [], false)
+ 4 APPPATH/Models/Rpiw/KawasanRpiwModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Rpiw.php(22): App\Models\Rpiw\KawasanRpiwModel->getKawasanAll()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-18 06:16:52 --> [Caused by] mysqli_sql_exception: Unknown column 'm_kawasan.k' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_kawasan`.`k`, `r_program_kawasan`.*
+FROM `m_kawasan`
+LEFT JOIN `r_program_kawasan` ON `r_program_kawasan`.`kode_kawasan` = `m_kawasan`.`kode_kawasan`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_kawasan`.`k`, `r_program_kawasan`.*
+FROM `m_kawasan`
+LEFT JOIN `r_program_kawasan` ON `r_program_kawasan`.`kode_kawasan` = `m_kawasan`.`kode_kawasan`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_kawasan`.`k`, `r_program_kawasan`.*
+FROM `m_kawasan`
+LEFT JOIN `r_program_kawasan` ON `r_program_kawasan`.`kode_kawasan` = `m_kawasan`.`kode_kawasan`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_kawasan`.`k`, `r_program_kawasan`.*
+FROM `m_kawasan`
+LEFT JOIN `r_program_kawasan` ON `r_program_kawasan`.`kode_kawasan` = `m_kawasan`.`kode_kawasan`', [], false)
+ 5 APPPATH/Models/Rpiw/KawasanRpiwModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Rpiw.php(22): App\Models\Rpiw\KawasanRpiwModel->getKawasanAll()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-18 06:17:15 --> ErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 58736640 bytes)
+[Method: GET, Route: rpiw]
+in APPPATH/Views/pages/p_rpiw.php on line 56.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-18 06:22:21 --> ErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 99745792 bytes)
+[Method: GET, Route: rpiw]
+in APPPATH/Views/pages/p_rpiw.php on line 56.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-18 07:18:21 --> ErrorException: Undefined variable $kawasa
+[Method: GET, Route: rpiw]
+in APPPATH/Views/pages/p_rpiw.php on line 56.
+ 1 APPPATH/Views/pages/p_rpiw.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $kawasa', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php', 56)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/p_rpiw', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/p_rpiw', [...])
+ 6 APPPATH/Controllers/Rpiw.php(29): App\Libraries\Template->load('/templates/main', '/pages/p_rpiw', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-18 07:18:38 --> ErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 99745792 bytes)
+[Method: GET, Route: rpiw]
+in APPPATH/Views/pages/p_rpiw.php on line 56.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-18 08:03:36 --> ErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 99745792 bytes)
+[Method: GET, Route: rpiw]
+in APPPATH/Views/pages/p_rpiw.php on line 56.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-09-18 08:04:11 --> ErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 99745792 bytes)
+[Method: GET, Route: rpiw]
+in APPPATH/Views/pages/p_rpiw.php on line 56.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2024-09-18 08:05:53 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'sipro2024', 3306, '', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Rpiw/ProgramRpiwModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php(21): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiw()
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_...', Array, false)
+#3 /Applications/MAMP/htdocs/sipro24/app/Models/Rpiw/ProgramRpiwModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#4 /Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php(21): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiw()
+#5 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#12 {main}
+CRITICAL - 2024-09-18 08:05:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: GET, Route: rpiw]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`', [], false)
+ 3 APPPATH/Models/Rpiw/ProgramRpiwModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH/Controllers/Rpiw.php(21): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiw()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-18 08:17:11 --> Error: Cannot use object of type stdClass as array
+[Method: GET, Route: rpiw]
+in APPPATH/Controllers/Rpiw.php on line 25.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-18 08:18:23 --> Error: Cannot use object of type stdClass as array
+[Method: GET, Route: rpiw]
+in APPPATH/Controllers/Rpiw.php on line 25.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-18 08:48:57 --> ErrorException: Attempt to read property "nama_kawasan" on string
+[Method: GET, Route: detail/96-06-3688]
+in APPPATH/Views/pages/detail.php on line 52.
+ 1 APPPATH/Views/pages/detail.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama_kawasan" on string', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php', 52)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(44): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('96-06-3688')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-18 08:50:25 --> ErrorException: Attempt to read property "nama_kawasan" on string
+[Method: GET, Route: detail/96-06-3688]
+in APPPATH/Views/pages/detail.php on line 52.
+ 1 APPPATH/Views/pages/detail.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama_kawasan" on string', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php', 52)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(44): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('96-06-3688')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-18 08:51:34 --> ParseError: syntax error, unexpected single-quoted string "<br>", expecting "," or ";"
+[Method: GET, Route: detail/96-06-3688]
+in APPPATH/Views/pages/detail.php on line 53.
+ 1 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 4 APPPATH/Controllers/Rpiw.php(44): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('96-06-3688')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-18 08:51:54 --> ParseError: syntax error, unexpected token "}"
+[Method: GET, Route: detail/96-06-3688]
+in APPPATH/Views/pages/detail.php on line 54.
+ 1 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 4 APPPATH/Controllers/Rpiw.php(44): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('96-06-3688')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-09-18 09:08:49 --> mysqli_sql_exception: Unknown column 'm_rpiw_program.id_programa' in 'where clause' in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_rpiw_...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Rpiw/ProgramRpiwModel.php(37): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php(39): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('96-06-3688')
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Rpiw->detail('96-06-3688')
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-09-18 09:08:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm_rpiw_program.id_programa' in 'where clause'
+[Method: GET, Route: detail/96-06-3688]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+WHERE `m_rpiw_program`.`id_programa` = :m_rpiw_program.id_programa:', [...], false)
+ 2 APPPATH/Models/Rpiw/ProgramRpiwModel.php(37): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Rpiw.php(39): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('96-06-3688')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('96-06-3688')
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-18 09:08:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm_rpiw_program.id_programa' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+WHERE `m_rpiw_program`.`id_programa` = \'96-06-3688\'')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+WHERE `m_rpiw_program`.`id_programa` = \'96-06-3688\'')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+WHERE `m_rpiw_program`.`id_programa` = :m_rpiw_program.id_programa:', [...], false)
+ 4 APPPATH/Models/Rpiw/ProgramRpiwModel.php(37): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Rpiw.php(39): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('96-06-3688')
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('96-06-3688')
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-18 09:08:49 --> [Caused by] mysqli_sql_exception: Unknown column 'm_rpiw_program.id_programa' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+WHERE `m_rpiw_program`.`id_programa` = \'96-06-3688\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+WHERE `m_rpiw_program`.`id_programa` = \'96-06-3688\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+WHERE `m_rpiw_program`.`id_programa` = \'96-06-3688\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+WHERE `m_rpiw_program`.`id_programa` = :m_rpiw_program.id_programa:', [...], false)
+ 5 APPPATH/Models/Rpiw/ProgramRpiwModel.php(37): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Rpiw.php(39): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('96-06-3688')
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('96-06-3688')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-18 09:12:48 --> ErrorException: Namespace declaration statement has to be the very first statement or after any declare call in the script
+[Method: GET, Route: detail/96-06-3688]
+in APPPATH/Models/Rpiw/KawasanRpiwModel.php on line 6.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

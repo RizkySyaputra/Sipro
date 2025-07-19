@@ -1,0 +1,1435 @@
+CRITICAL - 2024-09-12 03:46:55 --> ErrorException: Undefined array key "nama_program"
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Views/pages/detail.php on line 5.
+ 1 APPPATH/Views/pages/detail.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_program"', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php', 5)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(38): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 03:46:55 --> ErrorException: Undefined array key "nama_program"
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Views/pages/detail.php on line 5.
+ 1 APPPATH/Views/pages/detail.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_program"', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php', 5)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(38): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-09-12 03:47:45 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provi' at line 1 in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_rpiw_...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Rpiw/ProgramRpiwModel.php(26): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php(32): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('11-04-0011')
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-09-12 03:47:45 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provi' at line 1
+[Method: GET, Route: detail/11-04-0011]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = :m_rpiw_program.id_program:', [...], false)
+ 2 APPPATH/Models/Rpiw/ProgramRpiwModel.php(26): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Rpiw.php(32): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('11-04-0011')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 03:47:45 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provi' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = :m_rpiw_program.id_program:', [...], false)
+ 4 APPPATH/Models/Rpiw/ProgramRpiwModel.php(26): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Rpiw.php(32): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('11-04-0011')
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 03:47:45 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provi' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = :m_rpiw_program.id_program:', [...], false)
+ 5 APPPATH/Models/Rpiw/ProgramRpiwModel.php(26): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Rpiw.php(32): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('11-04-0011')
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-09-12 04:12:47 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provi' at line 1 in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_rpiw_...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Rpiw/ProgramRpiwModel.php(26): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php(32): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('11-04-0011')
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-09-12 04:12:47 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provi' at line 1
+[Method: GET, Route: detail/11-04-0011]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = :m_rpiw_program.id_program:', [...], false)
+ 2 APPPATH/Models/Rpiw/ProgramRpiwModel.php(26): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Rpiw.php(32): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('11-04-0011')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 04:12:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provi' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = :m_rpiw_program.id_program:', [...], false)
+ 4 APPPATH/Models/Rpiw/ProgramRpiwModel.php(26): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Rpiw.php(32): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('11-04-0011')
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 04:12:47 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provi' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = :m_rpiw_program.id_program:', [...], false)
+ 5 APPPATH/Models/Rpiw/ProgramRpiwModel.php(26): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Rpiw.php(32): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('11-04-0011')
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-09-12 04:32:04 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provi' at line 1 in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_rpiw_...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Rpiw/ProgramRpiwModel.php(26): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php(32): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('11-04-0011')
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-09-12 04:32:04 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provi' at line 1
+[Method: GET, Route: detail/11-04-0011]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = :m_rpiw_program.id_program:', [...], false)
+ 2 APPPATH/Models/Rpiw/ProgramRpiwModel.php(26): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Rpiw.php(32): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('11-04-0011')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 04:32:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provi' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = :m_rpiw_program.id_program:', [...], false)
+ 4 APPPATH/Models/Rpiw/ProgramRpiwModel.php(26): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Rpiw.php(32): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('11-04-0011')
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 04:32:04 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provi' at line 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program` `m_provinsi`.`id`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = :m_rpiw_program.id_program:', [...], false)
+ 5 APPPATH/Models/Rpiw/ProgramRpiwModel.php(26): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Rpiw.php(32): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('11-04-0011')
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 04:39:51 --> ErrorException: Undefined array key "nama_program"
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Views/pages/detail.php on line 5.
+ 1 APPPATH/Views/pages/detail.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_program"', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php', 5)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(38): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 07:35:20 --> ErrorException: Undefined array key "nama_program"
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Views/pages/detail.php on line 5.
+ 1 APPPATH/Views/pages/detail.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_program"', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php', 5)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(38): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-09-12 07:35:35 --> mysqli_sql_exception: Unknown column 'm_provinsi.nama' in 'field list' in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_rpiw_...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Rpiw/ProgramRpiwModel.php(26): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php(32): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('11-04-0011')
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-09-12 07:35:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm_provinsi.nama' in 'field list'
+[Method: GET, Route: detail/11-04-0011]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program`, `m_provinsi`.`id`, `m_provinsi`.`nama`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = :m_rpiw_program.id_program:', [...], false)
+ 2 APPPATH/Models/Rpiw/ProgramRpiwModel.php(26): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Rpiw.php(32): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('11-04-0011')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 07:35:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm_provinsi.nama' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program`, `m_provinsi`.`id`, `m_provinsi`.`nama`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program`, `m_provinsi`.`id`, `m_provinsi`.`nama`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program`, `m_provinsi`.`id`, `m_provinsi`.`nama`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = :m_rpiw_program.id_program:', [...], false)
+ 4 APPPATH/Models/Rpiw/ProgramRpiwModel.php(26): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Rpiw.php(32): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('11-04-0011')
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 07:35:35 --> [Caused by] mysqli_sql_exception: Unknown column 'm_provinsi.nama' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program`, `m_provinsi`.`id`, `m_provinsi`.`nama`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program`, `m_provinsi`.`id`, `m_provinsi`.`nama`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program`, `m_provinsi`.`id`, `m_provinsi`.`nama`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.`id_program`, `m_rpiw_program`.`nama_program`, `m_provinsi`.`id`, `m_provinsi`.`nama`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_rpiw_program`.`id_program` = :m_rpiw_program.id_program:', [...], false)
+ 5 APPPATH/Models/Rpiw/ProgramRpiwModel.php(26): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Rpiw.php(32): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('11-04-0011')
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 07:36:01 --> ErrorException: Undefined array key "nama_program"
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Views/pages/detail.php on line 5.
+ 1 APPPATH/Views/pages/detail.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_program"', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php', 5)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(38): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 07:41:20 --> ErrorException: Undefined array key "nama_program"
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Views/pages/detail.php on line 5.
+ 1 APPPATH/Views/pages/detail.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_program"', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php', 5)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(39): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 07:42:04 --> ErrorException: Undefined array key "nama_program"
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Views/pages/detail.php on line 5.
+ 1 APPPATH/Views/pages/detail.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_program"', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php', 5)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(39): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 07:42:06 --> ErrorException: Undefined array key "nama_program"
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Views/pages/detail.php on line 5.
+ 1 APPPATH/Views/pages/detail.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_program"', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php', 5)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(39): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 07:46:55 --> ErrorException: Attempt to read property "nama_program" on array
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Views/pages/detail.php on line 5.
+ 1 APPPATH/Views/pages/detail.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama_program" on array', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php', 5)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(39): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 07:51:03 --> ErrorException: Attempt to read property "nama_program" on array
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Views/pages/detail.php on line 5.
+ 1 APPPATH/Views/pages/detail.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama_program" on array', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php', 5)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(39): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 08:44:57 --> ErrorException: Attempt to read property "nama_program" on array
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Views/pages/detail.php on line 5.
+ 1 APPPATH/Views/pages/detail.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama_program" on array', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php', 5)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(38): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 08:49:59 --> Error: Object of class stdClass could not be converted to string
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Views/pages/detail.php on line 5.
+ 1 SYSTEMPATH/View/View.php(234): include()
+ 2 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 4 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 5 APPPATH/Controllers/Rpiw.php(40): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 08:56:45 --> ErrorException: Undefined array key 0
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Controllers/Rpiw.php on line 37.
+ 1 APPPATH/Controllers/Rpiw.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 37)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 08:57:42 --> ErrorException: Undefined array key "id"
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Controllers/Rpiw.php on line 37.
+ 1 APPPATH/Controllers/Rpiw.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 37)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 08:58:11 --> ErrorException: Undefined array key "id_program"
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Controllers/Rpiw.php on line 37.
+ 1 APPPATH/Controllers/Rpiw.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_program"', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 37)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 08:58:19 --> ErrorException: Undefined array key "id_program"
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Controllers/Rpiw.php on line 38.
+ 1 APPPATH/Controllers/Rpiw.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_program"', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 38)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 08:58:36 --> ErrorException: Undefined array key "id_program"
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Controllers/Rpiw.php on line 38.
+ 1 APPPATH/Controllers/Rpiw.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_program"', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 38)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 08:59:10 --> ErrorException: Trying to access array offset on value of type int
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Controllers/Rpiw.php on line 37.
+ 1 APPPATH/Controllers/Rpiw.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type int', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 37)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 09:00:16 --> ErrorException: Undefined array key "id_program"
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Controllers/Rpiw.php on line 37.
+ 1 APPPATH/Controllers/Rpiw.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_program"', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 37)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 09:00:52 --> Error: Cannot use object of type stdClass as array
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Controllers/Rpiw.php on line 37.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 09:01:06 --> Error: Cannot use object of type stdClass as array
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Controllers/Rpiw.php on line 37.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 09:01:42 --> Error: Cannot use object of type stdClass as array
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Controllers/Rpiw.php on line 37.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 09:03:39 --> ErrorException: Undefined array key "nama_program"
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Views/pages/detail.php on line 5.
+ 1 APPPATH/Views/pages/detail.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_program"', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php', 5)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(35): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 09:08:15 --> ErrorException: Undefined array key "nama_program"
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Views/pages/detail.php on line 5.
+ 1 APPPATH/Views/pages/detail.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_program"', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php', 5)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(35): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 09:19:22 --> ParseError: syntax error, unexpected end of file
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Views/pages/detail.php on line 151.
+ 1 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 4 APPPATH/Controllers/Rpiw.php(35): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 09:19:46 --> Error: Cannot use object of type stdClass as array
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Views/pages/detail.php on line 25.
+ 1 SYSTEMPATH/View/View.php(234): include()
+ 2 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 4 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 5 APPPATH/Controllers/Rpiw.php(35): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 09:20:19 --> Error: Cannot use object of type stdClass as array
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Views/pages/detail.php on line 25.
+ 1 SYSTEMPATH/View/View.php(234): include()
+ 2 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 4 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 5 APPPATH/Controllers/Rpiw.php(35): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 09:20:35 --> Error: Cannot use object of type stdClass as array
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Views/pages/detail.php on line 33.
+ 1 SYSTEMPATH/View/View.php(234): include()
+ 2 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 4 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 5 APPPATH/Controllers/Rpiw.php(35): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 09:32:21 --> ErrorException: Undefined property: stdClass::$Justifikasi
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Views/pages/detail.php on line 65.
+ 1 APPPATH/Views/pages/detail.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$Justifikasi', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php', 65)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(35): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 09:32:45 --> ErrorException: Undefined property: stdClass::$id_pendaan
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Views/pages/detail.php on line 97.
+ 1 APPPATH/Views/pages/detail.php(97): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$id_pendaan', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php', 97)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(35): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 09:56:38 --> Error: Call to undefined method CodeIgniter\View\View::NumberFormatter()
+[Method: GET, Route: detail/11-04-0013]
+in APPPATH/Views/pages/detail.php on line 90.
+ 1 SYSTEMPATH/View/View.php(234): include()
+ 2 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 4 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 5 APPPATH/Controllers/Rpiw.php(35): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0013')
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 10:58:09 --> Error: Object of class NumberFormatter could not be converted to string
+[Method: GET, Route: detail/11-04-0013]
+in APPPATH/Views/pages/detail.php on line 90.
+ 1 SYSTEMPATH/View/View.php(234): include()
+ 2 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 4 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 5 APPPATH/Controllers/Rpiw.php(35): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0013')
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-09-12 17:26:38 --> mysqli_sql_exception: Not unique table/alias: 'm_kawasan' in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_kawas...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_kawas...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_kawas...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_kawas...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Rpiw/KawasanRpiwModel.php(24): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php(52): App\Models\Rpiw\KawasanRpiwModel->getKawasanRpiwDetail('11-003')
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('11-003')
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-09-12 17:26:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'm_kawasan'
+[Method: GET, Route: detail_kawasan/11-003]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_kawasan` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_program` = :m_kawasan.id_program:', [...], false)
+ 2 APPPATH/Models/Rpiw/KawasanRpiwModel.php(24): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Rpiw.php(52): App\Models\Rpiw\KawasanRpiwModel->getKawasanRpiwDetail('11-003')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('11-003')
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 17:26:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'm_kawasan'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_kawasan` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_program` = \'11-003\'')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_kawasan` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_program` = \'11-003\'')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_kawasan` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_program` = :m_kawasan.id_program:', [...], false)
+ 4 APPPATH/Models/Rpiw/KawasanRpiwModel.php(24): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Rpiw.php(52): App\Models\Rpiw\KawasanRpiwModel->getKawasanRpiwDetail('11-003')
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('11-003')
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 17:26:38 --> [Caused by] mysqli_sql_exception: Not unique table/alias: 'm_kawasan'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_kawasan` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_program` = \'11-003\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_kawasan` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_program` = \'11-003\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_kawasan` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_program` = \'11-003\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_kawasan` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_program` = :m_kawasan.id_program:', [...], false)
+ 5 APPPATH/Models/Rpiw/KawasanRpiwModel.php(24): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Rpiw.php(52): App\Models\Rpiw\KawasanRpiwModel->getKawasanRpiwDetail('11-003')
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('11-003')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-09-12 17:31:39 --> mysqli_sql_exception: Unknown column 'm_kawasan.id_program' in 'where clause' in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_kawas...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_kawas...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_kawas...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_kawas...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Rpiw/KawasanRpiwModel.php(24): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php(52): App\Models\Rpiw\KawasanRpiwModel->getKawasanRpiwDetail('11-003')
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('11-003')
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-09-12 17:31:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm_kawasan.id_program' in 'where clause'
+[Method: GET, Route: detail_kawasan/11-003]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_provinsi` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_program` = :m_kawasan.id_program:', [...], false)
+ 2 APPPATH/Models/Rpiw/KawasanRpiwModel.php(24): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Rpiw.php(52): App\Models\Rpiw\KawasanRpiwModel->getKawasanRpiwDetail('11-003')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('11-003')
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 17:31:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm_kawasan.id_program' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_provinsi` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_program` = \'11-003\'')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_provinsi` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_program` = \'11-003\'')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_provinsi` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_program` = :m_kawasan.id_program:', [...], false)
+ 4 APPPATH/Models/Rpiw/KawasanRpiwModel.php(24): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Rpiw.php(52): App\Models\Rpiw\KawasanRpiwModel->getKawasanRpiwDetail('11-003')
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('11-003')
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 17:31:39 --> [Caused by] mysqli_sql_exception: Unknown column 'm_kawasan.id_program' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_provinsi` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_program` = \'11-003\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_provinsi` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_program` = \'11-003\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_provinsi` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_program` = \'11-003\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_provinsi` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_program` = :m_kawasan.id_program:', [...], false)
+ 5 APPPATH/Models/Rpiw/KawasanRpiwModel.php(24): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Rpiw.php(52): App\Models\Rpiw\KawasanRpiwModel->getKawasanRpiwDetail('11-003')
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('11-003')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-09-12 17:32:01 --> mysqli_sql_exception: Unknown column 'm_kawasan.id_kawasan' in 'where clause' in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_kawas...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_kawas...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_kawas...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_kawas...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Rpiw/KawasanRpiwModel.php(24): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php(52): App\Models\Rpiw\KawasanRpiwModel->getKawasanRpiwDetail('11-003')
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('11-003')
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-09-12 17:32:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm_kawasan.id_kawasan' in 'where clause'
+[Method: GET, Route: detail_kawasan/11-003]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_provinsi` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_kawasan` = :m_kawasan.id_kawasan:', [...], false)
+ 2 APPPATH/Models/Rpiw/KawasanRpiwModel.php(24): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Rpiw.php(52): App\Models\Rpiw\KawasanRpiwModel->getKawasanRpiwDetail('11-003')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('11-003')
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 17:32:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm_kawasan.id_kawasan' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_provinsi` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_kawasan` = \'11-003\'')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_provinsi` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_kawasan` = \'11-003\'')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_provinsi` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_kawasan` = :m_kawasan.id_kawasan:', [...], false)
+ 4 APPPATH/Models/Rpiw/KawasanRpiwModel.php(24): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Rpiw.php(52): App\Models\Rpiw\KawasanRpiwModel->getKawasanRpiwDetail('11-003')
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('11-003')
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 17:32:01 --> [Caused by] mysqli_sql_exception: Unknown column 'm_kawasan.id_kawasan' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_provinsi` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_kawasan` = \'11-003\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_provinsi` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_kawasan` = \'11-003\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_provinsi` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_kawasan` = \'11-003\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_kawasan`.*, `m_provinsi`.`provinsi`
+FROM `m_kawasan`
+LEFT JOIN `m_provinsi` ON `m_kawasan`.`id_provinsi` = `m_provinsi`.`id`
+WHERE `m_kawasan`.`id_kawasan` = :m_kawasan.id_kawasan:', [...], false)
+ 5 APPPATH/Models/Rpiw/KawasanRpiwModel.php(24): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Rpiw.php(52): App\Models\Rpiw\KawasanRpiwModel->getKawasanRpiwDetail('11-003')
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('11-003')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 17:32:14 --> ErrorException: Undefined array key "nama_kawasan"
+[Method: GET, Route: detail_kawasan/11-003]
+in APPPATH/Views/pages/detail_kawasan.php on line 5.
+ 1 APPPATH/Views/pages/detail_kawasan.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_kawasan"', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail_kawasan.php', 5)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail_kawasan.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail_kawasan', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail_kawasan', [...])
+ 6 APPPATH/Controllers/Rpiw.php(55): App\Libraries\Template->load('/templates/main', '/pages/detail_kawasan', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('11-003')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 17:34:24 --> ParseError: syntax error, unexpected end of file
+[Method: GET, Route: detail_kawasan/11-003]
+in APPPATH/Views/pages/detail_kawasan.php on line 47.
+ 1 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail_kawasan', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/detail_kawasan', [...])
+ 4 APPPATH/Controllers/Rpiw.php(55): App\Libraries\Template->load('/templates/main', '/pages/detail_kawasan', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail_kawasan('11-003')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 17:41:29 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "﻿11-002"
+[Method: GET, Route: detail_kawasan/%EF%BB%BF11-002]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('detail_kawasan/﻿11-002')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('detail_kawasan/﻿11-002')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 18:27:42 --> Error: Class "ShapefileReader\ShapefileReader" not found
+[Method: GET, Route: shapefile]
+in APPPATH/Services/ShapefileService.php on line 18.
+ 1 APPPATH/Controllers/ShapefileController.php(13): App\Services\ShapefileService->getGeoJson()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 18:47:10 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/writable/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(13): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 18:48:59 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('public/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(13): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 18:49:00 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('public/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(13): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 18:49:00 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('public/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(13): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 18:49:01 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('public/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(13): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 18:50:32 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/writable/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(21): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 18:50:33 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/writable/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(21): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 18:50:34 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/writable/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(21): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 18:55:19 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/writable/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(17): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 18:56:42 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "﻿11-002"
+[Method: GET, Route: detail_kawasan/%EF%BB%BF11-002]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('detail_kawasan/﻿11-002')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('detail_kawasan/﻿11-002')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 18:57:00 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/writable/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(22): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 18:57:45 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/writable/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(13): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 18:59:29 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/writable/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(13): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 19:00:40 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/writable/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(13): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 19:00:41 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/writable/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(13): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 19:01:36 --> ErrorException: Undefined variable $filePath
+[Method: GET, Route: shapefile]
+in APPPATH/Controllers/ShapefileController.php on line 12.
+ 1 APPPATH/Controllers/ShapefileController.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $filePath', '/Applications/MAMP/htdocs/sipro24/app/Controllers/ShapefileController.php', 12)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 19:01:59 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/writable/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(14): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 19:06:24 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/writable/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(14): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 19:06:25 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/writable/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(14): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 19:06:25 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/writable/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(14): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 19:06:26 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/writable/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(14): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 19:08:16 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/writable/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(32): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 19:08:18 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/writable/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(32): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 19:08:18 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/writable/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(32): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 19:08:53 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/writable/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(32): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-12 19:11:24 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: shapefile]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Services/ShapefileService.php(18): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/writable/data/KP_Ulapan_DesaTerdampak.shp')
+ 3 APPPATH/Controllers/ShapefileController.php(32): App\Services\ShapefileService->getGeoJson()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShapefileController->showMap()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShapefileController))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')

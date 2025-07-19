@@ -1,0 +1,1090 @@
+CRITICAL - 2024-10-27 03:49:31 --> ErrorException: file_get_contents(): Read of 8864 bytes failed with errno=21 Is a directory
+[Method: GET, Route: detail/RPIW51-51-04-0020]
+in APPPATH/Controllers/Rpiw.php on line 67.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'file_get_contents(): Read of 8864 bytes failed with errno=21 Is a directory', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 67)
+ 2 APPPATH/Controllers/Rpiw.php(67): file_get_contents('/Applications/MAMP/htdocs/sipro24/public/geoJson/')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('RPIW51-51-04-0020')
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 04:18:21 --> ErrorException: file_get_contents(): Read of 8864 bytes failed with errno=21 Is a directory
+[Method: GET, Route: detail/RPIW16-16-04-0038]
+in APPPATH/Controllers/Rpiw.php on line 67.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'file_get_contents(): Read of 8864 bytes failed with errno=21 Is a directory', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 67)
+ 2 APPPATH/Controllers/Rpiw.php(67): file_get_contents('/Applications/MAMP/htdocs/sipro24/public/geoJson/')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('RPIW16-16-04-0038')
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 04:42:39 --> ErrorException: file_get_contents(): Read of 8864 bytes failed with errno=21 Is a directory
+[Method: GET, Route: detail/RPIW16-16-04-0038]
+in APPPATH/Controllers/Rpiw.php on line 67.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'file_get_contents(): Read of 8864 bytes failed with errno=21 Is a directory', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 67)
+ 2 APPPATH/Controllers/Rpiw.php(67): file_get_contents('/Applications/MAMP/htdocs/sipro24/public/geoJson/')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('RPIW16-16-04-0038')
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 04:45:58 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: detail/RPIW16-16-04-0032]
+in APPPATH/Controllers/Rpiw.php on line 91.
+ 1 APPPATH/Controllers/Rpiw.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 91)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('RPIW16-16-04-0032')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 04:46:03 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: detail/RPIW16-16-04-0033]
+in APPPATH/Controllers/Rpiw.php on line 91.
+ 1 APPPATH/Controllers/Rpiw.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 91)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('RPIW16-16-04-0033')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 04:46:07 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: detail/RPIW16-16-04-0036]
+in APPPATH/Controllers/Rpiw.php on line 91.
+ 1 APPPATH/Controllers/Rpiw.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 91)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('RPIW16-16-04-0036')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 04:51:28 --> Error: Call to a member function getKawasanAll() on null
+[Method: GET, Route: memorandum]
+in APPPATH/Controllers/Memorandum.php on line 34.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->index()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 04:54:04 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/memorandum.php"
+[Method: GET, Route: memorandum]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/memorandum.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/memorandum', [...])
+ 4 APPPATH/Controllers/Memorandum.php(52): App\Libraries\Template->load('/templates/main', '/pages/memorandum', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->index()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 04:55:39 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/memorandum.php"
+[Method: GET, Route: memorandum]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/memorandum.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/memorandum', [...])
+ 4 APPPATH/Controllers/Memorandum.php(52): App\Libraries\Template->load('/templates/main', '/pages/memorandum', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->index()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 06:27:43 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/kro.php"
+[Method: GET, Route: kro]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/kro.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/kro', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/kro', [...])
+ 4 APPPATH/Controllers/Master.php(66): App\Libraries\Template->load('/templates/main', '/pages/kro', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Master->kro()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 06:37:51 --> Error: Cannot use object of type stdClass as array
+[Method: GET, Route: Report]
+in APPPATH/Views/pages/rpiw/report_rpiw.php on line 25.
+ 1 SYSTEMPATH/View/View.php(234): include()
+ 2 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('pages/rpiw/report_rpiw', [], true)
+ 4 APPPATH/Libraries/Template.php(104): view('pages/rpiw/report_rpiw', [...])
+ 5 APPPATH/Controllers/Rpiw.php(179): App\Libraries\Template->load('/templates/main', 'pages/rpiw/report_rpiw', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 12:46:09 --> Error: Cannot use object of type stdClass as array
+[Method: GET, Route: Report]
+in APPPATH/Views/pages/rpiw/report_rpiw.php on line 35.
+ 1 SYSTEMPATH/View/View.php(234): include()
+ 2 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('pages/rpiw/report_rpiw', [], true)
+ 4 APPPATH/Libraries/Template.php(104): view('pages/rpiw/report_rpiw', [...])
+ 5 APPPATH/Controllers/Rpiw.php(179): App\Libraries\Template->load('/templates/main', 'pages/rpiw/report_rpiw', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 13:08:27 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: memo/RPIW16-16-06-0009]
+in APPPATH/Controllers/Memorandum.php on line 90.
+ 1 APPPATH/Controllers/Memorandum.php(90): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 90)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->detail('RPIW16-16-06-0009')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 13:21:51 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: memo/RPIW16-16-06-0009]
+in APPPATH/Controllers/Memorandum.php on line 74.
+ 1 APPPATH/Controllers/Memorandum.php(74): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 74)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->detail('RPIW16-16-06-0009')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 13:22:49 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: detail/RPIW16-16-06-0009]
+in APPPATH/Controllers/Rpiw.php on line 91.
+ 1 APPPATH/Controllers/Rpiw.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 91)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('RPIW16-16-06-0009')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 13:23:00 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/program.php"
+[Method: GET, Route: program]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/program.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/program', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/program', [...])
+ 4 APPPATH/Controllers/Master.php(46): App\Libraries\Template->load('/templates/main', '/pages/program', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Master->program()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 14:12:08 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: memo/RPIW16-16-06-0009]
+in APPPATH/Controllers/Memorandum.php on line 91.
+ 1 APPPATH/Controllers/Memorandum.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 91)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->detail('RPIW16-16-06-0009')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 14:20:20 --> ErrorException: Undefined property: stdClass::$nama_provinsi
+[Method: GET, Route: memo/RPIW92-92-04-0015]
+in APPPATH/Views/pages/memorandum/detail.php on line 19.
+ 1 APPPATH/Views/pages/memorandum/detail.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$nama_provinsi', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/detail.php', 19)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/detail', [...])
+ 6 APPPATH/Controllers/Memorandum.php(99): App\Libraries\Template->load('/templates/main', '/pages/memorandum/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->detail('RPIW92-92-04-0015')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 14:21:12 --> ErrorException: Undefined property: stdClass::$kode_program
+[Method: GET, Route: memo/RPIW92-92-04-0015]
+in APPPATH/Views/pages/memorandum/detail.php on line 12.
+ 1 APPPATH/Views/pages/memorandum/detail.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$kode_program', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/detail.php', 12)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/detail', [...])
+ 6 APPPATH/Controllers/Memorandum.php(99): App\Libraries\Template->load('/templates/main', '/pages/memorandum/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->detail('RPIW92-92-04-0015')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 15:06:44 --> BadMethodCallException: Call to undefined method App\Models\Memorandum\ProgramModel::add_memorandum
+[Method: POST, Route: add_memorandum]
+in SYSTEMPATH/Model.php on line 932.
+ 1 APPPATH/Controllers/Memorandum.php(116): CodeIgniter\Model->__call('add_memorandum', [...])
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->insert()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-10-27 15:09:06 --> mysqli_sql_exception: Unknown column 'created_at' in 'field list' in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `me...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `me...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `me...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `me...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 /Applications/MAMP/htdocs/sipro24/app/Models/Memorandum/ProgramModel.php(89): CodeIgniter\Model->insert(Array)
+#8 /Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php(116): App\Models\Memorandum\ProgramModel->addMemorandumProgram('92', '4', 'RPIW92-92-04-00...', 'Kab. Teluk Bint...', '- Dukungan terh...', 'Siap', '29', '406000000', '12', '1', 'MP 10 - Jalan T...', '2026')
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Memorandum->insert()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+#11 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#16 {main}
+CRITICAL - 2024-10-27 15:09:06 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'created_at' in 'field list'
+[Method: POST, Route: add_memorandum]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `memorandum_program` (`lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `created_at`, `updated_at`) VALUES (:lokasi:, :justifikasi:, :kesiapan_rc:, :volume:, :biaya:, :id_satuan:, :id_pendanaan:, :tagging_mp:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH/Models/Memorandum/ProgramModel.php(89): CodeIgniter\Model->insert([...])
+ 6 APPPATH/Controllers/Memorandum.php(116): App\Models\Memorandum\ProgramModel->addMemorandumProgram('92', '4', 'RPIW92-92-04-0015', 'Kab. Teluk Bintuni', '- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati
+ 
+ - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh', 'Siap', '29', '406000000', '12', '1', 'MP 10 - Jalan Trans', '2026')
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->insert()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 15:09:06 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'created_at' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `memorandum_program` (`lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `created_at`, `updated_at`) VALUES (\'Kab. Teluk Bintuni\', \'- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati\\r\\n \\r\\n - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh\', \'Siap\', \'29\', \'406000000\', \'12\', \'1\', \'MP 10 - Jalan Trans\', \'2024-10-27 15:09:06\', \'2024-10-27 15:09:06\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `memorandum_program` (`lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `created_at`, `updated_at`) VALUES (\'Kab. Teluk Bintuni\', \'- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati\\r\\n \\r\\n - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh\', \'Siap\', \'29\', \'406000000\', \'12\', \'1\', \'MP 10 - Jalan Trans\', \'2024-10-27 15:09:06\', \'2024-10-27 15:09:06\')')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `memorandum_program` (`lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `created_at`, `updated_at`) VALUES (:lokasi:, :justifikasi:, :kesiapan_rc:, :volume:, :biaya:, :id_satuan:, :id_pendanaan:, :tagging_mp:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH/Models/Memorandum/ProgramModel.php(89): CodeIgniter\Model->insert([...])
+ 8 APPPATH/Controllers/Memorandum.php(116): App\Models\Memorandum\ProgramModel->addMemorandumProgram('92', '4', 'RPIW92-92-04-0015', 'Kab. Teluk Bintuni', '- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati
+ 
+ - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh', 'Siap', '29', '406000000', '12', '1', 'MP 10 - Jalan Trans', '2026')
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->insert()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 15:09:06 --> [Caused by] mysqli_sql_exception: Unknown column 'created_at' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('INSERT INTO `memorandum_program` (`lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `created_at`, `updated_at`) VALUES (\'Kab. Teluk Bintuni\', \'- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati\\r\\n \\r\\n - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh\', \'Siap\', \'29\', \'406000000\', \'12\', \'1\', \'MP 10 - Jalan Trans\', \'2024-10-27 15:09:06\', \'2024-10-27 15:09:06\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `memorandum_program` (`lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `created_at`, `updated_at`) VALUES (\'Kab. Teluk Bintuni\', \'- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati\\r\\n \\r\\n - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh\', \'Siap\', \'29\', \'406000000\', \'12\', \'1\', \'MP 10 - Jalan Trans\', \'2024-10-27 15:09:06\', \'2024-10-27 15:09:06\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `memorandum_program` (`lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `created_at`, `updated_at`) VALUES (\'Kab. Teluk Bintuni\', \'- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati\\r\\n \\r\\n - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh\', \'Siap\', \'29\', \'406000000\', \'12\', \'1\', \'MP 10 - Jalan Trans\', \'2024-10-27 15:09:06\', \'2024-10-27 15:09:06\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `memorandum_program` (`lokasi`, `justifikasi`, `kesiapan_rc`, `volume`, `biaya`, `id_satuan`, `id_pendanaan`, `tagging_mp`, `created_at`, `updated_at`) VALUES (:lokasi:, :justifikasi:, :kesiapan_rc:, :volume:, :biaya:, :id_satuan:, :id_pendanaan:, :tagging_mp:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH/Models/Memorandum/ProgramModel.php(89): CodeIgniter\Model->insert([...])
+ 9 APPPATH/Controllers/Memorandum.php(116): App\Models\Memorandum\ProgramModel->addMemorandumProgram('92', '4', 'RPIW92-92-04-0015', 'Kab. Teluk Bintuni', '- Dukungan terhadap kelancaran lalu lintas dari lintas barat menuju Pelabuhan Malahayati
+ 
+ - Pembangunan Banda Aceh Outer Ring Road mampu mengurangi kemacetan di Kota Banda Aceh', 'Siap', '29', '406000000', '12', '1', 'MP 10 - Jalan Trans', '2026')
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->insert()
+11 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+12 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-10-27 17:38:39 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IS NULL
+AND `memo`.`tahun_selesai` > IS NULL' at line 8 in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `memo`.*...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `memo`.*...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `memo`.*...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `memo`.*...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Memorandum/ProgramModel.php(44): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php(136): App\Models\Memorandum\ProgramModel->getProgramMemo(NULL, NULL, NULL)
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-10-27 17:38:39 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IS NULL
+AND `memo`.`tahun_selesai` > IS NULL' at line 8
+[Method: GET, Route: daftar_program]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`
+WHERE `memo`.`tahun_mulai` < IS NULL
+AND `memo`.`tahun_selesai` > IS NULL', [], false)
+ 2 APPPATH/Models/Memorandum/ProgramModel.php(44): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Memorandum.php(136): App\Models\Memorandum\ProgramModel->getProgramMemo(null, null, null)
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 17:38:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IS NULL
+AND `memo`.`tahun_selesai` > IS NULL' at line 8
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`
+WHERE `memo`.`tahun_mulai` < IS NULL
+AND `memo`.`tahun_selesai` > IS NULL')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`
+WHERE `memo`.`tahun_mulai` < IS NULL
+AND `memo`.`tahun_selesai` > IS NULL')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`
+WHERE `memo`.`tahun_mulai` < IS NULL
+AND `memo`.`tahun_selesai` > IS NULL', [], false)
+ 4 APPPATH/Models/Memorandum/ProgramModel.php(44): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Memorandum.php(136): App\Models\Memorandum\ProgramModel->getProgramMemo(null, null, null)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 17:38:39 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IS NULL
+AND `memo`.`tahun_selesai` > IS NULL' at line 8
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`
+WHERE `memo`.`tahun_mulai` < IS NULL
+AND `memo`.`tahun_selesai` > IS NULL', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`
+WHERE `memo`.`tahun_mulai` < IS NULL
+AND `memo`.`tahun_selesai` > IS NULL')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`
+WHERE `memo`.`tahun_mulai` < IS NULL
+AND `memo`.`tahun_selesai` > IS NULL')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`
+WHERE `memo`.`tahun_mulai` < IS NULL
+AND `memo`.`tahun_selesai` > IS NULL', [], false)
+ 5 APPPATH/Models/Memorandum/ProgramModel.php(44): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Memorandum.php(136): App\Models\Memorandum\ProgramModel->getProgramMemo(null, null, null)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-10-27 17:39:17 --> mysqli_sql_exception: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '=' in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `memo`.*...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `memo`.*...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `memo`.*...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `memo`.*...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Memorandum/ProgramModel.php(44): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php(136): App\Models\Memorandum\ProgramModel->getProgramMemo(NULL, NULL, NULL)
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-10-27 17:39:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+[Method: GET, Route: daftar_program]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`', [], false)
+ 2 APPPATH/Models/Memorandum/ProgramModel.php(44): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Memorandum.php(136): App\Models\Memorandum\ProgramModel->getProgramMemo(null, null, null)
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 17:39:17 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`', [], false)
+ 4 APPPATH/Models/Memorandum/ProgramModel.php(44): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Memorandum.php(136): App\Models\Memorandum\ProgramModel->getProgramMemo(null, null, null)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 17:39:17 --> [Caused by] mysqli_sql_exception: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`', [], false)
+ 5 APPPATH/Models/Memorandum/ProgramModel.php(44): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Memorandum.php(136): App\Models\Memorandum\ProgramModel->getProgramMemo(null, null, null)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-10-27 17:44:27 --> mysqli_sql_exception: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '=' in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `memo`.*...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `memo`.*...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `memo`.*...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `memo`.*...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Memorandum/ProgramModel.php(44): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php(136): App\Models\Memorandum\ProgramModel->getProgramMemo(NULL, NULL, NULL)
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-10-27 17:44:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+[Method: GET, Route: daftar_program]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`', [], false)
+ 2 APPPATH/Models/Memorandum/ProgramModel.php(44): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Memorandum.php(136): App\Models\Memorandum\ProgramModel->getProgramMemo(null, null, null)
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 17:44:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`', [], false)
+ 4 APPPATH/Models/Memorandum/ProgramModel.php(44): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Memorandum.php(136): App\Models\Memorandum\ProgramModel->getProgramMemo(null, null, null)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 17:44:27 --> [Caused by] mysqli_sql_exception: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`', [], false)
+ 5 APPPATH/Models/Memorandum/ProgramModel.php(44): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Memorandum.php(136): App\Models\Memorandum\ProgramModel->getProgramMemo(null, null, null)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-10-27 17:44:31 --> mysqli_sql_exception: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '=' in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `memo`.*...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `memo`.*...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `memo`.*...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `memo`.*...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Memorandum/ProgramModel.php(44): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php(136): App\Models\Memorandum\ProgramModel->getProgramMemo(NULL, NULL, NULL)
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-10-27 17:44:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+[Method: GET, Route: daftar_program]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`', [], false)
+ 2 APPPATH/Models/Memorandum/ProgramModel.php(44): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Memorandum.php(136): App\Models\Memorandum\ProgramModel->getProgramMemo(null, null, null)
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 17:44:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`', [], false)
+ 4 APPPATH/Models/Memorandum/ProgramModel.php(44): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Memorandum.php(136): App\Models\Memorandum\ProgramModel->getProgramMemo(null, null, null)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 17:44:31 --> [Caused by] mysqli_sql_exception: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`', [], false)
+ 5 APPPATH/Models/Memorandum/ProgramModel.php(44): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Memorandum.php(136): App\Models\Memorandum\ProgramModel->getProgramMemo(null, null, null)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-10-27 17:46:40 --> mysqli_sql_exception: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '=' in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `memo`.*...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `memo`.*...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `memo`.*...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `memo`.*...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Memorandum/ProgramModel.php(44): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php(136): App\Models\Memorandum\ProgramModel->getProgramMemo(NULL, NULL, NULL)
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-10-27 17:46:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+[Method: GET, Route: daftar_program]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`', [], false)
+ 2 APPPATH/Models/Memorandum/ProgramModel.php(44): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Memorandum.php(136): App\Models\Memorandum\ProgramModel->getProgramMemo(null, null, null)
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 17:46:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`', [], false)
+ 4 APPPATH/Models/Memorandum/ProgramModel.php(44): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Memorandum.php(136): App\Models\Memorandum\ProgramModel->getProgramMemo(null, null, null)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 17:46:40 --> [Caused by] mysqli_sql_exception: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `memo`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `memorandum_program` as `memo`
+LEFT JOIN `m_provinsi` ON `memo`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `memo`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `memo`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `memo`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `memo`.`id_rpiw` = `r_program_kawasan`.`kode_program`', [], false)
+ 5 APPPATH/Models/Memorandum/ProgramModel.php(44): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Memorandum.php(136): App\Models\Memorandum\ProgramModel->getProgramMemo(null, null, null)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-10-27 18:11:46 --> mysqli_sql_exception: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '=' in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT DISTINCT...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Rpiw/ProgramRpiwModel.php(41): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php(37): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiw(NULL, NULL, NULL)
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Memorandum->index()
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-10-27 18:11:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+[Method: GET, Route: memorandum]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `rpiw`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `program_rpiw` as `rpiw`
+LEFT JOIN `m_provinsi` ON `rpiw`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rpiw`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `rpiw`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `rpiw`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `rpiw`.`id_program` = `r_program_kawasan`.`kode_program`', [], false)
+ 2 APPPATH/Models/Rpiw/ProgramRpiwModel.php(41): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Memorandum.php(37): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiw(null, null, null)
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->index()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 18:11:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT `rpiw`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `program_rpiw` as `rpiw`
+LEFT JOIN `m_provinsi` ON `rpiw`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rpiw`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `rpiw`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `rpiw`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `rpiw`.`id_program` = `r_program_kawasan`.`kode_program`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT `rpiw`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `program_rpiw` as `rpiw`
+LEFT JOIN `m_provinsi` ON `rpiw`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rpiw`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `rpiw`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `rpiw`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `rpiw`.`id_program` = `r_program_kawasan`.`kode_program`')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `rpiw`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `program_rpiw` as `rpiw`
+LEFT JOIN `m_provinsi` ON `rpiw`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rpiw`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `rpiw`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `rpiw`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `rpiw`.`id_program` = `r_program_kawasan`.`kode_program`', [], false)
+ 4 APPPATH/Models/Rpiw/ProgramRpiwModel.php(41): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Memorandum.php(37): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiw(null, null, null)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 18:11:47 --> [Caused by] mysqli_sql_exception: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT DISTINCT `rpiw`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `program_rpiw` as `rpiw`
+LEFT JOIN `m_provinsi` ON `rpiw`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rpiw`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `rpiw`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `rpiw`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `rpiw`.`id_program` = `r_program_kawasan`.`kode_program`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT `rpiw`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `program_rpiw` as `rpiw`
+LEFT JOIN `m_provinsi` ON `rpiw`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rpiw`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `rpiw`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `rpiw`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `rpiw`.`id_program` = `r_program_kawasan`.`kode_program`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT `rpiw`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `program_rpiw` as `rpiw`
+LEFT JOIN `m_provinsi` ON `rpiw`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rpiw`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `rpiw`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `rpiw`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `rpiw`.`id_program` = `r_program_kawasan`.`kode_program`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `rpiw`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `program_rpiw` as `rpiw`
+LEFT JOIN `m_provinsi` ON `rpiw`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rpiw`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `rpiw`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `rpiw`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `rpiw`.`id_program` = `r_program_kawasan`.`kode_program`', [], false)
+ 5 APPPATH/Models/Rpiw/ProgramRpiwModel.php(41): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Memorandum.php(37): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiw(null, null, null)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->index()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-10-27 18:39:37 --> mysqli_sql_exception: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '=' in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT DISTINCT...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Rpiw/ProgramRpiwModel.php(41): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php(37): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiw(NULL, NULL, NULL)
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Memorandum->index()
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-10-27 18:39:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+[Method: GET, Route: memorandum]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `rpiw`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `program_rpiw` as `rpiw`
+LEFT JOIN `m_provinsi` ON `rpiw`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rpiw`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `rpiw`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `rpiw`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `rpiw`.`id_program` = `r_program_kawasan`.`kode_program`', [], false)
+ 2 APPPATH/Models/Rpiw/ProgramRpiwModel.php(41): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Memorandum.php(37): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiw(null, null, null)
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->index()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 18:39:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT `rpiw`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `program_rpiw` as `rpiw`
+LEFT JOIN `m_provinsi` ON `rpiw`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rpiw`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `rpiw`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `rpiw`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `rpiw`.`id_program` = `r_program_kawasan`.`kode_program`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT `rpiw`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `program_rpiw` as `rpiw`
+LEFT JOIN `m_provinsi` ON `rpiw`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rpiw`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `rpiw`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `rpiw`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `rpiw`.`id_program` = `r_program_kawasan`.`kode_program`')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `rpiw`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `program_rpiw` as `rpiw`
+LEFT JOIN `m_provinsi` ON `rpiw`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rpiw`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `rpiw`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `rpiw`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `rpiw`.`id_program` = `r_program_kawasan`.`kode_program`', [], false)
+ 4 APPPATH/Models/Rpiw/ProgramRpiwModel.php(41): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Memorandum.php(37): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiw(null, null, null)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-27 18:39:37 --> [Caused by] mysqli_sql_exception: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT DISTINCT `rpiw`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `program_rpiw` as `rpiw`
+LEFT JOIN `m_provinsi` ON `rpiw`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rpiw`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `rpiw`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `rpiw`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `rpiw`.`id_program` = `r_program_kawasan`.`kode_program`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT `rpiw`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `program_rpiw` as `rpiw`
+LEFT JOIN `m_provinsi` ON `rpiw`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rpiw`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `rpiw`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `rpiw`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `rpiw`.`id_program` = `r_program_kawasan`.`kode_program`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT `rpiw`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `program_rpiw` as `rpiw`
+LEFT JOIN `m_provinsi` ON `rpiw`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rpiw`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `rpiw`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `rpiw`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `rpiw`.`id_program` = `r_program_kawasan`.`kode_program`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `rpiw`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `program_rpiw` as `rpiw`
+LEFT JOIN `m_provinsi` ON `rpiw`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rpiw`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `rpiw`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `rpiw`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` ON `rpiw`.`id_program` = `r_program_kawasan`.`kode_program`', [], false)
+ 5 APPPATH/Models/Rpiw/ProgramRpiwModel.php(41): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Memorandum.php(37): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiw(null, null, null)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->index()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')

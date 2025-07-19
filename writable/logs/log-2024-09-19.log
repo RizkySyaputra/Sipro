@@ -1,0 +1,381 @@
+CRITICAL - 2024-09-19 04:17:23 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: map]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Controllers/ShpController.php(13): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/public/shp/Bali_KawasanPrioritas_All.shp')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShpController->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShpController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 04:19:26 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: map]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Controllers/ShpController.php(19): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/public/shp/Bali_KawasanPrioritas_All.shp')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShpController->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShpController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 05:18:17 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: map]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Controllers/ShpController.php(14): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/public/shp/Bali_KawasanPrioritas_All.shp')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShpController->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShpController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 05:22:16 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: map]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Controllers/ShpController.php(14): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/public/shp/Bali_KawasanPrioritas_All.shp')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShpController->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShpController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 05:27:27 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: map]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Controllers/ShpController.php(14): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/public/shp/Bali_KawasanPrioritas_All.shp')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShpController->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShpController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 05:28:27 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: map]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Controllers/ShpController.php(14): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/public/shp/Bali_KawasanPrioritas_All.shp')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShpController->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShpController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 05:28:53 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: map]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Controllers/ShpController.php(14): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/public/shp/Bali_KawasanPrioritas_All.shp')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShpController->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShpController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 05:29:39 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: map]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Controllers/ShpController.php(14): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/public/shp/Bali_KawasanPrioritas_All.shps')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShpController->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShpController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 05:29:40 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: map]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Controllers/ShpController.php(14): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/public/shp/Bali_KawasanPrioritas_All.shps')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShpController->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShpController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 05:29:41 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: map]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Controllers/ShpController.php(14): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/public/shp/Bali_KawasanPrioritas_All.shps')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShpController->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShpController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 05:29:41 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: map]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Controllers/ShpController.php(14): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/public/shp/Bali_KawasanPrioritas_All.shps')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShpController->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShpController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 07:36:03 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: map]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Controllers/ShpController.php(14): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/public/shp/Bali_KawasanPrioritas_All.shp')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShpController->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShpController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 08:54:22 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: map]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Controllers/ShpController.php(14): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/public/shp/Bali_KawasanPrioritas_All.shp')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShpController->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShpController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 08:54:23 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: map]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Controllers/ShpController.php(14): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/public/shp/Bali_KawasanPrioritas_All.shp')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShpController->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShpController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 08:54:26 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: map]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Controllers/ShpController.php(14): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/public/shp/Bali_KawasanPrioritas_All.shp')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShpController->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShpController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 09:15:29 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: map]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Controllers/ShpController.php(14): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/public/shp/Bali_KawasanPrioritas_All.shp')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShpController->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShpController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 09:15:30 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: map]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Controllers/ShpController.php(14): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/public/shp/Bali_KawasanPrioritas_All.shp')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShpController->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShpController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 09:15:32 --> Shapefile\ShapefileException: Check if the file exists and is readable and/or writable
+[Method: GET, Route: map]
+in VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/Shapefile.php on line 836.
+ 1 VENDORPATH/gasparesganga/php-shapefile/src/Shapefile/ShapefileReader.php(125): Shapefile\Shapefile->openFiles([...], false, [...])
+ 2 APPPATH/Controllers/ShpController.php(14): Shapefile\ShapefileReader->__construct('/Applications/MAMP/htdocs/sipro24/public/shp/Bali_KawasanPrioritas_All.shp')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShpController->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShpController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 10:20:41 --> Error: Object of class PHPUnit\Framework\Constraint\FileExists could not be converted to string
+[Method: GET, Route: map]
+in APPPATH/Controllers/ShpController.php on line 16.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ShpController->index()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ShpController))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 11:11:36 --> ErrorException: Undefined variable $message
+[Method: GET, Route: map]
+in APPPATH/Views/errors/html/error_404.php on line 77.
+ 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $message', '/Applications/MAMP/htdocs/sipro24/app/Views/errors/html/error_404.php', 77)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('errors/html/error_404', [], true)
+ 5 APPPATH/Controllers/MapController.php(13): view('errors/html/error_404')
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\MapController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MapController))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 11:34:16 --> ErrorException: Undefined variable $message
+[Method: GET, Route: map]
+in APPPATH/Views/errors/html/error_404.php on line 77.
+ 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $message', '/Applications/MAMP/htdocs/sipro24/app/Views/errors/html/error_404.php', 77)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('errors/html/error_404', [], true)
+ 5 APPPATH/Controllers/MapController.php(13): view('errors/html/error_404')
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\MapController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MapController))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 11:56:32 --> ErrorException: file_get_contents(/Applications/MAMP/htdocs/sipro24/public/geojson/wilayah.geojson): Failed to open stream: No such file or directory
+[Method: GET, Route: map]
+in APPPATH/Controllers/MapController.php on line 18.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_contents(/Applications/MAMP/htdocs/sipro24/public/geojson/wilayah.geojson): Failed to open stream: No such file or directory', '/Applications/MAMP/htdocs/sipro24/app/Controllers/MapController.php', 18)
+ 2 APPPATH/Controllers/MapController.php(18): file_get_contents('/Applications/MAMP/htdocs/sipro24/public/geojson/wilayah.geojson')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\MapController->index()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MapController))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 11:57:48 --> ErrorException: Undefined variable $message
+[Method: GET, Route: map]
+in APPPATH/Views/errors/html/error_404.php on line 77.
+ 1 APPPATH/Views/errors/html/error_404.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $message', '/Applications/MAMP/htdocs/sipro24/app/Views/errors/html/error_404.php', 77)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/errors/html/error_404.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('errors/html/error_404', [], true)
+ 5 APPPATH/Controllers/MapController.php(13): view('errors/html/error_404')
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\MapController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MapController))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 16:23:26 --> ErrorException: Undefined variable $itemA
+[Method: GET, Route: kawasan]
+in APPPATH/Views/pages/p_kawasan.php on line 43.
+ 1 APPPATH/Views/pages/p_kawasan.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $itemA', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_kawasan.php', 43)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_kawasan.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/p_kawasan', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/p_kawasan', [...])
+ 6 APPPATH/Controllers/Rpiw.php(52): App\Libraries\Template->load('/templates/main', '/pages/p_kawasan', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->kawasan()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 16:42:07 --> ErrorException: Undefined array key "peta_kawasan"
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Controllers/Rpiw.php on line 38.
+ 1 APPPATH/Controllers/Rpiw.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "peta_kawasan"', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 38)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 16:42:28 --> ErrorException: Undefined array key "peta_kawasan"
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Controllers/Rpiw.php on line 38.
+ 1 APPPATH/Controllers/Rpiw.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "peta_kawasan"', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 38)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 16:43:03 --> ErrorException: Undefined array key "peta_kawasan"
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Controllers/Rpiw.php on line 38.
+ 1 APPPATH/Controllers/Rpiw.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "peta_kawasan"', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 38)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 16:44:40 --> Error: Cannot use object of type stdClass as array
+[Method: GET, Route: detail/11-04-0011]
+in APPPATH/Controllers/Rpiw.php on line 39.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 16:47:26 --> ErrorException: file_get_contents(): Read of 8352 bytes failed with errno=21 Is a directory
+[Method: GET, Route: detail/11-04-0014]
+in APPPATH/Controllers/Rpiw.php on line 42.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'file_get_contents(): Read of 8352 bytes failed with errno=21 Is a directory', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 42)
+ 2 APPPATH/Controllers/Rpiw.php(42): file_get_contents('/Applications/MAMP/htdocs/sipro24/public/shp/')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0014')
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 16:49:32 --> ErrorException: Undefined variable $geojsonData
+[Method: GET, Route: detail/11-04-0014]
+in APPPATH/Controllers/Rpiw.php on line 48.
+ 1 APPPATH/Controllers/Rpiw.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $geojsonData', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 48)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0014')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-19 18:32:03 --> TypeError: NumberFormatter::formatCurrency(): Argument #1 ($amount) must be of type float, string given
+[Method: GET, Route: detail/51-05-1400]
+in APPPATH/Views/pages/detail.php on line 99.
+ 1 APPPATH/Views/pages/detail.php(99): NumberFormatter->formatCurrency(' 77.200.000 ', 'IDR')
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(53): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('51-05-1400')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')

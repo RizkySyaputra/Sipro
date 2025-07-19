@@ -1,0 +1,384 @@
+CRITICAL - 2025-05-26 04:33:02 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 04:33:03 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 06:17:47 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 06:17:48 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 06:56:00 --> ErrorException: Undefined variable $volume
+[Method: POST, Route: program/get_rekap_ditangguhkan]
+in APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php on line 28.
+ 1 APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $volume', 'C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php', 28)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/konreg/rekap/tabel_program_ditangguhkan', [], true)
+ 5 APPPATH\Controllers\KonregController.php(2085): view('/pages/konreg/rekap/tabel_program_ditangguhkan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->get_rekap_ditangguhkan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 06:56:05 --> ErrorException: Undefined variable $volume
+[Method: POST, Route: program/get_rekap_ditangguhkan]
+in APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php on line 28.
+ 1 APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $volume', 'C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php', 28)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/konreg/rekap/tabel_program_ditangguhkan', [], true)
+ 5 APPPATH\Controllers\KonregController.php(2085): view('/pages/konreg/rekap/tabel_program_ditangguhkan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->get_rekap_ditangguhkan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 06:56:09 --> ErrorException: Undefined variable $volume
+[Method: POST, Route: program/get_rekap_ditangguhkan]
+in APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php on line 28.
+ 1 APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $volume', 'C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php', 28)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/konreg/rekap/tabel_program_ditangguhkan', [], true)
+ 5 APPPATH\Controllers\KonregController.php(2085): view('/pages/konreg/rekap/tabel_program_ditangguhkan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->get_rekap_ditangguhkan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 06:57:53 --> ErrorException: Undefined variable $volume
+[Method: POST, Route: program/get_rekap_ditangguhkan]
+in APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php on line 28.
+ 1 APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $volume', 'C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php', 28)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/konreg/rekap/tabel_program_ditangguhkan', [], true)
+ 5 APPPATH\Controllers\KonregController.php(2085): view('/pages/konreg/rekap/tabel_program_ditangguhkan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->get_rekap_ditangguhkan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 06:58:09 --> ErrorException: Undefined variable $volume
+[Method: POST, Route: program/get_rekap_ditangguhkan]
+in APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php on line 28.
+ 1 APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $volume', 'C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php', 28)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/konreg/rekap/tabel_program_ditangguhkan', [], true)
+ 5 APPPATH\Controllers\KonregController.php(2085): view('/pages/konreg/rekap/tabel_program_ditangguhkan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->get_rekap_ditangguhkan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 07:01:00 --> ErrorException: Undefined variable $volume
+[Method: POST, Route: program/get_rekap_ditangguhkan]
+in APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php on line 28.
+ 1 APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $volume', 'C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php', 28)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/konreg/rekap/tabel_program_ditangguhkan', [], true)
+ 5 APPPATH\Controllers\KonregController.php(2085): view('/pages/konreg/rekap/tabel_program_ditangguhkan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->get_rekap_ditangguhkan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 07:01:08 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 07:01:12 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 07:02:17 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 07:02:21 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 07:13:55 --> ErrorException: Undefined variable $volume
+[Method: POST, Route: program/get_rekap_ditangguhkan]
+in APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php on line 28.
+ 1 APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $volume', 'C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php', 28)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/konreg/rekap/tabel_program_ditangguhkan', [], true)
+ 5 APPPATH\Controllers\KonregController.php(2085): view('/pages/konreg/rekap/tabel_program_ditangguhkan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->get_rekap_ditangguhkan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 07:27:43 --> ErrorException: Undefined variable $volume
+[Method: POST, Route: program/get_rekap_ditangguhkan]
+in APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php on line 28.
+ 1 APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $volume', 'C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php', 28)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/konreg/rekap/tabel_program_ditangguhkan', [], true)
+ 5 APPPATH\Controllers\KonregController.php(2085): view('/pages/konreg/rekap/tabel_program_ditangguhkan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->get_rekap_ditangguhkan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 07:27:48 --> ErrorException: Undefined variable $volume
+[Method: POST, Route: program/get_rekap_ditangguhkan]
+in APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php on line 28.
+ 1 APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $volume', 'C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php', 28)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/konreg/rekap/tabel_program_ditangguhkan', [], true)
+ 5 APPPATH\Controllers\KonregController.php(2085): view('/pages/konreg/rekap/tabel_program_ditangguhkan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->get_rekap_ditangguhkan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 07:27:58 --> ErrorException: Undefined variable $volume
+[Method: POST, Route: program/get_rekap_ditangguhkan]
+in APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php on line 28.
+ 1 APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $volume', 'C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php', 28)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/konreg/rekap/tabel_program_ditangguhkan', [], true)
+ 5 APPPATH\Controllers\KonregController.php(2085): view('/pages/konreg/rekap/tabel_program_ditangguhkan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->get_rekap_ditangguhkan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 08:13:56 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: POST, Route: rakortek/exportToExcel]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('rakortek/exportToExcel', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 08:13:59 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: POST, Route: rakortek/exportToExcel]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('rakortek/exportToExcel', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 08:14:19 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: POST, Route: rakortek/exportToExcel]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('rakortek/exportToExcel', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 08:28:41 --> ErrorException: Undefined variable $volume
+[Method: POST, Route: program/get_rekap_ditangguhkan]
+in APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php on line 28.
+ 1 APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $volume', 'C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php', 28)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/konreg/rekap/tabel_program_ditangguhkan', [], true)
+ 5 APPPATH\Controllers\KonregController.php(2085): view('/pages/konreg/rekap/tabel_program_ditangguhkan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->get_rekap_ditangguhkan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 09:00:26 --> ErrorException: Undefined variable $volume
+[Method: POST, Route: program/get_rekap_ditangguhkan]
+in APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php on line 28.
+ 1 APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $volume', 'C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php', 28)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/konreg/rekap/tabel_program_ditangguhkan', [], true)
+ 5 APPPATH\Controllers\KonregController.php(2085): view('/pages/konreg/rekap/tabel_program_ditangguhkan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->get_rekap_ditangguhkan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 09:00:34 --> ErrorException: Undefined variable $volume
+[Method: POST, Route: program/get_rekap_ditangguhkan]
+in APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php on line 28.
+ 1 APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $volume', 'C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php', 28)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/konreg/rekap/tabel_program_ditangguhkan', [], true)
+ 5 APPPATH\Controllers\KonregController.php(2085): view('/pages/konreg/rekap/tabel_program_ditangguhkan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->get_rekap_ditangguhkan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 09:34:06 --> ErrorException: Undefined variable $volume
+[Method: POST, Route: program/get_rekap_ditangguhkan]
+in APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php on line 28.
+ 1 APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $volume', 'C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php', 28)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/konreg/rekap/tabel_program_ditangguhkan', [], true)
+ 5 APPPATH\Controllers\KonregController.php(2085): view('/pages/konreg/rekap/tabel_program_ditangguhkan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->get_rekap_ditangguhkan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 09:34:17 --> ErrorException: Undefined variable $volume
+[Method: POST, Route: program/get_rekap_ditangguhkan]
+in APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php on line 28.
+ 1 APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $volume', 'C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php', 28)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/konreg/rekap/tabel_program_ditangguhkan', [], true)
+ 5 APPPATH\Controllers\KonregController.php(2085): view('/pages/konreg/rekap/tabel_program_ditangguhkan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->get_rekap_ditangguhkan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 09:34:21 --> ErrorException: Undefined variable $volume
+[Method: POST, Route: program/get_rekap_ditangguhkan]
+in APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php on line 28.
+ 1 APPPATH\Views\pages\konreg\rekap\tabel_program_ditangguhkan.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $volume', 'C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php', 28)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\rekap\\tabel_program_ditangguhkan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/konreg/rekap/tabel_program_ditangguhkan', [], true)
+ 5 APPPATH\Controllers\KonregController.php(2085): view('/pages/konreg/rekap/tabel_program_ditangguhkan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->get_rekap_ditangguhkan()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 09:35:09 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: POST, Route: fkb/exportToExcel]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('fkb/exportToExcel', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 10:39:50 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 10:39:58 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 10:40:05 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: GET, Route: memorandum]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('memorandum', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 12:06:05 --> Myth\Auth\Exceptions\PermissionException: You do not have sufficient permissions to access that page.
+[Method: POST, Route: fkw/exportToExcel]
+in VENDORPATH\myth\auth\src\Filters\RoleFilter.php on line 45.
+ 1 SYSTEMPATH\Filters\Filters.php(205): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), [...])
+ 2 SYSTEMPATH\Filters\Filters.php(184): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\Filters\Filters->run('fkw/exportToExcel', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

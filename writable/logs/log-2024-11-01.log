@@ -1,0 +1,182 @@
+CRITICAL - 2024-11-01 02:40:12 --> BadMethodCallException: Call to undefined method App\Models\Memorandum\ProgramModel::getMemoDetail
+[Method: GET, Route: detail_program/2]
+in SYSTEMPATH/Model.php on line 932.
+ 1 APPPATH/Controllers/Memorandum.php(164): CodeIgniter\Model->__call('getMemoDetail', [...])
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programDetail('$i')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-11-01 02:48:59 --> ErrorException: Undefined array key "id_rpiw"
+[Method: GET, Route: detail_program/2]
+in APPPATH/Controllers/Memorandum.php on line 165.
+ 1 APPPATH/Controllers/Memorandum.php(165): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_rpiw"', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 165)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programMemorandumDetail('2')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-11-01 02:49:44 --> ErrorException: Undefined array key "id_rpiw"
+[Method: GET, Route: detail_program/2]
+in APPPATH/Controllers/Memorandum.php on line 165.
+ 1 APPPATH/Controllers/Memorandum.php(165): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_rpiw"', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 165)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programMemorandumDetail('2')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-11-01 02:49:48 --> ErrorException: Undefined array key "id_rpiw"
+[Method: GET, Route: detail_program/2]
+in APPPATH/Controllers/Memorandum.php on line 165.
+ 1 APPPATH/Controllers/Memorandum.php(165): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_rpiw"', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 165)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programMemorandumDetail('2')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-11-01 02:50:40 --> ErrorException: Attempt to read property "id_rpiw" on array
+[Method: GET, Route: detail_program/2]
+in APPPATH/Controllers/Memorandum.php on line 165.
+ 1 APPPATH/Controllers/Memorandum.php(165): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id_rpiw" on array', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 165)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programMemorandumDetail('2')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-11-01 02:51:01 --> Error: Cannot use object of type stdClass as array
+[Method: GET, Route: detail_program/2]
+in APPPATH/Controllers/Memorandum.php on line 165.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programMemorandumDetail('2')
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-11-01 02:54:05 --> ErrorException: Undefined property: stdClass::$tagging_program
+[Method: GET, Route: detail_program/2]
+in APPPATH/Controllers/Memorandum.php on line 183.
+ 1 APPPATH/Controllers/Memorandum.php(183): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$tagging_program', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 183)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programMemorandumDetail('2')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-11-01 02:57:49 --> ErrorException: Undefined property: stdClass::$latitude
+[Method: GET, Route: detail_program/2]
+in APPPATH/Controllers/Memorandum.php on line 189.
+ 1 APPPATH/Controllers/Memorandum.php(189): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$latitude', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Memorandum.php', 189)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programMemorandumDetail('2')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-11-01 03:00:32 --> ErrorException: Undefined property: stdClass::$id_program
+[Method: GET, Route: detail_program/2]
+in APPPATH/Views/pages/memorandum/detail.php on line 13.
+ 1 APPPATH/Views/pages/memorandum/detail.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$id_program', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/detail.php', 13)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/detail', [...])
+ 6 APPPATH/Controllers/Memorandum.php(205): App\Libraries\Template->load('/templates/main', '/pages/memorandum/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programMemorandumDetail('2')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-11-01 03:01:44 --> ErrorException: Undefined property: stdClass::$id_program
+[Method: GET, Route: detail_program/2]
+in APPPATH/Views/pages/memorandum/detailProgram.php on line 13.
+ 1 APPPATH/Views/pages/memorandum/detailProgram.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$id_program', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/detailProgram.php', 13)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/detailProgram.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/detailProgram', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/detailProgram', [...])
+ 6 APPPATH/Controllers/Memorandum.php(205): App\Libraries\Template->load('/templates/main', '/pages/memorandum/detailProgram', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programMemorandumDetail('2')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-11-01 03:02:06 --> ErrorException: Undefined property: stdClass::$id_program
+[Method: GET, Route: detail_program/2]
+in APPPATH/Views/pages/memorandum/detailProgram.php on line 13.
+ 1 APPPATH/Views/pages/memorandum/detailProgram.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$id_program', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/detailProgram.php', 13)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/detailProgram.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/detailProgram', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/detailProgram', [...])
+ 6 APPPATH/Controllers/Memorandum.php(205): App\Libraries\Template->load('/templates/main', '/pages/memorandum/detailProgram', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programMemorandumDetail('2')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-11-01 03:03:06 --> ErrorException: Undefined variable $p_memo
+[Method: GET, Route: detail_program/2]
+in APPPATH/Views/pages/memorandum/detailProgram.php on line 1.
+ 1 APPPATH/Views/pages/memorandum/detailProgram.php(1): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $p_memo', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/detailProgram.php', 1)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/detailProgram.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/detailProgram', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/detailProgram', [...])
+ 6 APPPATH/Controllers/Memorandum.php(205): App\Libraries\Template->load('/templates/main', '/pages/memorandum/detailProgram', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programMemorandumDetail('2')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-11-01 03:03:34 --> ErrorException: Undefined property: stdClass::$tahun_mulai
+[Method: GET, Route: detail_program/2]
+in APPPATH/Views/pages/memorandum/detailProgram.php on line 70.
+ 1 APPPATH/Views/pages/memorandum/detailProgram.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$tahun_mulai', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/detailProgram.php', 70)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/detailProgram.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/detailProgram', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/detailProgram', [...])
+ 6 APPPATH/Controllers/Memorandum.php(205): App\Libraries\Template->load('/templates/main', '/pages/memorandum/detailProgram', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->programMemorandumDetail('2')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-11-01 09:33:55 --> ErrorException: Undefined variable $unor
+[Method: GET, Route: test]
+in APPPATH/Views/test.php on line 28.
+ 1 APPPATH/Views/test.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $unor', '/Applications/MAMP/htdocs/sipro24/app/Views/test.php', 28)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/test.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/test', [], true)
+ 5 APPPATH/Controllers/Master.php(95): view('/test')
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Master->test()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')

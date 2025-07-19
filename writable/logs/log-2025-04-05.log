@@ -1,0 +1,78 @@
+CRITICAL - 2025-04-05 17:30:56 --> ParseError: syntax error, unexpected token ")", expecting variable
+[Method: GET, Route: user]
+in APPPATH\Views\pages\master\user.php on line 179.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/master/user', [], true)
+ 3 APPPATH\Libraries\Template.php(104): view('/pages/master/user', [...])
+ 4 APPPATH\Controllers\Master.php(97): App\Libraries\Template->load('/templates/main', '/pages/master/user', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->user()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-05 17:31:02 --> ParseError: syntax error, unexpected token ")", expecting variable
+[Method: GET, Route: user]
+in APPPATH\Views\pages\master\user.php on line 179.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/master/user', [], true)
+ 3 APPPATH\Libraries\Template.php(104): view('/pages/master/user', [...])
+ 4 APPPATH\Controllers\Master.php(97): App\Libraries\Template->load('/templates/main', '/pages/master/user', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->user()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-05 17:31:09 --> ParseError: syntax error, unexpected token ")", expecting variable
+[Method: GET, Route: user]
+in APPPATH\Views\pages\master\user.php on line 179.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/master/user', [], true)
+ 3 APPPATH\Libraries\Template.php(104): view('/pages/master/user', [...])
+ 4 APPPATH\Controllers\Master.php(97): App\Libraries\Template->load('/templates/main', '/pages/master/user', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->user()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-05 17:32:21 --> ParseError: syntax error, unexpected token ")", expecting variable
+[Method: GET, Route: user]
+in APPPATH\Views\pages\master\user.php on line 179.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/master/user', [], true)
+ 3 APPPATH\Libraries\Template.php(104): view('/pages/master/user', [...])
+ 4 APPPATH\Controllers\Master.php(97): App\Libraries\Template->load('/templates/main', '/pages/master/user', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->user()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-05 17:34:30 --> ParseError: syntax error, unexpected token ")", expecting variable
+[Method: GET, Route: user]
+in APPPATH\Views\pages\master\user.php on line 179.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/master/user', [], true)
+ 3 APPPATH\Libraries\Template.php(104): view('/pages/master/user', [...])
+ 4 APPPATH\Controllers\Master.php(97): App\Libraries\Template->load('/templates/main', '/pages/master/user', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->user()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-04-05 17:34:39 --> ParseError: syntax error, unexpected token ")", expecting variable
+[Method: GET, Route: user]
+in APPPATH\Views\pages\master\user.php on line 179.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/master/user', [], true)
+ 3 APPPATH\Libraries\Template.php(104): view('/pages/master/user', [...])
+ 4 APPPATH\Controllers\Master.php(97): App\Libraries\Template->load('/templates/main', '/pages/master/user', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->user()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

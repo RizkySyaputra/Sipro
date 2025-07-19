@@ -1,0 +1,209 @@
+CRITICAL - 2024-09-27 03:10:33 --> ErrorException: Undefined variable $unor
+[Method: GET, Route: rpiw]
+in APPPATH/Views/pages/p_rpiw.php on line 17.
+ 1 APPPATH/Views/pages/p_rpiw.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $unor', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php', 17)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/p_rpiw', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/p_rpiw', [...])
+ 6 APPPATH/Controllers/Rpiw.php(34): App\Libraries\Template->load('/templates/main', '/pages/p_rpiw', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-27 03:10:34 --> ErrorException: Undefined variable $unor
+[Method: GET, Route: rpiw]
+in APPPATH/Views/pages/p_rpiw.php on line 17.
+ 1 APPPATH/Views/pages/p_rpiw.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $unor', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php', 17)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/p_rpiw', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/p_rpiw', [...])
+ 6 APPPATH/Controllers/Rpiw.php(34): App\Libraries\Template->load('/templates/main', '/pages/p_rpiw', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-27 03:24:10 --> ErrorException: Attempt to read property "nama_kawasan" on array
+[Method: GET, Route: rpiw]
+in APPPATH/Views/pages/p_rpiw.php on line 26.
+ 1 APPPATH/Views/pages/p_rpiw.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama_kawasan" on array', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php', 26)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/p_rpiw', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/p_rpiw', [...])
+ 6 APPPATH/Controllers/Rpiw.php(34): App\Libraries\Template->load('/templates/main', '/pages/p_rpiw', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-27 03:24:38 --> ErrorException: Undefined array key "nama_kawasan"
+[Method: GET, Route: rpiw]
+in APPPATH/Views/pages/p_rpiw.php on line 26.
+ 1 APPPATH/Views/pages/p_rpiw.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_kawasan"', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php', 26)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/p_rpiw', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/p_rpiw', [...])
+ 6 APPPATH/Controllers/Rpiw.php(34): App\Libraries\Template->load('/templates/main', '/pages/p_rpiw', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-27 03:39:51 --> ErrorException: Attempt to read property "nama_kawasan" on string
+[Method: GET, Route: rpiw]
+in APPPATH/Views/pages/p_rpiw.php on line 26.
+ 1 APPPATH/Views/pages/p_rpiw.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama_kawasan" on string', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php', 26)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/p_rpiw', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/p_rpiw', [...])
+ 6 APPPATH/Controllers/Rpiw.php(36): App\Libraries\Template->load('/templates/main', '/pages/p_rpiw', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-27 03:40:38 --> ErrorException: Attempt to read property "nama_kawasan" on array
+[Method: GET, Route: rpiw]
+in APPPATH/Views/pages/p_rpiw.php on line 26.
+ 1 APPPATH/Views/pages/p_rpiw.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nama_kawasan" on array', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php', 26)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/p_rpiw', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/p_rpiw', [...])
+ 6 APPPATH/Controllers/Rpiw.php(36): App\Libraries\Template->load('/templates/main', '/pages/p_rpiw', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-27 04:09:56 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: detail/12-04-0141]
+in APPPATH/Controllers/Rpiw.php on line 67.
+ 1 APPPATH/Controllers/Rpiw.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 67)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('12-04-0141')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-27 04:23:40 --> CodeIgniter\HTTP\Exceptions\HTTPException: The uploaded file has already been moved.
+[Method: POST, Route: Rpiw/upload_geojson]
+in SYSTEMPATH/HTTP/Files/UploadedFile.php on line 138.
+ 1 SYSTEMPATH/HTTP/Files/UploadedFile.php(138): CodeIgniter\HTTP\Exceptions\HTTPException::forAlreadyMoved()
+ 2 APPPATH/Controllers/Rpiw.php(105): CodeIgniter\HTTP\Files\UploadedFile->move('public/geoJson/', '66f6334c12fbd_data (7).geojson')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->upload_geojson()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-27 04:30:31 --> CodeIgniter\HTTP\Exceptions\HTTPException: The uploaded file has already been moved.
+[Method: POST, Route: Rpiw/upload_geojson]
+in SYSTEMPATH/HTTP/Files/UploadedFile.php on line 138.
+ 1 SYSTEMPATH/HTTP/Files/UploadedFile.php(138): CodeIgniter\HTTP\Exceptions\HTTPException::forAlreadyMoved()
+ 2 APPPATH/Controllers/Rpiw.php(105): CodeIgniter\HTTP\Files\UploadedFile->move('public/geoJson/', '66f634e7071a6_data (6).geojson')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->upload_geojson()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-27 04:59:48 --> ErrorException: Undefined variable $/Applications/MAMP/tmp/php/phpqWTbVs
+[Method: POST, Route: Rpiw/upload_geojson]
+in APPPATH/Controllers/Rpiw.php on line 105.
+ 1 APPPATH/Controllers/Rpiw.php(105): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $/Applications/MAMP/tmp/php/phpqWTbVs', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 105)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->upload_geojson()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-27 05:00:06 --> CodeIgniter\HTTP\Exceptions\HTTPException: The uploaded file has already been moved.
+[Method: POST, Route: Rpiw/upload_geojson]
+in SYSTEMPATH/HTTP/Files/UploadedFile.php on line 138.
+ 1 SYSTEMPATH/HTTP/Files/UploadedFile.php(138): CodeIgniter\HTTP\Exceptions\HTTPException::forAlreadyMoved()
+ 2 APPPATH/Controllers/Rpiw.php(105): CodeIgniter\HTTP\Files\UploadedFile->move('public/geoJson/', '66f63bd63d2be_data (6).geojson')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->upload_geojson()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+INFO - 2024-09-27 05:00:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-27 09:48:23 --> TypeError: NumberFormatter::formatCurrency(): Argument #1 ($amount) must be of type float, string given
+[Method: GET, Route: detail/31-04-0874]
+in APPPATH/Views/pages/detail.php on line 65.
+ 1 APPPATH/Views/pages/detail.php(65): NumberFormatter->formatCurrency('25.800.000,00', 'IDR')
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(87): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('31-04-0874')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-27 09:54:17 --> TypeError: NumberFormatter::formatCurrency(): Argument #1 ($amount) must be of type float, string given
+[Method: GET, Route: detail/31-04-0876]
+in APPPATH/Views/pages/detail.php on line 65.
+ 1 APPPATH/Views/pages/detail.php(65): NumberFormatter->formatCurrency('663.920.000,00', 'IDR')
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/detail', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/detail', [...])
+ 6 APPPATH/Controllers/Rpiw.php(87): App\Libraries\Template->load('/templates/main', '/pages/detail', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('31-04-0876')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-27 10:51:37 --> ErrorException: Undefined variable $petaKawasan
+[Method: GET, Route: detail/17-04-0602]
+in APPPATH/Controllers/Rpiw.php on line 80.
+ 1 APPPATH/Controllers/Rpiw.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaKawasan', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 80)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('17-04-0602')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-27 11:10:51 --> ErrorException: Undefined variable $petaProgram
+[Method: GET, Route: detail/17-04-0600]
+in APPPATH/Controllers/Rpiw.php on line 85.
+ 1 APPPATH/Controllers/Rpiw.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $petaProgram', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 85)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('17-04-0600')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')

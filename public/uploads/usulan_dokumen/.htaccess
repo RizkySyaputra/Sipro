@@ -1,0 +1,9 @@
+<FilesMatch "\.(php|phtml|phar|shtml|php5|php6|php7|php8)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Untuk memastikan Apache tidak memproses file PHP
+RemoveHandler .php .phtml .phar .shtml .php5 .php6 .php7 .php8
+RemoveType .php .phtml .phar .shtml .php5 .php6 .php7 .php8
+php_flag engine off

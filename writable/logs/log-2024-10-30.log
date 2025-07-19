@@ -1,0 +1,114 @@
+CRITICAL - 2024-10-30 09:26:21 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/memorandum/memorandumProgram.php"
+[Method: GET, Route: daftar_program]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/memorandum/memorandumProgram.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/memorandumProgram', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/memorandumProgram', [...])
+ 4 APPPATH/Controllers/Memorandum.php(154): App\Libraries\Template->load('/templates/main', '/pages/memorandum/memorandumProgram', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-30 10:08:50 --> ErrorException: Undefined property: stdClass::$id_program
+[Method: GET, Route: daftar_program]
+in APPPATH/Views/pages/memorandum/memorandumProgram.php on line 12.
+ 1 APPPATH/Views/pages/memorandum/memorandumProgram.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$id_program', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/memorandumProgram.php', 12)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/memorandum/memorandumProgram.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/memorandumProgram', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/memorandumProgram', [...])
+ 6 APPPATH/Controllers/Memorandum.php(154): App\Libraries\Template->load('/templates/main', '/pages/memorandum/memorandumProgram', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-30 10:10:22 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/kawasan.php"
+[Method: GET, Route: kegiatan]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/kawasan.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/kawasan', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/kawasan', [...])
+ 4 APPPATH/Controllers/Master.php(54): App\Libraries\Template->load('/templates/main', '/pages/kawasan', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Master->kawasan()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-30 10:11:46 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/kawasan.php"
+[Method: GET, Route: kegiatan]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/kawasan.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/kawasan', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/kawasan', [...])
+ 4 APPPATH/Controllers/Master.php(54): App\Libraries\Template->load('/templates/master/main', '/pages/kawasan', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Master->kawasan()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-30 10:11:49 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/kawasan.php"
+[Method: GET, Route: kegiatan]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/kawasan.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/kawasan', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/kawasan', [...])
+ 4 APPPATH/Controllers/Master.php(54): App\Libraries\Template->load('/templates/master/main', '/pages/kawasan', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Master->kawasan()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-30 10:11:52 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/kawasan.php"
+[Method: GET, Route: kegiatan]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/kawasan.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/kawasan', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/kawasan', [...])
+ 4 APPPATH/Controllers/Master.php(54): App\Libraries\Template->load('/templates/master/main', '/pages/kawasan', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Master->kawasan()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-30 10:14:52 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/memorandum/detail.php"
+[Method: GET, Route: memo/RPIW11-11-04-0015]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/memorandum/detail.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/detail', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/detail', [...])
+ 4 APPPATH/Controllers/Memorandum.php(99): App\Libraries\Template->load('/templates/main', '/pages/memorandum/detail', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->detail('RPIW11-11-04-0015')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-30 10:44:48 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "/pages/memorandum/memorandumProgram.php"
+[Method: GET, Route: daftar_program]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/memorandum/memorandumProgram.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('/pages/memorandum/memorandumProgram', [], true)
+ 3 APPPATH/Libraries/Template.php(104): view('/pages/memorandum/memorandumProgram', [...])
+ 4 APPPATH/Controllers/Memorandum.php(154): App\Libraries\Template->load('/templates/main', '/pages/memorandum/memorandumProgram', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Memorandum->listProgram()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Memorandum))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')

@@ -1,0 +1,337 @@
+ERROR - 2024-09-15 17:50:51 --> mysqli_sql_exception: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '=' in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_rpiw_...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Rpiw/ProgramRpiwModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php(45): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('11-04-0011')
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-09-15 17:50:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+[Method: GET, Route: detail/11-04-0011]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+WHERE `m_rpiw_program`.`id_program` = :m_rpiw_program.id_program:', [...], false)
+ 2 APPPATH/Models/Rpiw/ProgramRpiwModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Rpiw.php(45): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('11-04-0011')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-15 17:50:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+WHERE `m_rpiw_program`.`id_program` = :m_rpiw_program.id_program:', [...], false)
+ 4 APPPATH/Models/Rpiw/ProgramRpiwModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Rpiw.php(45): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('11-04-0011')
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-15 17:50:51 --> [Caused by] mysqli_sql_exception: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+WHERE `m_rpiw_program`.`id_program` = \'11-04-0011\'')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+WHERE `m_rpiw_program`.`id_program` = :m_rpiw_program.id_program:', [...], false)
+ 5 APPPATH/Models/Rpiw/ProgramRpiwModel.php(38): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Rpiw.php(45): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiwDetail('11-04-0011')
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->detail('11-04-0011')
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-09-15 17:51:41 --> mysqli_sql_exception: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '=' in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_rpiw_...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Rpiw/ProgramRpiwModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php(22): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiw()
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-09-15 17:51:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+[Method: GET, Route: rpiw]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`', [], false)
+ 2 APPPATH/Models/Rpiw/ProgramRpiwModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Rpiw.php(22): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiw()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-15 17:51:41 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`', [], false)
+ 4 APPPATH/Models/Rpiw/ProgramRpiwModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Rpiw.php(22): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiw()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-15 17:51:41 --> [Caused by] mysqli_sql_exception: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`', [], false)
+ 5 APPPATH/Models/Rpiw/ProgramRpiwModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Rpiw.php(22): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiw()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-09-15 17:51:44 --> mysqli_sql_exception: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '=' in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_rpiw_...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Rpiw/ProgramRpiwModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php(22): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiw()
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-09-15 17:51:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+[Method: GET, Route: rpiw]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`', [], false)
+ 2 APPPATH/Models/Rpiw/ProgramRpiwModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Rpiw.php(22): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiw()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-15 17:51:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`', [], false)
+ 4 APPPATH/Models/Rpiw/ProgramRpiwModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Rpiw.php(22): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiw()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-15 17:51:44 --> [Caused by] mysqli_sql_exception: Illegal mix of collations (utf8mb4_0900_ai_ci,IMPLICIT) and (utf8mb4_unicode_ci,IMPLICIT) for operation '='
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `m_rpiw_program`.*, `m_provinsi`.`provinsi`, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`, `r_program_kawasan`.`kode_kawasan`
+FROM `m_rpiw_program`
+LEFT JOIN `m_provinsi` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `r_program_kawasan` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_unor` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`', [], false)
+ 5 APPPATH/Models/Rpiw/ProgramRpiwModel.php(22): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Rpiw.php(22): App\Models\Rpiw\ProgramRpiwModel->getProgramRpiw()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-09-15 18:46:57 --> ErrorException: Undefined array key "kode_kawasan"
+[Method: GET, Route: rpiw]
+in APPPATH/Controllers/Rpiw.php on line 25.
+ 1 APPPATH/Controllers/Rpiw.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "kode_kawasan"', '/Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php', 25)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->index()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')

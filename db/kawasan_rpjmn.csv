@@ -1,0 +1,589 @@
+﻿id;kode_kawasan;Kode Provinsi;Lokasi Prioritas
+1;11-001;11;Kawasan Perkotaan Banda Aceh-Jantho
+2;11-002;11;Kawasan Perkotaan Lhokseumawe dan Kawasan Pengembangan Industri Arun-Lhokseumawe
+3;11-003;11;Kawasan Perkotaan Takengon dan Kawasan Pariwisata & Ekonomi Kreatif Unggulan DT Gayo-Danau Laut Tawar
+4;11-004;11;Kawasan Perkotaan Meulaboh
+5;11-005;11;Kawasan Perkotaan Langsa
+6;11-006;11;Kawasan Perkotaan Subulussalam
+7;11-007;11;KPBPB Sabang
+8;11-008;11;DT Gayo
+9;11-009;11;Pesisir Timur Laut Aceh
+10;11-010;11;Pesisir Barat-Selatan Aceh
+11;11-011;11;Pesisir Utara Aceh
+12;11-012;11;Pesisir Barat Aceh
+13;11-013;11;Simeulue
+14;11-014;11;TN Gunung Leuser
+15;12-001;12;Wilayah Metropolitan Medan dan Kawasan Pengembangan Industri Medan-Binjai-Deli-Serdang
+16;12-002;12;Kawasan Pengembangan Industri Kualatanjung-Seimangkei
+17;12-003;12;Kawasan Pariwisata dan Ekonomi Kreatif Unggulan Danau Toba (termasuk Kawsan Perkotaan Balige)
+18;12-004;12;Kawasan Perkotaan Sibolga-Pandan-Padangsidimpuan
+19;12-005;12;Kawasan Perkotaan Rantauprapat
+20;12-006;12;Kawasan Perkotaan Kabanjahe
+21;12-007;12;Kawasan Perkotaan Gunungsitoli
+22;12-008;12;Asahan-Labuhanbatu-Padanglawas
+23;12-009;12;Asahan-Tanjungbalai
+24;12-010;12;Nias Utara
+25;12-011;12;Sumatera Timur
+26;12-012;12;Bukit Barisan Utara
+27;12-013;12;Batang Angkola-Batang Gadis
+28;12-014;12;Kep. Nias
+29;12-015;12;TN Batang Gadis
+30;13-001;13;Kawasan Perkotaan Padang-Pariaman
+31;13-002;13;Kawasan Pariwisata dan Ekonomi Kreatif Unggulan Dataran Tinggi Minangkabau (termasuk Kawasan Perkotaan Bukittinggi-Padangpanjang dan Solok-Sawahlunto)
+32;13-003;13;Pasaman Barat
+33;13-004;13;Dataran Tinggi Minangkabau
+34;13-005;13;Minangkabau Pesisir
+35;13-006;13;Kep. Mentawai
+36;13-007;13;TN Kerinci-Seblat
+37;14-001;14;Kawasan Perkotaan Pekanbaru
+38;14-002;14;Kawasan Perkotaan Dumai & Kawasan Pengembangan Industri Dumai
+39;14-003;14;Kawasan Perkotaan Rengat
+40;14-004;14;Rokan-Siak-Kampar-Indragiri
+41;14-005;14;Rokan Hilir
+42;14-006;14;Indragiri Hilir
+43;14-007;14;Riau
+44;14-008;14;Indragiri
+45;14-009;14;Kepulauan Meranti-Bengkalis
+46;14-010;14;TN Zamrud
+47;14-011;14;TN Tesso Nilo
+48;14-012;14;TN Bukit Tigapuluh
+49;15-001;15;Kawasan Perkotaan Jambi
+50;15-002;15;Kawasan Pariwisata dan Ekonomi Kreatif Unggulan Candi Muarojambi
+51;15-003;15;Kawasan Perkotaan Bangko
+52;15-004;15;Kawasan Perkotaan Sungaipenuh
+53;15-005;15;Kawasan Perkotaan Muarobungo
+54;15-006;15;Tanjungjabung
+55;15-007;15;Cekungan Batanghari
+56;15-008;15;Bukit Barisan Tengah Jambi
+57;15-009;15;TN Bukit Duabelas
+58;15-010;15;TN Berbak
+59;16-001;16;Wilayah Metropolitan Palembang & Kawasan Pengebangan Industri Palembang-Banyuasin
+60;16-002;16;Kawasan Perkotaan Muaraenim & Kawasan Pengembangan Industri Tanjungenim
+61;16-003;16;Kawasan Perkotaan Lubuklinggau
+62;16-004;16;Kawasan Perkotaan Baturaja
+63;16-005;16;Banyuasin
+64;16-006;16;Cekungan Musi
+65;16-007;16;Ogan-Komering-Banyuasin
+66;16-008;16;Musi Hulu
+67;16-009;16;TN Bukit Barisan Selatan
+68;16-010;16;TN Sembilang
+69;17-001;17;Kawasan Perkotaan Bengkulu dan Kawasan Pengembangan Industri Pulaubasi
+70;17-002;17;Kawasan Perkotaan Manna
+71;17-003;17;Utara Bengkulu
+72;17-004;17;Bukit Barisan Tengah Bengkulu
+73;17-005;17;Mukomuko-Bengkulu Utara-Seluma-Bengkulu Selatan
+74;17-006;17;Pulau Enggano
+75;18-001;18;Kawasan Perkotaan Bandar Lampung
+76;18-002;18;Kawasan Pengembangan Industri Bandar Lampung-Lampung Selatan
+77;18-003;18;Kawasan Perkotaan Kotabumi
+78;18-004;18;Kawasan Perkotaan Menggala
+79;18-005;18;Kawasan Perkotaan Liwa
+80;18-006;18;Pesisir Timur Lampung
+81;18-007;18;Lampung Barat-Selatan
+82;18-008;18;Mesuji-Tulangbawang
+83;18-009;18;Seputih-Sekampung
+84;18-010;18;Pesisir Barat Lampung
+85;18-011;18;TN Waykambas
+86;19-001;19;Kawasan Perkotaan Pangkalpinang
+87;19-002;19;Kawasan Pengembangan Industri Pangkalpinang-Sungailiat
+88;19-003;19;Kawasan Pariwisata dan Ekonomi Kreatif Unggulan Belitung
+89;19-004;19;Kawasan Perkotaan Tanjungpandan
+90;19-005;19;KEK Tanjung Kelayang
+91;19-006;19;Bangka
+92;19-007;19;Bangka Selatan
+93;19-008;19;TN Gunung Maras
+94;19-009;19;Geopark Belitung
+95;21-001;21;Kawasan Perkotaan Batam & KPBPB Batam
+96;21-002;21;Kawasan Perkotaan Tanjungpinang & KPBPB Bintan
+97;21-003;21;Kawasan Perkotaan Tanjungbalai Karimun & KPBPB Karimun
+98;21-004;21;Natuna-Anambas
+99;21-005;21;Natuna
+100;21-006;21;Kepulauan Lingga
+101;21-007;21;Kepulauan Natuna-Anambas
+102;21-008;21;Geopark Natuna
+103;31-001;31;Kawasan Aglomerasi Jakarta/WM Jakarta
+104;31-002;31;Jakarta-Tangerang International Business Corridor dan Jakarta Global City Urban Tourism (Central-South)
+105;31-003;31;Northern Coast New Economic Hub dan Jakarta Global City Urban Tourism (North)
+106;31-004;31;Kawasan Pengembangan Industri Bogor-Bekasi-Karawang-Purwakarta-Subang-Patimban
+107;31-005;31;Kawasan Perkotaan Bogor-Sukabumi & Kawasan Pariwisata dan Ekonomi Kreatif Unggulan Bogor-Sukabumi-Cianjur
+108;31-006;31;Koridor Industri Cilegon-Serang-Tangerang
+109;31-007;31;TN Kepulauan Seribu
+110;31-008;31;TN Gede-Pangrango
+111;31-009;31;TN Halimun-Salak
+112;32-001;32;WM Bandung, Kawasan Pengembangan Industri Cekungan Bandung
+113;32-002;32;Kawasan Pariwisata & Ekonomi Kreatif Unggulan Bandung dan Sekitarnya
+114;32-003;32;Kawasan Perkotaan Cirebon & Kawasan Pengembangan Industri Cirebon-Kertajati
+115;32-004;32;Kawasan Perkotaan Tasikmalaya
+116;32-005;32;Kawasan Pengembangan Industri Bogor-Bekasi-Karawang-Purwakarta-Subang-Patimban (termasuk Kawasan Perkotaan Karawang)
+117;32-006;32;Kawasan Perkotaan Bogor-Sukabumi & Kawasan Pariwisata dan Ekonomi Kreatif Unggulan Bogor Sukabumi-Cianjur
+118;32-007;32;Cirebon-Majalengka
+119;32-008;32;Indramayu-Cirebon
+120;32-009;32;Citarum-Cimanuk-Cisanggarung
+121;32-010;32;Citanduy-Ciwulan-Cilaki
+122;32-011;32;Priangan Barat
+123;32-012;32;Jawa Barat Bagian Selatan
+124;32-013;32;TN Halimum-Salak
+125;32-014;32;TN Gede-Pangrango
+126;32-015;32;TN Ceremai
+127;32-016;32;Geopark Ciletuh
+128;32-017;32;Kawasan Rawan Bencana Gempa Bumi Sesar Darat di Jawa Barat
+129;33-001;33;Kawasan Perkotaan Purwokerto
+130;33-002;33;Kawasan Pariwisata dan Ekonomi Kreatif Unggulan Borobudur-Dataran Tinggi Dieng
+131;33-003;33;Kawasan Perkotaan Cilacap dan Kawasan Pengembangan Industri Cilacap
+132;33-004;33;Kawasan Perkotaan Pekalongan-Batang dan Kawasan Pengembangan Industri Batang
+133;33-005;33;WM Semarang dan Kawasan Pengembangan Industri Kendal-Semarang-Demak-Kudus
+134;33-006;33;Kawasan Perkotaan Surakarta, Kawasan Pengembangan Indudstri Surakarta-Boyolali-Karanganyar-Sukoharjo
+135;33-007;33;Kawasan Pariwisata & Ekonomi Kreatif Unggulan Solo-Sragen-Karanganyar
+136;33-008;33;Kawasan Perkotaan Rembang
+137;33-009;33;Pegunungan Kendeng
+138;33-010;33;Kawasan Komoditas Unggulan - Ekonomi Biru
+139;33-011;33;Pemali-Comal
+140;33-012;33;Dieng-Serayu-Bogowonto
+141;33-013;33;Jragung-Tuntang-Serang-Lusi-Juwana
+142;33-014;33;Bengawan Solo
+143;33-015;33;Brebes
+144;33-016;33;TN Karimunjawa
+145;33-017;33;Geopark Kebumen
+146;34-001;34;Kawasan Perkotaan Yogyakarta
+147;34-002;34;Kawasan Pariwisata dan Ekonomi Kreatif Unggulan Yogyakarta
+148;34-003;34;Kawasan Aerotropolis YIA
+149;34-004;34;Progo-Opak
+150;34-005;34;Pegunungan Sewu
+151;34-006;34;Kawasan rawan Bencana Gempa Bumi Sesar Darat
+152;35-001;35;WM Surabaya dan Kawasan Pengembangan Industri Gresik-Surabaya-Sidoarjo-Mojokerto-Pasuruan
+153;35-002;35;Kawasan Perkotaan Malang-Batu, Kawasan Pengembangan Industri Malang-Batu, Kawasan Pengembangan Industri Malang-Singasari-Lawang & Kawasan Pariwisata dan Ekonomi Kreatif Unggulan Bromo-Tengger-Semeru dan Lingkar Kawi
+154;35-003;35;Kawasan Perkotaan Kediri
+155;35-004;35;Kawasan Perkotaan Madiun
+156;35-005;35;Kawasan Perkotaan Jember
+157;35-006;35;Lingkar Kelud-Kawi-Arjuna-Welirang
+158;35-007;35;Tapal Kuda
+159;35-008;35;Pegunungan Kendeng-Lingkar Lawu
+160;35-009;35;Pacitan-Trenggalek-Tulungagung
+161;35-010;35;Lamongan-Tuban
+162;35-011;35;Sumenep
+163;35-012;35;Banyuwangi
+164;35-013;35;Bengawan Solo
+165;35-014;35;Brantas
+166;35-015;35;Tapal Kuda
+167;35-016;35;Madura dan Kepulauan
+168;35-017;35;Kawasan Perkotaan Sumenep
+169;35-018;35;Pegunungan Sewu
+170;35-019;35;TN Bromo-Tengger-Semeru
+171;35-020;35;TN Meru Betiri
+172;35-021;35;TN Alas Purwo
+173;35-022;35;TN Baluran
+174;35-023;35;Kawasan Rawan Bencana Gempa Bumi Sesar Darat di Jawa Timur
+175;36-001;36;Kawasan Perkotaan Cilegon-Serang
+176;36-002;36;Kawasan Pengembangan Industri Cilegon-Serang-Tangerang
+177;36-003;36;Kawasan Pariwisata dan Ekonomi Kreatif Unggulan Labuan-Tanjung Lesung
+178;36-004;36;Kawasan Perkotaan Tangerang Raya
+179;36-005;36;Banten
+180;36-006;36;Banten Selatan
+181;36-007;36;TN Ujung Kulon
+182;36-008;36;TN Halimun-Salak
+183;36-009;36;Kawasan Rawan Bencana Tsunami
+184;51-001;51;WM Denpasar
+185;51-002;51;Kawasan Pariwisata dan Ekonomi Kreatif Unggulan Bali
+186;51-003;51;Rintisan Kawasan Pengembangan Industri Candikusuma-Pengambengan
+187;51-004;51;Jembrana
+188;51-005;51;Bangli-Buleleng
+189;51-006;51;Buleleng
+190;51-007;51;Bali-Nusapenida
+191;51-008;51;Nusapenida
+192;51-009;51;TN Bali Barat
+193;51-010;51;TWA Gunung Batur-Bukit Payang
+194;51-011;51;TWA Danau Buyan-Danau Tambingan
+195;52-001;52;DPP Lombok Gili Tramena
+196;52-002;52;Kawasan Perkotaan Sedang Kota Mataram
+197;52-003;52;Kawasan Industri Sumbawa Barat
+198;52-004;52;Kawasan Perkebunan
+199;52-005;52;Kawasan Peternakan
+200;52-006;52;Kawasan Sentra Garam
+201;52-007;52;Kawasan Perikanan dan Sentra Rumput Laut
+202;52-008;52;Sentra Akuakultur - Komoditas Udang
+203;52-009;52;Kawasan Pengembangan Sentra Berbasis Perikanan Tangkap
+204;52-010;52;Kawasan pangan Lokal
+205;52-011;52;KPP Sembalun
+206;52-012;52;KT Selaparang
+207;52-013;52;Kawasan Konservasi Nasional Gili Matra
+208;52-014;52;Kawasan Konservasi Daerah Gili Balu
+209;52-015;52;Kota Mataram
+210;53-001;53;DPP Labuan Bajo - Manggarai Barat dengan rencana perluasan menjadi DPP Labuan Bajo -Flores
+211;53-002;53;Kawasan Perkotaan Pariwisata Labuan Bajo - Manggarai Barat
+212;53-003;53;Sentra Industri Berbasis Komoditas Rumput Laut
+213;53-004;53;Sentra Produksi Berbasis Komoditas Rumput Laut
+214;53-005;53;Sentra Industri Berbasis Komoditas Garam
+215;53-006;53;Sentra Produksi Berbasis Komoditas Garam
+216;53-007;53;Kawasan Swasembada Pangan
+217;53-008;53;Kawasan Swasembada Energi
+218;53-009;53;Kawasan Swasembada Air
+219;53-010;53;DT Sumba Tengah
+220;53-011;53;DT Sumba Barat Daya
+221;53-012;53;DT Sabu Raijua
+222;53-013;53;PKSN Kefamenanu
+223;53-014;53;PKSN Atambua
+224;53-015;53;PKSN Kalabahi
+225;53-016;53;Kecamatan Perbatasan Prioritas Sumba Barat
+226;53-017;53;Kecamatan Perbatasan Prioritas Sumba Timur
+227;53-018;53;Kecamatan Perbatasan Prioritas Kupang
+228;53-019;53;Kecamatan Perbatasan Prioritas Timor Tengah Selatan
+229;53-020;53;Kecamatan Perbatasan Prioritas Rote Ndao
+230;53-021;53;Kecamatan Perbatasan Prioritas Sumba Barat Daya
+231;53-022;53;Kecamatan Perbatasan Prioritas Raijua
+232;53-023;53;Kecamatan Perbatasan Prioritas Malaka
+233;53-024;53;KT Ponu
+234;53-025;53;KT Tasifeto-Mandeu
+235;53-026;53;KT Kobalima Timur
+236;53-027;53;KPP Agrowisata Kopi Flores Bajawa
+237;53-028;53;TN Komodo
+238;53-029;53;Cagar Alam Wae Wuul
+239;53-030;53;Kawasan Konservasi Daerah Selat Pantar dan Laut Sekitarnya
+240;53-031;53;Taman Wisata Alam Laut Tujuh Belas Pulau
+241;53-032;53;Cagar Alam Riung
+242;53-033;53;Taman Nasional Perairan Laut Sawu dan sekitarnya
+243;61-001;61;Kawasan Pariwisata Sambas-Singkawang
+244;61-002;61;Kawasan Perkotaan Kecil Mempawah (Kijing)
+245;61-003;61;Kawasan Industri Ketapang
+246;61-004;61;Kawasan Pengembagan Pelabuhan Kijing
+247;61-005;61;Kawasan Sentra Kelapa Sawit
+248;61-006;61;Kawasan Perdesaan Prioritas Agropolitan Rasau
+249;61-007;61;Kawasan Strategis Nasional Jantung Kalimantan
+250;61-008;61;PKSN Paloh Aruk
+251;61-009;61;PKSN Jagoi Babang
+252;61-010;61;PKSN Entikong
+253;61-011;61;PKSN Nangabadau
+254;61-012;61;Kecamatan Perbatasan
+255;61-013;61;KT Rasau Jaya
+256;61-014;61;KT Gerbang Mas Perkasa
+257;61-015;61;KT Sekayam-Entikong
+258;61-016;61;KT Ketungau Hulu
+259;62-001;62;Kawasan Agro Industri Kalimantan Tengah
+260;62-002;62;Kawasan Sentra Perikanan Kalimantan Tengah
+261;62-003;62;Kawasan Sentra Produksi Pangan (KSPP)
+262;62-004;62;KT Lamunti-Dadahup
+263;62-005;62;KT Jelai
+264;62-006;62;KT Arut Selatan dan Kotawaringin Lama
+265;62-007;62;Taman Nasional Tanjung Puting
+266;62-008;62;Taman Nasional Sebangau
+267;63-001;63;Kawasan Wilayah Metropolitan Banjarmasin
+268;63-002;63;Kawasan Pertumbuhan Industri Baru
+269;63-003;63;Kawasan Lumbung Pangan Rawa Batang Banyu
+270;63-004;63;KPP Agropolitan
+271;63-005;63;KPP Agrowisata Hortikultura
+272;63-006;63;KPP Agrominapolitan
+273;63-007;63;KT Cahaya Baru
+274;63-008;63;Kawasan Pegunungan Meratus
+275;63-009;63;Provinsi Kalimantan Selatan
+276;64-001;64;Kawasan Pariwisata Petualangan Derawan-Berau
+277;64-002;64;Kawasan Superhub Ekonomi IKN
+278;64-003;64;Kawasan Perkotaan Besar
+279;64-004;64;Kawasan Sentra Perikanan
+280;64-005;64;KPP Agroekowisata
+281;64-006;64;Kawasan Perbatasan Prioritas
+282;64-007;64;KT Kerang
+283;64-008;64;Kawasan Konservasi Derawan
+284;64-009;64;Kawasan Strategis Nasional Jantung Kalimantan
+285;65-001;65;Kota Baru Tanjung Selor dan Kota Tarakan
+286;65-002;65;Kawasan Perindustrian Hijau Tanah Kuning
+287;65-003;65;Kawasan Sentra Rumput Laut
+288;65-004;65;PKSN Nunukan dan PKSN Tou Lumbis dan Kecamatan Perbatasan Prioritas
+289;65-005;65;PKSN Long Nawang dan Kecamatan Perbatasan Priortas
+290;65-006;65;-
+291;65-007;65;KT Salim Batu
+292;71-001;71;DPP Manado - Likupang
+293;71-002;71;Wilayah Metropolitan Manado
+294;71-003;71;Kawasan Perkotaan Sedang
+295;71-004;71;Kawasan Perikanan Tangkap Bitung
+296;71-005;71;Kawasan Berbasis Pertanian di Bolaang Mongondow dsk
+297;71-006;71;KPP Mapalus
+298;71-007;71;PKSN Tahuna dan Kecamatan Perbatasan prioritas Kec. Kendahe
+299;71-008;71;PKSN Melonguane dan Kecamatan Perbatasan Prioritas Kec. Damau, Pulutan, dan Nanusa
+300;71-009;71;Kecamatan Perbatasan Prioritas Kec. Siau Barat, Siau Barat Utara
+301;71-010;71;Kecamatan Perbatasan Prioritas Likupang Barat, Wori
+302;71-011;71;Kecamatan Perbatasan Prioritas Kec. Tatapan, Tenga, Sinonsayang
+303;71-012;71;Kecamatan Perbatasan Prioritas Bolaang Timur
+304;71-013;71;Kecamatan Perbatasan Prioritas Bolangitang Barat, Pinogaluman
+305;71-014;71;Kawasan Rawan Bencana Gempa Bumi Sulawesi Utara
+306;72-001;72;Kawasan Perkotaan Kecil Kabupaten Morowali (Bahodopi)
+307;72-002;72;KI Morowali dan Morowali Utara
+308;72-003;72;Kawasan Hilirisasi Gas Bumi
+309;72-004;72;Kawasan Pertanian Pangan dan Perkebunan Sigi
+310;72-005;72;Kawasan Pertanian Pangan dan Perkebunan Donggala
+311;72-006;72;Kawasan Pertanian Pangan dan Perkebunan Poso
+312;72-007;72;Kawasan Pertanian Pangan dan Perkebunan Parigi Moutong
+313;72-008;72;Kawasan Pertanian Pangan dan Perkebunan Buol
+314;72-009;72;Kawasan Pertanian Pangan dan Perkebunan Tolitoli
+315;72-010;72;Kawasan Perikanan dan Hilirisasi Tongkol, Cakalang, Tuna (TCT) Parigi Moutong
+316;72-011;72;Kawasan Perikanan dan Hilirisasi Tongkol, Cakalang, Tuna (TCT) Donggala
+317;72-012;72;Kawasan Perikanan dan Hilirisasi Tongkol, Cakalang, Tuna (TCT) Morowali
+318;72-013;72;Kawasan Perikanan dan Hilirisasi Tongkol, Cakalang, Tuna (TCT) Banggai Laut
+319;72-014;72;Kawasan Perikanan dan Hilirisasi Tongkol, Cakalang, Tuna (TCT) Banggai Kepulauan
+320;72-015;72;Kawasan Sentra Hilirisasi Rumput Laut Banggai Kepulauan
+321;72-016;72;KPP Kabupaten Morowali
+322;72-017;72;Kecamatan Perbatasan Prioritas Kabupaten Buol
+323;72-018;72;Kecamatan Perbatasan Prioritas Kabupaten Toli -Toli
+324;72-019;72;KT Tampolore
+325;72-020;72;KT Bungku
+326;72-021;72;KT Palolo
+327;72-022;72;TN Lore Lindu
+328;72-023;72;TN Kepulauan Togean
+329;72-024;72;Kabupaten Banggai
+330;72-025;72;Kabupaten Banggai Kepulauan
+331;72-026;72;Kabupaten Bnaggai Laut
+332;72-027;72;Kabupaten Toli-Toli
+333;72-028;72;Kawasan Rawan Bencana Gempa Bumi dan Tsunami Kota Palu
+334;73-001;73;Kawasan WM Makassar dsk
+335;73-002;73;Kawasan Perkotaan Kecil Luwu Timur dan Tana Toraja
+336;73-003;73;Kawasan Industri Takalar
+337;73-004;73;Kawasan Smelter Terintegrasi Tambang Sorowako
+338;73-005;73;Kawasan Perkebunan Kakao dan Kopi Toraja Utara
+339;73-006;73;Kawasan Perkebunan Kakao dan Kopi Luwu
+340;73-007;73;Kawasan Perkebunan Kakao dan Kopi Luwu Utara
+341;73-008;73;Kawasan Perkebunan Kakao dan Kopi Pinrang
+342;73-009;73;Kawasan Perikanan Budidaya dan Sentra Rumput Laut Takalar
+343;73-010;73;Kawasan Perikanan Budidaya dan Sentra Rumput Laut Pangkajene Kepulauan
+344;73-011;73;Kawasan Sentra Garam Takalar
+345;73-012;73;Kawasan Sentra Garam Jeneponto
+346;73-013;73;Kawasan Lumbung Pangan Teluk Bone dsk
+347;73-014;73;KPP Agrowisata Gurilla
+348;73-015;73;KT Mahalona
+349;73-016;73;KT Pitu Riase
+350;73-017;73;Kawasan Pulau-Pulau Kecil Kabupaten Pangkajene dan Kepulauan
+351;73-018;73;Kawasan Pulau-Pulau Kecil Kabupaten Kepulauan Selayar
+352;73-019;73;Kawasan Teluk Bone dsk
+353;74-001;74;DPP Wakatobi
+354;74-002;74;Kawasan Perkotaan Kecil Konawe
+355;74-003;74;KI Pengolahan Hasil Tambang Konawe
+356;74-004;74;KI Pengolahan Hasil Tambang Kolaka
+357;74-005;74;Kawasan Perkebunan Kakao Kolaka Utara
+358;74-006;74;Kawasan Perkebunan Kakao Kolaka Timur
+359;74-007;74;Kawasan Perikanan Tangkap Kota Kendari
+360;74-008;74;Kawasan Perikanan Tangkap Kota Bau-bau
+361;74-009;74;Kawasan Perikanan Tangkap Buton
+362;74-010;74;Kawasan Perikanan Tangkap Muna
+363;74-011;74;Kawasan Perikanan Tangkap Bombana
+364;74-012;74;Kawasan Perikanan Tangkap Kolaka
+365;74-013;74;Kawasan Perikanan Tangkap Muna Barat
+366;74-014;74;Kawasan Lumbung Pangan Sulawesi Tenggara Kabupaten Bombana
+367;74-015;74;Kawasan Lumbung Pangan Sulawesi Tenggara Kabupaten Kolaka Timur
+368;74-016;74;Kawasan Lumbung Pangan Sulawesi Tenggara Kabupaten Konawe Selatan
+369;74-017;74;Kawasan Lumbung Pangan Sulawesi Tenggara Kabupaten Konawe
+370;74-018;74;KT Asinua
+371;74-019;74;KT Anawua
+372;74-020;74;KT Mutiara
+373;75-001;75;Kawasan Perkotaan Sedang Kota Gorontalo
+374;75-002;75;Kawasan Tanaman Pangan dan Hortikultura Gorontalo
+375;75-003;75;Kawasan Tanaman Pangan dan Hortikultura Gorontalo Utara
+376;75-004;75;Kawasan Tanaman Pangan dan Hortikultura Boalemo
+377;75-005;75;Kawasan Tanaman Pangan dan Hortikultura Pohuwato
+378;75-006;75;Kawasan Tanaman Pangan dan Hortikultura Bone Bolango
+379;75-007;75;Kawasan Perkebunan dan Hilirisasi Kelapa Gorontalo
+380;75-008;75;Kawasan Perkebunan dan Hilirisasi Kelapa Gorontalo Utara
+381;75-009;75;Kawasan Sentra Garam Pohuwato
+382;75-010;75;Kecamatan Perbatasan Prioritas Gorontalo Utara
+383;75-011;75;KT Sumulata
+384;75-012;75;Kawasan Pesisir dan Konservasi Teluk Gorontalo
+385;76-001;76;Kawasan Perkebunan Kakao dan Kopi Polewali Mandar
+386;76-002;76;Kawasan Perkebunan Kakao dan Kopi Majene
+387;76-003;76;Kawasan Perkebunan Kakao dan Kopi Mamasa
+388;76-004;76;Kawasan Perkebunan Kakao dan Kopi Pasangkayu
+389;76-005;76;Kawasan Perkebunan Kakao dan Kopi Mamuju Tengah
+390;76-006;76;Kawasan Perikanan Budidaya Polewali Mandar
+391;76-007;76;Kawasan Perikanan Budidaya Mamuju
+392;76-008;76;KT Ulumanda
+393;76-009;76;KT Tubbi Taramanu
+394;76-010;76;KT Tobadak
+395;76-011;76;KT Sarudu Baras
+396;76-012;76;KT Mambi Mahelaan
+397;76-013;76;Kawasan Konservasi dan Pengembangan Pulau Kecil Mamuju
+398;76-014;76;Kawasan Rawan Bencana Gempa Bumi Makassar Strait
+399;81-001;81;Kawasan Pariwisata Banda Neira
+400;81-002;81;Kawasan Pemanfaatan Gas Bumi (Blok Masela)
+401;81-003;81;Kota Kecil Berkarakter Khusus Banda Neira
+402;81-004;81;Kawasan Perkotaan Sedang Ambon
+403;81-005;81;Sentra Industri Berbasis Komoditas TCT, Udang dan Lobster Kota Ambon
+404;81-006;81;Sentra Industri Berbasis Komoditas TCT, Udang dan Lobster Kota Tual
+405;81-007;81;Sentra Produksi Berbasis Komoditas TCT, Udang dan Lobster Seram Bagian Barat
+406;81-008;81;Sentra Produksi Berbasis Komoditas TCT, Udang dan Lobster Maluku Tengah
+407;81-009;81;Sentra Produksi Berbasis Komoditas TCT, Udang dan Lobster Maluku Tenggara
+408;81-010;81;Sentra Produksi Berbasis Komoditas TCT, Udang dan Lobster Kepulauan Aru
+409;81-011;81;Kawasan Swasembada Pangan Buru
+410;81-012;81;Kawasan Swasembada Pangan Maluku Tengah
+411;81-013;81;Kawasan Swasembada Pangan Maluku Tenggara
+412;81-014;81;Kawasan Swasembada Air Buru
+413;-000;;Kawasan Swasembada Air Kepulauan Tanimbar
+414;81-015;81;Kawasan Swasembada Energi Kota Ambon
+415;81-016;81;PKSN Saumlaki
+416;81-017;81;PKSN Ilwaki
+417;81-018;81;Kecamatan Perbatasan Prioritas Maluku Tenggara
+418;81-019;81;Kecamatan Perbatasan Prioritas Kepulauan Aru
+419;81-020;81;Kecamatan Perbatasan Prioritas Kota Tual
+420;81-021;81;Kawasan Perdesaan Waepo Agropolitan Berbasis Komoditas Unggulan Padi
+421;81-022;81;KKN Laut Banda, TWA Gunung Api Banda, KK Perairan di Pulau Ay dan Pulau Rhun
+422;81-023;81;KKD Pulau Kei Kecil
+423;81-024;81;KK Perairan Buano
+424;81-025;81;KK Kepulauan Aru bagian tenggara
+425;81-026;81;KK Perairan Kepulauan Lease
+426;82-001;82;KI Buli
+427;82-002;82;KI Weda Bay
+428;82-003;82;KI Pulau Obi
+429;82-004;82;DPP Morotai
+430;82-005;82;Kota Kecil Berkarakter Khusus Daruba
+431;82-006;82;Kawasan Perkotaan Weda
+432;82-007;82;Kota Baru Sofifi
+433;82-008;82;Sentra Industri Berbasis Komoditas Kelapa Halmahera Barat
+434;82-009;82;Sentra Industri Berbasis Komoditas Kelapa halmahera Utara
+435;82-010;82;Sentra Industri Berbasis Komoditas Kelapa Halmahera Selatan
+436;82-011;82;Sentra Industri Berbasis Komoditas Kelapa Kepulauan Sula
+437;82-012;82;Sentra produksi Berbasis Komoditas Kelapa Halmahera Utara
+438;82-013;82;Sentra Produksi Berbasis Komoditas Pala Halmahera Barat
+439;82-014;82;Sentra Produksi Berbasis Komoditas Pala Halmahera Tengah
+440;82-015;82;Sentra Produksi Berbasis Komoditas Pala Halmahera Utara
+441;82-016;82;PKSN Daruba dan Kec. Morotai Utara
+442;82-017;82;Kecamatan Perbatasan Prioritas Halmahera Tengah
+443;82-018;82;Kecamatan Perbatasan Prioritas Halmahera Timur
+444;82-019;82;KT Sagea Waleh
+445;82-020;82;KT Pulau Bacan
+446;82-021;82;KT Patlean
+447;82-022;82;KT Pulau Morotai
+448;82-023;82;Kawasan Perdesaan prioritas Kab. Halmahera Barat
+449;82-024;82;TN Aketajawe lolobata
+450;82-025;82;SM Goa Bukimoruru
+451;82-026;82;CA Pulau Obi
+452;91-001;91;Kawasan Pariwisata Biak-Teluk Cendrawasih
+453;91-002;91;Kawasan Perkotaan Sedang Jayapura
+454;91-003;91;Sentra Industri Berbasis Komoditas TCT Kota jayapura
+455;91-004;91;Sentra Industri Berbasis Komoditas TCT Biak Numfor
+456;91-005;91;Sentra Produksi Berbasis Komoditas TCT Kota jayapura
+457;91-006;91;Sentra Produksi Berbasis Komoditas TCT Biak Numfor
+458;91-007;91;Sentra Produksi Berbasis Komoditas TCT Jayapura
+459;91-008;91;Sentra Produksi Berbasis Komoditas TCT Kepulauan Yapen
+460;91-009;91;Sentra Produksi Berbasis Komoditas TCT Waropen
+461;91-010;91;Kawasan Swasembada Pangan (KSPP Keerom)
+462;91-011;91;Kawasan Swasembada Pangan Jayapura
+463;91-012;91;Kawasan Swasembada Pangan Biak Numfor
+464;91-013;91;Kawasan Swasembada Pangan Kota Jayapura
+465;91-014;91;Kawasan Swasembada Pangan Kepulauan Yapen
+466;91-015;91;Kawasan Swasembada Pangan Sarmi
+467;91-016;91;Kawasan Swasembada Air jayapura
+468;91-017;91;Kawasan Swasembada Air Mamberamo Raya
+469;91-018;91;Kawasan Swasembada Energi Kota Jayapura
+470;91-019;91;Kawasan Konservasi TN Teluk Cendrawasih
+471;91-020;91;Kawasan Konservasi Mamberamo Foja
+472;91-021;91;KKN Padaido
+473;91-022;91;Kawasan Rawan Bencana Gempa Bumi Kota Jayapura
+474;91-023;91;Daerah Tertinggal Mamberamo Raya
+475;91-024;91;Daerah Tertinggal Waropen
+476;91-025;91;Daerah Tertinggal Supiori
+477;91-026;91;PKSN Jayapura
+478;91-027;91;PKSN Biak
+479;91-028;91;Kawasan Perbatasan Kecamatan Perbatasan Prioritas Mamberamo Raya
+480;91-029;91;Kawasan Perbatasan Kecamatan Perbatasan Prioritas Sarmi
+481;91-030;91;Kawasan Perbatasan Kecamatan Perbatasan Prioritas Keerom
+482;91-031;91;Kawasan Perbatasan Kecamatan Perbatasan Prioritas Supiori
+483;91-032;91;KT Senggi
+484;92-001;92;KI Fakfak
+485;92-002;92;Kawasan Pariwisata Teluk Triton
+486;92-003;92;Kawasan Pertambangan dan Pengolahan Migas Papua Barat
+487;92-004;92;Kota Kecil berkarakter Khusus Anggi
+488;92-005;92;Sentra Produksi Berbasis Komoditas Kakao Papua Barat
+489;92-006;92;Kawasan Swasembada Pangan Manokwari
+490;92-007;92;Kawasan Swasembada Pangan Manokwari Selatan
+491;92-008;92;Kawasan Swasembada Air Teluk Bintuni
+492;92-009;92;Kawasan Swasembada Air Kaimana
+493;92-010;92;Kawasan Swasembada Energi Manokwari
+494;92-011;92;Kawasan Swasembada Energi Teluk Bintuni
+495;92-012;92;DT Manokwari Selatan
+496;92-013;92;DT Teluk Bintuni
+497;92-014;92;DT Teluk Wondama
+498;92-015;92;DT Pegunungan Arfak
+499;92-016;92;Kawasan Konservasi TN Teluk Cendrawasih
+500;92-017;92;Kawasan Konservasi dan Keanekaragaman Hayati Teluk Bintuni
+501;93-001;93;Kawasan Pariwisata Asmat
+502;93-002;93;Ibu Kota Daerah Otonom Baru Merauke
+503;93-003;93;Sentra produksi Berbasis Komoditas Sagu Merauke
+504;93-004;93;Sentra produksi Berbasis Komoditas Sagu Mappi
+505;93-005;93;Sentra produksi Berbasis Komoditas Sagu Asmat
+506;93-006;93;Sentra Produksi Berbasis Komoditas TCT Merauke
+507;93-007;93;KSPP Papua Selatan
+508;93-008;93;Kawasan Swasembada Air Papua Selatan
+509;93-009;93;Kawasan Swasembada Energi Papua Selatan
+510;93-010;93;TN Lorentz
+511;93-011;93;TN Wasur
+512;93-012;93;Daerah Tertinggal Boven Digoel
+513;93-013;93;Daerah Tertinggal Asmat
+514;93-014;93;Daerah Tertinggal Mappi
+515;93-015;93;PKSN Merauke
+516;93-016;93;PKSN Tanah Merah
+517;93-017;93;Kecamatan Perbatasan Prioritas Asmat
+518;93-018;93;Kecamatan Perbatasan Prioritas Mappi
+519;93-019;93;KT Salor
+520;93-020;93;KT Muting
+521;93-021;93;Kawasan Perdesaan Semangga, Tanah Miring, Kurik dan Malind
+522;94-001;94;Kawasan Pariwisata TN Teluk Cendrawasih
+523;94-002;94;Kawasan Pertambangan Emas-Tembaga-Petak
+524;94-003;94;Ibu Kota Daerah Otonom Baru Papua Tengah
+525;94-004;94;Sentra Produksi Berbasis Komoditas Kopi Paniai, Dogiyai
+526;94-005;94;Sentra Produksi Berbasis Komoditas Kopi Dogiyai
+527;94-006;94;Sentra Produksi Berbasis Komoditas Kopi Puncak Jaya
+528;94-007;94;Sentra Produksi Berbasis Komoditas TCT Nabire
+529;94-008;94;Sentra Produksi Berbasis Komoditas TCT Mimika
+530;94-009;94;DT Paniai
+531;94-010;94;DT Dogiyai
+532;94-011;94;DT Deiyai
+533;94-012;94;DT Puncak
+534;94-013;94;DT Puncak Jaya
+535;94-014;94;DT Intan Jaya
+536;94-015;94;Kawasan Perbatasan Mimika
+537;94-016;94;Kawasan Swasembada Pangan Nabire
+538;94-017;94;Kawasan Swasembada Pangan Mimika
+539;94-018;94;Kawasan Swasembada Air Papua Nabire
+540;94-019;94;Kawasan Swasembada Air Papua Mimika
+541;94-020;94;Kawasan Swasembada Energi Nabire
+542;95-001;95;Kawasan Swasembada Energi Mimika
+543;94-021;94;Kawasan Konservasi TN Teluk Cendrawasih
+544;94-022;94;Kawasan Konservasi TN Lorentz
+545;94-023;94;Kawasan Konservasi TN Mamberamo Foja
+546;94-024;94;Kawasan Rawan Bancana Gempa Bumi Papua Tengah
+547;95-002;95;Ibu Kota Daerah Otonom Baru Jayawijaya
+548;95-003;95;Sentra Produksi Berbasis Komoditas Kopi Jayawijaya
+549;95-004;95;Sentra Produksi Berbasis Komoditas Kopi Lanny Jaya
+550;95-005;95;Sentra Produksi Berbasis Komoditas Kopi Tolikara
+551;95-006;95;Kawasan Swasembada Pangan Jayawijaya
+552;95-007;95;Kawasan Swasembada Energi Jayawijaya
+553;95-008;95;Kawasan Swasembada Air Pegunungan Bintang
+554;95-009;95;Kawasan Swasembada Air Yahukimo
+555;95-010;95;DT Jayawijaya
+556;95-011;95;DT Yahukimo
+557;95-012;95;DT Tolikara
+558;95-013;95;DT Nduga
+559;95-014;95;DT Lanny Jaya
+560;95-015;95;DT Yalimo
+561;95-016;95;DT Mamberamo Tengah
+562;95-017;95;DT Pegunungan Bintang
+563;95-018;95;Kawasan Perbatasan Kab. Pegunungan Bintang
+564;95-019;95;Kawasan Konservasi TN Lorenz
+565;95-020;95;Kawasan Rawan Bencana Gempa Bumi
+566;96-001;96;DPP Raja Ampat
+567;96-002;96;Ibu Kota Daerah Otonom Baru dan Kota Industri, Perdagangan, dan Jasa - Kota Sorong
+568;96-003;96;Sentra Industri Berbasis Komodistas Udang
+569;96-004;96;Sentra Produksi Berbasis Komodistas Udang Kota Sorong
+570;96-005;96;Sentra Produksi Berbasis Komodistas Udang Sorong Selatan
+571;96-006;96;Sentra Produksi Berbasis Komodistas Udang Sorong
+572;96-007;96;Sentra Produksi Berbasis Komodistas Rumput Laut Sorong
+573;96-008;96;Sentra Produksi Berbasis Komodistas Rumput Laut Kota Sorong
+574;96-009;96;Kawasan Swasembada Pangan Sorong
+575;96-010;96;Kawasan Swasembada Pangan Sorong Selatan
+576;96-011;96;Kawasan Swasembada Energi Sorong
+577;96-012;96;Kawasan Swasembada Air Sorong
+578;96-013;96;Kawasan Swasembada Air Tambrauw
+579;97-001;97;Daerah Tertinggal Tambrauw
+580;98-001;98;Daerah Tertinggal Maybrat
+581;96-014;96;Kecamatan Perbatasan Prioritas Raja Ampat
+582;96-015;96;Kecamatan Perbatasan Prioritas Tambrauw
+583;96-016;96;KT Klamono - Segun
+584;96-017;96;Kawasan Perdesaan Prioritas Raja Ampat
+585;96-018;96;Geopark Raja Ampat, KKN dan KKD Kep. Raja Ampat, KKN Kep. Waigeo
+586;96-019;96;Kawasan Konservasi dan Keanekaragaman Hayati Teluk Bintuni
+587;96-020;96;Kawasan Rawan bencana Gempa Bumi Kota Sorong
+588;96-021;96;Kawasan Rawan bencana Gempa Bumi Maybrat

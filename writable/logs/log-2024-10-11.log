@@ -1,0 +1,767 @@
+CRITICAL - 2024-10-11 02:07:01 --> ErrorException: Undefined variable $p_kawasan
+[Method: GET, Route: Repot]
+in APPPATH/Views/pages/detail_kawasan.php on line 5.
+ 1 APPPATH/Views/pages/detail_kawasan.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $p_kawasan', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail_kawasan.php', 5)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail_kawasan.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('pages/detail_kawasan', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('pages/detail_kawasan', [])
+ 6 APPPATH/Controllers/Rpiw.php(143): App\Libraries\Template->load('/templates/main', 'pages/detail_kawasan')
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-11 02:08:20 --> ErrorException: Undefined variable $p_kawasan
+[Method: GET, Route: Repot]
+in APPPATH/Views/pages/detail_kawasan.php on line 5.
+ 1 APPPATH/Views/pages/detail_kawasan.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $p_kawasan', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail_kawasan.php', 5)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail_kawasan.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('pages/detail_kawasan', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('pages/detail_kawasan', [...])
+ 6 APPPATH/Controllers/Rpiw.php(144): App\Libraries\Template->load('/templates/main', 'pages/detail_kawasan')
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-11 02:08:49 --> ArgumentCountError: Too few arguments to function App\Libraries\Template::load(), 1 passed in /Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php on line 144 and at least 2 expected
+[Method: GET, Route: Repot]
+in APPPATH/Libraries/Template.php on line 101.
+ 1 APPPATH/Controllers/Rpiw.php(144): App\Libraries\Template->load('pages/detail_kawasan')
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-11 02:09:03 --> ErrorException: Undefined variable $p_kawasan
+[Method: GET, Route: Repot]
+in APPPATH/Views/pages/detail_kawasan.php on line 5.
+ 1 APPPATH/Views/pages/detail_kawasan.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $p_kawasan', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail_kawasan.php', 5)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/detail_kawasan.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('pages/detail_kawasan', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('pages/detail_kawasan', [...])
+ 6 APPPATH/Controllers/Rpiw.php(144): App\Libraries\Template->load('/templates/main', 'pages/detail_kawasan')
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-11 02:10:03 --> ErrorException: Undefined variable $unor
+[Method: GET, Route: Repot]
+in APPPATH/Views/pages/p_rpiw.php on line 21.
+ 1 APPPATH/Views/pages/p_rpiw.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $unor', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php', 21)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/p_rpiw.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('pages/p_rpiw', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('pages/p_rpiw', [...])
+ 6 APPPATH/Controllers/Rpiw.php(144): App\Libraries\Template->load('/templates/main', 'pages/p_rpiw')
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-10-11 02:54:18 --> mysqli_sql_exception: Unknown column 'mrp.taging_mp' in 'field list' in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `mp`.`pr...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `mp`.`pr...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `mp`.`pr...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `mp`.`pr...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Rpiw/ProgramRpiwModel.php(77): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php(146): App\Models\Rpiw\ProgramRpiwModel->getReportProgram(NULL, NULL, NULL)
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-10-11 02:54:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'mrp.taging_mp' in 'field list'
+[Method: GET, Route: Repot]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`taging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` as `mu` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`', [], false)
+ 2 APPPATH/Models/Rpiw/ProgramRpiwModel.php(77): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Rpiw.php(146): App\Models\Rpiw\ProgramRpiwModel->getReportProgram(null, null, null)
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-11 02:54:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'mrp.taging_mp' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`taging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` as `mu` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`taging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` as `mu` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`taging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` as `mu` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`', [], false)
+ 4 APPPATH/Models/Rpiw/ProgramRpiwModel.php(77): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Rpiw.php(146): App\Models\Rpiw\ProgramRpiwModel->getReportProgram(null, null, null)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-11 02:54:18 --> [Caused by] mysqli_sql_exception: Unknown column 'mrp.taging_mp' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`taging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` as `mu` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`taging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` as `mu` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`taging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` as `mu` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`taging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` as `mu` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`', [], false)
+ 5 APPPATH/Models/Rpiw/ProgramRpiwModel.php(77): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Rpiw.php(146): App\Models\Rpiw\ProgramRpiwModel->getReportProgram(null, null, null)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-10-11 02:55:13 --> mysqli_sql_exception: Unknown column 'm_rpiw_program.id_program' in 'on clause' in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `mp`.`pr...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `mp`.`pr...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `mp`.`pr...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `mp`.`pr...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Rpiw/ProgramRpiwModel.php(77): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php(146): App\Models\Rpiw\ProgramRpiwModel->getReportProgram(NULL, NULL, NULL)
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-10-11 02:55:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm_rpiw_program.id_program' in 'on clause'
+[Method: GET, Route: Repot]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` as `mu` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`', [], false)
+ 2 APPPATH/Models/Rpiw/ProgramRpiwModel.php(77): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Rpiw.php(146): App\Models\Rpiw\ProgramRpiwModel->getReportProgram(null, null, null)
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-11 02:55:13 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm_rpiw_program.id_program' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` as `mu` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` as `mu` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` as `mu` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`', [], false)
+ 4 APPPATH/Models/Rpiw/ProgramRpiwModel.php(77): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Rpiw.php(146): App\Models\Rpiw\ProgramRpiwModel->getReportProgram(null, null, null)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-11 02:55:13 --> [Caused by] mysqli_sql_exception: Unknown column 'm_rpiw_program.id_program' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` as `mu` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` as `mu` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` as `mu` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `m_rpiw_program`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` as `mu` ON `m_rpiw_program`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `m_rpiw_program`.`id_pendanaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `m_rpiw_program`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `m_rpiw_program`.`id_program` = `r_program_kawasan`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`', [], false)
+ 5 APPPATH/Models/Rpiw/ProgramRpiwModel.php(77): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Rpiw.php(146): App\Models\Rpiw\ProgramRpiwModel->getReportProgram(null, null, null)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-10-11 02:55:58 --> mysqli_sql_exception: Unknown column 'mp.id_pendanaan' in 'on clause' in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `mp`.`pr...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `mp`.`pr...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `mp`.`pr...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `mp`.`pr...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Rpiw/ProgramRpiwModel.php(77): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php(146): App\Models\Rpiw\ProgramRpiwModel->getReportProgram(NULL, NULL, NULL)
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-10-11 02:55:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'mp.id_pendanaan' in 'on clause'
+[Method: GET, Route: Repot]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mp`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`', [], false)
+ 2 APPPATH/Models/Rpiw/ProgramRpiwModel.php(77): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Rpiw.php(146): App\Models\Rpiw\ProgramRpiwModel->getReportProgram(null, null, null)
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-11 02:55:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'mp.id_pendanaan' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mp`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mp`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mp`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`', [], false)
+ 4 APPPATH/Models/Rpiw/ProgramRpiwModel.php(77): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Rpiw.php(146): App\Models\Rpiw\ProgramRpiwModel->getReportProgram(null, null, null)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-11 02:55:58 --> [Caused by] mysqli_sql_exception: Unknown column 'mp.id_pendanaan' in 'on clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mp`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mp`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mp`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mp`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`', [], false)
+ 5 APPPATH/Models/Rpiw/ProgramRpiwModel.php(77): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Rpiw.php(146): App\Models\Rpiw\ProgramRpiwModel->getReportProgram(null, null, null)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-11 02:56:13 --> ErrorException: Undefined property: stdClass::$kawasan
+[Method: GET, Route: Repot]
+in APPPATH/Views/pages/report_rpiw.php on line 84.
+ 1 APPPATH/Views/pages/report_rpiw.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$kawasan', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/report_rpiw.php', 84)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/report_rpiw.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('pages/report_rpiw', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('pages/report_rpiw', [...])
+ 6 APPPATH/Controllers/Rpiw.php(163): App\Libraries\Template->load('/templates/main', 'pages/report_rpiw', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-11 02:57:37 --> ErrorException: Undefined property: stdClass::$kawasan
+[Method: GET, Route: Repot]
+in APPPATH/Views/pages/report_rpiw.php on line 84.
+ 1 APPPATH/Views/pages/report_rpiw.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$kawasan', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/report_rpiw.php', 84)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/report_rpiw.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('pages/report_rpiw', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('pages/report_rpiw', [...])
+ 6 APPPATH/Controllers/Rpiw.php(163): App\Libraries\Template->load('/templates/main', 'pages/report_rpiw', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-11 02:59:07 --> ErrorException: Undefined property: stdClass::$nama_kawasan
+[Method: GET, Route: Repot]
+in APPPATH/Views/pages/report_rpiw.php on line 84.
+ 1 APPPATH/Views/pages/report_rpiw.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$nama_kawasan', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/report_rpiw.php', 84)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/report_rpiw.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('pages/report_rpiw', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('pages/report_rpiw', [...])
+ 6 APPPATH/Controllers/Rpiw.php(163): App\Libraries\Template->load('/templates/main', 'pages/report_rpiw', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-10-11 03:00:40 --> mysqli_sql_exception: In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'sipro2024.mp.provinsi'; this is incompatible with sql_mode=only_full_group_by in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `mp`.`pr...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `mp`.`pr...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `mp`.`pr...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `mp`.`pr...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Rpiw/ProgramRpiwModel.php(77): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php(146): App\Models\Rpiw\ProgramRpiwModel->getReportProgram(NULL, NULL, NULL)
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-10-11 03:00:40 --> CodeIgniter\Database\Exceptions\DatabaseException: In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'sipro2024.mp.provinsi'; this is incompatible with sql_mode=only_full_group_by
+[Method: GET, Route: Repot]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`, COUNT(mrp.id_program) AS total_program, SUM(mrp.biaya) AS total_anggaran
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mpe`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`', [], false)
+ 2 APPPATH/Models/Rpiw/ProgramRpiwModel.php(77): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Rpiw.php(146): App\Models\Rpiw\ProgramRpiwModel->getReportProgram(null, null, null)
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-11 03:00:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'sipro2024.mp.provinsi'; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`, COUNT(mrp.id_program) AS total_program, SUM(mrp.biaya) AS total_anggaran
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mpe`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`, COUNT(mrp.id_program) AS total_program, SUM(mrp.biaya) AS total_anggaran
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mpe`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`, COUNT(mrp.id_program) AS total_program, SUM(mrp.biaya) AS total_anggaran
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mpe`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`', [], false)
+ 4 APPPATH/Models/Rpiw/ProgramRpiwModel.php(77): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Rpiw.php(146): App\Models\Rpiw\ProgramRpiwModel->getReportProgram(null, null, null)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-11 03:00:40 --> [Caused by] mysqli_sql_exception: In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'sipro2024.mp.provinsi'; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`, COUNT(mrp.id_program) AS total_program, SUM(mrp.biaya) AS total_anggaran
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mpe`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`, COUNT(mrp.id_program) AS total_program, SUM(mrp.biaya) AS total_anggaran
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mpe`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`, COUNT(mrp.id_program) AS total_program, SUM(mrp.biaya) AS total_anggaran
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mpe`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`, COUNT(mrp.id_program) AS total_program, SUM(mrp.biaya) AS total_anggaran
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mpe`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`', [], false)
+ 5 APPPATH/Models/Rpiw/ProgramRpiwModel.php(77): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Rpiw.php(146): App\Models\Rpiw\ProgramRpiwModel->getReportProgram(null, null, null)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-11 03:01:52 --> ErrorException: Undefined property: stdClass::$nama_program
+[Method: GET, Route: Repot]
+in APPPATH/Views/pages/report_rpiw.php on line 85.
+ 1 APPPATH/Views/pages/report_rpiw.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$nama_program', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/report_rpiw.php', 85)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/report_rpiw.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('pages/report_rpiw', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('pages/report_rpiw', [...])
+ 6 APPPATH/Controllers/Rpiw.php(163): App\Libraries\Template->load('/templates/main', 'pages/report_rpiw', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-11 03:02:56 --> ErrorException: Undefined property: stdClass::$Pendanaan
+[Method: GET, Route: Repot]
+in APPPATH/Views/pages/report_rpiw.php on line 85.
+ 1 APPPATH/Views/pages/report_rpiw.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$Pendanaan', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/report_rpiw.php', 85)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/report_rpiw.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('pages/report_rpiw', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('pages/report_rpiw', [...])
+ 6 APPPATH/Controllers/Rpiw.php(163): App\Libraries\Template->load('/templates/main', 'pages/report_rpiw', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+ERROR - 2024-10-11 03:09:24 --> mysqli_sql_exception: Unknown column 'm_rpiw_program.id_provinsi' in 'where clause' in /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `mp`.`pr...', 0)
+#1 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `mp`.`pr...')
+#2 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `mp`.`pr...')
+#3 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `mp`.`pr...', Array, false)
+#4 /Applications/MAMP/htdocs/sipro24/app/Models/Rpiw/ProgramRpiwModel.php(78): CodeIgniter\Database\BaseBuilder->get()
+#5 /Applications/MAMP/htdocs/sipro24/app/Controllers/Rpiw.php(146): App\Models\Rpiw\ProgramRpiwModel->getReportProgram('12', '', '')
+#6 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+#7 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+#8 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Applications/MAMP/htdocs/sipro24/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 /Applications/MAMP/htdocs/sipro24/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Applications/M...')
+#13 {main}
+CRITICAL - 2024-10-11 03:09:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm_rpiw_program.id_provinsi' in 'where clause'
+[Method: POST, Route: Report_Rpiw]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`, COUNT(mrp.id_program) AS total_program, SUM(mrp.biaya) AS total_anggaran
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mpe`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`
+WHERE `m_rpiw_program`.`id_provinsi` = :m_rpiw_program.id_provinsi:
+GROUP BY `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`', [...], false)
+ 2 APPPATH/Models/Rpiw/ProgramRpiwModel.php(78): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH/Controllers/Rpiw.php(146): App\Models\Rpiw\ProgramRpiwModel->getReportProgram('12', '', '')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-11 03:09:24 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm_rpiw_program.id_provinsi' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`, COUNT(mrp.id_program) AS total_program, SUM(mrp.biaya) AS total_anggaran
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mpe`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`
+WHERE `m_rpiw_program`.`id_provinsi` = \'12\'
+GROUP BY `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`, COUNT(mrp.id_program) AS total_program, SUM(mrp.biaya) AS total_anggaran
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mpe`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`
+WHERE `m_rpiw_program`.`id_provinsi` = \'12\'
+GROUP BY `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`, COUNT(mrp.id_program) AS total_program, SUM(mrp.biaya) AS total_anggaran
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mpe`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`
+WHERE `m_rpiw_program`.`id_provinsi` = :m_rpiw_program.id_provinsi:
+GROUP BY `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`', [...], false)
+ 4 APPPATH/Models/Rpiw/ProgramRpiwModel.php(78): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH/Controllers/Rpiw.php(146): App\Models\Rpiw\ProgramRpiwModel->getReportProgram('12', '', '')
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-11 03:09:24 --> [Caused by] mysqli_sql_exception: Unknown column 'm_rpiw_program.id_provinsi' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`, COUNT(mrp.id_program) AS total_program, SUM(mrp.biaya) AS total_anggaran
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mpe`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`
+WHERE `m_rpiw_program`.`id_provinsi` = \'12\'
+GROUP BY `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`, COUNT(mrp.id_program) AS total_program, SUM(mrp.biaya) AS total_anggaran
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mpe`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`
+WHERE `m_rpiw_program`.`id_provinsi` = \'12\'
+GROUP BY `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`, COUNT(mrp.id_program) AS total_program, SUM(mrp.biaya) AS total_anggaran
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mpe`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`
+WHERE `m_rpiw_program`.`id_provinsi` = \'12\'
+GROUP BY `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`, COUNT(mrp.id_program) AS total_program, SUM(mrp.biaya) AS total_anggaran
+FROM `m_rpiw_program` as `mrp`
+LEFT JOIN `m_provinsi` as `mp` ON `mrp`.`id_provinsi` = `mp`.`id`
+LEFT JOIN `m_unor` as `mu` ON `mrp`.`id_unor` = `mu`.`id`
+LEFT JOIN `m_pendanaan` as `mpe` ON `mrp`.`id_pendanaan` = `mpe`.`id_pendanaan`
+LEFT JOIN `m_satuan` as `ms` ON `mrp`.`id_satuan` = `ms`.`id_satuan`
+LEFT JOIN `r_program_kawasan` as `rpk` ON `mrp`.`id_program` = `rpk`.`kode_program`
+LEFT JOIN `m_kawasan` as `mk` ON `rpk`.`kode_kawasan` = `mk`.`kode_kawasan`
+WHERE `m_rpiw_program`.`id_provinsi` = :m_rpiw_program.id_provinsi:
+GROUP BY `mp`.`provinsi`, `mu`.`unor`, `mpe`.`sumber_pendanaan`, `mrp`.`tagging_mp`, `mk`.`nama_kawasan`', [...], false)
+ 5 APPPATH/Models/Rpiw/ProgramRpiwModel.php(78): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH/Controllers/Rpiw.php(146): App\Models\Rpiw\ProgramRpiwModel->getReportProgram('12', '', '')
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-11 03:18:17 --> Error: Class "App\Controllers\PendanaanModelModel" not found
+[Method: POST, Route: Report_Rpiw]
+in APPPATH/Controllers/Rpiw.php on line 28.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Rpiw->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')
+CRITICAL - 2024-10-11 03:18:38 --> ErrorException: Undefined array key "id"
+[Method: POST, Route: Report_Rpiw]
+in APPPATH/Views/pages/report_rpiw.php on line 46.
+ 1 APPPATH/Views/pages/report_rpiw.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', '/Applications/MAMP/htdocs/sipro24/app/Views/pages/report_rpiw.php', 46)
+ 2 SYSTEMPATH/View/View.php(234): include('/Applications/MAMP/htdocs/sipro24/app/Views/pages/report_rpiw.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('pages/report_rpiw', [], true)
+ 5 APPPATH/Libraries/Template.php(104): view('pages/report_rpiw', [...])
+ 6 APPPATH/Controllers/Rpiw.php(169): App\Libraries\Template->load('/templates/main', 'pages/report_rpiw', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Rpiw->report()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rpiw))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Applications/MAMP/htdocs/sipro24/public/index.php')

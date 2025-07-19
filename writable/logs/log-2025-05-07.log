@@ -1,0 +1,1293 @@
+CRITICAL - 2025-05-07 09:50:11 --> ErrorException: Undefined property: stdClass::$tematik
+[Method: GET, Route: unor/detail_program_fkb/API-FKB-71-04-0001]
+in APPPATH\Views\pages\konreg\unor\program_fkb_detail.php on line 106.
+ 1 APPPATH\Views\pages\konreg\unor\program_fkb_detail.php(106): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$tematik', 'C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\unor\\program_fkb_detail.php', 106)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\sipro24\\app\\Views\\pages\\konreg\\unor\\program_fkb_detail.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('/pages/konreg/unor/program_fkb_detail', [], true)
+ 5 APPPATH\Libraries\Template.php(104): view('/pages/konreg/unor/program_fkb_detail', [...])
+ 6 APPPATH\Controllers\KonregController.php(693): App\Libraries\Template->load('/templates/main', '/pages/konreg/unor/program_fkb_detail', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->unor_programFkbDetail('API-FKB-71-04-0001')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-05-07 09:55:14 --> mysqli_sql_exception: Unknown column 'm_ro.kdsatuan' in 'on clause' in C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `fkb`.*,...', 0)
+#1 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `fkb`.*,...')
+#2 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `fkb`.*,...')
+#3 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `fkb`.*,...', Array, false)
+#4 C:\xampp\htdocs\sipro24\app\Models\Konreg\UnorFkbModel.php(96): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sipro24\app\Controllers\KonregController.php(686): App\Models\Konreg\UnorFkbModel->getProgramFkbById('API-FKB-71-04-0...')
+#6 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\KonregController->unor_programFkbDetail('API-FKB-71-04-0...')
+#7 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+#8 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sipro24\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-05-07 09:55:14 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm_ro.kdsatuan' in 'on clause'
+[Method: GET, Route: unor/detail_program_fkb/API-FKB-71-04-0001]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `fkb`.*, `m_tematik`.`tematik`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_ro`.`kdsatuan`, `m_ro`.`nmro`, `m_program`.`kdprogram`, `m_program`.`nmprogram`, `m_provinsi`.*, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `k_kegiatan_baru_temp_api` as `fkb`
+LEFT JOIN `m_provinsi` ON `fkb`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `fkb`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `fkb`.`id_pembiayaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_ro`.`kdsatuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `m_program` ON `fkb`.`id_unor` = `m_program`.`id_unor`
+LEFT JOIN `m_kegiatan` ON `fkb`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `fkb`.`kd_kro` = `m_kro`.`kdkro`
+LEFT JOIN `m_ro` ON `fkb`.`kd_ro` = `m_ro`.`kdro`
+LEFT JOIN `m_tematik` ON `fkb`.`id_tematik` = `m_tematik`.`id_tematik`
+WHERE `fkb`.`id_fkb` = :fkb.id_fkb:', [...], false)
+ 2 APPPATH\Models\Konreg\UnorFkbModel.php(96): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\KonregController.php(686): App\Models\Konreg\UnorFkbModel->getProgramFkbById('API-FKB-71-04-0001')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->unor_programFkbDetail('API-FKB-71-04-0001')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 09:55:14 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm_ro.kdsatuan' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `fkb`.*, `m_tematik`.`tematik`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_ro`.`kdsatuan`, `m_ro`.`nmro`, `m_program`.`kdprogram`, `m_program`.`nmprogram`, `m_provinsi`.*, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `k_kegiatan_baru_temp_api` as `fkb`
+LEFT JOIN `m_provinsi` ON `fkb`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `fkb`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `fkb`.`id_pembiayaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_ro`.`kdsatuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `m_program` ON `fkb`.`id_unor` = `m_program`.`id_unor`
+LEFT JOIN `m_kegiatan` ON `fkb`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `fkb`.`kd_kro` = `m_kro`.`kdkro`
+LEFT JOIN `m_ro` ON `fkb`.`kd_ro` = `m_ro`.`kdro`
+LEFT JOIN `m_tematik` ON `fkb`.`id_tematik` = `m_tematik`.`id_tematik`
+WHERE `fkb`.`id_fkb` = \'API-FKB-71-04-0001\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `fkb`.*, `m_tematik`.`tematik`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_ro`.`kdsatuan`, `m_ro`.`nmro`, `m_program`.`kdprogram`, `m_program`.`nmprogram`, `m_provinsi`.*, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `k_kegiatan_baru_temp_api` as `fkb`
+LEFT JOIN `m_provinsi` ON `fkb`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `fkb`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `fkb`.`id_pembiayaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_ro`.`kdsatuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `m_program` ON `fkb`.`id_unor` = `m_program`.`id_unor`
+LEFT JOIN `m_kegiatan` ON `fkb`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `fkb`.`kd_kro` = `m_kro`.`kdkro`
+LEFT JOIN `m_ro` ON `fkb`.`kd_ro` = `m_ro`.`kdro`
+LEFT JOIN `m_tematik` ON `fkb`.`id_tematik` = `m_tematik`.`id_tematik`
+WHERE `fkb`.`id_fkb` = \'API-FKB-71-04-0001\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `fkb`.*, `m_tematik`.`tematik`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_ro`.`kdsatuan`, `m_ro`.`nmro`, `m_program`.`kdprogram`, `m_program`.`nmprogram`, `m_provinsi`.*, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `k_kegiatan_baru_temp_api` as `fkb`
+LEFT JOIN `m_provinsi` ON `fkb`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `fkb`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `fkb`.`id_pembiayaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_ro`.`kdsatuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `m_program` ON `fkb`.`id_unor` = `m_program`.`id_unor`
+LEFT JOIN `m_kegiatan` ON `fkb`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `fkb`.`kd_kro` = `m_kro`.`kdkro`
+LEFT JOIN `m_ro` ON `fkb`.`kd_ro` = `m_ro`.`kdro`
+LEFT JOIN `m_tematik` ON `fkb`.`id_tematik` = `m_tematik`.`id_tematik`
+WHERE `fkb`.`id_fkb` = :fkb.id_fkb:', [...], false)
+ 4 APPPATH\Models\Konreg\UnorFkbModel.php(96): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\KonregController.php(686): App\Models\Konreg\UnorFkbModel->getProgramFkbById('API-FKB-71-04-0001')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->unor_programFkbDetail('API-FKB-71-04-0001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 09:55:14 --> [Caused by] mysqli_sql_exception: Unknown column 'm_ro.kdsatuan' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `fkb`.*, `m_tematik`.`tematik`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_ro`.`kdsatuan`, `m_ro`.`nmro`, `m_program`.`kdprogram`, `m_program`.`nmprogram`, `m_provinsi`.*, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `k_kegiatan_baru_temp_api` as `fkb`
+LEFT JOIN `m_provinsi` ON `fkb`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `fkb`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `fkb`.`id_pembiayaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_ro`.`kdsatuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `m_program` ON `fkb`.`id_unor` = `m_program`.`id_unor`
+LEFT JOIN `m_kegiatan` ON `fkb`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `fkb`.`kd_kro` = `m_kro`.`kdkro`
+LEFT JOIN `m_ro` ON `fkb`.`kd_ro` = `m_ro`.`kdro`
+LEFT JOIN `m_tematik` ON `fkb`.`id_tematik` = `m_tematik`.`id_tematik`
+WHERE `fkb`.`id_fkb` = \'API-FKB-71-04-0001\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `fkb`.*, `m_tematik`.`tematik`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_ro`.`kdsatuan`, `m_ro`.`nmro`, `m_program`.`kdprogram`, `m_program`.`nmprogram`, `m_provinsi`.*, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `k_kegiatan_baru_temp_api` as `fkb`
+LEFT JOIN `m_provinsi` ON `fkb`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `fkb`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `fkb`.`id_pembiayaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_ro`.`kdsatuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `m_program` ON `fkb`.`id_unor` = `m_program`.`id_unor`
+LEFT JOIN `m_kegiatan` ON `fkb`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `fkb`.`kd_kro` = `m_kro`.`kdkro`
+LEFT JOIN `m_ro` ON `fkb`.`kd_ro` = `m_ro`.`kdro`
+LEFT JOIN `m_tematik` ON `fkb`.`id_tematik` = `m_tematik`.`id_tematik`
+WHERE `fkb`.`id_fkb` = \'API-FKB-71-04-0001\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `fkb`.*, `m_tematik`.`tematik`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_ro`.`kdsatuan`, `m_ro`.`nmro`, `m_program`.`kdprogram`, `m_program`.`nmprogram`, `m_provinsi`.*, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `k_kegiatan_baru_temp_api` as `fkb`
+LEFT JOIN `m_provinsi` ON `fkb`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `fkb`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `fkb`.`id_pembiayaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_ro`.`kdsatuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `m_program` ON `fkb`.`id_unor` = `m_program`.`id_unor`
+LEFT JOIN `m_kegiatan` ON `fkb`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `fkb`.`kd_kro` = `m_kro`.`kdkro`
+LEFT JOIN `m_ro` ON `fkb`.`kd_ro` = `m_ro`.`kdro`
+LEFT JOIN `m_tematik` ON `fkb`.`id_tematik` = `m_tematik`.`id_tematik`
+WHERE `fkb`.`id_fkb` = \'API-FKB-71-04-0001\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `fkb`.*, `m_tematik`.`tematik`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_ro`.`kdsatuan`, `m_ro`.`nmro`, `m_program`.`kdprogram`, `m_program`.`nmprogram`, `m_provinsi`.*, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `k_kegiatan_baru_temp_api` as `fkb`
+LEFT JOIN `m_provinsi` ON `fkb`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `fkb`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `fkb`.`id_pembiayaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_ro`.`kdsatuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `m_program` ON `fkb`.`id_unor` = `m_program`.`id_unor`
+LEFT JOIN `m_kegiatan` ON `fkb`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `fkb`.`kd_kro` = `m_kro`.`kdkro`
+LEFT JOIN `m_ro` ON `fkb`.`kd_ro` = `m_ro`.`kdro`
+LEFT JOIN `m_tematik` ON `fkb`.`id_tematik` = `m_tematik`.`id_tematik`
+WHERE `fkb`.`id_fkb` = :fkb.id_fkb:', [...], false)
+ 5 APPPATH\Models\Konreg\UnorFkbModel.php(96): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\KonregController.php(686): App\Models\Konreg\UnorFkbModel->getProgramFkbById('API-FKB-71-04-0001')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->unor_programFkbDetail('API-FKB-71-04-0001')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-05-07 09:55:52 --> mysqli_sql_exception: Unknown column 'm_ro.kdsatuan' in 'on clause' in C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `fkb`.*,...', 0)
+#1 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `fkb`.*,...')
+#2 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `fkb`.*,...')
+#3 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `fkb`.*,...', Array, false)
+#4 C:\xampp\htdocs\sipro24\app\Models\Konreg\UnorFkbModel.php(96): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sipro24\app\Controllers\KonregController.php(686): App\Models\Konreg\UnorFkbModel->getProgramFkbById('API-FKB-71-04-0...')
+#6 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\KonregController->unor_programFkbDetail('API-FKB-71-04-0...')
+#7 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+#8 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sipro24\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-05-07 09:55:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm_ro.kdsatuan' in 'on clause'
+[Method: GET, Route: unor/detail_program_fkb/API-FKB-71-04-0001]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `fkb`.*, `m_tematik`.`tematik`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_ro`.`kdsatuan`, `m_ro`.`nmro`, `m_program`.`kdprogram`, `m_program`.`nmprogram`, `m_provinsi`.*, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `k_kegiatan_baru_temp_api` as `fkb`
+LEFT JOIN `m_provinsi` ON `fkb`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `fkb`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `fkb`.`id_pembiayaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_ro`.`kdsatuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `m_program` ON `fkb`.`id_unor` = `m_program`.`id_unor`
+LEFT JOIN `m_kegiatan` ON `fkb`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `fkb`.`kd_kro` = `m_kro`.`kdkro`
+LEFT JOIN `m_ro` ON `fkb`.`kd_ro` = `m_ro`.`kdro`
+LEFT JOIN `m_tematik` ON `fkb`.`id_tematik` = `m_tematik`.`id_tematik`
+WHERE `fkb`.`id_fkb` = :fkb.id_fkb:', [...], false)
+ 2 APPPATH\Models\Konreg\UnorFkbModel.php(96): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\KonregController.php(686): App\Models\Konreg\UnorFkbModel->getProgramFkbById('API-FKB-71-04-0001')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->unor_programFkbDetail('API-FKB-71-04-0001')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 09:55:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'm_ro.kdsatuan' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `fkb`.*, `m_tematik`.`tematik`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_ro`.`kdsatuan`, `m_ro`.`nmro`, `m_program`.`kdprogram`, `m_program`.`nmprogram`, `m_provinsi`.*, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `k_kegiatan_baru_temp_api` as `fkb`
+LEFT JOIN `m_provinsi` ON `fkb`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `fkb`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `fkb`.`id_pembiayaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_ro`.`kdsatuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `m_program` ON `fkb`.`id_unor` = `m_program`.`id_unor`
+LEFT JOIN `m_kegiatan` ON `fkb`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `fkb`.`kd_kro` = `m_kro`.`kdkro`
+LEFT JOIN `m_ro` ON `fkb`.`kd_ro` = `m_ro`.`kdro`
+LEFT JOIN `m_tematik` ON `fkb`.`id_tematik` = `m_tematik`.`id_tematik`
+WHERE `fkb`.`id_fkb` = \'API-FKB-71-04-0001\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `fkb`.*, `m_tematik`.`tematik`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_ro`.`kdsatuan`, `m_ro`.`nmro`, `m_program`.`kdprogram`, `m_program`.`nmprogram`, `m_provinsi`.*, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `k_kegiatan_baru_temp_api` as `fkb`
+LEFT JOIN `m_provinsi` ON `fkb`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `fkb`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `fkb`.`id_pembiayaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_ro`.`kdsatuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `m_program` ON `fkb`.`id_unor` = `m_program`.`id_unor`
+LEFT JOIN `m_kegiatan` ON `fkb`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `fkb`.`kd_kro` = `m_kro`.`kdkro`
+LEFT JOIN `m_ro` ON `fkb`.`kd_ro` = `m_ro`.`kdro`
+LEFT JOIN `m_tematik` ON `fkb`.`id_tematik` = `m_tematik`.`id_tematik`
+WHERE `fkb`.`id_fkb` = \'API-FKB-71-04-0001\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `fkb`.*, `m_tematik`.`tematik`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_ro`.`kdsatuan`, `m_ro`.`nmro`, `m_program`.`kdprogram`, `m_program`.`nmprogram`, `m_provinsi`.*, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `k_kegiatan_baru_temp_api` as `fkb`
+LEFT JOIN `m_provinsi` ON `fkb`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `fkb`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `fkb`.`id_pembiayaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_ro`.`kdsatuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `m_program` ON `fkb`.`id_unor` = `m_program`.`id_unor`
+LEFT JOIN `m_kegiatan` ON `fkb`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `fkb`.`kd_kro` = `m_kro`.`kdkro`
+LEFT JOIN `m_ro` ON `fkb`.`kd_ro` = `m_ro`.`kdro`
+LEFT JOIN `m_tematik` ON `fkb`.`id_tematik` = `m_tematik`.`id_tematik`
+WHERE `fkb`.`id_fkb` = :fkb.id_fkb:', [...], false)
+ 4 APPPATH\Models\Konreg\UnorFkbModel.php(96): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\KonregController.php(686): App\Models\Konreg\UnorFkbModel->getProgramFkbById('API-FKB-71-04-0001')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->unor_programFkbDetail('API-FKB-71-04-0001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 09:55:52 --> [Caused by] mysqli_sql_exception: Unknown column 'm_ro.kdsatuan' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `fkb`.*, `m_tematik`.`tematik`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_ro`.`kdsatuan`, `m_ro`.`nmro`, `m_program`.`kdprogram`, `m_program`.`nmprogram`, `m_provinsi`.*, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `k_kegiatan_baru_temp_api` as `fkb`
+LEFT JOIN `m_provinsi` ON `fkb`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `fkb`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `fkb`.`id_pembiayaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_ro`.`kdsatuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `m_program` ON `fkb`.`id_unor` = `m_program`.`id_unor`
+LEFT JOIN `m_kegiatan` ON `fkb`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `fkb`.`kd_kro` = `m_kro`.`kdkro`
+LEFT JOIN `m_ro` ON `fkb`.`kd_ro` = `m_ro`.`kdro`
+LEFT JOIN `m_tematik` ON `fkb`.`id_tematik` = `m_tematik`.`id_tematik`
+WHERE `fkb`.`id_fkb` = \'API-FKB-71-04-0001\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `fkb`.*, `m_tematik`.`tematik`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_ro`.`kdsatuan`, `m_ro`.`nmro`, `m_program`.`kdprogram`, `m_program`.`nmprogram`, `m_provinsi`.*, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `k_kegiatan_baru_temp_api` as `fkb`
+LEFT JOIN `m_provinsi` ON `fkb`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `fkb`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `fkb`.`id_pembiayaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_ro`.`kdsatuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `m_program` ON `fkb`.`id_unor` = `m_program`.`id_unor`
+LEFT JOIN `m_kegiatan` ON `fkb`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `fkb`.`kd_kro` = `m_kro`.`kdkro`
+LEFT JOIN `m_ro` ON `fkb`.`kd_ro` = `m_ro`.`kdro`
+LEFT JOIN `m_tematik` ON `fkb`.`id_tematik` = `m_tematik`.`id_tematik`
+WHERE `fkb`.`id_fkb` = \'API-FKB-71-04-0001\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `fkb`.*, `m_tematik`.`tematik`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_ro`.`kdsatuan`, `m_ro`.`nmro`, `m_program`.`kdprogram`, `m_program`.`nmprogram`, `m_provinsi`.*, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `k_kegiatan_baru_temp_api` as `fkb`
+LEFT JOIN `m_provinsi` ON `fkb`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `fkb`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `fkb`.`id_pembiayaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_ro`.`kdsatuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `m_program` ON `fkb`.`id_unor` = `m_program`.`id_unor`
+LEFT JOIN `m_kegiatan` ON `fkb`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `fkb`.`kd_kro` = `m_kro`.`kdkro`
+LEFT JOIN `m_ro` ON `fkb`.`kd_ro` = `m_ro`.`kdro`
+LEFT JOIN `m_tematik` ON `fkb`.`id_tematik` = `m_tematik`.`id_tematik`
+WHERE `fkb`.`id_fkb` = \'API-FKB-71-04-0001\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `fkb`.*, `m_tematik`.`tematik`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_ro`.`kdsatuan`, `m_ro`.`nmro`, `m_program`.`kdprogram`, `m_program`.`nmprogram`, `m_provinsi`.*, `m_unor`.`unor`, `m_pendanaan`.`sumber_pendanaan`, `m_satuan`.`nama_satuan`
+FROM `k_kegiatan_baru_temp_api` as `fkb`
+LEFT JOIN `m_provinsi` ON `fkb`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `fkb`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_pendanaan` ON `fkb`.`id_pembiayaan` = `m_pendanaan`.`id_pendanaan`
+LEFT JOIN `m_satuan` ON `m_ro`.`kdsatuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `m_program` ON `fkb`.`id_unor` = `m_program`.`id_unor`
+LEFT JOIN `m_kegiatan` ON `fkb`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `fkb`.`kd_kro` = `m_kro`.`kdkro`
+LEFT JOIN `m_ro` ON `fkb`.`kd_ro` = `m_ro`.`kdro`
+LEFT JOIN `m_tematik` ON `fkb`.`id_tematik` = `m_tematik`.`id_tematik`
+WHERE `fkb`.`id_fkb` = :fkb.id_fkb:', [...], false)
+ 5 APPPATH\Models\Konreg\UnorFkbModel.php(96): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\KonregController.php(686): App\Models\Konreg\UnorFkbModel->getProgramFkbById('API-FKB-71-04-0001')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->unor_programFkbDetail('API-FKB-71-04-0001')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 11:05:12 --> BadMethodCallException: Call to undefined method App\Models\Api\ApiRakortekModel::getdata
+[Method: POST, Route: tempRakortek/filter_data]
+in SYSTEMPATH\Model.php on line 932.
+ 1 APPPATH\Controllers\KonregController.php(100): CodeIgniter\Model->__call('getdata', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->filter_dataRakortek()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-05-07 22:55:59 --> mysqli_sql_exception: Unknown column 'k_pro_p.kd_prog' in 'on clause' in C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT DISTINCT...', 0)
+#1 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT...')
+#2 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT...')
+#3 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT...', Array, false)
+#4 C:\xampp\htdocs\sipro24\app\Models\Api\ApiRakortekModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sipro24\app\Controllers\KonregController.php(96): App\Models\Api\ApiRakortekModel->getProgram('', '')
+#6 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\KonregController->filter_dataRakortek()
+#7 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+#8 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sipro24\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-05-07 22:55:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'k_pro_p.kd_prog' in 'on clause'
+[Method: POST, Route: Rakortek/filter_data]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`', [], false)
+ 2 APPPATH\Models\Api\ApiRakortekModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\KonregController.php(96): App\Models\Api\ApiRakortekModel->getProgram('', '')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->filter_dataRakortek()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 22:55:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'k_pro_p.kd_prog' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`', [], false)
+ 4 APPPATH\Models\Api\ApiRakortekModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\KonregController.php(96): App\Models\Api\ApiRakortekModel->getProgram('', '')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->filter_dataRakortek()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 22:55:59 --> [Caused by] mysqli_sql_exception: Unknown column 'k_pro_p.kd_prog' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`', [], false)
+ 5 APPPATH\Models\Api\ApiRakortekModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\KonregController.php(96): App\Models\Api\ApiRakortekModel->getProgram('', '')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->filter_dataRakortek()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-05-07 22:56:10 --> mysqli_sql_exception: Unknown column 'k_pro_p.kd_prog' in 'on clause' in C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT DISTINCT...', 0)
+#1 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT...')
+#2 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT...')
+#3 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT...', Array, false)
+#4 C:\xampp\htdocs\sipro24\app\Models\Api\ApiRakortekModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sipro24\app\Controllers\KonregController.php(96): App\Models\Api\ApiRakortekModel->getProgram('', '')
+#6 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\KonregController->filter_dataRakortek()
+#7 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+#8 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sipro24\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-05-07 22:56:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'k_pro_p.kd_prog' in 'on clause'
+[Method: POST, Route: Rakortek/filter_data]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`', [], false)
+ 2 APPPATH\Models\Api\ApiRakortekModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\KonregController.php(96): App\Models\Api\ApiRakortekModel->getProgram('', '')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->filter_dataRakortek()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 22:56:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'k_pro_p.kd_prog' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`', [], false)
+ 4 APPPATH\Models\Api\ApiRakortekModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\KonregController.php(96): App\Models\Api\ApiRakortekModel->getProgram('', '')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->filter_dataRakortek()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 22:56:10 --> [Caused by] mysqli_sql_exception: Unknown column 'k_pro_p.kd_prog' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`', [], false)
+ 5 APPPATH\Models\Api\ApiRakortekModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\KonregController.php(96): App\Models\Api\ApiRakortekModel->getProgram('', '')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->filter_dataRakortek()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-05-07 22:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-07 22:57:12 --> [DEPRECATED] Optional parameter $catatan_bpiw declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 22:57:12 --> [DEPRECATED] Optional parameter $catatan_unor declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 22:57:12 --> [DEPRECATED] Optional parameter $catatan_desk2 declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 22:57:12 --> [DEPRECATED] Optional parameter $desk declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-05-07 22:57:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-07 22:57:15 --> [DEPRECATED] Optional parameter $catatan_bpiw declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 22:57:15 --> [DEPRECATED] Optional parameter $catatan_unor declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 22:57:15 --> [DEPRECATED] Optional parameter $catatan_desk2 declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 22:57:15 --> [DEPRECATED] Optional parameter $desk declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-05-07 22:57:15 --> mysqli_sql_exception: Unknown column 'k_pro_p.kd_prog' in 'on clause' in C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT DISTINCT...', 0)
+#1 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT...')
+#2 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT...')
+#3 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT...', Array, false)
+#4 C:\xampp\htdocs\sipro24\app\Models\Api\ApiRakortekModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sipro24\app\Controllers\KonregController.php(96): App\Models\Api\ApiRakortekModel->getProgram('', '')
+#6 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\KonregController->filter_dataRakortek()
+#7 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+#8 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sipro24\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-05-07 22:57:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'k_pro_p.kd_prog' in 'on clause'
+[Method: POST, Route: Rakortek/filter_data]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`', [], false)
+ 2 APPPATH\Models\Api\ApiRakortekModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\KonregController.php(96): App\Models\Api\ApiRakortekModel->getProgram('', '')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->filter_dataRakortek()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 22:57:15 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'k_pro_p.kd_prog' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`', [], false)
+ 4 APPPATH\Models\Api\ApiRakortekModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\KonregController.php(96): App\Models\Api\ApiRakortekModel->getProgram('', '')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->filter_dataRakortek()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 22:57:15 --> [Caused by] mysqli_sql_exception: Unknown column 'k_pro_p.kd_prog' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`', [], false)
+ 5 APPPATH\Models\Api\ApiRakortekModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\KonregController.php(96): App\Models\Api\ApiRakortekModel->getProgram('', '')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->filter_dataRakortek()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-05-07 22:57:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-07 22:57:54 --> [DEPRECATED] Optional parameter $catatan_bpiw declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 22:57:54 --> [DEPRECATED] Optional parameter $catatan_unor declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 22:57:54 --> [DEPRECATED] Optional parameter $catatan_desk2 declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 22:57:54 --> [DEPRECATED] Optional parameter $desk declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-05-07 22:57:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-07 22:57:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-07 22:57:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-07 22:58:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-07 22:58:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-07 22:59:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-07 22:59:01 --> [DEPRECATED] Optional parameter $catatan_bpiw declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 22:59:01 --> [DEPRECATED] Optional parameter $catatan_unor declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 22:59:01 --> [DEPRECATED] Optional parameter $catatan_desk2 declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 22:59:01 --> [DEPRECATED] Optional parameter $desk declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-05-07 22:59:01 --> mysqli_sql_exception: Unknown column 'k_pro_p.kd_prog' in 'on clause' in C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT DISTINCT...', 0)
+#1 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT...')
+#2 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT...')
+#3 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT...', Array, false)
+#4 C:\xampp\htdocs\sipro24\app\Models\Api\ApiRakortekModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sipro24\app\Controllers\KonregController.php(96): App\Models\Api\ApiRakortekModel->getProgram(NULL, NULL)
+#6 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\KonregController->filter_dataRakortek()
+#7 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+#8 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sipro24\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sipro24\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-05-07 22:59:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'k_pro_p.kd_prog' in 'on clause'
+[Method: GET, Route: Rakortek/filter_data]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`', [], false)
+ 2 APPPATH\Models\Api\ApiRakortekModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\KonregController.php(96): App\Models\Api\ApiRakortekModel->getProgram(null, null)
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->filter_dataRakortek()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 22:59:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'k_pro_p.kd_prog' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`', [], false)
+ 4 APPPATH\Models\Api\ApiRakortekModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\KonregController.php(96): App\Models\Api\ApiRakortekModel->getProgram(null, null)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->filter_dataRakortek()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-07 22:59:01 --> [Caused by] mysqli_sql_exception: Unknown column 'k_pro_p.kd_prog' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT DISTINCT `rkt`.*, `k_pn`.`nama_pn`, `k_pp`.`nama_pp`, `k_kp`.`nama_kp`, `k_pro_p`.`nama_prop`, `m_provinsi`.*, `m_unor`.`unor`, `m_satuan`.`nama_satuan`, `m_kegiatan`.`nmgiat`, `m_kro`.`nmkro`, `m_program`.`nmprogram`
+FROM `k_rakortek_api` as `rkt`
+LEFT JOIN `m_provinsi` ON `rkt`.`id_provinsi` = `m_provinsi`.`id`
+LEFT JOIN `m_unor` ON `rkt`.`id_unor` = `m_unor`.`id`
+LEFT JOIN `m_satuan` ON `rkt`.`id_satuan` = `m_satuan`.`id_satuan`
+LEFT JOIN `k_pn` ON `rkt`.`id_pn` = `k_pn`.`id_pn`
+LEFT JOIN `k_pp` ON `rkt`.`id_pp` = `k_pp`.`id_pp`
+LEFT JOIN `k_kp` ON `rkt`.`id_kp` = `k_kp`.`id_kp`
+LEFT JOIN `k_pro_p` ON `rkt`.`id_prop` = `k_pro_p`.`id_prop`
+LEFT JOIN `m_program` ON `k_pro_p`.`kd_prog` = `m_program`.`kdprogram`
+LEFT JOIN `m_kegiatan` ON `k_pro_p`.`kd_kgiat` = `m_kegiatan`.`kdgiat`
+LEFT JOIN `m_kro` ON `k_pro_p`.`kd_kro` = `m_kro`.`kdkro`', [], false)
+ 5 APPPATH\Models\Api\ApiRakortekModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\KonregController.php(96): App\Models\Api\ApiRakortekModel->getProgram(null, null)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KonregController->filter_dataRakortek()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KonregController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-05-07 23:05:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-07 23:05:57 --> [DEPRECATED] Optional parameter $catatan_bpiw declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 23:05:57 --> [DEPRECATED] Optional parameter $catatan_unor declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 23:05:57 --> [DEPRECATED] Optional parameter $catatan_desk2 declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 23:05:57 --> [DEPRECATED] Optional parameter $desk declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-05-07 23:06:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-07 23:06:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-07 23:06:05 --> [DEPRECATED] Optional parameter $catatan_bpiw declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 23:06:05 --> [DEPRECATED] Optional parameter $catatan_unor declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 23:06:05 --> [DEPRECATED] Optional parameter $catatan_desk2 declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 23:06:05 --> [DEPRECATED] Optional parameter $desk declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-05-07 23:06:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-07 23:06:08 --> [DEPRECATED] Optional parameter $catatan_bpiw declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 23:06:08 --> [DEPRECATED] Optional parameter $catatan_unor declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 23:06:09 --> [DEPRECATED] Optional parameter $catatan_desk2 declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 23:06:09 --> [DEPRECATED] Optional parameter $desk declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-05-07 23:12:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-07 23:12:08 --> [DEPRECATED] Optional parameter $catatan_bpiw declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 23:12:08 --> [DEPRECATED] Optional parameter $catatan_unor declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 23:12:08 --> [DEPRECATED] Optional parameter $catatan_desk2 declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 23:12:08 --> [DEPRECATED] Optional parameter $desk declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-05-07 23:14:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-07 23:14:15 --> [DEPRECATED] Optional parameter $catatan_bpiw declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 23:14:15 --> [DEPRECATED] Optional parameter $catatan_unor declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 23:14:15 --> [DEPRECATED] Optional parameter $catatan_desk2 declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 23:14:15 --> [DEPRECATED] Optional parameter $desk declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-05-07 23:14:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-05-07 23:14:19 --> [DEPRECATED] Optional parameter $catatan_bpiw declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 23:14:19 --> [DEPRECATED] Optional parameter $catatan_unor declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 23:14:19 --> [DEPRECATED] Optional parameter $catatan_desk2 declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-05-07 23:14:19 --> [DEPRECATED] Optional parameter $desk declared before required parameter $id_pendanaan is implicitly treated as a required parameter in APPPATH\Models\Memorandum\ProgramModel.php on line 112.
+ 1 VENDORPATH\composer\ClassLoader.php(576): include('C:\\xampp\\htdocs\\sipro24\\vendor\\codeigniter4\\framework\\system\\Debug\\Exceptions.php')
+ 2 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\xampp\\htdocs\\sipro24\\vendor\\composer/../../app/Models/Memorandum/ProgramModel.php')
+ 3 APPPATH\Controllers\KonregController.php(65): Composer\Autoload\ClassLoader->loadClass('App\\Models\\Memorandum\\ProgramModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\KonregController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
