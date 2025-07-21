@@ -1,0 +1,4 @@
+# CodeIgniter 4
+/writable/cache
+/writable/logs
+*.log
