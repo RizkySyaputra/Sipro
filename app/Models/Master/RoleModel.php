@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class RoleModel extends Model
 {
-    protected $table = 'auth_groups';
+    protected $table = 'm_role';
     protected $allowedFields = ['id', 'name'];
     protected $useTimestamps  = 'true';
 

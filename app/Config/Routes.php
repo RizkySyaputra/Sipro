@@ -12,10 +12,15 @@ $routes->get('/program', 'Master::program', ['filter' => 'role:SuperAdmin']);
 $routes->get('/kegiatan', 'Master::kawasan', ['filter' => 'role:SuperAdmin']);
 $routes->get('/kro', 'Master::kro', ['filter' => 'role:SuperAdmin']);
 $routes->get('/ro', 'Master::ro', ['filter' => 'role:SuperAdmin']);
-$routes->get('/user', 'Master::user', ['filter' => 'role:SuperAdmin']);
+$routes->get('/user', 'Master::user', ['filter' => 'role:SUPER ADMIN']);
 $routes->get('/delete-user/(:segment)', 'Master::delete_user/$1', ['filter' => 'role:SuperAdmin']);
-$routes->post('/update-user', 'Master::update_user', ['filter' => 'role:SuperAdmin']);
+$routes->post('/update-user', 'Master::update_user');
 $routes->get('/provinsi', 'Master::provinsi');
+$routes->get('/role', 'RoleController::index');
+$routes->get('/role/permission/(:segment)', 'RoleController::permission/$1');
+$routes->get('/role/edit_permission/(:num)', 'RoleController::editPermission/$1');
+$routes->post('role/updatePermission/(:num)', 'RoleController::updatePermission/$1');
+
 // $routes->get('/login', 'Login::index');
 $routes->get('/form', 'Master::form', ['filter' => 'role:SuperAdmin']);
 

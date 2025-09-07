@@ -75,7 +75,7 @@
                     <div class=" row mb-3">
                         <div class="col-sm-3 font-weight-bold"><strong> KRO</strong></div>
                         <div class="col-sm-9">
-                            <input type="text" name="nama_prop" class="form-control" disabled value="<?= $usulan->nmkro; ?>" required>
+                            <input type="text" name="nama_prop" class="form-control" disabled value="<?= $usulan->nm_kro; ?>" required>
                         </div>
                     </div>
                     <div class="row mb-3">

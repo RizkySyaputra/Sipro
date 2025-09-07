@@ -61,7 +61,7 @@ class FkbModel extends Model
     public function getProgram($id_provinsi, $id_unor, $kesepakatan, $sumber = null)
     {
         $builder = $this->db->table('k_kegiatan_baru as fkb');
-        $builder->select('fkb.*,m_tematik.tematik,m_kegiatan.nmgiat , m_kro.nmkro, m_ro.nmro, m_program.kdprogram, m_program.nmprogram,m_kawasan.nama_kawasan, m_program.kdprogram, m_program.nmprogram, m_provinsi.*, m_unor.unor, m_pendanaan.sumber_pendanaan, m_satuan.nama_satuan,  ');
+        $builder->select('fkb.*,m_tematik.tematik,m_kegiatan.nmgiat , m_kro.nm_kro, m_ro.nmro, m_program.kdprogram, m_program.nmprogram,m_kawasan.nama_kawasan, m_program.kdprogram, m_program.nmprogram, m_provinsi.*, m_unor.unor, m_pendanaan.sumber_pendanaan, m_satuan.nama_satuan,  ');
         $builder->join('m_provinsi', 'fkb.id_provinsi = m_provinsi.id', 'left');
         $builder->join('m_unor', 'fkb.id_unor = m_unor.id', 'left');
         $builder->join('m_pendanaan', 'fkb.id_pembiayaan = m_pendanaan.id_pendanaan', 'left');
@@ -92,7 +92,7 @@ class FkbModel extends Model
     public function getProgramFkbById($id_fkb)
     {
         $builder = $this->db->table('k_kegiatan_baru as fkb');
-        $builder->select('fkb.*,m_tematik.tematik,m_kegiatan.nmgiat ,m_kabkot.kab_kot, m_kro.nmkro, m_ro.nmro, m_program.kdprogram, m_program.nmprogram, m_provinsi.*, m_unor.unor, m_pendanaan.sumber_pendanaan, m_satuan.nama_satuan ');
+        $builder->select('fkb.*,m_tematik.tematik,m_kegiatan.nmgiat ,m_kabkot.kab_kot, m_kro.nm_kro, m_ro.nmro, m_program.kdprogram, m_program.nmprogram, m_provinsi.*, m_unor.unor, m_pendanaan.sumber_pendanaan, m_satuan.nama_satuan ');
         $builder->join('m_provinsi', 'fkb.id_provinsi = m_provinsi.id', 'left');
         $builder->join('m_unor', 'fkb.id_unor = m_unor.id', 'left');
         $builder->join('m_pendanaan', 'fkb.id_pembiayaan = m_pendanaan.id_pendanaan', 'left');
@@ -110,7 +110,7 @@ class FkbModel extends Model
     public function getProgramFkbById_sumber($id_sumber)
     {
         $builder = $this->db->table('k_kegiatan_baru as fkb');
-        $builder->select('fkb.*,m_tematik.tematik,m_kegiatan.nmgiat , m_kro.nmkro, m_ro.nmro, m_program.kdprogram, m_program.nmprogram, m_provinsi.*, m_unor.unor, m_pendanaan.sumber_pendanaan, m_satuan.nama_satuan ');
+        $builder->select('fkb.*,m_tematik.tematik,m_kegiatan.nmgiat , m_kro.nm_kro, m_ro.nmro, m_program.kdprogram, m_program.nmprogram, m_provinsi.*, m_unor.unor, m_pendanaan.sumber_pendanaan, m_satuan.nama_satuan ');
         $builder->join('m_provinsi', 'fkb.id_provinsi = m_provinsi.id', 'left');
         $builder->join('m_unor', 'fkb.id_unor = m_unor.id', 'left');
         $builder->join('m_pendanaan', 'fkb.id_pembiayaan = m_pendanaan.id_pendanaan', 'left');
@@ -127,7 +127,7 @@ class FkbModel extends Model
     public function getProgramFKB($id_provinsi, $id_unor, $kesepakatan, $sumber = null)
     {
         $builder = $this->db->table('k_kegiatan_baru as fkb');
-        $builder->select('fkb.*,m_tematik.tematik,m_kegiatan.nmgiat , m_kro.nmkro, m_ro.nmro, m_program.kdprogram, m_program.nmprogram,m_kawasan.nama_kawasan, m_program.kdprogram, m_program.nmprogram, m_provinsi.*, m_unor.unor, m_pendanaan.sumber_pendanaan, m_satuan.nama_satuan,  ');
+        $builder->select('fkb.*,m_tematik.tematik,m_kegiatan.nmgiat , m_kro.nm_kro, m_ro.nmro, m_program.kdprogram, m_program.nmprogram,m_kawasan.nama_kawasan, m_program.kdprogram, m_program.nmprogram, m_provinsi.*, m_unor.unor, m_pendanaan.sumber_pendanaan, m_satuan.nama_satuan,  ');
         $builder->join('m_provinsi', 'fkb.id_provinsi = m_provinsi.id', 'left');
         $builder->join('m_unor', 'fkb.id_unor = m_unor.id', 'left');
         $builder->join('m_pendanaan', 'fkb.id_pembiayaan = m_pendanaan.id_pendanaan', 'left');
@@ -160,7 +160,7 @@ class FkbModel extends Model
     public function getProgramFKBLampiran($id_provinsi, $id_unor, $kesepakatan, $sumber = null)
     {
         $builder = $this->db->table('k_kegiatan_baru as fkb');
-        $builder->select('fkb.*,m_tematik.tematik,m_kegiatan.nmgiat , m_kro.nmkro, m_ro.nmro, m_program.kdprogram, m_program.nmprogram,m_kawasan.nama_kawasan, m_program.kdprogram, m_program.nmprogram, m_provinsi.*, m_unor.unor, m_pendanaan.sumber_pendanaan, m_satuan.nama_satuan,  ');
+        $builder->select('fkb.*,m_tematik.tematik,m_kegiatan.nmgiat , m_kro.nm_kro, m_ro.nmro, m_program.kdprogram, m_program.nmprogram,m_kawasan.nama_kawasan, m_program.kdprogram, m_program.nmprogram, m_provinsi.*, m_unor.unor, m_pendanaan.sumber_pendanaan, m_satuan.nama_satuan,  ');
         $builder->join('m_provinsi', 'fkb.id_provinsi = m_provinsi.id', 'left');
         $builder->join('m_unor', 'fkb.id_unor = m_unor.id', 'left');
         $builder->join('m_pendanaan', 'fkb.id_pembiayaan = m_pendanaan.id_pendanaan', 'left');

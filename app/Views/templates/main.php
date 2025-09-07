@@ -219,7 +219,7 @@
                             <p> Dashboard </p>
                         </a>
                     </li> -->
-                    <?php if (in_groups('SuperAdmin')) : ?>
+                    <?php if (in_groups('SUPER ADMIN')) : ?>
                         <li class="nav-item menu-main">
                             <a class="nav-link" data-toggle="collapse" href="#master">
                                 <i class="material-icons">source</i>
@@ -269,7 +269,7 @@
                             </div>
                         </li>
                     <?php endif ?>
-                    <?php if (in_groups('SuperAdmin') || in_groups('Rakorbangwil')) : ?>
+                    <?php if (in_groups('SUPER ADMIN') || in_groups('Rakorbangwil')) : ?>
                         <li class="nav-item menu-main">
                             <a class="nav-link" data-toggle="collapse" href="#rpiw">
                                 <i class="material-icons">source</i>
@@ -297,12 +297,7 @@
                                             <span class="sidebar-normal"> Laporan </span>
                                         </a>
                                     </li>
-                                    <!-- <li class="nav-item ">
-                                    <a class="nav-link" href="/leaflet-draw">
-                                        <span class="sidebar-mini"> T </span>
-                                        <span class="sidebar-normal"> Tagging </span>
-                                    </a>
-                                </li> -->
+
                                 </ul>
                             </div>
                         </li>
@@ -422,7 +417,7 @@
                             </div>
                         </li>
                     <?php endif ?>
-                    <?php if (in_groups('SuperAdmin') || in_groups('Konreg') || in_groups('Staff')) : ?>
+                    <?php if (in_groups('SUPER ADMIN') || in_groups('Konreg') || in_groups('Staff')) : ?>
                         <?php if (!in_groups('Staff')) : ?>
                             <li class="nav-item menu-main">
                                 <a class="nav-link" data-toggle="collapse" href="#konreg">

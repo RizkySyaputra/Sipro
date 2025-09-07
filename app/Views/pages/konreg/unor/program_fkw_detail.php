@@ -39,7 +39,7 @@ foreach ($p_fkw as $p_fkw) : ?>
                     <div class="row mb-3">
                         <div class="col-sm-3 font-weight-bold">KRO</div>
                         <div class="col-sm-9">
-                            <?= $p_fkw->kd_kro . " " . $p_fkw->nmkro; ?>
+                            <?= $p_fkw->kd_kro . " " . $p_fkw->nm_kro; ?>
                         </div>
                     </div>
                     <div class="row mb-3">

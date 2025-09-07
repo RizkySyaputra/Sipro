@@ -137,7 +137,7 @@ foreach ($p_memo as $p_memo) : ?>
                     <div class="row mb-3">
                         <div class="col-sm-3 font-weight-bold">KRO</div>
                         <div class="col-sm-9">
-                            <?= in_array($jenis_data, ['fkw', 'fkb']) ? $konreg->kd_kro . " " . $konreg->nmkro : "" ?>
+                            <?= in_array($jenis_data, ['fkw', 'fkb']) ? $konreg->kd_kro . " " . $konreg->nm_kro : "" ?>
                         </div>
                     </div>
                     <div class="row mb-3">

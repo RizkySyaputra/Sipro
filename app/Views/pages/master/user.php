@@ -38,8 +38,8 @@
                                     <td><?= $user->username; ?></td>
                                     <td><?= $user->name; ?></td>
                                     <td class="text-center">
-                                        <button class="btn btn-warning btn-sm" onclick="openUpdateRoleModal('<?= $user->user_id; ?>', '<?= $user->name; ?>')">Update</button>
-                                        <button class="btn btn-danger btn-sm" onclick="confirmDelete('<?= $user->user_id;; ?>')">Delete</button>
+                                        <button class="btn btn-warning btn-sm" onclick="openUpdateRoleModal('<?= $user->id_user; ?>', '<?= $user->name; ?>')">Edit</button>
+                                        <button class="btn btn-danger btn-sm" onclick="confirmDelete('<?= $user->id_user; ?>')">Delete</button>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -144,7 +144,7 @@
 
     function updateRole(userId, newRoleId) {
         $.ajax({
-            url: '<?= base_url('/update-user')?>', // URL untuk update role
+            url: '<?= base_url('/update-user') ?>', // URL untuk update role
             type: 'POST',
             data: {
                 id: userId,
@@ -174,7 +174,7 @@
         $('#confirmDeleteModal').modal('show');
         document.getElementById('confirmDeleteButton').onclick = function() {
             $.ajax({
-                url: '<?= base_url('/delete-user/')?>' + id,
+                url: '<?= base_url('/delete-user/') ?>' + id,
                 type: 'GET',
                 success: function(response) {
                     location.reload(); // Refresh halaman setelah sukses
