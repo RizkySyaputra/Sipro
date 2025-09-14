@@ -87,10 +87,13 @@ class Master extends BaseController
     }
     public function user()
     {
+        $id_role = user()->id_role;
         $data = [
             'user' => $this->userModel->getUser(),
-            'role' => $this->roleModel->getRole()
+            'role' => $this->roleModel->getRole(),
+            'can_view' => has_permission($id_role, '/user', 'view')
         ];
+
         $this->template->write('title', 'Master User');
         $this->template->load('/templates/main', '/pages/master/user', $data);
     }

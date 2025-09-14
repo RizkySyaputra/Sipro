@@ -7,23 +7,45 @@ use CodeIgniter\Model;
 class MenuModel extends Model
 {
     protected $table = 'm_menu';
-    protected $allowedFields = ['id_menu', 'nama_menu', 'parent_id', 'link', 'level', 'id_tipe', 'tipe', 'is_active'];
-    protected $useTimestamps  = 'true';
-    // public function getMenubyParent($parent_id)
-    // {
-    //     $builder = $this->db->table('m_menu as menu');
-    //     $builder->select('menu.*');
-    //     $builder->where('parent_id', $parent_id);
-    //     $query = $builder->get();
-    //     return $query->getResult();
-    // }
-    // public function getMenubyRole()
-    // {
-    //     $builder = $this->db->table('users as users');
-    //     $builder->select('users.*,  auth_groups_users.*, auth_groups.*');
-    //     $builder->join('auth_groups_users', 'users.id = auth_groups_users.user_id', 'left');
-    //     $builder->join('auth_groups', 'auth_groups_users.group_id = auth_groups.id', 'left');
-    //     $query = $builder->get();
-    //     return $query->getResult();
-    // }
+    protected $primaryKey = 'id_menu';
+    protected $allowedFields = [
+        'id_menu',
+        'nama_menu',
+        'parent_id',
+        'link',
+        'level',
+        'id_tipe',
+        'tipe',
+        'is_active'
+    ];
+    protected $useTimestamps = true;
+
+    public function getAllMenu()
+    {
+        return $this->orderBy('id_menu', 'ASC')->findAll();
+    }
+
+    public function getMenuTreeByRole($role_id, $parent_id = 0)
+    {
+        $builder = $this->db->table('m_menu m')
+            ->select('m.*, p.can_view, p.can_edit, p.can_delete')
+            ->join('m_permission p', 'p.id_menu = m.id_menu')
+            ->where('p.id_role', $role_id)
+            ->where('p.can_view', 1)
+            ->where('m.parent_id', $parent_id)
+            ->where('m.is_active', 1)
+            ->orderBy('m.id_menu', 'ASC')
+            ->get()->getResultArray();
+
+        $tree = [];
+        foreach ($builder as $row) {
+            $children = $this->getMenuTreeByRole($role_id, $row['id_menu']);
+            if ($children) {
+                $row['children'] = $children;
+            }
+            $tree[] = $row;
+        }
+
+        return $tree;
+    }
 }

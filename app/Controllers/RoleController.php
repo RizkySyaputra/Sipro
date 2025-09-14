@@ -12,36 +12,53 @@ class RoleController extends BaseController
     {
         $roleModel = new RoleModel();
         $data['roles'] = $roleModel->findAll();
-        return view('pages/master/role/role', $data);
+        $this->template->write('title', 'Kategori User');
+        $this->template->load('/templates/main', '/pages/master/role/role', $data);
     }
 
     public function permission($role_id)
     {
+        $id_role = user()->id_role;
         $permModel = new PermissionModel();
-        $data['permissions'] = $permModel->getPermissionsByRole($role_id);
-
-        return view('pages/master/role/role_permission', $data);
+        $menuModel = new MenuModel();
+        $menus = $menuModel->orderBy('parent_id ASC, id_menu ASC')->where('m_menu.is_active', 1)->findAll();
+        $permissions = $permModel->getPermissionsByRole($role_id);
+        $permMap = [];
+        foreach ($permissions as $p) {
+            $permMap[$p['id_menu']] = $p;
+        }
+        $data = [
+            'permMap' => $permMap,
+            'id_role' => $role_id,
+            'can_view' => has_permission($id_role, '/role', 'view'),
+            'menus' => $menus
+        ];
+        $this->template->write('title', 'Pengaturan Menu');
+        $this->template->load('/templates/main', '/pages/master/role/role_permission', $data);
     }
 
     public function editPermission($role_id)
     {
         $menuModel = new MenuModel();
         $permModel = new PermissionModel();
-
-        $menus = $menuModel->orderBy('parent_id ASC, id_menu ASC')->findAll();
-        $permissions = $permModel->where('id_role', $role_id)->findAll();
+        $id_role = user()->id_role;
+        $menus = $menuModel->orderBy('parent_id ASC, id_menu ASC')->where('m_menu.is_active', 1)->findAll();
+        $permissions = $permModel->getPermissionsByRole($role_id);
 
         // Format: [menu_id => [can_view, can_edit, can_delete]]
         $permMap = [];
         foreach ($permissions as $p) {
             $permMap[$p['id_menu']] = $p;
         }
-
-        return view('pages/master/role/edit_permission', [
+        $data = [
             'role_id' => $role_id,
             'menus' => $menus,
             'permMap' => $permMap,
-        ]);
+            'can_edit' => has_permission($id_role, '/role', 'edit')
+        ];
+
+        $this->template->write('title', 'Pengaturan Akses');
+        $this->template->load('/templates/main', '/pages/master/role/edit_permission', $data);
     }
 
     public function updatePermission($role_id)

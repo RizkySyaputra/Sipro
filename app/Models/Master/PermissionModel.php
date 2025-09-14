@@ -12,9 +12,10 @@ class PermissionModel extends Model
 
     public function getPermissionsByRole($role_id)
     {
-        return $this->select('m_permission.*, m_menu.nama_menu as nama_menu')
+        return $this->select('m_permission.*, m_menu.nama_menu as nama_menu, m_menu.parent_id')
             ->join('m_menu', 'm_menu.id_menu = m_permission.id_menu')
             ->where('id_role', $role_id)
+            ->where('m_menu.is_active', 1)
             ->findAll();
     }
 }

@@ -239,6 +239,8 @@ class Auth extends BaseConfig
      */
     public $silent = false;
 
+
+
     /**
      * --------------------------------------------------------------------
      * Encryption Algorithm to Use
