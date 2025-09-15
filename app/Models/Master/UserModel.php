@@ -16,6 +16,7 @@ class UserModel extends Model
         $builder = $this->db->table('users as users');
         $builder->select('users.id as id_user, users.username, users.id_role, m_role.*');
         $builder->join('m_role', 'users.id_role = m_role.id', 'left');
+        $builder->orderBy('users.id');
         $query = $builder->get();
         return $query->getResult();
     }
