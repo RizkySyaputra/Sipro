@@ -19,19 +19,23 @@ class RoleController extends BaseController
     public function permission($role_id)
     {
         $id_role = user()->id_role;
+        $roleModel = new RoleModel();
         $permModel = new PermissionModel();
         $menuModel = new MenuModel();
+        $role = $roleModel->where('id', $id_role)->first();
         $menus = $menuModel->orderBy('parent_id ASC, id_menu ASC')->where('m_menu.is_active', 1)->findAll();
         $permissions = $permModel->getPermissionsByRole($role_id);
         $permMap = [];
         foreach ($permissions as $p) {
             $permMap[$p['id_menu']] = $p;
         }
+
         $data = [
             'permMap' => $permMap,
             'id_role' => $role_id,
             'can_view' => has_permission($id_role, '/role', 'view'),
-            'menus' => $menus
+            'menus' => $menus,
+            'role' => $role
         ];
         $this->template->write('title', 'Pengaturan Menu');
         $this->template->load('/templates/main', '/pages/master/role/role_permission', $data);
@@ -41,10 +45,11 @@ class RoleController extends BaseController
     {
         $menuModel = new MenuModel();
         $permModel = new PermissionModel();
+        $roleModel = new RoleModel();
         $id_role = user()->id_role;
         $menus = $menuModel->orderBy('parent_id ASC, id_menu ASC')->where('m_menu.is_active', 1)->findAll();
         $permissions = $permModel->getPermissionsByRole($role_id);
-
+        $role = $roleModel->where('id', $id_role)->first();
         // Format: [menu_id => [can_view, can_edit, can_delete]]
         $permMap = [];
         foreach ($permissions as $p) {
@@ -54,7 +59,8 @@ class RoleController extends BaseController
             'role_id' => $role_id,
             'menus' => $menus,
             'permMap' => $permMap,
-            'can_edit' => has_permission($id_role, '/role', 'edit')
+            'can_edit' => has_permission($id_role, '/role', 'edit'),
+            'role' => $role
         ];
 
         $this->template->write('title', 'Pengaturan Akses');

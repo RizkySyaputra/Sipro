@@ -14,7 +14,7 @@ $routes->get('/kro', 'Master::kro', ['filter' => 'permission']);
 $routes->get('/ro', 'Master::ro', ['filter' => 'permission']);
 $routes->get('/user', 'Master::user', ['filter' => 'permission']);
 $routes->get('/delete-user/(:segment)', 'Master::delete_user/$1', ['filter' => 'permission:delete']);
-$routes->post('/update-user', 'Master::update_user', ['filter' => 'permission:edit']);
+$routes->post('/update-user', 'Master::update_user');
 $routes->get('/provinsi', 'Master::provinsi');
 $routes->get('/role', 'RoleController::index');
 $routes->get('/menu', 'MenuController::index');

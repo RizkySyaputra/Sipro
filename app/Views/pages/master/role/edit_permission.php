@@ -66,7 +66,8 @@ function renderEditPermissions($menus, $permMap, $parent_id = 0, &$group = 0, $g
                 <div class="card-icon">
                     <i class="material-icons">tune</i>
                 </div>
-                <h4 class="card-title mb-0 ml-2">Atur Akses Role</h4>
+                <h4 class="card-title mb-0 ml-2">Atur Akses Role <?= $role['name']; ?></h4>
+                </h4>
             </div>
             <div class="card-body">
                 <form method="post" action="<?= site_url('role/updatePermission/' . $role_id) ?>">
