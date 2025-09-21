@@ -16,7 +16,7 @@ class Auth extends BaseConfig
      *
      * @var string
      */
-    public $defaultUserGroup = 'Konreg';
+    public $defaultUserGroup = 'DESK KONREG';
 
     /**
      * --------------------------------------------------------------------

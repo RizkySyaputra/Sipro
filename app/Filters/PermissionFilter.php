@@ -15,7 +15,6 @@ class PermissionFilter implements FilterInterface
 
         $roleId = user()->id_role;
         if (!$roleId) {
-            d($roleId);
             return redirect()->to('/forbidden');
         }
 

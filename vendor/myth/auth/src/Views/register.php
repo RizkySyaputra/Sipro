@@ -6,7 +6,7 @@
         <div class="col-sm-6 offset-sm-3">
 
             <div class="card">
-                <h2 class="card-header"><?= lang('Auth.register') ?></h2>
+                <h2 class="card-header">Tambah Akun</h2>
                 <div class="card-body">
 
                     <?= view('Myth\Auth\Views\_message_block') ?>
@@ -25,7 +25,10 @@
                             <label for="username"><?= lang('Auth.username') ?></label>
                             <input type="text" class="form-control <?php if (session('errors.username')) : ?>is-invalid<?php endif ?>" name="username" placeholder="<?= lang('Auth.username') ?>" value="<?= old('username') ?>">
                         </div>
-
+                        <div class="form-group">
+                            <label for="user"><?= lang('User') ?></label>
+                            <input type="text" class="form-control <?php if (session('errors.user')) : ?>is-invalid<?php endif ?>" name="user" placeholder="<?= lang('user') ?>" value="<?= old('user') ?>">
+                        </div>
                         <div class="form-group">
                             <label for="password"><?= lang('Auth.password') ?></label>
                             <input type="password" name="password" class="form-control <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="<?= lang('Auth.password') ?>" autocomplete="off">
@@ -58,12 +61,12 @@
 
                         <br>
 
-                        <button type="submit" class="btn btn-primary btn-block"><?= lang('Auth.register') ?></button>
+                        <button type="submit" class="btn btn-primary btn-block">Buat Akun</button>
                     </form>
 
                     <hr>
 
-                    <p><?= lang('Auth.alreadyRegistered') ?> <a href="<?= url_to('login') ?>"><?= lang('Auth.signIn') ?></a></p>
+                    <!-- <p><?= lang('Auth.alreadyRegistered') ?> <a href="<?= url_to('login') ?>"><?= lang('Auth.signIn') ?></a></p> -->
                 </div>
             </div>
 

@@ -173,6 +173,7 @@ class AuthController extends Controller
         $rules = config('Validation')->registrationRules ?? [
             'username'     => 'required|alpha_numeric_space|min_length[3]|max_length[30]|is_unique[users.username]',
             'email'        => 'required|valid_email|is_unique[users.email]',
+            'user'        => 'required|alpha_numeric_space|min_length[3]|max_length[30]|is_unique[users.username]',
             'id_provinsi'  => 'permit_empty|integer',
             'id_unor'      => 'permit_empty|integer',
         ];
@@ -192,7 +193,7 @@ class AuthController extends Controller
         }
 
         // Ambil input yang diperbolehkan
-        $allowedPostFields = array_merge(['password', 'id_provinsi', 'id_unor'], $this->config->validFields, $this->config->personalFields);
+        $allowedPostFields = array_merge(['password', 'id_provinsi', 'id_unor', 'user'], $this->config->validFields, $this->config->personalFields);
         $postData = $this->request->getPost($allowedPostFields);
 
         // Buat instance User
@@ -222,10 +223,10 @@ class AuthController extends Controller
                 return redirect()->back()->withInput()->with('error', $activator->error() ?? lang('Auth.unknownError'));
             }
 
-            return redirect()->route('login')->with('message', lang('Auth.activationSuccess'));
+            return redirect()->route('user')->with('message', lang('Auth.activationSuccess'));
         }
 
-        return redirect()->route('login')->with('message', lang('Auth.registerSuccess'));
+        return redirect()->route('user')->with('message', lang('Auth.registerSuccess'));
     }
 
 

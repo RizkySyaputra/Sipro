@@ -38,7 +38,7 @@ function renderMenuTree(array $tree)
         } else {
             $html .= '
                 <li class="nav-item">
-                    <a class="nav-link" href="' . base_url($menu['link'] ?? '#') . '">
+                    <a class="nav-link"  href="' . base_url($menu['link'] ?? '#') . '">
                         <i class="material-icons">arrow_right</i>
                         <span class="sidebar-normal">' . esc($menu['nama_menu']) . '</span>
                     </a>

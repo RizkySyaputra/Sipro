@@ -1,12 +1,20 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card">
-            <div class="card-header card-header-primary card-header-icon">
-                <div class="card-icon">
-                    <i class="material-icons">source</i>
+            <div class="card-header card-header-primary card-header-icon d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <div class="card-icon">
+                        <i class="material-icons">source</i>
+                    </div>
+                    <h4 class="card-title mb-0">Data User</h4>
                 </div>
-                <h4 class="card-title">Data User</h4>
+
+                <!-- Tombol Buat Akun -->
+                <a href="<?= base_url('/register') ?>" class="btn btn-info btn-sm">
+                    <i class="material-icons">person_add</i> Buat Akun
+                </a>
             </div>
+
             <div class="card-body">
                 <div class="toolbar">
                     <!--        Here you can write extra buttons/actions for the toolbar              -->

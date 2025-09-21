@@ -201,69 +201,35 @@
         </div>
 
         <div class="main-panel">
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
-                <div class="container-fluid">
 
-                    <div class="collapse navbar-collapse justify-content-end">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#pablo">
-                                    <i class="material-icons">dashboard</i>
-                                    <p class="d-lg-none d-md-block">
-                                        Stats
-                                    </p>
-                                </a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="material-icons">person</i>
-                                    <p class="d-lg-none d-md-block">
-                                        Account
-                                    </p>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                                    <a class="dropdown-item" href="#">Profile</a>
-                                    <a class="dropdown-item" href="#">Settings</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Log out</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <!-- End Navbar -->
             <div class="content">
-                <div class="content">
 
-                    <?= isset($contents) ? $contents : null ?>
-                    <?= isset($_script) ? $_script : null ?>
+                <?= isset($contents) ? $contents : null ?>
+                <?= isset($_script) ? $_script : null ?>
+                <div class="container-fluid">
+                    <div class="row">
+                    </div>
+                </div>
+                <footer class="footer">
                     <div class="container-fluid">
-                        <div class="row">
+                        <nav class="float-left">
+                            <ul>
+                                <li>
+                                    <a href="https://www.bpiw.pu.go.id">
+                                        BPIW
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="copyright float-right">
+                            &copy;
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>, made with <i class="material-icons">favorite</i> by
+                            <a href="https://bpiw.pu.go.id" target="_blank">BPIW Tim</a> for a better web.
                         </div>
                     </div>
-                    <footer class="footer">
-                        <div class="container-fluid">
-                            <nav class="float-left">
-                                <ul>
-                                    <li>
-                                        <a href="https://www.bpiw.pu.go.id">
-                                            BPIW
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                            <div class="copyright float-right">
-                                &copy;
-                                <script>
-                                    document.write(new Date().getFullYear())
-                                </script>, made with <i class="material-icons">favorite</i> by
-                                <a href="https://bpiw.pu.go.id" target="_blank">BPIW Tim</a> for a better web.
-                            </div>
-                        </div>
-                    </footer>
-                </div>
+                </footer>
             </div>
 
             <!--   Core JS Files   -->
@@ -317,7 +283,7 @@
             <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
             <script src="<?= base_url('assets/js/plugins/jquery.dataTables.min.js') ?>"></script>
             <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
-            <script>
+            <!-- <script>
                 $(document).ready(function() {
                     // Mendapatkan URL saat ini
                     var currentUrl = window.location.pathname; // Menggunakan pathname untuk hanya mendapatkan bagian path
@@ -336,7 +302,7 @@
                         }
                     });
                 });
-            </script>
+            </script> -->
             <script>
                 $(document).ready(function() {
                     $().ready(function() {
@@ -612,26 +578,7 @@
                     });
                 });
             </script>
-            <script>
-                $(document).ready(function() {
-                    // Mendapatkan URL saat ini
-                    var currentUrl = window.location.pathname; // Menggunakan pathname untuk hanya mendapatkan bagian path
 
-                    // Memeriksa setiap link dalam sidebar
-                    $('.nav-link').each(function() {
-                        var linkUrl = $(this).attr('href');
-
-                        // Jika URL saat ini cocok dengan link
-                        if (currentUrl === linkUrl) {
-                            // Menambahkan kelas 'active' pada link yang cocok
-                            $(this).parents('.nav-item').addClass('active');
-
-                            // Jika link tersebut memiliki elemen collapsible, pastikan terbuka
-                            $(this).parents('.collapse').addClass('show');
-                        }
-                    });
-                });
-            </script>
             <script>
                 document.addEventListener("DOMContentLoaded", function() {
                     // Tampilkan loading pada saat DOM selesai dimuat
@@ -645,21 +592,15 @@
             </script>
             <script>
                 $(document).ready(function() {
-                    // Toggle submenu saat nav-link yang punya submenu diklik
                     $('.nav-link[data-toggle="collapse"]').on('click', function(e) {
-                        e.preventDefault();
                         let $this = $(this);
-                        let $submenu = $($this.attr('href')); // target collapse dari href="#id"
+                        let $submenu = $($this.attr('href'));
 
-                        if ($submenu.hasClass('show')) {
-                            // Jika sudah terbuka → tutup
-                            $submenu.collapse('hide');
-                        } else {
-                            // Tutup semua submenu lain dulu
+                        // Kalau submenu belum terbuka → tutup yang lain dulu
+                        if (!$submenu.hasClass('show')) {
                             $('.collapse.show').collapse('hide');
-                            // Buka submenu yang diklik
-                            $submenu.collapse('show');
                         }
+                        // Tidak perlu else, biar Bootstrap yang handle toggle buka/tutup
                     });
                 });
             </script>

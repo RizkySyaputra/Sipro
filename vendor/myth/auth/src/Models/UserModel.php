@@ -19,7 +19,9 @@ class UserModel extends Model
     protected $allowedFields  = [
         'email',
         'username',
+        'user',
         'password_hash',
+        'id_role',
         'reset_hash',
         'id_unor',
         'id_provinsi',
@@ -85,7 +87,7 @@ class UserModel extends Model
      */
     public function withGroup(string $groupName)
     {
-        $group = $this->db->table('auth_groups')->where('name', $groupName)->get()->getFirstRow();
+        $group = $this->db->table('m_role')->where('name', $groupName)->get()->getFirstRow();
 
         $this->assignGroup = $group->id;
 
