@@ -8,10 +8,20 @@ use App\Models\Master\MenuModel;
 
 class RoleController extends BaseController
 {
+    public function __construct()
+    {
+        helper('permission');
+    }
     public function index()
     {
+        $id_role = user()->id_role;
         $roleModel = new RoleModel();
-        $data['roles'] = $roleModel->findAll();
+        $data = [
+            'roles' => $roleModel->findAll(),
+            'can_view' => has_permission_menu($id_role, '/role', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/role', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/role', 'can_delete')
+        ];
         $this->template->write('title', 'Kategori User');
         $this->template->load('/templates/main', '/pages/master/role/role', $data);
     }
@@ -26,6 +36,7 @@ class RoleController extends BaseController
         $menus = $menuModel->orderBy('parent_id ASC, id_menu ASC')->where('m_menu.is_active', 1)->findAll();
         $permissions = $permModel->getPermissionsByRole($role_id);
         $permMap = [];
+
         foreach ($permissions as $p) {
             $permMap[$p['id_menu']] = $p;
         }
@@ -33,9 +44,11 @@ class RoleController extends BaseController
         $data = [
             'permMap' => $permMap,
             'id_role' => $role_id,
-            'can_view' => has_permission($id_role, '/role', 'view'),
             'menus' => $menus,
-            'role' => $role
+            'role' => $role,
+            'can_view' => has_permission_menu($id_role, '/role', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/role', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/role', 'can_delete')
         ];
         $this->template->write('title', 'Pengaturan Menu');
         $this->template->load('/templates/main', '/pages/master/role/role_permission', $data);
@@ -59,9 +72,12 @@ class RoleController extends BaseController
             'role_id' => $role_id,
             'menus' => $menus,
             'permMap' => $permMap,
-            'can_edit' => has_permission($id_role, '/role', 'edit'),
-            'role' => $role
+            'role' => $role,
+            'can_view' => has_permission_menu($id_role, '/role', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/role', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/role', 'can_delete')
         ];
+
 
         $this->template->write('title', 'Pengaturan Akses');
         $this->template->load('/templates/main', '/pages/master/role/edit_permission', $data);

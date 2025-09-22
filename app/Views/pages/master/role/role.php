@@ -37,7 +37,7 @@
                                     <td class="text-center">
                                         <a href="<?= site_url('role/permission/' . $role['id']) ?>" class="btn btn-info btn-sm">Lihat Akses</a>
                                         <!-- <a href="<?= site_url('role/edit_permission/' . $role['id']) ?>" class="btn btn-warning btn-sm">Edit Permission</a> -->
-                                        <button class="btn btn-danger btn-sm" onclick="confirmDeleteRole('<?= $role['id']; ?>')">Delete</button>
+                                        <?php if ($can_delete == true) : ?> <button class="btn btn-danger btn-sm" onclick="confirmDeleteRole('<?= $role['id']; ?>')">Delete</button><?php endif ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

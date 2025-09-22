@@ -10,9 +10,11 @@
                 </div>
 
                 <!-- Tombol Buat Akun -->
-                <a href="<?= base_url('/register') ?>" class="btn btn-info btn-sm">
-                    <i class="material-icons">person_add</i> Buat Akun
-                </a>
+                <?php if ($can_edit == true) : ?>
+                    <a href="<?= base_url('/register') ?>" class="btn btn-info btn-sm">
+                        <i class="material-icons">person_add</i> Buat Akun
+                    </a>
+                <?php endif ?>
             </div>
 
             <div class="card-body">
@@ -46,8 +48,8 @@
                                     <td><?= $user->username; ?></td>
                                     <td><?= $user->name; ?></td>
                                     <td class="text-center">
-                                        <button class="btn btn-warning btn-sm" onclick="openUpdateRoleModal('<?= $user->id_user; ?>', '<?= $user->name; ?>')">Edit</button>
-                                        <button class="btn btn-danger btn-sm" onclick="confirmDelete('<?= $user->id_user; ?>')">Delete</button>
+                                        <?php if ($can_edit == true) : ?><button class="btn btn-warning btn-sm" onclick="openUpdateRoleModal('<?= $user->id_user; ?>', '<?= $user->name; ?>')">Edit</button> <?php endif ?>
+                                        <?php if ($can_delete == true) : ?> <button class="btn btn-danger btn-sm" onclick="confirmDelete('<?= $user->id_user; ?>')">Delete</button> <?php endif ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

@@ -8,11 +8,16 @@ class MenuController extends BaseController
 {
     public function index()
     {
+        helper('permission');
+        $id_role = user()->id_role;
         $menuModel = new MenuModel();
         $menus = $menuModel->orderBy('parent_id ASC, id_menu ASC')->findAll();
 
         $data = [
             'menus' => $menus,
+            'can_view' => has_permission_menu($id_role, '/menu', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/menu', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/menu', 'can_delete')
         ];
 
         $this->template->write('title', 'Pengaturan Menu');

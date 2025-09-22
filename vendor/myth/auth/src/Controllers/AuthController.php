@@ -176,6 +176,7 @@ class AuthController extends Controller
             'user'        => 'required|alpha_numeric_space|min_length[3]|max_length[30]|is_unique[users.username]',
             'id_provinsi'  => 'permit_empty|integer',
             'id_unor'      => 'permit_empty|integer',
+            'id_role'      => 'required|permit_empty|integer',
         ];
 
         if (! $this->validate($rules)) {
@@ -193,7 +194,7 @@ class AuthController extends Controller
         }
 
         // Ambil input yang diperbolehkan
-        $allowedPostFields = array_merge(['password', 'id_provinsi', 'id_unor', 'user'], $this->config->validFields, $this->config->personalFields);
+        $allowedPostFields = array_merge(['password', 'id_provinsi', 'id_role', 'id_unor', 'user'], $this->config->validFields, $this->config->personalFields);
         $postData = $this->request->getPost($allowedPostFields);
 
         // Buat instance User

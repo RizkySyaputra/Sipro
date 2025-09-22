@@ -30,6 +30,8 @@ class Master extends BaseController
         $this->userModel = new UserModel();
         $this->provinsiModel = new ProvinsiModel();
         $this->roleModel = new RoleModel();
+
+        helper('permission');
     }
 
     public function index()
@@ -91,7 +93,9 @@ class Master extends BaseController
         $data = [
             'user' => $this->userModel->getUser(),
             'role' => $this->roleModel->getRole(),
-            'can_view' => has_permission($id_role, '/user', 'view')
+            'can_view' => has_permission_menu($id_role, '/user', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/user', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/user', 'can_delete')
         ];
 
         $this->template->write('title', 'Master User');

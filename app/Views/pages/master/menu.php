@@ -68,11 +68,13 @@ function renderMenuVisibility($menus, $parent_id = 0, &$group = 0, $groupColors 
                             </tbody>
                         </table>
                     </div>
-                    <div class="text-right mt-3">
-                        <button type="submit" class="btn btn-primary">
-                            <i class="material-icons">save</i> Simpan Perubahan
-                        </button>
-                    </div>
+                    <?php if ($can_edit == true) : ?>
+                        <div class="text-right mt-3">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="material-icons">save</i> Simpan Perubahan
+                            </button>
+                        <?php endif ?>
+                        </div>
                 </form>
             </div>
         </div>

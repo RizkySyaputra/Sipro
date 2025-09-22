@@ -23,6 +23,7 @@ abstract class BaseController extends Controller
     protected $template;
     protected $menuTree;
 
+
     /**
      * Helpers to be loaded automatically.
      *
