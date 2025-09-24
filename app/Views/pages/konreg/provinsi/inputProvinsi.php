@@ -101,7 +101,7 @@
                             <select name="kd_kro" class="form-control" id="select-kd_kro" <?= $limit; ?> required>
                                 <option value="" disabled selected>-- Pilih KRO --</option>
                                 <!-- <?php foreach ($kro as $item) : ?>
-                                    <option value="<?= $item['kdkro'] ?>"><?= $item['nmkro'] ?></option>
+                                    <option value="<?= $item['kdkro'] ?>"><?= $item['nm_kro'] ?></option>
                                 <?php endforeach; ?> -->
                             </select>
                         </div>
@@ -349,7 +349,7 @@
 
             //             var i = 1;
             //             $.each(response, function(index, kro) {
-            //                 $('#select-kd_kro').append('<option value="' + kro.kdkro + '">' + kro.kdkro + '. ' + kro.nmkro + '</option>');
+            //                 $('#select-kd_kro').append('<option value="' + kro.kdkro + '">' + kro.kdkro + '. ' + kro.nm_kro + '</option>');
             //                 i++;
             //             });
             //         },
@@ -578,7 +578,7 @@
                         $('#select-kd_kro').append('<option value="">-- Pilih KRO --</option>');
 
                         $.each(response, function(index, kro) {
-                            $('#select-kd_kro').append('<option value="' + kro.kdkro + '">' + kro.kdkro + '. ' + kro.nmkro + '</option>');
+                            $('#select-kd_kro').append('<option value="' + kro.kdkro + '">' + kro.kdkro + '. ' + kro.nm_kro + '</option>');
                         });
                     },
                     error: function() {

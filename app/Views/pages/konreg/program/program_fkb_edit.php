@@ -63,7 +63,7 @@ foreach ($p_fkb as $p_fkb) : ?>
                             <div class="col-sm-3 font-weight-bold">KRO</div>
                             <div class="col-sm-9">
                                 <select name="kd_kro" class="form-control" id="select-kd_kro" required>
-                                    <option value="<?= $p_fkb->kd_kro ?>" selected> <?= $p_fkb->kd_kro . " - " . $p_fkb->nmkro; ?></option>
+                                    <option value="<?= $p_fkb->kd_kro ?>" selected> <?= $p_fkb->kd_kro . " - " . $p_fkb->nm_kro; ?></option>
                                 </select>
                             </div>
                         </div>
@@ -403,7 +403,7 @@ endforeach ?>
                     $('#select-kd_ro').append('<option value="">-- Pilih RO --</option>');
 
                     $.each(response, function(index, kro) {
-                        $('#select-kd_kro').append('<option value="' + kro.kdkro + '">' + kro.kdkro + '. ' + kro.nmkro + '</option>');
+                        $('#select-kd_kro').append('<option value="' + kro.kdkro + '">' + kro.kdkro + '. ' + kro.nm_kro + '</option>');
                     });
                 },
                 error: function() {

@@ -16,7 +16,7 @@ class Auth extends BaseConfig
      *
      * @var string
      */
-    public $defaultUserGroup = 'Konreg';
+    public $defaultUserGroup = 'DESK KONREG';
 
     /**
      * --------------------------------------------------------------------
@@ -238,6 +238,8 @@ class Auth extends BaseConfig
      * @var bool
      */
     public $silent = false;
+
+
 
     /**
      * --------------------------------------------------------------------

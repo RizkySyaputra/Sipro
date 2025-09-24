@@ -794,7 +794,7 @@ class KonregController extends BaseController
             'ro' => $ro,
             'satuan' => $dataSatuan,
             'tematik' => $dataTematik,
-            'kabkot'     => model('App\Models\Master\KabkotModel')->where('provinsi', $id_provinsi)->findAll()
+            'kabkot'     => model('App\Models\Master\KabkotModel')->where('id_prov', $id_provinsi)->findAll()
         ];
         $this->template->add_css('https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css', 'link', false, true);
         $this->template->write('title', 'Detail Program Rakorbangwil');
@@ -922,7 +922,7 @@ class KonregController extends BaseController
             'satuan' => $dataSatuan,
             'tematik' => $dataTematik,
             'desk' => $desk,
-            'kabkot'   => model('App\Models\Master\KabkotModel')->where('provinsi', $id_provinsi)->findAll(),
+            'kabkot'   => model('App\Models\Master\KabkotModel')->where('id_prov', $id_provinsi)->findAll(),
         ];
 
         $this->template->add_css('https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css', 'link', false, true);
@@ -1281,7 +1281,7 @@ class KonregController extends BaseController
             $sheet->setCellValue('D' . $row, $program->tahun_diusulkan ?? '-');
             $sheet->setCellValue('E' . $row, $program->nmprogram ?? '-');
             $sheet->setCellValue('F' . $row, $program->nmgiat ?? '-');
-            $sheet->setCellValue('G' . $row, $program->nmkro ?? '-');
+            $sheet->setCellValue('G' . $row, $program->nm_kro ?? '-');
             $sheet->setCellValue('H' . $row, $program->nmro ?? '-');
             $sheet->setCellValue('I' . $row, $program->provinsi ?? '-');
             $sheet->setCellValue('J' . $row, $program->unor ?? '-');
@@ -1391,7 +1391,7 @@ class KonregController extends BaseController
             $sheet->setCellValue('D' . $row, $program->tahun_diusulkan ?? '-');
             $sheet->setCellValue('E' . $row, $program->nmprogram ?? '-');
             $sheet->setCellValue('F' . $row, $program->nmgiat ?? '-');
-            $sheet->setCellValue('G' . $row, $program->nmkro ?? '-');
+            $sheet->setCellValue('G' . $row, $program->nm_kro ?? '-');
             $sheet->setCellValue('H' . $row, $program->nmro ?? '-');
             $sheet->setCellValue('I' . $row, $program->provinsi ?? '-');
             $sheet->setCellValue('J' . $row, $program->unor ?? '-');
@@ -1769,7 +1769,7 @@ class KonregController extends BaseController
             'kegiatan'     => model('App\Models\Master\KegiatanModel')->findAll(),
             'kro'     => model('App\Models\Master\KroModel')->findAll(),
             'ro'     => model('App\Models\Master\RoModel')->findAll(),
-            'kabkot'     => model('App\Models\Master\KabkotModel')->where('provinsi', $dataRakortek[0]->id_provinsi)->findAll(),
+            'kabkot'     => model('App\Models\Master\KabkotModel')->where('id_prov', $dataRakortek[0]->id_provinsi)->findAll(),
             'provinsi'   => $provinsi_model,
             'unor'   => $unor_model,
             'desk' => $desk

@@ -169,6 +169,7 @@
                     SIPRO
                 </a>
             </div>
+            <!-- app/Views/layout/sidebar.php -->
             <div class="sidebar-wrapper">
                 <div class="user">
                     <div class="photo">
@@ -176,546 +177,59 @@
                     </div>
                     <div class="user-info">
                         <a data-toggle="collapse" href="#user" class="username">
-                            <span>
-                                <?= user()->username  ?>
-
-                                <b class="caret"></b>
-                            </span>
+                            <span><?= user()->username ?><b class="caret"></b></span>
                         </a>
                         <div class="collapse" id="user">
                             <ul class="nav">
-                                <!-- <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <span class="sidebar-mini"> MP </span>
-                                        <span class="sidebar-normal"> My Profile </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <span class="sidebar-mini"> EP </span>
-                                        <span class="sidebar-normal"> Edit Profile </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <span class="sidebar-mini"> S </span>
-                                        <span class="sidebar-normal"> Settings </span>
-                                    </a>
-                                </li> -->
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?= base_url('logout') ?>">
-                                        <span class="sidebar-mini"> L </span>
-                                        <span class="sidebar-normal"> Logout </span>
+                                        <span class="sidebar-mini">L</span>
+                                        <span class="sidebar-normal">Logout</span>
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
+
                 <ul class="nav">
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="/">
-                            <i class="material-icons">dashboard</i>
-                            <p> Dashboard </p>
-                        </a>
-                    </li> -->
-                    <?php if (in_groups('SuperAdmin')) : ?>
-                        <li class="nav-item menu-main">
-                            <a class="nav-link" data-toggle="collapse" href="#master">
-                                <i class="material-icons">source</i>
-                                <p> Master
-                                    <b class="caret"></b>
-                                </p>
-                            </a>
-                            <div class="collapse" id="master">
-                                <ul class="nav submenu">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="<?= base_url('program') ?>">
-                                            <i class="material-icons">dashboard</i>
-                                            <span class="sidebar-normal"> Program </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="<?= base_url('kegiatan') ?>">
-                                            <i class="material-icons">event</i>
-                                            <span class="sidebar-normal"> Kegiatan </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="<?= base_url('kro') ?>">
-                                            <i class="material-icons">view_list</i>
-                                            <span class="sidebar-normal"> KRO </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="<?= base_url('ro') ?>">
-                                            <i class="material-icons">view_module</i>
-                                            <span class="sidebar-normal"> RO </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="<?= base_url('user') ?>">
-                                            <i class="material-icons">person</i>
-                                            <span class="sidebar-normal"> User </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="<?= base_url('provinsi') ?>">
-                                            <i class="material-icons">place</i>
-                                            <span class="sidebar-normal"> Provinsi </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    <?php endif ?>
-                    <?php if (in_groups('SuperAdmin') || in_groups('Rakorbangwil')) : ?>
-                        <li class="nav-item menu-main">
-                            <a class="nav-link" data-toggle="collapse" href="#rpiw">
-                                <i class="material-icons">source</i>
-                                <p> RPIW
-                                    <b class="caret"></b>
-                                </p>
-                            </a>
-                            <div class="collapse" id="rpiw">
-                                <ul class="nav submenu">
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="<?= base_url('kawasan') ?>">
-                                            <span class="sidebar-mini"> K </span>
-                                            <span class="sidebar-normal"> Kawasan Prioritas </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="<?= base_url('rpiw') ?>">
-                                            <span class="sidebar-mini"> P </span>
-                                            <span class="sidebar-normal"> Rencana Aksi </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="<?= base_url('Report') ?>">
-                                            <span class="sidebar-mini"> L </span>
-                                            <span class="sidebar-normal"> Laporan </span>
-                                        </a>
-                                    </li>
-                                    <!-- <li class="nav-item ">
-                                    <a class="nav-link" href="/leaflet-draw">
-                                        <span class="sidebar-mini"> T </span>
-                                        <span class="sidebar-normal"> Tagging </span>
-                                    </a>
-                                </li> -->
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item menu-main ">
-                            <a class="nav-link" data-toggle="collapse" href="#memorandum">
-                                <i class="material-icons">description</i>
-                                <p> Memorandum Program
-                                    <b class="caret"></b>
-                                </p>
-                            </a>
-                            <div class="collapse" id="memorandum">
-                                <ul class="nav submenu">
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="<?= base_url('memorandum') ?>">
-                                            <i class="material-icons">add_box</i>
-                                            <span class="sidebar-normal">Input Program</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="<?= base_url('daftar_program') ?>">
-                                            <i class="material-icons">list</i>
-                                            <span class="sidebar-normal">Program Tahunan</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="#">
-                                            <i class="material-icons">bar_chart</i>
-                                            <span class="sidebar-normal">Laporan</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-
-                        <li class="nav-item menu-main">
-                            <a class="nav-link" data-toggle="collapse" href="#desk">
-                                <i class="material-icons">group_work</i>
-                                <p> Desk Rakorbangwil
-                                    <b class="caret"></b>
-                                </p>
-                            </a>
-                            <div class="collapse" id="desk">
-                                <ul class="nav submenu">
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="<?= base_url('desk_kawasan') ?>">
-                                            <i class="material-icons">map</i>
-                                            <span class="sidebar-normal">Pembahasan Kawasan</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="<?= base_url('desk_program') ?>">
-                                            <i class="material-icons">assignment</i>
-                                            <span class="sidebar-normal">Pembahasan Program</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="<?= base_url('pejabat/daftar') ?>">
-                                            <i class="material-icons">drawing</i>
-                                            <span class="sidebar-normal">Tanda Tangan Digital</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="<?= base_url('berita_acara') ?>">
-                                            <i class="material-icons">article</i>
-                                            <span class="sidebar-normal">Berita Acara Kesepakatan</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="<?= base_url('berita_acara2') ?>">
-                                            <i class="material-icons">article</i>
-                                            <span class="sidebar-normal">BAK Unor</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="collapse" href="#submenuLaporan" aria-expanded="false">
-                                            <i class="material-icons">assessment</i>
-                                            <span class="sidebar-normal">Laporan</span>
-                                        </a>
-                                        <div class="collapse" id="submenuLaporan">
-                                            <ul class="nav submenu">
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="<?= base_url('desk/laporan1') ?>">
-                                                        <i class="material-icons">today</i>
-                                                        <span class="sidebar-normal">Rekapan Program 1</span>
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="<?= base_url('desk/laporan2') ?>">
-                                                        <i class="material-icons">date_range</i>
-                                                        <span class="sidebar-normal">Rekapan Program 2</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item menu-main">
-                            <a class="nav-link" data-toggle="collapse" href="#desk1">
-                                <i class="material-icons">source</i>
-                                <p>Pasca Desk Rakorbangwil
-                                    <b class="caret"></b>
-                                </p>
-                            </a>
-                            <div class="collapse" id="desk1">
-                                <ul class="nav submenu">
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="#">
-                                            <i class="material-icons">assignment</i>
-                                            <span class="sidebar-normal">Daftar Program</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    <?php endif ?>
-                    <?php if (in_groups('SuperAdmin') || in_groups('Konreg') || in_groups('Staff')) : ?>
-                        <?php if (!in_groups('Staff')) : ?>
-                            <li class="nav-item menu-main">
-                                <a class="nav-link" data-toggle="collapse" href="#konreg">
-                                    <i class="material-icons">source</i>
-                                    <p>Input Konreg
-                                        <b class="caret"></b>
-                                    </p>
-                                </a>
-                                <div class="collapse" id="konreg">
-                                    <ul class="nav submenu">
-                                        <?php if (isset(user()->id_provinsi)): ?>
-                                            <li class="nav-item ">
-                                                <a class="nav-link" href="<?= base_url('/Rakortek') ?>">
-                                                    <i class="material-icons">map</i>
-                                                    <span class="sidebar-normal">Rakortek</span>
-                                                </a>
-                                            </li>
-                                        <?php endif ?>
-                                        <?php if (!isset(user()->id_provinsi)): ?>
-                                            <li class="nav-item ">
-                                                <a class="nav-link" href="<?= base_url('/daftarRakorbangwil') ?>">
-                                                    <i class="material-icons">map</i>
-                                                    <span class="sidebar-normal">Rakorbangwil</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item ">
-                                                <a class="nav-link" href="<?= base_url('/Rakortek') ?>">
-                                                    <i class="material-icons">map</i>
-                                                    <span class="sidebar-normal">Rakortek</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" data-toggle="collapse" href="#dataApi" aria-expanded="false">
-                                                    <i class="material-icons">assessment</i>
-                                                    <span class="sidebar-normal">Usulan Unor</span>
-                                                </a>
-                                                <div class="collapse" id="dataApi">
-                                                    <ul class="nav submenu">
-                                                        <li class="nav-item">
-                                                            <a class="nav-link" href="<?= base_url('/unor/fkw') ?>">
-                                                                <i class="material-icons">date_range</i>
-                                                                <span class="sidebar-normal">FKW</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="nav-item">
-                                                            <a class="nav-link" href="<?= base_url('/unor/fkb') ?>">
-                                                                <i class="material-icons">date_range</i>
-                                                                <span class="sidebar-normal">FKB</span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                        <?php endif ?>
-                                        <li class="nav-item">
-                                            <a class="nav-link" data-toggle="collapse" href="#usulanProvinsi" aria-expanded="false">
-                                                <i class="material-icons">map</i>
-                                                <span class="sidebar-normal">Usulan Provinsi</span>
-                                            </a>
-                                            <div class="collapse" id="usulanProvinsi">
-                                                <ul class="nav submenu">
-                                                    <?php if (
-                                                        !isset(user()->id_unor) &&
-                                                        (
-                                                            is_null(user()->id_provinsi)
-                                                        )
-                                                    ): ?>
-                                                        <li class="nav-item">
-                                                            <a class="nav-link" href="<?= base_url('/usulanprovinsi') ?>">
-                                                                <i class="material-icons">add_box</i>
-                                                                <span class="sidebar-normal">Input Usulan</span>
-                                                            </a>
-                                                        </li>
-                                                    <?php endif; ?>
-
-
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="<?= base_url('/listUsulan') ?>">
-                                                            <i class="material-icons">date_range</i>
-                                                            <span class="sidebar-normal">Daftar Usulan</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item menu-main">
-                                <a class="nav-link" data-toggle="collapse" href="#pradesk">
-                                    <i class="material-icons">source</i>
-                                    <p>PraDesk Konreg
-                                        <b class="caret"></b>
-                                    </p>
-                                </a>
-                                <div class="collapse" id="pradesk">
-                                    <ul class="nav submenu">
-                                        <li class="nav-item ">
-                                            <a class="nav-link" href="<?= base_url('/daftarRakorbangwil') ?>">
-                                                <i class="material-icons">map</i>
-                                                <span class="sidebar-normal">Rakorbangwil</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item ">
-                                            <a class="nav-link" href="<?= base_url('/listUsulan') ?>">
-                                                <i class="material-icons">map</i>
-                                                <span class="sidebar-normal">usulanProvinsi</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <?php if (!isset(user()->id_provinsi)): ?>
-                                <li class="nav-item menu-main">
-                                    <a class="nav-link" data-toggle="collapse" href="#prosesfkwfkb">
-                                        <i class="material-icons">source</i>
-                                        <p>Program Konreg
-                                            <b class="caret"></b>
-                                        </p>
-                                    </a>
-                                    <div class="collapse" id="prosesfkwfkb">
-                                        <ul class="nav submenu">
-                                            <li class="nav-item ">
-                                                <a class="nav-link" href="<?= base_url('/program-konreg/fkw') ?>">
-                                                    <i class="material-icons">map</i>
-                                                    <span class="sidebar-normal">FKW</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item ">
-                                                <a class="nav-link" href="<?= base_url('/program-konreg/fkb') ?>">
-                                                    <i class="material-icons">map</i>
-                                                    <span class="sidebar-normal">FKB</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            <?php endif; ?>
-                        <?php endif; ?>
-                        <?php if (!isset(user()->id_unor) or (in_groups('Staff'))): ?>
-                            <li class="nav-item menu-main">
-                                <a class="nav-link" data-toggle="collapse" href="#deskkonreg">
-                                    <i class="material-icons">source</i>
-                                    <p>Desk Konreg
-                                        <b class="caret"></b>
-                                    </p>
-                                </a>
-                                <div class="collapse" id="deskkonreg">
-                                    <ul class="nav submenu">
-                                        <li class="nav-item ">
-                                            <a class="nav-link" href="<?= base_url('/listUsulan?desk=konreg') ?>">
-                                                <i class="material-icons">source</i>
-                                                <span class="sidebar-normal">Usulan Provinsi</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item ">
-                                            <a class="nav-link" href="<?= base_url('/Rakortek?desk=konreg') ?>">
-                                                <i class="material-icons">source</i>
-                                                <span class="sidebar-normal">Rakortek</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item ">
-                                            <a class="nav-link" href="<?= base_url('/program-konreg/fkw?desk=konreg') ?>">
-                                                <i class="material-icons">source</i>
-                                                <span class="sidebar-normal">Pembahasan FKW</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item ">
-                                            <a class="nav-link" href="<?= base_url('/program-konreg/fkb?desk=konreg') ?>">
-                                                <i class="material-icons">source</i>
-                                                <span class="sidebar-normal">Pembahasan FKB</span>
-                                            </a>
-                                        </li>
-                                        <?php if (!in_groups('Staff')): ?>
-                                            <li class="nav-item ">
-                                                <a class="nav-link" href="<?= base_url('/daftar_pejabat') ?>">
-                                                    <i class="material-icons">drawing</i>
-                                                    <span class="sidebar-normal">Tanda Tangan Digital</span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item ">
-                                                <a class="nav-link" href="<?= base_url('/konreg/berita_acara') ?>">
-                                                    <i class="material-icons">article</i>
-                                                    <span class="sidebar-normal">Berita Acara Kesepakatan</span>
-                                                </a>
-                                            </li>
-                                        <?php endif; ?>
-                                        <li class="nav-item">
-                                            <a class="nav-link" data-toggle="collapse" href="#submenuLaporanKonreg" aria-expanded="false">
-                                                <i class="material-icons">assessment</i>
-                                                <span class="sidebar-normal">Laporan</span>
-                                            </a>
-                                            <div class="collapse" id="submenuLaporanKonreg">
-                                                <ul class="nav submenu">
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="<?= base_url('Konreg/Repot1') ?>">
-                                                            <i class="material-icons">today</i>
-                                                            <span class="sidebar-normal">Rekapan Program FKW/FKB</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                                <ul class="nav submenu">
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="<?= base_url('Konreg/fks') ?>">
-                                                            <i class="material-icons">today</i>
-                                                            <span class="sidebar-normal">Daftar Program FKS</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                                <ul class="nav submenu">
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="<?= base_url('Konreg/ditangguhkan') ?>">
-                                                            <i class="material-icons">today</i>
-                                                            <span class="sidebar-normal">Daftar Program Ditangguhkan</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </li>
-                        <?php endif ?>
-                    <?php endif ?>
+                    <?= renderMenuTree($menuTree) ?>
                 </ul>
+
             </div>
+
         </div>
 
         <div class="main-panel">
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
-                <div class="container-fluid">
 
-                    <div class="collapse navbar-collapse justify-content-end">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#pablo">
-                                    <i class="material-icons">dashboard</i>
-                                    <p class="d-lg-none d-md-block">
-                                        Stats
-                                    </p>
-                                </a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="material-icons">person</i>
-                                    <p class="d-lg-none d-md-block">
-                                        Account
-                                    </p>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                                    <a class="dropdown-item" href="#">Profile</a>
-                                    <a class="dropdown-item" href="#">Settings</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Log out</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <!-- End Navbar -->
             <div class="content">
-                <div class="content">
 
-                    <?= isset($contents) ? $contents : null ?>
-                    <?= isset($_script) ? $_script : null ?>
+                <?= isset($contents) ? $contents : null ?>
+                <?= isset($_script) ? $_script : null ?>
+                <div class="container-fluid">
+                    <div class="row">
+                    </div>
+                </div>
+                <footer class="footer">
                     <div class="container-fluid">
-                        <div class="row">
+                        <nav class="float-left">
+                            <ul>
+                                <li>
+                                    <a href="https://www.bpiw.pu.go.id">
+                                        BPIW
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="copyright float-right">
+                            &copy;
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>, made with <i class="material-icons">favorite</i> by
+                            <a href="https://bpiw.pu.go.id" target="_blank">BPIW Tim</a> for a better web.
                         </div>
                     </div>
-                    <footer class="footer">
-                        <div class="container-fluid">
-                            <nav class="float-left">
-                                <ul>
-                                    <li>
-                                        <a href="https://www.bpiw.pu.go.id">
-                                            BPIW
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                            <div class="copyright float-right">
-                                &copy;
-                                <script>
-                                    document.write(new Date().getFullYear())
-                                </script>, made with <i class="material-icons">favorite</i> by
-                                <a href="https://bpiw.pu.go.id" target="_blank">BPIW Tim</a> for a better web.
-                            </div>
-                        </div>
-                    </footer>
-                </div>
+                </footer>
             </div>
 
             <!--   Core JS Files   -->
@@ -769,7 +283,7 @@
             <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
             <script src="<?= base_url('assets/js/plugins/jquery.dataTables.min.js') ?>"></script>
             <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
-            <script>
+            <!-- <script>
                 $(document).ready(function() {
                     // Mendapatkan URL saat ini
                     var currentUrl = window.location.pathname; // Menggunakan pathname untuk hanya mendapatkan bagian path
@@ -788,7 +302,7 @@
                         }
                     });
                 });
-            </script>
+            </script> -->
             <script>
                 $(document).ready(function() {
                     $().ready(function() {
@@ -1064,26 +578,7 @@
                     });
                 });
             </script>
-            <script>
-                $(document).ready(function() {
-                    // Mendapatkan URL saat ini
-                    var currentUrl = window.location.pathname; // Menggunakan pathname untuk hanya mendapatkan bagian path
 
-                    // Memeriksa setiap link dalam sidebar
-                    $('.nav-link').each(function() {
-                        var linkUrl = $(this).attr('href');
-
-                        // Jika URL saat ini cocok dengan link
-                        if (currentUrl === linkUrl) {
-                            // Menambahkan kelas 'active' pada link yang cocok
-                            $(this).parents('.nav-item').addClass('active');
-
-                            // Jika link tersebut memiliki elemen collapsible, pastikan terbuka
-                            $(this).parents('.collapse').addClass('show');
-                        }
-                    });
-                });
-            </script>
             <script>
                 document.addEventListener("DOMContentLoaded", function() {
                     // Tampilkan loading pada saat DOM selesai dimuat
@@ -1095,6 +590,21 @@
                     document.getElementById("loading").style.display = "none";
                 });
             </script>
+            <script>
+                $(document).ready(function() {
+                    $('.nav-link[data-toggle="collapse"]').on('click', function(e) {
+                        let $this = $(this);
+                        let $submenu = $($this.attr('href'));
+
+                        // Kalau submenu belum terbuka → tutup yang lain dulu
+                        if (!$submenu.hasClass('show')) {
+                            $('.collapse.show').collapse('hide');
+                        }
+                        // Tidak perlu else, biar Bootstrap yang handle toggle buka/tutup
+                    });
+                });
+            </script>
+
 </body>
 
 </html>

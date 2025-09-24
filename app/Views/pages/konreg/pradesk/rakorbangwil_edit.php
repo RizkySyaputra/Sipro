@@ -155,9 +155,9 @@ foreach ($p_memo as $p_memo) : ?>
                         <div class="col-sm-3 font-weight-bold">KRO</div>
                         <div class="col-sm-9">
                             <select name="kd_kro" class="form-control" id="select-kd_kro" required>
-                                <option value="<?= in_array($jenis_data, ['fkw', 'fkb']) ? $konreg->kd_kro : "" ?>" <?= in_array($jenis_data, ['fkw', 'fkb']) ? "" : "disabled" ?> selected> <?= in_array($jenis_data, ['fkw', 'fkb']) ? $konreg->kd_kro . " " . $konreg->nmkro : "-- Pilih Kro --"  ?></option>
+                                <option value="<?= in_array($jenis_data, ['fkw', 'fkb']) ? $konreg->kd_kro : "" ?>" <?= in_array($jenis_data, ['fkw', 'fkb']) ? "" : "disabled" ?> selected> <?= in_array($jenis_data, ['fkw', 'fkb']) ? $konreg->kd_kro . " " . $konreg->nm_kro : "-- Pilih Kro --"  ?></option>
                                 <?php foreach ($kro as $item) : ?>
-                                    <option value="<?= $item['kdkro'] ?>"><?= $item['kdkro'] . " " . $item['nmkro'] ?></option>
+                                    <option value="<?= $item['kdkro'] ?>"><?= $item['kdkro'] . " " . $item['nm_kro'] ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>

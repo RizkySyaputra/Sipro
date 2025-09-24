@@ -116,7 +116,7 @@
                             <div class="col-sm-3 font-weight-bold"><strong>KRO (Kumpulan Rincian Output)</strong></div>
                             <div class="col-sm-9">
                                 <select name="kd_kro" class="form-control" id="select-kd_kro" required>
-                                    <option value="<?= $usulan->kd_kro; ?>" selected><?= $usulan->kd_kro . " " . $usulan->nmkro; ?></option>
+                                    <option value="<?= $usulan->kd_kro; ?>" selected><?= $usulan->kd_kro . " " . $usulan->nm_kro; ?></option>
                                 </select>
                             </div>
                         </div>
@@ -435,7 +435,7 @@
 
         //             var i = 1;
         //             $.each(response, function(index, kro) {
-        //                 $('#select-kd_kro').append('<option value="' + kro.kdkro + '">' + kro.kdkro + '. ' + kro.nmkro + '</option>');
+        //                 $('#select-kd_kro').append('<option value="' + kro.kdkro + '">' + kro.kdkro + '. ' + kro.nm_kro + '</option>');
         //                 i++;
         //             });
         //         },
@@ -666,7 +666,7 @@
                     $('#select-kd_kro').append('<option value="">-- Pilih KRO --</option>');
 
                     $.each(response, function(index, kro) {
-                        $('#select-kd_kro').append('<option value="' + kro.kdkro + '">' + kro.kdkro + '. ' + kro.nmkro + '</option>');
+                        $('#select-kd_kro').append('<option value="' + kro.kdkro + '">' + kro.kdkro + '. ' + kro.nm_kro + '</option>');
                     });
                 },
                 error: function() {

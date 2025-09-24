@@ -151,7 +151,7 @@
             foreach ($fkw as $fkw) : ?>
                 <tr>
                     <td><?= $i++; ?></td>
-                    <td><?= $fkw->nmkro . ' / ' .  $fkw->nmro . ' / ' . $fkw->pekerjaan; ?></td>
+                    <td><?= $fkw->nm_kro . ' / ' .  $fkw->nmro . ' / ' . $fkw->pekerjaan; ?></td>
                     <td><?= $fkw->lokasi; ?></td>
                     <td style="text-align: right;">
 
@@ -208,7 +208,7 @@
             foreach ($fkb as $fkb) : ?>
                 <tr>
                     <td><?= $j++; ?></td>
-                    <td><?= $fkb->nmkro . ' / ' .  $fkb->nmro . ' / ' . $fkb->pekerjaan; ?></td>
+                    <td><?= $fkb->nm_kro . ' / ' .  $fkb->nmro . ' / ' . $fkb->pekerjaan; ?></td>
                     <td><?= $fkb->lokasi; ?></td>
                     <td style="text-align: right;">
                         <?php
@@ -409,7 +409,7 @@
                 <tr>
                     <td><?= $j++; ?></td>
                     <td><?= $fkb->sumber; ?></td>
-                    <td><?= $fkb->nmkro . ' / ' .  $fkb->nmro . ' / ' . $fkb->pekerjaan; ?></td>
+                    <td><?= $fkb->nm_kro . ' / ' .  $fkb->nmro . ' / ' . $fkb->pekerjaan; ?></td>
                     <td><?= $fkb->lokasi; ?></td>
                     <td style="text-align: right;">
                         <?php
@@ -468,7 +468,7 @@
                 <tr>
                     <td><?= $i++; ?></td>
                     <td><?= $fkw->sumber; ?></td>
-                    <td><?= $fkw->nmkro . ' / ' .  $fkw->nmro . ' / ' . $fkw->pekerjaan; ?></td>
+                    <td><?= $fkw->nm_kro . ' / ' .  $fkw->nmro . ' / ' . $fkw->pekerjaan; ?></td>
                     <td><?= $fkw->lokasi; ?></td>
                     <td style="text-align: right;">
 

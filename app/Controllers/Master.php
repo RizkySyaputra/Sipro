@@ -9,7 +9,7 @@ use App\Models\Master\KroModel;
 use App\Models\Master\RoModel;
 use App\Models\Master\UserModel;
 use App\Models\Master\RoleModel;
-use App\Models\Master\EditRoleModel;
+use CodeIgniter\CLI\Console;
 use CodeIgniter\Router\Router;
 
 class Master extends BaseController
@@ -21,7 +21,6 @@ class Master extends BaseController
     protected $userModel;
     protected $provinsiModel;
     protected $roleModel;
-    protected $editroleModel;
     public function __construct()
     {
         $this->programModel = new ProgramModel();
@@ -31,7 +30,8 @@ class Master extends BaseController
         $this->userModel = new UserModel();
         $this->provinsiModel = new ProvinsiModel();
         $this->roleModel = new RoleModel();
-        $this->editroleModel = new EditRoleModel();
+
+        helper('permission');
     }
 
     public function index()
@@ -89,13 +89,19 @@ class Master extends BaseController
     }
     public function user()
     {
+        $id_role = user()->id_role;
         $data = [
             'user' => $this->userModel->getUser(),
-            'role' => $this->roleModel->getRole()
+            'role' => $this->roleModel->getRole(),
+            'can_view' => has_permission_menu($id_role, '/user', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/user', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/user', 'can_delete')
         ];
+
         $this->template->write('title', 'Master User');
         $this->template->load('/templates/main', '/pages/master/user', $data);
     }
+
 
     public function update_user()
     {
@@ -111,8 +117,7 @@ class Master extends BaseController
                 ]);
             }
 
-            $update = $this->editroleModel->editrole($user_id, $role_id);
-
+            $update = $this->userModel->editrole($user_id, $role_id);
             if ($update) {
                 return $this->response->setJSON([
                     'success' => true,

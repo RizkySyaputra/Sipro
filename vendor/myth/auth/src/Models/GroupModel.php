@@ -11,14 +11,14 @@ use stdClass;
 
 class GroupModel extends Model
 {
-    protected $table         = 'auth_groups';
+    protected $table         = 'm_role';
     protected $returnType    = Group::class;
     protected $allowedFields = [
         'name',
         'description',
     ];
     protected $validationRules = [
-        'name'        => 'required|max_length[255]|is_unique[auth_groups.name,name,{name}]',
+        'name'        => 'required|max_length[255]|is_unique[m_role.name,name,{name}]',
         'description' => 'max_length[255]',
     ];
 
@@ -96,8 +96,8 @@ class GroupModel extends Model
     {
         if (null === $found = cache("{$userId}_groups")) {
             $found = $this->builder()
-                ->select('auth_groups_users.*, auth_groups.name, auth_groups.description')
-                ->join('auth_groups_users', 'auth_groups_users.group_id = auth_groups.id', 'left')
+                ->select('auth_groups_users.*, m_role.name, m_role.description')
+                ->join('auth_groups_users', 'auth_groups_users.group_id = m_role.id', 'left')
                 ->where('user_id', $userId)
                 ->get()->getResultArray();
 
@@ -117,9 +117,9 @@ class GroupModel extends Model
         if (null === $found = cache("{$groupId}_users")) {
             $found = $this->builder()
                 ->select('auth_groups_users.*, users.*')
-                ->join('auth_groups_users', 'auth_groups_users.group_id = auth_groups.id', 'left')
+                ->join('auth_groups_users', 'auth_groups_users.group_id = m_role.id', 'left')
                 ->join('users', 'auth_groups_users.user_id = users.id', 'left')
-                ->where('auth_groups.id', $groupId)
+                ->where('m_role.id', $groupId)
                 ->get()->getResultArray();
 
             cache()->save("{$groupId}_users", $found, 300);

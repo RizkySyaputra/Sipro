@@ -9,17 +9,8 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use App\Libraries\Template;
-
-/**
- * Class BaseController
- *
- * BaseController provides a convenient place for loading components
- * and performing functions that are needed by all your controllers.
- * Extend this class in any new controllers:
- *     class Home extends BaseController
- *
- * For security be sure to declare any new methods as protected or private.
- */
+use App\Models\Master\MenuModel;
+use App\Models\Master\UserModel;
 
 abstract class BaseController extends Controller
 {
@@ -30,36 +21,51 @@ abstract class BaseController extends Controller
      */
     protected $request;
     protected $template;
-
-
+    protected $menuTree;
 
 
     /**
-     * An array of helpers to be loaded automatically upon
-     * class instantiation. These helpers will be available
-     * to all other controllers that extend BaseController.
+     * Helpers to be loaded automatically.
      *
      * @var list<string>
      */
-    protected $helpers = [];
+    protected $helpers = ['menu', 'url'];
 
     /**
-     * Be sure to declare properties for any property fetch you initialized.
-     * The creation of dynamic property is deprecated in PHP 8.2.
-     */
-    // protected $session;
-
-    /**
-     * @return void
+     * InitController
      */
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
-        // Do Not Edit This Line
         parent::initController($request, $response, $logger);
 
-        // Preload any models, libraries, etc, here.
-        $this->template = new Template();
+        $this->template = new \App\Libraries\Template();
+        $userModel = new UserModel();
+        $menuModel = new MenuModel();
+        $id_user = user()->id;
+        $id_role = $userModel->select('id_role')->where('id', $id_user)->first()['id_role'];
+        // $id_role   = 1;
+        $menuTree  = $menuModel->getMenuTreeByRole($id_role);
 
-        // E.g.: $this->session = \Config\Services::session();
+        // kirim ke semua view
+        $this->template->write('menuTree', $menuTree);
+    }
+
+
+    /**
+     * Render template utama
+     *
+     * @param string $view
+     * @param array $data
+     * @return string
+     */
+    protected function render(string $view, array $data = []): string
+    {
+        // Tambahkan menuTree ke semua view
+        $data['menuTree'] = $this->menuTree;
+
+        // Gabungkan konten utama ke layout
+        return view('layout/main', $data + [
+            'contents' => view($view, $data)
+        ]);
     }
 }

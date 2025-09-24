@@ -6,7 +6,7 @@
         <div class="col-sm-6 offset-sm-3">
 
             <div class="card">
-                <h2 class="card-header"><?= lang('Auth.register') ?></h2>
+                <h2 class="card-header">Tambah Akun</h2>
                 <div class="card-body">
 
                     <?= view('Myth\Auth\Views\_message_block') ?>
@@ -15,17 +15,9 @@
                         <?= csrf_field() ?>
 
                         <div class="form-group">
-                            <label for="email"><?= lang('Auth.email') ?></label>
-                            <input type="email" class="form-control <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>"
-                                name="email" aria-describedby="emailHelp" placeholder="<?= lang('Auth.email') ?>" value="<?= old('email') ?>">
-                            <small id="emailHelp" class="form-text text-muted"><?= lang('Auth.weNeverShare') ?></small>
-                        </div>
-
-                        <div class="form-group">
                             <label for="username"><?= lang('Auth.username') ?></label>
                             <input type="text" class="form-control <?php if (session('errors.username')) : ?>is-invalid<?php endif ?>" name="username" placeholder="<?= lang('Auth.username') ?>" value="<?= old('username') ?>">
                         </div>
-
                         <div class="form-group">
                             <label for="password"><?= lang('Auth.password') ?></label>
                             <input type="password" name="password" class="form-control <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="<?= lang('Auth.password') ?>" autocomplete="off">
@@ -37,6 +29,26 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="user"><?= lang('Nama Pengguna') ?></label>
+                            <input type="text" class="form-control <?php if (session('errors.user')) : ?>is-invalid<?php endif ?>" name="user" placeholder="<?= lang('Nama Pengguna') ?>" value="<?= old('user') ?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><?= lang('Auth.email') ?></label>
+                            <input type="email" class="form-control <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>"
+                                name="email" aria-describedby="emailHelp" placeholder="<?= lang('Auth.email') ?>" value="<?= old('email') ?>">
+                            <small id="emailHelp" class="form-text text-muted"><?= lang('Auth.weNeverShare') ?></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_role">Role</label>
+                            <select id="id_role" name="id_role" class="form-control <?php if (session('errors.id_role')) : ?>is-invalid<?php endif ?>">
+                                <option value="">-- Pilih Role --</option>
+                                <?php foreach ($role as $r): ?>
+                                    <option value="<?= $r['id'] ?>" <?= old('id') == $r['id'] ? 'selected' : '' ?>><?= $r['name'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="form-group" id="provinsi-group" style="display: none;">
                             <label for="id_provinsi">Provinsi</label>
                             <select name="id_provinsi" class="form-control <?php if (session('errors.id_provinsi')) : ?>is-invalid<?php endif ?>">
                                 <option value="">-- Pilih Provinsi --</option>
@@ -46,7 +58,7 @@
                             </select>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" id="unor-group" style="display: none;">
                             <label for="id_unor">UNOR</label>
                             <select name="id_unor" class="form-control <?php if (session('errors.id_unor')) : ?>is-invalid<?php endif ?>">
                                 <option value="">-- Pilih UNOR --</option>
@@ -58,17 +70,50 @@
 
                         <br>
 
-                        <button type="submit" class="btn btn-primary btn-block"><?= lang('Auth.register') ?></button>
+                        <button type="submit" class="btn btn-primary btn-block">Buat Akun</button>
                     </form>
 
                     <hr>
 
-                    <p><?= lang('Auth.alreadyRegistered') ?> <a href="<?= url_to('login') ?>"><?= lang('Auth.signIn') ?></a></p>
+                    <!-- <p><?= lang('Auth.alreadyRegistered') ?> <a href="<?= url_to('login') ?>"><?= lang('Auth.signIn') ?></a></p> -->
                 </div>
             </div>
 
         </div>
     </div>
 </div>
+<script>
+    const id_roleSelect = document.getElementById('id_role');
+    const unorGroup = document.getElementById('unor-group');
+    const provinsiGroup = document.getElementById('provinsi-group');
+    const unorSelect = unorGroup.querySelector('select');
+    const provinsiSelect = provinsiGroup.querySelector('select');
 
+    function toggleFields(id_roleId) {
+        // reset semua
+        unorGroup.style.display = 'none';
+        provinsiGroup.style.display = 'none';
+        unorSelect.removeAttribute('required');
+        provinsiSelect.removeAttribute('required');
+
+        // tampilkan & jadikan required sesuai id_role
+        if (id_roleId == '5') {
+            unorGroup.style.display = 'block';
+            unorSelect.setAttribute('required', 'required');
+        } else if (id_roleId == '6') {
+            provinsiGroup.style.display = 'block';
+            provinsiSelect.setAttribute('required', 'required');
+        }
+    }
+
+    // Event listener
+    id_roleSelect.addEventListener('change', function() {
+        toggleFields(this.value);
+    });
+
+    // Jalankan sekali saat halaman load (untuk old value dari validasi)
+    toggleFields("<?= old('id_role') ?>");
+</script>
+
+</script>
 <?= $this->endSection() ?>

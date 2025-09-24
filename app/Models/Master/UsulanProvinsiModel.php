@@ -66,7 +66,7 @@ class UsulanProvinsiModel extends Model
     public function getUsulan($id_provinsi = null, $id_unor = null, $id_pn = null, $kesepakatan = null)
     {
         $builder = $this->db->table('k_usulan_provinsi as usulan');
-        $builder->select('usulan.*,  m_provinsi.provinsi, m_unor.unor, m_pendanaan.sumber_pendanaan, m_satuan.nama_satuan,  m_kawasan.nama_kawasan, k_pn.nama_pn, k_pp.nama_pp, k_kp.nama_kp, k_pro_p.nama_prop , m_ro.nmro, m_kro.nmkro');
+        $builder->select('usulan.*,  m_provinsi.provinsi, m_unor.unor, m_pendanaan.sumber_pendanaan, m_satuan.nama_satuan,  m_kawasan.nama_kawasan, k_pn.nama_pn, k_pp.nama_pp, k_kp.nama_kp, k_pro_p.nama_prop , m_ro.nmro, m_kro.nm_kro');
         $builder->distinct();
         $builder->join('m_provinsi', 'usulan.id_provinsi = m_provinsi.id', 'left');
         $builder->join('m_unor', 'usulan.id_unor = m_unor.id', 'left');
@@ -100,7 +100,7 @@ class UsulanProvinsiModel extends Model
     public function getUsulanDetail($id)
     {
         $builder = $this->db->table('k_usulan_provinsi as usulan');
-        $builder->select('usulan.*,  m_provinsi.provinsi, m_unor.unor, m_kabkot.kab_kot, m_kegiatan.nmgiat , m_kro.nmkro, m_ro.nmro, m_pendanaan.sumber_pendanaan, m_satuan.nama_satuan,  k_kawasan.nama_kawasan, k_pn.nama_pn, k_pp.nama_pp, k_kp.nama_kp, k_pro_p.nama_prop');
+        $builder->select('usulan.*,  m_provinsi.provinsi, m_unor.unor, m_kabkot.kab_kot, m_kegiatan.nmgiat , m_kro.nm_kro, m_ro.nmro, m_pendanaan.sumber_pendanaan, m_satuan.nama_satuan,  k_kawasan.nama_kawasan, k_pn.nama_pn, k_pp.nama_pp, k_kp.nama_kp, k_pro_p.nama_prop');
         $builder->distinct();
         $builder->join('m_provinsi', 'usulan.id_provinsi = m_provinsi.id', 'left');
         $builder->join('m_unor', 'usulan.id_unor = m_unor.id', 'left');

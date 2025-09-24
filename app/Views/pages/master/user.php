@@ -1,12 +1,22 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card">
-            <div class="card-header card-header-primary card-header-icon">
-                <div class="card-icon">
-                    <i class="material-icons">source</i>
+            <div class="card-header card-header-primary card-header-icon d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <div class="card-icon">
+                        <i class="material-icons">source</i>
+                    </div>
+                    <h4 class="card-title mb-0">Data User</h4>
                 </div>
-                <h4 class="card-title">Data User</h4>
+
+                <!-- Tombol Buat Akun -->
+                <?php if ($can_edit == true) : ?>
+                    <a href="<?= base_url('/register') ?>" class="btn btn-info btn-sm">
+                        <i class="material-icons">person_add</i> Buat Akun
+                    </a>
+                <?php endif ?>
             </div>
+
             <div class="card-body">
                 <div class="toolbar">
                     <!--        Here you can write extra buttons/actions for the toolbar              -->
@@ -38,8 +48,8 @@
                                     <td><?= $user->username; ?></td>
                                     <td><?= $user->name; ?></td>
                                     <td class="text-center">
-                                        <button class="btn btn-warning btn-sm" onclick="openUpdateRoleModal('<?= $user->user_id; ?>', '<?= $user->name; ?>')">Update</button>
-                                        <button class="btn btn-danger btn-sm" onclick="confirmDelete('<?= $user->user_id;; ?>')">Delete</button>
+                                        <?php if ($can_edit == true) : ?><button class="btn btn-warning btn-sm" onclick="openUpdateRoleModal('<?= $user->id_user; ?>', '<?= $user->name; ?>')">Edit</button> <?php endif ?>
+                                        <?php if ($can_delete == true) : ?> <button class="btn btn-danger btn-sm" onclick="confirmDelete('<?= $user->id_user; ?>')">Delete</button> <?php endif ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -144,7 +154,7 @@
 
     function updateRole(userId, newRoleId) {
         $.ajax({
-            url: '<?= base_url('/update-user')?>', // URL untuk update role
+            url: '<?= base_url('/update-user') ?>', // URL untuk update role
             type: 'POST',
             data: {
                 id: userId,
@@ -174,7 +184,7 @@
         $('#confirmDeleteModal').modal('show');
         document.getElementById('confirmDeleteButton').onclick = function() {
             $.ajax({
-                url: '<?= base_url('/delete-user/')?>' + id,
+                url: '<?= base_url('/delete-user/') ?>' + id,
                 type: 'GET',
                 success: function(response) {
                     location.reload(); // Refresh halaman setelah sukses

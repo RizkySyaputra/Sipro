@@ -6,7 +6,7 @@
             <td><?= $usulan->provinsi ?></td>
             <td><?= $usulan->nama_kp ?></td>
             <td><?= $usulan->nama_prop ?></td>
-            <td><?= $usulan->nmkro ?></td>
+            <td><?= $usulan->nm_kro ?></td>
             <td><?= $usulan->nmro ?></td>
             <td><?= $usulan->nama_pekerjaan ?></td>
             <td><?= $usulan->volume . " " . $usulan->nama_satuan ?></td>

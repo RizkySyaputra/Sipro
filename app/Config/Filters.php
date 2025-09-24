@@ -38,7 +38,9 @@ class Filters extends BaseFilters
         'login'      => \Myth\Auth\Filters\LoginFilter::class,
         'role'       => \Myth\Auth\Filters\RoleFilter::class,
         'permission' => \Myth\Auth\Filters\PermissionFilter::class,
-        'api-token' => \App\Filters\ApiTokenFilter::class
+        'api-token' => \App\Filters\ApiTokenFilter::class,
+        'permission' => \App\Filters\PermissionFilter::class,
+
     ];
 
     /**

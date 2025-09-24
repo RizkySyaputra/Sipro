@@ -10,7 +10,7 @@ foreach ($p_fkw as $p_fkw) : ?>
                     <h4 style="text-align: center;"> Detail Pekerjaan FKW </h4>
                 </div>
                 <div class="card-body">
-					<div class="row mb-3">
+                    <div class="row mb-3">
                         <div class="col-sm-3 font-weight-bold">Tahun diusulkan</div>
                         <div class="col-sm-9">
                             <?= $p_fkw->tahun_diusulkan; ?>
@@ -20,10 +20,10 @@ foreach ($p_fkw as $p_fkw) : ?>
                         <div class="col-sm-3 font-weight-bold">Provinsi</div>
                         <div class="col-sm-9"><?= $p_fkw->provinsi; ?></div>
                     </div>
-					<div class="row mb-3">
+                    <div class="row mb-3">
                         <div class="col-sm-3 font-weight-bold">Kabupaten Kota</div>
                         <div class="col-sm-9">
-							<?= $p_fkw->kab_kot; ?>
+                            <?= $p_fkw->kab_kot; ?>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -45,7 +45,7 @@ foreach ($p_fkw as $p_fkw) : ?>
                     <div class="row mb-3">
                         <div class="col-sm-3 font-weight-bold">KRO</div>
                         <div class="col-sm-9">
-                            <?= $p_fkw->kd_kro . " " . $p_fkw->nmkro; ?>
+                            <?= $p_fkw->kd_kro . " " . $p_fkw->nm_kro; ?>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -54,7 +54,7 @@ foreach ($p_fkw as $p_fkw) : ?>
                             <?= $p_fkw->kd_ro . " " . $p_fkw->nmro; ?>
                         </div>
                     </div>
-					<div class="row mb-3">
+                    <div class="row mb-3">
                         <div class="col-sm-3 font-weight-bold">Nama Pekerjaan</div>
                         <div class="col-sm-9">
                             <?= $p_fkw->pekerjaan; ?>

@@ -10,13 +10,13 @@ foreach ($p_fkb as $p_fkb) : ?>
                     <h4 style="text-align: center;"> Detail Pekerjaan FKB </h4>
                 </div>
                 <div class="card-body">
-					<div class="row mb-3">
+                    <div class="row mb-3">
                         <div class="col-sm-3 font-weight-bold">Tahun diusulkan</div>
                         <div class="col-sm-9">
                             <?= $p_fkb->tahun_diusulkan; ?>
                         </div>
                     </div>
-                    
+
                     <div class="row mb-3">
                         <div class="col-sm-3 font-weight-bold">Provinsi</div>
                         <div class="col-sm-9"><?= $p_fkb->provinsi; ?></div>
@@ -40,7 +40,7 @@ foreach ($p_fkb as $p_fkb) : ?>
                     <div class="row mb-3">
                         <div class="col-sm-3 font-weight-bold">KRO</div>
                         <div class="col-sm-9">
-                            <?= $p_fkb->kd_kro . " " . $p_fkb->nmkro; ?>
+                            <?= $p_fkb->kd_kro . " " . $p_fkb->nm_kro; ?>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -49,7 +49,7 @@ foreach ($p_fkb as $p_fkb) : ?>
                             <?= $p_fkb->kd_ro .  " " . $p_fkb->nmro; ?>
                         </div>
                     </div>
-					<div class="row mb-3">
+                    <div class="row mb-3">
                         <div class="col-sm-3 font-weight-bold">Nama Pekerjaan</div>
                         <div class="col-sm-9">
                             <?= $p_fkb->pekerjaan; ?>
@@ -73,7 +73,7 @@ foreach ($p_fkb as $p_fkb) : ?>
                             echo $format->formatCurrency($p_fkb->anggaran, 'IDR'); ?>
                         </div>
                     </div>
-					<div class="row mb-3">
+                    <div class="row mb-3">
                         <div class="col-sm-3 font-weight-bold">Tahun Pelaksanaan</div>
                         <div class="col-sm-9">
                             <?= $p_fkb->tahun_pelaksanaan; ?>
