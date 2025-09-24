@@ -32,7 +32,7 @@ class RoleController extends BaseController
         $roleModel = new RoleModel();
         $permModel = new PermissionModel();
         $menuModel = new MenuModel();
-        $role = $roleModel->where('id', $id_role)->first();
+        $role = $roleModel->where('id', $role_id)->first();
         $menus = $menuModel->orderBy('parent_id ASC, id_menu ASC')->where('m_menu.is_active', 1)->findAll();
         $permissions = $permModel->getPermissionsByRole($role_id);
         $permMap = [];
@@ -62,7 +62,7 @@ class RoleController extends BaseController
         $id_role = user()->id_role;
         $menus = $menuModel->orderBy('parent_id ASC, id_menu ASC')->where('m_menu.is_active', 1)->findAll();
         $permissions = $permModel->getPermissionsByRole($role_id);
-        $role = $roleModel->where('id', $id_role)->first();
+        $role = $roleModel->where('id', $role_id)->first();
         // Format: [menu_id => [can_view, can_edit, can_delete]]
         $permMap = [];
         foreach ($permissions as $p) {
