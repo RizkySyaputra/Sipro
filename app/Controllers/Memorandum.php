@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Models\Rpiw\ProgramRpiwModel;
 use App\Models\Rpiw\KawasanRpiwModel;
 use App\Models\Memorandum\ProgramModel;
+use App\Models\Memorandum\DaftarMemoModel;
+use App\Models\Memorandum\MemoModel;
 use App\Models\Master\ProvinsiModel;
 use App\Models\Master\UnorModel;
 use App\Models\Master\PendanaanModel;
@@ -12,6 +14,8 @@ use App\Models\Master\SatuanModel;
 use App\Models\Master\MpModel;
 use CodeIgniter\Controller;
 use PhpParser\Node\Expr\Instanceof_;
+use App\Models\Rpiw\DaftarRenaksiModel;
+use App\Models\Rpiw\RenaksiModel;
 
 use function PHPUnit\Framework\returnCallback;
 
@@ -24,11 +28,18 @@ class Memorandum extends BaseController
     protected $pendanaanModel;
     protected $rekapProgram;
     protected $programModel;
+    protected $daftarMemoModel;
+    protected $memoModel;
     protected $satuanModel;
     protected $mpModel;
+    protected $daftarRenaksiModel;
+    protected $renaksiModel;
     public function __construct()
+
     {
         $this->programModel = new ProgramModel();
+        $this->daftarMemoModel = new DaftarMemoModel();
+        $this->memoModel = new MemoModel();
         $this->programRpiwModel = new ProgramRpiwModel();
         $this->provinsiModel = new ProvinsiModel();
         $this->unorModel = new UnorModel();
@@ -36,6 +47,9 @@ class Memorandum extends BaseController
         $this->kawasanRpiwModel = new KawasanRpiwModel();
         $this->satuanModel = new SatuanModel();
         $this->mpModel = new MpModel();
+        $this->daftarRenaksiModel = new daftarRenaksiModel();
+        $this->renaksiModel = new renaksiModel();
+        helper('permission');
     }
     public function index()
     {
@@ -341,5 +355,134 @@ class Memorandum extends BaseController
         $this->template->add_css('https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css', 'link', false, true);
         $this->template->write('title', 'Detail Program RPIW');
         $this->template->load('/templates/main', '/pages/memorandum/detailProgram', $data);
+    }
+
+    // Sipro 2025
+
+    public function daftar_memo()
+    {
+
+        $dataKawasan = $this->kawasanRpiwModel->getKawasan();
+        $dataProvinsi = $this->provinsiModel->getProvinsi();
+        $dataUnor = $this->unorModel->getUnor();
+        $data = [
+            'kawasan' => $dataKawasan,
+            'provinsi' => $dataProvinsi,
+            'unor' => $dataUnor
+        ];
+        $this->template->write('title', 'Program Jangka Menengah');
+        $this->template->load('/templates/main', '/pages/memorandum/daftar_memo', $data);
+    }
+    //2025
+    public function get_daftar_memo()
+    {
+        $id_role = user()->id_role;
+        $provinsi_id = $this->request->getPost('provinsi');
+        $unor_id = $this->request->getPost('unor');
+        $sumber = $this->request->getPost('sumber');
+        $daftarMemo = $this->daftarMemoModel->getDaftarMemo($provinsi_id, $unor_id, $sumber);
+        $data = [
+            'daftar_memo' => $daftarMemo,
+            'can_view' => has_permission_menu($id_role, '/memorandum/daftar_memo', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/memorandum/daftar_memo', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/memorandum/daftar_memo', 'can_delete')
+        ];
+        return view('/pages/memorandum/tabel/tabel_daftar_memo', $data);
+    }
+
+    // --- VIEW DETAIL ---
+    public function view($id)
+    {
+        $memo = $this->daftarMemoModel->find($id);
+        if (!$memo) {
+            return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
+        }
+        return view('/pages/memorandum/ModalView', ['memo' => $memo]);
+    }
+
+    public function edit($id)
+    {
+        $t_memo = $this->memoModel->find($id);
+        $memo = $this->daftarMemoModel->find($id);
+        if (!$memo) {
+            return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
+        }
+        return view('/pages/memorandum/ModalEdit', ['memo' => $memo, 't_memo' => $t_memo]);
+    }
+
+
+    public function update($id)
+    {
+        $data = $this->request->getPost();
+        $this->memoModel->update($id, $data);
+
+        return $this->response->setJSON(['success' => true]);
+    }
+
+
+    // --- DELETE ---
+    public function delete($id = null)
+    {
+        if ($this->request->getMethod(true) !== 'DELETE') {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Metode tidak valid']);
+        }
+
+        $memo = $this->memoModel->find($id);
+        if (!$memo) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Data tidak ditemukan']);
+        }
+
+        $this->memoModel->where('id_memorandum', $id)->delete();
+
+        return $this->response->setJSON(['status' => 'success', 'message' => 'Data berhasil dihapus']);
+    }
+
+    public function daftar_renaksi()
+    {
+
+        $dataKawasan = $this->kawasanRpiwModel->getKawasan();
+        $dataProvinsi = $this->provinsiModel->getProvinsi();
+        $dataUnor = $this->unorModel->getUnor();
+        $data = [
+            'kawasan' => $dataKawasan,
+            'provinsi' => $dataProvinsi,
+            'unor' => $dataUnor
+        ];
+        $this->template->write('title', 'Rencana Aksi');
+        $this->template->load('/templates/main', '/pages/memorandum/daftar_renaksi', $data);
+    }
+
+    public function get_daftar_renaksi()
+    {
+        $id_role = user()->id_role;
+        $provinsi_id = $this->request->getPost('provinsi');
+        $unor_id = $this->request->getPost('unor');
+        $kawasan = $this->request->getPost('sumber');
+        $daftarRenaksi = $this->daftarRenaksiModel->getDaftarRenaksi($provinsi_id, $unor_id, $kawasan);
+        $data = [
+            'daftar_renaksi' => $daftarRenaksi,
+            'can_view' => has_permission_menu($id_role, '/rpiw/daftar_renaksi', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/rpiw/daftar_renaksi', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/rpiw/daftar_renaksi', 'can_delete')
+        ];
+        return view('/pages/memorandum/tabel/tabel_daftar_renaksi', $data);
+    }
+    public function input_renaksi($id)
+    {
+        $data = $this->daftarRenaksiModel->find($id);
+        if (!$data) {
+            return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
+        }
+        return view('/pages/memorandum/ModalInputRenaksi', ['data' => $data]);
+    }
+
+
+    public function input_memo_renaksi($id)
+    {
+        die;
+        $data = $this->request->getPost();
+        $this->memoModel->insert($id, $data);
+
+        return $this->response->setJSON(['success' => true]);
     }
 }
