@@ -78,6 +78,7 @@ $routes->get('/memorandum/daftar_renaksi', 'Memorandum::daftar_renaksi');
 $routes->post('/memorandum/get_daftar_renaksi', 'Memorandum::get_daftar_renaksi');
 $routes->get('/memorandum/input_renaksi/(:segment)', 'Memorandum::input_renaksi/$1');
 $routes->post('memorandum/input_memo_renaksi/(:segment)', 'Memorandum::input_memo_renaksi/$1');
+$routes->get('memorandum/input_memo_renaksi/(:segment)', 'Memorandum::input_memo_renaksi/$1');
 $routes->post('/memorandum/get_program', 'Memorandum::get_program', ['filter' => 'permission']);
 $routes->post('/memorandum', 'Memorandum::index', ['filter' => 'permission']);
 $routes->get('/memo/(:segment)', 'Memorandum::detail/$1', ['filter' => 'permission']);

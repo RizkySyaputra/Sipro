@@ -331,7 +331,7 @@
         });
 
         // ====== UPDATE ======
-        $(document).on('submit', '#editRenaksiForm', function(e) {
+        $(document).on('submit', '#inputRenaksiForm', function(e) {
             e.preventDefault();
             let form = $(this);
             let id = form.find('input[name="id_renaksi"]').val();

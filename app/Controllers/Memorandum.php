@@ -404,20 +404,92 @@ class Memorandum extends BaseController
     {
         $t_memo = $this->memoModel->find($id);
         $memo = $this->daftarMemoModel->find($id);
+        $namaList = [
+            'Andi',
+            'Budi',
+            'Citra',
+            'Dewi',
+            'Eko'
+        ];
         if (!$memo) {
             return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
         }
-        return view('/pages/memorandum/ModalEdit', ['memo' => $memo, 't_memo' => $t_memo]);
+        return view('/pages/memorandum/ModalEdit', ['memo' => $memo, 't_memo' => $t_memo, 'namaList' => $namaList]);
     }
 
 
     public function update($id)
     {
-        $data = $this->request->getPost();
-        $this->memoModel->update($id, $data);
+        $memoModel = new MemoModel();
 
-        return $this->response->setJSON(['success' => true]);
+        // Ambil input lain
+        $pekerjaan     = $this->request->getPost('pekerjaan');
+        $lokasi        = $this->request->getPost('lokasi');
+        $justifikasi   = $this->request->getPost('justifikasi');
+        $tahun_mulai   = $this->request->getPost('tahun_mulai');
+        $tahun_selesai = $this->request->getPost('tahun_selesai');
+        // Ambil volume dan anggaran per tahun
+        $tahunMulai   = (int) $this->request->getPost('tahun_mulai');
+        $tahunSelesai = (int) $this->request->getPost('tahun_selesai');
+
+        $volumeData = [];
+        $anggaranData = [];
+
+        if ($tahunMulai && $tahunSelesai && $tahunSelesai >= $tahunMulai) {
+            for ($tahun = $tahunMulai; $tahun <= $tahunSelesai; $tahun++) {
+                $index = $tahun - $tahunMulai + 1;
+
+                $volumeKey = 'volume_' . $index;
+                $anggaranKey = 'anggaran_' . $index;
+
+                $volumeData[$volumeKey] = $this->request->getPost($volumeKey);
+                $anggaranData[$anggaranKey] = $this->request->getPost($anggaranKey);
+            }
+        }
+
+
+
+        // Ambil catatan
+        $namaArr = $this->request->getPost('catatan_nama');
+        $textArr = $this->request->getPost('catatan_text');
+
+        $catatan = [];
+        if ($namaArr && $textArr) {
+            foreach ($namaArr as $i => $nama) {
+                // Hanya simpan jika nama & catatan tidak kosong
+                if (!empty($nama) && isset($textArr[$i]) && trim($textArr[$i]) !== '') {
+                    $catatan[] = [
+                        'nama'    => $nama,
+                        'catatan' => $textArr[$i]
+                    ];
+                }
+            }
+        }
+
+        // Data yang akan diupdate
+        $dataToUpdate = [
+            'pekerjaan'         => $pekerjaan,
+            'lokasi'            => $lokasi,
+            'justifikasi'       => $justifikasi,
+            'tahun_mulai'       => $tahun_mulai,
+            'tahun_selesai'     => $tahun_selesai,
+            'catatan_memorandum' => json_encode($catatan, JSON_UNESCAPED_UNICODE)
+        ];
+        $dataToUpdate = array_merge($dataToUpdate, $volumeData, $anggaranData);
+        // Update data
+        if ($memoModel->update($id, $dataToUpdate)) {
+            return $this->response->setJSON([
+                'status' => true,
+                'message' => 'Data berhasil disimpan.'
+            ]);
+        } else {
+            return $this->response->setJSON([
+                'status' => false,
+                'message' => 'Terjadi kesalahan saat menyimpan.'
+            ]);
+        }
     }
+
 
 
     // --- DELETE ---
@@ -469,19 +541,90 @@ class Memorandum extends BaseController
     }
     public function input_renaksi($id)
     {
+        $namaList = [
+            'Andi',
+            'Budi',
+            'Citra',
+            'Dewi',
+            'Eko'
+        ];
         $data = $this->daftarRenaksiModel->find($id);
         if (!$data) {
             return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
         }
-        return view('/pages/memorandum/ModalInputRenaksi', ['data' => $data]);
+        return view('/pages/memorandum/ModalInputRenaksi', ['data' => $data,  'namaList' => $namaList]);
     }
 
 
     public function input_memo_renaksi($id)
     {
-        die;
         $data = $this->request->getPost();
-        $this->memoModel->insert($id, $data);
+        $id_unor = str_pad($data['id_unor'], 2, '0', STR_PAD_LEFT);
+        $prefix = 'MP' . '.' . $data['id_provinsi'] . '.' . $id_unor . '.';
+
+        // Ambil uniq_id terakhir berdasarkan id_provinsi
+        $row   = $this->memoModel->like('id_memorandum', $prefix)->orderBy('id_memorandum', 'DESC')->first();
+
+        if ($row) {
+            // Ambil angka uniq terakhir dan tambah 1
+            $last_id = (int) substr($row->id_memorandum, -4); // ambil 4 digit terakhir
+            $uniq_id = str_pad($last_id + 1, 4, '0', STR_PAD_LEFT);
+        } else {
+            // Mulai dari 0001
+            $uniq_id = '0001';
+        }
+
+        // Gabungkan semua
+        $id_memorandum = $prefix . $uniq_id;
+
+
+        $volumeData = [];
+        $anggaranData = [];
+        $tahunMulai   = (int) $this->request->getPost('tahun_mulai');
+        $tahunSelesai = (int) $this->request->getPost('tahun_selesai');
+
+        if ($tahunMulai && $tahunSelesai && $tahunSelesai >= $tahunMulai) {
+            for ($tahun = $tahunMulai; $tahun <= $tahunSelesai; $tahun++) {
+                $index = $tahun - $tahunMulai + 1;
+
+                $volumeKey = 'volume_' . $index;
+                $anggaranKey = 'anggaran_' . $index;
+
+                $volumeData[$volumeKey] = $this->request->getPost($volumeKey);
+                $anggaranData[$anggaranKey] = $this->request->getPost($anggaranKey);
+            }
+        }
+
+
+
+        // Ambil catatan
+        $namaArr = $this->request->getPost('catatan_nama');
+        $textArr = $this->request->getPost('catatan_text');
+
+        $catatan = [];
+        if ($namaArr && $textArr) {
+            foreach ($namaArr as $i => $nama) {
+                // Hanya simpan jika nama & catatan tidak kosong
+                if (!empty($nama) && isset($textArr[$i]) && trim($textArr[$i]) !== '') {
+                    $catatan[] = [
+                        'nama'    => $nama,
+                        'catatan' => $textArr[$i]
+                    ];
+                }
+            }
+        }
+        $data2 = [
+            'id_memorandum' =>  $id_memorandum,
+            'catatan_memorandum' => json_encode($catatan, JSON_UNESCAPED_UNICODE),
+            'sumber' => "RPIW"
+        ];
+        $dataToInsert = array_merge($data, $volumeData, $anggaranData, $data2);
+        // d($data);
+        // d($volumeData);
+        // d($anggaranData);
+        // d($data2);
+        // dd($dataToInsert);
+        $this->memoModel->insert($dataToInsert);
 
         return $this->response->setJSON(['success' => true]);
     }

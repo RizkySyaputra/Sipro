@@ -349,7 +349,7 @@
                 type: "POST",
                 data: form.serialize(),
                 success: function(res) {
-                    if (res.success) {
+                    if (res.status) {
                         $('#memoModal').modal('hide');
 
                         Swal.fire({

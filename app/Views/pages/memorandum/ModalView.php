@@ -1,3 +1,28 @@
+<style>
+    .catatan-item {
+        background-color: #f8f9fa;
+        /* warna abu lembut */
+        border-left: 4px solid #0d6efd;
+        /* garis biru di kiri */
+        padding: 10px 15px;
+        border-radius: 8px;
+        margin-bottom: 8px;
+    }
+
+    .catatan-nama {
+        font-weight: 600;
+        color: #0d6efd;
+        margin-bottom: 4px;
+    }
+
+    .catatan-text {
+        text-align: justify;
+        color: #333;
+        margin: 0;
+        white-space: pre-line;
+    }
+</style>
+
 <div class="container-fluid">
     <!-- Detail Memorandum -->
     <div class="card shadow-sm mb-4">
@@ -8,12 +33,12 @@
             <div class="row g-3">
                 <div class="col-md-6">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><strong>Nama Program:</strong> <?= esc($memo->pekerjaan ?? '-') ?></li>
+                        <li class="list-group-item catatan-text "><strong>Nama Program:</strong> <?= esc($memo->pekerjaan ?? '-') ?></li>
                         <li class="list-group-item"><strong>Provinsi:</strong> <?= esc($memo->provinsi ?? '-') ?></li>
                         <li class="list-group-item"><strong>Unit Organisasi:</strong> <?= esc($memo->unor ?? '-') ?></li>
                         <li class="list-group-item"><strong>Kawasan Prioritas:</strong> <?= esc($memo->kawasan ?? '-') ?></li>
                         <li class="list-group-item"><strong>Lokasi:</strong> <?= esc($memo->lokasi ?? '-') ?></li>
-                        <li class="list-group-item"><strong>Justifikasi:</strong> <?= esc($memo->justifikasi ?? '-') ?></li>
+                        <li class="list-group-item catatan-text"><strong>Justifikasi:</strong><br> <?= esc($memo->justifikasi ?? '-') ?></li>
                         <li class="list-group-item"><strong>Sumber Pendanaan:</strong> <?= esc($memo->sumber ?? '-') ?></li>
                         <li class="list-group-item"><strong>Tahun Perencanaan:</strong> <?= esc($memo->periode ?? '-') ?></li>
                         <li class="list-group-item"><strong>Tahun:</strong> <?= esc($memo->tahun_mulai ?? '-') ?> - <?= esc($memo->tahun_selesai ?? '-') ?></li>
@@ -55,8 +80,28 @@
                                 <span>-</span>
                             <?php endif; ?>
                         </li>
-                        <li class="list-group-item"><strong>Catatan Memorandum:</strong><br>
-                            <span class="text-muted"><?= esc($memo->catatan_memorandum ?? '-') ?></span>
+
+                        <li class="list-group-item">
+                            <strong>Catatan Memorandum:</strong>
+                            <?php if (!empty($memo->catatan_memorandum)): ?>
+                                <?php
+                                $catatanList = json_decode($memo->catatan_memorandum, true);
+                                ?>
+                                <?php if (!empty($catatanList)): ?>
+                                    <div class="mt-2">
+                                        <?php foreach ($catatanList as $item): ?>
+                                            <div class="catatan-item">
+                                                <div class="catatan-nama"><?= esc($item['nama']) ?>:</div>
+                                                <p class="catatan-text"><?= esc($item['catatan']) ?></p>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                <?php else: ?>
+                                    <div class="text-muted mt-1">-</div>
+                                <?php endif; ?>
+                            <?php else: ?>
+                                <div class="text-muted mt-1">-</div>
+                            <?php endif; ?>
                         </li>
                     </ul>
                 </div>
