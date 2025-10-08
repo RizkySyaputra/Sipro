@@ -13,7 +13,7 @@ class NomenklaturModel extends Model
     public function getNomenklatur($id_program, $id_kegiatan, $id_kro, $id_ro)
     {
         $builder = $this->db->table('view_m_nomenklatur_pu as vmnpu');
-        $builder->select('vmnpu.nm_program as nm_program, vmnpu.nm_kegiatan as nm_kegiatan, vmnpu.nm_kro as nm_kro, vmnpu.nm_ro as nm_ro');
+        $builder->select('vmnpu.nm_program as nm_program, vmnpu.nm_kegiatan as nm_kegiatan, vmnpu.nm_kro as nm_kro, vmnpu.nm_ro as nm_ro, vmnpu.nama_satuan as nama_satuan');
 
         $builder->where('vmnpu.id_program', $id_program);
 

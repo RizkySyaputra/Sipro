@@ -7,5 +7,6 @@ foreach ($nomenklaturs as $nm) : ?>
         <td><?= $nm->nm_kegiatan ?></td>
         <td><?= $nm->nm_kro ?></td>
         <td><?= $nm->nm_ro ?></td>
+        <td><?= $nm->nama_satuan ?></td>
     </tr>
 <?php endforeach; ?>

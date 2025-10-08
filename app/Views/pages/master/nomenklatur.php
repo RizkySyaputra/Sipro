@@ -25,10 +25,10 @@
                     </div> -->
                     <div class="card-body">
                         <form id="filter-form" ?>
-                            <div class="form-row align-items-center">
+                            <div class="form-row align-items-center justify-content-center">
                                 <!-- Dropdown Program -->
                                 <div class="col-md-2 mb-3">
-                                    <label for="program"><strong>Kode Program</strong></label>
+                                    <label for="program"><strong>Program</strong></label>
                                     <select class="form-control" name="program" id="filter-program">
                                         <option value=""></option>
                                         <?php foreach ($program as $p): ?>
@@ -39,7 +39,7 @@
 
                                 <!-- Dropdown Kegiatan -->
                                 <div class="col-md-2 mb-3">
-                                    <label for="kegiatan"><strong>Kode Kegiatan</strong></label>
+                                    <label for="kegiatan"><strong>Kegiatan</strong></label>
                                     <select class="form-control" name="kegiatan" id="filter-kegiatan" disabled>
                                         <option value="">Pilih Kegiatan</option>
                                     </select>
@@ -47,7 +47,7 @@
 
                                 <!-- Dropdown Kode KRO -->
                                 <div class="col-md-2 mb-3">
-                                    <label for="kro"><strong>Kode KRO</strong></label>
+                                    <label for="kro"><strong>KRO</strong></label>
                                     <select class="form-control" name="kro" id="filter-kro" disabled>
                                         <option value="">Pilih KRO</option>
                                     </select>
@@ -55,7 +55,7 @@
 
                                 <!-- Dropdown Kode RO -->
                                 <div class="col-md-2 mb-3">
-                                    <label for="ro"><strong>Kode RO</strong></label>
+                                    <label for="ro"><strong>RO</strong></label>
                                     <select class="form-control" name="ro" id="filter-ro" disabled>
                                         <option value="">Pilih RO</option>
                                     </select>
@@ -104,6 +104,8 @@
                             <th>Nama Kegiatan</th>
                             <th>Nama KRO</th>
                             <th>Nama RO</th>
+                            <th>Satuan</th>
+                            <th>Detail</th>
                         </tr>
                     </thead>
                     <!-- <tfoot>
@@ -358,6 +360,7 @@
 
             if (!id_kro) {
                 // Parent kosong → Reset semua anak
+
                 $('#filter-ro').html('<option value="">Pilih RO</option>').prop('disabled', true).trigger('change.select2');
                 return; // Hentikan proses kalau kosong
             }
