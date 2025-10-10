@@ -1,10 +1,3 @@
-<?php
-// echo '<pre>';
-// print_r($program);
-// echo '</pre>';
-// exit;
-?>
-
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -24,11 +17,12 @@
                         <h5 class="mb-0">Filter Data Memorandum</h5>
                     </div> -->
                     <div class="card-body">
-                        <form id="filter-form" ?>
-                            <div class="form-row align-items-center justify-content-center">
-                                <!-- Dropdown Program -->
-                                <div class="col-md-2 mb-3">
-                                    <label for="program"><strong>Program</strong></label>
+                        <form id="filter-form">
+                            <!-- <div class=""> -->
+                            <!-- Dropdown Program -->
+                            <div class="row mb-3">
+                                <label for="program" class="col-sm-1"><strong>Program</strong></label>
+                                <div class="col-sm-11">
                                     <select class="form-control" name="program" id="filter-program">
                                         <option value=""></option>
                                         <?php foreach ($program as $p): ?>
@@ -36,33 +30,44 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
+                            </div>
 
-                                <!-- Dropdown Kegiatan -->
-                                <div class="col-md-2 mb-3">
-                                    <label for="kegiatan"><strong>Kegiatan</strong></label>
+                            <!-- Dropdown Kegiatan -->
+                            <div class="row mb-3">
+                                <label for="kegiatan" class="col-sm-1"><strong>Kegiatan</strong></label>
+                                <div class="col-sm-11">
                                     <select class="form-control" name="kegiatan" id="filter-kegiatan" disabled>
                                         <option value="">Pilih Kegiatan</option>
                                     </select>
                                 </div>
+                            </div>
 
-                                <!-- Dropdown Kode KRO -->
-                                <div class="col-md-2 mb-3">
-                                    <label for="kro"><strong>KRO</strong></label>
+                            <!-- Dropdown Kode KRO -->
+                            <div class="row mb-3">
+                                <label for="kro" class="col-sm-1"><strong>KRO</strong></label>
+                                <div class="col-sm-11">
                                     <select class="form-control" name="kro" id="filter-kro" disabled>
                                         <option value="">Pilih KRO</option>
                                     </select>
                                 </div>
+                            </div>
 
-                                <!-- Dropdown Kode RO -->
-                                <div class="col-md-2 mb-3">
-                                    <label for="ro"><strong>RO</strong></label>
+                            <!-- Dropdown Kode RO -->
+                            <div class="row mb-3">
+                                <label for="ro" class="col-sm-1"><strong>RO</strong></label>
+                                <div class="col-sm-11">
                                     <select class="form-control" name="ro" id="filter-ro" disabled>
                                         <option value="">Pilih RO</option>
                                     </select>
                                 </div>
+                            </div>
 
-                                <!-- Button Filter -->
-                                <div class="col-md-3 ">
+                            <!-- Button Filter -->
+                            <div class="row">
+                                <div class="col-sm-1">
+
+                                </div>
+                                <div class="col-sm-11">
                                     <button type="submit" class="btn btn-primary" title="Cari Data">
                                         <i id="button-text" class="fa fa-search"></i>
                                         <span id="loading-spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
@@ -72,12 +77,14 @@
                                     </button>
                                     <!-- Tombol Download Excel -->
                                     <button type="button" id="download-excel" class="btn btn-success" title="Download Excel">
-                                        <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" alt="Excel Icon" style="width: 20px; height: 20px; vertical-align: middle;">
+                                        <img id="img-excel" src="https://cdn-icons-png.flaticon.com/512/732/732220.png" alt="Excel Icon" style="width: 20px; height: 20px; vertical-align: middle;">
+                                        <span id="loading-spinner-excel" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
                                         <!-- <i class="fa fa-download"></i> -->
                                     </button>
                                 </div>
-
                             </div>
+
+                            <!-- </div> -->
                     </div>
                     <!-- <input type="text" name="sumber" value="NON RPIW" hidden> -->
                     </form>
@@ -100,10 +107,10 @@
                     <thead>
                         <tr>
                             <th>No </th>
-                            <th>Nama Program</th>
-                            <th>Nama Kegiatan</th>
-                            <th>Nama KRO</th>
-                            <th>Nama RO</th>
+                            <th>Program</th>
+                            <th>Kegiatan</th>
+                            <th>KRO</th>
+                            <th>RO</th>
                             <th>Satuan</th>
                             <th>Detail</th>
                         </tr>
@@ -111,10 +118,12 @@
                     <!-- <tfoot>
                         <tr>
                             <th>No </th>
-                            <th>Nama Program</th>
-                            <th>Nama Kegiatan</th>
-                            <th>Nama KRO</th>
-                            <th>Nama RO</th>
+                            <th>Program</th>
+                            <th>Kegiatan</th>
+                            <th>KRO</th>
+                            <th>RO</th>
+                            <th>Satuan</th>
+                            <th>Detail</th>
                         </tr>
                     </tfoot> -->
                     <tbody>
@@ -140,12 +149,14 @@
 <script>
     $(document).ready(function() {
         $('#download-excel').on('click', function() {
+            $('#loading-spinner-excel').show();
+            $('#img-excel').hide();
             // Ambil data filter
             var filterData = $('#filter-form').serialize(); // Serialize data dari form filter
 
             // Kirim request AJAX
             $.ajax({
-                url: '<?= base_url('/desk/exportToExcel') ?>', // Endpoint controller
+                url: '<?= base_url('master/exportToExcel') ?>', // Endpoint controller
                 type: 'POST',
                 data: filterData,
                 xhrFields: {
@@ -165,7 +176,7 @@
                         date.getMinutes().toString().padStart(2, '0') +
                         date.getSeconds().toString().padStart(2, '0');
                     link.href = window.URL.createObjectURL(blob);
-                    link.download = 'Filtered_Program_Tahunan' + timestamp + '.xlsx'; // Nama file unduhan
+                    link.download = 'Filtered_Nomenklatur_Program' + timestamp + '.xlsx'; // Nama file unduhan
                     link.click();
                 },
                 error: function() {
@@ -175,6 +186,11 @@
                         text: 'Gagal mengunduh file Excel. Silakan coba lagi.',
                         confirmButtonText: 'OK'
                     });
+                },
+                complete: function() {
+                    // Sembunyikan spinner dan kembalikan teks tombol
+                    $('#loading-spinner-excel').hide();
+                    $('#img-excel').show();
                 }
             });
         });
@@ -221,7 +237,7 @@
                     console.log(response);
                     // Hapus inisialisasi DataTables yang lama
                     if ($.fn.DataTable.isDataTable('#datatables')) {
-                        $('#datatables').DataTable().destroy();
+                        $('#datatables').DataTable().clear().destroy();
                     }
                     // Update tabel dengan data yang diterima
                     $('#datatables tbody').html(response);
@@ -252,6 +268,8 @@
         });
 
 
+
+
         // filtering section process sendi_08102025
         $('#reset-filters').on('click', function() {
             // Reset dropdowns to their default values
@@ -268,6 +286,9 @@
             localStorage.removeItem('selectedKegiatan');
             localStorage.removeItem('selectedKro');
             localStorage.removeItem('selectedRo');
+
+            var table = $('#datatables').DataTable();
+            table.clear().draw();
         });
 
         // get data filter kegiatan

@@ -29,6 +29,8 @@ $routes->post('master/get_kegiatan', 'Master::get_kegiatan');
 $routes->post('master/get_kro', 'Master::get_kro');
 $routes->post('master/get_ro', 'Master::get_ro');
 $routes->post('master/get_nomenklatur', 'Master::get_nomenklatur');
+$routes->get('master/get_detail_nomenklatur', 'Master::get_detail_nomenklatur');
+$routes->post('master/exportToExcel', 'Master::export_to_excel', ['filter' => 'permission']);
 
 $routes->get('/forbidden', function () {
     return view('errors/html/production');

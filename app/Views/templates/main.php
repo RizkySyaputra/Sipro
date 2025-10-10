@@ -285,6 +285,9 @@
             <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
             <script src="<?= base_url('assets/js/plugins/jquery.dataTables.min.js') ?>"></script>
 
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
             <!-- External async scripts -->
             <!--  Google Maps Plugin    -->
             <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2Yno10-YTnLjjn_Vtk0V8cdcY5lC4plU"></script>

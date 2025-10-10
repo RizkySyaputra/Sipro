@@ -10,6 +10,8 @@ use App\Models\Master\RoModel;
 use App\Models\Master\UserModel;
 use App\Models\Master\RoleModel;
 use App\Models\Master\NomenklaturModel;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use CodeIgniter\CLI\Console;
 use CodeIgniter\Router\Router;
 
@@ -85,6 +87,92 @@ class Master extends BaseController
 
         return view('/pages/master/tabel/tabel_nomenklatur', $data);
     }
+
+    public function get_detail_nomenklatur()
+    {
+        $program_id = $this->request->getGet('program');
+        $kegiatan_id = $this->request->getGet('kegiatan');
+        $kro_id = $this->request->getGet('kro');
+        $ro_id = $this->request->getGet('ro');
+
+        $nomenklatur = $this->nomenklaturModel->getDetailNomenklatur($program_id, $kegiatan_id, $kro_id, $ro_id);
+
+        return $this->response->setJSON($nomenklatur);
+    }
+
+    public function export_to_excel()
+    {
+        // Ambil data filter dari request POST
+        $program_id = $this->request->getPost('program');
+        $kegiatan_id = $this->request->getPost('kegiatan');
+        $kro_id = $this->request->getPost('kro');
+        $ro_id = $this->request->getPost('ro');
+
+        // Ambil data berdasarkan filter
+        $nomenklaturs = $this->nomenklaturModel->getNomenklatur($program_id, $kegiatan_id, $kro_id, $ro_id);
+
+        // Buat Spreadsheet baru
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+
+        // Header kolom
+        $sheet->setCellValue('A1', 'No');
+        $sheet->setCellValue('B1', 'Kode Program');
+        $sheet->setCellValue('C1', 'Nama Program');
+        $sheet->setCellValue('D1', 'Kode Kegiatan');
+        $sheet->setCellValue('E1', 'Nama Kegiatan');
+        $sheet->setCellValue('F1', 'Kode KRO');
+        $sheet->setCellValue('G1', 'Nama KRO');
+        $sheet->setCellValue('H1', 'Kode RO');
+        $sheet->setCellValue('I1', 'Nama RO');
+        $sheet->setCellValue('J1', 'Satuan');
+        $sheet->setCellValue('K1', 'Periode');
+
+        // Membuat teks header menjadi bold
+        $sheet->getStyle('A1:K1')->getFont()->setBold(true);
+
+        // Atur kolom agar auto size
+        foreach (range('A', 'K') as $col) {
+            $sheet->getColumnDimension($col)->setAutoSize(true);
+        }
+
+        // Isi data ke dalam sheet
+        $row = 2; // Baris data dimulai dari baris ke-2
+        foreach ($nomenklaturs as $index => $nm) {
+
+            //
+            $sheet->setCellValue('A' . $row, $index + 1);
+            $sheet->setCellValue('B' . $row, $nm->id_program);
+            $sheet->setCellValue('C' . $row, $nm->nm_program);
+            $sheet->setCellValue('D' . $row, $nm->id_kegiatan);
+            $sheet->setCellValue('E' . $row, $nm->nm_kegiatan);
+            $sheet->setCellValue('F' . $row, $nm->id_kro);
+            $sheet->setCellValue('G' . $row, $nm->nm_kro);
+            $sheet->setCellValue('H' . $row, $nm->id_ro);
+            $sheet->setCellValue('I' . $row, $nm->nm_ro);
+            $sheet->setCellValue('J' . $row, $nm->nama_satuan);
+            $sheet->setCellValue('K' . $row, $nm->periode);
+            $row++;
+        }
+
+        // Simpan file sebagai output langsung
+        $writer = new Xlsx($spreadsheet);
+        $filename = 'Nomenklatur_Kegiatan' . date('Y-m-d_H-i-s') . '.xlsx';
+
+        // Header untuk download file Excel
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment; filename="' . $filename . '"');
+        header('Cache-Control: max-age=0');
+
+        // clean output buffer
+        while (ob_get_level()) {
+            ob_end_clean();
+        }
+        // Tulis file ke output
+        $writer->save('php://output');
+        exit;
+    }
+
 
     public function get_kegiatan()
     {
