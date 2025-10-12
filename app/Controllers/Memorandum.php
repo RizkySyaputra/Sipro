@@ -12,6 +12,7 @@ use App\Models\Master\UnorModel;
 use App\Models\Master\PendanaanModel;
 use App\Models\Master\SatuanModel;
 use App\Models\Master\MpModel;
+use App\Models\Master\StackholderModel;
 use CodeIgniter\Controller;
 use PhpParser\Node\Expr\Instanceof_;
 use App\Models\Rpiw\DaftarRenaksiModel;
@@ -34,6 +35,7 @@ class Memorandum extends BaseController
     protected $mpModel;
     protected $daftarRenaksiModel;
     protected $renaksiModel;
+    protected $stakholderModel;
     public function __construct()
 
     {
@@ -49,6 +51,8 @@ class Memorandum extends BaseController
         $this->mpModel = new MpModel();
         $this->daftarRenaksiModel = new daftarRenaksiModel();
         $this->renaksiModel = new renaksiModel();
+        $this->stakholderModel = new StackholderModel();
+
         helper('permission');
     }
     public function index()
@@ -404,13 +408,7 @@ class Memorandum extends BaseController
     {
         $t_memo = $this->memoModel->find($id);
         $memo = $this->daftarMemoModel->find($id);
-        $namaList = [
-            'Andi',
-            'Budi',
-            'Citra',
-            'Dewi',
-            'Eko'
-        ];
+        $namaList = $this->stakholderModel->orderBy('id_kategori')->orderBy('id_stakeholder')->findAll();
         if (!$memo) {
             return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
         }
@@ -503,7 +501,10 @@ class Memorandum extends BaseController
         if (!$memo) {
             return $this->response->setJSON(['status' => 'error', 'message' => 'Data tidak ditemukan']);
         }
-
+        $id_renaksi =  $memo->id_renaksi;
+        $renaksi = $this->renaksiModel->find($id_renaksi);
+        $newmp = $renaksi->mp - 1;
+        $this->renaksiModel->update($id_renaksi, ['mp' => $newmp]);
         $this->memoModel->where('id_memorandum', $id)->delete();
 
         return $this->response->setJSON(['status' => 'success', 'message' => 'Data berhasil dihapus']);
@@ -530,7 +531,8 @@ class Memorandum extends BaseController
         $provinsi_id = $this->request->getPost('provinsi');
         $unor_id = $this->request->getPost('unor');
         $kawasan = $this->request->getPost('sumber');
-        $daftarRenaksi = $this->daftarRenaksiModel->getDaftarRenaksi($provinsi_id, $unor_id, $kawasan);
+        $status = $this->request->getPost('status');
+        $daftarRenaksi = $this->daftarRenaksiModel->getDaftarRenaksi($provinsi_id, $unor_id, $kawasan, $status);
         $data = [
             'daftar_renaksi' => $daftarRenaksi,
             'can_view' => has_permission_menu($id_role, '/rpiw/daftar_renaksi', 'can_view'),
@@ -541,13 +543,9 @@ class Memorandum extends BaseController
     }
     public function input_renaksi($id)
     {
-        $namaList = [
-            'Andi',
-            'Budi',
-            'Citra',
-            'Dewi',
-            'Eko'
-        ];
+        $stackholder = $this->stakholderModel->orderBy('id_kategori')->orderBy('id_stakeholder')->findAll();
+        $namaList = array_column($stackholder, 'short_stakeholder');
+
         $data = $this->daftarRenaksiModel->find($id);
         if (!$data) {
             return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
@@ -624,6 +622,8 @@ class Memorandum extends BaseController
         // d($anggaranData);
         // d($data2);
         // dd($dataToInsert);
+        $newmp = $data['mp'] + 1;
+        $this->renaksiModel->update($data['id_renaksi'], ['mp' => $newmp]);
         $this->memoModel->insert($dataToInsert);
 
         return $this->response->setJSON(['success' => true]);

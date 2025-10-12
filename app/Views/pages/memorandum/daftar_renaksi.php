@@ -52,6 +52,14 @@
                                     </select>
                                 </div>
 
+                                <div class="col-md-3 mb-3">
+                                    <label for="status"><strong>Status</strong></label>
+                                    <select class="form-control" name="status" id="filter-status">
+                                        <option value="">Semua Status</option>
+                                        <option value="0">Belum Terinput</option>
+                                        <option value="1">Sudah Terinput</option>
+                                    </select>
+                                </div>
                                 <!-- Button Filter -->
                                 <div class="col-md-2 d-flex align-items-end gap-2">
                                     <!-- Reset Filter -->
@@ -181,12 +189,12 @@
 
 
         // Inisialisasi Select2 untuk semua dropdown
-        $('#filter-unor, #filter-provinsi, #filter-kawasan,  #filter-sumber').select2();
+        $('#filter-unor, #filter-provinsi, #filter-kawasan,  #filter-status').select2();
         // Restore values from local storage
         $('#filter-unor').val(localStorage.getItem('selectedUnor'));
         $('#filter-provinsi').val(localStorage.getItem('selectedProvinsi'));
         $('#filter-kawasan').val(localStorage.getItem('selectedKawasan'));
-        $('#filter-sumber').val(localStorage.getItem('selectedSumber'));
+        $('#filter-status').val(localStorage.getItem('selectedStatus'));
 
         // On form submit, save the selected values
         $('#filter-form').on('submit', function() {
@@ -240,7 +248,7 @@
             $('#filter-unor').val('').trigger('change');
             $('#filter-provinsi').val('').trigger('change');
             $('#filter-kawasan').val('').trigger('change');
-            $('#filter-sumber').val('').trigger('change');
+            $('#filter-Status').val('').trigger('change');
 
             // Optionally clear the table data
             //$('#datatables tbody').empty();
@@ -249,7 +257,7 @@
             localStorage.removeItem('selectedUnor');
             localStorage.removeItem('selectedProvinsi');
             localStorage.removeItem('selectedKawasan');
-            localStorage.removeItem('selectedSumber');
+            localStorage.removeItem('selectedStatus');
         });
     });
 </script>

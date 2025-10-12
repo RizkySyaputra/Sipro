@@ -11,7 +11,7 @@ class DaftarRenaksiModel extends Model
     protected $returnType = 'object';
 
 
-    public function getDaftarRenaksi($id_provinsi, $id_unor, $kawasan)
+    public function getDaftarRenaksi($id_provinsi, $id_unor, $kawasan, $status)
     {
         $builder = $this->db->table('view_rpiw_renaksi_2529 as a');
 
@@ -27,6 +27,14 @@ class DaftarRenaksiModel extends Model
         if ($kawasan) {
             $builder->where('a.kawasan', $kawasan);
         }
+        if ($status !== null) {
+            if ($status == 0) {
+                $builder->where('a.mp', 0);
+            } elseif ($status == 1) {
+                $builder->where('a.mp >', 0);
+            }
+        }
+
 
 
         $builder->orderBy('a.id_renaksi', 'ASC');

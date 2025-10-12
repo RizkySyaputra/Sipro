@@ -39,6 +39,10 @@
                 <input type="text" class="form-control-plaintext" name="kawasan" value="<?= esc($memo->kawasan ?? '') ?>" disabled>
             </div>
             <div class="form-group">
+                <label>Kabupaten Kota</label>
+                <input type="text" class="form-control-plaintext" name="kabkot" value="<?= esc($memo->kabkot ?? '') ?>" disabled>
+            </div>
+            <div class="form-group">
                 <label>Lokasi</label>
                 <input type="text" class="form-control" name="lokasi" value="<?= esc($memo->lokasi ?? '') ?>">
             </div>
@@ -108,8 +112,8 @@
                         <select class="form-select nama-pencatat" name="catatan_nama[]">
                             <option value="">-- Pilih Nama --</option>
                             <?php foreach ($namaList as $nama): ?>
-                                <option value="<?= esc($nama) ?>" <?= ($item['nama'] ?? '') === $nama ? 'selected' : '' ?>>
-                                    <?= esc($nama) ?>
+                                <option value="<?= esc($nama['short_stakeholder']) ?>" <?= ($item['nama'] ?? '') === $nama['short_stakeholder'] ? 'selected' : '' ?>>
+                                    <?= esc($nama['short_stakeholder']) ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>

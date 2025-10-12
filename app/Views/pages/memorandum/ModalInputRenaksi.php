@@ -31,6 +31,8 @@
             <div class="form-group">
                 <label>Nama Program</label>
                 <input type="text" class="form-control" name="periode" value="2025-2029" hidden>
+                <input type="text" class="form-control" name="id_renaksi" value="<?= esc($data->id_renaksi ?? '') ?>" hidden>
+                <input type="text" class="form-control" name="mp" value="<?= esc($data->mp ?? '') ?>" hidden>
                 <input type="text" class="form-control" name="pekerjaan" value="<?= esc($data->pekerjaan ?? '') ?>">
             </div>
             <div class="form-group">
@@ -118,8 +120,8 @@
                         <select class="form-select nama-pencatat" name="catatan_nama[]">
                             <option value="">-- Pilih Nama --</option>
                             <?php foreach ($namaList as $nama): ?>
-                                <option value="<?= esc($nama) ?>" <?= ($item['nama'] ?? '') === $nama ? 'selected' : '' ?>>
-                                    <?= esc($nama) ?>
+                                <option value="<?= esc($nama['short_stakeholder']) ?>" <?= ($item['nama'] ?? '') === $nama['short_stakeholder'] ? 'selected' : '' ?>>
+                                    <?= esc($nama['short_stakeholder']) ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>

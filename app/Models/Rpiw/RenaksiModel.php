@@ -24,6 +24,7 @@ class RenaksiModel extends Model
         'volume',
         'id_satuan',
         'biaya',
+        'mp',
         'id_pendanaan',
         'tahun_mulai',
         'tahun_selesai',

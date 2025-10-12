@@ -37,6 +37,7 @@
                         <li class="list-group-item"><strong>Provinsi:</strong> <?= esc($memo->provinsi ?? '-') ?></li>
                         <li class="list-group-item"><strong>Unit Organisasi:</strong> <?= esc($memo->unor ?? '-') ?></li>
                         <li class="list-group-item"><strong>Kawasan Prioritas:</strong> <?= esc($memo->kawasan ?? '-') ?></li>
+                        <li class="list-group-item"><strong>Kabupaten / Kota:</strong> <?= esc($memo->kabkot ?? '-') ?></li>
                         <li class="list-group-item"><strong>Lokasi:</strong> <?= esc($memo->lokasi ?? '-') ?></li>
                         <li class="list-group-item catatan-text"><strong>Justifikasi:</strong><br> <?= esc($memo->justifikasi ?? '-') ?></li>
                         <li class="list-group-item"><strong>Sumber Pendanaan:</strong> <?= esc($memo->sumber ?? '-') ?></li>

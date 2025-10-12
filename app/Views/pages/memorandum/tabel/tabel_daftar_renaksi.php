@@ -8,7 +8,17 @@ foreach ($daftar_renaksi as $data) : ?>
         <td><?= $data->pekerjaan ?></td>
         <td><?= $data->kawasan ?></td>
         <td><?= $data->tahun_mulai . ' - ' . $data->tahun_selesai  ?></td>
-        <td>Belum Terinput</td>
+        <td>
+            <?php if ($data->mp == 0) : ?>
+                <span class="badge bg-info">
+                    Belum Terinput
+                </span>
+            <?php elseif ($data->mp > 0) : ?>
+                <span class="badge bg-success">
+                    Sudah Terinput
+                </span>
+            <?php endif; ?>
+        </td>
         <td>
             <?php if ($can_view == true) : ?>
                 <button
