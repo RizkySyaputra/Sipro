@@ -108,32 +108,33 @@
                 <?php endfor; ?>
             <?php endif; ?>
 
-            <hr>
-            <h6><i class="fas fa-sticky-note me-2"></i> Catatan Memorandum</h6>
-            <div id="catatanWrapper">
-                <?php
-                $catatanData = json_decode($data->catatan_memorandum ?? '[]', true);
-                if (!$catatanData) $catatanData = [];
-                foreach ($catatanData as $item):
-                ?>
-                    <div class="catatan-item mb-2">
-                        <select class="form-select nama-pencatat" name="catatan_nama[]">
-                            <option value="">-- Pilih Nama --</option>
-                            <?php foreach ($namaList as $nama): ?>
-                                <option value="<?= esc($nama['short_stakeholder']) ?>" <?= ($item['nama'] ?? '') === $nama['short_stakeholder'] ? 'selected' : '' ?>>
-                                    <?= esc($nama['short_stakeholder']) ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                        <textarea class="form-control mt-1" name="catatan_text[]" rows="2"><?= esc($item['catatan'] ?? '') ?></textarea>
-                        <button type="button" class="btn btn-sm btn-danger mt-1 remove-catatan">Hapus</button>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-            <button type="button" class="btn btn-sm btn-primary mt-2" id="tambahCatatan">Tambah Catatan</button>
         </div>
     </div>
-
+    <div class="col-md-12">
+        <hr>
+        <h6><i class="fas fa-sticky-note me-2"></i> Catatan Memorandum</h6>
+        <div id="catatanWrapper">
+            <?php
+            $catatanData = json_decode($data->catatan_memorandum ?? '[]', true);
+            if (!$catatanData) $catatanData = [];
+            foreach ($catatanData as $item):
+            ?>
+                <div class="catatan-item mb-2">
+                    <select class="form-select nama-pencatat" name="catatan_nama[]">
+                        <option value="">-- Pilih Nama --</option>
+                        <?php foreach ($namaList as $nama): ?>
+                            <option value="<?= esc($nama['short_stakeholder']) ?>" <?= ($item['nama'] ?? '') === $nama['short_stakeholder'] ? 'selected' : '' ?>>
+                                <?= esc($nama['short_stakeholder']) ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                    <textarea class="form-control mt-1" name="catatan_text[]" rows="2"><?= esc($item['catatan'] ?? '') ?></textarea>
+                    <button type="button" class="btn btn-sm btn-danger mt-1 remove-catatan">Hapus</button>
+                </div>
+            <?php endforeach; ?>
+        </div>
+        <button type="button" class="btn btn-sm btn-primary mt-2" id="tambahCatatan">Tambah Catatan</button>
+    </div>
     <div class="text-end mt-3">
         <button type="submit" class="btn btn-primary">
             <i class="fas fa-save me-1"></i> Input Sebagai Memorandum

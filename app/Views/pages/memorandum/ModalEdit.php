@@ -99,7 +99,8 @@
                     </div>
                 <?php endfor; ?>
             <?php endif; ?>
-
+        </div>
+        <div class="col-md-12">
             <hr>
             <h6><i class="fas fa-sticky-note me-2"></i> Catatan Memorandum</h6>
             <div id="catatanWrapper">
