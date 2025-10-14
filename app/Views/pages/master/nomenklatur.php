@@ -2,6 +2,17 @@
     .modal-border-bottom {
         border-bottom: 1px solid #dee2e6 !important;
     }
+
+    /* Ubah warna ikon close */
+    .modal-header .close span {
+        color: #ffffff !important;
+        /* Ganti dengan warna yang kamu mau, misalnya #fff, #000, atau hex lain */
+    }
+
+    /* Ubah warna saat hover (opsional) */
+    .modal-header .close:hover span {
+        color: #dee2e6 !important;
+    }
 </style>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
@@ -132,7 +143,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="detailNomenklaturModalTitle">Nomenklatur Kegiatan</h5>
+                                <h4 class="modal-title" id="detailNomenklaturModalTitle">Nomenklatur Kegiatan</h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
