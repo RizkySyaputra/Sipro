@@ -23,34 +23,7 @@
     <link href="<?= base_url('assets/css/main.css') ?>" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="<?= base_url('assets/demo/demo.css') ?>" rel="stylesheet" />
-    <style>
-        .input-group-login {
-            display: flex;
-            column-gap: 20px;
-            row-gap: 10px;
-            border: 2px solid #000066;
-            border-radius: 30px;
-            padding: 5px 70px 5px 20px;
-        }
 
-        .btn-login {
-            border: 2px solid #000066;
-            background-color: #000066;
-            color: #ffffff;
-            border-radius: 30px;
-            padding: 10px 30px 10px 30px;
-            margin-top: 10px;
-            cursor: pointer;
-        }
-
-        .form-control {
-            background-image: none;
-        }
-
-        .bmd-form-group {
-            margin-top: 3px;
-        }
-    </style>
 </head>
 
 <body class="off-canvas-sidebar">
@@ -62,56 +35,59 @@
     <!-- End Google Tag Manager (noscript) -->
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top text-white">
-        <div class="container-fluid d-flex">
-            <!-- <div class="navbar-wrapper">
+        <div class="container">
+            <div class="navbar-wrapper">
                 <a class="navbar-brand" href="#pablo">SIPRO 2024 </a>
-            </div> -->
-            <div class="navbar-wrapper d-flex align-items-center ml-auto mr-5">
-                <div class="d-flex align-items-center">
-                    <img class=" mr-3" src="<?= base_url('assets/img/logo-bpiw.png') ?>" alt="Logo BPIW" width="50" height="50">
-                    <img src="<?= base_url('assets/img/logo-pu.png') ?>" alt="Logo PU" width="50" height="50">
-                </div>
-                <!-- <a class="navbar-brand" href="#pablo">SIPRO 2024 </a> -->
             </div>
         </div>
     </nav>
     <!-- End Navbar -->
     <div class="wrapper wrapper-full-page">
-        <div class="page-header login-page" filter-color="black" style="background-image: url('<?= base_url('assets/img/login-page.png') ?>'); background-size: cover; background-position: top center;">
-            <div class="container form-input-section" style="display: none;">
-                <div class="d-flex justify-content-end align-items-start col-lg-11 col-md-12 col-sm-12" style="margin-top:-120px">
-                    <form class="form" method="post" action="<?= url_to('login') ?>">
-                        <div class="d-flex flex-column">
-                            <div class="d-flex justify-content-center mb-2">
-                                <img src="<?= base_url('assets/img/logo-sipro.png') ?>" alt="Logo Sipro" width="150">
-                            </div>
-                            <span class="text-center mb-3" style="font-family: Arial, Helvetica, sans-serif; font-size: 24px; color: #000066; font-weight: 900">Hai, Selamat Datang!</span>
-                            <div class="input-group-login mb-2">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <i class="material-icons" style="color: #000066">person</i>
-                                    </span>
-                                </div>
-                                <input type="text" class="form-control no-border-bottom" name="login" placeholder="Username...">
-                            </div>
-                            <div class="input-group-login">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <i class="material-icons" style="color: #000066">lock_outline</i>
-                                    </span>
-                                </div>
-                                <input type="password" name="password" class="form-control no-border-bottom" placeholder="Password...">
-                            </div>
-                            <button type="submit" class="btn-login">MASUK</button>
+        <div class="page-header login-page header-filter" filter-color="black" style="background-image: url('<?= base_url('assets/img/jakarta.jpg') ?>'); background-size: cover; background-position: top center;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
+                        <form class="form" method="post" action="<?= url_to('login') ?>">
+                            <div class="card card-login card-hidden">
+                                <div class="card-header card-header-rose text-center">
+                                    <h4 class="card-title">Login</h4>
 
-                        </div>
-                    </form>
+                                </div>
+                                <div class="card-body ">
+                                    <span class="bmd-form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">
+                                                    <i class="material-icons">person</i>
+                                                </span>
+                                            </div>
+                                            <input type="text" class="form-control" name="login" placeholder="Username...">
+                                        </div>
+                                    </span>
+
+                                    <span class="bmd-form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">
+                                                    <i class="material-icons">lock_outline</i>
+                                                </span>
+                                            </div>
+                                            <input type="password" name="password" class="form-control" placeholder="Password...">
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="card-footer justify-content-center">
+                                    <button type="submit" class="btn btn-rose btn-link btn-lg">login</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
             <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
             <footer class="footer">
                 <div class="container">
-                    <div class="copyright float-right" style="color: #000000">
+                    <div class="copyright float-right">
                         &copy;
                         <script>
                             document.write(new Date().getFullYear())
@@ -149,7 +125,6 @@
     <script>
         $(document).ready(function() {
             localStorage.clear();
-            $('.form-input-section').show();
 
             md.checkFullPageBackgroundImage();
             setTimeout(function() {
