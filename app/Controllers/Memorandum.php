@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 use App\Models\Rpiw\ProgramRpiwModel;
 use App\Models\Rpiw\KawasanRpiwModel;
-use App\Models\Memorandum\ProgramModel;
 use App\Models\Memorandum\DaftarMemoModel;
 use App\Models\Memorandum\MemoModel;
 use App\Models\Master\ProvinsiModel;
@@ -13,6 +12,11 @@ use App\Models\Master\PendanaanModel;
 use App\Models\Master\SatuanModel;
 use App\Models\Master\MpModel;
 use App\Models\Master\StackholderModel;
+use App\Models\Master\KabkotModel;
+use App\Models\Master\ProgramModel;
+use App\Models\Master\KegiatanModel;
+use App\Models\Master\KroModel;
+use App\Models\Master\RoModel;
 use CodeIgniter\Controller;
 use PhpParser\Node\Expr\Instanceof_;
 use App\Models\Rpiw\DaftarRenaksiModel;
@@ -27,8 +31,12 @@ class Memorandum extends BaseController
     protected $provinsiModel;
     protected $unorModel;
     protected $pendanaanModel;
+    protected $kabkotModel;
     protected $rekapProgram;
     protected $programModel;
+    protected $kegiatanModel;
+    protected $kroModel;
+    protected $roModel;
     protected $daftarMemoModel;
     protected $memoModel;
     protected $satuanModel;
@@ -40,6 +48,9 @@ class Memorandum extends BaseController
 
     {
         $this->programModel = new ProgramModel();
+        $this->kegiatanModel = new KegiatanModel();
+        $this->kroModel = new KroModel();
+        $this->roModel = new RoModel();
         $this->daftarMemoModel = new DaftarMemoModel();
         $this->memoModel = new MemoModel();
         $this->programRpiwModel = new ProgramRpiwModel();
@@ -52,6 +63,7 @@ class Memorandum extends BaseController
         $this->daftarRenaksiModel = new daftarRenaksiModel();
         $this->renaksiModel = new renaksiModel();
         $this->stakholderModel = new StackholderModel();
+        $this->kabkotModel = new KabkotModel();
 
         helper('permission');
     }
@@ -408,7 +420,9 @@ class Memorandum extends BaseController
     {
         $t_memo = $this->memoModel->find($id);
         $memo = $this->daftarMemoModel->find($id);
-        $namaList = $this->stakholderModel->orderBy('id_kategori')->orderBy('id_stakeholder')->findAll();
+        $stackholder = $this->stakholderModel->orderBy('id_kategori')->orderBy('id_stakeholder')->findAll();
+        $namaList = array_column($stackholder, 'short_stakeholder');
+
         if (!$memo) {
             return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
         }
@@ -543,14 +557,21 @@ class Memorandum extends BaseController
     }
     public function input_renaksi($id)
     {
+        $data = $this->daftarRenaksiModel->find($id);
         $stackholder = $this->stakholderModel->orderBy('id_kategori')->orderBy('id_stakeholder')->findAll();
         $namaList = array_column($stackholder, 'short_stakeholder');
+        $id_prov = $data->id_provinsi;
+        $kabkot = $this->kabkotModel->where('id_prov', $id_prov)->findAll();
+        $program = $this->programModel->findAll();
+        $kegiatan = $this->kegiatanModel->findAll();;
+        $kro = $this->kroModel->findAll();;
+        $ro = $this->roModel->findAll();;
+        $pendanaan = $this->pendanaanModel->findAll();
 
-        $data = $this->daftarRenaksiModel->find($id);
         if (!$data) {
             return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
         }
-        return view('/pages/memorandum/ModalInputRenaksi', ['data' => $data,  'namaList' => $namaList]);
+        return view('/pages/memorandum/ModalInputRenaksi', ['data' => $data,  'namaList' => $namaList, 'kabkot' => $kabkot, 'pendanaan' => $pendanaan, 'program' => $program, 'kegiatan' => $kegiatan, 'kro' => $kro, 'ro' => $ro]);
     }
 
 

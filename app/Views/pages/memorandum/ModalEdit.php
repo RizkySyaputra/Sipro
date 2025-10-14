@@ -111,10 +111,10 @@
                 ?>
                     <div class="catatan-item mb-2">
                         <select class="form-select nama-pencatat" name="catatan_nama[]">
-                            <option value="">-- Pilih Nama --</option>
+                            <option value="">-- Pilih Pencatat --</option>
                             <?php foreach ($namaList as $nama): ?>
-                                <option value="<?= esc($nama['short_stakeholder']) ?>" <?= ($item['nama'] ?? '') === $nama['short_stakeholder'] ? 'selected' : '' ?>>
-                                    <?= esc($nama['short_stakeholder']) ?>
+                                <option value="<?= esc($nama) ?>" <?= ($item['nama'] ?? '') === $nama ? 'selected' : '' ?>>
+                                    <?= esc($nama) ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>

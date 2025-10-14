@@ -29,6 +29,42 @@
 
             <!--  -->
             <div class="form-group">
+                <label>Program</label><br>
+                <select class="form-control" name="id_program" id="select-program">
+                    <option value="">Pilih Program</option>
+                    <?php foreach ($program as $item): ?>
+                        <option value="<?= $item['id_program'] ?>"><?= $item['nm_program'] ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Kegiatan</label>
+                <select class="form-control" name="id_kegiatan" id="select-kegiatan">
+                    <option value="">Pilih Kegiatan</option>
+                    <?php foreach ($kegiatan as $item): ?>
+                        <option value="<?= $item['id_kegiatan'] ?>"><?= $item['nm_kegiatan'] ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>KRO</label>
+                <select class="form-control" name="id_kro" id="select-kro">
+                    <option value="">Pilih KRO</option>
+                    <?php foreach ($kro as $item): ?>
+                        <option value="<?= $item['id_kro'] ?>"><?= $item['nm_kro'] ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>RO</label>
+                <select class="form-control" name="id_ro" id="select-ro">
+                    <option value="">Pilih RO</option>
+                    <?php foreach ($ro as $item): ?>
+                        <option value="<?= $item['id_ro'] ?>"><?= $item['nm_ro'] ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <div class="form-group">
                 <label>Nama Program</label>
                 <input type="text" class="form-control" name="periode" value="2025-2029" hidden>
                 <input type="text" class="form-control" name="id_renaksi" value="<?= esc($data->id_renaksi ?? '') ?>" hidden>
@@ -40,6 +76,17 @@
                 <input type="text" class="form-control-plaintext" name="provinsi" value="<?= esc($data->provinsi ?? '') ?>" disabled>
                 <input type="text" class="form-control-plaintext" name="id_provinsi" value="<?= esc($data->id_provinsi ?? '') ?>" hidden>
             </div>
+
+            <div class="form-group">
+                <label>Kabupaten / Kota</label>
+                <select class="form-control" name="unor" id="select-kabkot">
+                    <option value="">Pilih Kabkot</option>
+                    <?php foreach ($kabkot as $item): ?>
+                        <option value="<?= $item['id'] ?>"><?= $item['kab_kot'] ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
             <div class="form-group">
                 <label>Unit Organisasi</label>
                 <input type="text" class="form-control-plaintext" name="unor" value="<?= esc($data->unor ?? '') ?>" disabled>
@@ -100,11 +147,21 @@
                     $nilaiAnggaran = $data->{'anggaran_' . $index} ?? '';
                 ?>
                     <div class="form-group">
+                        <label>Sumber Pendanaan</label>
+                        <select class="form-control" name="id_pendanaan_<?= $index ?>" id="select-pendanaan<?= $index ?>">
+                            <option value="">Pilih Sumber</option>
+                            <?php foreach ($pendanaan as $item): ?>
+                                <option value="<?= $item['id_pendanaan'] ?>"><?= $item['sumber_pendanaan'] ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label>Anggaran <?= $tahun ?> (Rp)</label>
                         <input type="text" class="form-control anggaran-format"
                             name="anggaran_<?= $index ?>"
                             value="<?= $nilaiAnggaran ?>">
                     </div>
+
                 <?php endfor; ?>
             <?php endif; ?>
 
@@ -121,7 +178,7 @@
             ?>
                 <div class="catatan-item mb-2">
                     <select class="form-select nama-pencatat" name="catatan_nama[]">
-                        <option value="">-- Pilih Nama --</option>
+                        <option value="">-- Pilih Pencatat --</option>
                         <?php foreach ($namaList as $nama): ?>
                             <option value="<?= esc($nama['short_stakeholder']) ?>" <?= ($item['nama'] ?? '') === $nama['short_stakeholder'] ? 'selected' : '' ?>>
                                 <?= esc($nama['short_stakeholder']) ?>
@@ -211,11 +268,8 @@
         });
 
         // Inisialisasi select2 untuk semua select lama
-        $('.nama-pencatat').select2({
-            placeholder: "-- Pilih Nama --",
-            width: '100%',
-            allowClear: true
-        });
+        $('.nama-pencatat').select2();
+        $('#select-program, #select-kegiatan, #select-kro, #select-ro, #select-kabkot, #select-pendanaan1,#select-pendanaan2,#select-pendanaan3,#select-pendanaan4,#select-pendanaan5').select2();
 
     })();
 

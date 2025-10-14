@@ -6,8 +6,8 @@ use CodeIgniter\Model;
 
 class KroModel extends Model
 {
-    protected $table = 'm_kro';
-    protected $allowedFields = ['kdkro', 'nm_kro', 'tahun'];
+    protected $table = 'm_sk_kro';
+    protected $allowedFields = ['id_program', 'id_kegiatan', 'id_kro', 'nm_kro', 'periode'];
     protected $useTimestamps  = 'true';
 
     public function getKro()
