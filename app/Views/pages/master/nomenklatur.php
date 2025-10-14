@@ -1,3 +1,11 @@
+<style>
+    .modal-border-bottom {
+        border-bottom: 1px solid #dee2e6 !important;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -5,14 +13,10 @@
                 <div class="card-icon">
                     <i class="material-icons">source</i>
                 </div>
-                <h4 class="card-title">Nomenklatur Kegiatan</h4>
-
+                <h3 class="card-title">Nomenklatur Kegiatan</h3>
             </div>
-            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
             <div class="container mt-4">
-                <div class="card shadow-sm">
+                <div class="card shadow-md p-1">
                     <!-- <div class="card-header">
                         <h5 class="mb-0">Filter Data Memorandum</h5>
                     </div> -->
@@ -89,6 +93,60 @@
                     <!-- <input type="text" name="sumber" value="NON RPIW" hidden> -->
                     </form>
                 </div>
+                <div class="card shadow-sm p-1">
+                    <div class="card-body">
+                        <div class="material-datatables">
+                            <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>No </th>
+                                        <th>Program</th>
+                                        <th>Kegiatan</th>
+                                        <th>KRO</th>
+                                        <th>RO</th>
+                                        <th>Satuan</th>
+                                        <th>Detail</th>
+                                    </tr>
+                                </thead>
+                                <!-- <tfoot>
+                        <tr>
+                            <th>No </th>
+                            <th>Program</th>
+                            <th>Kegiatan</th>
+                            <th>KRO</th>
+                            <th>RO</th>
+                            <th>Satuan</th>
+                            <th>Detail</th>
+                        </tr>
+                    </tfoot> -->
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="detailNomenklaturModal" tabindex="-1" role="dialog" aria-labelledby="detailNomenklaturModalTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="detailNomenklaturModalTitle">Nomenklatur Kegiatan</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="form-row-block"></div>
+                            <div class="modal-body" id="modalContent">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Kembali</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <style>
@@ -101,37 +159,6 @@
                 margin-left: 5px;
             }
         </style>
-        <div class="card-body">
-            <div class="material-datatables">
-                <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th>No </th>
-                            <th>Program</th>
-                            <th>Kegiatan</th>
-                            <th>KRO</th>
-                            <th>RO</th>
-                            <th>Satuan</th>
-                            <th>Detail</th>
-                        </tr>
-                    </thead>
-                    <!-- <tfoot>
-                        <tr>
-                            <th>No </th>
-                            <th>Program</th>
-                            <th>Kegiatan</th>
-                            <th>KRO</th>
-                            <th>RO</th>
-                            <th>Satuan</th>
-                            <th>Detail</th>
-                        </tr>
-                    </tfoot> -->
-                    <tbody>
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
         <!-- end content-->
     </div>
     <!--  end card  -->

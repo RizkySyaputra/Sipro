@@ -24,7 +24,7 @@ function renderMenuTree(array $tree)
 
         if ($hasChild) {
             $html .= '
-                <li class="nav-item menu-main">
+                <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#' . $collapseId . '" aria-expanded="false" aria-controls="' . $collapseId . '">
                         <i class="material-icons">source</i>
                         <p>' . esc($menu['nama_menu']) . '<b class="caret"></b></p>

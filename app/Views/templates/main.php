@@ -61,7 +61,7 @@
         }
 
         .content {
-            margin-top: 0 !important;
+            margin-top: -20px !important;
         }
 
         #peta {
@@ -117,6 +117,7 @@
     <meta charset="utf-8" />
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -129,17 +130,23 @@
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-    <!-- CSS Files -->
-    <link href="<?= base_url('assets/css/material-dashboard.min.css?v=2.1.0') ?>" rel="stylesheet" />
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="<?= base_url('assets/demo/demo.css') ?>" rel="stylesheet" />
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
-    <?= isset($_style) ? $_style : null ?>
 
-    <link rel="stylesheet" href="<?= base_url('assets/css/custom.css') ?>">
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <!-- <link href="<?= base_url('assets/demo/demo.css') ?>" rel="stylesheet" /> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
+
+    <!-- CSS Material Design -->
+    <link href="<?= base_url('assets/css/material-dashboard.min.css?v=2.1.0') ?>" rel="stylesheet" />
+    <!-- DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.dataTables.css" />
+
 
     <!-- CSS for Select2 -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="<?= base_url('assets/css/custom.css') ?>">
+
+    <?= isset($_style) ? $_style : null ?>
 </head>
 
 <body>
@@ -234,8 +241,8 @@
             <!--   Core JS Files   -->
 
             <!-- Load JQUery -->
-            <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+            <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
             <!-- <script src="<?= base_url('assets/js/core/jquery.min.js') ?>"></script> -->
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
@@ -280,13 +287,15 @@
             <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script> -->
             <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-            <!-- <script src="<?= base_url('assets/js/core/bootstrap-material-design.min.js') ?>"></script>
-            <script src="<?= base_url('assets/js/material-dashboard.min.js?v=2.1.0') ?>" type="text/javascript"></script> -->
+
             <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
             <script src="<?= base_url('assets/js/plugins/jquery.dataTables.min.js') ?>"></script>
 
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+            <!-- Material Design -->
+            <!-- <script src="<?= base_url('assets/js/material-dashboard.min.js?v=2.1.0') ?>" type="text/javascript"></script> -->
 
+            <!-- Bootstrap Icons -->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
             <!-- External async scripts -->
             <!--  Google Maps Plugin    -->

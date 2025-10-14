@@ -1,22 +1,49 @@
 /* custom.css */
 
 body {
-    font-family: 'Lato';
+  font-family: "Lato";
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Lato';
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato";
 }
 
-p, a, li, span {
-    font-family: 'Lato';
+p,
+a,
+li,
+span {
+  font-family: "Lato";
 }
 textarea {
-    resize: vertical;
-    /* Membolehkan resize manual */
-    overflow: hidden;
-    /* Menyembunyikan scrollbar */
-    min-height: 100px;
-    /* Tinggi minimum */
+  resize: vertical;
+  /* Membolehkan resize manual */
+  overflow: hidden;
+  /* Menyembunyikan scrollbar */
+  min-height: 100px;
+  /* Tinggi minimum */
 }
+
+.modal-header {
+  border-bottom: 2px solid #dee2e6 !important;
+  padding-bottom: 15px !important;
+  background-color: #007bff;
+  /* Sesuaikan warna jika perlu */
+}
+
+.modal-body {
+  border-bottom: 2px solid #dee2e6 !important;
+  padding-bottom: 15px !important;
+}
+
+.modal-footer {
+  padding-top: 20px !important;
+  margin-right: 20px !important;
+  margin-left: 20px !important;
+}
+
 /* Jika ada elemen lain yang perlu disesuaikan, tambahkan di sini */
