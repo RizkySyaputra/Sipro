@@ -189,7 +189,7 @@
                             <ul class="nav">
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?= base_url('logout') ?>">
-                                        <span class="sidebar-mini">L</span>
+                                        <i class="material-icons">exit_to_app</i>
                                         <span class="sidebar-normal">Logout</span>
                                     </a>
                                 </li>

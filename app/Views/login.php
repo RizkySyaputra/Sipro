@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="<?= base_url('assets/img/favicon.ico') ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Sipro | Login2
+        Sipro | Login
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!-- Extra details for Live View on GitHub Pages -->
@@ -31,6 +31,8 @@
             border: 2px solid #000066;
             border-radius: 30px;
             padding: 5px 70px 5px 20px;
+            width: 100%;
+            max-width: 300px;
         }
 
         .btn-login {
@@ -41,6 +43,8 @@
             padding: 10px 30px 10px 30px;
             margin-top: 10px;
             cursor: pointer;
+            width: 100%;
+            max-width: 300px;
         }
 
         .form-control {
@@ -49,6 +53,38 @@
 
         .bmd-form-group {
             margin-top: 3px;
+        }
+
+        .container-section {
+            width: 100%;
+        }
+
+        .container-subsection {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: -120px;
+        }
+
+        .content-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 100%;
+            /* background-color: cyan; */
+        }
+
+        .login-page {
+            background-image: url('<?= base_url('assets/img/login-page.png') ?>');
+            background-size: cover;
+            background-position: top center;
+        }
+
+        @media (min-width: 992px) {
+            .content-section {
+                width: 500px;
+            }
         }
     </style>
 </head>
@@ -77,11 +113,11 @@
     </nav>
     <!-- End Navbar -->
     <div class="wrapper wrapper-full-page">
-        <div class="page-header login-page" filter-color="black" style="background-image: url('<?= base_url('assets/img/login-page.png') ?>'); background-size: cover; background-position: top center;">
-            <div class="container form-input-section" style="display: none;">
-                <div class="d-flex justify-content-end align-items-start col-lg-11 col-md-12 col-sm-12" style="margin-top:-120px">
+        <div class="page-header login-page">
+            <div class="container container-section" style="display: none;">
+                <div class="container-subsection col-sm-8 col-md-12 col-lg-12">
                     <form class="form" method="post" action="<?= url_to('login') ?>">
-                        <div class="d-flex flex-column">
+                        <div class="content-section col-sm-8 col-md-12 col-lg-12">
                             <div class="d-flex justify-content-center mb-2">
                                 <img src="<?= base_url('assets/img/logo-sipro.png') ?>" alt="Logo Sipro" width="150">
                             </div>
@@ -94,7 +130,7 @@
                                 </div>
                                 <input type="text" class="form-control no-border-bottom" name="login" placeholder="Username...">
                             </div>
-                            <div class="input-group-login">
+                            <div class="input-group-login mb-2">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
                                         <i class="material-icons" style="color: #000066">lock_outline</i>
@@ -102,8 +138,14 @@
                                 </div>
                                 <input type="password" name="password" class="form-control no-border-bottom" placeholder="Password...">
                             </div>
+                            <?php if (session()->has('error')) : ?>
+                                <div class="my-2 text-center">
+                                    <span class="text-danger font-weight-bold" style="font-size:14px">
+                                        <?= session('error'); ?>
+                                    </span>
+                                </div>
+                            <?php endif; ?>
                             <button type="submit" class="btn-login">MASUK</button>
-
                         </div>
                     </form>
                 </div>
@@ -149,7 +191,7 @@
     <script>
         $(document).ready(function() {
             localStorage.clear();
-            $('.form-input-section').show();
+            $('.container-section').show();
 
             md.checkFullPageBackgroundImage();
             setTimeout(function() {

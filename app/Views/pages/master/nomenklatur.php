@@ -275,6 +275,7 @@
                         language: {
                             search: "_INPUT_",
                             searchPlaceholder: "Search records",
+                            zeroRecords: "Data tidak ditemukan"
                         }
                     });
                 },
