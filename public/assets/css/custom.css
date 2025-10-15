@@ -47,4 +47,16 @@ textarea {
   margin-left: 20px !important;
 }
 
+.modal-border-bottom {
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+.modal-header .close span {
+  color: #ffffff !important;
+}
+
+.modal-header .close:hover span {
+  color: #dee2e6 !important;
+}
+
 /* Jika ada elemen lain yang perlu disesuaikan, tambahkan di sini */

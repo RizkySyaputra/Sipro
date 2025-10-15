@@ -1,19 +1,3 @@
-<style>
-    .modal-border-bottom {
-        border-bottom: 1px solid #dee2e6 !important;
-    }
-
-    /* Ubah warna ikon close */
-    .modal-header .close span {
-        color: #ffffff !important;
-        /* Ganti dengan warna yang kamu mau, misalnya #fff, #000, atau hex lain */
-    }
-
-    /* Ubah warna saat hover (opsional) */
-    .modal-header .close:hover span {
-        color: #dee2e6 !important;
-    }
-</style>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
