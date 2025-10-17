@@ -1014,20 +1014,21 @@ class DeskController extends BaseController
         exit;
     }
 
-    public function nomenklatur()
-    {
-        $dataProvinsi = $this->provinsiModel->getProvinsi();
-        $dataUnor = $this->unorModel->getUnor();
-        $dataPendanaan = $this->pendanaanModel->getPendanaan();
+    // pindah ke controller Master -> 06102025_sendi
+    // public function nomenklatur()
+    // {
+    //     $dataProvinsi = $this->provinsiModel->getProvinsi();
+    //     $dataUnor = $this->unorModel->getUnor();
+    //     $dataPendanaan = $this->pendanaanModel->getPendanaan();
 
-        $data = [
-            'provinsi' => $dataProvinsi,
-            'unor' => $dataUnor,
-            'pendanaan' => $dataPendanaan
-        ];
-        $this->template->write('title', 'List Desk Program');
-        $this->template->load('/templates/main', '/pages/desk/list_program', $data);
-    }
+    //     $data = [
+    //         'provinsi' => $dataProvinsi,
+    //         'unor' => $dataUnor,
+    //         'pendanaan' => $dataPendanaan
+    //     ];
+    //     $this->template->write('title', 'List Desk Program');
+    //     $this->template->load('/templates/main', '/pages/desk/list_program', $data);
+    // }
 
     public function add_nomenklatur($id_memo)
     {
