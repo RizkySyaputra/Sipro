@@ -38,6 +38,7 @@ function renderMenuTree($menus, $level = 0, $parentClass = '')
             // kalau ada anak → kasih atribut data-toggle="submenu"
             $html .= '<a href="#' . $menuId . '" class="nav-link tree-link has-children" data-toggle="submenu">'
                 . '<span>' . esc($menu['nama_menu']) . '</span></a>';
+
         } else {
             // kalau tidak ada anak → normal link
             $html .= '<a href="' . base_url($menu['link'] ?? '#') . '" class="nav-link tree-link">'

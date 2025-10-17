@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="utf-8" />
     <title><?= isset($title) ? $title : null ?></title>
@@ -18,12 +19,71 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
 
+
     <style>
-        /* LOADING */
+        /* CSS untuk animasi loading */
         #loading {
             position: fixed;
             top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 5px solid #ddd;
+            border-top-color: #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Menu utama */
+        .menu-main>a {
+            background: linear-gradient(45deg, #333333, #555555);
+            /* Gradasi abu-abu gelap */
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+
+        /* Hover efek */
+        .menu-main>a:hover,
+        .submenu>.nav-item>a:hover,
+        .sub-submenu>.nav-item>a:hover {
+            background: linear-gradient(45deg, #222222, #444444);
+            /* Abu-abu lebih gelap saat hover */
+            opacity: 0.9;
+        }
+
+        /* Tambahan styling */
+        .nav-item {
+            margin-bottom: 10px;
+        }
+
+        .content {
+            margin-top: -20px !important;
+        }
+
+        #peta {
+            height: 400px;
             width: 100%;
             height: 100%;
             background: rgba(255, 255, 255, 0.8);
@@ -172,6 +232,39 @@
         }
     </style>
 
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+    <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url('assets/img/apple-icon.png') ?>">
+    <link rel="icon" type="image/png" href="<?= base_url('assets/img/favicon.ico') ?>">
+    <title>
+        <?= isset($title) ? $title : null ?>
+    </title>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <!-- <link href="<?= base_url('assets/demo/demo.css') ?>" rel="stylesheet" /> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
+
+    <!-- CSS Material Design -->
+    <link href="<?= base_url('assets/css/material-dashboard.min.css?v=2.1.0') ?>" rel="stylesheet" />
+    <!-- DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.dataTables.css" />
+
+
+    <!-- CSS for Select2 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="<?= base_url('assets/css/custom.css') ?>">
+
+
     <?= isset($_style) ? $_style : null ?>
 </head>
 
@@ -209,6 +302,17 @@
                         <a class="btn btn-sm btn-danger" href="<?= base_url('logout') ?>">
                             <i class="fas fa-sign-out-alt"></i> Logout
                         </a>
+
+                        <div class="collapse" id="user">
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?= base_url('logout') ?>">
+                                        <i class="material-icons">exit_to_app</i>
+                                        <span class="sidebar-normal">Logout</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
@@ -245,6 +349,7 @@
         </div>
     </div>
 
+//Memorandum_Program
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>

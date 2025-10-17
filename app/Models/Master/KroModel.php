@@ -10,8 +10,17 @@ class KroModel extends Model
     protected $allowedFields = ['id_program', 'id_kegiatan', 'id_kro', 'nm_kro', 'periode'];
     protected $useTimestamps  = 'true';
 
-    public function getKro()
+    // public function getKro()
+    // {
+    //     return $this->findAll();
+    // }
+
+    public function getKro($id_kegiatan)
     {
-        return $this->findAll();
+        $builder = $this->db->table('m_sk_kro as mskro');
+        $builder->select('mskro.id_kro, mskro.nm_kro');
+        $builder->where('mskro.id_kegiatan', $id_kegiatan);
+        $query = $builder->get();
+        return $query->getResult();
     }
 }
