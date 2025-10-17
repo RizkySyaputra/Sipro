@@ -47,7 +47,8 @@ class MemoModel extends Model
         'geotag_uraian',
         'catatan_memorandum',
         'sumber',
-        'periode'
+        'periode',
+        'id_kabkot'
     ];
 
     protected $useTimestamps = false;

@@ -79,12 +79,16 @@
 
             <div class="form-group">
                 <label>Kabupaten / Kota</label>
-                <select class="form-control" name="unor" id="select-kabkot">
-                    <option value="">Pilih Kabkot</option>
+                <select class="form-control" name="id_kabkot[]" id="select-kabkot" multiple>
                     <?php foreach ($kabkot as $item): ?>
-                        <option value="<?= $item['id'] ?>"><?= $item['kab_kot'] ?></option>
+                        <!-- <option value="<?= $item['id'] ?>"><?= $item['kab_kot'] ?></option> -->
+                        <option value="<?= $item['id'] ?>"
+                            <?= in_array($item['id'], (array)($data->kabkot ?? [])) ? 'selected' : '' ?>>
+                            <?= esc($item['kab_kot']) ?>
+                        </option>
                     <?php endforeach; ?>
                 </select>
+                <small class="text-muted">Tekan <b>Ctrl</b> (atau <b>Cmd</b> di Mac) untuk memilih lebih dari satu.</small>
             </div>
 
             <div class="form-group">
@@ -269,8 +273,14 @@
 
         // Inisialisasi select2 untuk semua select lama
         $('.nama-pencatat').select2();
-        $('#select-program, #select-kegiatan, #select-kro, #select-ro, #select-kabkot, #select-pendanaan1,#select-pendanaan2,#select-pendanaan3,#select-pendanaan4,#select-pendanaan5').select2();
-
+        $('#select-program, #select-kegiatan, #select-kro, #select-ro, #select-pendanaan1,#select-pendanaan2,#select-pendanaan3,#select-pendanaan4,#select-pendanaan5').select2();
+        $(document).ready(function() {
+            $('#select-kabkot').select2({
+                placeholder: "-- Pilih Kabupaten / Kota --",
+                width: '100%',
+                allowClear: true
+            });
+        });
     })();
 
 

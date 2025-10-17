@@ -578,34 +578,37 @@ class Memorandum extends BaseController
     public function input_memo_renaksi($id)
     {
         $data = $this->request->getPost();
+
+        // --- Pastikan ID Unor dua digit ---
         $id_unor = str_pad($data['id_unor'], 2, '0', STR_PAD_LEFT);
         $prefix = 'MP' . '.' . $data['id_provinsi'] . '.' . $id_unor . '.';
 
-        // Ambil uniq_id terakhir berdasarkan id_provinsi
-        $row   = $this->memoModel->like('id_memorandum', $prefix)->orderBy('id_memorandum', 'DESC')->first();
+        // --- Ambil uniq_id terakhir berdasarkan id_provinsi ---
+        $row = $this->memoModel
+            ->like('id_memorandum', $prefix)
+            ->orderBy('id_memorandum', 'DESC')
+            ->first();
 
         if ($row) {
             // Ambil angka uniq terakhir dan tambah 1
-            $last_id = (int) substr($row->id_memorandum, -4); // ambil 4 digit terakhir
+            $last_id = (int) substr($row->id_memorandum, -4);
             $uniq_id = str_pad($last_id + 1, 4, '0', STR_PAD_LEFT);
         } else {
-            // Mulai dari 0001
             $uniq_id = '0001';
         }
-
-        // Gabungkan semua
+        // Gabungkan prefix + uniq
         $id_memorandum = $prefix . $uniq_id;
 
-
+        // --- Handle Volume dan Anggaran per Tahun ---
         $volumeData = [];
         $anggaranData = [];
-        $tahunMulai   = (int) $this->request->getPost('tahun_mulai');
+
+        $tahunMulai = (int) $this->request->getPost('tahun_mulai');
         $tahunSelesai = (int) $this->request->getPost('tahun_selesai');
 
         if ($tahunMulai && $tahunSelesai && $tahunSelesai >= $tahunMulai) {
             for ($tahun = $tahunMulai; $tahun <= $tahunSelesai; $tahun++) {
                 $index = $tahun - $tahunMulai + 1;
-
                 $volumeKey = 'volume_' . $index;
                 $anggaranKey = 'anggaran_' . $index;
 
@@ -614,16 +617,13 @@ class Memorandum extends BaseController
             }
         }
 
-
-
-        // Ambil catatan
+        // --- Handle Catatan (Array Nama + Catatan) ---
         $namaArr = $this->request->getPost('catatan_nama');
         $textArr = $this->request->getPost('catatan_text');
 
         $catatan = [];
         if ($namaArr && $textArr) {
             foreach ($namaArr as $i => $nama) {
-                // Hanya simpan jika nama & catatan tidak kosong
                 if (!empty($nama) && isset($textArr[$i]) && trim($textArr[$i]) !== '') {
                     $catatan[] = [
                         'nama'    => $nama,
@@ -632,19 +632,30 @@ class Memorandum extends BaseController
                 }
             }
         }
+
+        // --- Handle kabkot (multi-select) ---
+        $kabkot = $this->request->getPost('id_kabkot'); // bisa berupa array atau string
+        if (is_array($kabkot)) {
+            $kabkot = json_encode($kabkot, JSON_UNESCAPED_UNICODE); // ubah ke JSON string
+        }
+
+        // --- Susun data tambahan ---
         $data2 = [
-            'id_memorandum' =>  $id_memorandum,
-            'catatan_memorandum' => json_encode($catatan, JSON_UNESCAPED_UNICODE),
-            'sumber' => "RPIW"
+            'id_memorandum'       => $id_memorandum,
+            'catatan_memorandum'  => json_encode($catatan, JSON_UNESCAPED_UNICODE),
+            'kabkot'              => $kabkot,
+            'sumber'              => 'RPIW'
         ];
+
+        // --- Gabungkan semua data ---
         $dataToInsert = array_merge($data, $volumeData, $anggaranData, $data2);
-        // d($data);
-        // d($volumeData);
-        // d($anggaranData);
-        // d($data2);
-        // dd($dataToInsert);
-        $newmp = $data['mp'] + 1;
+
+
+        // --- Update nilai mp pada renaksi ---
+        $newmp = (int) $data['mp'] + 1;
         $this->renaksiModel->update($data['id_renaksi'], ['mp' => $newmp]);
+
+        // --- Simpan ke tabel memorandum ---
         $this->memoModel->insert($dataToInsert);
 
         return $this->response->setJSON(['success' => true]);
