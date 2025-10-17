@@ -4,14 +4,23 @@ namespace App\Controllers;
 
 use App\Models\Rpiw\ProgramRpiwModel;
 use App\Models\Rpiw\KawasanRpiwModel;
-use App\Models\Memorandum\ProgramModel;
+use App\Models\Memorandum\DaftarMemoModel;
+use App\Models\Memorandum\MemoModel;
 use App\Models\Master\ProvinsiModel;
 use App\Models\Master\UnorModel;
 use App\Models\Master\PendanaanModel;
 use App\Models\Master\SatuanModel;
 use App\Models\Master\MpModel;
+use App\Models\Master\StackholderModel;
+use App\Models\Master\KabkotModel;
+use App\Models\Master\ProgramModel;
+use App\Models\Master\KegiatanModel;
+use App\Models\Master\KroModel;
+use App\Models\Master\RoModel;
 use CodeIgniter\Controller;
 use PhpParser\Node\Expr\Instanceof_;
+use App\Models\Rpiw\DaftarRenaksiModel;
+use App\Models\Rpiw\RenaksiModel;
 
 use function PHPUnit\Framework\returnCallback;
 
@@ -22,13 +31,28 @@ class Memorandum extends BaseController
     protected $provinsiModel;
     protected $unorModel;
     protected $pendanaanModel;
+    protected $kabkotModel;
     protected $rekapProgram;
     protected $programModel;
+    protected $kegiatanModel;
+    protected $kroModel;
+    protected $roModel;
+    protected $daftarMemoModel;
+    protected $memoModel;
     protected $satuanModel;
     protected $mpModel;
+    protected $daftarRenaksiModel;
+    protected $renaksiModel;
+    protected $stakholderModel;
     public function __construct()
+
     {
         $this->programModel = new ProgramModel();
+        $this->kegiatanModel = new KegiatanModel();
+        $this->kroModel = new KroModel();
+        $this->roModel = new RoModel();
+        $this->daftarMemoModel = new DaftarMemoModel();
+        $this->memoModel = new MemoModel();
         $this->programRpiwModel = new ProgramRpiwModel();
         $this->provinsiModel = new ProvinsiModel();
         $this->unorModel = new UnorModel();
@@ -36,6 +60,12 @@ class Memorandum extends BaseController
         $this->kawasanRpiwModel = new KawasanRpiwModel();
         $this->satuanModel = new SatuanModel();
         $this->mpModel = new MpModel();
+        $this->daftarRenaksiModel = new daftarRenaksiModel();
+        $this->renaksiModel = new renaksiModel();
+        $this->stakholderModel = new StackholderModel();
+        $this->kabkotModel = new KabkotModel();
+
+        helper('permission');
     }
     public function index()
     {
@@ -341,5 +371,293 @@ class Memorandum extends BaseController
         $this->template->add_css('https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css', 'link', false, true);
         $this->template->write('title', 'Detail Program RPIW');
         $this->template->load('/templates/main', '/pages/memorandum/detailProgram', $data);
+    }
+
+    // Sipro 2025
+
+    public function daftar_memo()
+    {
+
+        $dataKawasan = $this->kawasanRpiwModel->getKawasan();
+        $dataProvinsi = $this->provinsiModel->getProvinsi();
+        $dataUnor = $this->unorModel->getUnor();
+        $data = [
+            'kawasan' => $dataKawasan,
+            'provinsi' => $dataProvinsi,
+            'unor' => $dataUnor
+        ];
+        $this->template->write('title', 'Program Jangka Menengah');
+        $this->template->load('/templates/main', '/pages/memorandum/daftar_memo', $data);
+    }
+    //2025
+    public function get_daftar_memo()
+    {
+        $id_role = user()->id_role;
+        $provinsi_id = $this->request->getPost('provinsi');
+        $unor_id = $this->request->getPost('unor');
+        $sumber = $this->request->getPost('sumber');
+        $daftarMemo = $this->daftarMemoModel->getDaftarMemo($provinsi_id, $unor_id, $sumber);
+        $data = [
+            'daftar_memo' => $daftarMemo,
+            'can_view' => has_permission_menu($id_role, '/memorandum/daftar_memo', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/memorandum/daftar_memo', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/memorandum/daftar_memo', 'can_delete')
+        ];
+        return view('/pages/memorandum/tabel/tabel_daftar_memo', $data);
+    }
+
+    // --- VIEW DETAIL ---
+    public function view($id)
+    {
+        $memo = $this->daftarMemoModel->find($id);
+        if (!$memo) {
+            return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
+        }
+        return view('/pages/memorandum/ModalView', ['memo' => $memo]);
+    }
+
+    public function edit($id)
+    {
+        $t_memo = $this->memoModel->find($id);
+        $memo = $this->daftarMemoModel->find($id);
+        $stackholder = $this->stakholderModel->orderBy('id_kategori')->orderBy('id_stakeholder')->findAll();
+        $namaList = array_column($stackholder, 'short_stakeholder');
+
+        if (!$memo) {
+            return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
+        }
+        return view('/pages/memorandum/ModalEdit', ['memo' => $memo, 't_memo' => $t_memo, 'namaList' => $namaList]);
+    }
+
+
+    public function update($id)
+    {
+        $memoModel = new MemoModel();
+
+        // Ambil input lain
+        $pekerjaan     = $this->request->getPost('pekerjaan');
+        $lokasi        = $this->request->getPost('lokasi');
+        $justifikasi   = $this->request->getPost('justifikasi');
+        $tahun_mulai   = $this->request->getPost('tahun_mulai');
+        $tahun_selesai = $this->request->getPost('tahun_selesai');
+        // Ambil volume dan anggaran per tahun
+        $tahunMulai   = (int) $this->request->getPost('tahun_mulai');
+        $tahunSelesai = (int) $this->request->getPost('tahun_selesai');
+
+        $volumeData = [];
+        $anggaranData = [];
+
+        if ($tahunMulai && $tahunSelesai && $tahunSelesai >= $tahunMulai) {
+            for ($tahun = $tahunMulai; $tahun <= $tahunSelesai; $tahun++) {
+                $index = $tahun - $tahunMulai + 1;
+
+                $volumeKey = 'volume_' . $index;
+                $anggaranKey = 'anggaran_' . $index;
+
+                $volumeData[$volumeKey] = $this->request->getPost($volumeKey);
+                $anggaranData[$anggaranKey] = $this->request->getPost($anggaranKey);
+            }
+        }
+
+
+
+        // Ambil catatan
+        $namaArr = $this->request->getPost('catatan_nama');
+        $textArr = $this->request->getPost('catatan_text');
+
+        $catatan = [];
+        if ($namaArr && $textArr) {
+            foreach ($namaArr as $i => $nama) {
+                // Hanya simpan jika nama & catatan tidak kosong
+                if (!empty($nama) && isset($textArr[$i]) && trim($textArr[$i]) !== '') {
+                    $catatan[] = [
+                        'nama'    => $nama,
+                        'catatan' => $textArr[$i]
+                    ];
+                }
+            }
+        }
+
+        // Data yang akan diupdate
+        $dataToUpdate = [
+            'pekerjaan'         => $pekerjaan,
+            'lokasi'            => $lokasi,
+            'justifikasi'       => $justifikasi,
+            'tahun_mulai'       => $tahun_mulai,
+            'tahun_selesai'     => $tahun_selesai,
+            'catatan_memorandum' => json_encode($catatan, JSON_UNESCAPED_UNICODE)
+        ];
+        $dataToUpdate = array_merge($dataToUpdate, $volumeData, $anggaranData);
+        // Update data
+        if ($memoModel->update($id, $dataToUpdate)) {
+            return $this->response->setJSON([
+                'status' => true,
+                'message' => 'Data berhasil disimpan.'
+            ]);
+        } else {
+            return $this->response->setJSON([
+                'status' => false,
+                'message' => 'Terjadi kesalahan saat menyimpan.'
+            ]);
+        }
+    }
+
+
+
+    // --- DELETE ---
+    public function delete($id = null)
+    {
+        if ($this->request->getMethod(true) !== 'DELETE') {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Metode tidak valid']);
+        }
+
+        $memo = $this->memoModel->find($id);
+        if (!$memo) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Data tidak ditemukan']);
+        }
+        $id_renaksi =  $memo->id_renaksi;
+        $renaksi = $this->renaksiModel->find($id_renaksi);
+        $newmp = $renaksi->mp - 1;
+        $this->renaksiModel->update($id_renaksi, ['mp' => $newmp]);
+        $this->memoModel->where('id_memorandum', $id)->delete();
+
+        return $this->response->setJSON(['status' => 'success', 'message' => 'Data berhasil dihapus']);
+    }
+
+    public function daftar_renaksi()
+    {
+
+        $dataKawasan = $this->kawasanRpiwModel->getKawasan();
+        $dataProvinsi = $this->provinsiModel->getProvinsi();
+        $dataUnor = $this->unorModel->getUnor();
+        $data = [
+            'kawasan' => $dataKawasan,
+            'provinsi' => $dataProvinsi,
+            'unor' => $dataUnor
+        ];
+        $this->template->write('title', 'Rencana Aksi');
+        $this->template->load('/templates/main', '/pages/memorandum/daftar_renaksi', $data);
+    }
+
+    public function get_daftar_renaksi()
+    {
+        $id_role = user()->id_role;
+        $provinsi_id = $this->request->getPost('provinsi');
+        $unor_id = $this->request->getPost('unor');
+        $kawasan = $this->request->getPost('sumber');
+        $status = $this->request->getPost('status');
+        $daftarRenaksi = $this->daftarRenaksiModel->getDaftarRenaksi($provinsi_id, $unor_id, $kawasan, $status);
+        $data = [
+            'daftar_renaksi' => $daftarRenaksi,
+            'can_view' => has_permission_menu($id_role, '/rpiw/daftar_renaksi', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/rpiw/daftar_renaksi', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/rpiw/daftar_renaksi', 'can_delete')
+        ];
+        return view('/pages/memorandum/tabel/tabel_daftar_renaksi', $data);
+    }
+    public function input_renaksi($id)
+    {
+        $data = $this->daftarRenaksiModel->find($id);
+        $stackholder = $this->stakholderModel->orderBy('id_kategori')->orderBy('id_stakeholder')->findAll();
+        $namaList = array_column($stackholder, 'short_stakeholder');
+        $id_prov = $data->id_provinsi;
+        $kabkot = $this->kabkotModel->where('id_prov', $id_prov)->findAll();
+        $program = $this->programModel->findAll();
+        $kegiatan = $this->kegiatanModel->findAll();;
+        $kro = $this->kroModel->findAll();;
+        $ro = $this->roModel->findAll();;
+        $pendanaan = $this->pendanaanModel->findAll();
+
+        if (!$data) {
+            return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
+        }
+        return view('/pages/memorandum/ModalInputRenaksi', ['data' => $data,  'namaList' => $namaList, 'kabkot' => $kabkot, 'pendanaan' => $pendanaan, 'program' => $program, 'kegiatan' => $kegiatan, 'kro' => $kro, 'ro' => $ro]);
+    }
+
+
+    public function input_memo_renaksi($id)
+    {
+        $data = $this->request->getPost();
+
+        // --- Pastikan ID Unor dua digit ---
+        $id_unor = str_pad($data['id_unor'], 2, '0', STR_PAD_LEFT);
+        $prefix = 'MP' . '.' . $data['id_provinsi'] . '.' . $id_unor . '.';
+
+        // --- Ambil uniq_id terakhir berdasarkan id_provinsi ---
+        $row = $this->memoModel
+            ->like('id_memorandum', $prefix)
+            ->orderBy('id_memorandum', 'DESC')
+            ->first();
+
+        if ($row) {
+            // Ambil angka uniq terakhir dan tambah 1
+            $last_id = (int) substr($row->id_memorandum, -4);
+            $uniq_id = str_pad($last_id + 1, 4, '0', STR_PAD_LEFT);
+        } else {
+            $uniq_id = '0001';
+        }
+        // Gabungkan prefix + uniq
+        $id_memorandum = $prefix . $uniq_id;
+
+        // --- Handle Volume dan Anggaran per Tahun ---
+        $volumeData = [];
+        $anggaranData = [];
+
+        $tahunMulai = (int) $this->request->getPost('tahun_mulai');
+        $tahunSelesai = (int) $this->request->getPost('tahun_selesai');
+
+        if ($tahunMulai && $tahunSelesai && $tahunSelesai >= $tahunMulai) {
+            for ($tahun = $tahunMulai; $tahun <= $tahunSelesai; $tahun++) {
+                $index = $tahun - $tahunMulai + 1;
+                $volumeKey = 'volume_' . $index;
+                $anggaranKey = 'anggaran_' . $index;
+
+                $volumeData[$volumeKey] = $this->request->getPost($volumeKey);
+                $anggaranData[$anggaranKey] = $this->request->getPost($anggaranKey);
+            }
+        }
+
+        // --- Handle Catatan (Array Nama + Catatan) ---
+        $namaArr = $this->request->getPost('catatan_nama');
+        $textArr = $this->request->getPost('catatan_text');
+
+        $catatan = [];
+        if ($namaArr && $textArr) {
+            foreach ($namaArr as $i => $nama) {
+                if (!empty($nama) && isset($textArr[$i]) && trim($textArr[$i]) !== '') {
+                    $catatan[] = [
+                        'nama'    => $nama,
+                        'catatan' => $textArr[$i]
+                    ];
+                }
+            }
+        }
+
+        // --- Handle kabkot (multi-select) ---
+        $kabkot = $this->request->getPost('id_kabkot'); // bisa berupa array atau string
+        if (is_array($kabkot)) {
+            $kabkot = json_encode($kabkot, JSON_UNESCAPED_UNICODE); // ubah ke JSON string
+        }
+
+        // --- Susun data tambahan ---
+        $data2 = [
+            'id_memorandum'       => $id_memorandum,
+            'catatan_memorandum'  => json_encode($catatan, JSON_UNESCAPED_UNICODE),
+            'kabkot'              => $kabkot,
+            'sumber'              => 'RPIW'
+        ];
+
+        // --- Gabungkan semua data ---
+        $dataToInsert = array_merge($data, $volumeData, $anggaranData, $data2);
+
+
+        // --- Update nilai mp pada renaksi ---
+        $newmp = (int) $data['mp'] + 1;
+        $this->renaksiModel->update($data['id_renaksi'], ['mp' => $newmp]);
+
+        // --- Simpan ke tabel memorandum ---
+        $this->memoModel->insert($dataToInsert);
+
+        return $this->response->setJSON(['success' => true]);
     }
 }

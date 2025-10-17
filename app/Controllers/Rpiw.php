@@ -12,6 +12,8 @@ use App\Models\Master\PendanaanModel;
 use PhpParser\Node\Stmt\Echo_;
 use Shapefile\ShapefileException;
 use Shapefile\ShapefileReader;
+use App\Models\Rpiw\DaftarRenaksiModel;
+use App\Models\Rpiw\RenaksiModel;
 
 class Rpiw extends BaseController
 {
@@ -21,6 +23,8 @@ class Rpiw extends BaseController
     protected $unorModel;
     protected $pendanaanModel;
     protected $rekapProgram;
+    protected $daftarRenaksiModel;
+    protected $renaksiModel;
     public function __construct()
     {
         $this->programRpiwModel = new ProgramRpiwModel();
@@ -29,6 +33,9 @@ class Rpiw extends BaseController
         $this->unorModel = new UnorModel();
         $this->pendanaanModel = new PendanaanModel();
         $this->rekapProgram = new RekapProgramModel();
+        $this->daftarRenaksiModel = new daftarRenaksiModel();
+        $this->renaksiModel = new renaksiModel();
+        helper('permission');
     }
     public function index()
     {
@@ -180,5 +187,83 @@ class Rpiw extends BaseController
     public function rekap()
     {
         $this->rekapProgram->insertRekapProgram();
+    }
+
+    //2025
+    public function daftar_renaksi()
+    {
+
+        $dataKawasan = $this->kawasanRpiwModel->getKawasan();
+        $dataProvinsi = $this->provinsiModel->getProvinsi();
+        $dataUnor = $this->unorModel->getUnor();
+        $data = [
+            'kawasan' => $dataKawasan,
+            'provinsi' => $dataProvinsi,
+            'unor' => $dataUnor
+        ];
+        $this->template->write('title', 'Rencana Aksi');
+        $this->template->load('/templates/main', '/pages/rpiw/daftar_renaksi', $data);
+    }
+
+    public function get_daftar_renaksi()
+    {
+        $id_role = user()->id_role;
+        $provinsi_id = $this->request->getPost('provinsi');
+        $unor_id = $this->request->getPost('unor');
+        $kawasan = $this->request->getPost('sumber');
+        $daftarRenaksi = $this->daftarRenaksiModel->getDaftarRenaksi($provinsi_id, $unor_id, $kawasan);
+        $data = [
+            'daftar_renaksi' => $daftarRenaksi,
+            'can_view' => has_permission_menu($id_role, '/rpiw/daftar_renaksi', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/rpiw/daftar_renaksi', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/rpiw/daftar_renaksi', 'can_delete')
+        ];
+        return view('/pages/rpiw/tabel/tabel_daftar_renaksi', $data);
+    }
+
+    // --- VIEW DETAIL ---
+    public function view($id)
+    {
+        $data = $this->daftarRenaksiModel->find($id);
+        if (!$data) {
+            return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
+        }
+        return view('/pages/rpiw/ModalView', ['data' => $data]);
+    }
+
+    public function edit($id)
+    {
+        $data = $this->daftarRenaksiModel->find($id);
+        if (!$data) {
+            return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
+        }
+        return view('/pages/rpiw/ModalEdit', ['data' => $data]);
+    }
+
+
+    public function update($id)
+    {
+        $data = $this->request->getPost();
+        $this->renaksiModel->update($id, $data);
+
+        return $this->response->setJSON(['success' => true]);
+    }
+
+
+    // --- DELETE ---
+    public function delete($id = null)
+    {
+        if ($this->request->getMethod(true) !== 'DELETE') {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Metode tidak valid']);
+        }
+
+        $memo = $this->renaksiModel->find($id);
+        if (!$memo) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Data tidak ditemukan']);
+        }
+
+        $this->renaksiModel->where('id_renaksi', $id)->delete();
+
+        return $this->response->setJSON(['status' => 'success', 'message' => 'Data berhasil dihapus']);
     }
 }

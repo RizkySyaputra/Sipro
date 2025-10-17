@@ -1,7 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
+    <meta charset="utf-8" />
+    <title><?= isset($title) ? $title : null ?></title>
+    <link rel="icon" type="image/png" href="<?= base_url('assets/img/favicon.ico') ?>" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap4.min.css">
+    <!-- CSS: Bootstrap (only CSS) + Material Icons + FontAwesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Material Dashboard CSS -->
+    <link href="<?= base_url('assets/css/material-dashboard.min.css?v=2.1.0') ?>" rel="stylesheet" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/custom.css') ?>">
+    <!-- Select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+
+
     <style>
         /* CSS untuk animasi loading */
         #loading {
@@ -67,53 +85,153 @@
         #peta {
             height: 400px;
             width: 100%;
-            margin-right: 10px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
         }
 
-        button.filter {
-            background-color: #222cb1;
-            /* Hijau */
-            color: white;
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 4px;
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 5px solid #ddd;
+            border-top-color: #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ===== TREE MENU ===== */
+        .sidebar-wrapper .nav {
+            padding-left: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .menu-level {
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .menu-item {
+            list-style: none;
+            margin: 0;
+        }
+
+        .menu-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
             cursor: pointer;
         }
 
-        /* old */
-        .dropdown {
-            position: relative;
+        .menu-row .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: inherit;
+            width: 100%;
+        }
+
+        .menu-row .spacer {
+            width: 36px;
             display: inline-block;
         }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            max-height: 200px;
-            /* Tinggi maksimum */
-            overflow-y: auto;
-            /* Scroll jika konten lebih tinggi */
-        }
-
-        .dropdown-content label {
-            padding: 12px 16px;
+        .toggle-btn {
+            background: transparent;
+            border: 0;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
+            padding: 0;
+        }
+
+        .toggle-icon {
+            transition: transform .15s ease;
+            font-size: 20px;
+        }
+
+        .submenu-wrapper {
+            display: none;
+            overflow: hidden;
+        }
+
+        .submenu-wrapper.open {
             display: block;
         }
 
-        .dropdown-content label:hover {
-            background-color: #222cb1;
+        .toggle-btn[aria-expanded="true"] .toggle-icon {
+            transform: rotate(90deg);
         }
 
-        .show {
-            display: block;
+        /* indentation */
+        .menu-level-0>.menu-item>.menu-row {
+            padding-left: 8px;
+        }
+
+        .menu-level-1 {
+            padding-left: 12px;
+        }
+
+        .menu-level-2 {
+            padding-left: 24px;
+        }
+
+        .menu-level-3 {
+            padding-left: 36px;
+        }
+
+        /* menu-active link */
+        .menu-active {
+            background: linear-gradient(45deg, #3aa9ffff, #6fbefbff);
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        .menu-row:hover {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 4px;
+        }
+
+        .menu-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* teks kiri, panah kanan */
+            padding: 6px 10px;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            margin-left: 8px;
+            font-size: 0.75rem;
+            /* kecil */
+            color: #555;
+            transition: transform 0.2s ease;
+        }
+
+        .toggle-btn[aria-expanded="true"] i {
+            transform: rotate(90deg);
+            /* panah ke bawah saat open */
         }
     </style>
+
     <meta charset="utf-8" />
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -146,45 +264,45 @@
 
     <link rel="stylesheet" href="<?= base_url('assets/css/custom.css') ?>">
 
+
     <?= isset($_style) ? $_style : null ?>
 </head>
 
 <body>
-
-    <!-- Elemen Loading -->
+    <!-- loading -->
     <div id="loading">
         <div class="spinner"></div>
     </div>
-    <!-- Extra details for Live View on GitHub Pages -->
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <div class="wrapper ">
-        <div class="sidebar" data-color="rose" data-background-color="black">
-            <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
-        Tip 2: you can also add an image using data-image tag
-    -->
+    <div class="wrapper">
+        <div class="sidebar" data-color="rose" data-background-color="grey">
             <div class="logo">
-                <a href="#" class="simple-text logo-mini">
-                </a>
-                <a href="#" class="simple-text logo-normal">
-                    SIPRO
-                </a>
+                <a href="#" style="text-align: center;" class="simple-text logo-normal">SIPRO</a>
             </div>
-            <!-- app/Views/layout/sidebar.php -->
+
             <div class="sidebar-wrapper">
-                <div class="user">
-                    <div class="photo">
-                        <img src="<?= base_url('assets/img/faces/profile-user.png') ?>" />
+                <div class="user text-center p-3">
+                    <!-- Foto user -->
+                    <div class="photo mb-2" style="margin-top: 10px;">
+                        <img src="<?= base_url('assets/img/faces/profile-user.png') ?>"
+                            alt="User"
+                            class="img-fluid "
+                            style="width: 100%; height: 40px; object-fit: cover;">
                     </div>
-                    <div class="user-info">
-                        <a data-toggle="collapse" href="#user" class="username">
-                            <span><?= user()->username ?><b class="caret"></b></span>
+
+                    <!-- Nama user -->
+                    <div class="user-info mb-2">
+                        <span class="d-block font-weight-bold">
+                            <?= user()->username ?>
+                        </span>
+                    </div>
+
+                    <!-- Tombol Logout -->
+                    <div>
+                        <a class="btn btn-sm btn-danger" href="<?= base_url('logout') ?>">
+                            <i class="fas fa-sign-out-alt"></i> Logout
                         </a>
+
                         <div class="collapse" id="user">
                             <ul class="nav">
                                 <li class="nav-item">
@@ -198,433 +316,148 @@
                     </div>
                 </div>
 
-                <ul class="nav">
+
+                <!-- RENDER MENU TREE -->
+                <nav class="nav">
                     <?= renderMenuTree($menuTree) ?>
-                </ul>
-
+                </nav>
             </div>
-
         </div>
 
         <div class="main-panel">
-
             <div class="content">
-
                 <?= isset($contents) ? $contents : null ?>
                 <?= isset($_script) ? $_script : null ?>
-                <div class="container-fluid">
-                    <div class="row">
-                    </div>
-                </div>
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <nav class="float-left">
-                            <ul>
-                                <li>
-                                    <a href="https://www.bpiw.pu.go.id">
-                                        BPIW
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div class="copyright float-right">
-                            &copy;
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script>, made with <i class="material-icons">favorite</i> by
-                            <a href="https://bpiw.pu.go.id" target="_blank">BPIW Tim</a> for a better web.
-                        </div>
-                    </div>
-                </footer>
             </div>
 
-            <!--   Core JS Files   -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="float-left">
+                        <ul>
+                            <li><a href="https://www.bpiw.pu.go.id">BPIW</a></li>
+                        </ul>
+                    </nav>
+                    <div class="copyright float-right">
+                        &copy;<script>
+                            document.write(new Date().getFullYear())
+                        </script>,
+                        made with <i class="material-icons">favorite</i> by
+                        <a href="https://bpiw.pu.go.id" target="_blank">BPIW Tim</a>.
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
 
-            <!-- Load JQUery -->
-            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-            <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-            <!-- <script src="<?= base_url('assets/js/core/jquery.min.js') ?>"></script> -->
-            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+//Memorandum_Program
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        // hide loading
+        window.addEventListener("load", function() {
+            document.getElementById("loading").style.display = "none";
+        });
 
-            <!-- Bootstrap bundle with Popper.js -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
-            <!-- Plugins -->
-            <script src="<?= base_url('assets/js/plugins/perfect-scrollbar.jquery.min.js') ?>"></script>
-            <!-- Plugin for the momentJs  -->
-            <script src="<?= base_url('assets/js/plugins/moment.min.js') ?>"></script>
-            <!--  Plugin for Sweet Alert -->
-            <script src="<?= base_url('assets/js/plugins/sweetalert2.js') ?>"></script>
-            <!-- Forms Validations Plugin -->
-            <script src="<?= base_url('assets/js/plugins/jquery.validate.min.js') ?>"></script>
-            <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
-            <script src="<?= base_url('assets/js/plugins/jquery.bootstrap-wizard.js') ?>"></script>
-            <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
-            <script src="<?= base_url('assets/js/plugins/bootstrap-selectpicker.js') ?>"></script>
-            <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
-            <script src="<?= base_url('assets/js/plugins/bootstrap-datetimepicker.min.js') ?>"></script>
-            <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
-            <script src="<?= base_url('assets/js/plugins/bootstrap-tagsinput.js') ?>"></script>
-            <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
-            <script src="<?= base_url('assets/js/plugins/jasny-bootstrap.min.js') ?>"></script>
-            <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
-            <script src="<?= base_url('assets/js/plugins/fullcalendar.min.js') ?>"></script>
-            <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
-            <script src="<?= base_url('assets/js/plugins/jquery-jvectormap.js') ?>"></script>
-            <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-            <script src="<?= base_url('assets/js/plugins/nouislider.min.js') ?>"></script>
-            <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
-            <!-- Library for adding dinamically elements -->
-            <script src="<?= base_url('assets/js/plugins/arrive.min.js') ?>"></script>
-            <!-- Chartist JS -->
-            <script src="<?= base_url('assets/js/plugins/chartist.min.js') ?>"></script>
-            <!--  Notifications Plugin    -->
-            <script src="<?= base_url('assets/js/plugins/bootstrap-notify.js') ?>"></script>
-            <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-            <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-            <script src="<?= base_url('assets/demo/demo.js') ?>"></script>
-            <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script> -->
-            <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-
-            <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
-            <script src="<?= base_url('assets/js/plugins/jquery.dataTables.min.js') ?>"></script>
-
-            <!-- Material Design -->
-            <!-- <script src="<?= base_url('assets/js/material-dashboard.min.js?v=2.1.0') ?>" type="text/javascript"></script> -->
-
-            <!-- Bootstrap Icons -->
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-            <!-- External async scripts -->
-            <!--  Google Maps Plugin    -->
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2Yno10-YTnLjjn_Vtk0V8cdcY5lC4plU"></script>
-            <!-- Place this tag in your head or just before your close body tag. -->
-            <script async defer src="https://buttons.github.io/buttons.js"></script>
-
-            <!-- <script>
-                $(document).ready(function() {
-                    // Mendapatkan URL saat ini
-                    var currentUrl = window.location.pathname; // Menggunakan pathname untuk hanya mendapatkan bagian path
-
-                    // Memeriksa setiap link dalam sidebar
-                    $('.nav-link').each(function() {
-                        var linkUrl = $(this).attr('href');
-
-                        // Jika URL saat ini cocok dengan link
-                        if (currentUrl === linkUrl) {
-                            // Menambahkan kelas 'active' pada link yang cocok
-                            $(this).parents('.nav-item').addClass('active');
-
-                            // Jika link tersebut memiliki elemen collapsible, pastikan terbuka
-                            $(this).parents('.collapse').addClass('show');
-                        }
-                    });
+        (function($) {
+            $(function() {
+                // Klik tombol panah
+                $('.sidebar-wrapper').on('click', '.toggle-btn', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    toggleSubmenu($(this));
                 });
-            </script> -->
-            <script>
-                $(document).ready(function() {
-                    $().ready(function() {
-                        $sidebar = $('.sidebar');
 
-                        $sidebar_img_container = $sidebar.find('.sidebar-background');
-
-                        $full_page = $('.full-page');
-
-                        $sidebar_responsive = $('body > .navbar-collapse');
-
-                        window_width = $(window).width();
-
-                        fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
-
-                        if (window_width > 767 && fixed_plugin_open == 'Dashboard') {
-                            if ($('.fixed-plugin .dropdown').hasClass('show-dropdown')) {
-                                $('.fixed-plugin .dropdown').addClass('open');
-                            }
-
-                        }
-
-                        $('.fixed-plugin a').click(function(event) {
-                            // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
-                            if ($(this).hasClass('switch-trigger')) {
-                                if (event.stopPropagation) {
-                                    event.stopPropagation();
-                                } else if (window.event) {
-                                    window.event.cancelBubble = true;
-                                }
-                            }
-                        });
-
-                        $('.fixed-plugin .active-color span').click(function() {
-                            $full_page_background = $('.full-page-background');
-
-                            $(this).siblings().removeClass('active');
-                            $(this).addClass('active');
-
-                            var new_color = $(this).data('color');
-
-                            if ($sidebar.length != 0) {
-                                $sidebar.attr('data-color', new_color);
-                            }
-
-                            if ($full_page.length != 0) {
-                                $full_page.attr('filter-color', new_color);
-                            }
-
-                            if ($sidebar_responsive.length != 0) {
-                                $sidebar_responsive.attr('data-color', new_color);
-                            }
-                        });
-
-                        $('.fixed-plugin .background-color .badge').click(function() {
-                            $(this).siblings().removeClass('active');
-                            $(this).addClass('active');
-
-                            var new_color = $(this).data('background-color');
-
-                            if ($sidebar.length != 0) {
-                                $sidebar.attr('data-background-color', new_color);
-                            }
-                        });
-
-                        $('.fixed-plugin .img-holder').click(function() {
-                            $full_page_background = $('.full-page-background');
-
-                            $(this).parent('li').siblings().removeClass('active');
-                            $(this).parent('li').addClass('active');
-
-
-                            var new_image = $(this).find("img").attr('src');
-
-                            if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
-                                $sidebar_img_container.fadeOut('fast', function() {
-                                    $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
-                                    $sidebar_img_container.fadeIn('fast');
-                                });
-                            }
-
-                            if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
-                                var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
-
-                                $full_page_background.fadeOut('fast', function() {
-                                    $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
-                                    $full_page_background.fadeIn('fast');
-                                });
-                            }
-
-                            if ($('.switch-sidebar-image input:checked').length == 0) {
-                                var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
-                                var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
-
-                                $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
-                                $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
-                            }
-
-                            if ($sidebar_responsive.length != 0) {
-                                $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
-                            }
-                        });
-
-                        // $('.switch-sidebar-image input').change(function() {
-                        //     $full_page_background = $('.full-page-background');
-
-                        //     $input = $(this);
-
-                        //     if ($input.is(':checked')) {
-                        //         if ($sidebar_img_container.length != 0) {
-                        //             $sidebar_img_container.fadeIn('fast');
-                        //             $sidebar.attr('data-image', '#');
-                        //         }
-
-                        //         if ($full_page_background.length != 0) {
-                        //             $full_page_background.fadeIn('fast');
-                        //             $full_page.attr('data-image', '#');
-                        //         }
-
-                        //         background_image = true;
-                        //     } else {
-                        //         if ($sidebar_img_container.length != 0) {
-                        //             $sidebar.removeAttr('data-image');
-                        //             $sidebar_img_container.fadeOut('fast');
-                        //         }
-
-                        //         if ($full_page_background.length != 0) {
-                        //             $full_page.removeAttr('data-image', '#');
-                        //             $full_page_background.fadeOut('fast');
-                        //         }
-
-                        //         background_image = false;
-                        //     }
-                        // });
-
-                        $('.switch-sidebar-mini input').change(function() {
-                            $body = $('body');
-
-                            $input = $(this);
-
-                            if (md.misc.sidebar_mini_active == true) {
-                                $('body').removeClass('sidebar-mini');
-                                md.misc.sidebar_mini_active = false;
-
-                                $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
-
-                            } else {
-
-                                $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
-
-                                setTimeout(function() {
-                                    $('body').addClass('sidebar-mini');
-
-                                    md.misc.sidebar_mini_active = true;
-                                }, 300);
-                            }
-
-                            // we simulate the window Resize so the charts will get updated in realtime.
-                            var simulateWindowResize = setInterval(function() {
-                                window.dispatchEvent(new Event('resize'));
-                            }, 180);
-
-                            // we stop the simulation of Window Resize after the animations are completed
-                            setTimeout(function() {
-                                clearInterval(simulateWindowResize);
-                            }, 1000);
-
-                        });
-                    });
+                // Klik teks (link) yang punya child
+                $('.sidebar-wrapper').on('click', '.tree-link.has-children', function(e) {
+                    e.preventDefault(); // cegah redirect
+                    e.stopPropagation();
+                    var $btn = $(this).closest('.menu-row').find('.toggle-btn');
+                    toggleSubmenu($btn);
                 });
-            </script>
-            <!-- Sharrre libray -->
-            <script src="<?= base_url('assets/demo/jquery.sharrre.js') ?>"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
 
-            <script>
-                $(document).ready(function() {
-                    $('#datatables').DataTable({
-                        "pagingType": "full_numbers",
-                        "lengthMenu": [
-                            [10, 25, 50, -1],
-                            [10, 25, 50, "All"]
-                        ],
-                        responsive: true,
-                        language: {
-                            search: "_INPUT_",
-                            searchPlaceholder: "Search records",
-                        }
-                    });
+                // Fungsi toggle submenu
+                function toggleSubmenu($btn) {
+                    var expanded = $btn.attr('aria-expanded') === 'true';
+                    var $submenu = $btn.closest('.menu-row').next('.submenu-wrapper');
 
-                });
-                $(document).ready(function() {
-                    const dropdownButtons = document.querySelectorAll('.dropdown button');
-                    const dropdownContents = document.querySelectorAll('.dropdown-content');
-                    const checkboxes = document.querySelectorAll('.filter-checkbox');
-
-                    dropdownButtons.forEach((btn, index) => {
-                        btn.addEventListener('click', function(event) {
-                            // Cegah klik dari menutup dropdown yang aktif
-                            event.stopPropagation();
-
-                            // Tutup semua dropdown kecuali yang diklik
-                            dropdownContents.forEach((content, idx) => {
-                                if (idx !== index) {
-                                    content.classList.remove('show');
-                                }
+                    if ($submenu.length) {
+                        if (expanded) {
+                            $btn.attr('aria-expanded', 'false');
+                            $submenu.slideUp(200, function() {
+                                $submenu.removeClass('open');
                             });
-
-                            // Toggle dropdown yang diklik
-                            dropdownContents[index].classList.toggle('show');
-                        });
-                    });
-
-                    checkboxes.forEach(checkbox => {
-                        checkbox.addEventListener('click', function(event) {
-                            event.stopPropagation(); // Prevent click from closing the dropdown
-                            filterTable(); // Call filter function on checkbox click
-                        });
-                    });
-
-                    checkboxes.forEach(checkbox => {
-                        checkbox.addEventListener('change', function() {
-                            filterTable(); // Panggil fungsi filter
-                        });
-                    });
-
-                    // Event listener untuk checkbox "All" di setiap dropdown
-                    document.querySelectorAll('[id^="selectAll"]').forEach(selectAllCheckbox => {
-                        selectAllCheckbox.addEventListener('change', function() {
-                            const allCheckboxes = Array.from(selectAllCheckbox.closest('.dropdown-content').querySelectorAll('.filter-checkbox'));
-                            allCheckboxes.forEach(checkbox => {
-                                if (checkbox !== selectAllCheckbox) {
-                                    checkbox.checked = selectAllCheckbox.checked; // Centang atau batal centang semua checkbox
-                                }
+                        } else {
+                            $btn.attr('aria-expanded', 'true');
+                            $submenu.slideDown(200, function() {
+                                $submenu.addClass('open');
                             });
-                            filterTable(); // Panggil fungsi filter setelah mengubah status checkbox
-                        });
-                    });
-
-                    function filterTable() {
-                        const filters = {
-                            provinsi: [],
-                            unor: [],
-                            kawasan: [],
-                            pendanaan: [],
-                            updated_at: []
-                        };
-
-                        checkboxes.forEach(checkbox => {
-                            if (checkbox.checked && checkbox.id !== 'selectAllProvinsi' && checkbox.id !== 'selectAllUnor' && checkbox.id !== 'selectAllKawasan' && checkbox.id !== 'selectAllPendanaan' && checkbox.id !== 'selectAllUpdated_at') {
-                                const category = checkbox.closest('.dropdown-content').id.replace('dropdown', '').replace('Content', '').toLowerCase();
-                                filters[category].push(checkbox.value.toLowerCase());
-                            }
-                        });
-
-                        const dataTable = $('#datatables').DataTable();
-                        // Apply filters to DataTables
-                        dataTable.column(1).search(filters.provinsi.join('|'), true, false); // Provinsi
-                        dataTable.column(2).search(filters.unor.join('|'), true, false); // Unor
-                        dataTable.column(3).search(filters.kawasan.join('|'), true, false); // Kawasan
-                        dataTable.column(4).search(filters.pendanaan.join('|'), true, false); // Sumber Pendanaan
-                        dataTable.column(8).search(filters.updated_at.join('|'), true, false); // Updated_at
-                        dataTable.draw(); // Refresh the DataTable
+                        }
                     }
+                }
 
-                    // Close the dropdown if clicked outside or on another button
-                    window.addEventListener('click', function(event) {
-                        dropdownContents.forEach(content => {
-                            if (content.classList.contains('show')) {
-                                content.classList.remove('show');
+                // Klik link biasa: menu-active + buka parent
+                $('.sidebar-wrapper').on('click', '.tree-link:not(.has-children)', function() {
+                    $('.tree-link').removeClass('menu-active');
+                    $(this).addClass('menu-active');
+                    openParents($(this));
+                });
+
+                function openParents($el) {
+                    var $submenu = $el.closest('.submenu-wrapper');
+                    if ($submenu.length) {
+                        $submenu.slideDown(200).addClass('open');
+                        $submenu.prev('.menu-row').find('.toggle-btn').attr('aria-expanded', 'true');
+                        openParents(
+                            $submenu.prev('.menu-row').closest('.menu-item').parents('.submenu-wrapper').first().prev().find('.tree-link')
+                        );
+                    }
+                }
+
+                // On load: buka menu sesuai URL
+                (function() {
+                    var currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+
+                    $('.tree-link').each(function() {
+                        var href = $(this).attr('href');
+                        if (!href) return;
+
+                        var a = document.createElement('a');
+                        a.href = href;
+                        var linkPath = a.pathname.replace(/\/$/, '') || '/';
+
+                        if (linkPath === currentPath) {
+                            // hanya kasih menu-active kalau link BUKAN parent
+                            if (!$(this).hasClass('has-children')) {
+                                $('.tree-link').removeClass('menu-active open-parent'); // reset
+                                $(this).addClass('menu-active'); // anak jadi menu-active
                             }
-                        });
-                    });
-                });
-            </script>
 
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    // Tampilkan loading pada saat DOM selesai dimuat
-                    document.getElementById("loading").style.display = "flex";
-                });
-
-                window.addEventListener("load", function() {
-                    // Sembunyikan loading setelah seluruh elemen halaman selesai dimuat
-                    document.getElementById("loading").style.display = "none";
-                });
-            </script>
-            <script>
-                $(document).ready(function() {
-                    $('.nav-link[data-toggle="collapse"]').on('click', function(e) {
-                        let $this = $(this);
-                        let $submenu = $($this.attr('href'));
-
-                        // Kalau submenu belum terbuka → tutup yang lain dulu
-                        if (!$submenu.hasClass('show')) {
-                            $('.collapse.show').collapse('hide');
+                            // buka semua parentnya
+                            var $row = $(this).closest('.menu-row');
+                            var $parentSub = $row.closest('.submenu-wrapper');
+                            while ($parentSub.length) {
+                                $parentSub.show().addClass('open'); // buka parent
+                                var $parentRow = $parentSub.prev('.menu-row');
+                                $parentRow.find('.toggle-btn').attr('aria-expanded', 'true');
+                                $parentRow.find('.tree-link').addClass('open-parent'); // parent cukup open-parent
+                                $parentSub = $parentSub.parent().closest('.submenu-wrapper');
+                            }
                         }
-                        // Tidak perlu else, biar Bootstrap yang handle toggle buka/tutup
                     });
-                });
-            </script>
+                })();
 
+            });
+        })(jQuery);
+    </script>
+
+
+    <?= isset($_script) ? $_script : null ?>
+    <!-- Section khusus script -->
+    <?= $this->renderSection('_script') ?>
 </body>
 
 </html>

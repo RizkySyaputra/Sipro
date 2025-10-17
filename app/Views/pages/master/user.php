@@ -196,3 +196,17 @@
         };
     }
 </script>
+<?= $this->section('_script') ?>
+<script>
+    $(function() {
+        $('#datatables').DataTable({
+            "pageLength": 10,
+            "ordering": true,
+            "lengthChange": true,
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.13.6/i18n/id.json"
+            }
+        });
+    });
+</script>
+<?= $this->endSection() ?>
