@@ -13,6 +13,7 @@ use App\Models\Master\SatuanModel;
 use App\Models\Master\MpModel;
 use App\Models\Master\StackholderModel;
 use App\Models\Master\KabkotModel;
+use App\Models\Master\KabkotMemoModel;
 use App\Models\Master\ProgramModel;
 use App\Models\Master\KegiatanModel;
 use App\Models\Master\KroModel;
@@ -32,6 +33,7 @@ class Memorandum extends BaseController
     protected $unorModel;
     protected $pendanaanModel;
     protected $kabkotModel;
+    protected $kabkotMemoModel;
     protected $rekapProgram;
     protected $programModel;
     protected $kegiatanModel;
@@ -64,6 +66,7 @@ class Memorandum extends BaseController
         $this->renaksiModel = new renaksiModel();
         $this->stakholderModel = new StackholderModel();
         $this->kabkotModel = new KabkotModel();
+        $this->kabkotMemoModel = new KabkotMemoModel();
 
         helper('permission');
     }
@@ -410,23 +413,34 @@ class Memorandum extends BaseController
     public function view($id)
     {
         $memo = $this->daftarMemoModel->find($id);
+        $kabkot = $this->kabkotMemoModel->getKabkotMemo($id);
+
         if (!$memo) {
             return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
         }
-        return view('/pages/memorandum/ModalView', ['memo' => $memo]);
+        return view('/pages/memorandum/ModalView', ['memo' => $memo, 'kabkot' => $kabkot]);
     }
 
     public function edit($id)
     {
+
         $t_memo = $this->memoModel->find($id);
         $memo = $this->daftarMemoModel->find($id);
         $stackholder = $this->stakholderModel->orderBy('id_kategori')->orderBy('id_stakeholder')->findAll();
         $namaList = array_column($stackholder, 'short_stakeholder');
+        $id_prov = $t_memo->id_provinsi;
+        $kabkotmemo = $this->kabkotMemoModel->getKabkotMemo($id);
+        $kabkot = $this->kabkotModel->where('id_prov', $id_prov)->findAll();
+        $program = $this->programModel->findAll();
+        $kegiatan = $this->kegiatanModel->findAll();;
+        $kro = $this->kroModel->findAll();;
+        $ro = $this->roModel->findAll();;
+        $pendanaan = $this->pendanaanModel->findAll();
 
         if (!$memo) {
             return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
         }
-        return view('/pages/memorandum/ModalEdit', ['memo' => $memo, 't_memo' => $t_memo, 'namaList' => $namaList]);
+        return view('/pages/memorandum/ModalEdit', ['memo' => $memo, 't_memo' => $t_memo, 'namaList' => $namaList, 'kabkot' => $kabkot, 'pendanaan' => $pendanaan, 'program' => $program, 'kegiatan' => $kegiatan, 'kro' => $kro, 'ro' => $ro, 'kabkotmemo' => $kabkotmemo]);
     }
 
 
@@ -446,16 +460,18 @@ class Memorandum extends BaseController
 
         $volumeData = [];
         $anggaranData = [];
-
+        $pendanaanData = [];
         if ($tahunMulai && $tahunSelesai && $tahunSelesai >= $tahunMulai) {
             for ($tahun = $tahunMulai; $tahun <= $tahunSelesai; $tahun++) {
                 $index = $tahun - $tahunMulai + 1;
 
                 $volumeKey = 'volume_' . $index;
                 $anggaranKey = 'anggaran_' . $index;
+                $pendanaanKey = 'id_pendanaan_' . $index;
 
                 $volumeData[$volumeKey] = $this->request->getPost($volumeKey);
                 $anggaranData[$anggaranKey] = $this->request->getPost($anggaranKey);
+                $pendanaanData[$pendanaanKey] = $this->request->getPost($pendanaanKey);
             }
         }
 
@@ -487,7 +503,7 @@ class Memorandum extends BaseController
             'tahun_selesai'     => $tahun_selesai,
             'catatan_memorandum' => json_encode($catatan, JSON_UNESCAPED_UNICODE)
         ];
-        $dataToUpdate = array_merge($dataToUpdate, $volumeData, $anggaranData);
+        $dataToUpdate = array_merge($dataToUpdate, $volumeData, $anggaranData, $pendanaanData);
         // Update data
         if ($memoModel->update($id, $dataToUpdate)) {
             return $this->response->setJSON([
@@ -659,5 +675,29 @@ class Memorandum extends BaseController
         $this->memoModel->insert($dataToInsert);
 
         return $this->response->setJSON(['success' => true]);
+    }
+
+    public function getKegiatanByProgram($id_program)
+    {
+        $data = $this->kegiatanModel
+            ->where('id_program', $id_program)
+            ->findAll();
+        return $this->response->setJSON($data);
+    }
+
+    public function getKroByKegiatan($id_kegiatan)
+    {
+        $data = $this->kroModel
+            ->where('id_kegiatan', $id_kegiatan)
+            ->findAll();
+        return $this->response->setJSON($data);
+    }
+
+    public function getRoByKro($id_kro)
+    {
+        $data = $this->roModel
+            ->where('id_kro', $id_kro)
+            ->findAll();
+        return $this->response->setJSON($data);
     }
 }

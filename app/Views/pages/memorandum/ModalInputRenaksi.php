@@ -13,6 +13,13 @@
         padding: 10px;
         border-radius: 5px;
     }
+
+    .catatan-text {
+        text-align: justify;
+        color: #333;
+        margin: 0;
+        white-space: pre-line;
+    }
 </style>
 
 <form id="inputRenaksiForm">
@@ -29,41 +36,42 @@
 
             <!--  -->
             <div class="form-group">
-                <label>Program</label><br>
+                <label class="catatan-text"><strong>Program</strong></label>
                 <select class="form-control" name="id_program" id="select-program">
                     <option value="">Pilih Program</option>
                     <?php foreach ($program as $item): ?>
-                        <option value="<?= $item['id_program'] ?>"><?= $item['nm_program'] ?></option>
+                        <option value="<?= esc($item['id_program']) ?>"
+                            <?= ($memo->id_program ?? '') == $item['id_program'] ? 'selected' : '' ?>>
+                            <?= esc($item['id_program'] . ' - ' . $item['nm_program']) ?>
+                        </option>
                     <?php endforeach; ?>
                 </select>
             </div>
+
             <div class="form-group">
-                <label>Kegiatan</label>
+                <label class="catatan-text"><strong>Kegiatan</strong></label>
                 <select class="form-control" name="id_kegiatan" id="select-kegiatan">
                     <option value="">Pilih Kegiatan</option>
-                    <?php foreach ($kegiatan as $item): ?>
-                        <option value="<?= $item['id_kegiatan'] ?>"><?= $item['nm_kegiatan'] ?></option>
-                    <?php endforeach; ?>
+                    <!-- akan diisi lewat AJAX -->
                 </select>
             </div>
+
             <div class="form-group">
-                <label>KRO</label>
+                <label class="catatan-text"><strong>KRO</strong></label>
                 <select class="form-control" name="id_kro" id="select-kro">
                     <option value="">Pilih KRO</option>
-                    <?php foreach ($kro as $item): ?>
-                        <option value="<?= $item['id_kro'] ?>"><?= $item['nm_kro'] ?></option>
-                    <?php endforeach; ?>
+                    <!-- akan diisi lewat AJAX -->
                 </select>
             </div>
+
             <div class="form-group">
-                <label>RO</label>
+                <label class="catatan-text"><strong>RO</strong></label>
                 <select class="form-control" name="id_ro" id="select-ro">
                     <option value="">Pilih RO</option>
-                    <?php foreach ($ro as $item): ?>
-                        <option value="<?= $item['id_ro'] ?>"><?= $item['nm_ro'] ?></option>
-                    <?php endforeach; ?>
+                    <!-- akan diisi lewat AJAX -->
                 </select>
             </div>
+
             <div class="form-group">
                 <label>Nama Program</label>
                 <input type="text" class="form-control" name="periode" value="2025-2029" hidden>
@@ -202,6 +210,92 @@
         </button>
     </div>
 </form>
+<script>
+    $(document).ready(function() {
+        // Helper untuk reset dropdown
+        function resetDropdown(selector, placeholder = 'Pilih...') {
+            $(selector).html(`<option value="">${placeholder}</option>`);
+        }
+
+        // Helper untuk tampilkan "Loading..." saat ambil data
+        function showLoading(selector) {
+            $(selector).html('<option value="">Loading...</option>');
+        }
+
+        // Saat memilih PROGRAM → ambil KEGIATAN
+        $('#select-program').on('change', function() {
+            const id_program = $(this).val();
+            resetDropdown('#select-kegiatan', 'Pilih Kegiatan');
+            resetDropdown('#select-kro', 'Pilih KRO');
+            resetDropdown('#select-ro', 'Pilih RO');
+
+            if (id_program) {
+                showLoading('#select-kegiatan'); // tampilkan loading
+                $.getJSON('<?= base_url("memorandum/getKegiatanByProgram") ?>/' + id_program)
+                    .done(function(data) {
+                        let options = '<option value="">Pilih Kegiatan</option>';
+                        $.each(data, function(i, item) {
+                            options += `<option value="${item.id_kegiatan}">${item.id_kegiatan} - ${item.nm_kegiatan}</option>`;
+                        });
+                        $('#select-kegiatan').html(options);
+                    })
+                    .fail(function() {
+                        $('#select-kegiatan').html('<option value="">Gagal memuat data</option>');
+                    });
+            }
+        });
+
+        // Saat memilih KEGIATAN → ambil KRO
+        $('#select-kegiatan').on('change', function() {
+            const id_kegiatan = $(this).val();
+            resetDropdown('#select-kro', 'Pilih KRO');
+            resetDropdown('#select-ro', 'Pilih RO');
+
+            if (id_kegiatan) {
+                showLoading('#select-kro');
+                $.getJSON('<?= base_url("memorandum/getKroByKegiatan") ?>/' + id_kegiatan)
+                    .done(function(data) {
+                        let options = '<option value="">Pilih KRO</option>';
+                        $.each(data, function(i, item) {
+                            options += `<option value="${item.id_kro}">${item.id_kro} - ${item.nm_kro}</option>`;
+                        });
+                        $('#select-kro').html(options);
+                    })
+                    .fail(function() {
+                        $('#select-kro').html('<option value="">Gagal memuat data</option>');
+                    });
+            }
+        });
+
+        // Saat memilih KRO → ambil RO
+        $('#select-kro').on('change', function() {
+            const id_kro = $(this).val();
+            resetDropdown('#select-ro', 'Pilih RO');
+
+            if (id_kro) {
+                showLoading('#select-ro');
+                $.getJSON('<?= base_url("memorandum/getRoByKro") ?>/' + id_kro)
+                    .done(function(data) {
+                        let options = '<option value="">Pilih RO</option>';
+                        $.each(data, function(i, item) {
+                            options += `<option value="${item.id_ro}">${item.id_ro} - ${item.nm_ro}</option>`;
+                        });
+                        $('#select-ro').html(options);
+                    })
+                    .fail(function() {
+                        $('#select-ro').html('<option value="">Gagal memuat data</option>');
+                    });
+            }
+        });
+
+        // Kosongkan dropdown turunan saat awal load
+        resetDropdown('#select-kegiatan', 'Pilih Kegiatan');
+        resetDropdown('#select-kro', 'Pilih KRO');
+        resetDropdown('#select-ro', 'Pilih RO');
+    });
+</script>
+
+
 <script>
     (function() {
         // Cek apakah namaList sudah ada, jika belum buat

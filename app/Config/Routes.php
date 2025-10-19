@@ -94,6 +94,10 @@ $routes->get('/memo/(:segment)', 'Memorandum::detail/$1', ['filter' => 'permissi
 $routes->post('/add_memorandum', 'Memorandum::insert', ['filter' => 'permission']);
 $routes->get('/detail_program/(:segment)', 'Memorandum::programMemorandumDetail/$1', ['filter' => 'permission']);
 $routes->post('/add_catatan', 'Memorandum::addCatatan', ['filter' => 'permission']);
+$routes->get('memorandum/getKegiatanByProgram/(:segment)', 'Memorandum::getKegiatanByProgram/$1');
+$routes->get('memorandum/getKroByKegiatan/(:segment)', 'Memorandum::getKroByKegiatan/$1');
+$routes->get('memorandum/getRoByKro/(:segment)', 'Memorandum::getRoByKro/$1');
+
 
 
 //routes desk

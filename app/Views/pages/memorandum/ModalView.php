@@ -61,7 +61,14 @@
                         <p><?= esc($memo->kawasan ?? '-') ?></p>
 
                         <label class="catatan-text"><strong>Kab/Kot</strong></label>
-                        <p><?= esc($memo->kabkot ?? '-') ?></p>
+                        <?php if (!empty($kabkot)): ?>
+                            <?php foreach ($kabkot as $item): ?>
+                                <p><?= esc($item->kab_kot ?? '-') ?></p>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <p>-</p>
+                        <?php endif; ?>
+
 
                         <label class="catatan-text"><strong>Lokasi</strong></label>
                         <p><?= esc($memo->lokasi ?? '-') ?></p>
@@ -184,7 +191,7 @@
                 <div class="col-md-12">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            <strong>Catatan Memorandum:</strong>
+                            <label class="catatan-text"><strong>Catatan Memorandum:</strong></label>
                             <?php if (!empty($memo->catatan_memorandum)): ?>
                                 <?php
                                 $catatanList = json_decode($memo->catatan_memorandum, true);
