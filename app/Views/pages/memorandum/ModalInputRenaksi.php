@@ -33,7 +33,10 @@
     <div class="row g-3">
         <!-- Kolom kiri -->
         <div class="col-md-6">
-
+            <div class="form-group">
+                <label class="catatan-text"><strong>Id Renaksi</strong></label>
+                <p><?= esc($data->id_renaksi ?? '') ?></p>
+            </div>
             <!--  -->
             <div class="form-group">
                 <label class="catatan-text"><strong>Program</strong></label>
@@ -73,20 +76,20 @@
             </div>
 
             <div class="form-group">
-                <label>Nama Program</label>
+                <label class="catatan-text"><strong>Nama Program</strong></label>
                 <input type="text" class="form-control" name="periode" value="2025-2029" hidden>
                 <input type="text" class="form-control" name="id_renaksi" value="<?= esc($data->id_renaksi ?? '') ?>" hidden>
                 <input type="text" class="form-control" name="mp" value="<?= esc($data->mp ?? '') ?>" hidden>
                 <input type="text" class="form-control" name="pekerjaan" value="<?= esc($data->pekerjaan ?? '') ?>">
             </div>
             <div class="form-group">
-                <label>Provinsi</label>
+                <label class="catatan-text"><strong>Provinsi</strong></label>
                 <input type="text" class="form-control-plaintext" name="provinsi" value="<?= esc($data->provinsi ?? '') ?>" disabled>
                 <input type="text" class="form-control-plaintext" name="id_provinsi" value="<?= esc($data->id_provinsi ?? '') ?>" hidden>
             </div>
 
             <div class="form-group">
-                <label>Kabupaten / Kota</label>
+                <label class="catatan-text"><strong>Kabupaten / Kota</strong></label>
                 <select class="form-control" name="id_kabkot[]" id="select-kabkot" multiple>
                     <?php foreach ($kabkot as $item): ?>
                         <!-- <option value="<?= $item['id'] ?>"><?= $item['kab_kot'] ?></option> -->
@@ -100,28 +103,28 @@
             </div>
 
             <div class="form-group">
-                <label>Unit Organisasi</label>
+                <label class="catatan-text"><strong>Unit Organisasi</strong></label>
                 <input type="text" class="form-control-plaintext" name="unor" value="<?= esc($data->unor ?? '') ?>" disabled>
                 <input type="text" class="form-control-plaintext" name="id_unor" value="<?= esc($data->id_unor ?? '') ?>" hidden>
             </div>
             <div class="form-group">
-                <label>Kawasan Prioritas</label>
+                <label class="catatan-text"><strong>Kawasan Prioritas</strong></label>
                 <input type="text" class="form-control-plaintext" name="kawasan" value="<?= esc($data->kawasan ?? '') ?>" disabled>
             </div>
             <div class="form-group">
-                <label>Lokasi</label>
+                <label class="catatan-text"><strong>Lokasi</strong></label>
                 <input type="text" class="form-control" name="lokasi" value="<?= esc($data->lokasi ?? '') ?>">
             </div>
             <div class="form-group">
-                <label>Justifikasi</label>
+                <label class="catatan-text"><strong>Justifikasi</strong></label>
                 <textarea class="form-control" name="justifikasi" rows="3"><?= esc($data->justifikasi ?? '') ?></textarea>
             </div>
             <div class="form-group">
-                <label>Tahun Mulai</label>
+                <label class="catatan-text"><strong>Tahun Mulai</strong></label>
                 <input type="number" class="form-control" name="tahun_mulai" value="<?= esc($data->tahun_mulai ?? '') ?>">
             </div>
             <div class="form-group">
-                <label>Tahun Selesai</label>
+                <label class="catatan-text"><strong>Tahun Selesai</strong></label>
                 <input type="number" class="form-control" name="tahun_selesai" value="<?= esc($data->tahun_selesai ?? '') ?>">
             </div>
         </div>
@@ -129,9 +132,13 @@
         <!-- Kolom kanan -->
         <div class="col-md-6">
             <div class="form-group">
-                <label>Satuan Volume</label>
+                <label class="catatan-text"><strong>Satuan Volume</strong></label>
                 <input type="text" class="form-control-plaintext" name="nama_satuan" value="<?= esc($data->nama_satuan ?? '') ?>" disabled>
                 <input type="text" class="form-control-plaintext" name="id_satuan" value="<?= esc($data->id_satuan ?? '') ?>" hidden>
+            </div>
+            <div class="mb-2">
+                <label class="catatan-text"><strong>Anggaran RPIW(ribu)</strong></label>
+                <p>Rp. <?= number_format($data->biaya, 0, ',', '.') ?> </p>
             </div>
 
             <?php
@@ -141,11 +148,11 @@
             if ($tahunMulai && $tahunSelesai && $tahunSelesai >= $tahunMulai):
             ?>
                 <hr>
-                <h6><i class="fas fa-cubes me-2"></i> Volume per Tahun</h6>
+                <h6><label class="catatan-text"><strong> Volume per Tahun</strong></h6>
                 <?php for ($tahun = $tahunMulai; $tahun <= $tahunSelesai; $tahun++):
                     $index = $tahun - $tahunMulai + 1; ?>
                     <div class="form-group">
-                        <label>Volume <?= $tahun ?></label>
+                        <label class="catatan-text"><strong>Volume <?= $tahun ?></strong></label>
                         <input type="number" step="0.01" class="form-control"
                             name="volume_<?= $index ?>"
                             value="<?= esc($data->{'volume_' . $index} ?? '') ?>">
@@ -159,7 +166,7 @@
                     $nilaiAnggaran = $data->{'anggaran_' . $index} ?? '';
                 ?>
                     <div class="form-group">
-                        <label>Sumber Pendanaan</label>
+                        <label class="catatan-text"><strong>Sumber Pendanaan</strong></label>
                         <select class="form-control" name="id_pendanaan_<?= $index ?>" id="select-pendanaan<?= $index ?>">
                             <option value="">Pilih Sumber</option>
                             <?php foreach ($pendanaan as $item): ?>
@@ -168,7 +175,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Anggaran <?= $tahun ?> (Rp)</label>
+                        <label class="catatan-text"><strong>Anggaran <?= $tahun ?> (Rp) </strong></label>
                         <input type="text" class="form-control anggaran-format"
                             name="anggaran_<?= $index ?>"
                             value="<?= $nilaiAnggaran ?>">
