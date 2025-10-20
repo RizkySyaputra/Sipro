@@ -59,15 +59,17 @@
 
                         <label class="catatan-text"><strong>Kawasan</strong></label>
                         <p><?= esc($memo->kawasan ?? '-') ?></p>
+                        <label class="catatan-text"><strong>Kab/kot</strong></label>
+                        <p><?= esc($memo->kabkot ?? '-') ?></p>
 
-                        <label class="catatan-text"><strong>Kab/Kot</strong></label>
+                        <!-- <label class="catatan-text"><strong>Kab/Kot</strong></label>
                         <?php if (!empty($kabkot)): ?>
                             <?php foreach ($kabkot as $item): ?>
                                 <p><?= esc($item->kab_kot ?? '-') ?></p>
                             <?php endforeach; ?>
                         <?php else: ?>
                             <p>-</p>
-                        <?php endif; ?>
+                        <?php endif; ?> -->
 
 
                         <label class="catatan-text"><strong>Lokasi</strong></label>

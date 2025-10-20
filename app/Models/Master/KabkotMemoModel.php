@@ -8,7 +8,15 @@ class KabkotMemoModel extends Model
 {
     protected $table = 'prog_memorandum_kabkot';
 
+    protected $useTimestamps = true;
+    protected $createdField  = 'created_at';
+    protected $updatedField  = 'updated_at';
 
+    protected $allowedFields = [
+        'id',
+        'id_memorandum',
+        'id_kabkot'
+    ];
 
     public function getKabkotMemo($id_memorandum)
     {

@@ -90,7 +90,7 @@
 
             <div class="form-group">
                 <label class="catatan-text"><strong>Kabupaten / Kota</strong></label>
-                <select class="form-control" name="id_kabkot[]" id="select-kabkot" multiple>
+                <select class="form-control" name="kabkot[]" id="select-kabkot" multiple>
                     <?php foreach ($kabkot as $item): ?>
                         <!-- <option value="<?= $item['id'] ?>"><?= $item['kab_kot'] ?></option> -->
                         <option value="<?= $item['id'] ?>"
@@ -102,15 +102,30 @@
                 <small class="text-muted">Tekan <b>Ctrl</b> (atau <b>Cmd</b> di Mac) untuk memilih lebih dari satu.</small>
             </div>
 
+
+
             <div class="form-group">
                 <label class="catatan-text"><strong>Unit Organisasi</strong></label>
                 <input type="text" class="form-control-plaintext" name="unor" value="<?= esc($data->unor ?? '') ?>" disabled>
                 <input type="text" class="form-control-plaintext" name="id_unor" value="<?= esc($data->id_unor ?? '') ?>" hidden>
             </div>
             <div class="form-group">
+                <label class="catatan-text"><strong>kawasan</strong></label>
+                <select class="form-control" name="kawasan[]" id="select-kawasan" multiple>
+                    <?php foreach ($kawasan as $item): ?>
+                        <!-- <option value="<?= $item['kode_kawasan'] ?>"><?= $item['nama_kawasan'] ?></option> -->
+                        <option value="<?= $item['kode_kawasan'] ?>"
+                            <?= in_array($item['kode_kawasan'], (array)($data->kawasan ?? [])) ? 'selected' : '' ?>>
+                            <?= esc($item['nama_kawasan']) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+                <small class="text-muted">Tekan <b>Ctrl</b> (atau <b>Cmd</b> di Mac) untuk memilih lebih dari satu.</small>
+            </div>
+            <!-- <div class="form-group">
                 <label class="catatan-text"><strong>Kawasan Prioritas</strong></label>
                 <input type="text" class="form-control-plaintext" name="kawasan" value="<?= esc($data->kawasan ?? '') ?>" disabled>
-            </div>
+            </div> -->
             <div class="form-group">
                 <label class="catatan-text"><strong>Lokasi</strong></label>
                 <input type="text" class="form-control" name="lokasi" value="<?= esc($data->lokasi ?? '') ?>">
@@ -378,6 +393,13 @@
         $(document).ready(function() {
             $('#select-kabkot').select2({
                 placeholder: "-- Pilih Kabupaten / Kota --",
+                width: '100%',
+                allowClear: true
+            });
+        });
+        $(document).ready(function() {
+            $('#select-kawasan').select2({
+                placeholder: "-- Pilih Kawasan --",
                 width: '100%',
                 allowClear: true
             });

@@ -81,17 +81,27 @@
                 <label class="catatan-text"><strong>Provinsi</strong></label>
                 <p><?= esc($memo->provinsi ?? '') ?></p>
 
-                <label class="catatan-text"><strong>Kawasan</strong></label>
-                <input type="text" class="form-control" name="kawasan" value="<?= esc($memo->kawasan ?? '') ?>" readonly>
+                <div class="form-group">
+                    <label class="catatan-text"><strong>Kawasan</strong></label>
+                    <select class="form-control" name="kawasan[]" id="select-kawasan" multiple>
+                        <?php foreach ($kawasan as $item): ?>
+                            <!-- <option value="<?= $item['kode_kawasan'] ?>"><?= $item['nama_kawasan'] ?></option> -->
+                            <option value="<?= $item['kode_kawasan'] ?>"
+                                <?= in_array($item['nama_kawasan'], $selectedKawasan) ? 'selected' : '' ?>>
+                                <?= esc($item['nama_kawasan']) ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                    <small class="text-muted">Tekan <b>Ctrl</b> (atau <b>Cmd</b> di Mac) untuk memilih lebih dari satu.</small>
+                </div>
 
                 <div class="form-group">
                     <label class="catatan-text"><strong>Kabupaten / Kota</strong></label> <br>
                     <small class="text-muted">Tekan <b>Ctrl</b> (atau <b>Cmd</b> di Mac) untuk memilih lebih dari satu.</small>
                     <select class="form-control" name="id_kabkot[]" id="select-kabkot" multiple>
                         <?php foreach ($kabkot as $item): ?>
-                            <!-- <option value="<?= $item['id'] ?>"><?= $item['kab_kot'] ?></option> -->
                             <option value="<?= $item['id'] ?>"
-                                <?= in_array($item['id'], (array)($kabkotmemo[0]->kab_kot ?? [])) ? 'selected' : '' ?>>
+                                <?= in_array($item['kab_kot'], $selectedKabkot) ? 'selected' : '' ?>>
                                 <?= esc($item['kab_kot']) ?>
                             </option>
                         <?php endforeach; ?>
@@ -163,7 +173,7 @@
                                                     value="<?= esc($memo->{'anggaran_' . $index} ?? '') ?>">
                                             </td>
                                             <td>
-                                                <select class="form-control form-control-sm" name="id_pendanaan_<?= $index ?>" id="select-pendanaan<?= $index ?>">
+                                                <select style="width: 100%;" class="form-control form-control-sm" name="id_pendanaan_<?= $index ?>" id="select-pendanaan<?= $index ?>">
                                                     <option value="<?= ($memo->{'id_pendanaan_' . $index} ?? '') ?>" selected><?= ($memo->{'pendanaan_' . $index} ?? '') ?></option>
                                                     <?php foreach ($pendanaan as $item): ?>
                                                         <?php if ($item['id_pendanaan'] == $memo->{'id_pendanaan_' . $index} ?? '') continue; ?>
@@ -358,6 +368,13 @@
     $(document).ready(function() {
         $('#select-kabkot').select2({
             placeholder: "-- Pilih Kabupaten / Kota --",
+            width: '100%',
+            allowClear: true
+        });
+    });
+    $(document).ready(function() {
+        $('#select-kawasan').select2({
+            placeholder: "-- Pilih Kawasan --",
             width: '100%',
             allowClear: true
         });
