@@ -128,7 +128,7 @@
             </div> -->
             <div class="form-group">
                 <label class="catatan-text"><strong>Lokasi</strong></label>
-                <input type="text" class="form-control" name="lokasi" value="<?= esc($data->lokasi ?? '') ?>">
+                <input type="text" class="form-control-plaintext" name="lokasi" value="<?= esc($data->lokasi ?? '') ?>">
             </div>
             <div class="form-group">
                 <label class="catatan-text"><strong>Justifikasi</strong></label>
@@ -136,11 +136,11 @@
             </div>
             <div class="form-group">
                 <label class="catatan-text"><strong>Tahun Mulai</strong></label>
-                <input type="number" class="form-control" name="tahun_mulai" value="<?= esc($data->tahun_mulai ?? '') ?>">
+                <input type="number" class="form-control" name="tahun_mulai" value="<?= esc($data->tahun_mulai ?? '') ?>" readonly>
             </div>
             <div class="form-group">
                 <label class="catatan-text"><strong>Tahun Selesai</strong></label>
-                <input type="number" class="form-control" name="tahun_selesai" value="<?= esc($data->tahun_selesai ?? '') ?>">
+                <input type="number" class="form-control" name="tahun_selesai" value="<?= esc($data->tahun_selesai ?? '') ?>" readonly>
             </div>
         </div>
 
@@ -181,7 +181,7 @@
                     $nilaiAnggaran = $data->{'anggaran_' . $index} ?? '';
                 ?>
                     <div class="form-group">
-                        <label class="catatan-text"><strong>Sumber Pendanaan</strong></label>
+                        <label class="catatan-text"><strong>Sumber Pendanaan <?= $tahun ?> </strong></label>
                         <select class="form-control" name="id_pendanaan_<?= $index ?>" id="select-pendanaan<?= $index ?>">
                             <option value="">Pilih Sumber</option>
                             <?php foreach ($pendanaan as $item): ?>
