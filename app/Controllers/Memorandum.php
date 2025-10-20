@@ -467,6 +467,8 @@ class Memorandum extends BaseController
         $memoModel = new MemoModel();
 
         // Ambil input lain
+        $kabkot = $this->request->getPost('kabkot');
+        $kawasan = $this->request->getPost('kawasan');
         $pekerjaan     = $this->request->getPost('pekerjaan');
         $lokasi        = $this->request->getPost('lokasi');
         $justifikasi   = $this->request->getPost('justifikasi');
@@ -523,6 +525,14 @@ class Memorandum extends BaseController
         ];
         $dataToUpdate = array_merge($dataToUpdate, $volumeData, $anggaranData, $pendanaanData);
         // Update data
+        $this->kabkotMemoModel->where('id_memorandum', $id)->delete();
+        $this->kawasanMemoModel->where('id_memorandum', $id)->delete();
+        foreach ($kabkot as $data) {
+            $this->kabkotMemoModel->insert(['id_memorandum' => $id, 'id_kabkot' => $data]);
+        }
+        foreach ($kawasan as $data) {
+            $this->kawasanMemoModel->insert(['id_memorandum' => $id, 'id_kawasan' => $data]);
+        }
         if ($memoModel->update($id, $dataToUpdate)) {
             return $this->response->setJSON([
                 'status' => true,

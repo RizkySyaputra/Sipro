@@ -76,7 +76,7 @@
             </div>
 
             <div class="form-group">
-                <label class="catatan-text"><strong>Nama Program</strong></label>
+                <label class="catatan-text"><strong>Pekerjaan</strong></label>
                 <input type="text" class="form-control" name="periode" value="2025-2029" hidden>
                 <input type="text" class="form-control" name="id_renaksi" value="<?= esc($data->id_renaksi ?? '') ?>" hidden>
                 <input type="text" class="form-control" name="mp" value="<?= esc($data->mp ?? '') ?>" hidden>

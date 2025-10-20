@@ -98,7 +98,7 @@
                 <div class="form-group">
                     <label class="catatan-text"><strong>Kabupaten / Kota</strong></label> <br>
                     <small class="text-muted">Tekan <b>Ctrl</b> (atau <b>Cmd</b> di Mac) untuk memilih lebih dari satu.</small>
-                    <select class="form-control" name="id_kabkot[]" id="select-kabkot" multiple>
+                    <select class="form-control" name="kabkot[]" id="select-kabkot" multiple>
                         <?php foreach ($kabkot as $item): ?>
                             <option value="<?= $item['id'] ?>"
                                 <?= in_array($item['kab_kot'], $selectedKabkot) ? 'selected' : '' ?>>
