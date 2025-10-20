@@ -83,6 +83,11 @@
                 <input type="text" class="form-control" name="pekerjaan" value="<?= esc($data->pekerjaan ?? '') ?>">
             </div>
             <div class="form-group">
+                <label class="catatan-text"><strong>Unit Organisasi</strong></label>
+                <input type="text" class="form-control-plaintext" name="unor" value="<?= esc($data->unor ?? '') ?>" disabled>
+                <input type="text" class="form-control-plaintext" name="id_unor" value="<?= esc($data->id_unor ?? '') ?>" hidden>
+            </div>
+            <div class="form-group">
                 <label class="catatan-text"><strong>Provinsi</strong></label>
                 <input type="text" class="form-control-plaintext" name="provinsi" value="<?= esc($data->provinsi ?? '') ?>" disabled>
                 <input type="text" class="form-control-plaintext" name="id_provinsi" value="<?= esc($data->id_provinsi ?? '') ?>" hidden>
@@ -104,11 +109,6 @@
 
 
 
-            <div class="form-group">
-                <label class="catatan-text"><strong>Unit Organisasi</strong></label>
-                <input type="text" class="form-control-plaintext" name="unor" value="<?= esc($data->unor ?? '') ?>" disabled>
-                <input type="text" class="form-control-plaintext" name="id_unor" value="<?= esc($data->id_unor ?? '') ?>" hidden>
-            </div>
             <div class="form-group">
                 <label class="catatan-text"><strong>kawasan</strong></label>
                 <select class="form-control" name="kawasan[]" id="select-kawasan" multiple>
@@ -148,8 +148,10 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label class="catatan-text"><strong>Satuan Volume</strong></label>
-                <input type="text" class="form-control-plaintext" name="nama_satuan" value="<?= esc($data->nama_satuan ?? '') ?>" disabled>
-                <input type="text" class="form-control-plaintext" name="id_satuan" value="<?= esc($data->id_satuan ?? '') ?>" hidden>
+                <input type="text" class="form-control-plaintext" name="nama_satuan"
+                    value="<?= esc($data->nama_satuan ?? '') ?>" disabled>
+                <input type="text" class="form-control-plaintext" name="id_satuan"
+                    value="<?= esc($data->id_satuan ?? '') ?>" hidden>
             </div>
             <div class="mb-2">
                 <label class="catatan-text"><strong>Anggaran RPIW(ribu)</strong></label>
@@ -168,9 +170,12 @@
                     $index = $tahun - $tahunMulai + 1; ?>
                     <div class="form-group">
                         <label class="catatan-text"><strong>Volume <?= $tahun ?></strong></label>
-                        <input type="number" step="0.01" class="form-control"
+                        <input type="number" step="0.01" min="0" class="form-control"
                             name="volume_<?= $index ?>"
-                            value="<?= esc($data->{'volume_' . $index} ?? '') ?>">
+                            value="<?= esc($data->{'volume_' . $index} ?? '') ?>"
+                            oninput="if (this.value < 0) this.value = 0;"
+                            onkeydown="return event.key !== '-' && event.key !== 'e';">
+
                     </div>
                 <?php endfor; ?>
 
@@ -314,6 +319,28 @@
         resetDropdown('#select-kegiatan', 'Pilih Kegiatan');
         resetDropdown('#select-kro', 'Pilih KRO');
         resetDropdown('#select-ro', 'Pilih RO');
+    });
+    $('#select-ro').on('change', function() {
+        const id_ro = $(this).val();
+
+        // Kosongkan dulu field satuan
+        $('input[name="nama_satuan"]').val('');
+        $('input[name="id_satuan"]').val('');
+
+        if (id_ro) {
+            $.getJSON('<?= base_url("memorandum/getSatuanByRo") ?>/' + id_ro)
+                .done(function(data) {
+                    if (data) {
+                        $('input[name="nama_satuan"]').val(data.nama_satuan);
+                        $('input[name="id_satuan"]').val(data.id_satuan);
+                    } else {
+                        $('input[name="nama_satuan"]').val('Tidak ditemukan');
+                    }
+                })
+                .fail(function() {
+                    $('input[name="nama_satuan"]').val('Gagal memuat data');
+                });
+        }
     });
 </script>
 

@@ -97,6 +97,7 @@ $routes->post('/add_catatan', 'Memorandum::addCatatan', ['filter' => 'permission
 $routes->get('memorandum/getKegiatanByProgram/(:segment)', 'Memorandum::getKegiatanByProgram/$1');
 $routes->get('memorandum/getKroByKegiatan/(:segment)', 'Memorandum::getKroByKegiatan/$1');
 $routes->get('memorandum/getRoByKro/(:segment)', 'Memorandum::getRoByKro/$1');
+$routes->get('memorandum/getSatuanByRo/(:any)', 'Memorandum::getSatuanByRo/$1');
 
 
 

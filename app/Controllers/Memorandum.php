@@ -735,4 +735,18 @@ class Memorandum extends BaseController
             ->findAll();
         return $this->response->setJSON($data);
     }
+
+    public function getSatuanByRo($id_ro)
+    {
+        $ro = $this->roModel->getVolumeRo($id_ro);
+
+        if ($ro) {
+            return $this->response->setJSON([
+                'id_satuan'   => $ro->id_satuan,
+                'nama_satuan' => $ro->nama_satuan
+            ]);
+        } else {
+            return $this->response->setJSON(null);
+        }
+    }
 }
