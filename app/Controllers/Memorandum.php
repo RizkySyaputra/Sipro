@@ -625,7 +625,6 @@ class Memorandum extends BaseController
         $kabkot = $this->request->getPost('kabkot');
         $kawasan = $this->request->getPost('kawasan');
         $data = $this->request->getPost();
-
         // --- Pastikan ID Unor dua digit ---
         $id_unor = str_pad($data['id_unor'], 2, '0', STR_PAD_LEFT);
         $prefix = 'MP' . '.' . $data['id_provinsi'] . '.' . $id_unor . '.';

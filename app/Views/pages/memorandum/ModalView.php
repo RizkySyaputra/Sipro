@@ -110,7 +110,7 @@
                                         $periodeSelesai = (int) $periodeSelesai;
                                         $tahunMulai     = (int) $memo->tahun_mulai;
 
-                                        $i = ($tahunMulai - $periodeMulai) + 1;
+                                        $i = ($tahunMulai - $tahunMulai) + 1;
                                         $total_volume = 0;
                                         $total_anggaran = 0;
 

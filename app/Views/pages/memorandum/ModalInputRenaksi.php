@@ -95,7 +95,7 @@
 
             <div class="form-group">
                 <label class="catatan-text"><strong>Kabupaten / Kota</strong></label>
-                <select class="form-control" name="kabkot[]" id="select-kabkot" multiple>
+                <select class="form-control" name="kabkot[]" id="select-kabkot" multiple required>
                     <?php foreach ($kabkot as $item): ?>
                         <!-- <option value="<?= $item['id'] ?>"><?= $item['kab_kot'] ?></option> -->
                         <option value="<?= $item['id'] ?>"
@@ -111,7 +111,7 @@
 
             <div class="form-group">
                 <label class="catatan-text"><strong>kawasan</strong></label>
-                <select class="form-control" name="kawasan[]" id="select-kawasan" multiple>
+                <select class="form-control" name="kawasan[]" id="select-kawasan" multiple required>
                     <?php foreach ($kawasan as $item): ?>
                         <!-- <option value="<?= $item['kode_kawasan'] ?>"><?= $item['nama_kawasan'] ?></option> -->
                         <option value="<?= $item['kode_kawasan'] ?>"
