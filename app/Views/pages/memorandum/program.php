@@ -6,21 +6,25 @@
                     <i class="material-icons">source</i>
                 </div>
                 <h4 class="card-title">Program RPIW</h4>
-
             </div>
             <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
-
+            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
             <div class="container mt-4">
-                <div class="card shadow-sm">
-                    <div class="card-header">
+                <div class="card shadow-md">
+                    <!-- <div class="card-header">
                         <h5 class="mb-0">Filter Data Program</h5>
-                    </div>
+                    </div> -->
                     <div class="card-body">
                         <form method="post" id="filter-form">
-                            <div class="form-row align-items-center">
-                                <!-- Dropdown Unor -->
-                                <div class="col-md-2 mb-3">
-                                    <label for="unor"><strong>Pilih Unor</strong></label>
+                            <!-- <div class="form-row align-items-center"> -->
+                            <!-- Dropdown Unor -->
+                            <div class="row mb-3">
+                                <div class="col-md-2">
+                                    <label for="unor"><strong>Unor</strong></label>
+                                </div>
+                                <div class="col-md-10">
                                     <select class="form-control" name="unor" id="filter-unor">
                                         <option value="">Semua Unor</option>
                                         <?php foreach ($unor as $u): ?>
@@ -28,10 +32,14 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
+                            </div>
 
-                                <!-- Dropdown Provinsi -->
-                                <div class="col-md-2 mb-3">
-                                    <label for="provinsi"><strong>Pilih Provinsi</strong></label>
+                            <!-- Dropdown Provinsi -->
+                            <div class="row mb-3">
+                                <div class="col-md-2">
+                                    <label for="provinsi"><strong>Provinsi</strong></label>
+                                </div>
+                                <div class="col-md-10">
                                     <select class="form-control" name="provinsi" id="filter-provinsi">
                                         <option value="">Semua Provinsi</option>
                                         <?php foreach ($provinsi as $p): ?>
@@ -39,10 +47,14 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
+                            </div>
 
-                                <!-- Dropdown Kawasan -->
-                                <div class="col-md-2 mb-3">
-                                    <label for="kawasan"><strong>Pilih Kawasan</strong></label>
+                            <!-- Dropdown Kawasan -->
+                            <div class="row mb-3">
+                                <div class="col-md-2">
+                                    <label for="kawasan"><strong>Kawasan</strong></label>
+                                </div>
+                                <div class="col-md-10">
                                     <select class="form-control" name="kawasan" id="filter-kawasan">
                                         <option value="">Semua Kawasan</option>
                                         <?php foreach ($kawasan as $k): ?>
@@ -50,38 +62,87 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
-                                <div class="col-md-2 mb-3">
-                                    <label for="tahun_anggaran"><strong>Pilih Tahun Anggaran</strong></label>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-2">
+                                    <label for="tahun_anggaran"><strong>Tahun Anggaran</strong></label>
+                                </div>
+                                <div class="col-md-10">
                                     <select class="form-control" name="tahun_anggaran" id="filter-tahun_anggaran">
                                         <option value="">Semua Tahun</option>
                                         <option value="2025">2025</option>
                                         <option value="2026">2026</option>
                                         <option value="2027">2027</option>
-
                                     </select>
                                 </div>
+                            </div>
 
-                                <div class="col-md-2 mb-3">
-                                    <label for="residu"><strong>Pilih Jenis Program</strong></label>
+                            <div class="row mb-3">
+                                <div class="col-md-2">
+                                    <label for="residu"><strong>Jenis Program</strong></label>
+                                </div>
+                                <div class="col-md-10">
                                     <select class="form-control" name="residu" id="filter-residu">
                                         <option value="">Semua Program</option>
                                         <option value="residu">Residu</option>
                                         <!-- <option value="non">Non Residu</option> -->
                                     </select>
                                 </div>
+                            </div>
 
+                            <div class="row">
+                                <div class="col-md-2">
 
-                                <div class="col-md-2 ">
-                                    <button type="button" id="reset-filters" class="btn btn-info">
-                                        <i class="fa fa-undo"></i>
-                                    </button>
+                                </div>
+                                <div class="col-md-10">
                                     <button type="submit" class="btn btn-primary">
                                         <i id="button-text" class="fa fa-search"></i>
                                         <span id="loading-spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
                                     </button>
+                                    <button type="button" id="reset-filters" class="btn btn-info">
+                                        <i class="fa fa-undo"></i>
+                                    </button>
                                 </div>
                             </div>
+                            <!-- </div> -->
                         </form>
+                    </div>
+                </div>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="material-datatables">
+                            <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>No </th>
+                                        <!-- <th>Kode </th> -->
+                                        <th>Provinsi</th>
+                                        <th>Unor</th>
+                                        <th>Nama Program </th>
+                                        <th>Kawasan</th>
+                                        <th>Volume</th>
+                                        <th>Anggaran </th>
+                                        <th>Tahun </th>
+                                    </tr>
+                                </thead>
+                                <!-- <tfoot>
+                                    <tr>
+                                        <th>No </th>
+                                        <th>Kode </th>
+                                        <th>Provinsi</th>
+                                        <th>Unor</th>
+                                        <th>Nama Program </th>
+                                        <th>Kawasan</th>
+                                        <th>Volume</th>
+                                        <th>Anggaran </th>
+                                        <th>Tahun </th>
+                                    </tr>
+                                </tfoot> -->
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -97,41 +158,7 @@
                 }
             </style>
 
-            <div class="card-body">
-                <div class="material-datatables">
-                    <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>No </th>
-                                <!-- <th>Kode </th> -->
-                                <th>Provinsi</th>
-                                <th>Unor</th>
-                                <th>Nama Program </th>
-                                <th>Kawasan</th>
-                                <th>Volume</th>
-                                <th>Anggaran </th>
-                                <th>Tahun </th>
-                            </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <th>No </th>
-                                <!-- <th>Kode </th> -->
-                                <th>Provinsi</th>
-                                <th>Unor</th>
-                                <th>Nama Program </th>
-                                <th>Kawasan</th>
-                                <th>Volume</th>
-                                <th>Anggaran </th>
-                                <th>Tahun </th>
-                            </tr>
-                        </tfoot>
-                        <tbody>
 
-                        </tbody>
-                    </table>
-                </div>
-            </div>
             <!-- end content-->
         </div>
         <!--  end card  -->
@@ -139,9 +166,6 @@
     <!-- end col-md-12 -->
 </div>
 <!-- end row -->
-</div>
-</div>
-
 
 <script>
     $(document).ready(function() {
@@ -211,8 +235,10 @@
                         ],
                         responsive: true,
                         language: {
-                            search: "_INPUT_",
-                            searchPlaceholder: "Search records",
+                            search: "Search:",
+                            // search: "_INPUT_",
+                            // searchPlaceholder: "Search records",
+                            zeroRecords: "Data tidak ditemukan"
                         }
                     });
                 },
@@ -244,6 +270,19 @@
             localStorage.removeItem('selectedKawasan');
             localStorage.removeItem('selectedResidu');
             localStorage.removeItem('selectedTahun');
+        });
+
+        $(function() {
+            $('#datatables').DataTable({
+                "pageLength": 10,
+                "ordering": true,
+                "lengthChange": true,
+                "language": {
+                    "search": "_INPUT_",
+                    "searchPlaceholder": "Search records",
+                    "url": "//cdn.datatables.net/plug-ins/1.13.6/i18n/id.json"
+                }
+            });
         });
     });
 </script>

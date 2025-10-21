@@ -164,6 +164,18 @@ table.dataTable tbody tr:hover {
   background-image: none;
 }
 
+.select2-selection__choice__display {
+  padding-left: 16px !important;
+}
+
+.select2-search--inline {
+  margin-top: 10px;
+}
+
+textarea {
+  overflow-y: auto;
+}
+
 /* Responsive fix for small screens */
 @media (max-width: 575.98px) {
   .dataTables_filter input[type="search"],

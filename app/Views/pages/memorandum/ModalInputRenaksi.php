@@ -14,6 +14,7 @@
         border-radius: 5px;
     }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <form id="inputRenaksiForm">
     <?= csrf_field() ?>
@@ -79,7 +80,7 @@
 
             <div class="form-group">
                 <label>Kabupaten / Kota</label>
-                <select class="form-control" name="id_kabkot[]" id="select-kabkot" multiple>
+                <select class="form-control" name="id_kabkot[]" id="select-kabkot" multiple="multiple">
                     <?php foreach ($kabkot as $item): ?>
                         <!-- <option value="<?= $item['id'] ?>"><?= $item['kab_kot'] ?></option> -->
                         <option value="<?= $item['id'] ?>"
@@ -106,7 +107,7 @@
             </div>
             <div class="form-group">
                 <label>Justifikasi</label>
-                <textarea class="form-control" name="justifikasi" rows="3"><?= esc($data->justifikasi ?? '') ?></textarea>
+                <textarea class="form-control" name="justifikasi" rows="5"><?= esc($data->justifikasi ?? '') ?></textarea>
             </div>
             <div class="form-group">
                 <label>Tahun Mulai</label>
@@ -276,9 +277,9 @@
         $('#select-program, #select-kegiatan, #select-kro, #select-ro, #select-pendanaan1,#select-pendanaan2,#select-pendanaan3,#select-pendanaan4,#select-pendanaan5').select2();
         $(document).ready(function() {
             $('#select-kabkot').select2({
-                placeholder: "-- Pilih Kabupaten / Kota --",
+                placeholder: "Pilih Kabupaten / Kota",
                 width: '100%',
-                allowClear: true
+                // allowClear: true
             });
         });
     })();

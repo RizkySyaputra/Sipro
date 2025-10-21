@@ -8,7 +8,7 @@
                 <div class="card-icon">
                     <i class="material-icons">source</i>
                 </div>
-                <h3 class="card-title">Nomenklatur Kegiatan</h3>
+                <h4 class="card-title">Nomenklatur Kegiatan</h4>
             </div>
             <div class="container mt-4">
                 <div class="card shadow-md p-1">
@@ -20,12 +20,14 @@
                             <!-- <div class=""> -->
                             <!-- Dropdown Program -->
                             <div class="row mb-3">
-                                <label for="program" class="col-sm-1"><strong>Program</strong></label>
-                                <div class="col-sm-11">
+                                <div class="col-md-1">
+                                    <label for="program"><strong>Program</strong></label>
+                                </div>
+                                <div class="col-md-11">
                                     <select class="form-control" name="program" id="filter-program">
                                         <option value=""></option>
                                         <?php foreach ($program as $p): ?>
-                                            <option value="<?= htmlspecialchars($p['id_program']) ?>"><?= htmlspecialchars($p['nm_program']) ?></option>
+                                            <option value="<?= esc($p['id_program']) ?>"><?= esc($p['nm_program']) ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
@@ -33,8 +35,10 @@
 
                             <!-- Dropdown Kegiatan -->
                             <div class="row mb-3">
-                                <label for="kegiatan" class="col-sm-1"><strong>Kegiatan</strong></label>
-                                <div class="col-sm-11">
+                                <div class="col-md-1">
+                                    <label for="kegiatan"><strong>Kegiatan</strong></label>
+                                </div>
+                                <div class="col-md-11">
                                     <select class="form-control" name="kegiatan" id="filter-kegiatan" disabled>
                                         <option value="">Pilih Kegiatan</option>
                                     </select>
@@ -43,8 +47,10 @@
 
                             <!-- Dropdown Kode KRO -->
                             <div class="row mb-3">
-                                <label for="kro" class="col-sm-1"><strong>KRO</strong></label>
-                                <div class="col-sm-11">
+                                <div class="col-md-1">
+                                    <label for="kro"><strong>KRO</strong></label>
+                                </div>
+                                <div class="col-md-11">
                                     <select class="form-control" name="kro" id="filter-kro" disabled>
                                         <option value="">Pilih KRO</option>
                                     </select>
@@ -53,8 +59,10 @@
 
                             <!-- Dropdown Kode RO -->
                             <div class="row mb-3">
-                                <label for="ro" class="col-sm-1"><strong>RO</strong></label>
-                                <div class="col-sm-11">
+                                <div class="col-md-1">
+                                    <label for="ro"><strong>RO</strong></label>
+                                </div>
+                                <div class="col-md-11">
                                     <select class="form-control" name="ro" id="filter-ro" disabled>
                                         <option value="">Pilih RO</option>
                                     </select>
@@ -63,10 +71,10 @@
 
                             <!-- Button Filter -->
                             <div class="row">
-                                <div class="col-sm-1">
+                                <div class="col-md-1">
 
                                 </div>
-                                <div class="col-sm-11">
+                                <div class="col-md-11">
                                     <button type="submit" class="btn btn-primary" title="Cari Data">
                                         <i id="button-text" class="fa fa-search"></i>
                                         <span id="loading-spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
@@ -82,11 +90,10 @@
                                     </button>
                                 </div>
                             </div>
-
                             <!-- </div> -->
+                        </form>
+                        <!-- <input type="text" name="sumber" value="NON RPIW" hidden> -->
                     </div>
-                    <!-- <input type="text" name="sumber" value="NON RPIW" hidden> -->
-                    </form>
                 </div>
                 <div class="card shadow-sm p-1">
                     <div class="card-body">
@@ -143,25 +150,21 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <style>
-            .btn:hover {
-                transform: scale(1.05);
-                /* Efek zoom saat hover */
-            }
+            <style>
+                .btn:hover {
+                    transform: scale(1.05);
+                    /* Efek zoom saat hover */
+                }
 
-            .spinner-border {
-                margin-left: 5px;
-            }
-        </style>
-        <!-- end content-->
+                .spinner-border {
+                    margin-left: 5px;
+                }
+            </style>
+            <!-- end content-->
+        </div>
+        <!--  end card  -->
     </div>
-    <!--  end card  -->
-</div>
-<!-- end col-md-12 -->
-</div>
-<!-- end row -->
-</div>
+    <!-- end col-md-12 -->
 </div>
 <!-- jQuery, Select2, dan Bootstrap JS -->
 <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -170,6 +173,31 @@
 
 <script>
     $(document).ready(function() {
+
+        $(function() {
+            $('#datatables').DataTable({
+                "pageLength": 10,
+                "ordering": true,
+                "lengthChange": true,
+                "language": {
+                    "search": "_INPUT_",
+                    "searchPlaceholder": "Search records",
+                    "url": "//cdn.datatables.net/plug-ins/1.13.6/i18n/id.json"
+                }
+            });
+        });
+
+        $(document).on('click', '.btn-view', function() {
+            let id_ro = $(this).data('id');
+            $('#detailNomenklaturModalTitle').text('Nomenklatur Kegiatan');
+            $('#detailNomenklaturModal .modal-body').html('<div class="text-center p-3"><div class="spinner-border"></div></div>');
+            $('#detailNomenklaturModal').modal('show');
+
+            $.get("<?= base_url('master/get_detail_nomenklatur') ?>/" + id_ro, function(data) {
+                $('#detailNomenklaturModal .modal-body').html(data);
+            });
+        });
+
         $('#download-excel').on('click', function() {
             $('#loading-spinner-excel').show();
             $('#img-excel').hide();
@@ -289,9 +317,6 @@
                 }
             });
         });
-
-
-
 
         // filtering section process sendi_08102025
         $('#reset-filters').on('click', function() {

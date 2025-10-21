@@ -88,16 +88,22 @@ class Master extends BaseController
         return view('/pages/master/tabel/tabel_nomenklatur', $data);
     }
 
-    public function get_detail_nomenklatur()
+    public function get_detail_nomenklatur($id_ro)
     {
-        $program_id = $this->request->getGet('program');
-        $kegiatan_id = $this->request->getGet('kegiatan');
-        $kro_id = $this->request->getGet('kro');
-        $ro_id = $this->request->getGet('ro');
+        // $program_id = $this->request->getGet('program');
+        // $kegiatan_id = $this->request->getGet('kegiatan');
+        // $kro_id = $this->request->getGet('kro');
+        // $ro_id = $this->request->getGet('ro');
 
-        $nomenklatur = $this->nomenklaturModel->getDetailNomenklatur($program_id, $kegiatan_id, $kro_id, $ro_id);
+        // $nomenklatur = $this->nomenklaturModel->getDetailNomenklatur($program_id, $kegiatan_id, $kro_id, $ro_id);
 
-        return $this->response->setJSON($nomenklatur);
+        // return $this->response->setJSON($nomenklatur);
+
+        $nomenklatur = $this->nomenklaturModel->getDetailNomenklatur($id_ro);
+        if (!$nomenklatur) {
+            return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
+        }
+        return view('/pages/master/ModalNomenklaturView', ['nomenklatur' => $nomenklatur]);
     }
 
     public function export_to_excel()

@@ -5,31 +5,38 @@
                 <div class="card-icon">
                     <i class="material-icons">source</i>
                 </div>
-                <h4 class="card-title">Program Jangka Menengah</h4>
-
+                <!-- <h4 class="card-title">Program Jangka Menengah</h4> -->
+                <h4 class="card-title">Data Memorandum</h4>
             </div>
             <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
             <div class="container mt-4">
-                <div class="card shadow-sm">
-                    <div class="card-header">
+                <div class="card shadow-md">
+                    <!-- <div class="card-header">
                         <h5 class="mb-0">Filter Data Memorandum</h5>
-                    </div>
+                    </div> -->
                     <div class="card-body">
                         <form id="filter-form" ?>
-                            <div class="form-row align-items-center">
-                                <!-- Dropdown Unor -->
-                                <div class="col-md-3 mb-3">
+                            <!-- <div class="form-row align-items-center"> -->
+                            <!-- Dropdown Unor -->
+                            <div class="row mb-3">
+                                <div class="col-md-1">
                                     <label for="sumber"><strong>Sumber</strong></label>
+                                </div>
+                                <div class="col-md-11">
                                     <select class="form-control" name="sumber" id="filter-sumber">
                                         <option value="">Semua Sumber</option>
                                         <option value="RPIW">RPIW</option>
                                         <option value="Non RPIW">Non RPIW</option>
                                     </select>
                                 </div>
-                                <div class="col-md-3 mb-3">
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-1">
                                     <label for="unor"><strong>Unor</strong></label>
+                                </div>
+                                <div class="col-md-11">
                                     <select class="form-control" name="unor" id="filter-unor">
                                         <option value="">Semua Unor</option>
                                         <?php foreach ($unor as $u): ?>
@@ -37,10 +44,14 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
+                            </div>
 
-                                <!-- Dropdown Provinsi -->
-                                <div class="col-md-3 mb-3">
+                            <!-- Dropdown Provinsi -->
+                            <div class="row mb-3">
+                                <div class="col-md-1">
                                     <label for="provinsi"><strong>Provinsi</strong></label>
+                                </div>
+                                <div class="col-md-11">
                                     <select class="form-control" name="provinsi" id="filter-provinsi">
                                         <option value="">Semua Provinsi</option>
                                         <?php foreach ($provinsi as $p): ?>
@@ -48,9 +59,10 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
+                            </div>
 
-                                <!-- Dropdown Kawasan -->
-                                <!-- <div class="col-md-3 mb-3">
+                            <!-- Dropdown Kawasan -->
+                            <!-- <div class="col-md-3 mb-3">
                                     <label for="kawasan"><strong>Kawasan</strong></label>
                                     <select class="form-control" name="kawasan" id="filter-kawasan">
                                         <option value="">Semua Kawasan</option>
@@ -60,27 +72,87 @@
                                     </select>
                                 </div> -->
 
-                                <!-- Button Filter -->
-                                <div class="col-md-2 d-flex align-items-end gap-2">
-                                    <!-- Reset Filter -->
-                                    <button type="button" id="reset-filters" class="btn btn-warning" title="Reset Filter">
-                                        <i class="fa fa-eraser"></i>
-                                    </button>
+                            <!-- Button Filter -->
+                            <div class="row">
+                                <!-- <div class="col-md-3 d-flex align-items-end gap-2"> -->
+                                <div class="col-md-1">
 
+                                </div>
+                                <div class="col-md-11">
                                     <!-- Cari (Search) -->
                                     <button type="submit" class="btn btn-primary" title="Cari">
                                         <i id="button-text" class="fa fa-search"></i>
                                         <span id="loading-spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
                                     </button>
 
-                                    <!-- Refresh -->
-                                    <button type="submit" id="button-text" class="btn btn-success" title="Refresh Data">
-                                        <i class="fas fa-sync-alt"></i> <!-- icon refresh -->
+                                    <!-- Reset Filter -->
+                                    <button type="button" id="reset-filters" class="btn btn-info" title="Reset Filter">
+                                        <!-- <i class="fa fa-eraser"></i> -->
+                                        <i class="fa fa-undo"></i>
                                     </button>
-                                </div>
 
+                                    <!-- Refresh -->
+                                    <!-- <button type="submit" id="button-text" class="btn btn-success" title="Refresh Data">
+                                        <i class="fas fa-sync-alt"></i>
+                                    </button> -->
+                                </div>
                             </div>
+                            <!-- </div> -->
                         </form>
+                    </div>
+                </div>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="material-datatables">
+                            <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>No </th>
+                                        <th>Sumber </th>
+                                        <th>Provinsi</th>
+                                        <th>Unor</th>
+                                        <th>Nama Kegiatan </th>
+                                        <th>Kawasan</th>
+                                        <th>Mulai - Selesai</th>
+                                        <th style="width:20%">Aksi </th>
+                                    </tr>
+                                </thead>
+                                <!-- <tfoot>
+                            <tr>
+                                <th>No </th>
+                                <th>Kode </th>
+                                <th>Provinsi</th>
+                                <th>Unor</th>
+                                <th>Nama Kegiatan </th>
+                                <th>Kawasan</th>
+                                <th>Mulai - Selesai</th>
+                                <th style="width:15%">Aksi </th>
+                            </tr>
+                        </tfoot> -->
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                            <!-- Modal View/Edit -->
+                            <div class="modal fade" id="memoModal" tabindex="-1" role="dialog" aria-labelledby="memoModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="memoModalLabel">Loading...</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span>&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="text-center p-3">
+                                                <div class="spinner-border text-primary" role="status"></div>
+                                                <p>Memuat data...</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -94,59 +166,6 @@
                     margin-left: 5px;
                 }
             </style>
-            <div class="card-body">
-                <div class="material-datatables">
-                    <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>No </th>
-                                <th>Sumber </th>
-                                <th>Provinsi</th>
-                                <th>Unor</th>
-                                <th>Nama Kegiatan </th>
-                                <th>Kawasan</th>
-                                <th>Mulai - Selesai</th>
-                                <th>Aksi </th>
-                            </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <th>No </th>
-                                <th>Kode </th>
-                                <th>Provinsi</th>
-                                <th>Unor</th>
-                                <th>Nama Kegiatan </th>
-                                <th>Kawasan</th>
-                                <th>Mulai - Selesai</th>
-                                <th>Aksi </th>
-                            </tr>
-                        </tfoot>
-                        <tbody>
-
-                        </tbody>
-                    </table>
-                    <!-- Modal View/Edit -->
-                    <div class="modal fade" id="memoModal" tabindex="-1" role="dialog" aria-labelledby="memoModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="memoModalLabel">Loading...</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span>&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="text-center p-3">
-                                        <div class="spinner-border text-primary" role="status"></div>
-                                        <p>Memuat data...</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
             <!-- end content-->
         </div>
         <!--  end card  -->
@@ -229,6 +248,7 @@
                         language: {
                             search: "_INPUT_",
                             searchPlaceholder: "Search records",
+                            zeroRecords: "Data tidak ditemukan"
                         }
                     });
                 },
@@ -258,6 +278,9 @@
             localStorage.removeItem('selectedProvinsi');
             localStorage.removeItem('selectedKawasan');
             localStorage.removeItem('selectedSumber');
+
+            var table = $('#datatables').DataTable();
+            table.clear().draw();
         });
     });
 </script>
@@ -269,6 +292,8 @@
             "ordering": true,
             "lengthChange": true,
             "language": {
+                "search": "_INPUT_",
+                "searchPlaceholder": "Search records",
                 "url": "//cdn.datatables.net/plug-ins/1.13.6/i18n/id.json"
             }
         });
@@ -371,12 +396,12 @@
         });
     });
 
-    $.get("<?= base_url('memorandum/view') ?>/" + id, function(data) {
-        console.log("Response:", data); // cek respon
-        $('#memoModal .modal-body').html(data);
-    }).fail(function(xhr) {
-        alert("Error " + xhr.status + ": " + xhr.responseText);
-    });
+    // $.get("<?= base_url('memorandum/view') ?>/" + id, function(data) {
+    //     console.log("Response:", data); // cek respon
+    //     $('#memoModal .modal-body').html(data);
+    // }).fail(function(xhr) {
+    //     alert("Error " + xhr.status + ": " + xhr.responseText);
+    // });
 </script>
 
 <?= $this->endSection() ?>
