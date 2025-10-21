@@ -13,6 +13,9 @@ use App\Models\Master\SatuanModel;
 use App\Models\Master\MpModel;
 use App\Models\Master\StackholderModel;
 use App\Models\Master\KabkotModel;
+use App\Models\Master\KabkotMemoModel;
+use App\Models\Master\KawasanMemoModel;
+use App\Models\Master\KawasanModel;
 use App\Models\Master\ProgramModel;
 use App\Models\Master\KegiatanModel;
 use App\Models\Master\KroModel;
@@ -32,6 +35,9 @@ class Memorandum extends BaseController
     protected $unorModel;
     protected $pendanaanModel;
     protected $kabkotModel;
+    protected $kawasanModel;
+    protected $kabkotMemoModel;
+    protected $kawasanMemoModel;
     protected $rekapProgram;
     protected $programModel;
     protected $kegiatanModel;
@@ -64,6 +70,9 @@ class Memorandum extends BaseController
         $this->renaksiModel = new renaksiModel();
         $this->stakholderModel = new StackholderModel();
         $this->kabkotModel = new KabkotModel();
+        $this->kabkotMemoModel = new KabkotMemoModel();
+        $this->kawasanModel = new KawasanModel();
+        $this->kawasanMemoModel = new KawasanMemoModel();
 
         helper('permission');
     }
@@ -410,23 +419,46 @@ class Memorandum extends BaseController
     public function view($id)
     {
         $memo = $this->daftarMemoModel->find($id);
+        $kabkot = $this->kabkotMemoModel->getKabkotMemo($id);
+
         if (!$memo) {
             return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
         }
-        return view('/pages/memorandum/ModalView', ['memo' => $memo]);
+        return view('/pages/memorandum/ModalView', ['memo' => $memo, 'kabkot' => $kabkot]);
     }
 
     public function edit($id)
     {
+
         $t_memo = $this->memoModel->find($id);
+
         $memo = $this->daftarMemoModel->find($id);
+        $selectedKawasan = [];
+
+        if (!empty($memo->kawasan)) {
+            $selectedKawasan = array_map('trim', explode(',', $memo->kawasan));
+        }
+        $selectedKabkot = [];
+
+        if (!empty($memo->kabkot)) {
+            $selectedKabkot = array_map('trim', explode(',', $memo->kabkot));
+        }
         $stackholder = $this->stakholderModel->orderBy('id_kategori')->orderBy('id_stakeholder')->findAll();
         $namaList = array_column($stackholder, 'short_stakeholder');
+        $id_prov = $t_memo->id_provinsi;
+        $kabkotmemo = $this->kabkotMemoModel->getKabkotMemo($id);
+        $kabkot = $this->kabkotModel->where('id_prov', $id_prov)->findAll();
+        $program = $this->programModel->findAll();
+        $kegiatan = $this->kegiatanModel->findAll();;
+        $kro = $this->kroModel->findAll();;
+        $ro = $this->roModel->findAll();;
+        $pendanaan = $this->pendanaanModel->findAll();
+        $kawasan = $this->kawasanModel->where('id_provinsi', $id_prov)->findAll();
 
         if (!$memo) {
             return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
         }
-        return view('/pages/memorandum/ModalEdit', ['memo' => $memo, 't_memo' => $t_memo, 'namaList' => $namaList]);
+        return view('/pages/memorandum/ModalEdit', ['selectedKabkot' => $selectedKabkot, 'selectedKawasan' => $selectedKawasan, 'kawasan' => $kawasan, 'memo' => $memo, 't_memo' => $t_memo, 'namaList' => $namaList, 'kabkot' => $kabkot, 'pendanaan' => $pendanaan, 'program' => $program, 'kegiatan' => $kegiatan, 'kro' => $kro, 'ro' => $ro, 'kabkotmemo' => $kabkotmemo]);
     }
 
 
@@ -435,6 +467,8 @@ class Memorandum extends BaseController
         $memoModel = new MemoModel();
 
         // Ambil input lain
+        $kabkot = $this->request->getPost('kabkot');
+        $kawasan = $this->request->getPost('kawasan');
         $pekerjaan     = $this->request->getPost('pekerjaan');
         $lokasi        = $this->request->getPost('lokasi');
         $justifikasi   = $this->request->getPost('justifikasi');
@@ -446,16 +480,18 @@ class Memorandum extends BaseController
 
         $volumeData = [];
         $anggaranData = [];
-
+        $pendanaanData = [];
         if ($tahunMulai && $tahunSelesai && $tahunSelesai >= $tahunMulai) {
             for ($tahun = $tahunMulai; $tahun <= $tahunSelesai; $tahun++) {
                 $index = $tahun - $tahunMulai + 1;
 
                 $volumeKey = 'volume_' . $index;
                 $anggaranKey = 'anggaran_' . $index;
+                $pendanaanKey = 'id_pendanaan_' . $index;
 
                 $volumeData[$volumeKey] = $this->request->getPost($volumeKey);
                 $anggaranData[$anggaranKey] = $this->request->getPost($anggaranKey);
+                $pendanaanData[$pendanaanKey] = $this->request->getPost($pendanaanKey);
             }
         }
 
@@ -487,8 +523,16 @@ class Memorandum extends BaseController
             'tahun_selesai'     => $tahun_selesai,
             'catatan_memorandum' => json_encode($catatan, JSON_UNESCAPED_UNICODE)
         ];
-        $dataToUpdate = array_merge($dataToUpdate, $volumeData, $anggaranData);
+        $dataToUpdate = array_merge($dataToUpdate, $volumeData, $anggaranData, $pendanaanData);
         // Update data
+        $this->kabkotMemoModel->where('id_memorandum', $id)->delete();
+        $this->kawasanMemoModel->where('id_memorandum', $id)->delete();
+        foreach ($kabkot as $data) {
+            $this->kabkotMemoModel->insert(['id_memorandum' => $id, 'id_kabkot' => $data]);
+        }
+        foreach ($kawasan as $data) {
+            $this->kawasanMemoModel->insert(['id_memorandum' => $id, 'id_kawasan' => $data]);
+        }
         if ($memoModel->update($id, $dataToUpdate)) {
             return $this->response->setJSON([
                 'status' => true,
@@ -562,6 +606,7 @@ class Memorandum extends BaseController
         $namaList = array_column($stackholder, 'short_stakeholder');
         $id_prov = $data->id_provinsi;
         $kabkot = $this->kabkotModel->where('id_prov', $id_prov)->findAll();
+        $kawasan = $this->kawasanModel->where('id_provinsi', $id_prov)->findAll();
         $program = $this->programModel->findAll();
         $kegiatan = $this->kegiatanModel->findAll();;
         $kro = $this->kroModel->findAll();;
@@ -571,14 +616,15 @@ class Memorandum extends BaseController
         if (!$data) {
             return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
         }
-        return view('/pages/memorandum/ModalInputRenaksi', ['data' => $data,  'namaList' => $namaList, 'kabkot' => $kabkot, 'pendanaan' => $pendanaan, 'program' => $program, 'kegiatan' => $kegiatan, 'kro' => $kro, 'ro' => $ro]);
+        return view('/pages/memorandum/ModalInputRenaksi', ['kawasan' => $kawasan, 'data' => $data,  'namaList' => $namaList, 'kabkot' => $kabkot, 'pendanaan' => $pendanaan, 'program' => $program, 'kegiatan' => $kegiatan, 'kro' => $kro, 'ro' => $ro]);
     }
 
 
     public function input_memo_renaksi($id)
     {
+        $kabkot = $this->request->getPost('kabkot');
+        $kawasan = $this->request->getPost('kawasan');
         $data = $this->request->getPost();
-
         // --- Pastikan ID Unor dua digit ---
         $id_unor = str_pad($data['id_unor'], 2, '0', STR_PAD_LEFT);
         $prefix = 'MP' . '.' . $data['id_provinsi'] . '.' . $id_unor . '.';
@@ -634,16 +680,15 @@ class Memorandum extends BaseController
         }
 
         // --- Handle kabkot (multi-select) ---
-        $kabkot = $this->request->getPost('id_kabkot'); // bisa berupa array atau string
-        if (is_array($kabkot)) {
-            $kabkot = json_encode($kabkot, JSON_UNESCAPED_UNICODE); // ubah ke JSON string
-        }
+        // $kabkot = $this->request->getPost('id_kabkot'); // bisa berupa array atau string
+        // if (is_array($kabkot)) {
+        //     $kabkot = json_encode($kabkot, JSON_UNESCAPED_UNICODE); // ubah ke JSON string
+        // }
 
         // --- Susun data tambahan ---
         $data2 = [
             'id_memorandum'       => $id_memorandum,
             'catatan_memorandum'  => json_encode($catatan, JSON_UNESCAPED_UNICODE),
-            'kabkot'              => $kabkot,
             'sumber'              => 'RPIW'
         ];
 
@@ -654,10 +699,53 @@ class Memorandum extends BaseController
         // --- Update nilai mp pada renaksi ---
         $newmp = (int) $data['mp'] + 1;
         $this->renaksiModel->update($data['id_renaksi'], ['mp' => $newmp]);
-
+        foreach ($kabkot as $data) {
+            $this->kabkotMemoModel->insert(['id_memorandum' => $id_memorandum, 'id_kabkot' => $data]);
+        }
+        foreach ($kawasan as $data) {
+            $this->kawasanMemoModel->insert(['id_memorandum' => $id_memorandum, 'id_kawasan' => $data]);
+        }
         // --- Simpan ke tabel memorandum ---
         $this->memoModel->insert($dataToInsert);
 
         return $this->response->setJSON(['success' => true]);
+    }
+
+    public function getKegiatanByProgram($id_program)
+    {
+        $data = $this->kegiatanModel
+            ->where('id_program', $id_program)
+            ->findAll();
+        return $this->response->setJSON($data);
+    }
+
+    public function getKroByKegiatan($id_kegiatan)
+    {
+        $data = $this->kroModel
+            ->where('id_kegiatan', $id_kegiatan)
+            ->findAll();
+        return $this->response->setJSON($data);
+    }
+
+    public function getRoByKro($id_kro)
+    {
+        $data = $this->roModel
+            ->where('id_kro', $id_kro)
+            ->findAll();
+        return $this->response->setJSON($data);
+    }
+
+    public function getSatuanByRo($id_ro)
+    {
+        $ro = $this->roModel->getVolumeRo($id_ro);
+
+        if ($ro) {
+            return $this->response->setJSON([
+                'id_satuan'   => $ro->id_satuan,
+                'nama_satuan' => $ro->nama_satuan
+            ]);
+        } else {
+            return $this->response->setJSON(null);
+        }
     }
 }

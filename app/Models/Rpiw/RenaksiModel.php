@@ -32,7 +32,7 @@ class RenaksiModel extends Model
     ];
 
 
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $createdField  = 'created_at';  // pastikan ada di tabel
     protected $updatedField  = 'updated_at';  // pastikan ada di tabel
 
