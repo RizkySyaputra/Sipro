@@ -25,4 +25,14 @@ class RoModel extends Model
         $query = $builder->get();
         return $query->getResult();
     }
+
+    public function getVolumeRo($id_ro)
+    {
+        $builder = $this->db->table('m_sk_ro as a');
+        $builder->join('m_satuan b', 'a.id_satuan = b.id_satuan');
+        $builder->select('a.id_satuan, b.nama_satuan');
+        $builder->where('a.id_ro', $id_ro);
+        $query = $builder->get();
+        return $query->getRow();
+    }
 }

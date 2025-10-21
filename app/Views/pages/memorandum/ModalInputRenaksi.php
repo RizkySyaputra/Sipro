@@ -13,6 +13,13 @@
         padding: 10px;
         border-radius: 5px;
     }
+
+    .catatan-text {
+        text-align: justify;
+        color: #333;
+        margin: 0;
+        white-space: pre-line;
+    }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
@@ -27,60 +34,70 @@
     <div class="row g-3">
         <!-- Kolom kiri -->
         <div class="col-md-6">
-
+            <div class="form-group">
+                <label class="catatan-text"><strong>Id Renaksi</strong></label>
+                <p><?= esc($data->id_renaksi ?? '') ?></p>
+            </div>
             <!--  -->
             <div class="form-group">
-                <label>Program</label><br>
+                <label class="catatan-text"><strong>Program</strong></label>
                 <select class="form-control" name="id_program" id="select-program">
                     <option value="">Pilih Program</option>
                     <?php foreach ($program as $item): ?>
-                        <option value="<?= $item['id_program'] ?>"><?= $item['nm_program'] ?></option>
+                        <option value="<?= esc($item['id_program']) ?>"
+                            <?= ($memo->id_program ?? '') == $item['id_program'] ? 'selected' : '' ?>>
+                            <?= esc($item['id_program'] . ' - ' . $item['nm_program']) ?>
+                        </option>
                     <?php endforeach; ?>
                 </select>
             </div>
+
             <div class="form-group">
-                <label>Kegiatan</label>
+                <label class="catatan-text"><strong>Kegiatan</strong></label>
                 <select class="form-control" name="id_kegiatan" id="select-kegiatan">
                     <option value="">Pilih Kegiatan</option>
-                    <?php foreach ($kegiatan as $item): ?>
-                        <option value="<?= $item['id_kegiatan'] ?>"><?= $item['nm_kegiatan'] ?></option>
-                    <?php endforeach; ?>
+                    <!-- akan diisi lewat AJAX -->
                 </select>
             </div>
+
             <div class="form-group">
-                <label>KRO</label>
+                <label class="catatan-text"><strong>KRO</strong></label>
                 <select class="form-control" name="id_kro" id="select-kro">
                     <option value="">Pilih KRO</option>
-                    <?php foreach ($kro as $item): ?>
-                        <option value="<?= $item['id_kro'] ?>"><?= $item['nm_kro'] ?></option>
-                    <?php endforeach; ?>
+                    <!-- akan diisi lewat AJAX -->
                 </select>
             </div>
+
             <div class="form-group">
-                <label>RO</label>
+                <label class="catatan-text"><strong>RO</strong></label>
                 <select class="form-control" name="id_ro" id="select-ro">
                     <option value="">Pilih RO</option>
-                    <?php foreach ($ro as $item): ?>
-                        <option value="<?= $item['id_ro'] ?>"><?= $item['nm_ro'] ?></option>
-                    <?php endforeach; ?>
+                    <!-- akan diisi lewat AJAX -->
                 </select>
             </div>
+
             <div class="form-group">
-                <label>Nama Program</label>
+                <label class="catatan-text"><strong>Pekerjaan</strong></label>
                 <input type="text" class="form-control" name="periode" value="2025-2029" hidden>
                 <input type="text" class="form-control" name="id_renaksi" value="<?= esc($data->id_renaksi ?? '') ?>" hidden>
                 <input type="text" class="form-control" name="mp" value="<?= esc($data->mp ?? '') ?>" hidden>
                 <input type="text" class="form-control" name="pekerjaan" value="<?= esc($data->pekerjaan ?? '') ?>">
             </div>
             <div class="form-group">
-                <label>Provinsi</label>
+                <label class="catatan-text"><strong>Unit Organisasi</strong></label>
+                <input type="text" class="form-control-plaintext" name="unor" value="<?= esc($data->unor ?? '') ?>" disabled>
+                <input type="text" class="form-control-plaintext" name="id_unor" value="<?= esc($data->id_unor ?? '') ?>" hidden>
+            </div>
+            <div class="form-group">
+                <label class="catatan-text"><strong>Provinsi</strong></label>
                 <input type="text" class="form-control-plaintext" name="provinsi" value="<?= esc($data->provinsi ?? '') ?>" disabled>
                 <input type="text" class="form-control-plaintext" name="id_provinsi" value="<?= esc($data->id_provinsi ?? '') ?>" hidden>
             </div>
 
             <div class="form-group">
-                <label>Kabupaten / Kota</label>
-                <select class="form-control" name="id_kabkot[]" id="select-kabkot" multiple="multiple">
+
+                <label class="catatan-text"><strong>Kabupaten / Kota</strong></label>
+                <select class="form-control" name="kabkot[]" id="select-kabkot" multiple required>
                     <?php foreach ($kabkot as $item): ?>
                         <!-- <option value="<?= $item['id'] ?>"><?= $item['kab_kot'] ?></option> -->
                         <option value="<?= $item['id'] ?>"
@@ -92,39 +109,56 @@
                 <small class="text-muted">Tekan <b>Ctrl</b> (atau <b>Cmd</b> di Mac) untuk memilih lebih dari satu.</small>
             </div>
 
+
+
             <div class="form-group">
-                <label>Unit Organisasi</label>
-                <input type="text" class="form-control-plaintext" name="unor" value="<?= esc($data->unor ?? '') ?>" disabled>
-                <input type="text" class="form-control-plaintext" name="id_unor" value="<?= esc($data->id_unor ?? '') ?>" hidden>
+                <label class="catatan-text"><strong>kawasan</strong></label>
+                <select class="form-control" name="kawasan[]" id="select-kawasan" multiple required>
+                    <?php foreach ($kawasan as $item): ?>
+                        <!-- <option value="<?= $item['kode_kawasan'] ?>"><?= $item['nama_kawasan'] ?></option> -->
+                        <option value="<?= $item['kode_kawasan'] ?>"
+                            <?= in_array($item['kode_kawasan'], (array)($data->kawasan ?? [])) ? 'selected' : '' ?>>
+                            <?= esc($item['nama_kawasan']) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+                <small class="text-muted">Tekan <b>Ctrl</b> (atau <b>Cmd</b> di Mac) untuk memilih lebih dari satu.</small>
             </div>
-            <div class="form-group">
-                <label>Kawasan Prioritas</label>
+            <!-- <div class="form-group">
+                <label class="catatan-text"><strong>Kawasan Prioritas</strong></label>
                 <input type="text" class="form-control-plaintext" name="kawasan" value="<?= esc($data->kawasan ?? '') ?>" disabled>
+            </div> -->
+            <div class="form-group">
+                <label class="catatan-text"><strong>Lokasi</strong></label>
+                <input type="text" class="form-control-plaintext" name="lokasi" value="<?= esc($data->lokasi ?? '') ?>">
             </div>
             <div class="form-group">
-                <label>Lokasi</label>
-                <input type="text" class="form-control" name="lokasi" value="<?= esc($data->lokasi ?? '') ?>">
+
+                <label class="catatan-text"><strong>Justifikasi</strong></label>
+                <textarea class="form-control" name="justifikasi" rows="3"><?= esc($data->justifikasi ?? '') ?></textarea>
             </div>
             <div class="form-group">
-                <label>Justifikasi</label>
-                <textarea class="form-control" name="justifikasi" rows="5"><?= esc($data->justifikasi ?? '') ?></textarea>
+                <label class="catatan-text"><strong>Tahun Mulai</strong></label>
+                <input type="number" class="form-control" name="tahun_mulai" value="<?= esc($data->tahun_mulai ?? '') ?>" readonly>
             </div>
             <div class="form-group">
-                <label>Tahun Mulai</label>
-                <input type="number" class="form-control" name="tahun_mulai" value="<?= esc($data->tahun_mulai ?? '') ?>">
-            </div>
-            <div class="form-group">
-                <label>Tahun Selesai</label>
-                <input type="number" class="form-control" name="tahun_selesai" value="<?= esc($data->tahun_selesai ?? '') ?>">
+                <label class="catatan-text"><strong>Tahun Selesai</strong></label>
+                <input type="number" class="form-control" name="tahun_selesai" value="<?= esc($data->tahun_selesai ?? '') ?>" readonly>
             </div>
         </div>
 
         <!-- Kolom kanan -->
         <div class="col-md-6">
             <div class="form-group">
-                <label>Satuan Volume</label>
-                <input type="text" class="form-control-plaintext" name="nama_satuan" value="<?= esc($data->nama_satuan ?? '') ?>" disabled>
-                <input type="text" class="form-control-plaintext" name="id_satuan" value="<?= esc($data->id_satuan ?? '') ?>" hidden>
+                <label class="catatan-text"><strong>Satuan Volume</strong></label>
+                <input type="text" class="form-control-plaintext" name="nama_satuan"
+                    value="<?= esc($data->nama_satuan ?? '') ?>" disabled>
+                <input type="text" class="form-control-plaintext" name="id_satuan"
+                    value="<?= esc($data->id_satuan ?? '') ?>" hidden>
+            </div>
+            <div class="mb-2">
+                <label class="catatan-text"><strong>Anggaran RPIW(ribu)</strong></label>
+                <p>Rp. <?= number_format($data->biaya, 0, ',', '.') ?> </p>
             </div>
 
             <?php
@@ -134,14 +168,17 @@
             if ($tahunMulai && $tahunSelesai && $tahunSelesai >= $tahunMulai):
             ?>
                 <hr>
-                <h6><i class="fas fa-cubes me-2"></i> Volume per Tahun</h6>
+                <h6><label class="catatan-text"><strong> Volume per Tahun</strong></h6>
                 <?php for ($tahun = $tahunMulai; $tahun <= $tahunSelesai; $tahun++):
                     $index = $tahun - $tahunMulai + 1; ?>
                     <div class="form-group">
-                        <label>Volume <?= $tahun ?></label>
-                        <input type="number" step="0.01" class="form-control"
+                        <label class="catatan-text"><strong>Volume <?= $tahun ?></strong></label>
+                        <input type="number" step="0.01" min="0" class="form-control"
                             name="volume_<?= $index ?>"
-                            value="<?= esc($data->{'volume_' . $index} ?? '') ?>">
+                            value="<?= esc($data->{'volume_' . $index} ?? '') ?>"
+                            oninput="if (this.value < 0) this.value = 0;"
+                            onkeydown="return event.key !== '-' && event.key !== 'e';">
+
                     </div>
                 <?php endfor; ?>
 
@@ -152,7 +189,7 @@
                     $nilaiAnggaran = $data->{'anggaran_' . $index} ?? '';
                 ?>
                     <div class="form-group">
-                        <label>Sumber Pendanaan</label>
+                        <label class="catatan-text"><strong>Sumber Pendanaan <?= $tahun ?> </strong></label>
                         <select class="form-control" name="id_pendanaan_<?= $index ?>" id="select-pendanaan<?= $index ?>">
                             <option value="">Pilih Sumber</option>
                             <?php foreach ($pendanaan as $item): ?>
@@ -161,7 +198,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Anggaran <?= $tahun ?> (Rp)</label>
+                        <label class="catatan-text"><strong>Anggaran <?= $tahun ?> (Rp) </strong></label>
                         <input type="text" class="form-control anggaran-format"
                             name="anggaran_<?= $index ?>"
                             value="<?= $nilaiAnggaran ?>">
@@ -203,6 +240,114 @@
         </button>
     </div>
 </form>
+<script>
+    $(document).ready(function() {
+        // Helper untuk reset dropdown
+        function resetDropdown(selector, placeholder = 'Pilih...') {
+            $(selector).html(`<option value="">${placeholder}</option>`);
+        }
+
+        // Helper untuk tampilkan "Loading..." saat ambil data
+        function showLoading(selector) {
+            $(selector).html('<option value="">Loading...</option>');
+        }
+
+        // Saat memilih PROGRAM → ambil KEGIATAN
+        $('#select-program').on('change', function() {
+            const id_program = $(this).val();
+            resetDropdown('#select-kegiatan', 'Pilih Kegiatan');
+            resetDropdown('#select-kro', 'Pilih KRO');
+            resetDropdown('#select-ro', 'Pilih RO');
+
+            if (id_program) {
+                showLoading('#select-kegiatan'); // tampilkan loading
+                $.getJSON('<?= base_url("memorandum/getKegiatanByProgram") ?>/' + id_program)
+                    .done(function(data) {
+                        let options = '<option value="">Pilih Kegiatan</option>';
+                        $.each(data, function(i, item) {
+                            options += `<option value="${item.id_kegiatan}">${item.id_kegiatan} - ${item.nm_kegiatan}</option>`;
+                        });
+                        $('#select-kegiatan').html(options);
+                    })
+                    .fail(function() {
+                        $('#select-kegiatan').html('<option value="">Gagal memuat data</option>');
+                    });
+            }
+        });
+
+        // Saat memilih KEGIATAN → ambil KRO
+        $('#select-kegiatan').on('change', function() {
+            const id_kegiatan = $(this).val();
+            resetDropdown('#select-kro', 'Pilih KRO');
+            resetDropdown('#select-ro', 'Pilih RO');
+
+            if (id_kegiatan) {
+                showLoading('#select-kro');
+                $.getJSON('<?= base_url("memorandum/getKroByKegiatan") ?>/' + id_kegiatan)
+                    .done(function(data) {
+                        let options = '<option value="">Pilih KRO</option>';
+                        $.each(data, function(i, item) {
+                            options += `<option value="${item.id_kro}">${item.id_kro} - ${item.nm_kro}</option>`;
+                        });
+                        $('#select-kro').html(options);
+                    })
+                    .fail(function() {
+                        $('#select-kro').html('<option value="">Gagal memuat data</option>');
+                    });
+            }
+        });
+
+        // Saat memilih KRO → ambil RO
+        $('#select-kro').on('change', function() {
+            const id_kro = $(this).val();
+            resetDropdown('#select-ro', 'Pilih RO');
+
+            if (id_kro) {
+                showLoading('#select-ro');
+                $.getJSON('<?= base_url("memorandum/getRoByKro") ?>/' + id_kro)
+                    .done(function(data) {
+                        let options = '<option value="">Pilih RO</option>';
+                        $.each(data, function(i, item) {
+                            options += `<option value="${item.id_ro}">${item.id_ro} - ${item.nm_ro}</option>`;
+                        });
+                        $('#select-ro').html(options);
+                    })
+                    .fail(function() {
+                        $('#select-ro').html('<option value="">Gagal memuat data</option>');
+                    });
+            }
+        });
+
+        // Kosongkan dropdown turunan saat awal load
+        resetDropdown('#select-kegiatan', 'Pilih Kegiatan');
+        resetDropdown('#select-kro', 'Pilih KRO');
+        resetDropdown('#select-ro', 'Pilih RO');
+    });
+    $('#select-ro').on('change', function() {
+        const id_ro = $(this).val();
+
+        // Kosongkan dulu field satuan
+        $('input[name="nama_satuan"]').val('');
+        $('input[name="id_satuan"]').val('');
+
+        if (id_ro) {
+            $.getJSON('<?= base_url("memorandum/getSatuanByRo") ?>/' + id_ro)
+                .done(function(data) {
+                    if (data) {
+                        $('input[name="nama_satuan"]').val(data.nama_satuan);
+                        $('input[name="id_satuan"]').val(data.id_satuan);
+                    } else {
+                        $('input[name="nama_satuan"]').val('Tidak ditemukan');
+                    }
+                })
+                .fail(function() {
+                    $('input[name="nama_satuan"]').val('Gagal memuat data');
+                });
+        }
+    });
+</script>
+
+
 <script>
     (function() {
         // Cek apakah namaList sudah ada, jika belum buat
@@ -280,6 +425,13 @@
                 placeholder: "Pilih Kabupaten / Kota",
                 width: '100%',
                 // allowClear: true
+            });
+        });
+        $(document).ready(function() {
+            $('#select-kawasan').select2({
+                placeholder: "-- Pilih Kawasan --",
+                width: '100%',
+                allowClear: true
             });
         });
     })();

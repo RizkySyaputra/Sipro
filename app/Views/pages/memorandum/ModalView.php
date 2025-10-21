@@ -34,37 +34,46 @@
                 <div class="col-md-6">
                     <ul class="list-group list-group-flush">
                         <label class="catatan-text"><strong>ID Memorandum Program</strong></label>
-                        <input type="text" disabled value="<?= esc($memo->id_memorandum ?? '-') ?>">
+                        <p><?= esc($memo->id_memorandum ?? '-') ?></p>
 
                         <label class="catatan-text"><strong>Program</strong></label>
-                        <input type="text" disabled value="<?= esc($memo->nm_program ?? '-') ?>">
+                        <p><?= esc($memo->id_program . '-' . $memo->nm_program ?? ' - ') ?></p>
 
                         <label class="catatan-text"><strong>Kegiatan</strong></label>
-                        <input type="text" disabled value="<?= esc($memo->nm_kegiatan ?? '-') ?>">
+                        <p><?= esc($memo->id_kegiatan . '-' . $memo->nm_kegiatan ?? ' - ') ?></p>
 
                         <label class="catatan-text"><strong>KRO</strong></label>
-                        <input type="text" disabled value="<?= esc($memo->nm_kro ?? '-') ?>">
+                        <p><?= esc($memo->id_kro . '-' . $memo->nm_kro ?? ' - ') ?></p>
 
                         <label class="catatan-text"><strong>RO</strong></label>
-                        <input type="text" disabled value="<?= esc($memo->nm_ro ?? '-') ?>">
+                        <p><?= esc($memo->id_ro . '-' . $memo->nm_ro ?? ' - ') ?></p>
 
                         <label class="catatan-text"><strong>Pekerjaan</strong></label>
-                        <textarea type="text" disabled>"<?= esc($memo->pekerjaan ?? '-') ?></textarea>
+                        <p><?= esc($memo->pekerjaan ?? '-') ?></p>
 
                         <label class="catatan-text"><strong>Unit Organisasi</strong></label>
-                        <input type="text" disabled value="<?= esc($memo->unor ?? '-') ?>">
+                        <p><?= esc($memo->unor ?? '-') ?></p>
 
                         <label class="catatan-text"><strong>Provinsi</strong></label>
-                        <input type="text" disabled value="<?= esc($memo->provinsi ?? '-') ?>">
+                        <p><?= esc($memo->provinsi ?? '-') ?></p>
 
                         <label class="catatan-text"><strong>Kawasan</strong></label>
-                        <input type="text" disabled value="<?= esc($memo->kawasan ?? '-') ?>">
+                        <p><?= esc($memo->kawasan ?? '-') ?></p>
+                        <label class="catatan-text"><strong>Kab/kot</strong></label>
+                        <p><?= esc($memo->kabkot ?? '-') ?></p>
 
-                        <label class="catatan-text"><strong>Kab/Kot</strong></label>
-                        <input type="text" disabled value="<?= esc($memo->kabkot ?? '-') ?>">
+                        <!-- <label class="catatan-text"><strong>Kab/Kot</strong></label>
+                        <?php if (!empty($kabkot)): ?>
+                            <?php foreach ($kabkot as $item): ?>
+                                <p><?= esc($item->kab_kot ?? '-') ?></p>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <p>-</p>
+                        <?php endif; ?> -->
+
 
                         <label class="catatan-text"><strong>Lokasi</strong></label>
-                        <input type="text" disabled value="<?= esc($memo->lokasi ?? '-') ?>">
+                        <p><?= esc($memo->lokasi ?? '-') ?></p>
 
                     </ul>
                 </div>
@@ -75,10 +84,10 @@
                         <p><?= esc($memo->justifikasi ?? '-') ?></p>
 
                         <label class="catatan-text"><strong>Tahun Mulai</strong></label>
-                        <input type="text" disabled value="<?= esc($memo->tahun_mulai ?? '-') ?>">
+                        <p><?= esc($memo->tahun_mulai ?? '-') ?></p>
 
                         <label class="catatan-text"><strong>Tahun Selesai</strong></label>
-                        <input type="text" disabled value="<?= esc($memo->tahun_selesai ?? '-') ?>">
+                        <p><?= esc($memo->tahun_selesai ?? '-') ?></p>
 
                         <div class="card shadow-sm">
                             <div class="card-header bg-light">
@@ -90,7 +99,7 @@
                                         <tr>
                                             <th width="80">Tahun</th>
                                             <th>Volume</th>
-                                            <th>Anggaran (ribu)</th>
+                                            <th>Anggaran</th>
                                             <th>Pendanaan</th>
                                         </tr>
                                     </thead>
@@ -101,7 +110,7 @@
                                         $periodeSelesai = (int) $periodeSelesai;
                                         $tahunMulai     = (int) $memo->tahun_mulai;
 
-                                        $i = ($tahunMulai - $periodeMulai) + 1;
+                                        $i = ($tahunMulai - $tahunMulai) + 1;
                                         $total_volume = 0;
                                         $total_anggaran = 0;
 
@@ -139,10 +148,10 @@
 
 
                         <label class="catatan-text"><strong>Geotagging</strong></label>
-                        <input type="text" disabled value="<?= esc($memo->peta_kawasan ?? '-') ?>">
+                        <p><?= esc($memo->peta_kawasan ?? '-') ?></p>
 
                         <label class="catatan-text"><strong>Sumber Data</strong></label>
-                        <input type="text" disabled value="<?= esc($memo->sumber ?? '-') ?>">
+                        <p><?= esc($memo->sumber ?? '-') ?></p>
 
                         <!-- <?php
                                 // Hitung total volume
@@ -184,7 +193,7 @@
                 <div class="col-md-12">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            <strong>Catatan Memorandum:</strong>
+                            <label class="catatan-text"><strong>Catatan Memorandum:</strong></label>
                             <?php if (!empty($memo->catatan_memorandum)): ?>
                                 <?php
                                 $catatanList = json_decode($memo->catatan_memorandum, true);

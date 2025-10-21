@@ -51,7 +51,7 @@ class MemoModel extends Model
         'id_kabkot'
     ];
 
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $createdField  = 'created_at';  // pastikan ada di tabel
     protected $updatedField  = 'updated_at';  // pastikan ada di tabel
 
