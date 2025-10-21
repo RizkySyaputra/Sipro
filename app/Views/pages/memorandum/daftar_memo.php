@@ -366,8 +366,19 @@
         // ====== UPDATE ======
         $(document).on('submit', '#editMemoForm', function(e) {
             e.preventDefault();
+
             let form = $(this);
             let id = form.find('input[name="id_memorandum"]').val();
+
+            // 🔹 Ambil tombol submit di dalam form
+            const $btn = form.find('button[type="submit"]');
+            const originalText = $btn.html(); // simpan teks asli tombol
+
+            // 🔹 Ubah tombol jadi loading spinner & disable
+            $btn.prop('disabled', true).html(`
+        <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+        Menyimpan...
+    `);
 
             $.ajax({
                 url: "<?= base_url('memorandum/update') ?>/" + id,
@@ -387,13 +398,30 @@
 
                         // reload tabel dengan submit filter
                         $('#button-text').submit();
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Gagal!',
+                            text: res.message || 'Terjadi kesalahan saat memperbarui data.',
+                            showConfirmButton: true
+                        });
                     }
                 },
                 error: function() {
-                    alert("Gagal update data");
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error!',
+                        text: 'Gagal menghubungi server.',
+                        showConfirmButton: true
+                    });
+                },
+                complete: function() {
+                    // 🔹 Kembalikan tombol seperti semula
+                    $btn.prop('disabled', false).html(originalText);
                 }
             });
         });
+
     });
 
     // $.get("<?= base_url('memorandum/view') ?>/" + id, function(data) {

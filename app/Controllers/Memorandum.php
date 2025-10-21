@@ -626,12 +626,12 @@ class Memorandum extends BaseController
         $kawasan = $this->request->getPost('kawasan');
         $data = $this->request->getPost();
         // --- Pastikan ID Unor dua digit ---
-        $id_unor = str_pad($data['id_unor'], 2, '0', STR_PAD_LEFT);
+        $id_unor = $data['id_unor'];
         $prefix = 'MP' . '.' . $data['id_provinsi'] . '.' . $id_unor . '.';
-
+        $search = 'MP' . '.' . $data['id_provinsi'] . '.' . $id_unor . '.0';
         // --- Ambil uniq_id terakhir berdasarkan id_provinsi ---
         $row = $this->memoModel
-            ->like('id_memorandum', $prefix)
+            ->like('id_memorandum', $search)
             ->orderBy('id_memorandum', 'DESC')
             ->first();
 
