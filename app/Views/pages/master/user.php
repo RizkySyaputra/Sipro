@@ -11,13 +11,15 @@
 
                 <!-- Tombol Buat Akun -->
                 <?php if ($can_edit == true) : ?>
-                    <a href="<?= base_url('/register') ?>" class="btn btn-info btn-sm">
-                        <i class="material-icons">person_add</i> Buat Akun
-                    </a>
+                    <div class="mt-3">
+                        <a href="<?= base_url('/register') ?>" class="btn btn-info btn-sm">
+                            <i class="material-icons">person_add</i> Buat Akun
+                        </a>
+                    </div>
                 <?php endif ?>
             </div>
 
-            <div class="card-body">
+            <div class="card-body mt-4">
                 <div class="toolbar">
                     <!--        Here you can write extra buttons/actions for the toolbar              -->
                 </div>
@@ -97,14 +99,20 @@
             </div>
             <div class="modal-body">
                 <form id="updateRoleForm">
-                    <label for="roleSelect">Pilih Role Akses</label>
-                    <div class="form-group">
-                        <select class="form-control" id="roleSelect" name="role">
-                            <?php
-                            foreach ($role as $role) : ?>
-                                <option value="<?= $role['id']; ?>"><?= $role['name']; ?></option>
-                            <?php endforeach; ?>
-                        </select>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="roleSelect">Pilih Role Akses</label>
+                        </div>
+                        <div class="col-md-8">
+                            <!-- <div class="form-group"> -->
+                            <select class="form-control" id="roleSelect" name="role" style="width: 100%">
+                                <?php
+                                foreach ($role as $role) : ?>
+                                    <option value="<?= $role['id']; ?>"><?= $role['name']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                            <!-- </div> -->
+                        </div>
                     </div>
                 </form>
             </div>
@@ -207,6 +215,11 @@
                 "url": "//cdn.datatables.net/plug-ins/1.13.6/i18n/id.json"
             }
         });
+    });
+
+    $('#roleSelect').select2({
+        placeholder: "Pilih Role Akses",
+        // allowClear: true
     });
 </script>
 <?= $this->endSection() ?>

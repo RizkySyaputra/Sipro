@@ -21,6 +21,7 @@
         white-space: pre-line;
     }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <form id="inputRenaksiForm">
     <?= csrf_field() ?>
@@ -94,6 +95,7 @@
             </div>
 
             <div class="form-group">
+
                 <label class="catatan-text"><strong>Kabupaten / Kota</strong></label>
                 <select class="form-control" name="kabkot[]" id="select-kabkot" multiple required>
                     <?php foreach ($kabkot as $item): ?>
@@ -131,6 +133,7 @@
                 <input type="text" class="form-control-plaintext" name="lokasi" value="<?= esc($data->lokasi ?? '') ?>">
             </div>
             <div class="form-group">
+
                 <label class="catatan-text"><strong>Justifikasi</strong></label>
                 <textarea class="form-control" name="justifikasi" rows="3"><?= esc($data->justifikasi ?? '') ?></textarea>
             </div>
@@ -419,9 +422,9 @@
         $('#select-program, #select-kegiatan, #select-kro, #select-ro, #select-pendanaan1,#select-pendanaan2,#select-pendanaan3,#select-pendanaan4,#select-pendanaan5').select2();
         $(document).ready(function() {
             $('#select-kabkot').select2({
-                placeholder: "-- Pilih Kabupaten / Kota --",
+                placeholder: "Pilih Kabupaten / Kota",
                 width: '100%',
-                allowClear: true
+                // allowClear: true
             });
         });
         $(document).ready(function() {

@@ -14,10 +14,37 @@
 
     <!-- Material Dashboard CSS -->
     <link href="<?= base_url('assets/css/material-dashboard.min.css?v=2.1.0') ?>" rel="stylesheet" />
-    <link rel="stylesheet" href="<?= base_url('assets/css/custom.css') ?>">
-    <!-- Select2 -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+    <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url('assets/img/apple-icon.png') ?>">
+    <link rel="icon" type="image/png" href="<?= base_url('assets/img/favicon.ico') ?>">
+    <title>
+        <?= isset($title) ? $title : null ?>
+    </title>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <!-- <link href="<?= base_url('assets/demo/demo.css') ?>" rel="stylesheet" /> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
+
+    <!-- CSS Material Design -->
+    <link href="<?= base_url('assets/css/material-dashboard.min.css?v=2.1.0') ?>" rel="stylesheet" />
+    <!-- DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.dataTables.css" />
+
+    <!-- CSS for Select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="<?= base_url('assets/css/custom.css') ?>">
 
 
     <style>
@@ -73,12 +100,18 @@
             opacity: 0.9;
         }
 
+        .menu-level .menu-item {
+            font-weight: 600;
+        }
+
+
         /* Tambahan styling */
         .nav-item {
             margin-bottom: 10px;
         }
 
         .content {
+            background-color: #e6e6e6;
             margin-top: -20px !important;
         }
 
@@ -167,6 +200,7 @@
         .submenu-wrapper {
             display: none;
             overflow: hidden;
+            background-color: #ffffff;
         }
 
         .submenu-wrapper.open {
@@ -230,39 +264,11 @@
             transform: rotate(90deg);
             /* panah ke bawah saat open */
         }
+
+        .footer {
+            background-color: #e6e6e6;
+        }
     </style>
-
-    <meta charset="utf-8" />
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
-    <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url('assets/img/apple-icon.png') ?>">
-    <link rel="icon" type="image/png" href="<?= base_url('assets/img/favicon.ico') ?>">
-    <title>
-        <?= isset($title) ? $title : null ?>
-    </title>
-    <!--     Fonts and icons     -->
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <!-- <link href="<?= base_url('assets/demo/demo.css') ?>" rel="stylesheet" /> -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
-
-    <!-- CSS Material Design -->
-    <link href="<?= base_url('assets/css/material-dashboard.min.css?v=2.1.0') ?>" rel="stylesheet" />
-    <!-- DataTables -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.dataTables.css" />
-
-
-    <!-- CSS for Select2 -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
-
-    <link rel="stylesheet" href="<?= base_url('assets/css/custom.css') ?>">
 
 
     <?= isset($_style) ? $_style : null ?>
@@ -275,46 +281,52 @@
     </div>
 
     <div class="wrapper">
-        <div class="sidebar" data-color="rose" data-background-color="grey">
-            <div class="logo">
-                <a href="#" style="text-align: center;" class="simple-text logo-normal">SIPRO</a>
+        <div class="sidebar" data-color="rose" data-background-color="white">
+            <div class="logo d-flex justify-content-center">
+                <img src="<?= base_url('assets/img/logo-sipro-horizontal.png') ?>" alt="Logo Sipro" width="140">
+                <!-- <a href="#" style="text-align: center;" class="simple-text logo-normal">SIPRO</a> -->
             </div>
 
             <div class="sidebar-wrapper">
-                <div class="user text-center p-3">
-                    <!-- Foto user -->
-                    <div class="photo mb-2" style="margin-top: 10px;">
-                        <img src="<?= base_url('assets/img/faces/profile-user.png') ?>"
-                            alt="User"
-                            class="img-fluid "
-                            style="width: 100%; height: 40px; object-fit: cover;">
-                    </div>
-
-                    <!-- Nama user -->
-                    <div class="user-info mb-2">
-                        <span class="d-block font-weight-bold">
-                            <?= user()->username ?>
-                        </span>
-                    </div>
-
-                    <!-- Tombol Logout -->
-                    <div>
-                        <a class="btn btn-sm btn-danger" href="<?= base_url('logout') ?>">
-                            <i class="fas fa-sign-out-alt"></i> Logout
-                        </a>
-
-                        <div class="collapse" id="user">
-                            <ul class="nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?= base_url('logout') ?>">
-                                        <i class="material-icons">exit_to_app</i>
-                                        <span class="sidebar-normal">Logout</span>
-                                    </a>
-                                </li>
-                            </ul>
+                <div class="user dropdown">
+                    <a href="#" class="d-flex align-items-center text-decoration-none" id="userDropdown" data-toggle="dropdown" aria-expanded="false">
+                        <!-- Foto user -->
+                        <div class="photo me-2">
+                            <img src="<?= base_url('assets/img/faces/profile-user.png') ?>"
+                                alt="User">
                         </div>
+
+                        <!-- Nama user -->
+                        <div class="user-info">
+                            <span class="d-block font-weight-bold">
+                                <?= user()->username ?>
+                            </span>
+                        </div>
+                    </a>
+
+                    <div class="dropdown-menu ml-4" aria-labelledby="userDropdown">
+                        <a class="dropdown-item text-white bg-danger" href="<?= base_url('logout') ?>">
+                            <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                        </a>
                     </div>
                 </div>
+                <!-- Tombol Logout -->
+                <!-- <div>
+                    <a class="btn btn-sm btn-danger" href="<?= base_url('logout') ?>">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+
+                    <div class="collapse" id="user">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= base_url('logout') ?>">
+                                    <i class="material-icons">exit_to_app</i>
+                                    <span class="sidebar-normal">Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div> -->
 
 
                 <!-- RENDER MENU TREE -->
@@ -332,11 +344,11 @@
 
             <footer class="footer">
                 <div class="container-fluid">
-                    <nav class="float-left">
+                    <!-- <nav class="float-left">
                         <ul>
                             <li><a href="https://www.bpiw.pu.go.id">BPIW</a></li>
                         </ul>
-                    </nav>
+                    </nav> -->
                     <div class="copyright float-right">
                         &copy;<script>
                             document.write(new Date().getFullYear())
@@ -349,8 +361,11 @@
         </div>
     </div>
 
+
     <!-- SCRIPTS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
