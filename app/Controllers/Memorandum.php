@@ -699,11 +699,15 @@ class Memorandum extends BaseController
         // --- Update nilai mp pada renaksi ---
         $newmp = (int) $data['mp'] + 1;
         $this->renaksiModel->update($data['id_renaksi'], ['mp' => $newmp]);
-        foreach ($kabkot as $data) {
-            $this->kabkotMemoModel->insert(['id_memorandum' => $id_memorandum, 'id_kabkot' => $data]);
+        if ($kabkot) {
+            foreach ($kabkot as $data) {
+                $this->kabkotMemoModel->insert(['id_memorandum' => $id_memorandum, 'id_kabkot' => $data]);
+            }
         }
-        foreach ($kawasan as $data) {
-            $this->kawasanMemoModel->insert(['id_memorandum' => $id_memorandum, 'id_kawasan' => $data]);
+        if ($kawasan) {
+            foreach ($kawasan as $data) {
+                $this->kawasanMemoModel->insert(['id_memorandum' => $id_memorandum, 'id_kawasan' => $data]);
+            }
         }
         // --- Simpan ke tabel memorandum ---
         $this->memoModel->insert($dataToInsert);

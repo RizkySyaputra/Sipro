@@ -113,7 +113,7 @@
 
             <div class="form-group">
                 <label class="catatan-text"><strong>kawasan</strong></label>
-                <select class="form-control" name="kawasan[]" id="select-kawasan" multiple required>
+                <select class="form-control" name="kawasan[]" id="select-kawasan" multiple>
                     <?php foreach ($kawasan as $item): ?>
                         <!-- <option value="<?= $item['kode_kawasan'] ?>"><?= $item['nama_kawasan'] ?></option> -->
                         <option value="<?= $item['kode_kawasan'] ?>"
