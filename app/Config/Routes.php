@@ -98,6 +98,8 @@ $routes->get('memorandum/getKegiatanByProgram/(:segment)', 'Memorandum::getKegia
 $routes->get('memorandum/getKroByKegiatan/(:segment)', 'Memorandum::getKroByKegiatan/$1');
 $routes->get('memorandum/getRoByKro/(:segment)', 'Memorandum::getRoByKro/$1');
 $routes->get('memorandum/getSatuanByRo/(:any)', 'Memorandum::getSatuanByRo/$1');
+// adding sendi 20251024
+$routes->get('/memorandum/laporan1', 'Memorandum::laporan1', ['filter' => 'permission']);
 
 
 

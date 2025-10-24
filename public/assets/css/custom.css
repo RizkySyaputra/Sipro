@@ -1,7 +1,10 @@
 /* custom.css */
 
 body {
-  font-family: "Lato";
+  /* font-family: "Lato"; */
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 h1,
@@ -10,14 +13,21 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Lato";
+  /* font-family: "Lato"; */
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 p,
 a,
 li,
 span {
-  font-family: "Lato";
+  /* font-family: "Lato"; */
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
 }
 textarea {
   resize: vertical;
@@ -174,6 +184,10 @@ table.dataTable tbody tr:hover {
 
 textarea {
   overflow-y: auto;
+}
+
+.toggle-btn {
+  outline: none !important; /* hilangkan outline saat fokus */
 }
 
 /* Responsive fix for small screens */

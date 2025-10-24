@@ -9,7 +9,7 @@
     <title>Berita Acara Kesepakatan</title>
     <style>
         body {
-            font-family: "Times New Roman", Times, serif;
+            /* font-family: "Times New Roman", Times, serif; */
 
             font-size: 11px;
             margin: 0;
