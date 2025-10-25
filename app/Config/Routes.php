@@ -5,6 +5,8 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+$routes->post('set_tahun', 'SessionController::setTahun');
+
 $routes->get('/test', 'Master::test');
 // $routes->get('/', 'Master::index');
 $routes->get('/tabel', 'Master::tabel', ['filter' => 'permission']);

@@ -369,7 +369,7 @@
             e.preventDefault();
 
             let form = $(this);
-            let id = form.find('input[name="Program Tahunan"]').val();
+            let id = form.find('input[name="id_prog_tahunan"]').val();
 
             // 🔹 Ambil tombol submit di dalam form
             const $btn = form.find('button[type="submit"]');
@@ -424,13 +424,6 @@
         });
 
     });
-
-    // $.get("<?= base_url('memorandum/view') ?>/" + id, function(data) {
-    //     console.log("Response:", data); // cek respon
-    //     $('#memoModal .modal-body').html(data);
-    // }).fail(function(xhr) {
-    //     alert("Error " + xhr.status + ": " + xhr.responseText);
-    // });
 </script>
 
 <?= $this->endSection() ?>

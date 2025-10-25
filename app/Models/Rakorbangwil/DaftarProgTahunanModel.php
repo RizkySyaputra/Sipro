@@ -13,6 +13,7 @@ class DaftarProgTahunanModel extends Model
 
     public function getDaftarProgramTahunan($id_provinsi, $id_unor, $sumber)
     {
+        $tahun_pelaksanaan = session('tahun_pelaksana');
         $builder = $this->db->table('view_prog_tahunan as a');
 
         // SELECT clause
@@ -27,7 +28,7 @@ class DaftarProgTahunanModel extends Model
         if ($sumber) {
             $builder->where('a.sumber', $sumber);
         }
-
+        $builder->where('a.thn_pelaksanaan', $tahun_pelaksanaan);
         $builder->orderBy('a.id_prog_tahunan', 'ASC');
 
         // Eksekusi

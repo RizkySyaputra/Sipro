@@ -467,89 +467,87 @@ class Rakorbangwil extends BaseController
     }
 
 
-    // public function update($id)
-    // {
-    //     $memoModel = new MemoModel();
+    public function update($id)
+    {
 
-    //     // Ambil input lain
-    //     $kabkot = $this->request->getPost('kabkot');
-    //     $kawasan = $this->request->getPost('kawasan');
-    //     $pekerjaan     = $this->request->getPost('pekerjaan');
-    //     $lokasi        = $this->request->getPost('lokasi');
-    //     $justifikasi   = $this->request->getPost('justifikasi');
-    //     $tahun_mulai   = $this->request->getPost('tahun_mulai');
-    //     $tahun_selesai = $this->request->getPost('tahun_selesai');
-    //     // Ambil volume dan anggaran per tahun
-    //     $tahunMulai   = (int) $this->request->getPost('tahun_mulai');
-    //     $tahunSelesai = (int) $this->request->getPost('tahun_selesai');
+        $progTahunanModel = new progTahunanModel();
 
-    //     $volumeData = [];
-    //     $anggaranData = [];
-    //     $pendanaanData = [];
-    //     if ($tahunMulai && $tahunSelesai && $tahunSelesai >= $tahunMulai) {
-    //         for ($tahun = $tahunMulai; $tahun <= $tahunSelesai; $tahun++) {
-    //             $index = $tahun - $tahunMulai + 1;
-
-    //             $volumeKey = 'volume_' . $index;
-    //             $anggaranKey = 'anggaran_' . $index;
-    //             $pendanaanKey = 'id_pendanaan_' . $index;
-
-    //             $volumeData[$volumeKey] = $this->request->getPost($volumeKey);
-    //             $anggaranData[$anggaranKey] = $this->request->getPost($anggaranKey);
-    //             $pendanaanData[$pendanaanKey] = $this->request->getPost($pendanaanKey);
-    //         }
-    //     }
+        // Ambil input lain
+        $id_program = $this->request->getPost('id_program');
+        $id_kegiatan = $this->request->getPost('id_kegiatan');
+        $id_kro = $this->request->getPost('id_kro');
+        $id_ro = $this->request->getPost('id_ro');
+        $kabkot = $this->request->getPost('kabkot');
+        $kawasan = $this->request->getPost('kawasan');
+        $pekerjaan     = $this->request->getPost('pekerjaan');
+        $lokasi        = $this->request->getPost('lokasi');
+        $justifikasi   = $this->request->getPost('justifikasi');
+        $anggaran   = $this->request->getPost('anggaran');
+        $id_satuan   = $this->request->getPost('id_satuan');
+        $volume   = $this->request->getPost('volume');
+        $thn_pelaksanaan = $this->request->getPost('thn_pelaksanaan');
+        $kebutuhan_dukungan_kl = $this->request->getPost('kebutuhan_dukungan_kl');
+        $geotag = $this->request->getPost('geotag');
+        $reviu_puswil = $this->request->getPost('reviu_puswil');
 
 
+        // Ambil catatan
+        $namaArr = $this->request->getPost('catatan_nama');
+        $textArr = $this->request->getPost('catatan_text');
 
-    //     // Ambil catatan
-    //     $namaArr = $this->request->getPost('catatan_nama');
-    //     $textArr = $this->request->getPost('catatan_text');
+        $catatan = [];
+        if ($namaArr && $textArr) {
+            foreach ($namaArr as $i => $nama) {
+                // Hanya simpan jika nama & catatan tidak kosong
+                if (!empty($nama) && isset($textArr[$i]) && trim($textArr[$i]) !== '') {
+                    $catatan[] = [
+                        'nama'    => $nama,
+                        'catatan' => $textArr[$i]
+                    ];
+                }
+            }
+        }
 
-    //     $catatan = [];
-    //     if ($namaArr && $textArr) {
-    //         foreach ($namaArr as $i => $nama) {
-    //             // Hanya simpan jika nama & catatan tidak kosong
-    //             if (!empty($nama) && isset($textArr[$i]) && trim($textArr[$i]) !== '') {
-    //                 $catatan[] = [
-    //                     'nama'    => $nama,
-    //                     'catatan' => $textArr[$i]
-    //                 ];
-    //             }
-    //         }
-    //     }
+        // Data yang akan diupdate
+        $dataToUpdate = [
+            'id_program'        => $id_program,
+            'id_kegiatan'       => $id_kegiatan,
+            'id_kro'            => $id_kro,
+            'id_ro'             => $id_ro,
+            'pekerjaan'         => $pekerjaan,
+            'lokasi'            => $lokasi,
+            'justifikasi'       => $justifikasi,
+            'anggaran'          => $anggaran,
+            'id_satuan'         => $id_satuan,
+            'kebutuhan_dukungan_kl' => $kebutuhan_dukungan_kl,
+            'geotag'            => $geotag,
+            'reviu_puswil'      => $reviu_puswil,
+            'volume'            => $volume,
+            'thn_pelaksanaan'   => $thn_pelaksanaan,
+            'catatan_memorandum' => json_encode($catatan, JSON_UNESCAPED_UNICODE)
+        ];
+        // Update data
+        $this->kabkotProgramTahunanModel->where('id_prog_tahunan', $id)->delete();
+        $this->kawasanProgramTahunanModel->where('id_prog_tahunan', $id)->delete();
+        foreach ($kabkot as $data) {
+            $this->kabkotProgramTahunanModel->insert(['id_prog_tahunan' => $id, 'id_kabkot' => $data]);
+        }
+        foreach ($kawasan as $data) {
+            $this->kawasanProgramTahunanModel->insert(['id_prog_tahunan' => $id, 'id_kawasan' => $data]);
+        }
 
-    //     // Data yang akan diupdate
-    //     $dataToUpdate = [
-    //         'pekerjaan'         => $pekerjaan,
-    //         'lokasi'            => $lokasi,
-    //         'justifikasi'       => $justifikasi,
-    //         'tahun_mulai'       => $tahun_mulai,
-    //         'tahun_selesai'     => $tahun_selesai,
-    //         'catatan_memorandum' => json_encode($catatan, JSON_UNESCAPED_UNICODE)
-    //     ];
-    //     $dataToUpdate = array_merge($dataToUpdate, $volumeData, $anggaranData, $pendanaanData);
-    //     // Update data
-    //     $this->kabkotMemoModel->where('id_memorandum', $id)->delete();
-    //     $this->kawasanMemoModel->where('id_memorandum', $id)->delete();
-    //     foreach ($kabkot as $data) {
-    //         $this->kabkotMemoModel->insert(['id_memorandum' => $id, 'id_kabkot' => $data]);
-    //     }
-    //     foreach ($kawasan as $data) {
-    //         $this->kawasanMemoModel->insert(['id_memorandum' => $id, 'id_kawasan' => $data]);
-    //     }
-    //     if ($memoModel->update($id, $dataToUpdate)) {
-    //         return $this->response->setJSON([
-    //             'status' => true,
-    //             'message' => 'Data berhasil disimpan.'
-    //         ]);
-    //     } else {
-    //         return $this->response->setJSON([
-    //             'status' => false,
-    //             'message' => 'Terjadi kesalahan saat menyimpan.'
-    //         ]);
-    //     }
-    // }
+        if ($progTahunanModel->update($id, $dataToUpdate)) {
+            return $this->response->setJSON([
+                'status' => true,
+                'message' => 'Data berhasil disimpan.'
+            ]);
+        } else {
+            return $this->response->setJSON([
+                'status' => false,
+                'message' => 'Terjadi kesalahan saat menyimpan.'
+            ]);
+        }
+    }
 
 
 

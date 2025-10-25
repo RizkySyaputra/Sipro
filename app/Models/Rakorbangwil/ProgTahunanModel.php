@@ -34,8 +34,8 @@ class ProgTahunanModel extends Model
         'catatan_memorandum',
         'sumber',
         'thn_pelaksanaan',
-        'kebutuhan_dukungan',
-        'reviu_puswil',
+        'kebutuhan_dukungan_kl',
+        'reviu_puswil'
     ];
 
     protected $useTimestamps = true;

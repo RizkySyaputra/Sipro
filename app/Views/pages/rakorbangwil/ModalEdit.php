@@ -115,6 +115,23 @@
             <!-- Kolom kanan -->
             <div class="col-md-6">
                 <ul class="list-group list-group-flush">
+                    <div class="mb-2">
+                        <label class="catatan-text"><strong>Anggaran(ribu)</strong></label>
+                        <input type="text" class="form-control anggaran-format" name="anggaran" value="<?= esc($progTahunan->anggaran ?? '') ?>">
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Satuan</strong></label>
+                        <input type="text" class="form-control-plaintext" name="nama_satuan"
+                            value="<?= esc($progTahunan->nama_satuan ?? '') ?>" disabled>
+                        <input type="text" class="form-control-plaintext" name="id_satuan"
+                            value="<?= esc($progTahunan->id_satuan ?? '') ?>" hidden>
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Volume</strong></label>
+                        <input type="number" step="0.01" class="form-control form-control-sm"
+                            name="volume"
+                            value="<?= esc($progTahunan->volume ?? '') ?>">
+                    </div>
                     <label class="catatan-text"><strong>Justifikasi</strong></label>
                     <textarea class="form-control" name="justifikasi" rows="3"><?= esc($progTahunan->justifikasi ?? '') ?></textarea>
 
@@ -125,68 +142,22 @@
 
 
                     <label class="mt-3 catatan-text"><strong>Geotagging</strong></label>
-                    <input type="text" class="form-control" name="peta_kawasan" value="<?= esc($progTahunan->peta_kawasan ?? '') ?>">
+                    <input type="text" class="form-control" name="geotag" value="<?= esc($progTahunan->geotag ?? '-') ?>">
 
                     <label class="catatan-text"><strong>Sumber Data</strong></label>
-                    <input type="text" class="form-control" name="sumber" value="<?= esc($progTahunan->sumber ?? '') ?>">
+                    <input type="text" class="form-control" name="sumber" value="<?= esc($progTahunan->sumber ?? '-') ?>" disabled>
+
+                    <label class="catatan-text"><strong>Kebutuhan Dukungan KL</strong></label>
+                    <input type="text" class="form-control" name="kebutuhan_dukungan_kl" value="<?= esc($progTahunan->kebutuhan_dukungan_kl ?? '-') ?>">
+
+                    <label class="catatan-text"><strong>Reviu Puswil</strong></label>
+                    <input type="text" class="form-control" name="reviu_puswil" value="<?= esc($progTahunan->reviu_puswil ?? '-') ?>">
                 </ul>
             </div>
 
             <!-- Catatan Memorandum -->
             <div class="col-md-12">
 
-                <?php
-                $tahunMulai   = isset($progTahunan->tahun_mulai) ? (int)$progTahunan->tahun_mulai : 0;
-                $tahunSelesai = isset($progTahunan->tahun_selesai) ? (int)$progTahunan->tahun_selesai : 0;
-
-                if ($tahunMulai && $tahunSelesai && $tahunSelesai >= $tahunMulai):
-                ?>
-                    <div class="card shadow-sm mt-3">
-                        <div class="card-header bg-light">
-                            <strong><i class="fas fa-table me-2"></i> Volume, Anggaran, dan Pendanaan per Tahun</strong>
-                        </div>
-                        <div class="card-body p-2">
-                            <table class="table table-sm table-bordered table-hover table-striped mb-0 align-middle text-center">
-                                <thead class="table-light">
-                                    <tr>
-                                        <th width="80">Tahun</th>
-                                        <th>Volume</th>
-                                        <th>Anggaran (Rp)</th>
-                                        <th>Pendanaan</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php for ($tahun = $tahunMulai; $tahun <= $tahunSelesai; $tahun++):
-                                        $index = $tahun - $tahunMulai + 1; ?>
-                                        <tr>
-                                            <td><?= $tahun ?></td>
-                                            <td>
-                                                <input type="number" step="0.01" class="form-control form-control-sm"
-                                                    name="volume_<?= $index ?>"
-                                                    value="<?= esc($progTahunan->{'volume_' . $index} ?? '') ?>">
-                                            </td>
-                                            <td>
-                                                <input type="text" class="form-control form-control-sm anggaran-format"
-                                                    name="anggaran_<?= $index ?>"
-                                                    value="<?= esc($progTahunan->{'anggaran_' . $index} ?? '') ?>">
-                                            </td>
-                                            <td>
-                                                <select style="width: 100%;" class="form-control form-control-sm" name="id_pendanaan_<?= $index ?>" id="select-pendanaan<?= $index ?>">
-                                                    <option value="<?= ($progTahunan->{'id_pendanaan_' . $index} ?? '') ?>" selected><?= ($progTahunan->{'pendanaan_' . $index} ?? '') ?></option>
-                                                    <?php foreach ($pendanaan as $item): ?>
-                                                        <?php if ($item['id_pendanaan'] == $progTahunan->{'id_pendanaan_' . $index} ?? '') continue; ?>
-                                                        <option value="<?= esc($item['id_pendanaan']) ?>"><?= esc($item['sumber_pendanaan']) ?>
-                                                        </option>
-                                                    <?php endforeach; ?>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                    <?php endfor; ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                <?php endif; ?>
                 <hr>
 
                 <h6><i class="fas fa-sticky-note me-2 catatan-text"></i><strong> Catatan memorandum</strong></h6>
@@ -281,6 +252,29 @@
                 $('#select-ro').html('<option value="">Pilih RO</option>');
             }
         });
+    });
+
+    $('#select-ro').on('change', function() {
+        const id_ro = $(this).val();
+
+        // Kosongkan dulu field satuan
+        $('input[name="nama_satuan"]').val('');
+        $('input[name="id_satuan"]').val('');
+
+        if (id_ro) {
+            $.getJSON('<?= base_url("memorandum/getSatuanByRo") ?>/' + id_ro)
+                .done(function(data) {
+                    if (data) {
+                        $('input[name="nama_satuan"]').val(data.nama_satuan);
+                        $('input[name="id_satuan"]').val(data.id_satuan);
+                    } else {
+                        $('input[name="nama_satuan"]').val('Tidak ditemukan');
+                    }
+                })
+                .fail(function() {
+                    $('input[name="nama_satuan"]').val('Gagal memuat data');
+                });
+        }
     });
 </script>
 

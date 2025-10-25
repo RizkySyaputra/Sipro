@@ -115,6 +115,13 @@
             <!-- Kolom kanan -->
             <div class="col-md-6">
                 <ul class="list-group list-group-flush">
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Satuan Volume</strong></label>
+                        <input type="text" class="form-control-plaintext" name="nama_satuan"
+                            value="<?= esc($memo->nama_satuan ?? '') ?>" disabled>
+                        <input type="text" class="form-control-plaintext" name="id_satuan"
+                            value="<?= esc($memo->id_satuan ?? '') ?>" hidden>
+                    </div>
                     <label class="catatan-text"><strong>Justifikasi</strong></label>
                     <textarea class="form-control" name="justifikasi" rows="3"><?= esc($memo->justifikasi ?? '') ?></textarea>
 
@@ -153,7 +160,7 @@
                                     <tr>
                                         <th width="80">Tahun</th>
                                         <th>Volume</th>
-                                        <th>Anggaran (Rp)</th>
+                                        <th>Anggaran (Ribu)</th>
                                         <th>Pendanaan</th>
                                     </tr>
                                 </thead>
@@ -283,6 +290,29 @@
                 $('#select-ro').html('<option value="">Pilih RO</option>');
             }
         });
+    });
+
+    $('#select-ro').on('change', function() {
+        const id_ro = $(this).val();
+
+        // Kosongkan dulu field satuan
+        $('input[name="nama_satuan"]').val('');
+        $('input[name="id_satuan"]').val('');
+
+        if (id_ro) {
+            $.getJSON('<?= base_url("memorandum/getSatuanByRo") ?>/' + id_ro)
+                .done(function(data) {
+                    if (data) {
+                        $('input[name="nama_satuan"]').val(data.nama_satuan);
+                        $('input[name="id_satuan"]').val(data.id_satuan);
+                    } else {
+                        $('input[name="nama_satuan"]').val('Tidak ditemukan');
+                    }
+                })
+                .fail(function() {
+                    $('input[name="nama_satuan"]').val('Gagal memuat data');
+                });
+        }
     });
 </script>
 
