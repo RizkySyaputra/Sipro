@@ -99,7 +99,13 @@ $routes->get('memorandum/getKroByKegiatan/(:segment)', 'Memorandum::getKroByKegi
 $routes->get('memorandum/getRoByKro/(:segment)', 'Memorandum::getRoByKro/$1');
 $routes->get('memorandum/getSatuanByRo/(:any)', 'Memorandum::getSatuanByRo/$1');
 
-
+//routes rakorbangwil
+$routes->get('/rakorbangwil/program_tahunan', 'Rakorbangwil::daftar_program_tahunan');
+$routes->post('/rakorbangwil/get_daftar_program_tahunan', 'Rakorbangwil::get_daftar_program_tahunan');
+$routes->get('rakorbangwil/view/(:segment)', 'Rakorbangwil::view/$1');
+$routes->get('rakorbangwil/edit/(:segment)', 'Rakorbangwil::edit/$1');
+$routes->post('rakorbangwil/update/(:segment)', 'Rakorbangwil::update/$1');
+$routes->delete('/rakorbangwil/delete/(:segment)', 'Rakorbangwil::delete/$1');
 
 //routes desk
 $routes->get('/desk_kawasan', 'DeskController::kawasan', ['filter' => 'permission']);
