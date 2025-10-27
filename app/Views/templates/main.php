@@ -354,7 +354,7 @@
                             document.write(new Date().getFullYear())
                         </script>,
                         made with <i class="material-icons">favorite</i> by
-                        <a href="https://bpiw.pu.go.id" target="_blank">BPIW Tim</a>.
+                        <a href="https://bpiw.pu.go.id" target="_blank">BPIW</a>.
                     </div>
                 </div>
             </footer>

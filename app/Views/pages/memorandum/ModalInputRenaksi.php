@@ -149,16 +149,16 @@
 
         <!-- Kolom kanan -->
         <div class="col-md-6">
+            <div class="mb-2">
+                <label class="catatan-text"><strong>Anggaran RPIW(ribu)</strong></label>
+                <p>Rp. <?= number_format($data->biaya, 0, ',', '.') ?> </p>
+            </div>
             <div class="form-group">
                 <label class="catatan-text"><strong>Satuan Volume</strong></label>
                 <input type="text" class="form-control-plaintext" name="nama_satuan"
                     value="<?= esc($data->nama_satuan ?? '') ?>" disabled>
                 <input type="text" class="form-control-plaintext" name="id_satuan"
                     value="<?= esc($data->id_satuan ?? '') ?>" hidden>
-            </div>
-            <div class="mb-2">
-                <label class="catatan-text"><strong>Anggaran RPIW(ribu)</strong></label>
-                <p>Rp. <?= number_format($data->biaya, 0, ',', '.') ?> </p>
             </div>
 
             <?php
@@ -424,7 +424,7 @@
             $('#select-kabkot').select2({
                 placeholder: "Pilih Kabupaten / Kota",
                 width: '100%',
-                // allowClear: true
+                allowClear: true
             });
         });
         $(document).ready(function() {

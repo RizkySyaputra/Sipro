@@ -102,9 +102,9 @@
             <!-- <div class="navbar-wrapper">
                 <a class="navbar-brand" href="#pablo">SIPRO 2024 </a>
             </div> -->
-            <div class="navbar-wrapper d-flex align-items-center ml-auto mr-5">
+            <div class="navbar-wrapper d-flex align-items-center" style="margin-left: auto; margin-right: 60px;">
                 <div class="d-flex align-items-center">
-                    <img class=" mr-3" src="<?= base_url('assets/img/logo-bpiw.png') ?>" alt="Logo BPIW" width="50" height="50">
+                    <!-- <img class=" mr-3" src="<?= base_url('assets/img/logo-bpiw.png') ?>" alt="Logo BPIW" width="50" height="50"> -->
                     <img src="<?= base_url('assets/img/logo-pu.png') ?>" alt="Logo PU" width="50" height="50">
                 </div>
                 <!-- <a class="navbar-brand" href="#pablo">SIPRO 2024 </a> -->
@@ -157,7 +157,7 @@
                         &copy;
                         <script>
                             document.write(new Date().getFullYear())
-                        </script>, made with <i class="material-icons">favorite</i> by BPIW DEV
+                        </script>, made with <i class="material-icons">favorite</i> by BPIW
                     </div>
                 </div>
 

@@ -59,7 +59,7 @@
 
                         <label class="catatan-text"><strong>Kawasan</strong></label>
                         <p><?= esc($memo->kawasan ?? '-') ?></p>
-                        <label class="catatan-text"><strong>Kab/kot</strong></label>
+                        <label class="catatan-text"><strong>Kabupaten / Kota</strong></label>
                         <p><?= esc($memo->kabkot ?? '-') ?></p>
 
                         <!-- <label class="catatan-text"><strong>Kab/Kot</strong></label>
