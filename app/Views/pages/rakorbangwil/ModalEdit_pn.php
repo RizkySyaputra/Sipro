@@ -167,7 +167,7 @@
 
                 <div class="form-group">
                     <label class="catatan-text"><strong>Kawasan</strong></label>
-                    <select class="form-control" name="kawasan[]" id="select-kawasan" multiple required>
+                    <select class="form-control" name="kawasan[]" id="select-kawasan" multiple>
                         <?php foreach ($kawasan as $item): ?>
                             <!-- <option value="<?= $item['kode_kawasan'] ?>"><?= $item['nama_kawasan'] ?></option> -->
                             <option value="<?= $item['kode_kawasan'] ?>"
@@ -182,7 +182,7 @@
                 <div class="form-group">
                     <label class="catatan-text"><strong>Kabupaten / Kota</strong></label> <br>
                     <small class="text-muted">Tekan <b>Ctrl</b> (atau <b>Cmd</b> di Mac) untuk memilih lebih dari satu.</small>
-                    <select class="form-control" name="kabkot[]" id="select-kabkot" multiple required>
+                    <select class="form-control" name="kabkot[]" id="select-kabkot" multiple>
                         <?php foreach ($kabkot as $item): ?>
                             <option value="<?= $item['id'] ?>"
                                 <?= in_array($item['kab_kot'], $selectedKabkot) ? 'selected' : '' ?>>

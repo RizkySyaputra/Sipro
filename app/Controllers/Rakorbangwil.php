@@ -21,6 +21,9 @@ use App\Models\Master\ProgramModel;
 use App\Models\Master\KegiatanModel;
 use App\Models\Master\KroModel;
 use App\Models\Master\RoModel;
+use App\Models\Master\PnModel;
+use App\Models\Master\PraRakorModel;
+use App\Models\Master\RekapKawasanModel;
 use App\Models\Rakorbangwil\DaftarProgTahunanModel;
 use App\Models\Rpiw\DaftarRenaksiModel;
 use App\Models\Rpiw\RenaksiModel;
@@ -35,9 +38,12 @@ class Rakorbangwil extends BaseController
     protected $unorModel;
     protected $pendanaanModel;
     protected $kabkotModel;
+    protected $pnModel;
+    protected $praRakorModel;
     protected $kawasanModel;
     protected $kabkotMemoModel;
     protected $kawasanMemoModel;
+    protected $rekapKawasanModel;
     protected $kabkotProgramTahunanModel;
     protected $kawasanProgramTahunanModel;
     protected $rekapProgram;
@@ -64,6 +70,8 @@ class Rakorbangwil extends BaseController
         $this->programRpiwModel = new ProgramRpiwModel();
         $this->provinsiModel = new ProvinsiModel();
         $this->unorModel = new UnorModel();
+        $this->rekapKawasanModel = new RekapKawasanModel();
+        $this->pnModel = new PnModel();
         $this->pendanaanModel = new PendanaanModel();
         $this->kawasanRpiwModel = new KawasanRpiwModel();
         $this->satuanModel = new SatuanModel();
@@ -77,317 +85,13 @@ class Rakorbangwil extends BaseController
         $this->kawasanModel = new KawasanModel();
         $this->kawasanMemoModel = new KawasanMemoModel();
         $this->kawasanProgramTahunanModel = new KawasanProgTahunanModel();
+        $this->praRakorModel = new PraRakorModel();
+
 
         helper('permission');
     }
-    // public function index()
-    // {
-    //     $unor_id = $this->request->getPost('unor');
-    //     $provinsi_id = $this->request->getPost('provinsi');
-    //     $kawasan_id = $this->request->getPost('kawasan');
-    //     $tahun_anggaran = $this->request->getPost('tahun_anggaran');
-    //     $residu = $this->request->getPost('residu');
-    //     $dataKawasan = $this->kawasanRpiwModel->getKawasan();
-    //     $dataProvinsi = $this->provinsiModel->getProvinsi();
-    //     $dataUnor = $this->unorModel->getUnor();
-    //     if (isset($unor_id) || isset($provinsi_id) || isset($kawasan_id)) {
-    //         $programs = $this->programRpiwModel->getProgramRpiw($provinsi_id, $unor_id, $kawasan_id, $tahun_anggaran, $residu);
-    //         $kawasans = $this->kawasanRpiwModel->getKawasanAll();
-    //         $kawasanAll = []; // $programs menjadi array object 
-    //         foreach ($kawasans as $kawasan) {
-    //             $kawasanAll[$kawasan->kode_program][] = $kawasan;
-    //         }
-    //         $data = [
-    //             'p_rpiw' => $programs,
-    //             'kawasans' => $kawasanAll,
-    //             'kawasan' => $dataKawasan,
-    //             'provinsi' => $dataProvinsi,
-    //             'unor' => $dataUnor,
-    //         ];
-    //         $this->template->write('title', 'Memorandum Program');
-    //         $this->template->load('/templates/main', '/pages/memorandum/program', $data);
-    //     } else {
-    //         $data = [
-    //             'kawasan' => $dataKawasan,
-    //             'provinsi' => $dataProvinsi,
-    //             'unor' => $dataUnor,
-    //             'tahun' => $tahun_anggaran
-    //         ];
-    //         $this->template->write('title', 'Memorandum Program');
-    //         // $this->template->add_js('assets/js/memorandum/program.js');
-    //         $this->template->load('/templates/main', '/pages/memorandum/program', $data);
-    //     }
-    // }
-    // public function get_program()
-    // {
 
-    //     $unor_id = $this->request->getPost('unor');
-    //     $provinsi_id = $this->request->getPost('provinsi');
-    //     $kawasan_id = $this->request->getPost('kawasan');
-    //     $programs = $this->programModel->getProgramMemo($provinsi_id, $unor_id, $kawasan_id);
-    //     $kawasans = $this->kawasanRpiwModel->getKawasanAll();
-    //     $kawasanAll = []; // $programs menjadi array object 
-    //     foreach ($kawasans as $kawasan) {
-    //         $kawasanAll[$kawasan->kode_program][] = $kawasan;
-    //     }
-    //     $data = [
-    //         'p_memo' => $programs,
-    //         'kawasans' => $kawasanAll,
-    //     ];
-    //     return view('/pages/memorandum/tabel/tabel_memorandum', $data);
-    // }
-    // public function filter_data()
-    // {
-    //     $unor_id = $this->request->getPost('unor');
-    //     $provinsi_id = $this->request->getPost('provinsi');
-    //     $kawasan_id = $this->request->getPost('kawasan');
-    //     $residu = $this->request->getPost('residu');
-    //     $tahun_anggaran = $this->request->getPost('tahun_anggaran');
-
-    //     // Lakukan query berdasarkan filter yang diterapkan
-    //     $programs = $this->programRpiwModel->getProgramRpiw($provinsi_id, $unor_id, $kawasan_id, $tahun_anggaran, $residu);
-    //     $kawasans = $this->kawasanRpiwModel->getKawasanAll();
-    //     $kawasanAll = []; // $programs menjadi array object 
-    //     foreach ($kawasans as $kawasan) {
-    //         $kawasanAll[$kawasan->kode_program][] = $kawasan;
-    //     }
-    //     $data = [
-    //         'p_rpiw' => $programs,
-    //         'kawasans' => $kawasanAll,
-    //         'tahun' => $tahun_anggaran
-    //     ];
-    //     // Load view dan kembalikan hanya bagian tabel
-    //     return view('/pages/memorandum/tabel/tabel_program', $data); // Pastikan view hanya memuat tbody
-    // }
-
-    // public function get_kawasan()
-    // {
-    //     $provinsi_id = $this->request->getPost('provinsi_id');
-    //     $kawasan = $this->kawasanRpiwModel->getKawasanByProvinsi($provinsi_id);
-    //     return $this->response->setJSON($kawasan);
-    // }
-
-    // public function detail($id)
-    // {
-    //     $dataProgram = $this->programRpiwModel->getProgramRpiwDetail($id);
-    //     $dataKawasan = $this->kawasanRpiwModel->getKawasanById($id);
-    //     $dataSatuan = $this->satuanModel->getSatuan();
-    //     $dataMp = $this->mpModel->getMp();
-
-    //     // Array untuk menampung data geojson
-    //     $petaKawasan = [];
-    //     $namaKawasan = [];
-
-    //     foreach ($dataKawasan as $kawasan) {
-    //         if ($kawasan->kode_kawasan != 0) {
-    //             // Cek apakah peta_kawasan ada
-    //             if (!empty($kawasan->peta_kawasan)) {
-    //                 $filePath = FCPATH . 'geoJson/' . $kawasan->peta_kawasan;
-    //                 // Cek jika file peta_kawasan ada
-    //                 if (file_exists($filePath)) {
-    //                     // Masukkan isi file GeoJSON ke dalam array
-    //                     $petaKawasan[] = file_get_contents($filePath);
-    //                     $namaKawasan[] = $kawasan->nama_kawasan;
-    //                 }
-    //             }
-    //         } else {
-    //             // Jika tidak ada kawasan, set petaKawasan ke null
-    //             $petaKawasan = null;
-    //             $namaKawasan = null;
-    //         }
-    //     }
-
-    //     foreach ($dataProgram as $program) {
-    //         if ($program->tagging_program != "") {
-    //             $jsonProgram = FCPATH . 'geoJson/' . $program->geojtagging_programson;
-    //             $petaProgram = file_get_contents($jsonProgram);
-    //         } else {
-    //             $petaProgram = "";
-    //         }
-    //         $lat = $program->latitude;
-    //         $long = $program->longitude;
-    //     }
-
-
-    //     $data = [
-    //         'kawasans' => $dataKawasan,
-    //         'p_rpiw' => $dataProgram,
-    //         'peta_kawasan' => $petaKawasan,
-    //         'namaKawasan' => $namaKawasan,
-    //         'peta_program' => $petaProgram,
-    //         'latitude' => $lat,
-    //         'longitude' => $long,
-    //         'satuan' => $dataSatuan,
-    //         'mp' => $dataMp
-
-    //     ];
-    //     $this->template->add_css('https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css', 'link', false, true);
-    //     $this->template->write('title', 'Detail Program RPIW');
-    //     $this->template->load('/templates/main', '/pages/memorandum/detail', $data);
-    // }
-    // public function insert()
-    // {
-    //     $provinsi_id = $this->request->getPost('id_provinsi');
-    //     $unor_id = $this->request->getPost('id_unor');
-    //     $program_id = $this->request->getPost('id_program');
-    //     $nama_program = $this->request->getPost('nama_program');
-    //     $lokasi = $this->request->getPost('lokasi');
-    //     $justifikasi = $this->request->getPost('justifikasi');
-    //     $kesiapan_rc = $this->request->getPost('kesiapan_rc');
-    //     $volume = $this->request->getPost('volume');
-    //     $id_satuan = $this->request->getPost('id_satuan');
-    //     $biaya = $this->request->getPost('biaya');
-    //     $id_pendanaan = $this->request->getPost('id_pendanaan');
-    //     $tagging_mp = $this->request->getPost('tagging_mp');
-    //     $tahun_anggaran = $this->request->getPost('tahun_anggaran');
-    //     $prefix_id_program =  '26' . $provinsi_id . $unor_id;
-    //     //proses cek id yang sudah ada
-    //     $id_mprogram_db = $this->programModel->getIdProgramMemo($prefix_id_program);
-    //     $existing_ids = array_map(function ($row) use ($prefix_id_program) {
-    //         return (int)substr($row->id_mprogram, strlen($prefix_id_program));
-    //     }, $id_mprogram_db);
-    //     // Jika ada ID yang sudah ada, cari angka berurutan berikutnya yang unik
-    //     if (!empty($existing_ids)) {
-    //         // Cari angka akhir terbesar dan tambahkan 1
-    //         $max_sequence = max($existing_ids);
-    //         $new_sequence = $max_sequence + 1;
-    //     } else {
-    //         // Jika belum ada ID dengan prefix_id_program ini, mulai dari 1
-    //         $new_sequence = 1;
-    //     }
-
-    //     // Gabungkan menjadi ID baru
-    //     $new_id_mprogram = $prefix_id_program . $new_sequence;
-
-    //     $this->programModel->addMemorandumProgram(
-    //         $new_id_mprogram,
-    //         $provinsi_id,
-    //         $unor_id,
-    //         $program_id,
-    //         $nama_program,
-    //         $lokasi,
-    //         $justifikasi,
-    //         $kesiapan_rc,
-    //         $volume,
-    //         $biaya,
-    //         $id_satuan,
-    //         $id_pendanaan,
-    //         $tagging_mp,
-    //         $tahun_anggaran
-    //     );
-    //     return redirect()->to('/daftar_program');
-    // }
-
-    // public function addCatatan()
-    // {
-    //     $jenis = $this->request->getPost('jenis');
-    //     $id_mprogram = $this->request->getPost('id_mprogram');
-    //     $bpiw = $this->request->getPost('bpiw');
-    //     $unor = $this->request->getPost('unor');
-    //     $kl = $this->request->getPost('kl');
-    //     $nama_program = $this->request->getPost('nama_program');
-    //     $id_satuan = $this->request->getPost('id_satuan');
-    //     $volume = $this->request->getPost('volume');
-    //     $biaya = $this->request->getPost('biaya');
-    //     $kesiapan_rc = $this->request->getPost('rc');
-    //     $desk = $this->request->getPost('desk');
-    //     $id_pendanaan = $this->request->getPost('id_pendanaan');
-    //     $catatan_desk2 = $this->request->getPost('catatan_desk2');
-    //     $desk2 = $this->request->getPost('desk2');
-    //     $desk2 = ($desk2 == "x") ? null : $desk2;
-
-    //     $this->programModel->add_catatan($id_mprogram, $bpiw, $unor, $catatan_desk2, $nama_program,  $volume, $id_satuan, $biaya, $kesiapan_rc, $desk, $id_pendanaan, $desk2);
-    //     if ($jenis == "desk") {
-    //         return redirect()->to(base_url('desk_program'));
-    //     }
-    //     return redirect()->to(base_url('daftar_program'));
-    //     //return redirect()->back();
-    // }
-    // public function listProgram()
-    // {
-    //     // $unor_id = $this->request->getPost('unor');
-    //     // $provinsi_id = $this->request->getPost('provinsi');
-    //     // $kawasan_id = $this->request->getPost('kawasan');
-    //     // $tahun_anggaran = $this->request->getPost('tahun_anggaran');
-    //     // $programs = $this->programModel->getProgramMemo($provinsi_id, $unor_id, $kawasan_id, $tahun_anggaran);
-    //     // $kawasans = $this->kawasanRpiwModel->getKawasanAll();
-    //     $dataKawasan = $this->kawasanRpiwModel->getKawasan();
-    //     $dataProvinsi = $this->provinsiModel->getProvinsi();
-    //     $dataUnor = $this->unorModel->getUnor();
-    //     // $kawasanAll = []; // $programs menjadi array object 
-    //     // foreach ($kawasans as $kawasan) {
-    //     //     $kawasanAll[$kawasan->kode_program][] = $kawasan;
-    //     // }
-    //     $data = [
-    //         'kawasan' => $dataKawasan,
-    //         'provinsi' => $dataProvinsi,
-    //         'unor' => $dataUnor
-    //     ];
-    //     $this->template->write('title', 'List Memorandom Program');
-    //     $this->template->load('/templates/main', '/pages/memorandum/listProgram', $data);
-    // }
-
-    // public function programMemorandumDetail($id_memo)
-    // {
-    //     $dataMemorandum = $this->programModel->getProgramMemorandumById($id_memo);
-    //     $id_rpiw = $dataMemorandum[0]->id_rpiw;
-    //     $dataKawasan = $this->kawasanRpiwModel->getKawasanById($id_rpiw);
-    //     $dataSatuan = $this->satuanModel->getSatuan();
-    //     // $dataKawasan = $this->kawasanRpiwModel->getKawasanById($id_rpiw);
-    //     // Array untuk menampung data geojson
-    //     $petaKawasan = [];
-    //     $namaKawasan = [];
-
-    //     foreach ($dataKawasan as $kawasan) {
-    //         if ($kawasan->kode_kawasan != 0) {
-    //             // Cek apakah peta_kawasan ada
-    //             if (!empty($kawasan->peta_kawasan)) {
-    //                 $filePath = FCPATH . 'geoJson/' . $kawasan->peta_kawasan;
-    //                 // Cek jika file peta_kawasan ada
-    //                 if (file_exists($filePath)) {
-    //                     // Masukkan isi file GeoJSON ke dalam array
-    //                     $petaKawasan[] = file_get_contents($filePath);
-    //                     $namaKawasan[] = $kawasan->nama_kawasan;
-    //                 }
-    //             }
-    //         } else {
-    //             // Jika tidak ada kawasan, set petaKawasan ke null
-    //             $petaKawasan = null;
-    //             $namaKawasan = null;
-    //         }
-    //     }
-
-    //     foreach ($dataMemorandum as $program) {
-
-    //         if ($program->tagging_program != "") {
-    //             $jsonProgram = FCPATH . 'geoJson/' . $program->geojtagging_programson;
-    //             $petaProgram = file_get_contents($jsonProgram);
-    //         } else {
-    //             $petaProgram = "";
-    //         }
-    //         $lat = $program->latitude;
-    //         $long = $program->longitude;
-    //     }
-
-
-    //     $data = [
-    //         'kawasans' => $dataKawasan,
-    //         'p_memo' => $dataMemorandum,
-    //         'peta_kawasan' => $petaKawasan,
-    //         'namaKawasan' => $namaKawasan,
-    //         'peta_program' => $petaProgram,
-    //         'latitude' => $lat,
-    //         'longitude' => $long,
-    //         'satuan' => $dataSatuan
-
-    //     ];
-    //     $this->template->add_css('https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css', 'link', false, true);
-    //     $this->template->write('title', 'Detail Program RPIW');
-    //     $this->template->load('/templates/main', '/pages/memorandum/detailProgram', $data);
-    // }
-
-    // // Sipro 2025
-
+    //program_tahunan
     public function daftar_program_tahunan()
     {
         $dataKawasan = $this->kawasanRpiwModel->getKawasan();
@@ -401,7 +105,6 @@ class Rakorbangwil extends BaseController
         $this->template->write('title', 'Program Tahunan');
         $this->template->load('/templates/main', '/pages/rakorbangwil/daftar_program_tahunan', $data);
     }
-    // //2025
     public function get_daftar_program_tahunan()
     {
         $id_role = user()->id_role;
@@ -549,8 +252,6 @@ class Rakorbangwil extends BaseController
         }
     }
 
-
-
     // --- DELETE ---
     public function delete($id = null)
     {
@@ -571,188 +272,41 @@ class Rakorbangwil extends BaseController
         return $this->response->setJSON(['status' => 'success', 'message' => 'Data berhasil dihapus']);
     }
 
-    // public function daftar_renaksi()
-    // {
+    //pra_rakorbangwil
+    public function daftar_pn()
+    {
+        $id_role = user()->id_role;
+        $dataPn = $this->pnModel->findAll();
+        $dataKl = $this->pnModel->getKl();
 
-    //     $dataKawasan = $this->kawasanRpiwModel->getKawasan();
-    //     $dataProvinsi = $this->provinsiModel->getProvinsi();
-    //     $dataUnor = $this->unorModel->getUnor();
-    //     $data = [
-    //         'kawasan' => $dataKawasan,
-    //         'provinsi' => $dataProvinsi,
-    //         'unor' => $dataUnor
-    //     ];
-    //     $this->template->write('title', 'Rencana Aksi');
-    //     $this->template->load('/templates/main', '/pages/memorandum/daftar_renaksi', $data);
-    // }
+        $klByPn = [];
+        foreach ($dataKl as $kl) {
+            $klByPn[$kl->id_pn][] = $kl->nama_kl;
+        }
 
-    // public function get_daftar_renaksi()
-    // {
-    //     $id_role = user()->id_role;
-    //     $provinsi_id = $this->request->getPost('provinsi');
-    //     $unor_id = $this->request->getPost('unor');
-    //     $kawasan = $this->request->getPost('sumber');
-    //     $status = $this->request->getPost('status');
-    //     $daftarRenaksi = $this->daftarRenaksiModel->getDaftarRenaksi($provinsi_id, $unor_id, $kawasan, $status);
-    //     $data = [
-    //         'daftar_renaksi' => $daftarRenaksi,
-    //         'can_view' => has_permission_menu($id_role, '/rpiw/daftar_renaksi', 'can_view'),
-    //         'can_edit' => has_permission_menu($id_role, '/rpiw/daftar_renaksi', 'can_edit'),
-    //         'can_delete' => has_permission_menu($id_role, '/rpiw/daftar_renaksi', 'can_delete')
-    //     ];
-    //     return view('/pages/memorandum/tabel/tabel_daftar_renaksi', $data);
-    // }
-    // public function input_renaksi($id)
-    // {
-    //     $data = $this->daftarRenaksiModel->find($id);
-    //     $stackholder = $this->stakholderModel->orderBy('id_kategori')->orderBy('id_stakeholder')->findAll();
-    //     $namaList = array_column($stackholder, 'short_stakeholder');
-    //     $id_prov = $data->id_provinsi;
-    //     $kabkot = $this->kabkotModel->where('id_prov', $id_prov)->findAll();
-    //     $kawasan = $this->kawasanModel->where('id_provinsi', $id_prov)->findAll();
-    //     $program = $this->programModel->findAll();
-    //     $kegiatan = $this->kegiatanModel->findAll();;
-    //     $kro = $this->kroModel->findAll();;
-    //     $ro = $this->roModel->findAll();;
-    //     $pendanaan = $this->pendanaanModel->findAll();
+        $data = [
+            'dataPn' => $dataPn,
+            'klByPn' => $klByPn,
+            'can_view' => has_permission_menu($id_role, '/rakorbangwil/desk_pra_rakorbangwil', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/rakorbangwil/desk_pra_rakorbangwil', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/rakorbangwil/desk_pra_rakorbangwil', 'can_delete')
+        ];
 
-    //     if (!$data) {
-    //         return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
-    //     }
-    //     return view('/pages/memorandum/ModalInputRenaksi', ['kawasan' => $kawasan, 'data' => $data,  'namaList' => $namaList, 'kabkot' => $kabkot, 'pendanaan' => $pendanaan, 'program' => $program, 'kegiatan' => $kegiatan, 'kro' => $kro, 'ro' => $ro]);
-    // }
+        $this->template->write('title', 'Pra Rakorbangwil');
+        $this->template->load('/templates/main', '/pages/rakorbangwil/daftar_pn', $data);
+    }
+    public function view_pn($id)
+    {
 
-
-    // public function input_memo_renaksi($id)
-    // {
-    //     $kabkot = $this->request->getPost('kabkot');
-    //     $kawasan = $this->request->getPost('kawasan');
-    //     $data = $this->request->getPost();
-    //     // --- Pastikan ID Unor dua digit ---
-    //     $id_unor = $data['id_unor'];
-    //     $prefix = 'MP' . '.' . $data['id_provinsi'] . '.' . $id_unor . '.';
-    //     $search = 'MP' . '.' . $data['id_provinsi'] . '.' . $id_unor . '.0';
-    //     // --- Ambil uniq_id terakhir berdasarkan id_provinsi ---
-    //     $row = $this->memoModel
-    //         ->like('id_memorandum', $search)
-    //         ->orderBy('id_memorandum', 'DESC')
-    //         ->first();
-
-    //     if ($row) {
-    //         // Ambil angka uniq terakhir dan tambah 1
-    //         $last_id = (int) substr($row->id_memorandum, -4);
-    //         $uniq_id = str_pad($last_id + 1, 4, '0', STR_PAD_LEFT);
-    //     } else {
-    //         $uniq_id = '0001';
-    //     }
-    //     // Gabungkan prefix + uniq
-    //     $id_memorandum = $prefix . $uniq_id;
-
-    //     // --- Handle Volume dan Anggaran per Tahun ---
-    //     $volumeData = [];
-    //     $anggaranData = [];
-
-    //     $tahunMulai = (int) $this->request->getPost('tahun_mulai');
-    //     $tahunSelesai = (int) $this->request->getPost('tahun_selesai');
-
-    //     if ($tahunMulai && $tahunSelesai && $tahunSelesai >= $tahunMulai) {
-    //         for ($tahun = $tahunMulai; $tahun <= $tahunSelesai; $tahun++) {
-    //             $index = $tahun - $tahunMulai + 1;
-    //             $volumeKey = 'volume_' . $index;
-    //             $anggaranKey = 'anggaran_' . $index;
-
-    //             $volumeData[$volumeKey] = $this->request->getPost($volumeKey);
-    //             $anggaranData[$anggaranKey] = $this->request->getPost($anggaranKey);
-    //         }
-    //     }
-
-    //     // --- Handle Catatan (Array Nama + Catatan) ---
-    //     $namaArr = $this->request->getPost('catatan_nama');
-    //     $textArr = $this->request->getPost('catatan_text');
-
-    //     $catatan = [];
-    //     if ($namaArr && $textArr) {
-    //         foreach ($namaArr as $i => $nama) {
-    //             if (!empty($nama) && isset($textArr[$i]) && trim($textArr[$i]) !== '') {
-    //                 $catatan[] = [
-    //                     'nama'    => $nama,
-    //                     'catatan' => $textArr[$i]
-    //                 ];
-    //             }
-    //         }
-    //     }
-
-    //     // --- Handle kabkot (multi-select) ---
-    //     // $kabkot = $this->request->getPost('id_kabkot'); // bisa berupa array atau string
-    //     // if (is_array($kabkot)) {
-    //     //     $kabkot = json_encode($kabkot, JSON_UNESCAPED_UNICODE); // ubah ke JSON string
-    //     // }
-
-    //     // --- Susun data tambahan ---
-    //     $data2 = [
-    //         'id_memorandum'       => $id_memorandum,
-    //         'catatan_memorandum'  => json_encode($catatan, JSON_UNESCAPED_UNICODE),
-    //         'sumber'              => 'RPIW'
-    //     ];
-
-    //     // --- Gabungkan semua data ---
-    //     $dataToInsert = array_merge($data, $volumeData, $anggaranData, $data2);
-
-
-    //     // --- Update nilai mp pada renaksi ---
-    //     $newmp = (int) $data['mp'] + 1;
-    //     $this->renaksiModel->update($data['id_renaksi'], ['mp' => $newmp]);
-    //     if ($kabkot) {
-    //         foreach ($kabkot as $data) {
-    //             $this->kabkotMemoModel->insert(['id_memorandum' => $id_memorandum, 'id_kabkot' => $data]);
-    //         }
-    //     }
-    //     if ($kawasan) {
-    //         foreach ($kawasan as $data) {
-    //             $this->kawasanMemoModel->insert(['id_memorandum' => $id_memorandum, 'id_kawasan' => $data]);
-    //         }
-    //     }
-    //     // --- Simpan ke tabel memorandum ---
-    //     $this->memoModel->insert($dataToInsert);
-
-    //     return $this->response->setJSON(['success' => true]);
-    // }
-
-    // public function getKegiatanByProgram($id_program)
-    // {
-    //     $data = $this->kegiatanModel
-    //         ->where('id_program', $id_program)
-    //         ->findAll();
-    //     return $this->response->setJSON($data);
-    // }
-
-    // public function getKroByKegiatan($id_kegiatan)
-    // {
-    //     $data = $this->kroModel
-    //         ->where('id_kegiatan', $id_kegiatan)
-    //         ->findAll();
-    //     return $this->response->setJSON($data);
-    // }
-
-    // public function getRoByKro($id_kro)
-    // {
-    //     $data = $this->roModel
-    //         ->where('id_kro', $id_kro)
-    //         ->findAll();
-    //     return $this->response->setJSON($data);
-    // }
-
-    // public function getSatuanByRo($id_ro)
-    // {
-    //     $ro = $this->roModel->getVolumeRo($id_ro);
-
-    //     if ($ro) {
-    //         return $this->response->setJSON([
-    //             'id_satuan'   => $ro->id_satuan,
-    //             'nama_satuan' => $ro->nama_satuan
-    //         ]);
-    //     } else {
-    //         return $this->response->setJSON(null);
-    //     }
-    // }
+        $pn = $this->pnModel->find($id);
+        $program = $this->praRakorModel->where('id_pn', $id)->findAll();
+        $rekap_kawasan = $this->rekapKawasanModel->where('id_pn', $id)->findAll();
+        $catatan_pn = $this->praRakorModel->getCatatan($id);
+        $this->template->write('title', 'Detail Prioritas Nasional');
+        $this->template->load('/templates/main', '/pages/rakorbangwil/view_pn', [
+            'kawasanData' => $rekap_kawasan,
+            'pn' => $pn,
+            'catatan_pn' => $catatan_pn
+        ]);
+    }
 }

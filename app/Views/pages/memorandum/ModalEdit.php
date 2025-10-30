@@ -6,6 +6,43 @@
         background-color: #e9ecef;
         color: #6c757d;
         cursor: not-allowed;
+        border: 1px solid #d1d1d1 !important;
+        /* tetap ada border halus */
+    }
+
+    /* Tambahkan border untuk semua input yang bisa diedit */
+    input:not(:disabled),
+    textarea:not(:disabled),
+    select:not(:disabled) {
+        border: 1px solid #000000ff !important;
+        /* warna border biru */
+        box-shadow: none !important;
+        transition: border-color 0.2s ease-in-out;
+    }
+
+    /* Efek saat fokus (klik) */
+    input:not(:disabled):focus,
+    textarea:not(:disabled):focus,
+    select:not(:disabled):focus {
+        border-color: #000000ff !important;
+        /* biru lebih gelap saat fokus */
+        box-shadow: 0 0 3px rgba(0, 123, 255, 0.3);
+        outline: none;
+    }
+
+    /* Agar field readonly tetap terlihat tapi tidak seperti editable */
+    input[readonly],
+    textarea[readonly] {
+        background-color: #f8f9fa;
+        border: 1px solid #ccc;
+        color: #6c757d;
+    }
+
+    /* Style tambahan agar form tampak rapi */
+    .form-control,
+    .form-select {
+        border-radius: 6px;
+        padding: 6px 10px;
     }
 
     .catatan-item {
@@ -20,7 +57,31 @@
         margin: 0;
         white-space: pre-line;
     }
+
+    /* Hilangkan ruang kosong (search box) di Select2 multiple yang tertutup */
+    .select2-container--default .select2-search--inline .select2-search__field {
+        width: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+    }
+
+    /* Supaya tidak muncul input kosong di bawah pilihan */
+    .select2-container--default .select2-selection--multiple {
+        min-height: 10px;
+        /* sesuaikan tinggi agar pas */
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    /* Sedikit perbaikan visual agar tampilan rapi */
+    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
 </style>
+
 
 <form id="editMemoForm">
     <?= csrf_field() ?>
