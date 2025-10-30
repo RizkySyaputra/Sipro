@@ -5,7 +5,7 @@
                 <div class="card-icon">
                     <i class="material-icons">source</i>
                 </div>
-                <h4 class="card-title">Laporan Memorandum Kawasan Per Provinsi Per PN</h4>
+                <h4 class="card-title">Laporan Memorandum Kawasan Per Provinsi</h4>
 
             </div>
             <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->

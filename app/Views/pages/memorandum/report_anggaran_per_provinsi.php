@@ -5,7 +5,7 @@
                 <div class="card-icon">
                     <i class="material-icons">source</i>
                 </div>
-                <h4 class="card-title">Laporan Memorandum Kawasan Per Provinsi Per Unor</h4>
+                <h4 class="card-title">Laporan Memorandum Jenis Anggaran Per Provinsi</h4>
 
             </div>
             <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
@@ -93,25 +93,18 @@
                                 <thead>
                                     <?php
                                     $unorList = ['BM', 'CK', 'SDA', 'PS'];
-                                    $jenis = ['Jumlah Kawasan', 'Jumlah Tematik Kawasan', 'Jumlah Pekerjaan'];
-                                    // Baris 1: Jenis, colspan = Jumlah Unor
                                     echo '<tr>';
                                     echo '<th rowspan="2">No</th>';
                                     echo '<th rowspan="2">Provinsi</th>'; // kolom tetap
                                     echo '<th colspan="4" class="text-center">APBN</th>';
                                     echo '<th rowspan="2" class="text-center">Pembiayaan Lainnya</th>';
-                                    // foreach ($jenis as $j) {
-                                    //     echo '<th colspan="' . count($unorList) . '">' . $j . '</th>';
-                                    // }
                                     echo '</tr>';
 
-                                    // Baris 2: Unor
                                     echo '<tr>';
                                     echo "<th>RPM</th>";
                                     echo "<th>PHLN</th>";
                                     echo "<th>SBSN</th>";
                                     echo "<th>Total</th>";
-                                    // echo "<th></th>";
                                     echo '</tr>';
                                     ?>
                                 </thead>
