@@ -170,6 +170,13 @@ table.dataTable tbody tr:hover {
   border: 1px solid transparent !important;
 }
 
+table.table-bordered.dataTable td:last-child,
+table.table-bordered.dataTable th:last-child {
+  border-right-width: 1px !important;
+  border-right-style: solid !important;
+  border-right-color: #dee2e6 !important; /* warna default Bootstrap */
+}
+
 .form-control {
   background-image: none;
 }
