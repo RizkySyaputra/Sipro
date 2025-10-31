@@ -153,6 +153,12 @@
                 <label class="catatan-text"><strong>Anggaran RPIW(ribu)</strong></label>
                 <p>Rp. <?= number_format($data->biaya, 0, ',', '.') ?> </p>
             </div>
+
+            <div class="mb-2">
+                <label class="catatan-text"><strong>Volume RPIW</strong></label>
+                <p> <?= $data->volume . ' ' . $data->nama_satuan ?> </p>
+            </div>
+
             <div class="form-group">
                 <label class="catatan-text"><strong>Satuan Volume</strong></label>
                 <input type="text" class="form-control-plaintext" name="nama_satuan"
@@ -173,7 +179,7 @@
                     $index = $tahun - $tahunMulai + 1; ?>
                     <div class="form-group">
                         <label class="catatan-text"><strong>Volume <?= $tahun ?></strong></label>
-                        <input type="number" step="0.01" min="0" class="form-control"
+                        <input type="number" step="0.01" min="0" class="form-control volume-input"
                             name="volume_<?= $index ?>"
                             value="<?= esc($data->{'volume_' . $index} ?? '') ?>"
                             oninput="if (this.value < 0) this.value = 0;"
@@ -181,6 +187,10 @@
 
                     </div>
                 <?php endfor; ?>
+                <div class="form-group mt-2">
+                    <label class="catatan-text"><strong>Total Volume</strong></label>
+                    <input type="text" class="form-control " id="total-volume" readonly>
+                </div>
 
                 <hr>
                 <h6><i class="fas fa-coins me-2"></i> Anggaran per Tahun</h6>
@@ -198,13 +208,17 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label class="catatan-text"><strong>Anggaran <?= $tahun ?> (Rp) </strong></label>
+                        <label class="catatan-text"><strong>Anggaran <?= $tahun ?> (Ribu) </strong></label>
                         <input type="text" class="form-control anggaran-format"
                             name="anggaran_<?= $index ?>"
                             value="<?= $nilaiAnggaran ?>">
                     </div>
 
                 <?php endfor; ?>
+                <div class="form-group mt-2">
+                    <label class="catatan-text"><strong>Total Anggaran (Ribu)</strong></label>
+                    <input type="text" class="form-control" id="total-anggaran" readonly>
+                </div>
             <?php endif; ?>
 
         </div>
@@ -471,5 +485,38 @@
             });
         });
 
+    });
+
+    $(document).ready(function() {
+        // === Hitung total Volume ===
+        function hitungTotalVolume() {
+            let total = 0;
+            $('.volume-input').each(function() {
+                let val = parseFloat($(this).val()) || 0;
+                total += val;
+            });
+            $('#total-volume').val(total.toLocaleString('id-ID', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }));
+        }
+
+        // === Hitung total Anggaran ===
+        function hitungTotalAnggaran() {
+            let total = 0;
+            $('.anggaran-format').each(function() {
+                let val = $(this).val().replace(/\./g, '');
+                total += parseFloat(val) || 0;
+            });
+            $('#total-anggaran').val(new Intl.NumberFormat('id-ID').format(total));
+        }
+
+        // Jalankan setiap kali user input
+        $(document).on('input', '.volume-input', hitungTotalVolume);
+        $(document).on('input', '.anggaran-format', hitungTotalAnggaran);
+
+        // Jalankan juga saat halaman pertama kali dimuat
+        hitungTotalVolume();
+        hitungTotalAnggaran();
     });
 </script>

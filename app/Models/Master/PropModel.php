@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class PropModel extends Model
 {
-    protected $table = 'k_pro_p';
+    protected $table = 'm_rpjmn_prop';
     protected $useTimestamps = true;
 
     public function getAll()
