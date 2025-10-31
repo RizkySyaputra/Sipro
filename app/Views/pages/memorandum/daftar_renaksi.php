@@ -116,7 +116,7 @@
                                         <th>Kawasan</th>
                                         <th>Mulai - Selesai</th>
                                         <th>Status</th>
-                                        <th>Aksi </th>
+                                        <th style="width:15%">Aksi </th>
                                     </tr>
                                 </thead>
                                 <!-- <tfoot>

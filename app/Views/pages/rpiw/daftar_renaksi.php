@@ -104,7 +104,7 @@
                                         <th>Nama Kegiatan </th>
                                         <th>Kawasan</th>
                                         <th>Mulai - Selesai</th>
-                                        <th>Aksi </th>
+                                        <th style="width:18%">Aksi</th>
                                     </tr>
                                 </thead>
                                 <!-- <tfoot>

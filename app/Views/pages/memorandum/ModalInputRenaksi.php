@@ -153,10 +153,12 @@
                 <label class="catatan-text"><strong>Anggaran RPIW(ribu)</strong></label>
                 <p>Rp. <?= number_format($data->biaya, 0, ',', '.') ?> </p>
             </div>
+
             <div class="mb-2">
                 <label class="catatan-text"><strong>Volume RPIW</strong></label>
                 <p> <?= $data->volume . ' ' . $data->nama_satuan ?> </p>
             </div>
+
             <div class="form-group">
                 <label class="catatan-text"><strong>Satuan Volume</strong></label>
                 <input type="text" class="form-control-plaintext" name="nama_satuan"
@@ -436,7 +438,7 @@
             $('#select-kabkot').select2({
                 placeholder: "Pilih Kabupaten / Kota",
                 width: '100%',
-                // allowClear: true
+                allowClear: true
             });
         });
         $(document).ready(function() {

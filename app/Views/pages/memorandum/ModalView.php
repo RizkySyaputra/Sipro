@@ -68,8 +68,10 @@
                         <label class="catatan-text"><strong>Tematik</strong></label>
                         <label class="catatan-text"><strong>Kawasan</strong></label>
                         <p><?= esc($memo->kawasan ?? '-') ?></p>
+
                         <p><?= esc($memo->tematik ?? '-') ?></p>
                         <label class="catatan-text"><strong>Kab/kot</strong></label>
+
                         <p><?= esc($memo->kabkot ?? '-') ?></p>
 
                         <!-- <label class="catatan-text"><strong>Kab/Kot</strong></label>
