@@ -27,4 +27,34 @@ class PraRakorModel extends Model
         $query = $builder->get();
         return $query->getFirstRow();
     }
+    public function getKawasanList($id_provinsi = null, $id_tematik)
+    {
+        $builder = $this->db->table('prog_tahunan as a');
+        $builder->select('DISTINCT(c.nama_kawasan) as kawasan');
+        $builder->join('prog_tahunan_kwsn as b', 'a.id_prog_tahunan = b.id_prog_tahunan', 'left');
+        $builder->join('m_kawasan as c', 'b.id_kawasan = c.kode_kawasan', 'left');
+        $builder->join('m_tematik as d', 'c.id_tematik_kawasan = d.id_tematik', 'left');
+        $builder->where('a.id_provinsi', $id_provinsi);
+        $builder->where('d.id_tematik', $id_tematik);
+        $builder->orderBy('c.kode_kawasan', 'ASC');
+
+        $query = $builder->get();
+        return $query->getResult();
+    }
+    public function getProgramList($id_provinsi = null, $id_tematik)
+    {
+        $builder = $this->db->table('prog_tahunan as a');
+        $builder->select('*');
+        $builder->join('prog_tahunan_kwsn as b', 'a.id_prog_tahunan = b.id_prog_tahunan', 'left');
+        $builder->join('m_kawasan as c', 'b.id_kawasan = c.kode_kawasan', 'left');
+        $builder->join('m_tematik as d', 'c.id_tematik_kawasan = d.id_tematik', 'left');
+        $builder->join('m_unor as e', 'a.id_unor = e.id_2', 'left');
+        $builder->join('m_satuan as f', 'a.id_satuan = f.id_satuan', 'left');
+        $builder->where('a.id_provinsi', $id_provinsi);
+        $builder->where('d.id_tematik', $id_tematik);
+        $builder->orderBy('c.kode_kawasan', 'ASC');
+
+        $query = $builder->get();
+        return $query->getResult();
+    }
 }

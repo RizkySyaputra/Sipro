@@ -71,17 +71,17 @@
                                                     </button>
                                                 <?php endif; ?>
 
-                                                <?php if ($can_edit): ?>
+                                                <!-- <?php if ($can_edit): ?>
                                                     <button class="btn btn-warning btn-sm btn-edit" data-id="<?= $pn['id_pn'] ?>" title="Edit">
                                                         <i class="fas fa-edit"></i>
                                                     </button>
-                                                <?php endif; ?>
+                                                <?php endif; ?> -->
 
-                                                <?php if ($can_delete): ?>
+                                                <!-- <?php if ($can_delete): ?>
                                                     <button type="button" class="btn btn-danger btn-sm btn-delete" data-id="<?= $pn['id_pn'] ?>" title="Hapus">
                                                         <i class="fas fa-trash"></i>
                                                     </button>
-                                                <?php endif; ?>
+                                                <?php endif; ?> -->
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

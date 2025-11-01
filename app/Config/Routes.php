@@ -111,6 +111,13 @@ $routes->post('rakorbangwil/update/(:segment)', 'Rakorbangwil::update/$1');
 $routes->delete('/rakorbangwil/delete/(:segment)', 'Rakorbangwil::delete/$1');
 //pra_rakorbangwil
 $routes->get('/rakorbangwil/desk_pra_rakorbangwil', 'Rakorbangwil::daftar_pn');
+$routes->get('/rakorbangwil/list_kawasan/(:segment)', 'Rakorbangwil::view_pn/$1');
+$routes->post('/rakorbangwil/get_list_kawasan/', 'Rakorbangwil::get_list_kawasan');
+$routes->post('/rakorbangwil/get_list_program/', 'Rakorbangwil::get_list_program');
+$routes->post('/rakorbangwil/update_usulan/', 'Rakorbangwil::update_usulan');
+$routes->post('/rakorbangwil/update_catatan/', 'Rakorbangwil::update_catatan');
+
+$routes->get('/rakorbangwil/view_pn/(:segment)', 'Rakorbangwil::view_pn/$1');
 $routes->get('/rakorbangwil/view_pn/(:segment)', 'Rakorbangwil::view_pn/$1');
 
 //routes desk
