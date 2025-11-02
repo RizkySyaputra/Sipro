@@ -397,7 +397,7 @@
             select.classList.add('form-select', 'nama-pencatat');
             select.name = "catatan_nama[]";
 
-            let options = '<option value="">-- Pilih Nama --</option>';
+            let options = '<option value="">-- Pilih Stakeholder --</option>';
             window.namaList.forEach(n => {
                 options += `<option value="${n}" ${n===nama?'selected':''}>${n}</option>`;
             });

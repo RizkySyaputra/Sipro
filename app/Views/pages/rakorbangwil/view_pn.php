@@ -504,7 +504,7 @@
                 const select = $('<select>')
                     .addClass('form-select nama-pencatat')
                     .attr('name', 'catatan_nama[]');
-                let options = '<option value="">-- Pilih Nama --</option>';
+                let options = '<option value="">-- Pilih Stakeholder --</option>';
                 window.namaList.forEach(n => {
                     options += `<option value="${n}" ${n === nama ? 'selected' : ''}>${n}</option>`;
                 });
@@ -525,7 +525,7 @@
 
                 // Inisialisasi Select2
                 $(select).select2({
-                    placeholder: "-- Pilih Nama --",
+                    placeholder: "-- Pilih Stakeholder --",
                     width: '100%',
                     allowClear: true
                 });

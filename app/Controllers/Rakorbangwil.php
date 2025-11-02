@@ -334,7 +334,7 @@ class Rakorbangwil extends BaseController
         }
 
         // Ambil data kawasan dari model
-        $list_kawasan = $this->praRakorModel->getKawasanList($id_provinsi, $id_tematik);
+        $list_kawasan = $this->praRakorModel->getKawasanList($id_provinsi, $id_tematik, $id_pn);
 
         // Jika tidak ada data
         if (!$list_kawasan || count($list_kawasan) === 0) {
@@ -364,7 +364,7 @@ class Rakorbangwil extends BaseController
         }
 
         // Ambil data program dari model
-        $list_program = $this->praRakorModel->getProgramList($id_provinsi, $id_tematik);
+        $list_program = $this->praRakorModel->getProgramList($id_provinsi, $id_tematik, $id_pn);
 
         // Jika tidak ada data
         if (!$list_program || count($list_program) === 0) {
