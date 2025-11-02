@@ -37,13 +37,13 @@
                         <p><?= esc($prog_tahunan->id_prog_tahunan ?? '-') ?></p>
 
                         <label class="catatan-text"><strong>PN</strong></label>
-                        <p><?= esc($prog_tahunan->nama_pn ?? ' - ') ?></p>
+                        <p><?= esc($prog_tahunan->id_pn . ' - ' . $prog_tahunan->nama_pn ?? ' - ') ?></p>
                         <label class="catatan-text"><strong>PP</strong></label>
-                        <p><?= esc($prog_tahunan->nama_pp ?? ' - ') ?></p>
+                        <p><?= esc($prog_tahunan->id_pp . ' - ' . $prog_tahunan->nama_pp ?? ' - ') ?></p>
                         <label class="catatan-text"><strong>KP</strong></label>
-                        <p><?= esc($prog_tahunan->nama_kp ?? ' - ') ?></p>
+                        <p><?= esc($prog_tahunan->id_kp . ' - ' . $prog_tahunan->nama_kp ?? ' - ') ?></p>
                         <label class="catatan-text"><strong>ProP</strong></label>
-                        <p><?= esc($prog_tahunan->nama_prop ?? ' - ') ?></p>
+                        <p><?= esc($prog_tahunan->id_prop . ' - ' . $prog_tahunan->nama_prop ?? ' - ') ?></p>
                         <label class="catatan-text"><strong>Program</strong></label>
                         <p><?= esc($prog_tahunan->id_program . '-' . $prog_tahunan->nm_program ?? ' - ') ?></p>
 

@@ -44,26 +44,17 @@
                     <!-- Tabs -->
                     <ul class="nav nav-tabs" id="pnTabs" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#kebutuhan" role="tab">Kebutuhan K/L</a>
+                            <a class="nav-link active" data-toggle="tab" href="#catatan" role="tab">Catatan Pembahasan</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#catatan" role="tab">Catatan Pembahasan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#usulan" role="tab">Usulan Program/Kegiatan</a>
+                            <a class="nav-link non-active" data-toggle="tab" href="#usulan" role="tab">Usulan Program/Kegiatan</a>
                         </li>
                     </ul>
 
                     <div class="tab-content mt-3 p-3 border rounded bg-white">
-                        <div class="tab-pane fade show active" id="kebutuhan">
-                            <div class="form-group">
-                                <label><strong>Kebutuhan K/L</strong></label>
-                                <p><?= $catatan_pn->kebutuhan_dukungan_kl ?></p>
-                            </div>
-                        </div>
 
                         <!-- === CATATAN PEMBAHASAN === -->
-                        <div class="tab-pane fade" id="catatan">
+                        <div class="tab-pane fade show active" id="catatan">
                             <div class="d-flex justify-content-between align-items-center">
                                 <label><strong>Catatan Pembahasan</strong></label>
                                 <button id="btnEditCatatan" class="btn btn-sm btn-warning">Ubah Catatan</button>
@@ -124,7 +115,10 @@
                                 <a class="nav-link active" data-toggle="tab" href="#kawasan" role="tab">Kawasan Prioritas PU</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#infra" role="tab">Dukungan Infrastruktur PU</a>
+                                <a class="nav-link non-active" data-toggle="tab" href="#infra" role="tab">Dukungan Infrastruktur PU</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link non-active" data-toggle="tab" href="#kebutuhan" role="tab">Kebutuhan K/L</a>
                             </li>
                         </ul>
 
@@ -144,7 +138,20 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach ($kawasanData as $row): ?>
+                                            <?php
+                                            $total_kawasan_afirmasi = 0;
+                                            $total_kawasan_komoditas_unggulan = 0;
+                                            $total_kawasan_pertumbuhan = 0;
+                                            $total_kawasan_konservasi_rawan_bencana = 0;
+                                            $total_kawasan_swasembada_pangan_air_energi = 0;
+                                            $total_total = 0;
+                                            foreach ($kawasanData as $row):
+                                                $total_total += $row['kawasan_afirmasi'] + $row['kawasan_komoditas_unggulan'] + $row['kawasan_konservasi_rawan_bencana'] + $row['kawasan_pertumbuhan'] + $row['kawasan_swasembada_pangan_air_energi'];
+                                                $total_kawasan_afirmasi += $row['kawasan_afirmasi'];
+                                                $total_kawasan_komoditas_unggulan += $row['kawasan_komoditas_unggulan'];
+                                                $total_kawasan_pertumbuhan += $row['kawasan_pertumbuhan'];
+                                                $total_kawasan_konservasi_rawan_bencana += $row['kawasan_konservasi_rawan_bencana'];
+                                                $total_kawasan_swasembada_pangan_air_energi += $row['kawasan_swasembada_pangan_air_energi']; ?>
                                                 <tr>
                                                     <td style="text-align: left;"><?= esc($row['provinsi']) ?></td>
 
@@ -208,11 +215,22 @@
                                                         </a>
                                                     </td>
 
-                                                    <td style="text-align: right;"><?= esc($row['kawasan_afirmasi'] + $row['kawasan_komoditas_unggulan'] + $row['kawasan_konservasi_rawan_bencana'] + $row['kawasan_pertumbuhan'] + $row['kawasan_swasembada_pangan_air_energi']) ?></td>
+                                                    <td style="text-align: center;font-weight: bold;"><?= esc($row['kawasan_afirmasi'] + $row['kawasan_komoditas_unggulan'] + $row['kawasan_konservasi_rawan_bencana'] + $row['kawasan_pertumbuhan'] + $row['kawasan_swasembada_pangan_air_energi']) ?></td>
                                                 </tr>
                                             <?php endforeach; ?>
 
                                         </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td style="text-align : center;font-weight: bold;"><strong>Total</strong></td>
+                                                <td style="text-align : center;font-weight: bold;"> <?= $total_kawasan_afirmasi ?></td>
+                                                <td style="text-align : center;font-weight: bold;"><?= $total_kawasan_komoditas_unggulan ?></td>
+                                                <td style="text-align : center;font-weight: bold;"><?= $total_kawasan_pertumbuhan ?></td>
+                                                <td style="text-align : center;font-weight: bold;"><?= $total_kawasan_konservasi_rawan_bencana  ?></td>
+                                                <td style="text-align : center;font-weight: bold;"> <?= $total_kawasan_swasembada_pangan_air_energi  ?></td>
+                                                <td style="text-align : center;font-weight: bold;"><?= $total_total  ?></td>
+                                            </tr>
+                                        </tfoot>
                                     </table>
                                     <!-- Modal Kawasan Detail -->
                                     <div class="modal fade" id="modalKawasanDetail" tabindex="-1" role="dialog" aria-labelledby="modalKawasanDetailLabel" aria-hidden="true">
@@ -265,7 +283,33 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach ($programData as $row): ?>
+                                            <?php
+                                            $total_kawasan_afirmasi_pekerjaan = 0;
+                                            $total_kawasan_afirmasi_anggaran = 0;
+                                            $total_kawasan_komoditas_pekerjaan = 0;
+                                            $total_kawasan_komoditas_anggaran = 0;
+                                            $total_kawasan_konservasi_pekerjaan = 0;
+                                            $total_kawasan_konservasi_anggaran = 0;
+                                            $total_kawasan_pertumbuhan_pekerjaan = 0;
+                                            $total_kawasan_pertumbuhan_anggaran = 0;
+                                            $total_kawasan_swasembada_pekerjaan = 0;
+                                            $total_kawasan_swasembada_anggaran = 0;
+                                            $total_total_pekerjaan = 0;
+                                            $total_total_anggaran = 0;
+                                            foreach ($programData as $row):
+                                                $total_kawasan_afirmasi_pekerjaan += $row['kawasan_afirmasi_pekerjaan'];
+                                                $total_kawasan_afirmasi_anggaran += $row['kawasan_afirmasi_anggaran'];
+                                                $total_kawasan_komoditas_pekerjaan += $row['kawasan_komoditas_pekerjaan'];
+                                                $total_kawasan_komoditas_anggaran += $row['kawasan_komoditas_anggaran'];
+                                                $total_kawasan_konservasi_pekerjaan += $row['kawasan_konservasi_pekerjaan'];
+                                                $total_kawasan_konservasi_anggaran += $row['kawasan_konservasi_anggaran'];
+                                                $total_kawasan_pertumbuhan_pekerjaan += $row['kawasan_pertumbuhan_pekerjaan'];
+                                                $total_kawasan_pertumbuhan_anggaran += $row['kawasan_pertumbuhan_anggaran'];
+                                                $total_kawasan_swasembada_pekerjaan += $row['kawasan_swasembada_pekerjaan'];
+                                                $total_kawasan_swasembada_anggaran += $row['kawasan_swasembada_anggaran'];
+                                                $total_total_pekerjaan += $row['kawasan_afirmasi_pekerjaan'] + $row['kawasan_komoditas_pekerjaan'] + $row['kawasan_pertumbuhan_pekerjaan'] + $row['kawasan_konservasi_pekerjaan'] + $row['kawasan_swasembada_pekerjaan'];
+                                                $total_total_anggaran += $row['kawasan_afirmasi_anggaran'] + $row['kawasan_komoditas_anggaran'] + $row['kawasan_pertumbuhan_anggaran'] + $row['kawasan_konservasi_anggaran'] + $row['kawasan_swasembada_anggaran'];
+                                            ?>
                                                 <tr>
                                                     <td style="text-align: left; font-weight: 600;"><?= esc($row['provinsi']) ?></td>
 
@@ -349,14 +393,31 @@
                                                     </td>
 
                                                     <!-- Total -->
-                                                    <td style="text-align: center;">
+                                                    <td style="text-align: center;font-weight: bold;">
                                                         <?= esc($row['kawasan_afirmasi_pekerjaan'] + $row['kawasan_komoditas_pekerjaan'] + $row['kawasan_konservasi_pekerjaan'] + $row['kawasan_pertumbuhan_pekerjaan'] + $row['kawasan_swasembada_pekerjaan'] ?? 0) ?>
                                                     </td>
-                                                    <td style="text-align: right;">
+                                                    <td style="text-align: right;font-weight: bold;">
                                                         Rp<?= number_format($row['kawasan_afirmasi_anggaran'] + $row['kawasan_komoditas_anggaran'] + $row['kawasan_konservasi_anggaran'] + $row['kawasan_pertumbuhan_anggaran'] + $row['kawasan_swasembada_anggaran'] ?? 0, 0, ',', '.') ?>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>
+                                        <tfoot>
+                                            <tr>
+                                                <td style="text-align : center;font-weight: bold;"><strong>Total</strong></td>
+                                                <td style="text-align : center;font-weight: bold;"> <?= $total_kawasan_afirmasi_pekerjaan ?></td>
+                                                <td style="text-align : center;font-weight: bold;"> Rp<?= number_format($total_kawasan_afirmasi_anggaran ?? 0, 0, ',', '.')  ?></td>
+                                                <td style="text-align : center;font-weight: bold;"><?= $total_kawasan_komoditas_pekerjaan ?></td>
+                                                <td style="text-align : center;font-weight: bold;">Rp<?= number_format($total_kawasan_komoditas_anggaran  ?? 0, 0, ',', '.')  ?></td>
+                                                <td style="text-align : center;font-weight: bold;"><?= $total_kawasan_konservasi_pekerjaan ?></td>
+                                                <td style="text-align : center;font-weight: bold;">Rp<?= number_format($total_kawasan_konservasi_anggaran  ?? 0, 0, ',', '.')  ?></td>
+                                                <td style="text-align : center;font-weight: bold;"><?= $total_kawasan_pertumbuhan_pekerjaan  ?></td>
+                                                <td style="text-align : center;font-weight: bold;">Rp<?= number_format($total_kawasan_pertumbuhan_anggaran   ?? 0, 0, ',', '.')  ?></td>
+                                                <td style="text-align : center;font-weight: bold;"> <?= $total_kawasan_swasembada_pekerjaan  ?></td>
+                                                <td style="text-align : center;font-weight: bold;"> Rp<?= number_format($total_kawasan_swasembada_anggaran  ?? 0, 0, ',', '.')  ?></td>
+                                                <td style="text-align : center;font-weight: bold;"> <?= $total_total_pekerjaan ?></td>
+                                                <td style="text-align : center;font-weight: bold;">Rp<?= number_format($total_total_anggaran  ?? 0, 0, ',', '.')  ?></td>
+                                            </tr>
+                                        </tfoot>
                                         </tbody>
 
 
@@ -381,6 +442,12 @@
                                         </div>
                                     </div>
 
+                                </div>
+                            </div>
+                            <div class="tab-pane fade show" id="kebutuhan">
+                                <div class="form-group">
+                                    <label><strong>Kebutuhan K/L</strong></label>
+                                    <p><?= $catatan_pn->kebutuhan_dukungan_kl ?></p>
                                 </div>
                             </div>
                         </div>
@@ -687,6 +754,11 @@
 
         .nav-tabs .nav-link.active {
             background-color: #00b37d !important;
+            color: white !important;
+        }
+
+        .nav-tabs .nav-link.non-active {
+            background-color: #d7d7d7ff !important;
             color: white !important;
         }
 

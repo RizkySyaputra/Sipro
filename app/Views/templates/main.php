@@ -395,8 +395,8 @@
                 <div class="tahun-container">
                     <form id="form-tahun">
                         <label for="tahun-pelaksana">Tahun Pelaksanaan</label>
-                        <select id="tahun-pelaksana" name="tahun_pelaksana">
-                            <option value="">-- Pilih Tahun --</option>
+                        <select id="tahun-pelaksana" name="tahun_pelaksana" style="width: 110px;">
+                            <option value="">Pilih Tahun</option>
                             <?php
                             $tahunAktif = session('tahun_pelaksana');
                             for ($i = 2025; $i <= 2029; $i++):

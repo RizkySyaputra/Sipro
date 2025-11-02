@@ -20,23 +20,6 @@
                         <form id="filter-form" ?>
                             <div class="form-row align-items-center">
                                 <!-- Dropdown Unor -->
-                                <div class="col-md-3 mb-3">
-                                    <label for="sumber"><strong>Sumber</strong></label>
-                                    <select class="form-control" name="sumber" id="filter-sumber">
-                                        <option value="">Semua Sumber</option>
-                                        <option value="RPIW">RPIW</option>
-                                        <option value="Non RPIW">Non RPIW</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                    <label for="unor"><strong>Unor</strong></label>
-                                    <select class="form-control" name="unor" id="filter-unor">
-                                        <option value="">Semua Unor</option>
-                                        <?php foreach ($unor as $u): ?>
-                                            <option value="<?= $u->id ?>"><?= $u->unor ?></option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                </div>
 
                                 <!-- Dropdown Provinsi -->
                                 <div class="col-md-3 mb-3">
@@ -48,17 +31,15 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
-
-                                <!-- Dropdown Kawasan -->
-                                <!-- <div class="col-md-3 mb-3">
-                                    <label for="kawasan"><strong>Kawasan</strong></label>
-                                    <select class="form-control" name="kawasan" id="filter-kawasan">
-                                        <option value="">Semua Kawasan</option>
-                                        <?php foreach ($kawasan as $k): ?>
-                                            <option value="<?= $k->kode_kawasan ?>"><?= $k->nama_kawasan ?></option>
+                                <div class="col-md-3 mb-3">
+                                    <label for="tematik"><strong>Tematik</strong></label>
+                                    <select class="form-control" name="tematik" id="filter-unor">
+                                        <option value="">Semua Tematik</option>
+                                        <?php foreach ($tematik as $u): ?>
+                                            <option value="<?= $u['id_tematik'] ?>"><?= $u['tematik'] ?></option>
                                         <?php endforeach; ?>
                                     </select>
-                                </div> -->
+                                </div>
 
                                 <!-- Button Filter -->
                                 <div class="col-md-2 d-flex align-items-end gap-2">
@@ -100,27 +81,12 @@
                         <thead>
                             <tr>
                                 <th>No </th>
-                                <th>Sumber </th>
                                 <th>Provinsi</th>
-                                <th>Unor</th>
-                                <th>Nama Kegiatan </th>
                                 <th>Kawasan</th>
-                                <th>Mulai - Selesai</th>
+                                <th>Tematik</th>
                                 <th>Aksi </th>
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                                <th>No </th>
-                                <th>Kode </th>
-                                <th>Provinsi</th>
-                                <th>Unor</th>
-                                <th>Nama Kegiatan </th>
-                                <th>Kawasan</th>
-                                <th>Mulai - Selesai</th>
-                                <th>Aksi </th>
-                            </tr>
-                        </tfoot>
                         <tbody>
 
                         </tbody>
@@ -206,7 +172,7 @@
             var filterData = $(this).serialize();
             // Kirim request AJAX
             $.ajax({
-                url: '<?= base_url('/memorandum/get_daftar_memo') ?>', // URL untuk memproses filter
+                url: '<?= base_url('/rpiw/get_daftar_kawasan') ?>', // URL untuk memproses filter
                 type: 'POST',
                 data: filterData,
                 success: function(response) {
@@ -317,11 +283,11 @@
         // ====== VIEW ======
         $(document).on('click', '.btn-view', function() {
             let id = $(this).data('id');
-            $('#memoModalLabel').text('Detail Memorandum');
+            $('#memoModalLabel').text('Detail Kawasan');
             $('#memoModal .modal-body').html('<div class="text-center p-3"><div class="spinner-border"></div></div>');
             $('#memoModal').modal('show');
 
-            $.get("<?= base_url('memorandum/view') ?>/" + id, function(data) {
+            $.get("<?= base_url('rpiw/view_kawasan') ?>/" + id, function(data) {
                 $('#memoModal .modal-body').html(data);
             });
         });

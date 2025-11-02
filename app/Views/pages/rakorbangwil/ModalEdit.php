@@ -471,19 +471,25 @@
 
         // 🔹 Format saat user mengetik
         $(document).on('input', '.anggaran-format', function() {
-            // Ambil posisi kursor
-            let cursorPos = this.selectionStart;
-            let val = $(this).val().replace(/\D/g, '');
+            let input = this;
 
-            if (val) {
-                $(this).val(new Intl.NumberFormat('id-ID').format(val));
+            // Ambil angka saja
+            let clean = input.value.replace(/[^\d]/g, "");
+
+            // Format ribuan
+            if (clean) {
+                input.value = new Intl.NumberFormat('id-ID').format(clean);
             } else {
-                $(this).val('');
+                input.value = "";
             }
 
-            // Kembalikan posisi kursor agar tidak lompat
-            this.setSelectionRange(cursorPos, cursorPos);
+            // Cursor selalu di akhir
+            input.setSelectionRange(input.value.length, input.value.length);
         });
+
+
+
+
 
         // 🔹 Sebelum submit form, ubah jadi angka mentah tanpa titik
         $('#editMemoForm').on('submit', function() {

@@ -7,7 +7,7 @@
                     <tr>
                         <th style="text-align: center;">No</th>
                         <th style="text-align: center;">Unor</th>
-                        <th style="text-align: center;">Nama Kegiatan</th>
+                        <th style="text-align: left;">Pekerjaan</th>
                         <th style="text-align: center;">Kawasan</th>
                         <th style="text-align: center;">Volume</th>
                         <th style="text-align: center;">Anggaran</th>
@@ -21,7 +21,7 @@
                         <tr>
                             <td style="text-align: center;"><?= $no++ ?></td>
                             <td><?= esc($program->unor ?? '-') ?></td>
-                            <td><?= esc($program->pekerjaan ?? '-') ?></td>
+                            <td style="text-align: left;"><?= esc($program->pekerjaan ?? '-') ?></td>
                             <td><?= esc($program->nama_kawasan ?? '-') ?></td>
                             <td style="text-align: right;"><?= esc($program->volume . ' ' . $program->nama_satuan ?? '-') ?></td>
                             <td style="text-align: right;">
