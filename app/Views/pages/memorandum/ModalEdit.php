@@ -237,7 +237,7 @@
                                         <tr>
                                             <td><?= $tahun ?></td>
                                             <td>
-                                                <input type="number" step="0.01" class="form-control form-control-sm"
+                                                <input type="number" step="0.01" min="0" class="form-control form-control-sm"
                                                     name="volume_<?= $index ?>"
                                                     value="<?= esc($memo->{'volume_' . $index} ?? '') ?>">
                                             </td>

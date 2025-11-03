@@ -47,7 +47,7 @@
                             <a class="nav-link active" data-toggle="tab" href="#catatan" role="tab">Catatan Pembahasan</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link non-active" data-toggle="tab" href="#usulan" role="tab">Usulan Program/Kegiatan</a>
+                            <a class="nav-link" data-toggle="tab" href="#usulan" role="tab">Usulan Program/Kegiatan</a>
                         </li>
                     </ul>
 
@@ -115,10 +115,10 @@
                                 <a class="nav-link active" data-toggle="tab" href="#kawasan" role="tab">Kawasan Prioritas PU</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link non-active" data-toggle="tab" href="#infra" role="tab">Dukungan Infrastruktur PU</a>
+                                <a class="nav-link" data-toggle="tab" href="#infra" role="tab">Dukungan Infrastruktur PU</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link non-active" data-toggle="tab" href="#kebutuhan" role="tab">Kebutuhan K/L</a>
+                                <a class="nav-link" data-toggle="tab" href="#kebutuhan" role="tab">Kebutuhan K/L</a>
                             </li>
                         </ul>
 
@@ -752,15 +752,30 @@
             flex: 1;
         }
 
+        /* TAB ACTIVE = Hijau */
         .nav-tabs .nav-link.active {
             background-color: #00b37d !important;
+            /* hijau */
+            color: white !important;
+            font-weight: 600;
+            border: none !important;
+        }
+
+        /* TAB NON ACTIVE = Abu */
+        .nav-tabs .nav-link {
+            background-color: #d7d7d7 !important;
+            /* abu */
+            color: white !important;
+            font-weight: 500;
+            border: none !important;
+        }
+
+        /* Hover effect optional */
+        .nav-tabs .nav-link:hover {
+            background-color: #bbbbbb !important;
             color: white !important;
         }
 
-        .nav-tabs .nav-link.non-active {
-            background-color: #d7d7d7ff !important;
-            color: white !important;
-        }
 
 
 

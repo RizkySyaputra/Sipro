@@ -212,7 +212,7 @@
                     </div>
                     <div class="form-group">
                         <label class="catatan-text"><strong>Volume</strong></label>
-                        <input type="number" step="0.01" min="0" class="form-control form-control-sm"
+                        <input type="number" step="0.01" class="form-control form-control-sm"
                             name="volume"
                             value="<?= esc($progTahunan->volume ?? '') ?>">
                     </div>
@@ -229,17 +229,16 @@
                     <label class="mt-3 catatan-text"><strong>Geotagging</strong></label>
 
                     <div class="input-group">
-                        <p>Fitur Dalam Tahapan Pengembangan</p>
-                        <!-- <textarea id="geotag" name="geotag" class="form-control" rows="2" readonly>
+                        <textarea id="geotag" name="geotag" class="form-control" rows="2" readonly>
 <?= esc($progTahunan->geotag ?? '') ?>
-</textarea> -->
+</textarea>
 
-                        <!-- <button type="button" class="btn btn-success mt-2" id="btnOpenMap">
+                        <button type="button" class="btn btn-success mt-2" id="btnOpenMap">
                             Pilih Lokasi di Peta
                         </button>
--->
+
                     </div>
-                    <!-- <small class="text-muted">Klik tombol untuk memilih lokasi di peta.</small>  -->
+                    <small class="text-muted">Klik tombol untuk memilih lokasi di peta.</small>
 
 
                     <label class="catatan-text"><strong>Sumber Data</strong></label>
@@ -292,8 +291,12 @@
         </button>
     </div>
 </form>
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+<script src="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
 
-<!-- <div class="modal fade" id="modalMap" tabindex="-1">
+<div class="modal fade" id="modalMap" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-success text-white">
@@ -308,95 +311,79 @@
             </div>
         </div>
     </div>
-</div> -->
-
-<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
-<script src="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script> -->
-<!-- Leaflet -->
-<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> -->
-
-<!-- Leaflet Draw -->
-<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
-<script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script> -->
+</div>
 <script>
-    // document.addEventListener("DOMContentLoaded", initMap);
+    document.addEventListener("DOMContentLoaded", initMap);
+</script>
 
-    // $('#modalMap').on('hide.bs.modal', function() {
-    //     // Hapus fokus dari peta atau elemen lain di dalam modal
-    //     if (document.activeElement) {
-    //         document.activeElement.blur();
-    //     }
-    // });
+<script>
+    // === GEOTAGGING MAP (POINT / LINE / POLYGON) ===
+    var map, drawnItems, drawControl;
+    var savedGeo = document.getElementById('geotag').value;
 
-    // // === GEOTAGGING MAP (POINT / LINE / POLYGON) ===
-    // var map, drawnItems, drawControl;
-    // var savedGeo = document.getElementById('geotag').value;
+    function initMap() {
+        map = L.map('mapSelect').setView([-2.5489, 118.0149], 5); // Indonesia center
 
-    // function initMap() {
-    //     map = L.map('mapSelect').setView([-2.5489, 118.0149], 5); // Indonesia center
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 30,
+            attribution: '© OpenStreetMap'
+        }).addTo(peta);
 
-    //     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    //         maxZoom: 19
-    //     }).addTo(map);
+        // Layer tampung gambar
+        drawnItems = new L.FeatureGroup();
+        map.addLayer(drawnItems);
 
-    //     // Layer tampung gambar
-    //     drawnItems = new L.FeatureGroup();
-    //     map.addLayer(drawnItems);
+        // Jika sudah ada geotag tersimpan → gambarkan ulang
+        if (savedGeo) {
+            try {
+                let geo = JSON.parse(savedGeo);
+                let layer = L.geoJSON(geo).addTo(drawnItems);
+                map.fitBounds(layer.getBounds());
+            } catch (e) {
+                console.log("GeoJSON tidak valid");
+            }
+        }
 
-    //     // Jika sudah ada geotag tersimpan → gambarkan ulang
-    //     if (savedGeo) {
-    //         try {
-    //             let geo = JSON.parse(savedGeo);
-    //             let layer = L.geoJSON(geo).addTo(drawnItems);
-    //             map.fitBounds(layer.getBounds());
-    //         } catch (e) {
-    //             console.log("GeoJSON tidak valid");
-    //         }
-    //     }
+        // Toolbar draw control
+        drawControl = new L.Control.Draw({
+            edit: {
+                featureGroup: drawnItems
+            },
+            draw: {
+                polygon: true,
+                polyline: true,
+                rectangle: true,
+                marker: true,
+                circle: false
+            }
+        });
+        map.addControl(drawControl);
 
-    //     // Toolbar draw control
-    //     drawControl = new L.Control.Draw({
-    //         edit: {
-    //             featureGroup: drawnItems
-    //         },
-    //         draw: {
-    //             polygon: true,
-    //             polyline: true,
-    //             rectangle: true,
-    //             marker: true,
-    //             circle: false
-    //         }
-    //     });
-    //     map.addControl(drawControl);
+        // Event saat menggambar baru
+        map.on(L.Draw.Event.CREATED, function(e) {
+            drawnItems.clearLayers(); // hanya simpan 1 objek
+            drawnItems.addLayer(e.layer);
+            saveGeo();
+        });
 
-    //     // Event saat menggambar baru
-    //     map.on(L.Draw.Event.CREATED, function(e) {
-    //         drawnItems.clearLayers(); // hanya simpan 1 objek
-    //         drawnItems.addLayer(e.layer);
-    //         saveGeo();
-    //     });
+        // Event edit/delete
+        map.on(L.Draw.Event.EDITSTOP, saveGeo);
+        map.on(L.Draw.Event.DELETED, saveGeo);
+    }
 
-    //     // Event edit/delete
-    //     map.on(L.Draw.Event.EDITSTOP, saveGeo);
-    //     map.on(L.Draw.Event.DELETED, saveGeo);
-    // }
+    function saveGeo() {
+        let geojson = drawnItems.toGeoJSON();
+        document.getElementById('geotag').value = JSON.stringify(geojson);
+    }
 
-    // function saveGeo() {
-    //     let geojson = drawnItems.toGeoJSON();
-    //     document.getElementById('geotag').value = JSON.stringify(geojson);
-    // }
+    document.getElementById('btnOpenMap').addEventListener('click', () => {
+        $('#modalMap').modal('show');
 
-    // document.getElementById('btnOpenMap').addEventListener('click', () => {
-    //     $('#modalMap').modal('show');
-
-    //     setTimeout(() => {
-    //         if (!map) initMap();
-    //         else map.invalidateSize();
-    //     }, 300);
-    // });
+        setTimeout(() => {
+            if (!map) initMap();
+            else map.invalidateSize();
+        }, 300);
+    });
 
 
     $(document).ready(function() {
