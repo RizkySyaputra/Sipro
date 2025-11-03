@@ -105,6 +105,17 @@ $routes->get('memorandum/getKegiatanByProgram/(:segment)', 'Memorandum::getKegia
 $routes->get('memorandum/getKroByKegiatan/(:segment)', 'Memorandum::getKroByKegiatan/$1');
 $routes->get('memorandum/getRoByKro/(:segment)', 'Memorandum::getRoByKro/$1');
 $routes->get('memorandum/getSatuanByRo/(:any)', 'Memorandum::getSatuanByRo/$1');
+// adding sendi 20251024
+$routes->get('/memorandum/laporan1', 'Memorandum::laporan1', ['filter' => 'permission']);
+$routes->post('/memorandum/filter_laporan1', 'Memorandum::filter_laporan1');
+$routes->get('/memorandum/laporan2', 'Memorandum::laporan2', ['filter' => 'permission']);
+$routes->post('/memorandum/filter_laporan2', 'Memorandum::filter_laporan2');
+$routes->get('/memorandum/laporan3', 'Memorandum::laporan3', ['filter' => 'permission']);
+$routes->post('/memorandum/filter_laporan3', 'Memorandum::filter_laporan3');
+$routes->get('/memorandum/laporan4', 'Memorandum::laporan4', ['filter' => 'permission']);
+$routes->post('/memorandum/filter_laporan4', 'Memorandum::filter_laporan4');
+$routes->get('/memorandum/laporan5', 'Memorandum::laporan5', ['filter' => 'permission']);
+$routes->post('/memorandum/filter_laporan5', 'Memorandum::filter_laporan5');
 
 //routes rakorbangwil
 //proram_tahunan

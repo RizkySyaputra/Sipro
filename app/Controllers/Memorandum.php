@@ -24,6 +24,7 @@ use CodeIgniter\Controller;
 use PhpParser\Node\Expr\Instanceof_;
 use App\Models\Rpiw\DaftarRenaksiModel;
 use App\Models\Rpiw\RenaksiModel;
+use App\Models\Memorandum\ReportMemoModel;
 
 use function PHPUnit\Framework\returnCallback;
 
@@ -50,6 +51,7 @@ class Memorandum extends BaseController
     protected $daftarRenaksiModel;
     protected $renaksiModel;
     protected $stakholderModel;
+    protected $reportMemoModel;
     public function __construct()
 
     {
@@ -73,6 +75,7 @@ class Memorandum extends BaseController
         $this->kabkotMemoModel = new KabkotMemoModel();
         $this->kawasanModel = new KawasanModel();
         $this->kawasanMemoModel = new KawasanMemoModel();
+        $this->reportMemoModel = new ReportMemoModel();
 
         helper('permission');
     }
@@ -751,5 +754,166 @@ class Memorandum extends BaseController
         } else {
             return $this->response->setJSON(null);
         }
+    }
+
+    public function laporan1()
+    {
+        $dataProvinsi = $this->provinsiModel->getProvinsi();
+
+        $data = [
+            'provinsi'             => $dataProvinsi
+        ];
+
+        $this->template->write('title', 'Laporan Kawasan Per Provinsi');
+        $this->template->load('/templates/main', '/pages/memorandum/report_kawasan_provinsi', $data);
+    }
+
+    public function filter_laporan1()
+    {
+
+        $tahun_anggaran = $this->request->getPost('tahun_anggaran');
+
+
+        if (!empty($tahun_anggaran)) {
+            $kawasanPerProvinsi = $this->reportMemoModel->getReportKawasanPerProvinsi($tahun_anggaran);
+
+            $data = [
+                'kawasan_per_provinsi' => $kawasanPerProvinsi,
+            ];
+        } else {
+            $data = [
+                'kawasan_per_provinsi' => []
+            ];
+        }
+        return view('/pages/memorandum/tabel/tabel_report_kawasan_provinsi', $data);
+    }
+
+    public function laporan2()
+    {
+        $dataProvinsi = $this->provinsiModel->getProvinsi();
+
+        $data = [
+            'provinsi'             => $dataProvinsi
+        ];
+
+        $this->template->write('title', 'Laporan Kawasan Per Provinsi Per PN');
+        $this->template->load('/templates/main', '/pages/memorandum/report_kawasan_provinsi_per_pn', $data);
+    }
+
+    public function filter_laporan2()
+    {
+
+        $tahun_anggaran = $this->request->getPost('tahun_anggaran');
+
+
+        if (!empty($tahun_anggaran)) {
+            $kawasanPerProvinsiPerPN = $this->reportMemoModel->getReportKawasanPerProvinsiPerPN($tahun_anggaran);
+
+            $data = [
+                'kawasan_per_provinsi_per_pn' => $kawasanPerProvinsiPerPN,
+            ];
+        } else {
+            $data = [
+                'kawasan_per_provinsi_per_pn' => []
+            ];
+        }
+        return view('/pages/memorandum/tabel/tabel_report_kawasan_provinsi_per_pn', $data);
+    }
+
+    public function laporan3()
+    {
+        $dataProvinsi = $this->provinsiModel->getProvinsi();
+
+        $data = [
+            'provinsi'  => $dataProvinsi
+        ];
+
+        $this->template->write('title', 'Laporan Kawasan Per Provinsi Per Unor');
+        $this->template->load('/templates/main', '/pages/memorandum/report_kawasan_provinsi_per_unor', $data);
+    }
+
+    public function filter_laporan3()
+    {
+
+        $tahun_anggaran = $this->request->getPost('tahun_anggaran');
+
+
+        if (!empty($tahun_anggaran)) {
+            $kawasanPerProvinsiPerUnor = $this->reportMemoModel->getReportKawasanPerProvinsiPerUnor($tahun_anggaran);
+
+            $data = [
+                'kawasan_per_provinsi_per_unor' => $kawasanPerProvinsiPerUnor,
+            ];
+        } else {
+            $data = [
+                'kawasan_per_provinsi_per_unor' => []
+            ];
+        }
+        return view('/pages/memorandum/tabel/tabel_report_kawasan_provinsi_per_unor', $data);
+    }
+    public function laporan4()
+    {
+        $dataProvinsi = $this->provinsiModel->getProvinsi();
+
+        $data = [
+            'provinsi'  => $dataProvinsi
+        ];
+
+        $this->template->write('title', 'Laporan Anggaran Per Provinsi');
+        $this->template->load('/templates/main', '/pages/memorandum/report_anggaran_per_provinsi', $data);
+    }
+
+    public function filter_laporan4()
+    {
+
+        $tahun_anggaran = $this->request->getPost('tahun_anggaran');
+        $unor = $this->request->getPost('unor');
+        $pn = $this->request->getPost('pn');
+
+
+        if (empty($tahun_anggaran) && empty($unor) && empty($pn)) {
+            $data = [
+                'anggaran_per_provinsi' => []
+            ];
+        } else {
+            $anggaranPerProvinsi = $this->reportMemoModel->getReportAnggaranPerProvinsi($tahun_anggaran, $unor, $pn);
+
+            $data = [
+                'anggaran_per_provinsi' => $anggaranPerProvinsi,
+            ];
+        }
+        return view('/pages/memorandum/tabel/tabel_report_anggaran_per_provinsi', $data);
+    }
+
+    public function laporan5()
+    {
+        $dataProvinsi = $this->provinsiModel->getProvinsi();
+
+        $data = [
+            'provinsi'  => $dataProvinsi
+        ];
+
+        $this->template->write('title', 'Laporan Infrastruktur PU terhadap PN');
+        $this->template->load('/templates/main', '/pages/memorandum/report_infrastruktur_pu_per_pn', $data);
+    }
+
+    public function filter_laporan5()
+    {
+
+        $tahun_anggaran = $this->request->getPost('tahun_anggaran');
+
+
+        if (!empty($tahun_anggaran)) {
+            $infrastrukturPUPerPN = $this->reportMemoModel->getReportInfrastrukturPUPerPN($tahun_anggaran);
+
+            $data = [
+                'infrastruktur_pu_per_pn' => $infrastrukturPUPerPN,
+            ];
+        } else {
+            $data = [
+                'infrastruktur_pu_per_pn' => []
+            ];
+        }
+        return view('/pages/memorandum/tabel/tabel_report_infrastruktur_pu_per_pn', $data);
     }
 }

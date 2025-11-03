@@ -1,0 +1,192 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-primary card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">source</i>
+                </div>
+                <h4 class="card-title">Laporan Memorandum Kawasan Per Provinsi Per PN</h4>
+
+            </div>
+            <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <div class="container mt-4">
+                <div class="card shadow-md">
+                    <div class="card-body">
+                        <form method="post" id="filter-form">
+                            <!-- <div class="form-row align-items-center"> -->
+
+                            <!-- Dropdown Provinsi -->
+
+                            <div class="row mb-3">
+                                <div class="col-md-2">
+                                    <label for="tahun_anggaran"><strong>Tahun Anggaran</strong></label>
+                                </div>
+                                <div class="col-md-10">
+                                    <select class="form-control" name="tahun_anggaran" id="filter-tahun_anggaran">
+                                        <option value="">Semua Tahun</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                        <option value="2028">2028</option>
+                                        <option value="2029">2029</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2">
+
+                                </div>
+                                <div class="col-md-10">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i id="button-text" class="fa fa-search"></i>
+                                        <span id="loading-spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
+                                    </button>
+                                    <button type="button" id="reset-filters" class="btn btn-info">
+                                        <i class="fa fa-undo"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- </div> -->
+                        </form>
+                    </div>
+                </div>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="material-datatables">
+                            <table id="datatables" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+                                <thead>
+                                    <?php
+                                    $pnList = [2, 3, 4, 5, 6, 8];
+                                    $jenis = ['Kawasan', 'Tematik Kawasan', 'Pekerjaan'];
+                                    // Baris 1: Jenis, colspan = jumlah PN
+                                    echo '<tr>';
+                                    echo '<th rowspan="2">No</th>';
+                                    echo '<th rowspan="2">Provinsi</th>'; // kolom tetap
+                                    foreach ($jenis as $j) {
+                                        echo '<th colspan="' . count($pnList) . '">' . $j . '</th>';
+                                    }
+                                    echo '</tr>';
+
+                                    // Baris 2: PN
+                                    echo '<tr>';
+                                    foreach ($jenis as $j) {
+                                        foreach ($pnList as $pn) {
+                                            echo "<th>PN {$pn}</th>";
+                                        }
+                                    }
+                                    echo '</tr>';
+
+                                    ?>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end content-->
+        </div>
+        <!--  end card  -->
+    </div>
+    <!-- end col-md-12 -->
+</div>
+<!-- end row -->
+
+<script>
+    $(document).ready(function() {
+
+        $('#filter-tahun_anggaran').select2({
+            placeholder: "Pilih Tahun Anggaran",
+            allowClear: true
+        });
+
+        $('#filter-tahun_anggaran').val(localStorage.getItem('selectedTahunAnggaran'));
+
+        // On form submit, save the selected values
+        $('#filter-form').on('submit', function() {
+            event.preventDefault();
+
+            $('#loading-spinner').show();
+            $('#button-text').hide();
+            // Ambil data filter dari form
+            var filterData = $(this).serialize();
+            // Kirim request AJAX
+            $.ajax({
+                url: '<?= base_url("memorandum/filter_laporan2") ?>', // URL untuk memproses filter
+                type: 'POST',
+                data: filterData,
+                success: function(response) {
+                    console.log(response);
+                    // Hapus inisialisasi DataTables yang lama
+                    if ($.fn.DataTable.isDataTable('#datatables')) {
+                        $('#datatables').DataTable().destroy();
+                    }
+                    // Update tabel dengan data yang diterima
+                    $('#datatables').html(response);
+
+
+                    //Inisialisasi DataTables kembali
+                    $('#datatables').DataTable({
+                        // "scrollX": true,
+                        "pageLength": 50,
+                        "pagingType": "full_numbers",
+                        "lengthMenu": [
+                            [10, 25, 50, -1],
+                            [10, 25, 50, "All"]
+                        ],
+                        responsive: true,
+                        language: {
+                            search: "Search:",
+                            // search: "_INPUT_",
+                            // searchPlaceholder: "Search records",
+                            zeroRecords: "Data tidak ditemukan"
+                        }
+                    });
+                },
+                error: function() {
+                    alert('Error loading data');
+                },
+                complete: function() {
+                    // Sembunyikan spinner dan kembalikan teks tombol
+                    $('#loading-spinner').hide();
+                    $('#button-text').show();
+                }
+            });
+        });
+
+        $('#reset-filters').on('click', function() {
+            // Reset dropdowns to their default values
+            $('#filter-tahun_anggaran').val('').trigger('change');
+
+            // Optionally clear the table data
+            //$('#datatables tbody').empty();
+
+            // Optionally, you could also clear the local storage if needed
+            localStorage.removeItem('selectedTahunAnggaran');
+
+            var table = $('#datatables').DataTable();
+            table.clear().draw();
+        });
+
+
+        $(function() {
+            $('#datatables').DataTable({
+                // "scrollX": true,
+                "pageLength": 10,
+                "ordering": true,
+                "lengthChange": true,
+                "language": {
+                    "search": "_INPUT_",
+                    "searchPlaceholder": "Search records",
+                    "url": "//cdn.datatables.net/plug-ins/1.13.6/i18n/id.json"
+                }
+            });
+        });
+    });
+</script>

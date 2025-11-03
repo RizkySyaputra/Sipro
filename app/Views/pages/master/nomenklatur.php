@@ -330,7 +330,7 @@
             //$('#datatables tbody').empty();
 
             // Optionally, you could also clear the local storage if needed
-            localStorage.removeItem('selectedProgram=');
+            localStorage.removeItem('selectedProgram');
             localStorage.removeItem('selectedKegiatan');
             localStorage.removeItem('selectedKro');
             localStorage.removeItem('selectedRo');
