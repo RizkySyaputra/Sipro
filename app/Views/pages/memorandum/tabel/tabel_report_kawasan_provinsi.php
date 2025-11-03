@@ -22,9 +22,9 @@ foreach ($kawasan_per_provinsi as $kp) : ?>
     $table .= "<tr>
         <td>$a</td>
         <td>$kp->provinsi</td>
-        <td>$kp->jumlah_kawasan</td>
-        <td>$kp->jumlah_tematik</td>
-        <td>$kp->jumlah_pekerjaan</td>
+        <td class='text-right'>$kp->jumlah_kawasan</td>
+        <td class='text-right'>$kp->jumlah_tematik</td>
+        <td class='text-right'>$kp->jumlah_pekerjaan</td>
     </tr>";
     $a++;
     ?>
