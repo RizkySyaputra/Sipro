@@ -36,6 +36,14 @@
                         <label class="catatan-text"><strong>ID Memorandum Program</strong></label>
                         <p><?= esc($memo->id_memorandum ?? '-') ?></p>
 
+                        <label class="catatan-text"><strong>PN</strong></label>
+                        <p><?= esc($memo->nama_pn ?? ' - ') ?></p>
+                        <label class="catatan-text"><strong>PP</strong></label>
+                        <p><?= esc($memo->nama_pp ?? ' - ') ?></p>
+                        <label class="catatan-text"><strong>KP</strong></label>
+                        <p><?= esc($memo->nama_kp ?? ' - ') ?></p>
+                        <label class="catatan-text"><strong>ProP</strong></label>
+                        <p><?= esc($memo->nama_prop ?? ' - ') ?></p>
                         <label class="catatan-text"><strong>Program</strong></label>
                         <p><?= esc($memo->id_program . '-' . $memo->nm_program ?? ' - ') ?></p>
 
@@ -57,9 +65,13 @@
                         <label class="catatan-text"><strong>Provinsi</strong></label>
                         <p><?= esc($memo->provinsi ?? '-') ?></p>
 
+                        <label class="catatan-text"><strong>Tematik</strong></label>
                         <label class="catatan-text"><strong>Kawasan</strong></label>
                         <p><?= esc($memo->kawasan ?? '-') ?></p>
-                        <label class="catatan-text"><strong>Kabupaten / Kota</strong></label>
+
+                        <p><?= esc($memo->tematik ?? '-') ?></p>
+                        <label class="catatan-text"><strong>Kab/kot</strong></label>
+
                         <p><?= esc($memo->kabkot ?? '-') ?></p>
 
                         <!-- <label class="catatan-text"><strong>Kab/Kot</strong></label>

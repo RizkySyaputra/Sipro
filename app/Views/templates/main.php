@@ -268,6 +268,86 @@
         .footer {
             background-color: #e6e6e6;
         }
+
+        /* Gaya khusus dropdown tahun */
+        .tahun-container {
+            border-radius: 12px;
+            padding: 10px 12px;
+            text-align: center;
+            width: 100%;
+            margin-top: 10px;
+            transition: all 0.2s ease-in-out;
+        }
+
+
+        .tahun-container label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #495057;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .tahun-container select {
+            font-size: 14px;
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            padding: 5px 8px;
+            width: 100%;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .tahun-container select:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+        }
+
+        .tahun-container option {
+            text-align: center;
+        }
+
+        /* Spinner Overlay */
+        #loading-overlay {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            background: rgba(255, 255, 255, 0.85);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+            padding-top: 200px;
+        }
+
+        .spinner {
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #007bff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #loading-overlay p {
+            color: #333;
+            font-weight: 500;
+            margin-top: 10px;
+        }
     </style>
 
 
@@ -286,6 +366,7 @@
                 <img src="<?= base_url('assets/img/logo-sipro-horizontal.png') ?>" alt="Logo Sipro" width="140">
                 <!-- <a href="#" style="text-align: center;" class="simple-text logo-normal">SIPRO</a> -->
             </div>
+            <!-- Dropdown Pilih Tahun -->
 
             <div class="sidebar-wrapper">
                 <div class="user dropdown">
@@ -309,6 +390,28 @@
                             <i class="fas fa-sign-out-alt mr-2"></i> Logout
                         </a>
                     </div>
+                </div>
+                <!-- Dropdown Pilih Tahun -->
+                <div class="tahun-container">
+                    <form id="form-tahun">
+                        <label for="tahun-pelaksana">Tahun Pelaksanaan</label>
+                        <select id="tahun-pelaksana" name="tahun_pelaksana">
+                            <option value="">-- Pilih Tahun --</option>
+                            <?php
+                            $tahunAktif = session('tahun_pelaksana');
+                            for ($i = 2025; $i <= 2029; $i++):
+                            ?>
+                                <option value="<?= $i ?>" <?= ($tahunAktif == $i) ? 'selected' : '' ?>>
+                                    <?= $i ?>
+                                </option>
+                            <?php endfor; ?>
+                        </select>
+                    </form>
+                </div>
+
+                <div id="loading-overlay">
+                    <div class="spinner"></div>
+                    <p>Memproses tahun pelaksanaan...</p>
                 </div>
                 <!-- Tombol Logout -->
                 <!-- <div>
@@ -472,6 +575,42 @@
     <?= isset($_script) ? $_script : null ?>
     <!-- Section khusus script -->
     <?= $this->renderSection('_script') ?>
+    <!-- Dropdown Tahun -->
+
+    <script>
+        $('#tahun-pelaksana').select2();
+        $(document).ready(function() {
+            $('#tahun-pelaksana').on('change', function() {
+                let tahun = $(this).val();
+                if (tahun) {
+                    // Tampilkan spinner
+                    $('#loading-overlay').fadeIn(200);
+
+                    $.ajax({
+                        url: "<?= base_url('set_tahun') ?>", // ganti sesuai controller kamu
+                        type: "POST",
+                        data: {
+                            tahun_pelaksana: tahun,
+                            csrf_test_name: '<?= csrf_hash() ?>'
+                        },
+                        success: function(response) {
+                            // Tutup spinner dan reload halaman
+                            setTimeout(() => {
+                                $('#loading-overlay').fadeOut(300, function() {
+                                    location.reload();
+                                });
+                            }, 700);
+                        },
+                        error: function() {
+                            $('#loading-overlay').fadeOut(300);
+                            alert("Gagal menyimpan tahun pelaksanaan!");
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>

@@ -5,6 +5,8 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+$routes->post('set_tahun', 'SessionController::setTahun');
+
 $routes->get('/test', 'Master::test');
 // $routes->get('/', 'Master::index');
 $routes->get('/tabel', 'Master::tabel', ['filter' => 'permission']);
@@ -110,7 +112,17 @@ $routes->post('/memorandum/filter_laporan4', 'Memorandum::filter_laporan4');
 $routes->get('/memorandum/laporan5', 'Memorandum::laporan5', ['filter' => 'permission']);
 $routes->post('/memorandum/filter_laporan5', 'Memorandum::filter_laporan5');
 
-
+//routes rakorbangwil
+//proram_tahunan
+$routes->get('/rakorbangwil/program_tahunan', 'Rakorbangwil::daftar_program_tahunan');
+$routes->post('/rakorbangwil/get_daftar_program_tahunan', 'Rakorbangwil::get_daftar_program_tahunan');
+$routes->get('rakorbangwil/view/(:segment)', 'Rakorbangwil::view/$1');
+$routes->get('rakorbangwil/edit/(:segment)', 'Rakorbangwil::edit/$1');
+$routes->post('rakorbangwil/update/(:segment)', 'Rakorbangwil::update/$1');
+$routes->delete('/rakorbangwil/delete/(:segment)', 'Rakorbangwil::delete/$1');
+//pra_rakorbangwil
+$routes->get('/rakorbangwil/desk_pra_rakorbangwil', 'Rakorbangwil::daftar_pn');
+$routes->get('/rakorbangwil/view_pn/(:segment)', 'Rakorbangwil::view_pn/$1');
 
 //routes desk
 $routes->get('/desk_kawasan', 'DeskController::kawasan', ['filter' => 'permission']);
