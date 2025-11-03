@@ -23,7 +23,9 @@ use App\Models\Master\KroModel;
 use App\Models\Master\RoModel;
 use App\Models\Master\PnModel;
 use App\Models\Master\PraRakorModel;
+use App\Models\Master\ProPraRakorModel;
 use App\Models\Master\RekapKawasanModel;
+use App\Models\Master\RekapProgramPraRakModel;
 use App\Models\Rakorbangwil\DaftarProgTahunanModel;
 use App\Models\Rpiw\DaftarRenaksiModel;
 use App\Models\Rpiw\RenaksiModel;
@@ -40,6 +42,7 @@ class Rakorbangwil extends BaseController
     protected $kabkotModel;
     protected $pnModel;
     protected $praRakorModel;
+    protected $proPraRakorModel;
     protected $kawasanModel;
     protected $kabkotMemoModel;
     protected $kawasanMemoModel;
@@ -58,6 +61,7 @@ class Rakorbangwil extends BaseController
     protected $daftarRenaksiModel;
     protected $renaksiModel;
     protected $stakholderModel;
+    protected $rekapProgRakorbangwilModel;
     public function __construct()
 
     {
@@ -71,6 +75,7 @@ class Rakorbangwil extends BaseController
         $this->provinsiModel = new ProvinsiModel();
         $this->unorModel = new UnorModel();
         $this->rekapKawasanModel = new RekapKawasanModel();
+        $this->rekapProgRakorbangwilModel = new RekapProgramPraRakModel();
         $this->pnModel = new PnModel();
         $this->pendanaanModel = new PendanaanModel();
         $this->kawasanRpiwModel = new KawasanRpiwModel();
@@ -86,6 +91,7 @@ class Rakorbangwil extends BaseController
         $this->kawasanMemoModel = new KawasanMemoModel();
         $this->kawasanProgramTahunanModel = new KawasanProgTahunanModel();
         $this->praRakorModel = new PraRakorModel();
+        $this->proPraRakorModel = new ProPraRakorModel();
 
 
         helper('permission');
@@ -299,14 +305,104 @@ class Rakorbangwil extends BaseController
     {
 
         $pn = $this->pnModel->find($id);
+        $stackholder = $this->stakholderModel->orderBy('id_kategori')->orderBy('id_stakeholder')->findAll();
+        $namaList = array_column($stackholder, 'short_stakeholder');
         $program = $this->praRakorModel->where('id_pn', $id)->findAll();
         $rekap_kawasan = $this->rekapKawasanModel->where('id_pn', $id)->findAll();
+        $rekap_program = $this->rekapProgRakorbangwilModel->where('id_pn', $id)->findAll();
         $catatan_pn = $this->praRakorModel->getCatatan($id);
         $this->template->write('title', 'Detail Prioritas Nasional');
         $this->template->load('/templates/main', '/pages/rakorbangwil/view_pn', [
             'kawasanData' => $rekap_kawasan,
+            'programData' => $rekap_program,
             'pn' => $pn,
-            'catatan_pn' => $catatan_pn
+            'catatan_pn' => $catatan_pn,
+            'namaList' => $namaList
         ]);
+    }
+    public function get_list_kawasan()
+    {
+        // Ambil parameter dari AJAX
+        $id_pn       = $this->request->getPost('id_pn');
+        $id_provinsi = $this->request->getPost('id_provinsi');
+        $provinsi = $this->request->getPost('provinsi');
+        $id_tematik  = $this->request->getPost('id_tematik');
+
+        // Validasi sederhana
+        if (empty($id_provinsi) || empty($id_tematik)) {
+            return $this->response->setStatusCode(400)->setBody('Parameter tidak lengkap');
+        }
+
+        // Ambil data kawasan dari model
+        $list_kawasan = $this->praRakorModel->getKawasanList($id_provinsi, $id_tematik, $id_pn);
+
+        // Jika tidak ada data
+        if (!$list_kawasan || count($list_kawasan) === 0) {
+            return $this->response->setStatusCode(404)->setBody('Tidak ada data kawasan ditemukan');
+        }
+
+        // Return tampilan modal daftar kawasan
+        return view('/pages/rakorbangwil/ModalListKawasan', [
+            'list_kawasan' => $list_kawasan,
+            'id_pn' => $id_pn,
+            'id_tematik' => $id_tematik,
+            'id_provinsi' => $id_provinsi,
+            'provinsi' => $provinsi
+        ]);
+    }
+    public function get_list_program()
+    {
+        // Ambil parameter dari AJAX
+        $id_pn       = $this->request->getPost('id_pn');
+        $id_provinsi = $this->request->getPost('id_provinsi');
+        $provinsi = $this->request->getPost('provinsi');
+        $id_tematik  = $this->request->getPost('id_tematik');
+
+        // Validasi sederhana
+        if (empty($id_provinsi) || empty($id_tematik)) {
+            return $this->response->setStatusCode(400)->setBody('Parameter tidak lengkap');
+        }
+
+        // Ambil data program dari model
+        $list_program = $this->praRakorModel->getProgramList($id_provinsi, $id_tematik, $id_pn);
+
+        // Jika tidak ada data
+        if (!$list_program || count($list_program) === 0) {
+            return $this->response->setStatusCode(404)->setBody('Tidak ada data program ditemukan');
+        }
+
+        // Return tampilan modal daftar program
+        return view('/pages/rakorbangwil/ModalListProgram', [
+            'list_program' => $list_program,
+            'id_pn' => $id_pn,
+            'id_tematik' => $id_tematik,
+            'id_provinsi' => $id_provinsi,
+            'provinsi' => $provinsi
+        ]);
+    }
+    public function update_usulan()
+    {
+        $id_pn = $this->request->getPost('id_pn');
+        $usulan = $this->request->getPost('usulan_pekerjaan');
+
+        $this->proPraRakorModel
+            ->where('id_pn', $id_pn)
+            ->set('usulan_pekerjaan', $usulan)
+            ->update();
+
+        return $this->response->setStatusCode(200);
+    }
+
+    public function update_catatan()
+    {
+        $id_pn = $this->request->getPost('id_pn');
+        $catatan = $this->request->getPost('catatan');
+
+        $this->proPraRakorModel
+            ->where('id_pn', $id_pn)
+            ->set('catatan_pra_rakorbangwil', $catatan)
+            ->update();
+
+        return $this->response->setStatusCode(200);
     }
 }

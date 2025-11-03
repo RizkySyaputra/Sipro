@@ -5,6 +5,7 @@ namespace App\Controllers;
 
 use App\Models\Rpiw\ProgramRpiwModel;
 use App\Models\Rpiw\KawasanRpiwModel;
+use App\Models\Master\TematikModel;
 use App\Models\Rpiw\RekapProgramModel;
 use App\Models\Master\ProvinsiModel;
 use App\Models\Master\UnorModel;
@@ -19,6 +20,7 @@ class Rpiw extends BaseController
 {
     protected $programRpiwModel;
     protected $kawasanRpiwModel;
+    protected $tematikModel;
     protected $provinsiModel;
     protected $unorModel;
     protected $pendanaanModel;
@@ -29,6 +31,7 @@ class Rpiw extends BaseController
     {
         $this->programRpiwModel = new ProgramRpiwModel();
         $this->kawasanRpiwModel = new KawasanrpiwModel();
+        $this->tematikModel = new TematikModel();
         $this->provinsiModel = new ProvinsiModel();
         $this->unorModel = new UnorModel();
         $this->pendanaanModel = new PendanaanModel();
@@ -190,6 +193,33 @@ class Rpiw extends BaseController
     }
 
     //2025
+    public function daftar_kawasan()
+    {
+
+        $dataTematik = $this->tematikModel->findAll();
+        $dataProvinsi = $this->provinsiModel->getProvinsi();
+        $data = [
+            'tematik' => $dataTematik,
+            'provinsi' => $dataProvinsi
+        ];
+        $this->template->write('title', 'Daftar Kawasan');
+        $this->template->load('/templates/main', '/pages/rpiw/daftar_kawasan', $data);
+    }
+
+    public function get_daftar_kawasan()
+    {
+        $id_role = user()->id_role;
+        $provinsi_id = $this->request->getPost('provinsi');
+        $tematik = $this->request->getPost('tematik');
+        $daftarKawasan = $this->kawasanRpiwModel->getKawasanRpiw($provinsi_id, $tematik);
+        $data = [
+            'daftar_kawasan' => $daftarKawasan,
+            'can_view' => has_permission_menu($id_role, '/rpiw/daftar_kawasan', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/rpiw/daftar_kawasan', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/rpiw/daftar_kawasan', 'can_delete')
+        ];
+        return view('/pages/rpiw/tabel/tabel_daftar_kawasan', $data);
+    }
     public function daftar_renaksi()
     {
 
@@ -230,7 +260,14 @@ class Rpiw extends BaseController
         }
         return view('/pages/rpiw/ModalView', ['data' => $data]);
     }
-
+    public function view_kawasan($id)
+    {
+        $data = $this->kawasanRpiwModel->getKawasanByIdKawasan($id);
+        if (!$data) {
+            return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
+        }
+        return view('/pages/rpiw/ModalViewKawasan', ['data' => $data]);
+    }
     public function edit($id)
     {
         $data = $this->daftarRenaksiModel->find($id);

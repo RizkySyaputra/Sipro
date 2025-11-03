@@ -46,7 +46,12 @@ $routes->get('/rpiw', 'Rpiw::index', ['filter' => 'permission']);
 $routes->get('/detail/(:segment)', 'Rpiw::detail/$1', ['filter' => 'permission']);
 $routes->get('/kawasan', 'Rpiw::kawasan', ['filter' => 'permission']);
 $routes->get('/detail_kawasan/(:segment)', 'Rpiw::detail_kawasan/$1', ['filter' => 'permission']);
+$routes->get('rpiw/daftar_kawasan', 'Rpiw::daftar_kawasan');
+$routes->post('rpiw/get_daftar_kawasan', 'Rpiw::get_daftar_kawasan');
+$routes->get('rpiw/get_daftar_kawasan', 'Rpiw::get_daftar_kawasan');
+$routes->get('rpiw/detail_kawasan', 'Rpiw::detail_kawasan');
 $routes->get('rpiw/daftar_renaksi', 'Rpiw::daftar_renaksi');
+$routes->get('rpiw/view_kawasan/(:segment)', 'Rpiw::view_kawasan/$1');
 $routes->post('/rpiw/get_daftar_renaksi', 'Rpiw::get_daftar_renaksi');
 $routes->get('/rpiw/get_daftar_renaksi', 'Rpiw::get_daftar_renaksi');
 $routes->get('/rpiw/daftar', 'Rpiw::get_daftar_renaksi');
@@ -122,6 +127,13 @@ $routes->post('rakorbangwil/update/(:segment)', 'Rakorbangwil::update/$1');
 $routes->delete('/rakorbangwil/delete/(:segment)', 'Rakorbangwil::delete/$1');
 //pra_rakorbangwil
 $routes->get('/rakorbangwil/desk_pra_rakorbangwil', 'Rakorbangwil::daftar_pn');
+$routes->get('/rakorbangwil/list_kawasan/(:segment)', 'Rakorbangwil::view_pn/$1');
+$routes->post('/rakorbangwil/get_list_kawasan/', 'Rakorbangwil::get_list_kawasan');
+$routes->post('/rakorbangwil/get_list_program/', 'Rakorbangwil::get_list_program');
+$routes->post('/rakorbangwil/update_usulan/', 'Rakorbangwil::update_usulan');
+$routes->post('/rakorbangwil/update_catatan/', 'Rakorbangwil::update_catatan');
+
+$routes->get('/rakorbangwil/view_pn/(:segment)', 'Rakorbangwil::view_pn/$1');
 $routes->get('/rakorbangwil/view_pn/(:segment)', 'Rakorbangwil::view_pn/$1');
 
 //routes desk

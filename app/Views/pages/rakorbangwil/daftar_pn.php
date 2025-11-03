@@ -27,7 +27,7 @@
                     <i class="material-icons">source</i>
                 </div>
                 <!-- <h4 class="card-title">Program Jangka Menengah</h4> -->
-                <h4 class="card-title">Data Pra Rakorbangwil</h4>
+                <h4 class="card-title">Pembahasan Pra-Rakorbangwil</h4>
             </div>
             <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
@@ -71,17 +71,17 @@
                                                     </button>
                                                 <?php endif; ?>
 
-                                                <?php if ($can_edit): ?>
+                                                <!-- <?php if ($can_edit): ?>
                                                     <button class="btn btn-warning btn-sm btn-edit" data-id="<?= $pn['id_pn'] ?>" title="Edit">
                                                         <i class="fas fa-edit"></i>
                                                     </button>
-                                                <?php endif; ?>
+                                                <?php endif; ?> -->
 
-                                                <?php if ($can_delete): ?>
+                                                <!-- <?php if ($can_delete): ?>
                                                     <button type="button" class="btn btn-danger btn-sm btn-delete" data-id="<?= $pn['id_pn'] ?>" title="Hapus">
                                                         <i class="fas fa-trash"></i>
                                                     </button>
-                                                <?php endif; ?>
+                                                <?php endif; ?> -->
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

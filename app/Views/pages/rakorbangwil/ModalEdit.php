@@ -212,7 +212,7 @@
                     </div>
                     <div class="form-group">
                         <label class="catatan-text"><strong>Volume</strong></label>
-                        <input type="number" step="0.01" class="form-control form-control-sm"
+                        <input type="number" step="0.01" min="0" class="form-control form-control-sm"
                             name="volume"
                             value="<?= esc($progTahunan->volume ?? '') ?>">
                     </div>
@@ -227,8 +227,19 @@
 
 
                     <label class="mt-3 catatan-text"><strong>Geotagging</strong></label>
-                    <p><?= esc($progTahunan->geotag ?? '-') ?></p>
-                    <input type="text" class="form-control" name="geotag" value="<?= esc($progTahunan->geotag ?? '-') ?>" hidden>
+
+                    <div class="input-group">
+                        <p>Fitur Dalam Tahapan Pengembangan</p>
+                        <!-- <textarea id="geotag" name="geotag" class="form-control" rows="2" readonly>
+<?= esc($progTahunan->geotag ?? '') ?>
+</textarea> -->
+
+                        <!-- <button type="button" class="btn btn-success mt-2" id="btnOpenMap">
+                            Pilih Lokasi di Peta
+                        </button>
+-->
+                    </div>
+                    <!-- <small class="text-muted">Klik tombol untuk memilih lokasi di peta.</small>  -->
 
 
                     <label class="catatan-text"><strong>Sumber Data</strong></label>
@@ -282,7 +293,112 @@
     </div>
 </form>
 
+<!-- <div class="modal fade" id="modalMap" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title">Pilih Lokasi Geotag</h5>
+                <button type="button" class="btn-close text-white" data-bs-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body" style="height: 450px;">
+                <div id="mapSelect" style="height: 100%; width: 100%; border-radius:8px;"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+<script src="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script> -->
+<!-- Leaflet -->
+<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> -->
+
+<!-- Leaflet Draw -->
+<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+<script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script> -->
 <script>
+    // document.addEventListener("DOMContentLoaded", initMap);
+
+    // $('#modalMap').on('hide.bs.modal', function() {
+    //     // Hapus fokus dari peta atau elemen lain di dalam modal
+    //     if (document.activeElement) {
+    //         document.activeElement.blur();
+    //     }
+    // });
+
+    // // === GEOTAGGING MAP (POINT / LINE / POLYGON) ===
+    // var map, drawnItems, drawControl;
+    // var savedGeo = document.getElementById('geotag').value;
+
+    // function initMap() {
+    //     map = L.map('mapSelect').setView([-2.5489, 118.0149], 5); // Indonesia center
+
+    //     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //         maxZoom: 19
+    //     }).addTo(map);
+
+    //     // Layer tampung gambar
+    //     drawnItems = new L.FeatureGroup();
+    //     map.addLayer(drawnItems);
+
+    //     // Jika sudah ada geotag tersimpan → gambarkan ulang
+    //     if (savedGeo) {
+    //         try {
+    //             let geo = JSON.parse(savedGeo);
+    //             let layer = L.geoJSON(geo).addTo(drawnItems);
+    //             map.fitBounds(layer.getBounds());
+    //         } catch (e) {
+    //             console.log("GeoJSON tidak valid");
+    //         }
+    //     }
+
+    //     // Toolbar draw control
+    //     drawControl = new L.Control.Draw({
+    //         edit: {
+    //             featureGroup: drawnItems
+    //         },
+    //         draw: {
+    //             polygon: true,
+    //             polyline: true,
+    //             rectangle: true,
+    //             marker: true,
+    //             circle: false
+    //         }
+    //     });
+    //     map.addControl(drawControl);
+
+    //     // Event saat menggambar baru
+    //     map.on(L.Draw.Event.CREATED, function(e) {
+    //         drawnItems.clearLayers(); // hanya simpan 1 objek
+    //         drawnItems.addLayer(e.layer);
+    //         saveGeo();
+    //     });
+
+    //     // Event edit/delete
+    //     map.on(L.Draw.Event.EDITSTOP, saveGeo);
+    //     map.on(L.Draw.Event.DELETED, saveGeo);
+    // }
+
+    // function saveGeo() {
+    //     let geojson = drawnItems.toGeoJSON();
+    //     document.getElementById('geotag').value = JSON.stringify(geojson);
+    // }
+
+    // document.getElementById('btnOpenMap').addEventListener('click', () => {
+    //     $('#modalMap').modal('show');
+
+    //     setTimeout(() => {
+    //         if (!map) initMap();
+    //         else map.invalidateSize();
+    //     }, 300);
+    // });
+
+
     $(document).ready(function() {
         // Saat pilih PROGRAM → ambil KEGIATAN
         $('#select-program').on('change', function() {
@@ -471,19 +587,25 @@
 
         // 🔹 Format saat user mengetik
         $(document).on('input', '.anggaran-format', function() {
-            // Ambil posisi kursor
-            let cursorPos = this.selectionStart;
-            let val = $(this).val().replace(/\D/g, '');
+            let input = this;
 
-            if (val) {
-                $(this).val(new Intl.NumberFormat('id-ID').format(val));
+            // Ambil angka saja
+            let clean = input.value.replace(/[^\d]/g, "");
+
+            // Format ribuan
+            if (clean) {
+                input.value = new Intl.NumberFormat('id-ID').format(clean);
             } else {
-                $(this).val('');
+                input.value = "";
             }
 
-            // Kembalikan posisi kursor agar tidak lompat
-            this.setSelectionRange(cursorPos, cursorPos);
+            // Cursor selalu di akhir
+            input.setSelectionRange(input.value.length, input.value.length);
         });
+
+
+
+
 
         // 🔹 Sebelum submit form, ubah jadi angka mentah tanpa titik
         $('#editMemoForm').on('submit', function() {

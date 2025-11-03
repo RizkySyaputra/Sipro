@@ -26,14 +26,14 @@
                     </div>
 
                     <div class="mb-2">
+                        <label class="catatan-text"><strong>Unit Organisasi</strong></label>
+                        <p><?= esc($data->unor ?? '-') ?></p>
+                    </div>
+
+                    <div class="mb-2">
                         <label class="catatan-text"><strong>Provinsi</strong></label>
                         <p><?= esc($data->provinsi ?? '-') ?></p>
                     </div>
-                    <!-- 
-                    <div class="mb-2">
-                        <label class="catatan-text"><strong>Unit Organisasi</strong></label>
-                        <p><?= esc($data->unor ?? '-') ?></p>
-                    </div> -->
 
                     <div class="mb-2">
                         <label class="catatan-text"><strong>Kawasan</strong></label>
@@ -51,6 +51,19 @@
                     </div>
 
                     <div class="mb-2">
+                        <label class="catatan-text"><strong>Periode</strong></label>
+                        <p><?= esc($data->periode ?? '-') ?></p>
+                    </div>
+                    <div class="mb-2">
+                        <label class="catatan-text"><strong>Tahun Mulai</strong></label>
+                        <p><?= esc($data->tahun_mulai ?? '-') ?></p>
+                    </div>
+
+                    <div class="mb-2">
+                        <label class="catatan-text"><strong>Tahun Selesai</strong></label>
+                        <p><?= esc($data->tahun_selesai ?? '-') ?></p>
+                    </div>
+                    <div class="mb-2">
                         <label class="catatan-text"><strong>Volume</strong></label>
                         <p><?= esc($data->volume ?? '-') ?> <?= esc($data->nama_satuan ?? '-') ?></p>
                     </div>
@@ -65,20 +78,7 @@
                         <p><?= esc($data->sumber_pendanaan ?? '-') ?></p>
                     </div>
 
-                    <div class="mb-2">
-                        <label class="catatan-text"><strong>Tahun Mulai</strong></label>
-                        <p><?= esc($data->tahun_mulai ?? '-') ?></p>
-                    </div>
 
-                    <div class="mb-2">
-                        <label class="catatan-text"><strong>Tahun Selesai</strong></label>
-                        <p><?= esc($data->tahun_selesai ?? '-') ?></p>
-                    </div>
-
-                    <div class="mb-2">
-                        <label class="catatan-text"><strong>Periode</strong></label>
-                        <p><?= esc($data->periode ?? '-') ?></p>
-                    </div>
                     <!-- 
                     <div class="mb-2">
                         <label class="catatan-text"><strong>Peta Kawasan</strong></label>

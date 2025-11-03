@@ -19,7 +19,6 @@
 
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
     <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url('assets/img/apple-icon.png') ?>">
     <link rel="icon" type="image/png" href="<?= base_url('assets/img/favicon.ico') ?>">
@@ -395,8 +394,8 @@
                 <div class="tahun-container">
                     <form id="form-tahun">
                         <label for="tahun-pelaksana">Tahun Pelaksanaan</label>
-                        <select id="tahun-pelaksana" name="tahun_pelaksana">
-                            <option value="">-- Pilih Tahun --</option>
+                        <select id="tahun-pelaksana" name="tahun_pelaksana" style="width: 110px;">
+                            <option value="">Pilih Tahun</option>
                             <?php
                             $tahunAktif = session('tahun_pelaksana');
                             for ($i = 2025; $i <= 2029; $i++):

@@ -109,9 +109,15 @@
                 <div class="form-group">
                     <label class="catatan-text"><strong>Kegiatan</strong></label>
                     <select class="form-control" name="id_kegiatan" id="select-kegiatan">
-                        <option value="<?= $memo->id_kegiatan ?>">
+                        <!-- <option value="<?= $memo->id_kegiatan ?>">
                             <?= $memo->id_kegiatan . ' - ' . $memo->nm_kegiatan ?>
-                        </option>
+                        </option> -->
+                        <?php foreach ($kegiatan as $item): ?>
+                            <option value="<?= esc($item['id_kegiatan']) ?>"
+                                <?= ($memo->id_kegiatan ?? '') == $item['id_kegiatan'] ? 'selected' : '' ?>>
+                                <?= esc($item['id_kegiatan'] . ' - ' . $item['nm_kegiatan']) ?>
+                            </option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
 
@@ -231,7 +237,7 @@
                                         <tr>
                                             <td><?= $tahun ?></td>
                                             <td>
-                                                <input type="number" step="0.01" class="form-control form-control-sm"
+                                                <input type="number" step="0.01" min="0" class="form-control form-control-sm"
                                                     name="volume_<?= $index ?>"
                                                     value="<?= esc($memo->{'volume_' . $index} ?? '') ?>">
                                             </td>
@@ -397,7 +403,7 @@
             select.classList.add('form-select', 'nama-pencatat');
             select.name = "catatan_nama[]";
 
-            let options = '<option value="">-- Pilih Nama --</option>';
+            let options = '<option value="">-- Pilih Stakeholder --</option>';
             window.namaList.forEach(n => {
                 options += `<option value="${n}" ${n===nama?'selected':''}>${n}</option>`;
             });
@@ -482,19 +488,22 @@
 
         // 🔹 Format saat user mengetik
         $(document).on('input', '.anggaran-format', function() {
-            // Ambil posisi kursor
-            let cursorPos = this.selectionStart;
-            let val = $(this).val().replace(/\D/g, '');
+            let input = this;
 
-            if (val) {
-                $(this).val(new Intl.NumberFormat('id-ID').format(val));
+            // Ambil angka saja
+            let clean = input.value.replace(/[^\d]/g, "");
+
+            // Format ribuan
+            if (clean) {
+                input.value = new Intl.NumberFormat('id-ID').format(clean);
             } else {
-                $(this).val('');
+                input.value = "";
             }
 
-            // Kembalikan posisi kursor agar tidak lompat
-            this.setSelectionRange(cursorPos, cursorPos);
+            // Cursor selalu di akhir
+            input.setSelectionRange(input.value.length, input.value.length);
         });
+
 
         // 🔹 Sebelum submit form, ubah jadi angka mentah tanpa titik
         $('#editMemoForm').on('submit', function() {

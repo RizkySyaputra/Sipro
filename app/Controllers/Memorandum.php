@@ -451,8 +451,8 @@ class Memorandum extends BaseController
         $id_prov = $t_memo->id_provinsi;
         $kabkotmemo = $this->kabkotMemoModel->getKabkotMemo($id);
         $kabkot = $this->kabkotModel->where('id_prov', $id_prov)->findAll();
-        $program = $this->programModel->findAll();
-        $kegiatan = $this->kegiatanModel->findAll();;
+        $program = $this->programModel->where('id_unor', $memo->id_unor)->findAll();
+        $kegiatan = $this->kegiatanModel->where('id_program', $memo->id_program)->findAll();
         $kro = $this->kroModel->findAll();;
         $ro = $this->roModel->findAll();;
         $pendanaan = $this->pendanaanModel->findAll();

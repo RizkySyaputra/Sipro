@@ -37,13 +37,13 @@
                         <p><?= esc($memo->id_memorandum ?? '-') ?></p>
 
                         <label class="catatan-text"><strong>PN</strong></label>
-                        <p><?= esc($memo->nama_pn ?? ' - ') ?></p>
+                        <p><?= esc($memo->id_pn . ' - ' . $memo->nama_pn ?? ' - ') ?></p>
                         <label class="catatan-text"><strong>PP</strong></label>
-                        <p><?= esc($memo->nama_pp ?? ' - ') ?></p>
+                        <p><?= esc($memo->id_pp . ' - ' . $memo->nama_pp ?? ' - ') ?></p>
                         <label class="catatan-text"><strong>KP</strong></label>
-                        <p><?= esc($memo->nama_kp ?? ' - ') ?></p>
+                        <p><?= esc($memo->id_kp . ' - ' . $memo->nama_kp ?? ' - ') ?></p>
                         <label class="catatan-text"><strong>ProP</strong></label>
-                        <p><?= esc($memo->nama_prop ?? ' - ') ?></p>
+                        <p><?= esc($memo->id_prop . ' - ' . $memo->nama_prop ?? ' - ') ?></p>
                         <label class="catatan-text"><strong>Program</strong></label>
                         <p><?= esc($memo->id_program . '-' . $memo->nm_program ?? ' - ') ?></p>
 
