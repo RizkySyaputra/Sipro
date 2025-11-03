@@ -109,9 +109,15 @@
                 <div class="form-group">
                     <label class="catatan-text"><strong>Kegiatan</strong></label>
                     <select class="form-control" name="id_kegiatan" id="select-kegiatan">
-                        <option value="<?= $memo->id_kegiatan ?>">
+                        <!-- <option value="<?= $memo->id_kegiatan ?>">
                             <?= $memo->id_kegiatan . ' - ' . $memo->nm_kegiatan ?>
-                        </option>
+                        </option> -->
+                        <?php foreach ($kegiatan as $item): ?>
+                            <option value="<?= esc($item['id_kegiatan']) ?>"
+                                <?= ($memo->id_kegiatan ?? '') == $item['id_kegiatan'] ? 'selected' : '' ?>>
+                                <?= esc($item['id_kegiatan'] . ' - ' . $item['nm_kegiatan']) ?>
+                            </option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
 
