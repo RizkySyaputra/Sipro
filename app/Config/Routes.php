@@ -32,7 +32,7 @@ $routes->post('master/get_kro', 'Master::get_kro');
 $routes->post('master/get_ro', 'Master::get_ro');
 $routes->post('master/get_nomenklatur', 'Master::get_nomenklatur');
 $routes->get('master/get_detail_nomenklatur/(:segment)', 'Master::get_detail_nomenklatur/$1');
-$routes->post('master/exportToExcel', 'Master::export_to_excel', ['filter' => 'permission']);
+$routes->post('master/exportToExcel', 'Master::export_to_excel');
 
 $routes->get('/forbidden', function () {
     return view('errors/html/production');
