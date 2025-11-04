@@ -18,8 +18,10 @@ class PermissionFilter implements FilterInterface
             return redirect()->to('/forbidden');
         }
 
-        $link = service('uri');
-        $currentlink = $link->getPath();
+        $request = service('request');
+        $currentlink = $request->getPath();
+        $currentlink = preg_replace('#^keterpaduanprogram/#', '', $currentlink);
+        $currentlink = '/' . ltrim($currentlink, '/');
 
         $menuModel = new MenuModel();
         $menu = $menuModel->where('link', $currentlink)->first();

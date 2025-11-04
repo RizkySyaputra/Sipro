@@ -134,7 +134,7 @@
                     //Inisialisasi DataTables kembali
                     $('#datatables').DataTable({
                         // "scrollX": true,
-                        "pageLength": 50,
+                        "pageLength": 10,
                         "pagingType": "full_numbers",
                         "lengthMenu": [
                             [10, 25, 50, -1],
