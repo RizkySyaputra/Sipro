@@ -191,6 +191,7 @@ class Rakorbangwil extends BaseController
         $pekerjaan     = $this->request->getPost('pekerjaan');
         $lokasi        = $this->request->getPost('lokasi');
         $justifikasi   = $this->request->getPost('justifikasi');
+        $id_pendanaan   = $this->request->getPost('id_pendanaan');
         $anggaran   = $this->request->getPost('anggaran');
         $id_satuan   = $this->request->getPost('id_satuan');
         $volume   = $this->request->getPost('volume');
@@ -226,23 +227,27 @@ class Rakorbangwil extends BaseController
             'pekerjaan'         => $pekerjaan,
             'lokasi'            => $lokasi,
             'justifikasi'       => $justifikasi,
+            'id_pendanaan'          => $id_pendanaan,
             'anggaran'          => $anggaran,
             'id_satuan'         => $id_satuan,
             'kebutuhan_dukungan_kl' => $kebutuhan_dukungan_kl,
             'geotag'            => $geotag,
             'reviu_puswil'      => $reviu_puswil,
             'volume'            => $volume,
-            'thn_pelaksanaan'   => $thn_pelaksanaan,
-            'catatan_memorandum' => json_encode($catatan, JSON_UNESCAPED_UNICODE)
+            'thn_pelaksanaan'   => $thn_pelaksanaan
         ];
         // Update data
         $this->kabkotProgramTahunanModel->where('id_prog_tahunan', $id)->delete();
         $this->kawasanProgramTahunanModel->where('id_prog_tahunan', $id)->delete();
-        foreach ($kabkot as $data) {
-            $this->kabkotProgramTahunanModel->insert(['id_prog_tahunan' => $id, 'id_kabkot' => $data]);
+        if ($kabkot) {
+            foreach ($kabkot as $data) {
+                $this->kabkotProgramTahunanModel->insert(['id_prog_tahunan' => $id, 'id_kabkot' => $data]);
+            }
         }
-        foreach ($kawasan as $data) {
-            $this->kawasanProgramTahunanModel->insert(['id_prog_tahunan' => $id, 'id_kawasan' => $data]);
+        if ($kawasan) {
+            foreach ($kawasan as $data) {
+                $this->kawasanProgramTahunanModel->insert(['id_prog_tahunan' => $id, 'id_kawasan' => $data]);
+            }
         }
 
         if ($progTahunanModel->update($id, $dataToUpdate)) {

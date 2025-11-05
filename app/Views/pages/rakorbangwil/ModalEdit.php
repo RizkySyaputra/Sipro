@@ -167,7 +167,7 @@
 
                 <div class="form-group">
                     <label class="catatan-text"><strong>Kawasan</strong></label>
-                    <select class="form-control" name="kawasan[]" id="select-kawasan" multiple required>
+                    <select class="form-control" name="kawasan[]" id="select-kawasan" multiple>
                         <?php foreach ($kawasan as $item): ?>
                             <!-- <option value="<?= $item['kode_kawasan'] ?>"><?= $item['nama_kawasan'] ?></option> -->
                             <option value="<?= $item['kode_kawasan'] ?>"
@@ -182,7 +182,7 @@
                 <div class="form-group">
                     <label class="catatan-text"><strong>Kabupaten / Kota</strong></label> <br>
                     <small class="text-muted">Tekan <b>Ctrl</b> (atau <b>Cmd</b> di Mac) untuk memilih lebih dari satu.</small>
-                    <select class="form-control" name="kabkot[]" id="select-kabkot" multiple required>
+                    <select class="form-control" name="kabkot[]" id="select-kabkot" multiple>
                         <?php foreach ($kabkot as $item): ?>
                             <option value="<?= $item['id'] ?>"
                                 <?= in_array($item['kab_kot'], $selectedKabkot) ? 'selected' : '' ?>>
@@ -199,6 +199,17 @@
             <!-- Kolom kanan -->
             <div class="col-md-6">
                 <ul class="list-group list-group-flush">
+                    <div class="mb-2">
+                        <label class="catatan-text"><strong>Sumber Pendaan</strong></label>
+                        <select style="width: 100%;" class="form-control form-control-sm" name="id_pendanaan" id="select-pendanaan">
+                            <option value="<?= ($progTahunan->id_pendanaan ?? '') ?>" selected><?= ($progTahunan->sumber_pendanaan ?? '') ?></option>
+                            <?php foreach ($pendanaan as $item): ?>
+                                <?php if ($item['id_pendanaan'] == $progTahunan->id_pendanaan ?? '') continue; ?>
+                                <option value="<?= esc($item['id_pendanaan']) ?>"><?= esc($item['sumber_pendanaan']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
                     <div class="mb-2">
                         <label class="catatan-text"><strong>Anggaran(ribu)</strong></label>
                         <input type="text" class="form-control anggaran-format" name="anggaran" value="<?= esc($progTahunan->anggaran ?? '') ?>">
@@ -254,35 +265,35 @@
                 </ul>
             </div>
 
-            <!-- Catatan Memorandum -->
-            <div class="col-md-12">
-
-                <hr>
-
-                <h6><i class="fas fa-sticky-note me-2 catatan-text"></i><strong> Catatan memorandum</strong></h6>
-                <div id="catatanWrapper">
-                    <?php
-                    $catatanData = json_decode($progTahunan->catatan_memorandum ?? '[]', true);
-                    if (!$catatanData) $catatanData = [];
-                    foreach ($catatanData as $item):
-                    ?>
-                        <div class="catatan-item mb-2">
-                            <select class="form-select nama-pencatat" name="catatan_nama[]">
-                                <option value="">-- Pilih Pencatat --</option>
-                                <?php foreach ($namaList as $nama): ?>
-                                    <option value="<?= esc($nama) ?>" <?= ($item['nama'] ?? '') === $nama ? 'selected' : '' ?>>
-                                        <?= esc($nama) ?>
-                                    </option>
-                                <?php endforeach; ?>
-                            </select>
-                            <textarea class="form-control mt-1" name="catatan_text[]" rows="2"><?= esc($item['catatan'] ?? '') ?></textarea>
-                            <button type="button" class="btn btn-sm btn-danger mt-1 remove-catatan">Hapus</button>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-                <button type="button" class="btn btn-sm btn-primary mt-2" id="tambahCatatan">Tambah Catatan</button>
-            </div>
         </div>
+    </div>
+    <!-- Catatan Memorandum -->
+    <div class="col-md-12">
+
+        <hr>
+
+        <h6><i class="fas fa-sticky-note me-2 catatan-text"></i><strong> Catatan 2 memorandum</strong></h6>
+        <div id="catatanWrapper">
+            <?php
+            $catatanData = json_decode($progTahunan->catatan_memorandum ?? '[]', true);
+            if (!$catatanData) $catatanData = [];
+            foreach ($catatanData as $item):
+            ?>
+                <div class="catatan-item mb-2">
+                    <select class="form-select nama-pencatat" name="catatan_nama[]" disabled>
+                        <option value="">-- Pilih Pencatat --</option>
+                        <?php foreach ($namaList as $nama): ?>
+                            <option value="<?= esc($nama) ?>" <?= ($item['nama'] ?? '') === $nama ? 'selected' : '' ?>>
+                                <?= esc($nama) ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                    <textarea readonly class="form-control mt-1" name="catatan_text[]" rows="2"><?= esc($item['catatan'] ?? '') ?></textarea>
+                    <button type="button" class="btn btn-sm btn-danger mt-1 remove-catatan" hidden>Hapus</button>
+                </div>
+            <?php endforeach; ?>
+        </div>
+        <button type="button" class="btn btn-sm btn-primary mt-2" id="tambahCatatan" hidden>Tambah Catatan</button>
     </div>
 
 
@@ -483,7 +494,7 @@
 </script>
 
 <script>
-    $('#select-program, #select-kegiatan, #select-kro, #select-ro, #select-pendanaan1,#select-pendanaan2,#select-pendanaan3,#select-pendanaan4,#select-pendanaan5').select2();
+    $('#select-program, #select-pendanaan, #select-kegiatan, #select-kro, #select-ro, #select-pendanaan1,#select-pendanaan2,#select-pendanaan3,#select-pendanaan4,#select-pendanaan5').select2();
     (function() {
         // Cek apakah namaList sudah ada, jika belum buat
         if (typeof window.namaList === 'undefined') {
