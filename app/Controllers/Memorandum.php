@@ -596,9 +596,9 @@ class Memorandum extends BaseController
         $daftarRenaksi = $this->daftarRenaksiModel->getDaftarRenaksi($provinsi_id, $unor_id, $kawasan, $status);
         $data = [
             'daftar_renaksi' => $daftarRenaksi,
-            'can_view' => has_permission_menu($id_role, '/rpiw/daftar_renaksi', 'can_view'),
-            'can_edit' => has_permission_menu($id_role, '/rpiw/daftar_renaksi', 'can_edit'),
-            'can_delete' => has_permission_menu($id_role, '/rpiw/daftar_renaksi', 'can_delete')
+            'can_view' => has_permission_menu($id_role, '/memorandum/daftar_renaksi', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/memorandum/daftar_renaksi', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/memorandum/daftar_renaksi', 'can_delete')
         ];
         return view('/pages/memorandum/tabel/tabel_daftar_renaksi', $data);
     }
