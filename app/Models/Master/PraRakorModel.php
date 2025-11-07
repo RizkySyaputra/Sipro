@@ -29,22 +29,21 @@ class PraRakorModel extends Model
     }
     public function getKawasanList($id_provinsi = null, $id_tematik, $id_pn)
     {
-        $builder = $this->db->table('prog_tahunan as a');
-        $builder->select('DISTINCT(c.nama_kawasan) as kawasan');
-        $builder->join('prog_tahunan_kwsn as b', 'a.id_prog_tahunan = b.id_prog_tahunan', 'left');
-        $builder->join('m_kawasan as c', 'b.id_kawasan = c.kode_kawasan', 'left');
-        $builder->join('m_tematik as d', 'c.id_tematik_kawasan = d.id_tematik', 'left');
-        $builder->join('m_sk_ro as e', 'e.id_ro = a.id_ro', 'inner');
+        $tahun_pelaksanaan = session('tahun_pelaksana');
+        $builder = $this->db->table('trx_prog_tahunan_pra_rakorbangwil as a');
+        $builder->select('DISTINCT(a.kawasan) as kawasan, a.provinsi');
         $builder->where('a.id_provinsi', $id_provinsi);
-        $builder->where('d.id_tematik', $id_tematik);
-        $builder->where('e.id_pn', $id_pn);
-        $builder->orderBy('c.kode_kawasan', 'ASC');
+        $builder->where('a.id_tematik_kawasan', $id_tematik);
+        $builder->where('a.id_pn', $id_pn);
+        $builder->where('a.thn_pelaksanaan', $tahun_pelaksanaan);
+        $builder->orderBy('a.id_kawasan', 'ASC');
 
         $query = $builder->get();
         return $query->getResult();
     }
     public function getProgramList($id_provinsi = null, $id_tematik, $id_pn)
     {
+        $tahun_pelaksanaan = session('tahun_pelaksana');
         $builder = $this->db->table('prog_tahunan as a');
         $builder->select('*');
         $builder->join('prog_tahunan_kwsn as b', 'a.id_prog_tahunan = b.id_prog_tahunan', 'left');
@@ -56,6 +55,7 @@ class PraRakorModel extends Model
         $builder->where('a.id_provinsi', $id_provinsi);
         $builder->where('d.id_tematik', $id_tematik);
         $builder->where('g.id_pn', $id_pn);
+        $builder->where('a.thn_pelaksanaan', $tahun_pelaksanaan);
         $builder->orderBy('c.kode_kawasan', 'ASC');
 
         $query = $builder->get();
