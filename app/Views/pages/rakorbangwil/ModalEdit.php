@@ -272,7 +272,7 @@
 
         <hr>
 
-        <h6><i class="fas fa-sticky-note me-2 catatan-text"></i><strong> Catatan 2 memorandum</strong></h6>
+        <h6><i class="fas fa-sticky-note me-2 catatan-text"></i><strong> Catatan memorandum</strong></h6>
         <div id="catatanWrapper">
             <?php
             $catatanData = json_decode($progTahunan->catatan_memorandum ?? '[]', true);

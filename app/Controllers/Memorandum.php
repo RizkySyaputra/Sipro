@@ -564,8 +564,10 @@ class Memorandum extends BaseController
         }
         $id_renaksi =  $memo->id_renaksi;
         $renaksi = $this->renaksiModel->find($id_renaksi);
-        $newmp = $renaksi->mp - 1;
-        $this->renaksiModel->update($id_renaksi, ['mp' => $newmp]);
+        if ($renaksi) {
+            $newmp = $renaksi->mp - 1;
+            $this->renaksiModel->update($id_renaksi, ['mp' => $newmp]);
+        }
         $this->memoModel->where('id_memorandum', $id)->delete();
 
         return $this->response->setJSON(['status' => 'success', 'message' => 'Data berhasil dihapus']);

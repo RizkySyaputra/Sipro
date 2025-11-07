@@ -146,12 +146,12 @@
                                             $total_kawasan_swasembada_pangan_air_energi = 0;
                                             $total_total = 0;
                                             foreach ($kawasanData as $row):
-                                                $total_total += $row['kawasan_afirmasi'] + $row['kawasan_komoditas_unggulan'] + $row['kawasan_konservasi_rawan_bencana'] + $row['kawasan_pertumbuhan'] + $row['kawasan_swasembada_pangan_air_energi'];
-                                                $total_kawasan_afirmasi += $row['kawasan_afirmasi'];
-                                                $total_kawasan_komoditas_unggulan += $row['kawasan_komoditas_unggulan'];
-                                                $total_kawasan_pertumbuhan += $row['kawasan_pertumbuhan'];
-                                                $total_kawasan_konservasi_rawan_bencana += $row['kawasan_konservasi_rawan_bencana'];
-                                                $total_kawasan_swasembada_pangan_air_energi += $row['kawasan_swasembada_pangan_air_energi']; ?>
+                                                $total_total += $row['tmtk1_kawasan'] + $row['tmtk2_kawasan'] + $row['tmtk3_kawasan'] + $row['tmtk4_kawasan'] + $row['tmtk5_kawasan'];
+                                                $total_kawasan_afirmasi += $row['tmtk1_kawasan'];
+                                                $total_kawasan_komoditas_unggulan += $row['tmtk2_kawasan'];
+                                                $total_kawasan_konservasi_rawan_bencana += $row['tmtk3_kawasan'];
+                                                $total_kawasan_pertumbuhan += $row['tmtk4_kawasan'];
+                                                $total_kawasan_swasembada_pangan_air_energi += $row['tmtk5_kawasan']; ?>
                                                 <tr>
                                                     <td style="text-align: left;"><?= esc($row['provinsi']) ?></td>
 
@@ -163,7 +163,7 @@
                                                             data-tematik="Kawasan Afirmasi"
                                                             data-id_provinsi="<?= esc($row['id_provinsi']) ?>"
                                                             data-provinsi="<?= esc($row['provinsi']) ?>">
-                                                            <?= esc($row['kawasan_afirmasi']) ?>
+                                                            <?= esc($row['tmtk1_kawasan']) ?>
                                                         </a>
                                                     </td>
 
@@ -175,7 +175,7 @@
                                                             data-tematik="Kawasan Komoditas Unggulan"
                                                             data-id_provinsi="<?= esc($row['id_provinsi']) ?>"
                                                             data-provinsi="<?= esc($row['provinsi']) ?>">
-                                                            <?= esc($row['kawasan_komoditas_unggulan']) ?>
+                                                            <?= esc($row['tmtk2_kawasan']) ?>
                                                         </a>
                                                     </td>
 
@@ -187,7 +187,7 @@
                                                             data-tematik="Kawasan Konservasi/Rawan Bencana"
                                                             data-id_provinsi="<?= esc($row['id_provinsi']) ?>"
                                                             data-provinsi="<?= esc($row['provinsi']) ?>">
-                                                            <?= esc($row['kawasan_konservasi_rawan_bencana']) ?>
+                                                            <?= esc($row['tmtk3_kawasan']) ?>
                                                         </a>
                                                     </td>
 
@@ -199,7 +199,7 @@
                                                             data-tematik="Kawasan Pertumbuhan"
                                                             data-id_provinsi="<?= esc($row['id_provinsi']) ?>"
                                                             data-provinsi="<?= esc($row['provinsi']) ?>">
-                                                            <?= esc($row['kawasan_pertumbuhan']) ?>
+                                                            <?= esc($row['tmtk4_kawasan']) ?>
                                                         </a>
                                                     </td>
 
@@ -211,11 +211,11 @@
                                                             data-tematik="Kawasan Swasembada Pangan, Air, dan Energi"
                                                             data-id_provinsi="<?= esc($row['id_provinsi']) ?>"
                                                             data-provinsi="<?= esc($row['provinsi']) ?>">
-                                                            <?= esc($row['kawasan_swasembada_pangan_air_energi']) ?>
+                                                            <?= esc($row['tmtk5_kawasan']) ?>
                                                         </a>
                                                     </td>
 
-                                                    <td style="text-align: center;font-weight: bold;"><?= esc($row['kawasan_afirmasi'] + $row['kawasan_komoditas_unggulan'] + $row['kawasan_konservasi_rawan_bencana'] + $row['kawasan_pertumbuhan'] + $row['kawasan_swasembada_pangan_air_energi']) ?></td>
+                                                    <td style="text-align: center;font-weight: bold;"><?= esc($row['tmtk1_kawasan'] + $row['tmtk2_kawasan'] + $row['tmtk3_kawasan'] + $row['tmtk4_kawasan'] + $row['tmtk5_kawasan']) ?></td>
                                                 </tr>
                                             <?php endforeach; ?>
 
@@ -297,18 +297,18 @@
                                             $total_total_pekerjaan = 0;
                                             $total_total_anggaran = 0;
                                             foreach ($programData as $row):
-                                                $total_kawasan_afirmasi_pekerjaan += $row['kawasan_afirmasi_pekerjaan'];
-                                                $total_kawasan_afirmasi_anggaran += $row['kawasan_afirmasi_anggaran'];
-                                                $total_kawasan_komoditas_pekerjaan += $row['kawasan_komoditas_pekerjaan'];
-                                                $total_kawasan_komoditas_anggaran += $row['kawasan_komoditas_anggaran'];
-                                                $total_kawasan_konservasi_pekerjaan += $row['kawasan_konservasi_pekerjaan'];
-                                                $total_kawasan_konservasi_anggaran += $row['kawasan_konservasi_anggaran'];
-                                                $total_kawasan_pertumbuhan_pekerjaan += $row['kawasan_pertumbuhan_pekerjaan'];
-                                                $total_kawasan_pertumbuhan_anggaran += $row['kawasan_pertumbuhan_anggaran'];
-                                                $total_kawasan_swasembada_pekerjaan += $row['kawasan_swasembada_pekerjaan'];
-                                                $total_kawasan_swasembada_anggaran += $row['kawasan_swasembada_anggaran'];
-                                                $total_total_pekerjaan += $row['kawasan_afirmasi_pekerjaan'] + $row['kawasan_komoditas_pekerjaan'] + $row['kawasan_pertumbuhan_pekerjaan'] + $row['kawasan_konservasi_pekerjaan'] + $row['kawasan_swasembada_pekerjaan'];
-                                                $total_total_anggaran += $row['kawasan_afirmasi_anggaran'] + $row['kawasan_komoditas_anggaran'] + $row['kawasan_pertumbuhan_anggaran'] + $row['kawasan_konservasi_anggaran'] + $row['kawasan_swasembada_anggaran'];
+                                                $total_kawasan_afirmasi_pekerjaan += $row['tmtk1_pekerjaan'];
+                                                $total_kawasan_afirmasi_anggaran += $row['tmtk1_anggaran'];
+                                                $total_kawasan_komoditas_pekerjaan += $row['tmtk2_pekerjaan'];
+                                                $total_kawasan_komoditas_anggaran += $row['tmtk2_anggaran'];
+                                                $total_kawasan_konservasi_pekerjaan += $row['tmtk3_pekerjaan'];
+                                                $total_kawasan_konservasi_anggaran += $row['tmtk3_anggaran'];
+                                                $total_kawasan_pertumbuhan_pekerjaan += $row['tmtk4_pekerjaan'];
+                                                $total_kawasan_pertumbuhan_anggaran += $row['tmtk4_anggaran'];
+                                                $total_kawasan_swasembada_pekerjaan += $row['tmtk5_pekerjaan'];
+                                                $total_kawasan_swasembada_anggaran += $row['tmtk5_anggaran'];
+                                                $total_total_pekerjaan += $row['tmtk1_pekerjaan'] + $row['tmtk2_pekerjaan'] + $row['tmtk3_pekerjaan'] + $row['tmtk4_pekerjaan'] + $row['tmtk5_pekerjaan'];
+                                                $total_total_anggaran += $row['tmtk1_anggaran'] + $row['tmtk2_anggaran'] + $row['tmtk3_anggaran'] + $row['tmtk4_anggaran'] + $row['tmtk5_anggaran'];
                                             ?>
                                                 <tr>
                                                     <td style="text-align: left; font-weight: 600;"><?= esc($row['provinsi']) ?></td>
@@ -322,11 +322,11 @@
                                                             data-tematik="Kawasan Afirmasi"
                                                             data-id_provinsi="<?= esc($row['id_provinsi']) ?>"
                                                             data-provinsi="<?= esc($row['provinsi']) ?>">
-                                                            <?= esc($row['kawasan_afirmasi_pekerjaan'] ?? 0) ?>
+                                                            <?= esc($row['tmtk1_pekerjaan'] ?? 0) ?>
                                                         </a>
                                                     </td>
                                                     <td style="text-align: right;">
-                                                        Rp<?= number_format($row['kawasan_afirmasi_anggaran'] ?? 0, 0, ',', '.') ?>
+                                                        Rp<?= number_format($row['tmtk1_anggaran'] ?? 0, 0, ',', '.') ?>
                                                     </td>
 
                                                     <!-- Kawasan Komoditas Unggulan -->
@@ -338,11 +338,11 @@
                                                             data-tematik="Kawasan Komoditas Unggulan"
                                                             data-id_provinsi="<?= esc($row['id_provinsi']) ?>"
                                                             data-provinsi="<?= esc($row['provinsi']) ?>">
-                                                            <?= esc($row['kawasan_komoditas_pekerjaan'] ?? 0) ?>
+                                                            <?= esc($row['tmtk2_pekerjaan'] ?? 0) ?>
                                                         </a>
                                                     </td>
                                                     <td style="text-align: right;">
-                                                        Rp<?= number_format($row['kawasan_komoditas_anggaran'] ?? 0, 0, ',', '.') ?>
+                                                        Rp<?= number_format($row['tmtk2_anggaran'] ?? 0, 0, ',', '.') ?>
                                                     </td>
 
                                                     <!-- Kawasan Konservasi/Rawan Bencana -->
@@ -354,11 +354,11 @@
                                                             data-tematik="Kawasan Konservasi/Rawan Bencana"
                                                             data-id_provinsi="<?= esc($row['id_provinsi']) ?>"
                                                             data-provinsi="<?= esc($row['provinsi']) ?>">
-                                                            <?= esc($row['kawasan_konservasi_pekerjaan'] ?? 0) ?>
+                                                            <?= esc($row['tmtk3_pekerjaan'] ?? 0) ?>
                                                         </a>
                                                     </td>
                                                     <td style="text-align: right;">
-                                                        Rp<?= number_format($row['kawasan_konservasi_anggaran'] ?? 0, 0, ',', '.') ?>
+                                                        Rp<?= number_format($row['tmtk3_anggaran'] ?? 0, 0, ',', '.') ?>
                                                     </td>
                                                     <!-- Kawasan Pertumbuhan -->
                                                     <td style="text-align: center;">
@@ -369,11 +369,11 @@
                                                             data-tematik="Kawasan Pertumbuhan"
                                                             data-id_provinsi="<?= esc($row['id_provinsi']) ?>"
                                                             data-provinsi="<?= esc($row['provinsi']) ?>">
-                                                            <?= esc($row['kawasan_pertumbuhan_pekerjaan'] ?? 0) ?>
+                                                            <?= esc($row['tmtk4_pekerjaan'] ?? 0) ?>
                                                         </a>
                                                     </td>
                                                     <td style="text-align: right;">
-                                                        Rp<?= number_format($row['kawasan_pertumbuhan_anggaran'] ?? 0, 0, ',', '.') ?>
+                                                        Rp<?= number_format($row['tmtk4_anggaran'] ?? 0, 0, ',', '.') ?>
                                                     </td>
 
                                                     <!-- Kawasan Swasembada -->
@@ -385,19 +385,19 @@
                                                             data-tematik="Kawasan Swasembada Pangan, Air, dan Energi"
                                                             data-id_provinsi="<?= esc($row['id_provinsi']) ?>"
                                                             data-provinsi="<?= esc($row['provinsi']) ?>">
-                                                            <?= esc($row['kawasan_swasembada_pekerjaan'] ?? 0) ?>
+                                                            <?= esc($row['tmtk5_pekerjaan'] ?? 0) ?>
                                                         </a>
                                                     </td>
                                                     <td style="text-align: right;">
-                                                        Rp<?= number_format($row['kawasan_swasembada_anggaran'] ?? 0, 0, ',', '.') ?>
+                                                        Rp<?= number_format($row['tmtk5_anggaran'] ?? 0, 0, ',', '.') ?>
                                                     </td>
 
                                                     <!-- Total -->
                                                     <td style="text-align: center;font-weight: bold;">
-                                                        <?= esc($row['kawasan_afirmasi_pekerjaan'] + $row['kawasan_komoditas_pekerjaan'] + $row['kawasan_konservasi_pekerjaan'] + $row['kawasan_pertumbuhan_pekerjaan'] + $row['kawasan_swasembada_pekerjaan'] ?? 0) ?>
+                                                        <?= esc($row['tmtk1_pekerjaan'] + $row['tmtk2_pekerjaan'] + $row['tmtk3_pekerjaan'] + $row['tmtk4_pekerjaan'] + $row['tmtk5_pekerjaan'] ?? 0) ?>
                                                     </td>
                                                     <td style="text-align: right;font-weight: bold;">
-                                                        Rp<?= number_format($row['kawasan_afirmasi_anggaran'] + $row['kawasan_komoditas_anggaran'] + $row['kawasan_konservasi_anggaran'] + $row['kawasan_pertumbuhan_anggaran'] + $row['kawasan_swasembada_anggaran'] ?? 0, 0, ',', '.') ?>
+                                                        Rp<?= number_format($row['tmtk1_anggaran'] + $row['tmtk2_anggaran'] + $row['tmtk3_anggaran'] + $row['tmtk4_anggaran'] + $row['tmtk5_anggaran'] ?? 0, 0, ',', '.') ?>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>
