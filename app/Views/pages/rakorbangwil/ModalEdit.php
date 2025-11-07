@@ -114,92 +114,95 @@
         <div class="row g-3">
             <!-- Kolom kiri -->
             <div class="col-md-6">
-                <label class="catatan-text"><strong>ID Program Tahunan</strong></label>
-                <p><?= esc($progTahunan->id_prog_tahunan ?? '') ?></p>
-                <div class="form-group">
-                    <label class="catatan-text"><strong>Program</strong></label>
-                    <select class="form-control" name="id_program" id="select-program">
-                        <option value="">Pilih Program</option>
-                        <?php foreach ($program as $item): ?>
-                            <option value="<?= esc($item['id_program']) ?>"
-                                <?= ($progTahunan->id_program ?? '') == $item['id_program'] ? 'selected' : '' ?>>
-                                <?= esc($item['id_program'] . ' - ' . $item['nm_program']) ?>
+                <ul class="list-group list-group-flush">
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>ID Program Tahunan</strong></label>
+                        <p><?= esc($progTahunan->id_prog_tahunan ?? '') ?></p>
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Program</strong></label>
+                        <select class="form-control" name="id_program" id="select-program">
+                            <option value="">Pilih Program</option>
+                            <?php foreach ($program as $item): ?>
+                                <option value="<?= esc($item['id_program']) ?>"
+                                    <?= ($progTahunan->id_program ?? '') == $item['id_program'] ? 'selected' : '' ?>>
+                                    <?= esc($item['id_program'] . ' - ' . $item['nm_program']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Kegiatan</strong></label>
+                        <select class="form-control" name="id_kegiatan" id="select-kegiatan">
+                            <option value="<?= $progTahunan->id_kegiatan ?>">
+                                <?= $progTahunan->id_kegiatan . ' - ' . $progTahunan->nm_kegiatan ?>
                             </option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label class="catatan-text"><strong>Kegiatan</strong></label>
-                    <select class="form-control" name="id_kegiatan" id="select-kegiatan">
-                        <option value="<?= $progTahunan->id_kegiatan ?>">
-                            <?= $progTahunan->id_kegiatan . ' - ' . $progTahunan->nm_kegiatan ?>
-                        </option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label class="catatan-text"><strong>KRO</strong></label>
-                    <select class="form-control" name="id_kro" id="select-kro">
-                        <option value="<?= $progTahunan->id_kro ?>">
-                            <?= $progTahunan->id_kro . ' - ' . $progTahunan->nm_kro ?>
-                        </option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label class="catatan-text"><strong>RO</strong></label>
-                    <select class="form-control" name="id_ro" id="select-ro">
-                        <option value="<?= $progTahunan->id_ro ?>">
-                            <?= $progTahunan->id_ro . ' - ' . $progTahunan->nm_ro ?>
-                        </option>
-                    </select>
-                </div>
-
-                <label class="catatan-text"><strong>Pekerjaan</strong></label>
-                <input type="text" class="form-control" name="pekerjaan" value="<?= esc($progTahunan->pekerjaan ?? '') ?>">
-
-                <label class="catatan-text"><strong>Unit Organisasi</strong></label>
-                <p><?= esc($progTahunan->unor ?? '') ?></p>
-
-                <label class="catatan-text"><strong>Provinsi</strong></label>
-                <p><?= esc($progTahunan->provinsi ?? '') ?></p>
-
-                <div class="form-group">
-                    <label class="catatan-text"><strong>Kawasan</strong></label>
-                    <select class="form-control" name="kawasan[]" id="select-kawasan" multiple>
-                        <?php foreach ($kawasan as $item): ?>
-                            <!-- <option value="<?= $item['kode_kawasan'] ?>"><?= $item['nama_kawasan'] ?></option> -->
-                            <option value="<?= $item['kode_kawasan'] ?>"
-                                <?= in_array($item['nama_kawasan'], $selectedKawasan) ? 'selected' : '' ?>>
-                                <?= esc($item['nama_kawasan']) ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>KRO</strong></label>
+                        <select class="form-control" name="id_kro" id="select-kro">
+                            <option value="<?= $progTahunan->id_kro ?>">
+                                <?= $progTahunan->id_kro . ' - ' . $progTahunan->nm_kro ?>
                             </option>
-                        <?php endforeach; ?>
-                    </select>
-                    <small class="text-muted">Tekan <b>Ctrl</b> (atau <b>Cmd</b> di Mac) untuk memilih lebih dari satu.</small>
-                </div>
-
-                <div class="form-group">
-                    <label class="catatan-text"><strong>Kabupaten / Kota</strong></label> <br>
-                    <small class="text-muted">Tekan <b>Ctrl</b> (atau <b>Cmd</b> di Mac) untuk memilih lebih dari satu.</small>
-                    <select class="form-control" name="kabkot[]" id="select-kabkot" multiple>
-                        <?php foreach ($kabkot as $item): ?>
-                            <option value="<?= $item['id'] ?>"
-                                <?= in_array($item['kab_kot'], $selectedKabkot) ? 'selected' : '' ?>>
-                                <?= esc($item['kab_kot']) ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>RO</strong></label>
+                        <select class="form-control" name="id_ro" id="select-ro">
+                            <option value="<?= $progTahunan->id_ro ?>">
+                                <?= $progTahunan->id_ro . ' - ' . $progTahunan->nm_ro ?>
                             </option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-                <label class="catatan-text"><strong>Lokasi</strong></label>
-                <input type="text" class="form-control" name="lokasi" value="<?= esc($progTahunan->lokasi ?? '') ?>">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Pekerjaan</strong></label>
+                        <input type="text" class="form-control" name="pekerjaan" value="<?= esc($progTahunan->pekerjaan ?? '') ?>">
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Unit Organisasi</strong></label>
+                        <p><?= esc($progTahunan->unor ?? '') ?></p>
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Provinsi</strong></label>
+                        <p><?= esc($progTahunan->provinsi ?? '') ?></p>
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Kawasan</strong></label>
+                        <select class="form-control" name="kawasan[]" id="select-kawasan" multiple>
+                            <?php foreach ($kawasan as $item): ?>
+                                <!-- <option value="<?= $item['kode_kawasan'] ?>"><?= $item['nama_kawasan'] ?></option> -->
+                                <option value="<?= $item['kode_kawasan'] ?>"
+                                    <?= in_array($item['nama_kawasan'], $selectedKawasan) ? 'selected' : '' ?>>
+                                    <?= esc($item['nama_kawasan']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <small class="text-muted">Tekan <b>Ctrl</b> (atau <b>Cmd</b> di Mac) untuk memilih lebih dari satu.</small>
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Kabupaten / Kota</strong></label> <br>
+                        <small class="text-muted">Tekan <b>Ctrl</b> (atau <b>Cmd</b> di Mac) untuk memilih lebih dari satu.</small>
+                        <select class="form-control" name="kabkot[]" id="select-kabkot" multiple>
+                            <?php foreach ($kabkot as $item): ?>
+                                <option value="<?= $item['id'] ?>"
+                                    <?= in_array($item['kab_kot'], $selectedKabkot) ? 'selected' : '' ?>>
+                                    <?= esc($item['kab_kot']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Lokasi</strong></label>
+                        <input type="text" class="form-control" name="lokasi" value="<?= esc($progTahunan->lokasi ?? '') ?>">
+                    </div>
                 </ul>
             </div>
 
             <!-- Kolom kanan -->
             <div class="col-md-6">
                 <ul class="list-group list-group-flush">
-                    <div class="mb-2">
+                    <div class="form-group">
                         <label class="catatan-text"><strong>Sumber Pendaan</strong></label>
                         <select style="width: 100%;" class="form-control form-control-sm" name="id_pendanaan" id="select-pendanaan">
                             <option value="<?= ($progTahunan->id_pendanaan ?? '') ?>" selected><?= ($progTahunan->sumber_pendanaan ?? '') ?></option>
@@ -210,7 +213,7 @@
                             <?php endforeach; ?>
                         </select>
                     </div>
-                    <div class="mb-2">
+                    <div class="form-group">
                         <label class="catatan-text"><strong>Anggaran(ribu)</strong></label>
                         <input type="text" class="form-control anggaran-format" name="anggaran" value="<?= esc($progTahunan->anggaran ?? '') ?>">
                     </div>
@@ -227,41 +230,46 @@
                             name="volume"
                             value="<?= esc($progTahunan->volume ?? '') ?>">
                     </div>
-                    <label class="catatan-text"><strong>Justifikasi</strong></label>
-                    <textarea class="form-control" name="justifikasi" rows="3"><?= esc($progTahunan->justifikasi ?? '') ?></textarea>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Justifikasi</strong></label>
+                        <textarea class="form-control" name="justifikasi" rows="3"><?= esc($progTahunan->justifikasi ?? '') ?></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Tahun Pelaksanaan</strong></label>
+                        <p><?= esc($progTahunan->thn_pelaksanaan ?? '') ?></p>
+                        <input type="number" class="form-control" name="thn_pelaksanaan" value="<?= esc($progTahunan->thn_pelaksanaan ?? '') ?>" hidden>
+                    </div>
 
 
-                    <label class="catatan-text"><strong>Tahun Pelaksanaan</strong></label>
-                    <p><?= esc($progTahunan->thn_pelaksanaan ?? '') ?></p>
-                    <input type="number" class="form-control" name="thn_pelaksanaan" value="<?= esc($progTahunan->thn_pelaksanaan ?? '') ?>" hidden>
+                    <div class="form-group">
+                        <label class="mt-3 catatan-text"><strong>Geotagging</strong></label>
+                        <div class="input-group">
+                            <p>Fitur Dalam Tahapan Pengembangan</p>
+                            <!-- <textarea id="geotag" name="geotag" class="form-control" rows="2" readonly>
+                            <?= esc($progTahunan->geotag ?? '') ?>
+                            </textarea> -->
 
-
-
-                    <label class="mt-3 catatan-text"><strong>Geotagging</strong></label>
-
-                    <div class="input-group">
-                        <p>Fitur Dalam Tahapan Pengembangan</p>
-                        <!-- <textarea id="geotag" name="geotag" class="form-control" rows="2" readonly>
-<?= esc($progTahunan->geotag ?? '') ?>
-</textarea> -->
-
-                        <!-- <button type="button" class="btn btn-success mt-2" id="btnOpenMap">
+                            <!-- <button type="button" class="btn btn-success mt-2" id="btnOpenMap">
                             Pilih Lokasi di Peta
                         </button>
--->
+                            -->
+                        </div>
+                        <!-- <small class="text-muted">Klik tombol untuk memilih lokasi di peta.</small>  -->
                     </div>
-                    <!-- <small class="text-muted">Klik tombol untuk memilih lokasi di peta.</small>  -->
 
-
-                    <label class="catatan-text"><strong>Sumber Data</strong></label>
-                    <p><?= esc($progTahunan->sumber ?? '-') ?></p>
-                    <input type="text" class="form-control" name="sumber" value="<?= esc($progTahunan->sumber ?? '-') ?>" hidden>
-
-                    <label class="catatan-text"><strong>Kebutuhan Dukungan KL</strong></label>
-                    <textarea class="form-control" name="kebutuhan_dukungan_kl"><?= esc($progTahunan->kebutuhan_dukungan_kl ?? '-') ?></textarea>
-
-                    <label class="catatan-text"><strong>Reviu Puswil</strong></label>
-                    <textarea class="form-control" name="reviu_puswil"><?= esc($progTahunan->reviu_puswil ?? '-') ?></textarea>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Sumber Data</strong></label>
+                        <p><?= esc($progTahunan->sumber ?? '-') ?></p>
+                        <input type="text" class="form-control" name="sumber" value="<?= esc($progTahunan->sumber ?? '-') ?>" hidden>
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Kebutuhan Dukungan KL</strong></label>
+                        <textarea class="form-control" name="kebutuhan_dukungan_kl"><?= esc($progTahunan->kebutuhan_dukungan_kl ?? '-') ?></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Reviu Puswil</strong></label>
+                        <textarea class="form-control" name="reviu_puswil"><?= esc($progTahunan->reviu_puswil ?? '-') ?></textarea>
+                    </div>
                 </ul>
             </div>
 

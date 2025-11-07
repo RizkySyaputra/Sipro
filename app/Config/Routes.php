@@ -7,6 +7,9 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->post('set_tahun', 'SessionController::setTahun');
 
+$routes->get('/', 'Dashboard::index');
+$routes->get('dashboard', 'Dashboard::index');
+
 $routes->get('/test', 'Master::test');
 // $routes->get('/', 'Master::index');
 $routes->get('/tabel', 'Master::tabel', ['filter' => 'permission']);
@@ -77,7 +80,7 @@ $routes->post('/rekap', 'Rpiw::rekap', ['filter' => 'permission']);
 $routes->get('/rekap', 'Rpiw::rekap', ['filter' => 'permission']);
 
 //routes memorandum program
-$routes->get('/', 'Memorandum::index');
+// $routes->get('/', 'Memorandum::index');
 $routes->get('/memorandum', 'Memorandum::index', ['filter' => 'permission']);
 $routes->post('memorandum/filter_data', 'Memorandum::filter_data', ['filter' => 'permission']);
 $routes->post('memorandum/get_kawasan', 'Memorandum::get_kawasan', ['filter' => 'permission']);

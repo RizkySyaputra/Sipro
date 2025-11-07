@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\Rpiw\ProgramRpiwModel;
 use App\Models\Rpiw\KawasanRpiwModel;
 use App\Models\Rakorbangwil\ProgTahunanModel;
+use App\Models\Rakorbangwil\ReportProgTahunanModel;
 use App\Models\Master\ProvinsiModel;
 use App\Models\Master\UnorModel;
 use App\Models\Master\PendanaanModel;
@@ -56,6 +57,7 @@ class Rakorbangwil extends BaseController
     protected $roModel;
     protected $daftarProgTahunanModel;
     protected $progTahunanModel;
+    protected $reportProgTahunanModel;
     protected $satuanModel;
     protected $mpModel;
     protected $daftarRenaksiModel;
@@ -71,6 +73,7 @@ class Rakorbangwil extends BaseController
         $this->roModel = new RoModel();
         $this->daftarProgTahunanModel = new DaftarProgTahunanModel();
         $this->progTahunanModel = new ProgTahunanModel();
+        $this->reportProgTahunanModel = new ReportProgTahunanModel();
         $this->programRpiwModel = new ProgramRpiwModel();
         $this->provinsiModel = new ProvinsiModel();
         $this->unorModel = new UnorModel();
@@ -409,5 +412,25 @@ class Rakorbangwil extends BaseController
             ->update();
 
         return $this->response->setStatusCode(200);
+    }
+
+    public function filter_laporan1()
+    {
+
+        $tahun_anggaran = $this->request->getPost('tahun_anggaran');
+
+
+        if (!empty($tahun_anggaran)) {
+            $kawasanPerProvinsi = $this->reportProgTahunanModel->getReportKawasanPerProvinsi($tahun_anggaran);
+
+            $data = [
+                'kawasan_per_provinsi' => $kawasanPerProvinsi,
+            ];
+        } else {
+            $data = [
+                'kawasan_per_provinsi' => []
+            ];
+        }
+        return view('/pages/rakorbangwil/tabel/tabel_report_kawasan_provinsi', $data);
     }
 }
