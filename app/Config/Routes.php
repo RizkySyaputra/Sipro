@@ -89,7 +89,7 @@ $routes->get('/memorandum/daftar', 'Memorandum::get_daftar_memo');
 $routes->get('memorandum/view/(:segment)', 'Memorandum::view/$1');
 $routes->get('memorandum/edit/(:segment)', 'Memorandum::edit/$1');
 $routes->post('memorandum/update/(:segment)', 'Memorandum::update/$1');
-$routes->delete('/memorandum/delete/(:segment)', 'Memorandum::delete/$1');
+$routes->delete('memorandum/delete/(:segment)', 'Memorandum::delete/$1');
 $routes->get('/memorandum/daftar_renaksi', 'Memorandum::daftar_renaksi', ['filter' => 'permission']);
 $routes->post('/memorandum/get_daftar_renaksi', 'Memorandum::get_daftar_renaksi');
 $routes->get('/memorandum/input_renaksi/(:segment)', 'Memorandum::input_renaksi/$1');

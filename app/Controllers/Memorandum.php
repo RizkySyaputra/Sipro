@@ -562,6 +562,7 @@ class Memorandum extends BaseController
         if (!$memo) {
             return $this->response->setJSON(['status' => 'error', 'message' => 'Data tidak ditemukan']);
         }
+  
         $id_renaksi =  $memo->id_renaksi;
         $renaksi = $this->renaksiModel->find($id_renaksi);
         if ($renaksi) {
@@ -569,8 +570,7 @@ class Memorandum extends BaseController
             $this->renaksiModel->update($id_renaksi, ['mp' => $newmp]);
         }
         $this->memoModel->where('id_memorandum', $id)->delete();
-
-        return $this->response->setJSON(['status' => 'success', 'message' => 'Data berhasil dihapus']);
+         return $this->response->setJSON(['status' => 'success', 'message' => 'Data berhasil dihapus']);
     }
 
     public function daftar_renaksi()
