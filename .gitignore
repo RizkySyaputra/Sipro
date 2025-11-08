@@ -1,4 +1,6 @@
 # CodeIgniter 4
 /writable/cache
 /writable/logs
+/writable/debugbar
+.env
 *.log
