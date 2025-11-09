@@ -5,7 +5,7 @@
                 <div class="card-icon">
                     <i class="material-icons">source</i>
                 </div>
-                <h4 class="card-title">Laporan Program Tahunan Kawasan Per Provinsi</h4>
+                <h4 class="card-title">Laporan Program Tahunan Jenis Anggaran Per Provinsi</h4>
 
             </div>
             <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
@@ -66,21 +66,27 @@
                         <div class="material-datatables">
                             <table id="datatables" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                                 <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Provinsi</th>
-                                        <th>Kawasan</th>
-                                        <th>Tematik Kawasan</th>
-                                        <th>Pekerjaan</th>
-                                        <th class="text-center">Anggaran</th>
-                                    </tr>
+                                    <?php
+                                    $unorList = ['BM', 'CK', 'SDA', 'PS'];
+                                    echo '<tr>';
+                                    echo '<th rowspan="2">No</th>';
+                                    echo '<th rowspan="2">Provinsi</th>'; // kolom tetap
+                                    echo '<th colspan="4" class="text-center">APBN</th>';
+                                    echo '<th rowspan="2" class="text-center">Pembiayaan Lainnya</th>';
+                                    echo '<th rowspan="2" class="text-center">Total Anggaran</th>';
+                                    echo '</tr>';
+
+                                    echo '<tr>';
+                                    echo "<th>RPM</th>";
+                                    echo "<th>PHLN</th>";
+                                    echo "<th>SBSN</th>";
+                                    echo "<th>Total</th>";
+                                    echo '</tr>';
+                                    ?>
                                 </thead>
                                 <tbody>
 
                                 </tbody>
-                                <tfoot>
-
-                                </tfoot>
                             </table>
                         </div>
                     </div>
@@ -116,7 +122,7 @@
             let id_provinsi = $('#filter-provinsi').val();
             // Kirim request AJAX
             $.ajax({
-                url: '<?= base_url("rakorbangwil/filter_laporan1") ?>', // URL untuk memproses filter
+                url: '<?= base_url("rakorbangwil/filter_laporan4") ?>', // URL untuk memproses filter
                 type: 'POST',
                 data: {
                     tahun_pelaksanaan: tahun_pelaksanaan,
@@ -129,11 +135,12 @@
                         $('#datatables').DataTable().destroy();
                     }
                     // Update tabel dengan data yang diterima
-                    $('#datatables').html(response);
+                    $('#datatables tbody').html(response);
 
 
                     //Inisialisasi DataTables kembali
                     $('#datatables').DataTable({
+                        // "scrollX": true,
                         "pageLength": 10,
                         "pagingType": "full_numbers",
                         "lengthMenu": [
@@ -162,22 +169,20 @@
 
         $('#reset-filters').on('click', function() {
             // Reset dropdowns to their default values
+            // Reset dropdowns to their default values
             $('#filter-provinsi').val('').trigger('change');
-
-            // Optionally clear the table data
-            //$('#datatables tbody').empty();
 
             // Optionally, you could also clear the local storage if needed
             localStorage.removeItem('selectedProvinsi');
 
             var table = $('#datatables').DataTable();
             table.clear().draw();
-
-            $('#datatables tfoot').remove();
         });
 
         $(function() {
             $('#datatables').DataTable({
+                // "scrollX": true,
+                // "scrollCollapse": true,
                 "pageLength": 10,
                 "ordering": true,
                 "lengthChange": true,

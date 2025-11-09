@@ -139,6 +139,16 @@ $routes->post('/rakorbangwil/update_catatan/', 'Rakorbangwil::update_catatan');
 $routes->get('/rakorbangwil/view_pn/(:segment)', 'Rakorbangwil::view_pn/$1');
 $routes->get('/rakorbangwil/view_pn/(:segment)', 'Rakorbangwil::view_pn/$1');
 
+// adding sendi 20251107
+$routes->get('/rakorbangwil/laporan1', 'Rakorbangwil::laporan1', ['filter' => 'permission']);
+$routes->post('/rakorbangwil/filter_laporan1', 'Rakorbangwil::filter_laporan1');
+$routes->get('/rakorbangwil/laporan2', 'Rakorbangwil::laporan2', ['filter' => 'permission']);
+$routes->post('/rakorbangwil/filter_laporan2', 'Rakorbangwil::filter_laporan2');
+$routes->get('/rakorbangwil/laporan3', 'Rakorbangwil::laporan3', ['filter' => 'permission']);
+$routes->post('/rakorbangwil/filter_laporan3', 'Rakorbangwil::filter_laporan3');
+$routes->get('/rakorbangwil/laporan4', 'Rakorbangwil::laporan4', ['filter' => 'permission']);
+$routes->post('/rakorbangwil/filter_laporan4', 'Rakorbangwil::filter_laporan4');
+
 //routes desk
 $routes->get('/desk_kawasan', 'DeskController::kawasan', ['filter' => 'permission']);
 $routes->get('/desk_program', 'DeskController::program', ['filter' => 'permission']);

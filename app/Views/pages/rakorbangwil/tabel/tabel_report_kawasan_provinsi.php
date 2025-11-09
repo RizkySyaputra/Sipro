@@ -1,4 +1,7 @@
 <?php
+$format = new NumberFormatter('id_ID', NumberFormatter::CURRENCY);
+$format->setAttribute(NumberFormatter::FRACTION_DIGITS, 0);
+
 $a = 1;
 $total_kawasan = 0;
 $total_tematik = 0;
@@ -11,20 +14,22 @@ $table .= "<thead>
                 <th>Kawasan</th>
                 <th>Tematik Kawasan</th>
                 <th>Pekerjaan</th>
+                <th>Anggaran</th>
             </tr>
         </thead><tbody>";
 foreach ($kawasan_per_provinsi as $kp) : ?>
     <?php
-    $total_kawasan += $kp->jumlah_kawasan;
-    $total_tematik += $kp->jumlah_tematik;
-    $total_pekerjaan += $kp->jumlah_pekerjaan;
+    // $total_kawasan += $kp->kawasan;
+    // $total_tematik += $kp->tematik;
+    // $total_pekerjaan += $kp->pekerjaan;
 
     $table .= "<tr>
         <td>$a</td>
         <td>$kp->provinsi</td>
-        <td class='text-right'>$kp->jumlah_kawasan</td>
-        <td class='text-right'>$kp->jumlah_tematik</td>
-        <td class='text-right'>$kp->jumlah_pekerjaan</td>
+        <td class='text-right'>$kp->kawasan</td>
+        <td class='text-right'>$kp->tematik</td>
+        <td class='text-right'>$kp->pekerjaan</td>
+        <td class='text-right'>" . $format->formatCurrency($kp->anggaran, 'IDR') . "</td>
     </tr>";
     $a++;
     ?>

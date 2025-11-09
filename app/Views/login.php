@@ -128,7 +128,7 @@
                                         <i class="material-icons" style="color: #000066">person</i>
                                     </span>
                                 </div>
-                                <input type="text" class="form-control no-border-bottom" name="login" placeholder="Username...">
+                                <input type="text" class="form-control no-border-bottom" name="login" placeholder="Username..." autocomplete="off">
                             </div>
                             <div class="input-group-login mb-2">
                                 <div class="input-group-prepend">
@@ -136,7 +136,7 @@
                                         <i class="material-icons" style="color: #000066">lock_outline</i>
                                     </span>
                                 </div>
-                                <input type="password" name="password" class="form-control no-border-bottom" placeholder="Password...">
+                                <input type="password" name="password" class="form-control no-border-bottom" placeholder="Password..." autocomplete="off">
                             </div>
                             <?php if (session()->has('error')) : ?>
                                 <div class="my-2 text-center">
