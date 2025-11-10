@@ -309,8 +309,9 @@
 
         $.ajax({
             url: '<?= base_url('memorandum/delete') ?>/' + id,
-            type: 'DELETE',
+            type: 'POST',
             data: {
+                 _method: 'DELETE', 
                 '<?= csrf_token() ?>': '<?= csrf_hash() ?>' // kirim CSRF
             },
             success: function(response) {

@@ -310,8 +310,9 @@
 
         $.ajax({
             url: '<?= base_url('rakorbangwil/delete') ?>/' + id,
-            type: 'DELETE',
+            type: 'POST',
             data: {
+                 _method: 'DELETE', 
                 '<?= csrf_token() ?>': '<?= csrf_hash() ?>' // kirim CSRF
             },
             success: function(response) {

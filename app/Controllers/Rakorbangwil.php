@@ -283,10 +283,6 @@ class Rakorbangwil extends BaseController
         if (!$progTahunan) {
             return $this->response->setJSON(['status' => 'error', 'message' => 'Data tidak ditemukan']);
         }
-        $id_renaksi =  $progTahunan->id_renaksi;
-        $renaksi = $this->renaksiModel->find($id_renaksi);
-        $newmp = $renaksi->mp - 1;
-        $this->renaksiModel->update($id_renaksi, ['mp' => $newmp]);
         $this->progTahunanModel->where('id_prog_tahunan', $id)->delete();
 
         return $this->response->setJSON(['status' => 'success', 'message' => 'Data berhasil dihapus']);
@@ -349,7 +345,6 @@ class Rakorbangwil extends BaseController
 
         // Ambil data kawasan dari model
         $list_kawasan = $this->praRakorModel->getKawasanList($id_provinsi, $id_tematik, $id_pn);
-
         // Jika tidak ada data
         if (!$list_kawasan || count($list_kawasan) === 0) {
             return $this->response->setStatusCode(404)->setBody('Tidak ada data kawasan ditemukan');
