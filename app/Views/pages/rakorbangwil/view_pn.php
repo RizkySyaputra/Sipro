@@ -269,17 +269,17 @@
                                             </tr>
                                             <tr>
                                                 <th style="text-align: center;">Pekerjaan</th>
-                                                <th style="text-align: center;">Anggaran</th>
+                                                <th style="text-align: center;">Anggaran (ribu)</th>
                                                 <th style="text-align: center;">Pekerjaan</th>
-                                                <th style="text-align: center;">Anggaran</th>
+                                                <th style="text-align: center;">Anggaran (ribu)</th>
                                                 <th style="text-align: center;">Pekerjaan</th>
-                                                <th style="text-align: center;">Anggaran</th>
+                                                <th style="text-align: center;">Anggaran (ribu)</th>
                                                 <th style="text-align: center;">Pekerjaan</th>
-                                                <th style="text-align: center;">Anggaran</th>
+                                                <th style="text-align: center;">Anggaran (ribu)</th>
                                                 <th style="text-align: center;">Pekerjaan</th>
-                                                <th style="text-align: center;">Anggaran</th>
+                                                <th style="text-align: center;">Anggaran (ribu)</th>
                                                 <th style="text-align: center;">Pekerjaan</th>
-                                                <th style="text-align: center;">Anggaran</th>
+                                                <th style="text-align: center;">Anggaran (ribu)</th>
                                             </tr>
                                         </thead>
                                         <tbody>

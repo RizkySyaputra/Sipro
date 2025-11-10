@@ -10,7 +10,7 @@
                         <th style="text-align: left;">Pekerjaan</th>
                         <th style="text-align: center;">Kawasan</th>
                         <th style="text-align: center;">Volume</th>
-                        <th style="text-align: center;">Anggaran</th>
+                        <th style="text-align: center;">Anggaran (ribu)</th>
                     </tr>
                 </thead>
                 <tbody>
