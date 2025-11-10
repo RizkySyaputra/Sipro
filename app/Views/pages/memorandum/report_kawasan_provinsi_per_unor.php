@@ -61,7 +61,7 @@
                                 <thead>
                                     <?php
                                     $unorList = ['SDA', 'BM', 'CK', 'PS'];
-                                    $jenis = ['Kawasan', 'Tematik Kawasan', 'Pekerjaan'];
+                                    $jenis = ['Kawasan', 'Tematik Kawasan', 'Pekerjaan', 'Anggaran'];
                                     // Baris 1: Jenis, colspan = Jumlah Unor
                                     echo '<tr>';
                                     echo '<th rowspan="2">No</th>';

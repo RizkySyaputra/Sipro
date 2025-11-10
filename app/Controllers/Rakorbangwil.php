@@ -5,6 +5,9 @@ namespace App\Controllers;
 use App\Models\Rpiw\ProgramRpiwModel;
 use App\Models\Rpiw\KawasanRpiwModel;
 use App\Models\Rakorbangwil\ProgTahunanModel;
+use App\Models\Rakorbangwil\ReportProgTahunanPerProvinsiModel;
+use App\Models\Rakorbangwil\ReportProgTahunanPerProvinsiPerPNModel;
+use App\Models\Rakorbangwil\ReportProgTahunanPerProvinsiPerUnorModel;
 use App\Models\Master\ProvinsiModel;
 use App\Models\Master\UnorModel;
 use App\Models\Master\PendanaanModel;
@@ -56,6 +59,9 @@ class Rakorbangwil extends BaseController
     protected $roModel;
     protected $daftarProgTahunanModel;
     protected $progTahunanModel;
+    protected $reportProgTahunanPerProvinsiModel;
+    protected $reportProgTahunanPerProvinsiPerPNModel;
+    protected $reportProgTahunanPerProvinsiPerUnorModel;
     protected $satuanModel;
     protected $mpModel;
     protected $daftarRenaksiModel;
@@ -71,6 +77,9 @@ class Rakorbangwil extends BaseController
         $this->roModel = new RoModel();
         $this->daftarProgTahunanModel = new DaftarProgTahunanModel();
         $this->progTahunanModel = new ProgTahunanModel();
+        $this->reportProgTahunanPerProvinsiModel = new ReportProgTahunanPerProvinsiModel();
+        $this->reportProgTahunanPerProvinsiPerPNModel = new ReportProgTahunanPerProvinsiPerPNModel();
+        $this->reportProgTahunanPerProvinsiPerUnorModel = new ReportProgTahunanPerProvinsiPerUnorModel();
         $this->programRpiwModel = new ProgramRpiwModel();
         $this->provinsiModel = new ProvinsiModel();
         $this->unorModel = new UnorModel();
@@ -404,5 +413,142 @@ class Rakorbangwil extends BaseController
             ->update();
 
         return $this->response->setStatusCode(200);
+    }
+
+    public function laporan1()
+    {
+        $dataProvinsi = $this->provinsiModel->getProvinsi();
+
+        $data = [
+            'provinsi' => $dataProvinsi
+        ];
+
+        $this->template->write('title', 'Laporan Kawasan Per Provinsi');
+        $this->template->load('/templates/main', '/pages/rakorbangwil/report_kawasan_provinsi', $data);
+    }
+
+    public function filter_laporan1()
+    {
+
+        // $session = session();
+        $tahun_pelaksanaan = $this->request->getPost('tahun_pelaksanaan');
+        $id_provinsi = $this->request->getPost('id_provinsi');
+
+
+        if (!empty($tahun_pelaksanaan)) {
+            $kawasanPerProvinsi = $this->reportProgTahunanPerProvinsiModel->getReportKawasanPerProvinsi($tahun_pelaksanaan, $id_provinsi);
+
+            $data = [
+                'kawasan_per_provinsi' => $kawasanPerProvinsi,
+            ];
+        } else {
+            $data = [
+                'kawasan_per_provinsi' => []
+            ];
+        }
+        return view('/pages/rakorbangwil/tabel/tabel_report_kawasan_provinsi', $data);
+    }
+
+    public function laporan2()
+    {
+        $dataProvinsi = $this->provinsiModel->getProvinsi();
+
+        $data = [
+            'provinsi'  => $dataProvinsi
+        ];
+
+        $this->template->write('title', 'Laporan Kawasan Per Provinsi Per PN');
+        $this->template->load('/templates/main', '/pages/rakorbangwil/report_kawasan_provinsi_per_pn', $data);
+    }
+
+    public function filter_laporan2()
+    {
+
+        $tahun_pelaksanaan = $this->request->getPost('tahun_pelaksanaan');
+        $id_provinsi = $this->request->getPost('id_provinsi');
+
+
+        if (!empty($tahun_pelaksanaan)) {
+            $kawasanPerProvinsiPerPN = $this->reportProgTahunanPerProvinsiPerPNModel->getReportKawasanPerProvinsiPerPN($tahun_pelaksanaan, $id_provinsi);
+
+            $data = [
+                'kawasan_per_provinsi_per_pn' => $kawasanPerProvinsiPerPN,
+            ];
+        } else {
+            $data = [
+                'kawasan_per_provinsi_per_pn' => []
+            ];
+        }
+
+        return view('/pages/rakorbangwil/tabel/tabel_report_kawasan_provinsi_per_pn', $data);
+    }
+
+    public function laporan3()
+    {
+        $dataProvinsi = $this->provinsiModel->getProvinsi();
+
+        $data = [
+            'provinsi'  => $dataProvinsi
+        ];
+
+        $this->template->write('title', 'Laporan Kawasan Per Provinsi Per Unor');
+        $this->template->load('/templates/main', '/pages/rakorbangwil/report_kawasan_provinsi_per_unor', $data);
+    }
+
+    public function filter_laporan3()
+    {
+
+
+        $tahun_pelaksanaan = $this->request->getPost('tahun_pelaksanaan');
+        $id_provinsi = $this->request->getPost('id_provinsi');
+
+
+        if (!empty($tahun_pelaksanaan)) {
+            $kawasanPerProvinsiPerUnor = $this->reportProgTahunanPerProvinsiPerUnorModel->getReportKawasanPerProvinsiPerUnor($tahun_pelaksanaan, $id_provinsi);
+
+            $data = [
+                'kawasan_per_provinsi_per_unor' => $kawasanPerProvinsiPerUnor,
+            ];
+        } else {
+            $data = [
+                'kawasan_per_provinsi_per_unor' => []
+            ];
+        }
+
+        return view('/pages/rakorbangwil/tabel/tabel_report_kawasan_provinsi_per_unor', $data);
+    }
+
+    public function laporan4()
+    {
+        $dataProvinsi = $this->provinsiModel->getProvinsi();
+
+        $data = [
+            'provinsi' => $dataProvinsi
+        ];
+
+        $this->template->write('title', 'Laporan Anggaran Per Provinsi');
+        $this->template->load('/templates/main', '/pages/rakorbangwil/report_anggaran_per_provinsi', $data);
+    }
+
+    public function filter_laporan4()
+    {
+
+        $tahun_pelaksanaan = $this->request->getPost('tahun_pelaksanaan');
+        $id_provinsi = $this->request->getPost('id_provinsi');
+
+
+        if (!empty($tahun_pelaksanaan)) {
+            $anggaranPerProvinsi = $this->reportProgTahunanPerProvinsiModel->getReportAnggaranPerProvinsi($tahun_pelaksanaan, $id_provinsi);
+
+            $data = [
+                'anggaran_per_provinsi' => $anggaranPerProvinsi,
+            ];
+        } else {
+            $data = [
+                'anggaran_per_provinsi' => []
+            ];
+        }
+
+        return view('/pages/rakorbangwil/tabel/tabel_report_anggaran_per_provinsi', $data);
     }
 }

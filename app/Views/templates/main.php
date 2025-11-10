@@ -378,7 +378,7 @@
 
                         <!-- Nama user -->
                         <div class="user-info">
-                            <span class="d-block font-weight-bold">
+                            <span class="d-block font-weight-bold" style="text-transform: capitalize;">
                                 <?= user()->username ?>
                             </span>
                         </div>
@@ -473,6 +473,26 @@
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
+        $(document).ready(function() {
+            // $('.submenu-wrapper').hide().removeClass('open');
+            // $('.tree-link').removeClass('menu-active open-parent');
+            // $('.toggle-btn').attr('aria-expanded', 'false');
+            // Pilih semua elemen yang memiliki class mengandung 'parent-'
+            $('.menu-item[class*="parent-"]').each(function() {
+                var $parent = $(this);
+
+                // Contoh: sembunyikan submenu
+                $parent.find('.submenu-wrapper').hide().removeClass('open');
+
+                // Set tombol toggle tertutup
+                $parent.find('.toggle-btn').attr('aria-expanded', 'false');
+
+                // Hapus tanda parent terbuka
+                $parent.find('.tree-link').removeClass('open-parent');
+            });
+
+        });
+
         // hide loading
         window.addEventListener("load", function() {
             document.getElementById("loading").style.display = "none";
@@ -535,6 +555,12 @@
 
                 // On load: buka menu sesuai URL
                 (function() {
+
+                    // On load: tutup semua submenu dulu
+                    // $('.submenu-wrapper').hide().removeClass('open');
+                    // $('.tree-link').removeClass('menu-active open-parent');
+                    // $('.toggle-btn').attr('aria-expanded', 'false');
+
                     var currentPath = window.location.pathname.replace(/\/$/, '') || '/';
 
                     $('.tree-link').each(function() {
@@ -545,6 +571,7 @@
                         a.href = href;
                         var linkPath = a.pathname.replace(/\/$/, '') || '/';
 
+
                         if (linkPath === currentPath) {
                             // hanya kasih menu-active kalau link BUKAN parent
                             if (!$(this).hasClass('has-children')) {
@@ -552,15 +579,22 @@
                                 $(this).addClass('menu-active'); // anak jadi menu-active
                             }
 
+                            // $('.submenu-wrapper').hide().removeClass('open');
+                            // $('.tree-link').removeClass('menu-active open-parent');
+                            // $('.toggle-btn').attr('aria-expanded', 'false');
+
                             // buka semua parentnya
                             var $row = $(this).closest('.menu-row');
                             var $parentSub = $row.closest('.submenu-wrapper');
-                            while ($parentSub.length) {
-                                $parentSub.show().addClass('open'); // buka parent
-                                var $parentRow = $parentSub.prev('.menu-row');
-                                $parentRow.find('.toggle-btn').attr('aria-expanded', 'true');
-                                $parentRow.find('.tree-link').addClass('open-parent'); // parent cukup open-parent
-                                $parentSub = $parentSub.parent().closest('.submenu-wrapper');
+
+                            if ($row.find('.nav-link').hasClass('menu-active')) {
+                                while ($parentSub.length) {
+                                    $parentSub.show().addClass('open'); // buka parent
+                                    var $parentRow = $parentSub.prev('.menu-row');
+                                    $parentRow.find('.toggle-btn').attr('aria-expanded', 'true');
+                                    $parentRow.find('.tree-link').addClass('open-parent'); // parent cukup open-parent
+                                    $parentSub = $parentSub.parent().closest('.submenu-wrapper');
+                                }
                             }
                         }
                     });
