@@ -37,7 +37,7 @@
 
 
                     <div class="mb-2">
-                        <label class="catatan-text"><strong>Peta Kawasan <?= $data[0]->peta_kawasan ?></strong></label>
+                        <label class="catatan-text"><strong>Peta Kawasan </strong></label>
 
                         <?php if (!empty($data[0]->peta_kawasan)): ?>
                             <div id="map" style="height: 400px; width: 100%; border-radius:10px;"></div>
