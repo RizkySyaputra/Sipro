@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\Rpiw\ProgramRpiwModel;
 use App\Models\Rpiw\KawasanRpiwModel;
 use App\Models\Rakorbangwil\ProgTahunanModel;
+use App\Models\Rakorbangwil\KebutuhanKLModel;
 use App\Models\Rakorbangwil\ReportProgTahunanPerProvinsiModel;
 use App\Models\Rakorbangwil\ReportProgTahunanPerProvinsiPerPNModel;
 use App\Models\Rakorbangwil\ReportProgTahunanPerProvinsiPerUnorModel;
@@ -38,6 +39,7 @@ use function PHPUnit\Framework\returnCallback;
 class Rakorbangwil extends BaseController
 {
     protected $programRpiwModel;
+    protected $kebutuhan_kl_Model;
     protected $kawasanRpiwModel;
     protected $provinsiModel;
     protected $unorModel;
@@ -71,6 +73,8 @@ class Rakorbangwil extends BaseController
     public function __construct()
 
     {
+
+        $this->kebutuhan_kl_Model = new KebutuhanKLModel();
         $this->programModel = new ProgramModel();
         $this->kegiatanModel = new KegiatanModel();
         $this->kroModel = new KroModel();
@@ -320,6 +324,7 @@ class Rakorbangwil extends BaseController
         $program = $this->praRakorModel->where('id_pn', $id)->findAll();
         $rekap_kawasan = $this->rekapKawasanModel->where('id_pn', $id)->findAll();
         $rekap_program = $this->rekapProgRakorbangwilModel->where('id_pn', $id)->findAll();
+        $kebutuhan_dukungan_kl = $this->kebutuhan_kl_Model->getKebutuhanKl($id);
         $catatan_pn = $this->praRakorModel->getCatatan($id);
         $this->template->write('title', 'Detail Prioritas Nasional');
         $this->template->load('/templates/main', '/pages/rakorbangwil/view_pn', [
@@ -327,7 +332,8 @@ class Rakorbangwil extends BaseController
             'programData' => $rekap_program,
             'pn' => $pn,
             'catatan_pn' => $catatan_pn,
-            'namaList' => $namaList
+            'namaList' => $namaList,
+            'kebutuhan_dukungan_kl' => $kebutuhan_dukungan_kl
         ]);
     }
     public function get_list_kawasan()

@@ -447,7 +447,29 @@
                             <div class="tab-pane fade show" id="kebutuhan">
                                 <div class="form-group">
                                     <label><strong>Kebutuhan K/L</strong></label>
-                                    <p><?= $catatan_pn->kebutuhan_dukungan_kl ?></p>
+                                    <div class="table-responsive">
+                                        <table id="datatables3" class="table table-bordered table-hover">
+                                            <thead class="bg-light">
+                                                <tr>
+                                                    <th style="text-align: center;">No</th>
+                                                    <th style="text-align: center;">K/L</th>
+                                                    <th style="text-align: center;">Wilayah</th>
+                                                    <th style="text-align: center;">Catatan</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php $i = 1;
+                                                foreach ($kebutuhan_dukungan_kl as $data) : ?>
+                                                    <tr>
+                                                        <td><?= $i++ ?></td>
+                                                        <td><?= $data->nama_kl  ?></td>
+                                                        <td><?= $data->wilayah  ?></td>
+                                                        <td><?= $data->catatan  ?></td>
+                                                    </tr>
+                                                <?php endforeach; ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -610,6 +632,13 @@
                 }
             });
             $('#datatables2').DataTable({
+                "order": [],
+                "pageLength": 10,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.13.6/i18n/id.json"
+                }
+            });
+            $('#datatables3').DataTable({
                 "order": [],
                 "pageLength": 10,
                 "language": {
