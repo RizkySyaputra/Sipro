@@ -52,7 +52,7 @@
                                         <tr>
                                             <td><?= $a++; ?></td>
                                             <td>
-                                                <strong><?= esc($pn['nama_pn']) ?></strong>
+                                                <strong><?= esc('PN' . $pn['id_pn'] . ' - ' . $pn['nama_pn']) ?></strong>
                                             </td>
                                             <td>
                                                 <?php if (!empty($klByPn[$pn['id_pn']])): ?>
@@ -63,7 +63,7 @@
                                                     <em class="text-muted">Belum ada data KL</em>
                                                 <?php endif; ?>
                                             </td>
-                                            <td>2026</td>
+                                            <td><?= session('tahun_pelaksana') ?></td>
                                             <td>
                                                 <?php if ($can_view): ?>
                                                     <button class="btn btn-info btn-sm btn-view" data-id="<?= $pn['id_pn'] ?>" title="Lihat">
