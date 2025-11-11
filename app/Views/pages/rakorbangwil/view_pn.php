@@ -85,7 +85,7 @@
                             <div id="catatanForm" class="d-none mt-3">
                                 <div id="catatanWrapper"></div>
                                 <button type="button" class="btn btn-sm btn-primary mt-2" id="tambahCatatan">Tambah Catatan</button>
-                                <button type="button" class="btn btn-success mt-2" id="simpanCatatan">Simpan</button>
+                                <button type="button" class="btn btn-info mt-2" id="simpanCatatan">Simpan</button>
                                 <button type="button" class="btn btn-secondary mt-2" id="batalCatatan">Batal</button>
                             </div>
                         </div>
@@ -103,7 +103,7 @@
                             <!-- Form edit usulan -->
                             <div id="usulanForm" class="d-none mt-3">
                                 <textarea id="inputUsulan" class="form-control" rows="4"><?= esc($catatan_pn->usulan_pekerjaan ?? '') ?></textarea>
-                                <button class="btn btn-success mt-2" id="simpanUsulan">Simpan</button>
+                                <button class="btn btn-info mt-2" id="simpanUsulan">Simpan</button>
                                 <button class="btn btn-secondary mt-2" id="batalUsulan">Batal</button>
                             </div>
                         </div>
@@ -118,7 +118,7 @@
                                 <a class="nav-link" data-toggle="tab" href="#infra" role="tab">Dukungan Infrastruktur PU</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#kebutuhan" role="tab">Kebutuhan K/L</a>
+                                <a class="nav-link" data-toggle="tab" href="#kebutuhan" role="tab">Kebutuhan Dukungan K/L</a>
                             </li>
                         </ul>
 
@@ -680,7 +680,7 @@
                 let id_provinsi = $(this).data('id_provinsi');
 
                 // Set judul modal
-                $('#modalprogramDetailLabel').text('Daftar Program ' + tematik);
+                $('#modalprogramDetailLabel').text('Daftar Program/Kegiatan di ' + tematik);
                 // Tampilkan modal
                 $('#modalprogramDetail').modal('show');
 

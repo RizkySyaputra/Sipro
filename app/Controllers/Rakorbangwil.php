@@ -316,7 +316,7 @@ class Rakorbangwil extends BaseController
 
         $pn = $this->pnModel->find($id);
         $stackholder = $this->stakholderModel->orderBy('id_kategori')->orderBy('id_stakeholder')->findAll();
-        $namaList = array_column($stackholder, 'short_stakeholder');
+        $namaList = array_column($stackholder, 'stakeholder');
         $program = $this->praRakorModel->where('id_pn', $id)->findAll();
         $rekap_kawasan = $this->rekapKawasanModel->where('id_pn', $id)->findAll();
         $rekap_program = $this->rekapProgRakorbangwilModel->where('id_pn', $id)->findAll();
