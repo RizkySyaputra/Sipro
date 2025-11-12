@@ -451,20 +451,20 @@
                                         <table id="datatables3" class="table table-bordered table-hover">
                                             <thead class="bg-light">
                                                 <tr>
-                                                    <th style="text-align: center;">No</th>
+                                                    <th style="text-align: center; width: 5% ;">No</th>
                                                     <th style="text-align: center;">K/L</th>
-                                                    <th style="text-align: center;">Wilayah</th>
-                                                    <th style="text-align: center;">Catatan</th>
+                                                    <th style="text-align: center; ">Wilayah</th>
+                                                    <th style="text-align: center; width: 65% ;">Catatan</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php $i = 1;
                                                 foreach ($kebutuhan_dukungan_kl as $data) : ?>
                                                     <tr>
-                                                        <td><?= $i++ ?></td>
+                                                        <td style="text-align: center; width: 5% ;"><?= $i++ ?></td>
                                                         <td><?= $data->nama_kl  ?></td>
                                                         <td><?= $data->wilayah  ?></td>
-                                                        <td><?= $data->catatan  ?></td>
+                                                        <td style="width: 70% ;"><?= nl2br($data->catatan)  ?></td>
                                                     </tr>
                                                 <?php endforeach; ?>
                                             </tbody>
@@ -631,6 +631,7 @@
                     "url": "//cdn.datatables.net/plug-ins/1.13.6/i18n/id.json"
                 }
             });
+
             $('#datatables2').DataTable({
                 "order": [],
                 "pageLength": 10,
