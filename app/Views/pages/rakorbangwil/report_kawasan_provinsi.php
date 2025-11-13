@@ -67,12 +67,12 @@
                             <table id="datatables" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Provinsi</th>
-                                        <th>Kawasan</th>
-                                        <th>Tematik Kawasan</th>
-                                        <th>Pekerjaan</th>
-                                        <th class="text-center">Anggaran</th>
+                                        <th class="text-center">No</th>
+                                        <th class="text-center">Provinsi</th>
+                                        <th class="text-center">Kawasan</th>
+                                        <th class="text-center">Tematik Kawasan</th>
+                                        <th class="text-center">Pekerjaan</th>
+                                        <th class="text-center">Anggaran (Ribu)</th>
                                     </tr>
                                 </thead>
                                 <tbody>

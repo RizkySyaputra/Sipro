@@ -32,6 +32,7 @@
                                         <option value="2027">2027</option>
                                         <option value="2028">2028</option>
                                         <option value="2029">2029</option>
+                                        <option value="2529">2025 - 2029</option>
                                     </select>
                                 </div>
                             </div>
@@ -60,11 +61,13 @@
                             <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Provinsi</th>
-                                        <th>Kawasan</th>
-                                        <th>Tematik Kawasan</th>
-                                        <th>Pekerjaan</th>
+                                        <th class="text-center">No</th>
+                                        <th class="text-center">Provinsi</th>
+                                        <th class="text-center">Kawasan</th>
+                                        <th class="text-center">Tematik Kawasan</th>
+                                        <th class="text-center">Pekerjaan</th>
+                                        <th class="text-center">Anggaran (Ribu)</th>
+                                        <th class="text-center">Tahun Anggaran</th>
                                     </tr>
                                 </thead>
                                 <tbody>

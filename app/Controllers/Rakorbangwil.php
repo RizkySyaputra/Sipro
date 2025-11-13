@@ -32,6 +32,8 @@ use App\Models\Master\RekapProgramPraRakModel;
 use App\Models\Rakorbangwil\DaftarProgTahunanModel;
 use App\Models\Rpiw\DaftarRenaksiModel;
 use App\Models\Rpiw\RenaksiModel;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 use function PHPUnit\Framework\returnCallback;
 
@@ -550,5 +552,142 @@ class Rakorbangwil extends BaseController
         }
 
         return view('/pages/rakorbangwil/tabel/tabel_report_anggaran_per_provinsi', $data);
+    }
+
+    public function export_to_excel()
+    {
+        // Ambil data filter dari request POST
+        $provinsi_id = $this->request->getPost('provinsi');
+        $unor_id = $this->request->getPost('unor');
+        $sumber = $this->request->getPost('sumber');
+
+        // Ambil data berdasarkan filter
+        $daftar_program_tahunan = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, $unor_id, $sumber);
+
+        // Buat Spreadsheet baru
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+
+        // Header kolom
+        $sheet->setCellValue('A1', 'No');
+        $sheet->setCellValue('B1', 'ID Renaksi');
+        $sheet->setCellValue('C1', 'ID Memorandum');
+        $sheet->setCellValue('D1', 'ID Program Tahunan');
+        $sheet->setCellValue('E1', 'ID PN');
+        $sheet->setCellValue('F1', 'Nama PN');
+        $sheet->setCellValue('G1', 'ID PP');
+        $sheet->setCellValue('H1', 'Nama PP');
+        $sheet->setCellValue('I1', 'ID KP');
+        $sheet->setCellValue('J1', 'Nama KP');
+        $sheet->setCellValue('K1', 'ID Prop');
+        $sheet->setCellValue('L1', 'Nama Prop');
+        $sheet->setCellValue('M1', 'ID Program');
+        $sheet->setCellValue('N1', 'Nama Program');
+        $sheet->setCellValue('O1', 'ID Kegiatan');
+        $sheet->setCellValue('P1', 'Nama Kegiatan');
+        $sheet->setCellValue('Q1', 'ID KRO');
+        $sheet->setCellValue('R1', 'Nama KRO');
+        $sheet->setCellValue('S1', 'ID RO');
+        $sheet->setCellValue('T1', 'Nama RO');
+        $sheet->setCellValue('U1', 'Tahun Pelaksanaan');
+        $sheet->setCellValue('V1', 'ID Provinsi');
+        $sheet->setCellValue('W1', 'Nama Provinsi');
+        $sheet->setCellValue('X1', 'Unor');
+        $sheet->setCellValue('Y1', 'Pekerjaan');
+        $sheet->setCellValue('Z1', 'Kawasan');
+        $sheet->setCellValue('AA1', 'Tematik');
+        $sheet->setCellValue('AB1', 'Kabkot');
+        $sheet->setCellValue('AC1', 'Lokasi');
+        $sheet->setCellValue('AD1', 'Justifikasi');
+        $sheet->setCellValue('AE1', 'Nama Satuan');
+        $sheet->setCellValue('AF1', 'Volume');
+        $sheet->setCellValue('AG1', 'Sumber Pendanaan');
+        $sheet->setCellValue('AH1', 'Anggaran');
+        $sheet->setCellValue('AI1', 'Sumber');
+        $sheet->setCellValue('AJ1', 'Catatan Memorandum');
+        $sheet->setCellValue('AK1', 'KL');
+        $sheet->setCellValue('AL1', 'Kebutuhan Dukungan KL');
+        $sheet->setCellValue('AM1', 'Reviu Puswil');
+
+        // Membuat teks header menjadi bold
+        $sheet->getStyle('A1:AM1')->getFont()->setBold(true);
+
+        // Atur kolom agar auto size
+        // foreach (range('A', 'AM') as $col) {
+        //     $sheet->getColumnDimension($col)->setAutoSize(true);
+        // }
+
+        // Atur semua kolom agar auto size (termasuk kolom di atas 'Z')
+        foreach ($sheet->getColumnIterator() as $column) {
+            $columnIndex = $column->getColumnIndex();
+            $sheet->getColumnDimension($columnIndex)->setAutoSize(true);
+        }
+
+        // Recalculate lebar kolom agar pas
+        $sheet->calculateColumnWidths();
+
+        // Isi data ke dalam sheet
+        $row = 2; // Baris data dimulai dari baris ke-2
+        foreach ($daftar_program_tahunan as $index => $dt) {
+
+            //
+            $sheet->setCellValue('A' . $row, $index + 1);
+            $sheet->setCellValue('B' . $row, $dt->id_renaksi);
+            $sheet->setCellValue('C' . $row, $dt->id_memorandum);
+            $sheet->setCellValue('D' . $row, $dt->id_prog_tahunan);
+            $sheet->setCellValue('E' . $row, $dt->id_pn);
+            $sheet->setCellValue('F' . $row, $dt->nama_pn);
+            $sheet->setCellValue('G' . $row, $dt->id_pp);
+            $sheet->setCellValue('H' . $row, $dt->nama_pp);
+            $sheet->setCellValue('I' . $row, $dt->id_kp);
+            $sheet->setCellValue('J' . $row, $dt->nama_kp);
+            $sheet->setCellValue('K' . $row, $dt->id_prop);
+            $sheet->setCellValue('L' . $row, $dt->nama_prop);
+            $sheet->setCellValue('M' . $row, $dt->id_program);
+            $sheet->setCellValue('N' . $row, $dt->nm_program);
+            $sheet->setCellValue('O' . $row, $dt->id_kegiatan);
+            $sheet->setCellValue('P' . $row, $dt->nm_kegiatan);
+            $sheet->setCellValue('Q' . $row, $dt->id_kro);
+            $sheet->setCellValue('R' . $row, $dt->nm_kro);
+            $sheet->setCellValue('S' . $row, $dt->id_ro);
+            $sheet->setCellValue('T' . $row, $dt->nm_ro);
+            $sheet->setCellValue('U' . $row, $dt->thn_pelaksanaan);
+            $sheet->setCellValue('V' . $row, $dt->id_provinsi);
+            $sheet->setCellValue('W' . $row, $dt->provinsi);
+            $sheet->setCellValue('X' . $row, $dt->unor);
+            $sheet->setCellValue('Y' . $row, $dt->pekerjaan);
+            $sheet->setCellValue('Z' . $row, $dt->kawasan);
+            $sheet->setCellValue('AA' . $row, $dt->tematik);
+            $sheet->setCellValue('AB' . $row, $dt->kabkot);
+            $sheet->setCellValue('AC' . $row, $dt->lokasi);
+            $sheet->setCellValue('AD' . $row, $dt->justifikasi);
+            $sheet->setCellValue('AE' . $row, $dt->nama_satuan);
+            $sheet->setCellValue('AF' . $row, $dt->volume);
+            $sheet->setCellValue('AG' . $row, $dt->sumber_pendanaan);
+            $sheet->setCellValue('AH' . $row, $dt->anggaran);
+            $sheet->setCellValue('AI' . $row, $dt->sumber);
+            $sheet->setCellValue('AJ' . $row, $dt->catatan_memorandum);
+            $sheet->setCellValue('AK' . $row, $dt->kl);
+            $sheet->setCellValue('AL' . $row, $dt->kebutuhan_dukungan_kl);
+            $sheet->setCellValue('AM' . $row, $dt->reviu_puswil);
+            $row++;
+        }
+
+        // Simpan file sebagai output langsung
+        $writer = new Xlsx($spreadsheet);
+        $filename = 'Daftar_Program_Tahunan_' . date('Y-m-d_H-i-s') . '.xlsx';
+
+        // Header untuk download file Excel
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment; filename="' . $filename . '"');
+        header('Cache-Control: max-age=0');
+
+        // clean output buffer
+        while (ob_get_level()) {
+            ob_end_clean();
+        }
+        // Tulis file ke output
+        $writer->save('php://output');
+        exit;
     }
 }

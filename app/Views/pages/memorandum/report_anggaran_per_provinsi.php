@@ -32,11 +32,12 @@
                                         <option value="2027">2027</option>
                                         <option value="2028">2028</option>
                                         <option value="2029">2029</option>
+                                        <option value="2529">2025 - 2029</option>
                                     </select>
                                 </div>
                             </div>
 
-                            <div class="row mb-3">
+                            <!-- <div class="row mb-3">
                                 <div class="col-md-2">
                                     <label for="unor"><strong>Unor</strong></label>
                                 </div>
@@ -66,7 +67,7 @@
                                         <option value="8">PN 8</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="row">
                                 <div class="col-md-2">
@@ -94,17 +95,19 @@
                                     <?php
                                     $unorList = ['BM', 'CK', 'SDA', 'PS'];
                                     echo '<tr>';
-                                    echo '<th rowspan="2">No</th>';
-                                    echo '<th rowspan="2">Provinsi</th>'; // kolom tetap
-                                    echo '<th colspan="4" class="text-center">APBN</th>';
-                                    echo '<th rowspan="2" class="text-center">Pembiayaan Lainnya</th>';
+                                    echo '<th rowspan="2" class="text-center">No</th>';
+                                    echo '<th rowspan="2" class="text-center">Provinsi</th>'; // kolom tetap
+                                    echo '<th colspan="4" class="text-center">APBN (Ribu)</th>';
+                                    echo '<th rowspan="2" class="text-center">Pembiayaan Lainnya (Ribu)</th>';
+                                    echo '<th rowspan="2" class="text-center">Total Anggaran (Ribu)</th>';
+                                    echo '<th rowspan="2" class="text-center">Tahun Anggaran</th>';
                                     echo '</tr>';
 
                                     echo '<tr>';
-                                    echo "<th>RPM</th>";
-                                    echo "<th>PHLN</th>";
-                                    echo "<th>SBSN</th>";
-                                    echo "<th>Total</th>";
+                                    echo "<th class='text-center'>RPM</th>";
+                                    echo "<th class='text-center'>PHLN</th>";
+                                    echo "<th class='text-center'>SBSN</th>";
+                                    echo "<th class='text-center'>Total</th>";
                                     echo '</tr>';
                                     ?>
                                 </thead>
@@ -132,19 +135,19 @@
             allowClear: true
         });
 
-        $('#filter-unor').select2({
-            placeholder: "Pilih Unor",
-            allowClear: true
-        });
+        // $('#filter-unor').select2({
+        //     placeholder: "Pilih Unor",
+        //     allowClear: true
+        // });
 
-        $('#filter-pn').select2({
-            placeholder: "Pilih PN",
-            allowClear: true
-        });
+        // $('#filter-pn').select2({
+        //     placeholder: "Pilih PN",
+        //     allowClear: true
+        // });
 
         $('#filter-tahun_anggaran').val(localStorage.getItem('selectedTahunAnggaran'));
-        $('#filter-unor').val(localStorage.getItem('selectedUnor'));
-        $('#filter-pn').val(localStorage.getItem('selectedPN'));
+        // $('#filter-unor').val(localStorage.getItem('selectedUnor'));
+        // $('#filter-pn').val(localStorage.getItem('selectedPN'));
 
         // On form submit, save the selected values
         $('#filter-form').on('submit', function() {
@@ -166,7 +169,7 @@
                         $('#datatables').DataTable().destroy();
                     }
                     // Update tabel dengan data yang diterima
-                    $('#datatables tbody').html(response);
+                    $('#datatables').html(response);
 
 
                     //Inisialisasi DataTables kembali
@@ -202,13 +205,13 @@
             // Reset dropdowns to their default values
             // Reset dropdowns to their default values
             $('#filter-tahun_anggaran').val('').trigger('change');
-            $('#filter-unor').val('').trigger('change');
-            $('#filter-pn').val('').trigger('change');
+            // $('#filter-unor').val('').trigger('change');
+            // $('#filter-pn').val('').trigger('change');
 
             // Optionally, you could also clear the local storage if needed
             localStorage.removeItem('selectedTahunAnggaran');
-            localStorage.removeItem('selectedUnor');
-            localStorage.removeItem('selectedPN');
+            // localStorage.removeItem('selectedUnor');
+            // localStorage.removeItem('selectedPN');
 
             var table = $('#datatables').DataTable();
             table.clear().draw();

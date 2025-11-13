@@ -32,6 +32,7 @@
                                         <option value="2027">2027</option>
                                         <option value="2028">2028</option>
                                         <option value="2029">2029</option>
+                                        <option value="2529">2025 - 2029</option>
                                     </select>
                                 </div>
                             </div>
@@ -61,22 +62,23 @@
                                 <thead>
                                     <?php
                                     $unorList = ['SDA', 'BM', 'CK', 'PS'];
-                                    $jenis = ['Kawasan', 'Tematik Kawasan', 'Pekerjaan', 'Anggaran'];
+                                    $jenis = ['Kawasan', 'Tematik', 'Pekerjaan', 'Anggaran (Ribu)'];
                                     // Baris 1: Jenis, colspan = Jumlah Unor
                                     echo '<tr>';
-                                    echo '<th rowspan="2">No</th>';
-                                    echo '<th rowspan="2">Provinsi</th>'; // kolom tetap
+                                    echo '<th rowspan="2" class="text-center">No</th>';
+                                    echo '<th rowspan="2" class="text-center">Provinsi</th>'; // kolom tetap
                                     foreach ($jenis as $j) {
-                                        echo '<th colspan="' . count($unorList) . '">' . $j . '</th>';
+                                        echo '<th colspan="' . count($unorList) + 1 . '" class="text-center">' . $j . '</th>';
                                     }
-                                    echo '</tr>';
+                                    echo '<th rowspan="2" class="text-center">Tahun Anggaran</th></tr>';
 
                                     // Baris 2: Unor
                                     echo '<tr>';
                                     foreach ($jenis as $j) {
                                         foreach ($unorList as $unor) {
-                                            echo "<th>{$unor}</th>";
+                                            echo "<th class='text-center'>{$unor}</th>";
                                         }
+                                        echo "<th class='text-center'>Total</th>";
                                     }
                                     echo '</tr>';
                                     ?>
@@ -127,12 +129,12 @@
                         $('#datatables').DataTable().destroy();
                     }
                     // Update tabel dengan data yang diterima
-                    $('#datatables tbody').html(response);
+                    $('#datatables').html(response);
 
 
                     //Inisialisasi DataTables kembali
                     $('#datatables').DataTable({
-                        // "scrollX": true,
+                        "scrollX": true,
                         "pageLength": 10,
                         "pagingType": "full_numbers",
                         "lengthMenu": [
@@ -175,7 +177,7 @@
 
         $(function() {
             $('#datatables').DataTable({
-                // "scrollX": true,
+                "scrollX": true,
                 // "scrollCollapse": true,
                 "pageLength": 10,
                 "ordering": true,

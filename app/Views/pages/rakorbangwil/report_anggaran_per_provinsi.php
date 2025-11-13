@@ -69,18 +69,18 @@
                                     <?php
                                     $unorList = ['BM', 'CK', 'SDA', 'PS'];
                                     echo '<tr>';
-                                    echo '<th rowspan="2">No</th>';
-                                    echo '<th rowspan="2">Provinsi</th>'; // kolom tetap
-                                    echo '<th colspan="4" class="text-center">APBN</th>';
-                                    echo '<th rowspan="2" class="text-center">Pembiayaan Lainnya</th>';
-                                    echo '<th rowspan="2" class="text-center">Total Anggaran</th>';
+                                    echo '<th rowspan="2" class="text-center">No</th>';
+                                    echo '<th rowspan="2" class="text-center">Provinsi</th>'; // kolom tetap
+                                    echo '<th colspan="4" class="text-center">APBN (Ribu)</th>';
+                                    echo '<th rowspan="2" class="text-center">Pembiayaan Lainnya (Ribu)</th>';
+                                    echo '<th rowspan="2" class="text-center">Total Anggaran (Ribu)</th>';
                                     echo '</tr>';
 
                                     echo '<tr>';
-                                    echo "<th>RPM</th>";
-                                    echo "<th>PHLN</th>";
-                                    echo "<th>SBSN</th>";
-                                    echo "<th>Total</th>";
+                                    echo "<th class='text-center'>RPM</th>";
+                                    echo "<th class='text-center'>PHLN</th>";
+                                    echo "<th class='text-center'>SBSN</th>";
+                                    echo "<th class='text-center'>Total</th>";
                                     echo '</tr>';
                                     ?>
                                 </thead>
@@ -135,7 +135,7 @@
                         $('#datatables').DataTable().destroy();
                     }
                     // Update tabel dengan data yang diterima
-                    $('#datatables tbody').html(response);
+                    $('#datatables').html(response);
 
 
                     //Inisialisasi DataTables kembali

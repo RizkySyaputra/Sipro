@@ -226,7 +226,7 @@
                         date.getMinutes().toString().padStart(2, '0') +
                         date.getSeconds().toString().padStart(2, '0');
                     link.href = window.URL.createObjectURL(blob);
-                    link.download = 'Filtered_Nomenklatur_Program' + timestamp + '.xlsx'; // Nama file unduhan
+                    link.download = 'Filter_Nomenklatur_Kegiatan_' + timestamp + '.xlsx'; // Nama file unduhan
                     link.click();
                 },
                 error: function() {

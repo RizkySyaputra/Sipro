@@ -4,24 +4,24 @@ $format->setAttribute(NumberFormatter::FRACTION_DIGITS, 0);
 
 $a = 1;
 $total_kawasan = 0;
-$total_tematik = 0;
 $total_pekerjaan = 0;
+$total_anggaran = 0;
 $table = '';
 $table .= "<thead>
             <tr>
-                <th>No</th>
-                <th>Provinsi</th>
-                <th>Kawasan</th>
-                <th>Tematik Kawasan</th>
-                <th>Pekerjaan</th>
-                <th>Anggaran</th>
+                <th class='text-center'>No</th>
+                <th class='text-center'>Provinsi</th>
+                <th class='text-center'>Kawasan</th>
+                <th class='text-center'>Tematik Kawasan</th>
+                <th class='text-center'>Pekerjaan</th>
+                <th class='text-center'>Anggaran (Ribu)</th>
             </tr>
         </thead><tbody>";
 foreach ($kawasan_per_provinsi as $kp) : ?>
     <?php
-    // $total_kawasan += $kp->kawasan;
-    // $total_tematik += $kp->tematik;
-    // $total_pekerjaan += $kp->pekerjaan;
+    $total_kawasan += $kp->kawasan ?? 0;
+    $total_pekerjaan += $kp->pekerjaan ?? 0;
+    $total_anggaran += $kp->anggaran ?? 0;
 
     $table .= "<tr>
         <td>$a</td>
@@ -35,12 +35,13 @@ foreach ($kawasan_per_provinsi as $kp) : ?>
     ?>
 <?php endforeach; ?>
 <?php
-// $table .= "</tbody><tfoot><tr style='font-weight:bold;'>
-//     <td colspan='2'>Total</td>
-//     <td><strong>$total_kawasan</strong></td>
-//     <td><strong>$total_tematik</strong></td>
-//     <td><strong>$total_pekerjaan</strong></td>
-// </tr></tfoot>";
+$table .= "</tbody><tfoot><tr style='font-weight:bold;'>
+    <td colspan='2' class='text-center'>Total</td>
+    <td class='text-right'>$total_kawasan</td>
+    <td class='text-right'>-</td>
+    <td class='text-right'>$total_pekerjaan</td>
+    <td class='text-right'>" . $format->formatCurrency($total_anggaran, 'IDR') . "</td>
+</tr></tfoot>";
 
 echo $table;
 

@@ -11,7 +11,8 @@ class MenuController extends BaseController
         helper('permission');
         $id_role = user()->id_role;
         $menuModel = new MenuModel();
-        $menus = $menuModel->orderBy('parent_id ASC, id_menu ASC')->findAll();
+        // $menus = $menuModel->orderBy('parent_id ASC, id_menu ASC')->findAll();
+        $menus = $menuModel->orderBy('parent_id ASC, prioritas ASC')->findAll();
 
         $data = [
             'menus' => $menus,

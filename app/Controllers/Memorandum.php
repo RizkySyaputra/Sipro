@@ -25,6 +25,8 @@ use PhpParser\Node\Expr\Instanceof_;
 use App\Models\Rpiw\DaftarRenaksiModel;
 use App\Models\Rpiw\RenaksiModel;
 use App\Models\Memorandum\ReportMemoModel;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 use function PHPUnit\Framework\returnCallback;
 
@@ -562,7 +564,7 @@ class Memorandum extends BaseController
         if (!$memo) {
             return $this->response->setJSON(['status' => 'error', 'message' => 'Data tidak ditemukan']);
         }
-  
+
         $id_renaksi =  $memo->id_renaksi;
         $renaksi = $this->renaksiModel->find($id_renaksi);
         if ($renaksi) {
@@ -570,7 +572,7 @@ class Memorandum extends BaseController
             $this->renaksiModel->update($id_renaksi, ['mp' => $newmp]);
         }
         $this->memoModel->where('id_memorandum', $id)->delete();
-         return $this->response->setJSON(['status' => 'success', 'message' => 'Data berhasil dihapus']);
+        return $this->response->setJSON(['status' => 'success', 'message' => 'Data berhasil dihapus']);
     }
 
     public function daftar_renaksi()
@@ -869,19 +871,18 @@ class Memorandum extends BaseController
     {
 
         $tahun_anggaran = $this->request->getPost('tahun_anggaran');
-        $unor = $this->request->getPost('unor');
-        $pn = $this->request->getPost('pn');
 
 
-        if (empty($tahun_anggaran) && empty($unor) && empty($pn)) {
-            $data = [
-                'anggaran_per_provinsi' => []
-            ];
-        } else {
-            $anggaranPerProvinsi = $this->reportMemoModel->getReportAnggaranPerProvinsi($tahun_anggaran, $unor, $pn);
+        if (!empty($tahun_anggaran)) {
+
+            $anggaranPerProvinsi = $this->reportMemoModel->getReportAnggaranPerProvinsi($tahun_anggaran);
 
             $data = [
                 'anggaran_per_provinsi' => $anggaranPerProvinsi,
+            ];
+        } else {
+            $data = [
+                'anggaran_per_provinsi' => []
             ];
         }
         return view('/pages/memorandum/tabel/tabel_report_anggaran_per_provinsi', $data);
@@ -917,5 +918,162 @@ class Memorandum extends BaseController
             ];
         }
         return view('/pages/memorandum/tabel/tabel_report_infrastruktur_pu_per_pn', $data);
+    }
+
+    public function export_to_excel()
+    {
+        // Ambil data filter dari request POST
+        $provinsi_id = $this->request->getPost('provinsi');
+        $unor_id = $this->request->getPost('unor');
+        $sumber = $this->request->getPost('sumber');
+
+        // Ambil data berdasarkan filter
+        $daftar_memo = $this->daftarMemoModel->getDaftarMemo($provinsi_id, $unor_id, $sumber);
+
+        // Buat Spreadsheet baru
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+
+        // Header kolom
+        $sheet->setCellValue('A1', 'No');
+        $sheet->setCellValue('B1', 'ID Renaksi');
+        $sheet->setCellValue('C1', 'ID Memorandum');
+        $sheet->setCellValue('D1', 'ID PN');
+        $sheet->setCellValue('E1', 'Nama PN');
+        $sheet->setCellValue('F1', 'ID PP');
+        $sheet->setCellValue('G1', 'Nama PP');
+        $sheet->setCellValue('H1', 'ID KP');
+        $sheet->setCellValue('I1', 'Nama KP');
+        $sheet->setCellValue('J1', 'ID Prop');
+        $sheet->setCellValue('K1', 'Nama Prop');
+        $sheet->setCellValue('L1', 'ID Program');
+        $sheet->setCellValue('M1', 'Nama Program');
+        $sheet->setCellValue('N1', 'ID Kegiatan');
+        $sheet->setCellValue('O1', 'Nama Kegiatan');
+        $sheet->setCellValue('P1', 'ID KRO');
+        $sheet->setCellValue('Q1', 'Nama KRO');
+        $sheet->setCellValue('R1', 'ID RO');
+        $sheet->setCellValue('S1', 'Nama RO');
+        $sheet->setCellValue('T1', 'ID Provinsi');
+        $sheet->setCellValue('U1', 'Nama Provinsi');
+        $sheet->setCellValue('V1', 'Unor');
+        $sheet->setCellValue('W1', 'Pekerjaan');
+        $sheet->setCellValue('X1', 'Kawasan');
+        $sheet->setCellValue('Y1', 'Tematik');
+        $sheet->setCellValue('Z1', 'Kabkot');
+        $sheet->setCellValue('AA1', 'Lokasi');
+        $sheet->setCellValue('AB1', 'Justifikasi');
+        $sheet->setCellValue('AC1', 'Tahun Mulai');
+        $sheet->setCellValue('AD1', 'Tahun Selesai');
+        $sheet->setCellValue('AE1', 'Nama Satuan');
+        $sheet->setCellValue('AF1', 'Volume 1');
+        $sheet->setCellValue('AG1', 'Volume 2');
+        $sheet->setCellValue('AH1', 'Volume 3');
+        $sheet->setCellValue('AI1', 'Volume 4');
+        $sheet->setCellValue('AJ1', 'Volume 5');
+        $sheet->setCellValue('AK1', 'Pendanaan 1');
+        $sheet->setCellValue('AL1', 'Anggaran 1');
+        $sheet->setCellValue('AM1', 'Pendanaan 2');
+        $sheet->setCellValue('AN1', 'Anggaran 2');
+        $sheet->setCellValue('AO1', 'Pendanaan 3');
+        $sheet->setCellValue('AP1', 'Anggaran 3');
+        $sheet->setCellValue('AQ1', 'Pendanaan 4');
+        $sheet->setCellValue('AR1', 'Anggaran 4');
+        $sheet->setCellValue('AS1', 'Pendanaan 5');
+        $sheet->setCellValue('AT1', 'Anggaran 5');
+        $sheet->setCellValue('AU1', 'Catatan Memorandum');
+        $sheet->setCellValue('AV1', 'Sumber');
+        $sheet->setCellValue('AW1', 'Periode');
+
+        // Membuat teks header menjadi bold
+        $sheet->getStyle('A1:AW1')->getFont()->setBold(true);
+
+        // Atur kolom agar auto size
+        // foreach (range('A', 'AV') as $col) {
+        //     $sheet->getColumnDimension($col)->setAutoSize(true);
+        // }
+
+        // Atur semua kolom agar auto size (termasuk kolom di atas 'Z')
+        foreach ($sheet->getColumnIterator() as $column) {
+            $columnIndex = $column->getColumnIndex();
+            $sheet->getColumnDimension($columnIndex)->setAutoSize(true);
+        }
+
+        // Recalculate lebar kolom agar pas
+        $sheet->calculateColumnWidths();
+
+        // Isi data ke dalam sheet
+        $row = 2; // Baris data dimulai dari baris ke-2
+        foreach ($daftar_memo as $index => $dm) {
+
+            //
+            $sheet->setCellValue('A' . $row, $index + 1);
+            $sheet->setCellValue('B' . $row, $dm->id_renaksi);
+            $sheet->setCellValue('C' . $row, $dm->id_memorandum);
+            $sheet->setCellValue('D' . $row, $dm->id_pn);
+            $sheet->setCellValue('E' . $row, $dm->nama_pn);
+            $sheet->setCellValue('F' . $row, $dm->id_pp);
+            $sheet->setCellValue('G' . $row, $dm->nama_pp);
+            $sheet->setCellValue('H' . $row, $dm->id_kp);
+            $sheet->setCellValue('I' . $row, $dm->nama_kp);
+            $sheet->setCellValue('J' . $row, $dm->id_prop);
+            $sheet->setCellValue('K' . $row, $dm->nama_prop);
+            $sheet->setCellValue('L' . $row, $dm->id_program);
+            $sheet->setCellValue('M' . $row, $dm->nm_program);
+            $sheet->setCellValue('N' . $row, $dm->id_kegiatan);
+            $sheet->setCellValue('O' . $row, $dm->nm_kegiatan);
+            $sheet->setCellValue('P' . $row, $dm->id_kro);
+            $sheet->setCellValue('Q' . $row, $dm->nm_kro);
+            $sheet->setCellValue('R' . $row, $dm->id_ro);
+            $sheet->setCellValue('S' . $row, $dm->nm_ro);
+            $sheet->setCellValue('T' . $row, $dm->id_provinsi);
+            $sheet->setCellValue('U' . $row, $dm->provinsi);
+            $sheet->setCellValue('V' . $row, $dm->unor);
+            $sheet->setCellValue('W' . $row, $dm->pekerjaan);
+            $sheet->setCellValue('X' . $row, $dm->kawasan);
+            $sheet->setCellValue('Y' . $row, $dm->tematik);
+            $sheet->setCellValue('Z' . $row, $dm->kabkot);
+            $sheet->setCellValue('AA' . $row, $dm->lokasi);
+            $sheet->setCellValue('AB' . $row, $dm->justifikasi);
+            $sheet->setCellValue('AC' . $row, $dm->tahun_mulai);
+            $sheet->setCellValue('AD' . $row, $dm->tahun_selesai);
+            $sheet->setCellValue('AE' . $row, $dm->nama_satuan);
+            $sheet->setCellValue('AF' . $row, $dm->volume_1);
+            $sheet->setCellValue('AG' . $row, $dm->volume_2);
+            $sheet->setCellValue('AH' . $row, $dm->volume_3);
+            $sheet->setCellValue('AI' . $row, $dm->volume_4);
+            $sheet->setCellValue('AJ' . $row, $dm->volume_5);
+            $sheet->setCellValue('AK' . $row, $dm->pendanaan_1);
+            $sheet->setCellValue('AL' . $row, $dm->anggaran_1);
+            $sheet->setCellValue('AM' . $row, $dm->pendanaan_2);
+            $sheet->setCellValue('AN' . $row, $dm->anggaran_2);
+            $sheet->setCellValue('AO' . $row, $dm->pendanaan_3);
+            $sheet->setCellValue('AP' . $row, $dm->anggaran_3);
+            $sheet->setCellValue('AQ' . $row, $dm->pendanaan_4);
+            $sheet->setCellValue('AR' . $row, $dm->anggaran_4);
+            $sheet->setCellValue('AS' . $row, $dm->pendanaan_5);
+            $sheet->setCellValue('AT' . $row, $dm->anggaran_5);
+            $sheet->setCellValue('AU' . $row, $dm->catatan_memorandum);
+            $sheet->setCellValue('AV' . $row, $dm->sumber);
+            $sheet->setCellValue('AW' . $row, $dm->periode);
+            $row++;
+        }
+
+        // Simpan file sebagai output langsung
+        $writer = new Xlsx($spreadsheet);
+        $filename = 'Daftar_Memorandum_' . date('Y-m-d_H-i-s') . '.xlsx';
+
+        // Header untuk download file Excel
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment; filename="' . $filename . '"');
+        header('Cache-Control: max-age=0');
+
+        // clean output buffer
+        while (ob_get_level()) {
+            ob_end_clean();
+        }
+        // Tulis file ke output
+        $writer->save('php://output');
+        exit;
     }
 }
