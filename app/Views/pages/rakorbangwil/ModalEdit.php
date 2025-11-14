@@ -229,17 +229,16 @@
                     <label class="mt-3 catatan-text"><strong>Geotagging</strong></label>
 
                     <div class="input-group">
-                        <p>Fitur Dalam Tahapan Pengembangan</p>
-                        <!-- <textarea id="geotag" name="geotag" class="form-control" rows="2" readonly>
+                        <textarea id="geotag" name="geotag" class="form-control" rows="2" hidden>
 <?= esc($progTahunan->geotag ?? '') ?>
-</textarea> -->
+</textarea>
 
-                        <!-- <button type="button" class="btn btn-success mt-2" id="btnOpenMap">
+                        <button type="button" class="btn btn-success mt-2" id="btnOpenMap">
                             Pilih Lokasi di Peta
                         </button>
--->
+
                     </div>
-                    <!-- <small class="text-muted">Klik tombol untuk memilih lokasi di peta.</small>  -->
+                    <small class="text-muted">Klik tombol untuk memilih lokasi di peta.</small>
 
 
                     <label class="catatan-text"><strong>Sumber Data</strong></label>
@@ -293,110 +292,219 @@
     </div>
 </form>
 
-<!-- <div class="modal fade" id="modalMap" tabindex="-1">
+<div class="modal fade" id="modalMap" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-success text-white">
                 <h5 class="modal-title">Pilih Lokasi Geotag</h5>
-                <button type="button" class="btn-close text-white" data-bs-dismiss="modal">×</button>
+                <button type="button" class="close text-white" onclick="$('#modalMap').modal('hide')" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
             </div>
             <div class="modal-body" style="height: 450px;">
                 <div id="mapSelect" style="height: 100%; width: 100%; border-radius:8px;"></div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                <button class="btn btn-secondary" onclick="$('#modalMap').modal('hide')">Tutup</button>
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
-<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
-<script src="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script> -->
-<!-- Leaflet -->
-<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> -->
 
-<!-- Leaflet Draw -->
-<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
-<script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script> -->
 <script>
-    // document.addEventListener("DOMContentLoaded", initMap);
+    // ========================================================
+    // 🧩 FIX NESTED MODAL (Bootstrap 4)
+    // ========================================================
+    $(document).on('hidden.bs.modal', function() {
+        if ($('.modal.show').length > 0) {
+            $('body').addClass('modal-open');
+        } else {
+            $('body').removeClass('modal-open');
+        }
+    });
 
-    // $('#modalMap').on('hide.bs.modal', function() {
-    //     // Hapus fokus dari peta atau elemen lain di dalam modal
-    //     if (document.activeElement) {
-    //         document.activeElement.blur();
-    //     }
-    // });
 
-    // // === GEOTAGGING MAP (POINT / LINE / POLYGON) ===
-    // var map, drawnItems, drawControl;
-    // var savedGeo = document.getElementById('geotag').value;
+    $(document).on('show.bs.modal', '.modal', function() {
+        // Hitung z-index berdasarkan jumlah modal aktif
+        var zIndex = 1040 + 10 * $('.modal:visible').length;
+        $(this).css('z-index', zIndex);
 
-    // function initMap() {
-    //     map = L.map('mapSelect').setView([-2.5489, 118.0149], 5); // Indonesia center
+        // Atur backdrop agar tetap di bawah modal yang benar
+        setTimeout(function() {
+            $('.modal-backdrop')
+                .not('.modal-stack')
+                .css('z-index', zIndex - 1)
+                .addClass('modal-stack');
+        }, 0);
+    });
 
-    //     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    //         maxZoom: 19
-    //     }).addTo(map);
+    $('#modalMap').on('hidden.bs.modal', function() {
+        if (map) {
+            map.remove();
+            map = null;
 
-    //     // Layer tampung gambar
-    //     drawnItems = new L.FeatureGroup();
-    //     map.addLayer(drawnItems);
+            // reset semua
+            drawnItems = null;
+            drawControl = null;
+        }
+    });
 
-    //     // Jika sudah ada geotag tersimpan → gambarkan ulang
-    //     if (savedGeo) {
-    //         try {
-    //             let geo = JSON.parse(savedGeo);
-    //             let layer = L.geoJSON(geo).addTo(drawnItems);
-    //             map.fitBounds(layer.getBounds());
-    //         } catch (e) {
-    //             console.log("GeoJSON tidak valid");
-    //         }
-    //     }
+    // ========================================================
+    // 🗺️ LEAFLET MAP
+    // ========================================================
+    var map, drawnItems, drawControl;
+    var savedGeo = document.getElementById('geotag').value;
 
-    //     // Toolbar draw control
-    //     drawControl = new L.Control.Draw({
-    //         edit: {
-    //             featureGroup: drawnItems
-    //         },
-    //         draw: {
-    //             polygon: true,
-    //             polyline: true,
-    //             rectangle: true,
-    //             marker: true,
-    //             circle: false
-    //         }
-    //     });
-    //     map.addControl(drawControl);
+    function initMap() {
+        if (map) return; // 🔒 biar gak double init
 
-    //     // Event saat menggambar baru
-    //     map.on(L.Draw.Event.CREATED, function(e) {
-    //         drawnItems.clearLayers(); // hanya simpan 1 objek
-    //         drawnItems.addLayer(e.layer);
-    //         saveGeo();
-    //     });
+        // 1️⃣ Buat peta
+        map = L.map('mapSelect').setView([-2.5489, 118.0149], 5); // Indonesia center
 
-    //     // Event edit/delete
-    //     map.on(L.Draw.Event.EDITSTOP, saveGeo);
-    //     map.on(L.Draw.Event.DELETED, saveGeo);
-    // }
+        // 2️⃣ Tambahkan basemap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19
+        }).addTo(map);
 
-    // function saveGeo() {
-    //     let geojson = drawnItems.toGeoJSON();
-    //     document.getElementById('geotag').value = JSON.stringify(geojson);
-    // }
+        // 3️⃣ Tambahkan layer kawasan dari GeoJSON
+        // === 3️⃣ Tambahkan beberapa kawasan (multi deliniasi) ===
 
-    // document.getElementById('btnOpenMap').addEventListener('click', () => {
-    //     $('#modalMap').modal('show');
+        // Daftar file kawasan
+        const kawasanFiles = <?= json_encode(array_map(function ($petaKawasan) {
+                                    return [
+                                        "url" => base_url('geojson/' . $petaKawasan),
+                                        "color" => "#43a047"
+                                    ];
+                                }, $petaKawasan)); ?>;
 
-    //     setTimeout(() => {
-    //         if (!map) initMap();
-    //         else map.invalidateSize();
-    //     }, 300);
-    // });
+        // LayerGroup untuk menyimpan semua kawasan
+        const kawasanGroup = L.layerGroup().addTo(map);
+
+        // Loop semua file kawasan
+        Promise.all(
+            kawasanFiles.map(k =>
+                fetch(k.url)
+                .then(res => res.json())
+                .then(data => {
+                    const layer = L.geoJSON(data, {
+                        style: {
+                            color: k.color,
+                            weight: 2,
+                            fillColor: k.color,
+                            fillOpacity: 0.2
+                        },
+                        onEachFeature: function(feature, layer) {
+                            const nama = feature.properties?.nama || k.name;
+                            layer.bindTooltip(nama, {
+                                direction: "top",
+                                sticky: true
+                            });
+                        }
+                    }).addTo(kawasanGroup);
+                    return layer;
+                })
+            )
+        ).then(layers => {
+            // Setelah semua kawasan termuat → zoom agar semua terlihat
+            const allBounds = L.latLngBounds([]);
+            layers.forEach(layer => {
+                allBounds.extend(layer.getBounds());
+            });
+            map.fitBounds(allBounds);
+        });
+
+        // ===  Tambahkan toggle ON/OFF kawasan di pojok kanan atas  ===
+        const layersMap = {};
+        kawasanFiles.forEach(k => {
+            fetch(k.url)
+                .then(res => res.json())
+                .then(data => {
+                    const layer = L.geoJSON(data, {
+                        style: {
+                            color: k.color,
+                            weight: 2,
+                            fillColor: k.color,
+                            fillOpacity: 0.25
+                        }
+                    });
+                    layersMap[k.name] = layer; // simpan layer ke daftar
+                    layer.addTo(map); // tampilkan awalnya
+                });
+        });
+
+        // Tambahkan kontrol layer ke peta
+        L.control.layers(null, layersMap, {
+            collapsed: false
+        }).addTo(map);
+
+        // 4️⃣ Layer tampung gambar
+        drawnItems = new L.FeatureGroup();
+        map.addLayer(drawnItems);
+
+        // 5️⃣ Kalau ada geotag tersimpan → tampilkan ulang
+        if (savedGeo) {
+            try {
+                let geo = JSON.parse(savedGeo);
+                if (geo && geo.features && geo.features.length > 0) {
+                    let layer = L.geoJSON(geo).addTo(drawnItems);
+                    map.fitBounds(layer.getBounds());
+                }
+            } catch (e) {
+                console.log("GeoJSON tidak valid:", e);
+            }
+        }
+
+        // 6️⃣ Toolbar draw control
+        drawControl = new L.Control.Draw({
+            edit: {
+                featureGroup: drawnItems
+            },
+            draw: {
+                polygon: true,
+                polyline: true,
+                rectangle: true,
+                marker: true,
+                circle: false
+            }
+        });
+        map.addControl(drawControl);
+
+        // 7️⃣ Event saat menggambar baru
+        map.on(L.Draw.Event.CREATED, function(e) {
+            drawnItems.clearLayers(); // hanya simpan 1 objek
+            drawnItems.addLayer(e.layer);
+            saveGeo();
+        });
+
+        // 8️⃣ Event edit/delete
+        map.on(L.Draw.Event.EDITSTOP, saveGeo);
+        map.on(L.Draw.Event.DELETED, saveGeo);
+    }
+
+    function saveGeo() {
+        let geojson = drawnItems.toGeoJSON();
+        document.getElementById('geotag').value = JSON.stringify(geojson);
+    }
+
+    // ========================================================
+    // ⚙️ EVENT MODAL PEMETAAN
+    // ========================================================
+
+    // Saat tombol buka modal diklik
+    document.getElementById('btnOpenMap').addEventListener('click', () => {
+        $('#modalMap').modal('show');
+    });
+
+    // Jalankan peta setelah modal benar-benar tampil
+    $('#modalMap').on('shown.bs.modal', function() {
+        setTimeout(() => {
+            if (!map) initMap();
+            else map.invalidateSize();
+        }, 200);
+    });
+
 
 
     $(document).ready(function() {

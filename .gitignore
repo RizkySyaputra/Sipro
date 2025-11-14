@@ -2,3 +2,4 @@
 /writable/cache
 /writable/logs
 *.log
+writable/cache/2_groups

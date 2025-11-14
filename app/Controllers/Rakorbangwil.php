@@ -152,6 +152,19 @@ class Rakorbangwil extends BaseController
         if (!empty($progTahunan->kawasan)) {
             $selectedKawasan = array_map('trim', explode(',', $progTahunan->kawasan));
         }
+
+        $petaKawasan = [];
+
+        foreach ($selectedKawasan as $nama) {
+            $row = $this->kawasanModel
+                ->where('nama_kawasan', $nama)
+                ->first();
+
+            if ($row) {
+                $petaKawasan[] = $row['peta_kawasan'];
+            }
+        }
+
         $selectedKabkot = [];
 
         if (!empty($progTahunan->kabkot)) {
@@ -172,7 +185,7 @@ class Rakorbangwil extends BaseController
         if (!$progTahunan) {
             return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
         }
-        return view('/pages/rakorbangwil/ModalEdit', ['selectedKabkot' => $selectedKabkot, 'selectedKawasan' => $selectedKawasan, 'kawasan' => $kawasan, 'progTahunan' => $progTahunan, 't_prog' => $t_prog, 'namaList' => $namaList, 'kabkot' => $kabkot, 'pendanaan' => $pendanaan, 'program' => $program, 'kegiatan' => $kegiatan, 'kro' => $kro, 'ro' => $ro, 'kabkotProgTahunan' => $kabkotProgTahunan]);
+        return view('/pages/rakorbangwil/ModalEdit', ['petaKawasan' => $petaKawasan, 'selectedKabkot' => $selectedKabkot, 'selectedKawasan' => $selectedKawasan, 'kawasan' => $kawasan, 'progTahunan' => $progTahunan, 't_prog' => $t_prog, 'namaList' => $namaList, 'kabkot' => $kabkot, 'pendanaan' => $pendanaan, 'program' => $program, 'kegiatan' => $kegiatan, 'kro' => $kro, 'ro' => $ro, 'kabkotProgTahunan' => $kabkotProgTahunan]);
     }
 
 
