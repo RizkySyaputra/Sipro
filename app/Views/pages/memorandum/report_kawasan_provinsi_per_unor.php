@@ -123,7 +123,7 @@
                 type: 'POST',
                 data: filterData,
                 success: function(response) {
-                    console.log(response);
+                    // console.log(response);
                     // Hapus inisialisasi DataTables yang lama
                     if ($.fn.DataTable.isDataTable('#datatables')) {
                         $('#datatables').DataTable().destroy();
@@ -141,7 +141,10 @@
                             [10, 25, 50, -1],
                             [10, 25, 50, "All"]
                         ],
-                        responsive: true,
+                        "fixedColumns": {
+                            "leftColumns": 2 // Membekukan 2 kolom dari kiri
+                        },
+                        // responsive: true,
                         language: {
                             search: "Search:",
                             // search: "_INPUT_",

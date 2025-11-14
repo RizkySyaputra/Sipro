@@ -161,10 +161,10 @@
                             [10, 25, 50, -1],
                             [10, 25, 50, "All"]
                         ],
-                        "responsive": true,
                         "fixedColumns": {
-                            "leftColumns": 1, // "freeze" kolom 1 dan 2
+                            "leftColumns": 2 // Membekukan 2 kolom dari kiri
                         },
+                        // "responsive": true,
                         language: {
                             search: "Search:",
                             // search: "_INPUT_",
@@ -206,9 +206,6 @@
                 "pageLength": 10,
                 "ordering": true,
                 "lengthChange": true,
-                "fixedColumns": {
-                    "leftColumns": 1, // "freeze" kolom 1 dan 2
-                },
                 "language": {
                     "search": "_INPUT_",
                     "searchPlaceholder": "Search records",
