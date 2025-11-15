@@ -35,7 +35,9 @@ class ProgTahunanModel extends Model
         'sumber',
         'thn_pelaksanaan',
         'kebutuhan_dukungan_kl',
-        'reviu_puswil'
+        'catatan_pra_rakorbangwil',
+        'catatan_konfrm_pemda',
+        'catatan_pemda'
     ];
 
     protected $useTimestamps = true;

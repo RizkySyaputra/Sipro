@@ -175,10 +175,10 @@ class Rakorbangwil extends BaseController
         $id_prov = $t_prog->id_provinsi;
         $kabkotProgTahunan = $this->kabkotProgramTahunanModel->getKabkotProgTahunan($id);
         $kabkot = $this->kabkotModel->where('id_prov', $id_prov)->findAll();
-        $program = $this->programModel->findAll();
-        $kegiatan = $this->kegiatanModel->findAll();;
-        $kro = $this->kroModel->findAll();;
-        $ro = $this->roModel->findAll();;
+        $program = $this->programModel->where('id_unor', $progTahunan->id_unor)->findAll();
+        $kegiatan = $this->kegiatanModel->where('id_program', $progTahunan->id_program)->findAll();
+        $kro = $this->kroModel->findAll();
+        $ro = $this->roModel->findAll();
         $pendanaan = $this->pendanaanModel->findAll();
         $kawasan = $this->kawasanModel->where('id_provinsi', $id_prov)->findAll();
 
@@ -212,6 +212,8 @@ class Rakorbangwil extends BaseController
         $kebutuhan_dukungan_kl = $this->request->getPost('kebutuhan_dukungan_kl');
         $geotag = $this->request->getPost('geotag');
         $reviu_puswil = $this->request->getPost('reviu_puswil');
+        $catatan_pra_rakorbangwil = $this->request->getPost('catatan_pra_rakorbangwil');
+        $catatan_konfrm_pemda = $this->request->getPost('catatan_konfrm_pemda');
 
 
         // Ambil catatan
@@ -245,9 +247,10 @@ class Rakorbangwil extends BaseController
             'id_satuan'         => $id_satuan,
             'kebutuhan_dukungan_kl' => $kebutuhan_dukungan_kl,
             'geotag'            => $geotag,
-            'reviu_puswil'      => $reviu_puswil,
             'volume'            => $volume,
-            'thn_pelaksanaan'   => $thn_pelaksanaan
+            'thn_pelaksanaan'   => $thn_pelaksanaan,
+            'catatan_pra_rakorbangwil' => $catatan_pra_rakorbangwil,
+            'catatan_konfrm_pemda' => $catatan_konfrm_pemda
         ];
         // Update data
         $this->kabkotProgramTahunanModel->where('id_prog_tahunan', $id)->delete();

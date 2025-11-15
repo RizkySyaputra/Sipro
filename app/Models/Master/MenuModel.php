@@ -27,7 +27,7 @@ class MenuModel extends Model
 
     public function getMenuTreeByRole($role_id, $parent_id = 0)
     {
-        $priority_id = 74; // Menu dashboard
+        // $priority_id = 74; // Menu dashboard
 
         $builder = $this->db->table('m_menu m')
             ->select('m.*, p.can_view, p.can_edit, p.can_delete')
@@ -36,7 +36,9 @@ class MenuModel extends Model
             ->where('p.can_view', 1)
             ->where('m.parent_id', $parent_id)
             ->where('m.is_active', 1)
-            ->orderBy("CASE WHEN m.id_menu = $priority_id THEN 0 ELSE 1 END", 'ASC', false)
+            // ->orderBy("CASE WHEN m.id_menu = $priority_id THEN 0 ELSE 1 END", 'ASC', false)
+            // ->orderBy('m.id_menu', 'ASC') 
+            ->orderBy('m.prioritas', 'ASC')
             ->orderBy('m.id_menu', 'ASC')
             ->get()->getResultArray();
 
