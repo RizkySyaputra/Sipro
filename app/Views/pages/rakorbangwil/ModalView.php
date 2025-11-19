@@ -122,6 +122,8 @@
                         <p><?= esc($prog_tahunan->catatan_pra_rakorbangwil ?? '-') ?></p>
                         <label class="catatan-text"><strong>Catatan Konfirmasi Pemda:</strong></label>
                         <p><?= esc($prog_tahunan->catatan_konfrm_pemda ?? '-') ?></p>
+                        <label class="catatan-text"><strong>Catatan Pemda:</strong></label>
+                        <p><?= esc($prog_tahunan->catatan_pemda ?? '-') ?></p>
 
                     </ul>
                 </div>

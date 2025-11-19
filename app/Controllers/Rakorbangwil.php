@@ -124,6 +124,19 @@ class Rakorbangwil extends BaseController
         $this->template->write('title', 'Program Tahunan');
         $this->template->load('/templates/main', '/pages/rakorbangwil/daftar_program_tahunan', $data);
     }
+    public function catatan_pemda()
+    {
+        $dataKawasan = $this->kawasanRpiwModel->getKawasan();
+        $dataProvinsi = $this->provinsiModel->getProvinsi();
+        $dataUnor = $this->unorModel->getUnor();
+        $data = [
+            'kawasan' => $dataKawasan,
+            'provinsi' => $dataProvinsi,
+            'unor' => $dataUnor
+        ];
+        $this->template->write('title', 'Program Tahunan');
+        $this->template->load('/templates/main', '/pages/rakorbangwil/catatan_pemda', $data);
+    }
     public function get_daftar_program_tahunan()
     {
         $id_role = user()->id_role;
@@ -279,6 +292,64 @@ class Rakorbangwil extends BaseController
         }
     }
 
+    public function edit_pemda($id)
+    {
+        $t_prog = $this->progTahunanModel->find($id);
+
+        $progTahunan = $this->daftarProgTahunanModel->find($id);
+        $selectedKawasan = [];
+
+        if (!empty($progTahunan->kawasan)) {
+            $selectedKawasan = array_map('trim', explode(',', $progTahunan->kawasan));
+        }
+        $selectedKabkot = [];
+
+        if (!empty($progTahunan->kabkot)) {
+            $selectedKabkot = array_map('trim', explode(',', $progTahunan->kabkot));
+        }
+        $stackholder = $this->stakholderModel->orderBy('id_kategori')->orderBy('id_stakeholder')->findAll();
+        $namaList = array_column($stackholder, 'short_stakeholder');
+        $id_prov = $t_prog->id_provinsi;
+        $kabkotProgTahunan = $this->kabkotProgramTahunanModel->getKabkotProgTahunan($id);
+        $kabkot = $this->kabkotModel->where('id_prov', $id_prov)->findAll();
+        $program = $this->programModel->where('id_unor', $progTahunan->id_unor)->findAll();
+        $kegiatan = $this->kegiatanModel->where('id_program', $progTahunan->id_program)->findAll();
+        $kro = $this->kroModel->findAll();
+        $ro = $this->roModel->findAll();
+        $pendanaan = $this->pendanaanModel->findAll();
+        $kawasan = $this->kawasanModel->where('id_provinsi', $id_prov)->findAll();
+
+        if (!$progTahunan) {
+            return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
+        }
+        return view('/pages/rakorbangwil/ModalEditPemda', ['selectedKabkot' => $selectedKabkot, 'selectedKawasan' => $selectedKawasan, 'kawasan' => $kawasan, 'progTahunan' => $progTahunan, 't_prog' => $t_prog, 'namaList' => $namaList, 'kabkot' => $kabkot, 'pendanaan' => $pendanaan, 'program' => $program, 'kegiatan' => $kegiatan, 'kro' => $kro, 'ro' => $ro, 'kabkotProgTahunan' => $kabkotProgTahunan]);
+    }
+
+    public function update_pemda($id)
+    {
+
+        $progTahunanModel = new progTahunanModel();
+
+        // Ambil input lain
+        $catatan_pemda = $this->request->getPost('catatan_pemda');
+
+        // Data yang akan diupdate
+        $dataToUpdate = [
+            'catatan_pemda' => $catatan_pemda
+        ];
+
+        if ($progTahunanModel->update($id, $dataToUpdate)) {
+            return $this->response->setJSON([
+                'status' => true,
+                'message' => 'Catatan berhasil disimpan.'
+            ]);
+        } else {
+            return $this->response->setJSON([
+                'status' => false,
+                'message' => 'Terjadi kesalahan saat menyimpan.'
+            ]);
+        }
+    }
     // --- DELETE ---
     public function delete($id = null)
     {
@@ -320,7 +391,7 @@ class Rakorbangwil extends BaseController
     }
     public function view_pn($id)
     {
-
+        $id_role = user()->id_role;
         $pn = $this->pnModel->find($id);
         $stackholder = $this->stakholderModel->orderBy('id_kategori')->orderBy('id_stakeholder')->findAll();
         $namaList = array_column($stackholder, 'stakeholder');
@@ -336,7 +407,10 @@ class Rakorbangwil extends BaseController
             'pn' => $pn,
             'catatan_pn' => $catatan_pn,
             'namaList' => $namaList,
-            'kebutuhan_dukungan_kl' => $kebutuhan_dukungan_kl
+            'kebutuhan_dukungan_kl' => $kebutuhan_dukungan_kl,
+            'can_view' => has_permission_menu($id_role, '/rakorbangwil/desk_pra_rakorbangwil', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/rakorbangwil/desk_pra_rakorbangwil', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/rakorbangwil/desk_pra_rakorbangwil', 'can_delete')
         ]);
     }
     public function get_list_kawasan()

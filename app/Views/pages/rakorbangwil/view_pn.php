@@ -57,7 +57,9 @@
                         <div class="tab-pane fade show active" id="catatan">
                             <div class="d-flex justify-content-between align-items-center">
                                 <label><strong>Catatan Pembahasan</strong></label>
-                                <button id="btnEditCatatan" class="btn btn-sm btn-warning">Ubah Catatan</button>
+                                <?php if ($can_edit): ?>
+                                    <button id="btnEditCatatan" class="btn btn-sm btn-warning">Ubah Catatan</button>
+                                <?php endif; ?>
                             </div>
                             <div id="catatanDisplay">
                                 <?php if (!empty($catatan_pn->catatan_pra_rakorbangwil)): ?>
@@ -94,7 +96,9 @@
                         <div class="tab-pane fade" id="usulan">
                             <div class="d-flex justify-content-between align-items-center">
                                 <label><strong>Usulan Program/Kegiatan</strong></label>
-                                <button id="btnEditUsulan" class="btn btn-sm btn-warning">Ubah Usulan</button>
+                                <?php if ($can_edit): ?>
+                                    <button id="btnEditUsulan" class="btn btn-sm btn-warning">Ubah Usulan</button>
+                                <?php endif; ?>
                             </div>
                             <div id="usulanDisplay">
                                 <p><?= esc($catatan_pn->usulan_pekerjaan ?? '-') ?></p>
@@ -225,8 +229,8 @@
                                                 <td style="text-align : center;font-weight: bold;"><strong>Total</strong></td>
                                                 <td style="text-align : center;font-weight: bold;"> <?= $total_kawasan_afirmasi ?></td>
                                                 <td style="text-align : center;font-weight: bold;"><?= $total_kawasan_komoditas_unggulan ?></td>
-                                                <td style="text-align : center;font-weight: bold;"><?= $total_kawasan_pertumbuhan ?></td>
                                                 <td style="text-align : center;font-weight: bold;"><?= $total_kawasan_konservasi_rawan_bencana  ?></td>
+                                                <td style="text-align : center;font-weight: bold;"><?= $total_kawasan_pertumbuhan ?></td>
                                                 <td style="text-align : center;font-weight: bold;"> <?= $total_kawasan_swasembada_pangan_air_energi  ?></td>
                                                 <td style="text-align : center;font-weight: bold;"><?= $total_total  ?></td>
                                             </tr>
