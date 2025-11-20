@@ -143,7 +143,8 @@ class Rakorbangwil extends BaseController
         $provinsi_id = $this->request->getPost('provinsi');
         $unor_id = $this->request->getPost('unor');
         $sumber = $this->request->getPost('sumber');
-        $daftar_program_tahunan = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, $unor_id, $sumber);
+        $pn = $this->request->getPost('pn');
+        $daftar_program_tahunan = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, $unor_id, $sumber, $pn);
 
 
         $data = [

@@ -11,7 +11,7 @@ class DaftarMemoModel extends Model
     protected $returnType = 'object';
 
 
-    public function getDaftarMemo($id_provinsi, $id_unor, $sumber)
+    public function getDaftarMemo($id_provinsi, $id_unor, $sumber, $pn)
     {
         $builder = $this->db->table('view_prog_memorandum_2529 as a');
 
@@ -27,7 +27,11 @@ class DaftarMemoModel extends Model
         if ($sumber) {
             $builder->where('a.sumber', $sumber);
         }
-
+        if ($pn == 2) {
+            $builder->where('a.id_pn', null);
+        } elseif ($pn == 3) {
+            $builder->where('a.id_pn IS NOT NULL', null, false);
+        }
         $builder->orderBy('a.id_memorandum', 'ASC');
 
         // Eksekusi

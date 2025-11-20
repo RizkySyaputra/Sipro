@@ -408,7 +408,8 @@ class Memorandum extends BaseController
         $provinsi_id = $this->request->getPost('provinsi');
         $unor_id = $this->request->getPost('unor');
         $sumber = $this->request->getPost('sumber');
-        $daftarMemo = $this->daftarMemoModel->getDaftarMemo($provinsi_id, $unor_id, $sumber);
+        $pn = $this->request->getPost('pn');
+        $daftarMemo = $this->daftarMemoModel->getDaftarMemo($provinsi_id, $unor_id, $sumber, $pn);
         $data = [
             'daftar_memo' => $daftarMemo,
             'can_view' => has_permission_menu($id_role, '/memorandum/daftar_memo', 'can_view'),
@@ -562,7 +563,7 @@ class Memorandum extends BaseController
         if (!$memo) {
             return $this->response->setJSON(['status' => 'error', 'message' => 'Data tidak ditemukan']);
         }
-  
+
         $id_renaksi =  $memo->id_renaksi;
         $renaksi = $this->renaksiModel->find($id_renaksi);
         if ($renaksi) {
@@ -570,7 +571,7 @@ class Memorandum extends BaseController
             $this->renaksiModel->update($id_renaksi, ['mp' => $newmp]);
         }
         $this->memoModel->where('id_memorandum', $id)->delete();
-         return $this->response->setJSON(['status' => 'success', 'message' => 'Data berhasil dihapus']);
+        return $this->response->setJSON(['status' => 'success', 'message' => 'Data berhasil dihapus']);
     }
 
     public function daftar_renaksi()
