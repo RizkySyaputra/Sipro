@@ -28,10 +28,11 @@ class DaftarProgTahunanModel extends Model
         if ($sumber) {
             $builder->where('a.sumber', $sumber);
         }
-        if ($pn == 2) {
+        if ($pn == "NON") {
             $builder->where('a.id_pn', null);
-        } elseif ($pn == 3) {
-            $builder->where('a.id_pn IS NOT NULL', null, false);
+        } elseif ($pn == "ALL") {
+        } else {
+            $builder->where('a.id_pn', $pn);
         }
         $builder->where('a.thn_pelaksanaan', $tahun_pelaksanaan);
         $builder->orderBy('a.id_prog_tahunan', 'ASC');

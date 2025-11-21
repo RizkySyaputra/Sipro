@@ -27,10 +27,11 @@ class DaftarMemoModel extends Model
         if ($sumber) {
             $builder->where('a.sumber', $sumber);
         }
-        if ($pn == 2) {
+        if ($pn == "NON") {
             $builder->where('a.id_pn', null);
-        } elseif ($pn == 3) {
-            $builder->where('a.id_pn IS NOT NULL', null, false);
+        } elseif ($pn == "ALL") {
+        } else {
+            $builder->where('a.id_pn', $pn);
         }
         $builder->orderBy('a.id_memorandum', 'ASC');
 
