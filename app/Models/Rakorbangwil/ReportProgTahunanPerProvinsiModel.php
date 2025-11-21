@@ -29,20 +29,6 @@ class ReportProgTahunanPerProvinsiModel extends Model
 
     public function getReportKawasanPerProvinsi($tahun_pelaksanaan = null, $id_provinsi = null, $id_unor = null, $id_pn = null)
     {
-        // $builder = $this->db->table('view_prog_tahunan_lap_ktpa');
-
-        // $builder->select("provinsi, kawasan, tematik, pekerjaan, anggaran");
-        // $builder->where('thn_pelaksanaan', "$tahun_pelaksanaan");
-        // if (!empty($id_provinsi)) {
-        //     $builder->where('id_provinsi', "$id_provinsi");
-        // }
-        // $builder->groupBy('provinsi');
-        // $builder->orderBy('id_provinsi');
-        // $query = $builder->get();
-        // return $query->getResult();
-        // echo $builder->getCompiledSelect();
-        // echo $this->db->getLastQuery();
-
         $builder = $this->db->table('sipro_kp.trx_prog_tahunan_kt');
 
         $builder->select(
@@ -82,18 +68,6 @@ class ReportProgTahunanPerProvinsiModel extends Model
 
     public function getReportAnggaranPerProvinsi($tahun_pelaksanaan = null, $id_provinsi = null, $id_unor = null, $id_pn = null)
     {
-        // $builder = $this->db->table('view_prog_tahunan_lap_ktpa');
-
-        // $builder->select("provinsi, anggaran, rpm, phln, sbsn, (rpm + phln + sbsn) as total_apbn, other");
-        // $builder->where('thn_pelaksanaan', "$tahun_pelaksanaan");
-        // if (!empty($id_provinsi)) {
-        //     $builder->where('id_provinsi', "$id_provinsi");
-        // }
-        // $builder->groupBy('provinsi');
-        // $builder->orderBy('id_provinsi');
-        // $query = $builder->get();
-        // return $query->getResult();
-
         $builder = $this->db->table('trx_prog_tahunan_pa');
 
         $builder->select("provinsi, SUM(pekerjaan) as total_pekerjaan, SUM(pkrjn_rpm) as total_pkrjn_rpm, SUM(pkrjn_phln) as total_pkrjn_phln, SUM(pkrjn_sbsn) as total_pkrjn_sbsn, (SUM(pkrjn_rpm) + SUM(pkrjn_phln) + SUM(pkrjn_sbsn)) as total_pkrjn_apbn, SUM(pkrjn_other) as total_pkrjn_other, SUM(anggaran) as total_anggaran, SUM(rpm) as total_rpm, SUM(phln) as total_phln, SUM(sbsn) as total_sbsn, (SUM(rpm) + SUM(phln) + SUM(sbsn)) as total_apbn, SUM(other) as total_other");
