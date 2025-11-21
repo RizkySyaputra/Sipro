@@ -387,10 +387,10 @@
                     </a>
 
                     <div class="dropdown-menu ml-4" aria-labelledby="userDropdown">
-                        <a class="dropdown-item text-white bg-dark mb-1" href="<?= base_url('profile') ?>">
+                        <a class="dropdown-item text-white bg-secondary mb-1" href="<?= base_url('profile') ?>">
                             <i class="fas fa-user-alt mr-2"></i> Profil
                         </a>
-                        <a class="dropdown-item text-white bg-dark" href="<?= base_url('logout') ?>">
+                        <a class="dropdown-item text-white bg-secondary" href="<?= base_url('logout') ?>">
                             <i class="fas fa-sign-out-alt mr-2"></i> Logout
                         </a>
                     </div>

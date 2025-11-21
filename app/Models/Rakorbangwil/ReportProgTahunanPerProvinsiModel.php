@@ -45,41 +45,15 @@ class ReportProgTahunanPerProvinsiModel extends Model
 
         $builder = $this->db->table('sipro_kp.trx_prog_tahunan_kt');
 
-        // $builder->select('provinsi, COUNT(DISTINCT kawasan) as jml_kawasan');
-        // $builder->selectSum("CASE WHEN tematik = 'Kawasan Pertumbuhan' THEN 1 ELSE 0 END", 'jml_pertumbuhan', false);
-        // $builder->selectSum("CASE WHEN tematik = 'Kawasan Afirmasi' THEN 1 ELSE 0 END", 'jml_afirmasi', false);
-        // $builder->selectSum("CASE WHEN tematik = 'Kawasan Konservasi/Rawan Bencana' THEN 1 ELSE 0 END", 'jml_konservasi', false);
-        // $builder->selectSum("CASE WHEN tematik = 'Kawasan Komoditas Unggulan' THEN 1 ELSE 0 END", 'jml_unggulan', false);
-        // $builder->selectSum("CASE WHEN tematik = 'Kawasan Swasembada Pangan Air dan Energi' THEN 1 ELSE 0 END", 'jml_swasembada', false);
-
-        $builder->select("provinsi, count(distinct kawasan) as jml_kawasan,
-        CASE 
-            WHEN COUNT(DISTINCT CASE WHEN tematik = 'Kawasan Pertumbuhan' THEN kawasan END) > 0 
-            THEN 1 ELSE 0 
-        END AS jml_pertumbuhan,
-
-        CASE 
-            WHEN COUNT(DISTINCT CASE WHEN tematik = 'Kawasan Afirmasi' THEN kawasan END) > 0 
-            THEN 1 ELSE 0 
-        END AS jml_afirmasi,
-
-        CASE 
-            WHEN COUNT(DISTINCT CASE WHEN tematik = 'Kawasan Konservasi/Rawan Bencana' THEN kawasan END) > 0 
-            THEN 1 ELSE 0 
-        END AS jml_konservasi,
-
-        CASE 
-            WHEN COUNT(DISTINCT CASE WHEN tematik = 'Kawasan Komoditas Unggulan' THEN kawasan END) > 0 
-            THEN 1 ELSE 0 
-        END AS jml_unggulan,
-
-        CASE 
-            WHEN COUNT(DISTINCT CASE WHEN tematik = 'Kawasan Swasembada Pangan Air dan Energi' THEN kawasan END) > 0 
-            THEN 1 ELSE 0 
-        END AS jml_swasembada
-
-        ", false);
-
+        $builder->select(
+            "provinsi, 
+            COUNT(DISTINCT(IF(id_kawasan!=0,id_kawasan,NULL))) AS jml_kawasan,
+            COUNT(DISTINCT(IF(id_tematik='1',id_tematik,NULL))) AS jml_afirmasi,
+            COUNT(DISTINCT(IF(id_tematik='2',id_tematik,NULL))) AS jml_unggulan,
+            COUNT(DISTINCT(IF(id_tematik='3',id_tematik,NULL))) AS jml_konservasi,
+            COUNT(DISTINCT(IF(id_tematik='4',id_tematik,NULL))) AS jml_pertumbuhan,
+            COUNT(DISTINCT(IF(id_tematik='5',id_tematik,NULL))) AS jml_swasembada"
+        );
 
         $builder->where('thn_pelaksanaan', "$tahun_pelaksanaan");
 
@@ -96,7 +70,7 @@ class ReportProgTahunanPerProvinsiModel extends Model
                 $builder->where('id_pn', $id_pn);
             }
         }
-        $builder->groupBy('provinsi');
+        $builder->groupBy('id_provinsi');
         $builder->orderBy('id_provinsi');
 
         // echo $builder->getCompiledSelect();
@@ -123,6 +97,7 @@ class ReportProgTahunanPerProvinsiModel extends Model
         $builder = $this->db->table('trx_prog_tahunan_pa');
 
         $builder->select("provinsi, SUM(pekerjaan) as total_pekerjaan, SUM(pkrjn_rpm) as total_pkrjn_rpm, SUM(pkrjn_phln) as total_pkrjn_phln, SUM(pkrjn_sbsn) as total_pkrjn_sbsn, (SUM(pkrjn_rpm) + SUM(pkrjn_phln) + SUM(pkrjn_sbsn)) as total_pkrjn_apbn, SUM(pkrjn_other) as total_pkrjn_other, SUM(anggaran) as total_anggaran, SUM(rpm) as total_rpm, SUM(phln) as total_phln, SUM(sbsn) as total_sbsn, (SUM(rpm) + SUM(phln) + SUM(sbsn)) as total_apbn, SUM(other) as total_other");
+
         $builder->where('thn_pelaksanaan', "$tahun_pelaksanaan");
 
         if (!empty($id_provinsi)) {
