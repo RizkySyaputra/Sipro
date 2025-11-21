@@ -1,3 +1,80 @@
+<style>
+    /* Placeholder untuk select2 multiple */
+    .select2-container--default .select2-selection--multiple .select2-selection__rendered:before {
+        content: attr(data-placeholder);
+        color: #999 !important;
+        font-size: 14px !important;
+        font-style: italic;
+        padding-left: 4px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+
+    /* Container utama */
+    .select2-container--default .select2-selection--multiple {
+        /* min-height: 38px !important; */
+        /* tinggi awal */
+        color: #999 !important;
+        height: auto !important;
+        /* otomatis menyesuaikan */
+        max-height: none !important;
+        /* pastikan bisa memanjang */
+        overflow-y: visible !important;
+        /* jangan scroll di dalam */
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center;
+        padding: 2px 4px;
+        position: relative;
+    }
+
+    /* Area isi tag */
+    .select2-selection--multiple .select2-selection__rendered {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 4px;
+        padding: 2px 4px !important;
+        width: 100%;
+    }
+
+    /* Tag item */
+    .select2-selection--multiple .select2-selection__choice {
+        margin: 2px 2px !important;
+        padding: 2px 6px !important;
+        font-size: 13px;
+    }
+
+    textarea.select2-search__field {
+        color: #999 !important;
+        padding: 0 !important;
+        margin: 2px 0 !important;
+
+        height: 30px !important;
+        /* dipendekkan */
+        min-height: 16px !important;
+        /* pastikan tidak memanjang */
+        line-height: 16px !important;
+        /* sejajarkan teks */
+
+        min-width: 30px !important;
+        overflow: hidden !important;
+        resize: none !important;
+    }
+
+    /* Style untuk membuat kolom total di footer tetap presisi*/
+    td.total {
+        position: relative;
+        text-align: center;
+        /* background-color: #f0f0f0; */
+    }
+
+    /* Hilangkan border di td pertama */
+    td.total:first-child {
+        border-right: none;
+    }
+</style>
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -19,30 +96,51 @@
                             <!-- <div class="form-row align-items-center"> -->
 
                             <!-- Dropdown Provinsi -->
-
                             <div class="row mb-3">
                                 <div class="col-md-2">
                                     <label for="provinsi"><strong>Provinsi</strong></label>
                                 </div>
                                 <div class="col-md-10">
-                                    <!-- <select class="form-control" name="tahun_anggaran" id="filter-tahun_anggaran">
-                                        <option value="">Semua Tahun</option>
-                                        <option value="2025">2025</option>
-                                        <option value="2026">2026</option>
-                                        <option value="2027">2027</option>
-                                        <option value="2028">2028</option>
-                                        <option value="2029">2029</option>
-                                    </select> -->
-
-                                    <select name="provinsi" class="form-control" id="filter-provinsi">
-                                        <option value="">Pilih Provinsi</option>
+                                    <select name="provinsi" class="form-control" id="filter-provinsi" multiple="multiple">
+                                        <!-- <option value="">Semua Provinsi</option> -->
                                         <?php foreach ($provinsi as $p): ?>
                                             <option value="<?= $p->id ?>" <?= old('id_provinsi') == $p->id ? 'selected' : '' ?>><?= $p->provinsi ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
                             </div>
-
+                            <div class="row mb-3">
+                                <div class="col-md-2">
+                                    <label for="unor"><strong>Unor</strong></label>
+                                </div>
+                                <div class="col-md-10">
+                                    <select class="form-control" name="unor" id="filter-unor">
+                                        <option value="">Semua Unor</option>
+                                        <option value="6">SDA</option>
+                                        <option value="4">BM</option>
+                                        <option value="5">CK</option>
+                                        <option value="8">PS</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-2">
+                                    <label for="pn"><strong>PN</strong></label>
+                                </div>
+                                <div class="col-md-10">
+                                    <select class="form-control" name="pn" id="filter-pn">
+                                        <option value="">Semua PN</option>
+                                        <option value="0">Non PN</option>
+                                        <option value="28">PN 2-8</option>
+                                        <option value="2">PN 2</option>
+                                        <option value="3">PN 3</option>
+                                        <option value="4">PN 4</option>
+                                        <option value="5">PN 5</option>
+                                        <option value="6">PN 6</option>
+                                        <option value="8">PN 8</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-2">
 
@@ -67,16 +165,24 @@
                             <table id="datatables" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                                 <thead>
                                     <?php
-                                    $unorList = ['BM', 'CK', 'SDA', 'PS'];
+
                                     echo '<tr>';
                                     echo '<th rowspan="2" class="text-center">No</th>';
                                     echo '<th rowspan="2" class="text-center">Provinsi</th>'; // kolom tetap
-                                    echo '<th colspan="4" class="text-center">APBN (Ribu)</th>';
+                                    echo '<th colspan="4" class="text-center">Pekerjaan APBN</th>';
+                                    echo '<th rowspan="2" class="text-center">Pekerjaan Lainnya</th>';
+                                    echo '<th rowspan="2" class="text-center">Total Pekerjaan</th>';
+                                    echo '<th colspan="4" class="text-center">Anggaran APBN (Ribu)</th>';
                                     echo '<th rowspan="2" class="text-center">Pembiayaan Lainnya (Ribu)</th>';
                                     echo '<th rowspan="2" class="text-center">Total Anggaran (Ribu)</th>';
                                     echo '</tr>';
 
                                     echo '<tr>';
+                                    echo "<th class='text-center'>RPM</th>";
+                                    echo "<th class='text-center'>PHLN</th>";
+                                    echo "<th class='text-center'>SBSN</th>";
+                                    echo "<th class='text-center'>Total</th>";
+
                                     echo "<th class='text-center'>RPM</th>";
                                     echo "<th class='text-center'>PHLN</th>";
                                     echo "<th class='text-center'>SBSN</th>";
@@ -104,11 +210,23 @@
     $(document).ready(function() {
 
         $('#filter-provinsi').select2({
-            placeholder: "Pilih Provinsi",
+            placeholder: "Semua Provinsi",
+            allowClear: true
+        });
+
+        $('#filter-unor').select2({
+            placeholder: "Semua Unor",
+            allowClear: true
+        });
+
+        $('#filter-pn').select2({
+            placeholder: "Semua PN",
             allowClear: true
         });
 
         $('#filter-provinsi').val(localStorage.getItem('selectedProvinsi'));
+        $('#filter-unor').val(localStorage.getItem('selectedUnor'));
+        $('#filter-pn').val(localStorage.getItem('selectedPN'));
 
         // On form submit, save the selected values
         $('#filter-form').on('submit', function() {
@@ -120,13 +238,17 @@
             // var filterData = $(this).serialize();
             let tahun_pelaksanaan = '<?= session()->get('tahun_pelaksana') ?>';
             let id_provinsi = $('#filter-provinsi').val();
+            let id_unor = $('#filter-unor').val();
+            let id_pn = $('#filter-pn').val();
             // Kirim request AJAX
             $.ajax({
                 url: '<?= base_url("rakorbangwil/filter_laporan4") ?>', // URL untuk memproses filter
                 type: 'POST',
                 data: {
                     tahun_pelaksanaan: tahun_pelaksanaan,
-                    id_provinsi: id_provinsi
+                    id_provinsi: id_provinsi,
+                    id_unor: id_unor,
+                    id_pn: id_pn
                 },
                 success: function(response) {
                     console.log(response);
@@ -140,13 +262,16 @@
 
                     //Inisialisasi DataTables kembali
                     $('#datatables').DataTable({
-                        // "scrollX": true,
+                        "scrollX": true,
                         "pageLength": 10,
                         "pagingType": "full_numbers",
                         "lengthMenu": [
                             [10, 25, 50, -1],
                             [10, 25, 50, "All"]
                         ],
+                        "fixedColumns": {
+                            "leftColumns": 2 // Membekukan 2 kolom dari kiri
+                        },
                         responsive: true,
                         language: {
                             search: "Search:",
@@ -169,11 +294,14 @@
 
         $('#reset-filters').on('click', function() {
             // Reset dropdowns to their default values
-            // Reset dropdowns to their default values
             $('#filter-provinsi').val('').trigger('change');
+            $('#filter-unor').val('').trigger('change');
+            $('#filter-pn').val('').trigger('change');
 
             // Optionally, you could also clear the local storage if needed
             localStorage.removeItem('selectedProvinsi');
+            localStorage.removeItem('selectedUnor');
+            localStorage.removeItem('selectedPN');
 
             var table = $('#datatables').DataTable();
             table.clear().draw();
@@ -181,7 +309,7 @@
 
         $(function() {
             $('#datatables').DataTable({
-                // "scrollX": true,
+                "scrollX": true,
                 // "scrollCollapse": true,
                 "pageLength": 10,
                 "ordering": true,

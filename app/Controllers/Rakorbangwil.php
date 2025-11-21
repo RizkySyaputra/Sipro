@@ -435,10 +435,14 @@ class Rakorbangwil extends BaseController
         // $session = session();
         $tahun_pelaksanaan = $this->request->getPost('tahun_pelaksanaan');
         $id_provinsi = $this->request->getPost('id_provinsi');
+        $id_unor = $this->request->getPost('id_unor');
+        $id_pn = $this->request->getPost('id_pn');
+
+        // print_r($id_provinsi);
 
 
         if (!empty($tahun_pelaksanaan)) {
-            $kawasanPerProvinsi = $this->reportProgTahunanPerProvinsiModel->getReportKawasanPerProvinsi($tahun_pelaksanaan, $id_provinsi);
+            $kawasanPerProvinsi = $this->reportProgTahunanPerProvinsiModel->getReportKawasanPerProvinsi($tahun_pelaksanaan, $id_provinsi, $id_unor, $id_pn);
 
             $data = [
                 'kawasan_per_provinsi' => $kawasanPerProvinsi,
@@ -448,6 +452,8 @@ class Rakorbangwil extends BaseController
                 'kawasan_per_provinsi' => []
             ];
         }
+        // print_r($data);
+        // exit;
         return view('/pages/rakorbangwil/tabel/tabel_report_kawasan_provinsi', $data);
     }
 
@@ -537,10 +543,12 @@ class Rakorbangwil extends BaseController
 
         $tahun_pelaksanaan = $this->request->getPost('tahun_pelaksanaan');
         $id_provinsi = $this->request->getPost('id_provinsi');
+        $id_unor = $this->request->getPost('id_unor');
+        $id_pn = $this->request->getPost('id_pn');
 
 
         if (!empty($tahun_pelaksanaan)) {
-            $anggaranPerProvinsi = $this->reportProgTahunanPerProvinsiModel->getReportAnggaranPerProvinsi($tahun_pelaksanaan, $id_provinsi);
+            $anggaranPerProvinsi = $this->reportProgTahunanPerProvinsiModel->getReportAnggaranPerProvinsi($tahun_pelaksanaan, $id_provinsi, $id_unor, $id_pn);
 
             $data = [
                 'anggaran_per_provinsi' => $anggaranPerProvinsi,

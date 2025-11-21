@@ -30,4 +30,9 @@ class UserModel extends Model
         return $this->db->affectedRows();
         // 1 = ada row ter-update, 0 = tidak ada perubahan
     }
+
+    public function getUserById($user_id)
+    {
+        return $this->where('id', $user_id)->first();
+    }
 }

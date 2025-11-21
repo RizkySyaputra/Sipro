@@ -348,3 +348,5 @@ $routes->get('/addBakKonreg/(:segment)/(:segment)/(:segment)', 'KonregController
 
 $routes->get('register', 'AuthController::register');
 $routes->post('register', 'AuthController::attemptRegister');
+
+$routes->get('profile', 'ProfileController::index');
