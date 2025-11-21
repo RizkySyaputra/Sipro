@@ -68,7 +68,7 @@
                                 </div>
                                 <div class="col-md-11">
                                     <select class="form-control" name="pn" id="filter-pn">
-                                        <option value="">ALL</option>
+                                        <option value="">Semua PN dan Non PN</option>
                                         <option value="NON">NON PN</option>
                                         <option value="2">PN 2</option>
                                         <option value="3">PN 3</option>
