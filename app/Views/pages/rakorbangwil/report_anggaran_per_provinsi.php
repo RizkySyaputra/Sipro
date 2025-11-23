@@ -116,20 +116,19 @@
                                 <div class="col-md-10">
                                     <select class="form-control" name="unor" id="filter-unor">
                                         <option value="">Semua Unor</option>
-                                        <option value="6">Sumber Daya Air</option>
-                                        <option value="4">Bina Marga</option>
-                                        <option value="5">Cipta Karya</option>
-                                        <option value="8">Prasarana Strategis</option>
+                                        <?php foreach ($unor as $u): ?>
+                                            <option value="<?= $u->id ?>"><?= $u->unor ?></option>
+                                        <?php endforeach; ?>
                                     </select>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-2">
-                                    <label for="pn"><strong>PN</strong></label>
+                                    <label for="pn"><strong>Prioritas Nasional</strong></label>
                                 </div>
                                 <div class="col-md-10">
                                     <select class="form-control" name="pn" id="filter-pn">
-                                        <option value=" ">Semua PN dan Non PN</option>
+                                        <option value="">Semua PN dan Non PN</option>
                                         <option value="0">Non PN</option>
                                         <option value="28">PN 2-8</option>
                                         <option value="2">PN 2</option>
@@ -214,15 +213,17 @@
             allowClear: true
         });
 
-        $('#filter-unor').select2({
-            placeholder: "Semua Unor",
-            allowClear: true
-        });
+        $('#filter-unor, #filter-pn').select2();
 
-        $('#filter-pn').select2({
-            placeholder: "Semua PN dan Non PN",
-            allowClear: true
-        });
+        // $('#filter-unor').select2({
+        //     placeholder: "Semua Unor",
+        //     allowClear: true
+        // });
+
+        // $('#filter-pn').select2({
+        //     placeholder: "Semua PN dan Non PN",
+        //     allowClear: true
+        // });
 
         $('#filter-provinsi').val(localStorage.getItem('selectedProvinsi'));
         $('#filter-unor').val(localStorage.getItem('selectedUnor'));

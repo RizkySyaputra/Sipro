@@ -5,9 +5,6 @@ $format->setAttribute(NumberFormatter::FRACTION_DIGITS, 0);
 $a = 1;
 $total_kawasan = 0;
 $total_tematik = 0;
-$total_tematik_all = 0;
-// $total_pekerjaan = 0;
-// $total_anggaran = 0;
 $table = '';
 $table .= "<thead>
             <tr>
@@ -32,8 +29,6 @@ foreach ($kawasan_per_provinsi as $kp) : ?>
     // $total_anggaran += $kp->anggaran ?? 0;
     $total_tematik = $kp->jml_pertumbuhan + $kp->jml_swasembada + $kp->jml_afirmasi + $kp->jml_unggulan;
 
-    $total_tematik_all += $total_tematik;
-
     $table .= "<tr>
         <td>$a</td>
         <td>$kp->provinsi</td>
@@ -52,7 +47,7 @@ foreach ($kawasan_per_provinsi as $kp) : ?>
 $table .= "</tbody><tfoot><tr style='font-weight:bold;'>
     <td colspan='2' class='text-center'>Total</td>
     <td class='text-right'>$total_kawasan</td>
-    <td colspan='6' class='text-right'>$total_tematik_all</td>
+    <td colspan='6' class='text-right'></td>
 </tr></tfoot>";
 
 echo $table;

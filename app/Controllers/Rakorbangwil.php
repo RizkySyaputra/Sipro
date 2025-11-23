@@ -420,9 +420,12 @@ class Rakorbangwil extends BaseController
     public function laporan1()
     {
         $dataProvinsi = $this->provinsiModel->getProvinsi();
+        $dataUnor = $this->unorModel->getUnor();
 
         $data = [
-            'provinsi' => $dataProvinsi
+            'provinsi' => $dataProvinsi,
+            'unor'     => $dataUnor
+
         ];
 
         $this->template->write('title', 'Laporan Kawasan Per Provinsi');
@@ -529,9 +532,11 @@ class Rakorbangwil extends BaseController
     public function laporan4()
     {
         $dataProvinsi = $this->provinsiModel->getProvinsi();
+        $dataUnor = $this->unorModel->getUnor();
 
         $data = [
-            'provinsi' => $dataProvinsi
+            'provinsi' => $dataProvinsi,
+            'unor'     => $dataUnor
         ];
 
         $this->template->write('title', 'Laporan Anggaran Per Provinsi');
