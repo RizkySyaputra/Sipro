@@ -102,10 +102,10 @@
                                 <div class="col-md-10">
                                     <select class="form-control" name="unor" id="filter-unor">
                                         <option value="">Semua Unor</option>
-                                        <option value="6">SDA</option>
-                                        <option value="4">BM</option>
-                                        <option value="5">CK</option>
-                                        <option value="8">PS</option>
+                                        <option value="6">Sumber Daya Air</option>
+                                        <option value="4">Bina Marga</option>
+                                        <option value="5">Cipta Karya</option>
+                                        <option value="8">Prasarana Strategis</option>
                                     </select>
                                 </div>
                             </div>
@@ -116,7 +116,7 @@
                                 </div>
                                 <div class="col-md-10">
                                     <select class="form-control" name="pn" id="filter-pn">
-                                        <option value="">Semua PN</option>
+                                        <option value="">Semua PN dan Non PN</option>
                                         <option value="0">Non PN</option>
                                         <option value="28">PN 2-8</option>
                                         <option value="2">PN 2</option>
@@ -199,7 +199,7 @@
         });
 
         $('#filter-pn').select2({
-            placeholder: "Semua PN",
+            placeholder: "Semua PN dan Non PN",
             allowClear: true
         });
 
