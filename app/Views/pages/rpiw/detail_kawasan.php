@@ -29,7 +29,7 @@
                     <label class="col-sm-2 col-form-label">Nama Kawasan</label>
                     <div class="col-sm-10">
                         <div class="form-group">
-                            <input type="text" class="form-control" value="<?= $p_kawasan->nama_kawasan ?>" disabled>
+                            <input type="text" class="form-control" value="<?= $p_kawasan->nama_kawasan ?>" hidden>
                         </div>
                     </div>
                 </div>

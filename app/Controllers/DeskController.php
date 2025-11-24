@@ -50,6 +50,8 @@ class DeskController extends BaseController
         $this->pejabatModel = new PejabatModel();
         $this->ttdModel = new TtdModel();
         $this->baModel = new BaModel();
+
+        helper('permission');
     }
     public function kawasan()
     {
@@ -308,16 +310,32 @@ class DeskController extends BaseController
     }
     public function daftar_pejabat()
     {
-        $data['pejabat'] = $this->pejabatModel->getPejabat();
+        $id_role = user()->id_role;
         $this->template->write('title', 'Daftar Pejabat');
-        $this->template->load('/templates/main', '/pages/desk/daftar_pejabat', $data);
+        $this->template->load('/templates/main', '/pages/desk/daftar_pejabat', [
+            'pejabat' => $this->pejabatModel->getPejabat(),
+            'can_view' => has_permission_menu($id_role, '/pejabat_ttd', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/pejabat_ttd', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/pejabat_ttd', 'can_delete')
+        ]);
+    }
+    public function pejabat_view($id)
+    {
+        $pejabat = $this->pejabatModel->find($id);
+
+        if (!$pejabat) {
+            return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
+        }
+        return view('/pages/desk/ModalPejabatView', ['pejabat' => $pejabat]);
     }
 
     public function pejabat_edit($id_pejabat)
     {
         $pejabat = $this->pejabatModel->getPejabatbyId($id_pejabat);
-        $data = ['pejabat' => $pejabat];
-        $this->template->load('/templates/main', '/pages/desk/edit_pejabat', $data);
+        if (!$pejabat) {
+            return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
+        }
+        return view('/pages/desk/ModalPejabatEdit', ['pejabat' => $pejabat]);
     }
     public function add_ttd()
     {
@@ -442,7 +460,7 @@ class DeskController extends BaseController
         }
     }
 
-    public function edit_pejabat()
+    public function update_pejabat($id_pejabat)
     {
         // Memuat helper form dan validasi
         helper(['form', 'url']);
@@ -468,7 +486,6 @@ class DeskController extends BaseController
         } else {
             $newName = $this->request->getPost('ttd_lama');
         }
-        $id_pejabat = $this->request->getPost('id_pejabat');
         $data = [
             'nip'             => $this->request->getPost('nip'),
             'nama_pejabat'    => $this->request->getPost('nama_pejabat'),
@@ -482,11 +499,73 @@ class DeskController extends BaseController
         ];
 
         if ($this->pejabatModel->update($id_pejabat, $data)) {
-            return redirect()->to(base_url('/pejabat/daftar'))->with('success', 'Data pejabat berhasil ditambahkan.');
+            return $this->response->setJSON([
+                'status' => true,
+                'message' => 'Data berhasil disimpan.'
+            ]);
         } else {
-            return redirect()->back()->withInput()->with('error', 'Gagal menambahkan data pejabat.');
+            return $this->response->setJSON([
+                'status' => false,
+                'message' => 'Terjadi kesalahan saat menyimpan.'
+            ]);
         }
     }
+    public function pejabat_add()
+    {
+        return view('/pages/desk/ModalPejabatAdd'); // form input
+    }
+    public function store()
+    {
+        helper(['form', 'url']);
+
+        if (!$this->validate([
+            'tanda_tangan' => 'uploaded[tanda_tangan]|is_image[tanda_tangan]|max_size[tanda_tangan,1024]',
+        ])) {
+            return $this->response->setJSON([
+                'status' => false,
+                'message' => $this->validator->listErrors()
+            ]);
+        }
+
+        $file = $this->request->getFile('tanda_tangan');
+        $name = $file->getRandomName();
+        $file->move(ROOTPATH . 'public/assets/ttd', $name);
+
+        $data = [
+            'nip'             => $this->request->getPost('nip'),
+            'nama_pejabat'    => $this->request->getPost('nama_pejabat'),
+            'jabatan'         => $this->request->getPost('jabatan'),
+            'unit_kerja'      => $this->request->getPost('unit_kerja'),
+            'unit_organisasi' => $this->request->getPost('unit_organisasi'),
+            'instansi'        => $this->request->getPost('instansi'),
+            'email'           => $this->request->getPost('email'),
+            'no_telp'         => $this->request->getPost('no_telp'),
+            'tanda_tangan'    => $name,
+        ];
+
+        $this->pejabatModel->insert($data);
+
+        return $this->response->setJSON([
+            'status' => true,
+            'message' => 'Data pejabat berhasil ditambah.'
+        ]);
+    }
+
+    public function pejabat_delete($id = null)
+    {
+        if ($this->request->getMethod(true) !== 'DELETE') {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Metode tidak valid']);
+        }
+
+        $Pejabat = $this->pejabatModel->find($id);
+        if (!$Pejabat) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Data tidak ditemukan']);
+        }
+        $this->pejabatModel->where('id_pejabat', $id)->delete();
+
+        return $this->response->setJSON(['status' => 'success', 'message' => 'Data berhasil dihapus']);
+    }
+
     public function pejabat_detail($id_pejabat)
 
     {

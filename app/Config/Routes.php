@@ -124,11 +124,17 @@ $routes->post('/memorandum/filter_laporan5', 'Memorandum::filter_laporan5');
 //routes rakorbangwil
 //proram_tahunan
 $routes->get('/rakorbangwil/program_tahunan', 'Rakorbangwil::daftar_program_tahunan', ['filter' => 'permission']);
+
 $routes->post('rakorbangwil/exportToExcel', 'Rakorbangwil::export_to_excel');
+
+$routes->get('/rakorbangwil/catatan_pemda', 'Rakorbangwil::catatan_pemda', ['filter' => 'permission']);
+
 $routes->post('/rakorbangwil/get_daftar_program_tahunan', 'Rakorbangwil::get_daftar_program_tahunan');
 $routes->get('rakorbangwil/view/(:segment)', 'Rakorbangwil::view/$1');
 $routes->get('rakorbangwil/edit/(:segment)', 'Rakorbangwil::edit/$1');
 $routes->post('rakorbangwil/update/(:segment)', 'Rakorbangwil::update/$1');
+$routes->get('rakorbangwil/edit_pemda/(:segment)', 'Rakorbangwil::edit_pemda/$1');
+$routes->post('rakorbangwil/update_pemda/(:segment)', 'Rakorbangwil::update_pemda/$1');
 $routes->delete('/rakorbangwil/delete/(:segment)', 'Rakorbangwil::delete/$1');
 //pra_rakorbangwil
 $routes->get('/rakorbangwil/desk_pra_rakorbangwil', 'Rakorbangwil::daftar_pn');
@@ -163,17 +169,23 @@ $routes->post('/desk/get_catatan', 'DeskController::getCatatanKawasan', ['filter
 $routes->post('/desk/simpan_catatan', 'DeskController::add_catatan_provinsi', ['filter' => 'permission']);
 
 //routes pejabat
-$routes->get('/tanda_tangan/daftar', 'DeskController::daftar_ttd', ['filter' => 'permission']);
-$routes->get('/tanda_tangan/tambah', 'DeskController::add_ttd', ['filter' => 'permission']);
-$routes->post('/tanda_tangan/tambah', 'DeskController::add_ttd_new', ['filter' => 'permission']);
-$routes->get('/pejabat/daftar', 'DeskController::daftar_pejabat', ['filter' => 'permission']);
-$routes->get('/pejabat/tambah', 'DeskController::add_pejabat', ['filter' => 'permission']);
-$routes->get('/pejabat/edit/(:segment)', 'DeskController::pejabat_edit/$1', ['filter' => 'permission:edit']);
-$routes->get('/pejabat/detail/(:segment)', 'DeskController::pejabat_detail/$1', ['filter' => 'permission']);
-$routes->post('/pejabat/edit', 'DeskController::edit_pejabat', ['filter' => 'permission:edit']);
-$routes->get('/pejabat/detail', 'DeskController::detail_pejabat', ['filter' => 'permission']);
+$routes->get('/tanda_tangan/daftar', 'DeskController::daftar_ttd');
+$routes->get('/tanda_tangan/tambah', 'DeskController::add_ttd');
+$routes->post('/tanda_tangan/tambah', 'DeskController::add_ttd_new');
+$routes->get('/pejabat_ttd', 'DeskController::daftar_pejabat');
+$routes->get('/pejabat/tambah', 'DeskController::add_pejabat');
+$routes->get('/pejabat/edit/(:segment)', 'DeskController::pejabat_edit/$1');
+$routes->get('/pejabat/detail/(:segment)', 'DeskController::pejabat_detail/$1');
+$routes->post('/pejabat/edit', 'DeskController::edit_pejabat');
+$routes->get('/pejabat/detail', 'DeskController::detail_pejabat');
 $routes->get('/pejabat/delete', 'DeskController::delete_pejabat', ['filter' => 'permission:delete']);
-$routes->post('/pejabat/tambah', 'DeskController::add_pejabat_new', ['filter' => 'permission']);
+$routes->post('/pejabat/tambah', 'DeskController::add_pejabat_new');
+$routes->get('pejabat/view/(:segment)', 'DeskController::pejabat_view/$1');
+// $routes->get('pejabat/edit/(:segment)', 'DeskController::pejabat_edit/$1');
+$routes->post('pejabat/update/(:segment)', 'DeskController::update_pejabat/$1');
+$routes->delete('pejabat/delete/(:segment)', 'DeskController::pejabat_delete/$1');
+$routes->get('pejabat/add', 'DeskController::pejabat_add');
+$routes->post('pejabat/store', 'DeskController::store');
 
 // routes BAK
 $routes->get('/berita_acara', 'DeskController::berita_acara', ['filter' => 'permission']);

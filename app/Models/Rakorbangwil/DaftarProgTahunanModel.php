@@ -11,7 +11,7 @@ class DaftarProgTahunanModel extends Model
     protected $returnType = 'object';
 
 
-    public function getDaftarProgramTahunan($id_provinsi, $id_unor, $sumber)
+    public function getDaftarProgramTahunan($id_provinsi, $id_unor, $sumber, $pn = "ALL")
     {
         $tahun_pelaksanaan = session('tahun_pelaksana');
         $builder = $this->db->table('view_prog_tahunan as a');
@@ -28,9 +28,15 @@ class DaftarProgTahunanModel extends Model
         if ($sumber) {
             $builder->where('a.sumber', $sumber);
         }
+        if ($pn) {
+            if ($pn == "NON") {
+                $builder->where('a.id_pn', null);
+            } else {
+                $builder->where('a.id_pn', $pn);
+            }
+        }
         $builder->where('a.thn_pelaksanaan', $tahun_pelaksanaan);
         $builder->orderBy('a.id_prog_tahunan', 'ASC');
-
         // Eksekusi
         $query = $builder->get();
         return $query->getResult();

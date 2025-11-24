@@ -49,7 +49,7 @@ class PraRakorModel extends Model
         $builder->join('prog_tahunan_kwsn as b', 'a.id_prog_tahunan = b.id_prog_tahunan', 'left');
         $builder->join('m_kawasan as c', 'b.id_kawasan = c.kode_kawasan', 'left');
         $builder->join('m_tematik as d', 'c.id_tematik_kawasan = d.id_tematik', 'left');
-        $builder->join('m_unor as e', 'a.id_unor = e.id_2', 'left');
+        $builder->join('m_unor as e', 'a.id_unor = e.id', 'left');
         $builder->join('m_satuan as f', 'a.id_satuan = f.id_satuan', 'left');
         $builder->join('m_sk_ro as g', 'g.id_ro = a.id_ro', 'inner');
         $builder->where('a.id_provinsi', $id_provinsi);

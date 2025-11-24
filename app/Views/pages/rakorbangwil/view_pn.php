@@ -57,7 +57,9 @@
                         <div class="tab-pane fade show active" id="catatan">
                             <div class="d-flex justify-content-between align-items-center">
                                 <label><strong>Catatan Pembahasan</strong></label>
-                                <button id="btnEditCatatan" class="btn btn-sm btn-warning">Ubah Catatan</button>
+                                <?php if ($can_edit): ?>
+                                    <button id="btnEditCatatan" class="btn btn-sm btn-warning">Ubah Catatan</button>
+                                <?php endif; ?>
                             </div>
                             <div id="catatanDisplay">
                                 <?php if (!empty($catatan_pn->catatan_pra_rakorbangwil)): ?>
@@ -85,7 +87,7 @@
                             <div id="catatanForm" class="d-none mt-3">
                                 <div id="catatanWrapper"></div>
                                 <button type="button" class="btn btn-sm btn-primary mt-2" id="tambahCatatan">Tambah Catatan</button>
-                                <button type="button" class="btn btn-success mt-2" id="simpanCatatan">Simpan</button>
+                                <button type="button" class="btn btn-info mt-2" id="simpanCatatan">Simpan</button>
                                 <button type="button" class="btn btn-secondary mt-2" id="batalCatatan">Batal</button>
                             </div>
                         </div>
@@ -94,7 +96,9 @@
                         <div class="tab-pane fade" id="usulan">
                             <div class="d-flex justify-content-between align-items-center">
                                 <label><strong>Usulan Program/Kegiatan</strong></label>
-                                <button id="btnEditUsulan" class="btn btn-sm btn-warning">Ubah Usulan</button>
+                                <?php if ($can_edit): ?>
+                                    <button id="btnEditUsulan" class="btn btn-sm btn-warning">Ubah Usulan</button>
+                                <?php endif; ?>
                             </div>
                             <div id="usulanDisplay">
                                 <p><?= esc($catatan_pn->usulan_pekerjaan ?? '-') ?></p>
@@ -103,7 +107,7 @@
                             <!-- Form edit usulan -->
                             <div id="usulanForm" class="d-none mt-3">
                                 <textarea id="inputUsulan" class="form-control" rows="4"><?= esc($catatan_pn->usulan_pekerjaan ?? '') ?></textarea>
-                                <button class="btn btn-success mt-2" id="simpanUsulan">Simpan</button>
+                                <button class="btn btn-info mt-2" id="simpanUsulan">Simpan</button>
                                 <button class="btn btn-secondary mt-2" id="batalUsulan">Batal</button>
                             </div>
                         </div>
@@ -118,7 +122,7 @@
                                 <a class="nav-link" data-toggle="tab" href="#infra" role="tab">Dukungan Infrastruktur PU</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#kebutuhan" role="tab">Kebutuhan K/L</a>
+                                <a class="nav-link" data-toggle="tab" href="#kebutuhan" role="tab">Kebutuhan Dukungan K/L</a>
                             </li>
                         </ul>
 
@@ -225,8 +229,8 @@
                                                 <td style="text-align : center;font-weight: bold;"><strong>Total</strong></td>
                                                 <td style="text-align : center;font-weight: bold;"> <?= $total_kawasan_afirmasi ?></td>
                                                 <td style="text-align : center;font-weight: bold;"><?= $total_kawasan_komoditas_unggulan ?></td>
-                                                <td style="text-align : center;font-weight: bold;"><?= $total_kawasan_pertumbuhan ?></td>
                                                 <td style="text-align : center;font-weight: bold;"><?= $total_kawasan_konservasi_rawan_bencana  ?></td>
+                                                <td style="text-align : center;font-weight: bold;"><?= $total_kawasan_pertumbuhan ?></td>
                                                 <td style="text-align : center;font-weight: bold;"> <?= $total_kawasan_swasembada_pangan_air_energi  ?></td>
                                                 <td style="text-align : center;font-weight: bold;"><?= $total_total  ?></td>
                                             </tr>
@@ -269,17 +273,17 @@
                                             </tr>
                                             <tr>
                                                 <th style="text-align: center;">Pekerjaan</th>
-                                                <th style="text-align: center;">Anggaran</th>
+                                                <th style="text-align: center;">Anggaran (ribu)</th>
                                                 <th style="text-align: center;">Pekerjaan</th>
-                                                <th style="text-align: center;">Anggaran</th>
+                                                <th style="text-align: center;">Anggaran (ribu)</th>
                                                 <th style="text-align: center;">Pekerjaan</th>
-                                                <th style="text-align: center;">Anggaran</th>
+                                                <th style="text-align: center;">Anggaran (ribu)</th>
                                                 <th style="text-align: center;">Pekerjaan</th>
-                                                <th style="text-align: center;">Anggaran</th>
+                                                <th style="text-align: center;">Anggaran (ribu)</th>
                                                 <th style="text-align: center;">Pekerjaan</th>
-                                                <th style="text-align: center;">Anggaran</th>
+                                                <th style="text-align: center;">Anggaran (ribu)</th>
                                                 <th style="text-align: center;">Pekerjaan</th>
-                                                <th style="text-align: center;">Anggaran</th>
+                                                <th style="text-align: center;">Anggaran (ribu)</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -447,7 +451,29 @@
                             <div class="tab-pane fade show" id="kebutuhan">
                                 <div class="form-group">
                                     <label><strong>Kebutuhan K/L</strong></label>
-                                    <p><?= $catatan_pn->kebutuhan_dukungan_kl ?></p>
+                                    <div class="table-responsive">
+                                        <table id="datatables3" class="table table-bordered table-hover">
+                                            <thead class="bg-light">
+                                                <tr>
+                                                    <th style="text-align: center; width: 5% ;">No</th>
+                                                    <th style="text-align: center;">K/L</th>
+                                                    <th style="text-align: center; ">Wilayah</th>
+                                                    <th style="text-align: center; width: 65% ;">Catatan</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php $i = 1;
+                                                foreach ($kebutuhan_dukungan_kl as $data) : ?>
+                                                    <tr>
+                                                        <td style="text-align: center; width: 5% ;"><?= $i++ ?></td>
+                                                        <td><?= $data->nama_kl  ?></td>
+                                                        <td><?= $data->wilayah  ?></td>
+                                                        <td style="width: 70% ;"><?= nl2br($data->catatan)  ?></td>
+                                                    </tr>
+                                                <?php endforeach; ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -609,7 +635,15 @@
                     "url": "//cdn.datatables.net/plug-ins/1.13.6/i18n/id.json"
                 }
             });
+
             $('#datatables2').DataTable({
+                "order": [],
+                "pageLength": 10,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.13.6/i18n/id.json"
+                }
+            });
+            $('#datatables3').DataTable({
                 "order": [],
                 "pageLength": 10,
                 "language": {
@@ -680,7 +714,7 @@
                 let id_provinsi = $(this).data('id_provinsi');
 
                 // Set judul modal
-                $('#modalprogramDetailLabel').text('Daftar Program ' + tematik);
+                $('#modalprogramDetailLabel').text('Daftar Program/Kegiatan di ' + tematik);
                 // Tampilkan modal
                 $('#modalprogramDetail').modal('show');
 

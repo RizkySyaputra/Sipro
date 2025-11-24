@@ -4,3 +4,4 @@
 /writable/debugbar
 .env
 *.log
+.env

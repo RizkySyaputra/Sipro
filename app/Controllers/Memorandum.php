@@ -410,7 +410,8 @@ class Memorandum extends BaseController
         $provinsi_id = $this->request->getPost('provinsi');
         $unor_id = $this->request->getPost('unor');
         $sumber = $this->request->getPost('sumber');
-        $daftarMemo = $this->daftarMemoModel->getDaftarMemo($provinsi_id, $unor_id, $sumber);
+        $pn = $this->request->getPost('pn');
+        $daftarMemo = $this->daftarMemoModel->getDaftarMemo($provinsi_id, $unor_id, $sumber, $pn);
         $data = [
             'daftar_memo' => $daftarMemo,
             'can_view' => has_permission_menu($id_role, '/memorandum/daftar_memo', 'can_view'),

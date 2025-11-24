@@ -61,6 +61,24 @@
                                 </div>
                             </div>
 
+                            <!-- Dropdown pn -->
+                            <div class="row mb-3">
+                                <div class="col-md-1">
+                                    <label for="pn"><strong>Prioritas Nasional</strong></label>
+                                </div>
+                                <div class="col-md-11">
+                                    <select class="form-control" name="pn" id="filter-pn">
+                                        <option value="">Semua PN dan Non PN</option>
+                                        <option value="NON">NON PN</option>
+                                        <option value="2">PN 2</option>
+                                        <option value="3">PN 3</option>
+                                        <option value="4">PN 4</option>
+                                        <option value="5">PN 5</option>
+                                        <option value="6">PN 6</option>
+                                        <option value="8">PN 8</option>
+                                    </select>
+                                </div>
+                            </div>
                             <!-- Dropdown Kawasan -->
                             <!-- <div class="col-md-3 mb-3">
                                     <label for="kawasan"><strong>Kawasan</strong></label>
@@ -216,11 +234,11 @@
 
 
         // Inisialisasi Select2 untuk semua dropdown
-        $('#filter-unor, #filter-provinsi, #filter-kawasan,  #filter-sumber').select2();
+        $('#filter-unor, #filter-provinsi, #filter-pn,  #filter-sumber').select2();
         // Restore values from local storage
         $('#filter-unor').val(localStorage.getItem('selectedUnor'));
         $('#filter-provinsi').val(localStorage.getItem('selectedProvinsi'));
-        $('#filter-kawasan').val(localStorage.getItem('selectedKawasan'));
+        $('#filter-pn').val(localStorage.getItem('selectedPn'));
         $('#filter-sumber').val(localStorage.getItem('selectedSumber'));
 
         // On form submit, save the selected values
@@ -275,7 +293,7 @@
             // Reset dropdowns to their default values
             $('#filter-unor').val('').trigger('change');
             $('#filter-provinsi').val('').trigger('change');
-            $('#filter-kawasan').val('').trigger('change');
+            $('#filter-pn').val('').trigger('change');
             $('#filter-sumber').val('').trigger('change');
 
             // Optionally clear the table data
@@ -284,7 +302,7 @@
             // Optionally, you could also clear the local storage if needed
             localStorage.removeItem('selectedUnor');
             localStorage.removeItem('selectedProvinsi');
-            localStorage.removeItem('selectedKawasan');
+            localStorage.removeItem('selectedPn');
             localStorage.removeItem('selectedSumber');
 
             var table = $('#datatables').DataTable();

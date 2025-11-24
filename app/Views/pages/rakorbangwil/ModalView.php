@@ -118,11 +118,12 @@
                         <label class="catatan-text"><strong>Kebutuhan Dukungan KL</strong></label>
                         <p><?= esc($prog_tahunan->kebutuhan_dukungan_kl ?? '-') ?></p>
 
-                        <label class="catatan-text"><strong>Reviu Puswil</strong></label>
-                        <p><?= esc($prog_tahunan->reviu_puswil ?? '-') ?></p>
-
-                        <!-- <label class="catatan-text"><strong>Catatan memorandum:</strong></label>
-                        <p><?= esc($prog_tahunan->catatan_memorandum ?? '-') ?></p> -->
+                        <label class="catatan-text"><strong>Catatan Pra Rakorbangwil:</strong></label>
+                        <p><?= esc($prog_tahunan->catatan_pra_rakorbangwil ?? '-') ?></p>
+                        <label class="catatan-text"><strong>Catatan Konfirmasi Pemda:</strong></label>
+                        <p><?= esc($prog_tahunan->catatan_konfrm_pemda ?? '-') ?></p>
+                        <label class="catatan-text"><strong>Catatan Pemda:</strong></label>
+                        <p><?= esc($prog_tahunan->catatan_pemda ?? '-') ?></p>
 
                     </ul>
                 </div>

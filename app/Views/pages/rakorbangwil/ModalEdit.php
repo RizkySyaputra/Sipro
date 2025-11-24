@@ -134,8 +134,14 @@
                     <div class="form-group">
                         <label class="catatan-text"><strong>Kegiatan</strong></label>
                         <select class="form-control" name="id_kegiatan" id="select-kegiatan">
-                            <option value="<?= $progTahunan->id_kegiatan ?>">
-                                <?= $progTahunan->id_kegiatan . ' - ' . $progTahunan->nm_kegiatan ?>
+                            <!-- <option value="<?= $progTahunan->id_kegiatan ?>">
+                                <?= $progTahunan->id_kegiatan . ' - ' . $progTahunan->nm_kegiatan ?> -->
+                            <?php foreach ($kegiatan as $item): ?>
+                                <option value="<?= esc($item['id_kegiatan']) ?>"
+                                    <?= ($progTahunan->id_kegiatan ?? '') == $item['id_kegiatan'] ? 'selected' : '' ?>>
+                                    <?= esc($item['id_kegiatan'] . ' - ' . $item['nm_kegiatan']) ?>
+                                </option>
+                            <?php endforeach; ?>
                             </option>
                         </select>
                     </div>
@@ -267,8 +273,16 @@
                         <textarea class="form-control" name="kebutuhan_dukungan_kl"><?= esc($progTahunan->kebutuhan_dukungan_kl ?? '-') ?></textarea>
                     </div>
                     <div class="form-group">
-                        <label class="catatan-text"><strong>Reviu Puswil</strong></label>
-                        <textarea class="form-control" name="reviu_puswil"><?= esc($progTahunan->reviu_puswil ?? '-') ?></textarea>
+                        <label class="catatan-text"><strong>Catatan Pra Rakorbangwil</strong></label>
+                        <textarea class="form-control" name="catatan_pra_rakorbangwil"><?= esc($progTahunan->catatan_pra_rakorbangwil ?? '-') ?></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Catatan Konfirmasi Pemda</strong></label>
+                        <textarea class="form-control" name="catatan_konfrm_pemda"><?= esc($progTahunan->catatan_konfrm_pemda ?? '-') ?></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Catatan Pemda</strong></label>
+                        <p><?= esc($progTahunan->catatan_pemda ?? '-') ?></p>
                     </div>
                 </ul>
             </div>
