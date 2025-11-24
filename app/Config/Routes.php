@@ -86,6 +86,7 @@ $routes->post('memorandum/filter_data', 'Memorandum::filter_data', ['filter' => 
 $routes->post('memorandum/get_kawasan', 'Memorandum::get_kawasan');
 $routes->get('memorandum/daftar_program', 'Memorandum::listProgram');
 $routes->get('memorandum/daftar_memo', 'Memorandum::daftar_memo', ['filter' => 'permission']);
+$routes->post('memorandum/exportToExcel', 'Memorandum::export_to_excel');
 $routes->post('/memorandum/get_daftar_memo', 'Memorandum::get_daftar_memo');
 $routes->get('/memorandum/get_daftar_memo', 'Memorandum::get_daftar_memo');
 $routes->get('/memorandum/daftar', 'Memorandum::get_daftar_memo');
@@ -123,7 +124,11 @@ $routes->post('/memorandum/filter_laporan5', 'Memorandum::filter_laporan5');
 //routes rakorbangwil
 //proram_tahunan
 $routes->get('/rakorbangwil/program_tahunan', 'Rakorbangwil::daftar_program_tahunan', ['filter' => 'permission']);
+
+$routes->post('rakorbangwil/exportToExcel', 'Rakorbangwil::export_to_excel');
+
 $routes->get('/rakorbangwil/catatan_pemda', 'Rakorbangwil::catatan_pemda', ['filter' => 'permission']);
+
 $routes->post('/rakorbangwil/get_daftar_program_tahunan', 'Rakorbangwil::get_daftar_program_tahunan');
 $routes->get('rakorbangwil/view/(:segment)', 'Rakorbangwil::view/$1');
 $routes->get('rakorbangwil/edit/(:segment)', 'Rakorbangwil::edit/$1');
@@ -355,3 +360,5 @@ $routes->get('/addBakKonreg/(:segment)/(:segment)/(:segment)', 'KonregController
 
 $routes->get('register', 'AuthController::register');
 $routes->post('register', 'AuthController::attemptRegister');
+
+$routes->get('profile', 'ProfileController::index');

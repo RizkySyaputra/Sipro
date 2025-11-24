@@ -32,6 +32,7 @@
                                         <option value="2027">2027</option>
                                         <option value="2028">2028</option>
                                         <option value="2029">2029</option>
+                                        <option value="2529">2025 - 2029</option>
                                     </select>
                                 </div>
                             </div>
@@ -61,22 +62,23 @@
                                 <thead>
                                     <?php
                                     $pnList = [2, 3, 4, 5, 6, 8];
-                                    $jenis = ['Kawasan', 'Tematik Kawasan', 'Pekerjaan'];
+                                    $jenis = ['Kawasan', 'Tematik', 'Pekerjaan', 'Anggaran (Ribu)'];
                                     // Baris 1: Jenis, colspan = jumlah PN
                                     echo '<tr>';
-                                    echo '<th rowspan="2">No</th>';
-                                    echo '<th rowspan="2">Provinsi</th>'; // kolom tetap
+                                    echo '<th rowspan="2" class="text-center">No</th>';
+                                    echo '<th rowspan="2" class="text-center">Provinsi</th>'; // kolom tetap
                                     foreach ($jenis as $j) {
-                                        echo '<th colspan="' . count($pnList) . '">' . $j . '</th>';
+                                        echo '<th colspan="' . count($pnList) + 1 . '" class="text-center">' . $j . '</th>';
                                     }
-                                    echo '</tr>';
+                                    echo '<th rowspan="2" class="text-center">Tahun Anggaran</th></tr>';
 
                                     // Baris 2: PN
                                     echo '<tr>';
                                     foreach ($jenis as $j) {
                                         foreach ($pnList as $pn) {
-                                            echo "<th>PN {$pn}</th>";
+                                            echo "<th class='text-center'>PN {$pn}</th>";
                                         }
+                                        echo "<th class='text-center'>Total</th>";
                                     }
                                     echo '</tr>';
 
@@ -133,14 +135,17 @@
 
                     //Inisialisasi DataTables kembali
                     $('#datatables').DataTable({
-                        // "scrollX": true,
+                        "scrollX": true,
                         "pageLength": 10,
                         "pagingType": "full_numbers",
                         "lengthMenu": [
                             [10, 25, 50, -1],
                             [10, 25, 50, "All"]
                         ],
-                        responsive: true,
+                        "fixedColumns": {
+                            "leftColumns": 2 // Membekukan 2 kolom dari kiri
+                        },
+                        // responsive: true,
                         language: {
                             search: "Search:",
                             // search: "_INPUT_",
@@ -177,7 +182,7 @@
 
         $(function() {
             $('#datatables').DataTable({
-                // "scrollX": true,
+                "scrollX": true,
                 "pageLength": 10,
                 "ordering": true,
                 "lengthChange": true,

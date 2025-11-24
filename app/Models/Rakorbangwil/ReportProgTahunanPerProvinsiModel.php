@@ -27,37 +27,73 @@ class ReportProgTahunanPerProvinsiModel extends Model
     // protected $updatedField  = 'updated_at';  // pastikan ada di tabel
 
 
-    public function getReportKawasanPerProvinsi($tahun_pelaksanaan = null, $id_provinsi = null)
+    public function getReportKawasanPerProvinsi($tahun_pelaksanaan = null, $id_provinsi = null, $id_unor = null, $id_pn = null)
     {
-        $builder = $this->db->table('view_prog_tahunan_lap_ktpa');
+        $builder = $this->db->table('sipro_kp.trx_prog_tahunan_kt');
 
-        $builder->select("provinsi, kawasan, tematik, pekerjaan, anggaran");
+        $builder->select(
+            "provinsi, 
+            COUNT(DISTINCT(IF(id_kawasan!=0,id_kawasan,NULL))) AS jml_kawasan,
+            COUNT(DISTINCT(IF(id_tematik='1',id_tematik,NULL))) AS jml_afirmasi,
+            COUNT(DISTINCT(IF(id_tematik='2',id_tematik,NULL))) AS jml_unggulan,
+            COUNT(DISTINCT(IF(id_tematik='3',id_tematik,NULL))) AS jml_konservasi,
+            COUNT(DISTINCT(IF(id_tematik='4',id_tematik,NULL))) AS jml_pertumbuhan,
+            COUNT(DISTINCT(IF(id_tematik='5',id_tematik,NULL))) AS jml_swasembada"
+        );
+
         $builder->where('thn_pelaksanaan', "$tahun_pelaksanaan");
+
         if (!empty($id_provinsi)) {
-            $builder->where('id_provinsi', "$id_provinsi");
+            $builder->whereIn('id_provinsi', $id_provinsi);
         }
-        $builder->groupBy('provinsi');
+        if (!empty($id_unor)) {
+            $builder->where('id_unor', $id_unor);
+        }
+        if ($id_pn !== null && $id_pn !== '') {
+            if ($id_pn == 28) {
+                $builder->whereIn('id_pn', [2, 3, 4, 5, 6, 8]);
+            } else {
+                $builder->where('id_pn', $id_pn);
+            }
+        }
+        $builder->groupBy('id_provinsi');
         $builder->orderBy('id_provinsi');
+
+        // echo $builder->getCompiledSelect();
+        // exit;
+
         $query = $builder->get();
         return $query->getResult();
-        // echo $builder->getCompiledSelect();
-        // echo $this->db->getLastQuery();
     }
 
-    public function getReportAnggaranPerProvinsi($tahun_pelaksanaan = null, $id_provinsi = null)
+    public function getReportAnggaranPerProvinsi($tahun_pelaksanaan = null, $id_provinsi = null, $id_unor = null, $id_pn = null)
     {
-        $builder = $this->db->table('view_prog_tahunan_lap_ktpa');
+        $builder = $this->db->table('trx_prog_tahunan_pa');
 
-        $builder->select("provinsi, anggaran, rpm, phln, sbsn, (rpm + phln + sbsn) as total_apbn, other");
+        $builder->select("provinsi, SUM(pekerjaan) as total_pekerjaan, SUM(pkrjn_rpm) as total_pkrjn_rpm, SUM(pkrjn_phln) as total_pkrjn_phln, SUM(pkrjn_sbsn) as total_pkrjn_sbsn, (SUM(pkrjn_rpm) + SUM(pkrjn_phln) + SUM(pkrjn_sbsn)) as total_pkrjn_apbn, SUM(pkrjn_other) as total_pkrjn_other, SUM(anggaran) as total_anggaran, SUM(rpm) as total_rpm, SUM(phln) as total_phln, SUM(sbsn) as total_sbsn, (SUM(rpm) + SUM(phln) + SUM(sbsn)) as total_apbn, SUM(other) as total_other");
+
         $builder->where('thn_pelaksanaan', "$tahun_pelaksanaan");
+
         if (!empty($id_provinsi)) {
-            $builder->where('id_provinsi', "$id_provinsi");
+            $builder->whereIn('id_provinsi', $id_provinsi);
+        }
+        if (!empty($id_unor)) {
+            $builder->where('id_unor', $id_unor);
+        }
+        if ($id_pn !== null && $id_pn !== '') {
+            if ($id_pn == 28) {
+                $builder->whereIn('id_pn', [2, 3, 4, 5, 6, 8]);
+            } else {
+                $builder->where('id_pn', $id_pn);
+            }
         }
         $builder->groupBy('provinsi');
         $builder->orderBy('id_provinsi');
+
+        // echo $builder->getCompiledSelect();
+        // exit;
+
         $query = $builder->get();
         return $query->getResult();
-        // echo $builder->getCompiledSelect();
-        // echo $this->db->getLastQuery();
     }
 }

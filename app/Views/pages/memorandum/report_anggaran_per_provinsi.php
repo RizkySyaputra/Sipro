@@ -17,25 +17,37 @@
                     <div class="card-body">
                         <form method="post" id="filter-form">
                             <!-- <div class="form-row align-items-center"> -->
-
-                            <!-- Dropdown Provinsi -->
-
                             <div class="row mb-3">
                                 <div class="col-md-2">
                                     <label for="tahun_anggaran"><strong>Tahun Anggaran</strong></label>
                                 </div>
                                 <div class="col-md-10">
                                     <select class="form-control" name="tahun_anggaran" id="filter-tahun_anggaran">
-                                        <option value="">Semua Tahun</option>
+                                        <option value="">Pilih Tahun</option>
                                         <option value="2025">2025</option>
                                         <option value="2026">2026</option>
                                         <option value="2027">2027</option>
                                         <option value="2028">2028</option>
                                         <option value="2029">2029</option>
+                                        <option value="2529">2025 - 2029</option>
                                     </select>
                                 </div>
                             </div>
 
+                            <!-- Dropdown Provinsi -->
+                            <div class="row mb-3">
+                                <div class="col-md-2">
+                                    <label for="provinsi"><strong>Provinsi</strong></label>
+                                </div>
+                                <div class="col-md-10">
+                                    <select name="provinsi" class="form-control" id="filter-provinsi" multiple="multiple">
+                                        <!-- <option value="">Semua Provinsi</option> -->
+                                        <?php foreach ($provinsi as $p): ?>
+                                            <option value="<?= $p->id ?>" <?= old('id_provinsi') == $p->id ? 'selected' : '' ?>><?= $p->provinsi ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="row mb-3">
                                 <div class="col-md-2">
                                     <label for="unor"><strong>Unor</strong></label>
@@ -43,21 +55,21 @@
                                 <div class="col-md-10">
                                     <select class="form-control" name="unor" id="filter-unor">
                                         <option value="">Semua Unor</option>
-                                        <option value="4">BM</option>
-                                        <option value="5">CK</option>
-                                        <option value="6">SDA</option>
-                                        <option value="8">PS</option>
+                                        <?php foreach ($unor as $u): ?>
+                                            <option value="<?= $u->id ?>"><?= $u->unor ?></option>
+                                        <?php endforeach; ?>
                                     </select>
                                 </div>
                             </div>
-
                             <div class="row mb-3">
                                 <div class="col-md-2">
-                                    <label for="pn"><strong>PN</strong></label>
+                                    <label for="pn"><strong>Prioritas Nasional</strong></label>
                                 </div>
                                 <div class="col-md-10">
                                     <select class="form-control" name="pn" id="filter-pn">
-                                        <option value="">Semua PN</option>
+                                        <option value="">Semua PN dan Non PN</option>
+                                        <option value="0">Non PN</option>
+                                        <option value="28">PN 2-8</option>
                                         <option value="2">PN 2</option>
                                         <option value="3">PN 3</option>
                                         <option value="4">PN 4</option>
@@ -67,7 +79,6 @@
                                     </select>
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-md-2">
 
@@ -92,19 +103,28 @@
                             <table id="datatables" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                                 <thead>
                                     <?php
-                                    $unorList = ['BM', 'CK', 'SDA', 'PS'];
+
                                     echo '<tr>';
-                                    echo '<th rowspan="2">No</th>';
-                                    echo '<th rowspan="2">Provinsi</th>'; // kolom tetap
-                                    echo '<th colspan="4" class="text-center">APBN</th>';
-                                    echo '<th rowspan="2" class="text-center">Pembiayaan Lainnya</th>';
+                                    echo '<th rowspan="2" class="text-center">No</th>';
+                                    echo '<th rowspan="2" class="text-center">Provinsi</th>'; // kolom tetap
+                                    echo '<th rowspan="2" class="text-center">Pekerjaan APBN</th>';
+                                    // echo '<th rowspan="2" class="text-center">Pekerjaan Lainnya</th>';
+                                    // echo '<th rowspan="2" class="text-center">Total Pekerjaan</th>';
+                                    echo '<th colspan="4" class="text-center">Anggaran APBN (Ribu)</th>';
+                                    echo '<th rowspan="2" class="text-center">Pembiayaan Lainnya (Ribu)</th>';
+                                    echo '<th rowspan="2" class="text-center">Total Anggaran (Ribu)</th>';
                                     echo '</tr>';
 
                                     echo '<tr>';
-                                    echo "<th>RPM</th>";
-                                    echo "<th>PHLN</th>";
-                                    echo "<th>SBSN</th>";
-                                    echo "<th>Total</th>";
+                                    // echo "<th class='text-center'>RPM</th>";
+                                    // echo "<th class='text-center'>PHLN</th>";
+                                    // echo "<th class='text-center'>SBSN</th>";
+                                    // echo "<th class='text-center'>Total</th>";
+
+                                    echo "<th class='text-center'>RPM</th>";
+                                    echo "<th class='text-center'>PHLN</th>";
+                                    echo "<th class='text-center'>SBSN</th>";
+                                    echo "<th class='text-center'>Total</th>";
                                     echo '</tr>';
                                     ?>
                                 </thead>
@@ -127,21 +147,29 @@
 <script>
     $(document).ready(function() {
 
-        $('#filter-tahun_anggaran').select2({
-            placeholder: "Pilih Tahun Anggaran",
+        // $('#filter-tahun_anggaran').select2({
+        //     placeholder: "Pilih Tahun Anggaran",
+        //     allowClear: true
+        // });
+
+        $('#filter-provinsi').select2({
+            placeholder: "Semua Provinsi",
             allowClear: true
         });
 
-        $('#filter-unor').select2({
-            placeholder: "Pilih Unor",
-            allowClear: true
-        });
+        $('#filter-tahun_anggaran, #filter-unor, #filter-pn').select2();
 
-        $('#filter-pn').select2({
-            placeholder: "Pilih PN",
-            allowClear: true
-        });
+        // $('#filter-unor').select2({
+        //     placeholder: "Pilih Unor",
+        //     allowClear: true
+        // });
 
+        // $('#filter-pn').select2({
+        //     placeholder: "Pilih PN",
+        //     allowClear: true
+        // });
+
+        $('#filter-provinsi').val(localStorage.getItem('selectedProvinsi'));
         $('#filter-tahun_anggaran').val(localStorage.getItem('selectedTahunAnggaran'));
         $('#filter-unor').val(localStorage.getItem('selectedUnor'));
         $('#filter-pn').val(localStorage.getItem('selectedPN'));
@@ -153,12 +181,21 @@
             $('#loading-spinner').show();
             $('#button-text').hide();
             // Ambil data filter dari form
-            var filterData = $(this).serialize();
+            // var filterData = $(this).serialize();
+            let tahun_anggaran = $('#filter-tahun_anggaran').val();
+            let id_provinsi = $('#filter-provinsi').val();
+            let id_unor = $('#filter-unor').val();
+            let id_pn = $('#filter-pn').val();
             // Kirim request AJAX
             $.ajax({
                 url: '<?= base_url("memorandum/filter_laporan4") ?>', // URL untuk memproses filter
                 type: 'POST',
-                data: filterData,
+                data: {
+                    tahun_anggaran: tahun_anggaran,
+                    id_provinsi: id_provinsi,
+                    id_unor: id_unor,
+                    id_pn: id_pn
+                },
                 success: function(response) {
                     console.log(response);
                     // Hapus inisialisasi DataTables yang lama
@@ -166,7 +203,7 @@
                         $('#datatables').DataTable().destroy();
                     }
                     // Update tabel dengan data yang diterima
-                    $('#datatables tbody').html(response);
+                    $('#datatables').html(response);
 
 
                     //Inisialisasi DataTables kembali
@@ -200,12 +237,13 @@
 
         $('#reset-filters').on('click', function() {
             // Reset dropdowns to their default values
-            // Reset dropdowns to their default values
+            $('#filter-provinsi').val('').trigger('change');
             $('#filter-tahun_anggaran').val('').trigger('change');
             $('#filter-unor').val('').trigger('change');
             $('#filter-pn').val('').trigger('change');
 
             // Optionally, you could also clear the local storage if needed
+            localStorage.removeItem('selectedProvinsi');
             localStorage.removeItem('selectedTahunAnggaran');
             localStorage.removeItem('selectedUnor');
             localStorage.removeItem('selectedPN');

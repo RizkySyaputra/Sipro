@@ -5,13 +5,20 @@ $format->setAttribute(NumberFormatter::FRACTION_DIGITS, 0);
 $pnList = [2, 3, 4, 5, 6, 8];
 $jenis = ['Kawasan', 'Tematik', 'Pekerjaan', 'Anggaran'];
 $a = 1;
+$total_kawasan = 0;
+$total_pekerjaan = 0;
+$total_anggaran = 0;
+
 $table = '';
 $table .= "<thead>
             <tr>
-             <th rowspan='2'>No</th>
-             <th rowspan='2'>Provinsi</th>"; // kolom tetap
+             <th rowspan='2' class='text-center'>No</th>
+             <th rowspan='2' class='text-center'>Provinsi</th>"; // kolom tetap
 foreach ($jenis as $j) {
-    $table .= '<th colspan="' . count($pnList) + 1 . '">' . $j . '</th>';
+    if ($j === 'Anggaran') {
+        $j = 'Anggaran (Ribu)';
+    }
+    $table .= '<th colspan="' . count($pnList) + 1 . '" class="text-center">' . $j . '</th>';
 }
 $table .= "</tr>";
 
@@ -19,12 +26,17 @@ $table .= "</tr>";
 $table .= "<tr>";
 foreach ($jenis as $j) {
     foreach ($pnList as $pn) {
-        $table .= "<th>PN $pn</th>";
+        $table .= "<th class='text-center'>PN $pn</th>";
     }
-    $table .= "<th>Total</th>";
+    $table .= "<th class='text-center'>Total</th>";
 }
 $table .= "</tr></thead><tbody>";
 foreach ($kawasan_per_provinsi_per_pn as $kn) {
+
+    $total_kawasan += $kn->kawasan ?? 0;
+    $total_pekerjaan += $kn->pekerjaan ?? 0;
+    $total_anggaran += $kn->total_anggaran ?? 0;
+
     $table .= "<tr>
     <td>$a</td>
     <td>$kn->provinsi</td>";
@@ -57,11 +69,12 @@ foreach ($kawasan_per_provinsi_per_pn as $kn) {
     $a++;
 }
 
-// $table .= "</tbody><tfoot><tr style='font-weight:bold;'>
-//     <td colspan='2'>Total</td>
-//     <td><strong>$total_kawasan</strong></td>
-//     <td><strong>$total_tematik</strong></td>
-//     <td><strong>$total_pekerjaan</strong></td>
-// </tr></tfoot>";
+$table .= "</tbody><tfoot><tr style='font-weight:bold;'>
+    <td colspan='2' class='text-center'>Total</td>
+    <td colspan='" . count($pnList) + 1 . "' class='text-right'>$total_kawasan</td>
+    <td colspan='" . count($pnList) + 1 . "' class='text-right'>-</td>
+    <td colspan='" . count($pnList) + 1 . "' class='text-right'>$total_pekerjaan</td>
+    <td colspan='" . count($pnList) + 1 . "' class='text-right'>" . $format->formatCurrency($total_anggaran, 'IDR') . "</td>
+</tr></tfoot>";
 
 echo $table;

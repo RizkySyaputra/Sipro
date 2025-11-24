@@ -109,6 +109,13 @@
                                         <i class="fa fa-undo"></i>
                                     </button>
 
+                                    <!-- Tombol Download Excel -->
+                                    <button type="button" id="download-excel" class="btn btn-success" title="Download Excel">
+                                        <img id="img-excel" src="https://cdn-icons-png.flaticon.com/512/732/732220.png" alt="Excel Icon" style="width: 20px; height: 20px; vertical-align: middle;">
+                                        <span id="loading-spinner-excel" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
+                                        <!-- <i class="fa fa-download"></i> -->
+                                    </button>
+
                                     <!-- Refresh -->
                                     <!-- <button type="submit" id="button-text" class="btn btn-success" title="Refresh Data">
                                         <i class="fas fa-sync-alt"></i>
@@ -314,6 +321,63 @@
                 "search": "_INPUT_",
                 "searchPlaceholder": "Search records",
                 "url": "//cdn.datatables.net/plug-ins/1.13.6/i18n/id.json"
+            }
+        });
+    });
+
+    $('#download-excel').on('click', function() {
+        $('#loading-spinner-excel').show();
+        $('#img-excel').hide();
+        // Ambil data filter
+        var filterData = $('#filter-form').serialize(); // Serialize data dari form filter
+        var hasFilter = ($('#filter-sumber').val() && $('#filter-sumber').val() !== "") ||
+            ($('#filter-unor').val() && $('#filter-unor').val() !== "") || ($('#filter-provinsi').val() && $('#filter-provinsi').val() !== "");
+
+        console.log('filter ' + filterData);
+        // exit;
+
+        // Kirim request AJAX
+        $.ajax({
+            url: '<?= base_url('rakorbangwil/exportToExcel') ?>', // Endpoint controller
+            type: 'POST',
+            data: filterData,
+            xhrFields: {
+                responseType: 'blob' // Terima file sebagai blob
+            },
+            success: function(response) {
+                // Buat link unduh file
+                var blob = new Blob([response], {
+                    type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+                });
+                var link = document.createElement('a');
+                var date = new Date();
+                var timestamp = date.getFullYear() +
+                    (date.getMonth() + 1).toString().padStart(2, '0') +
+                    date.getDate().toString().padStart(2, '0') + '_' +
+                    date.getHours().toString().padStart(2, '0') +
+                    date.getMinutes().toString().padStart(2, '0') +
+                    date.getSeconds().toString().padStart(2, '0');
+                link.href = window.URL.createObjectURL(blob);
+
+                var filename = (hasFilter ?
+                    'Filter_Daftar_Program_Tahunan_' :
+                    'Daftar_Program_Tahunan_') + timestamp + '.xlsx';
+
+                link.download = filename; // Nama file unduhan
+                link.click();
+            },
+            error: function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Gagal mengunduh file Excel. Silakan coba lagi.',
+                    confirmButtonText: 'OK'
+                });
+            },
+            complete: function() {
+                // Sembunyikan spinner dan kembalikan teks tombol
+                $('#loading-spinner-excel').hide();
+                $('#img-excel').show();
             }
         });
     });

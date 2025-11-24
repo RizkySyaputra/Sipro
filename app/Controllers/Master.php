@@ -163,7 +163,7 @@ class Master extends BaseController
 
         // Simpan file sebagai output langsung
         $writer = new Xlsx($spreadsheet);
-        $filename = 'Nomenklatur_Kegiatan' . date('Y-m-d_H-i-s') . '.xlsx';
+        $filename = 'Filter_Nomenklatur_Kegiatan_' . date('Y-m-d_H-i-s') . '.xlsx';
 
         // Header untuk download file Excel
         header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');

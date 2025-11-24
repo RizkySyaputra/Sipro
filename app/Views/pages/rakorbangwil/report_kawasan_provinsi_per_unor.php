@@ -68,13 +68,13 @@
                                 <thead>
                                     <?php
                                     $unorList = ['SDA', 'BM', 'CK', 'PS'];
-                                    $jenis = ['Kawasan', 'Tematik', 'Pekerjaan', 'Anggaran'];
+                                    $jenis = ['Kawasan', 'Tematik', 'Pekerjaan', 'Anggaran (Ribu)'];
                                     // Baris 1: Jenis, colspan = jumlah Unor
                                     echo '<tr>';
-                                    echo '<th rowspan="2">No</th>';
-                                    echo '<th rowspan="2">Provinsi</th>'; // kolom tetap
+                                    echo '<th rowspan="2" class="text-center">No</th>';
+                                    echo '<th rowspan="2" class="text-center">Provinsi</th>'; // kolom tetap
                                     foreach ($jenis as $j) {
-                                        echo '<th colspan="' . count($unorList) + 1 . '">' . $j . '</th>';
+                                        echo '<th colspan="' . count($unorList) + 1 . '" class="text-center">' . $j . '</th>';
                                     }
                                     echo '</tr>';
 
@@ -82,9 +82,9 @@
                                     echo '<tr>';
                                     foreach ($jenis as $j) {
                                         foreach ($unorList as $unor) {
-                                            echo "<th>{$unor}</th>";
+                                            echo "<th class='text-center'>{$unor}</th>";
                                         }
-                                        echo "<th>Total</th>";
+                                        echo "<th class='text-center'>Total</th>";
                                     }
                                     echo '</tr>';
 
@@ -153,7 +153,10 @@
                             [10, 25, 50, -1],
                             [10, 25, 50, "All"]
                         ],
-                        responsive: true,
+                        "fixedColumns": {
+                            "leftColumns": 2 // Membekukan 2 kolom dari kiri
+                        },
+                        // responsive: true,
                         language: {
                             search: "Search:",
                             // search: "_INPUT_",

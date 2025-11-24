@@ -12,6 +12,13 @@
             <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+            <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+            <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/4.3.0/css/fixedColumns.dataTables.min.css">
+
+            <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+            <script src="https://cdn.datatables.net/fixedcolumns/4.3.0/js/dataTables.fixedColumns.min.js"></script>
+
             <div class="container mt-4">
                 <div class="card shadow-md">
                     <div class="card-body">
@@ -68,13 +75,13 @@
                                 <thead>
                                     <?php
                                     $pnList = [2, 3, 4, 5, 6, 8];
-                                    $jenis = ['Kawasan', 'Tematik', 'Pekerjaan', 'Anggaran'];
+                                    $jenis = ['Kawasan', 'Tematik', 'Pekerjaan', 'Anggaran (Ribu)'];
                                     // Baris 1: Jenis, colspan = jumlah PN
                                     echo '<tr>';
-                                    echo '<th rowspan="2">No</th>';
-                                    echo '<th rowspan="2">Provinsi</th>'; // kolom tetap
+                                    echo '<th rowspan="2" class="text-center">No</th>';
+                                    echo '<th rowspan="2" class="text-center">Provinsi</th>'; // kolom tetap
                                     foreach ($jenis as $j) {
-                                        echo '<th colspan="' . count($pnList) + 1 . '">' . $j . '</th>';
+                                        echo '<th colspan="' . count($pnList) + 1 . '" class="text-center">' . $j . '</th>';
                                     }
                                     echo '</tr>';
 
@@ -82,9 +89,9 @@
                                     echo '<tr>';
                                     foreach ($jenis as $j) {
                                         foreach ($pnList as $pn) {
-                                            echo "<th>PN {$pn}</th>";
+                                            echo "<th class='text-center'>PN {$pn}</th>";
                                         }
-                                        echo "<th>Total</th>";
+                                        echo "<th class='text-center'>Total</th>";
                                     }
                                     echo '</tr>';
 
@@ -147,13 +154,17 @@
                     //Inisialisasi DataTables kembali
                     $('#datatables').DataTable({
                         "scrollX": true,
+                        "scrollCollapse": true,
                         "pageLength": 10,
                         "pagingType": "full_numbers",
                         "lengthMenu": [
                             [10, 25, 50, -1],
                             [10, 25, 50, "All"]
                         ],
-                        responsive: true,
+                        "fixedColumns": {
+                            "leftColumns": 2 // Membekukan 2 kolom dari kiri
+                        },
+                        // "responsive": true,
                         language: {
                             search: "Search:",
                             // search: "_INPUT_",

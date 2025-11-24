@@ -37,9 +37,11 @@ class MenuModel extends Model
             ->where('m.parent_id', $parent_id)
             ->where('m.is_active', 1)
             // ->orderBy("CASE WHEN m.id_menu = $priority_id THEN 0 ELSE 1 END", 'ASC', false)
+
             // ->orderBy('m.id_menu', 'ASC') 
             ->orderBy('m.prioritas', 'ASC')
             ->orderBy('m.id_menu', 'ASC')
+
             ->get()->getResultArray();
 
         $tree = [];

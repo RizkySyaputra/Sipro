@@ -17,32 +17,52 @@
                     <div class="card-body">
                         <form method="post" id="filter-form">
                             <!-- <div class="form-row align-items-center"> -->
-
                             <!-- Dropdown Provinsi -->
-
                             <div class="row mb-3">
                                 <div class="col-md-2">
                                     <label for="provinsi"><strong>Provinsi</strong></label>
                                 </div>
                                 <div class="col-md-10">
-                                    <!-- <select class="form-control" name="tahun_anggaran" id="filter-tahun_anggaran">
-                                        <option value="">Semua Tahun</option>
-                                        <option value="2025">2025</option>
-                                        <option value="2026">2026</option>
-                                        <option value="2027">2027</option>
-                                        <option value="2028">2028</option>
-                                        <option value="2029">2029</option>
-                                    </select> -->
-
-                                    <select name="provinsi" class="form-control" id="filter-provinsi">
-                                        <option value="">Pilih Provinsi</option>
+                                    <select name="provinsi" class="form-control" id="filter-provinsi" multiple="multiple">
+                                        <!-- <option value="">Semua Provinsi</option> -->
                                         <?php foreach ($provinsi as $p): ?>
                                             <option value="<?= $p->id ?>" <?= old('id_provinsi') == $p->id ? 'selected' : '' ?>><?= $p->provinsi ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
                             </div>
+                            <div class="row mb-3">
+                                <div class="col-md-2">
+                                    <label for="unor"><strong>Unor</strong></label>
+                                </div>
+                                <div class="col-md-10">
+                                    <select class="form-control" name="unor" id="filter-unor">
+                                        <option value="">Semua Unor</option>
+                                        <?php foreach ($unor as $u): ?>
+                                            <option value="<?= $u->id ?>"><?= $u->unor ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
 
+                            <div class="row mb-3">
+                                <div class="col-md-2">
+                                    <label for="pn"><strong>Prioritas Nasional</strong></label>
+                                </div>
+                                <div class="col-md-10">
+                                    <select class="form-control" name="pn" id="filter-pn">
+                                        <option value="">Semua PN dan Non PN</option>
+                                        <option value="0">Non PN</option>
+                                        <option value="28">PN 2-8</option>
+                                        <option value="2">PN 2</option>
+                                        <option value="3">PN 3</option>
+                                        <option value="4">PN 4</option>
+                                        <option value="5">PN 5</option>
+                                        <option value="6">PN 6</option>
+                                        <option value="8">PN 8</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-2">
 
@@ -67,12 +87,18 @@
                             <table id="datatables" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Provinsi</th>
-                                        <th>Kawasan</th>
-                                        <th>Tematik Kawasan</th>
-                                        <th>Pekerjaan</th>
-                                        <th class="text-center">Anggaran</th>
+                                        <th class="text-center" rowspan="2">No</th>
+                                        <th class="text-center" rowspan="2">Provinsi</th>
+                                        <th class="text-center" rowspan="2">Kawasan</th>
+                                        <th class="text-center" colspan="6">Tematik Kawasan</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="text-center">Pertumbuhan</th>
+                                        <th class="text-center">Swasembada</th>
+                                        <th class="text-center">Afirmasi</th>
+                                        <th class="text-center">Konservasi/Rawan Bencana</th>
+                                        <th class="text-center">Komoditas Unggulan</th>
+                                        <th class="text-center">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -98,11 +124,25 @@
     $(document).ready(function() {
 
         $('#filter-provinsi').select2({
-            placeholder: "Pilih Provinsi",
+            placeholder: "Semua Provinsi",
             allowClear: true
         });
 
+        $('#filter-unor, #filter-pn').select2();
+
+        // $('#filter-unor').select2({
+        //     placeholder: "Semua Unor",
+        //     allowClear: true
+        // });
+
+        // $('#filter-pn').select2({
+        //     placeholder: "Semua PN dan Non PN",
+        //     allowClear: true
+        // });
+
         $('#filter-provinsi').val(localStorage.getItem('selectedProvinsi'));
+        $('#filter-unor').val(localStorage.getItem('selectedUnor'));
+        $('#filter-pn').val(localStorage.getItem('selectedPN'));
 
         // On form submit, save the selected values
         $('#filter-form').on('submit', function() {
@@ -114,13 +154,18 @@
             // var filterData = $(this).serialize();
             let tahun_pelaksanaan = '<?= session()->get('tahun_pelaksana') ?>';
             let id_provinsi = $('#filter-provinsi').val();
+            let id_unor = $('#filter-unor').val();
+            let id_pn = $('#filter-pn').val();
+            // console.log(id_provinsi);
             // Kirim request AJAX
             $.ajax({
                 url: '<?= base_url("rakorbangwil/filter_laporan1") ?>', // URL untuk memproses filter
                 type: 'POST',
                 data: {
                     tahun_pelaksanaan: tahun_pelaksanaan,
-                    id_provinsi: id_provinsi
+                    id_provinsi: id_provinsi,
+                    id_unor: id_unor,
+                    id_pn: id_pn
                 },
                 success: function(response) {
                     console.log(response);
@@ -163,12 +208,16 @@
         $('#reset-filters').on('click', function() {
             // Reset dropdowns to their default values
             $('#filter-provinsi').val('').trigger('change');
+            $('#filter-unor').val('').trigger('change');
+            $('#filter-pn').val('').trigger('change');
 
             // Optionally clear the table data
             //$('#datatables tbody').empty();
 
             // Optionally, you could also clear the local storage if needed
             localStorage.removeItem('selectedProvinsi');
+            localStorage.removeItem('selectedUnor');
+            localStorage.removeItem('selectedPN');
 
             var table = $('#datatables').DataTable();
             table.clear().draw();
