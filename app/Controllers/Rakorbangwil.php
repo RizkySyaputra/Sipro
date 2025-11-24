@@ -620,7 +620,7 @@ class Rakorbangwil extends BaseController
         $sheet->setCellValue('AJ1', 'Catatan Memorandum');
         $sheet->setCellValue('AK1', 'KL');
         $sheet->setCellValue('AL1', 'Kebutuhan Dukungan KL');
-        $sheet->setCellValue('AM1', 'Reviu Puswil');
+        // $sheet->setCellValue('AM1', 'Reviu Puswil');
 
         // Membuat teks header menjadi bold
         $sheet->getStyle('A1:AM1')->getFont()->setBold(true);
@@ -682,7 +682,7 @@ class Rakorbangwil extends BaseController
             $sheet->setCellValue('AJ' . $row, $dt->catatan_memorandum);
             $sheet->setCellValue('AK' . $row, $dt->kl);
             $sheet->setCellValue('AL' . $row, $dt->kebutuhan_dukungan_kl);
-            $sheet->setCellValue('AM' . $row, $dt->reviu_puswil);
+            // $sheet->setCellValue('AM' . $row, $dt->reviu_puswil);
             $row++;
         }
 

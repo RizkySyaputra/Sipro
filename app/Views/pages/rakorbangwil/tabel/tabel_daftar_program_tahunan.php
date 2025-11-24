@@ -10,7 +10,7 @@ foreach ($daftar_program_tahunan as $data) : ?>
         <td><?= $data->kawasan ?></td>
         <td><?= $data->tematik ?></td>
         <td><?= $data->thn_pelaksanaan ?></td>
-        <td>
+        <td style="width:20%">
             <?php if ($can_view == true) : ?>
                 <button
                     class="btn btn-info btn-sm btn-view"

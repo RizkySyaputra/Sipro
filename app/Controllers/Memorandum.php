@@ -763,9 +763,11 @@ class Memorandum extends BaseController
     public function laporan1()
     {
         $dataProvinsi = $this->provinsiModel->getProvinsi();
+        $dataUnor = $this->unorModel->getUnor();
 
         $data = [
-            'provinsi'             => $dataProvinsi
+            'provinsi'   => $dataProvinsi,
+            'unor'       => $dataUnor
         ];
 
         $this->template->write('title', 'Laporan Kawasan Per Provinsi');
@@ -776,10 +778,13 @@ class Memorandum extends BaseController
     {
 
         $tahun_anggaran = $this->request->getPost('tahun_anggaran');
+        $id_provinsi = $this->request->getPost('id_provinsi');
+        $id_unor = $this->request->getPost('id_unor');
+        $id_pn = $this->request->getPost('id_pn');
 
 
         if (!empty($tahun_anggaran)) {
-            $kawasanPerProvinsi = $this->reportMemoModel->getReportKawasanPerProvinsi($tahun_anggaran);
+            $kawasanPerProvinsi = $this->reportMemoModel->getReportKawasanPerProvinsi($tahun_anggaran, $id_provinsi, $id_unor, $id_pn);
 
             $data = [
                 'kawasan_per_provinsi' => $kawasanPerProvinsi,
@@ -858,9 +863,11 @@ class Memorandum extends BaseController
     public function laporan4()
     {
         $dataProvinsi = $this->provinsiModel->getProvinsi();
+        $dataUnor = $this->unorModel->getUnor();
 
         $data = [
-            'provinsi'  => $dataProvinsi
+            'provinsi'  => $dataProvinsi,
+            'unor'      => $dataUnor
         ];
 
         $this->template->write('title', 'Laporan Anggaran Per Provinsi');
@@ -871,11 +878,14 @@ class Memorandum extends BaseController
     {
 
         $tahun_anggaran = $this->request->getPost('tahun_anggaran');
+        $id_provinsi = $this->request->getPost('id_provinsi');
+        $id_unor = $this->request->getPost('id_unor');
+        $id_pn = $this->request->getPost('id_pn');
 
 
         if (!empty($tahun_anggaran)) {
 
-            $anggaranPerProvinsi = $this->reportMemoModel->getReportAnggaranPerProvinsi($tahun_anggaran);
+            $anggaranPerProvinsi = $this->reportMemoModel->getReportAnggaranPerProvinsi($tahun_anggaran, $id_provinsi, $id_unor, $id_pn);
 
             $data = [
                 'anggaran_per_provinsi' => $anggaranPerProvinsi,

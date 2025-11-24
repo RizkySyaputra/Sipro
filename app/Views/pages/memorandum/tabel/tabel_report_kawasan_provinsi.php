@@ -4,42 +4,41 @@ $format->setAttribute(NumberFormatter::FRACTION_DIGITS, 0);
 
 $a = 1;
 $total_kawasan = 0;
-$total_pekerjaan = 0;
-$total_anggaran = 0;
-$tahun = '-';
-
+$total_tematik = 0;
 $table = '';
-
 $table .= "<thead>
             <tr>
-                <th class='text-center'>No</th>
-                <th class='text-center'>Provinsi</th>
-                <th class='text-center'>Kawasan</th>
-                <th class='text-center'>Tematik Kawasan</th>
-                <th class='text-center'>Pekerjaan</th>
-                <th class='text-center'>Anggaran (Ribu)</th>
-                <th class='text-center'>Tahun Anggaran</th>
+                <th class='text-center' rowspan='2'>No</th>
+                <th class='text-center' rowspan='2'>Provinsi</th>
+                <th class='text-center' rowspan='2'>Kawasan</th>
+                <th class='text-center' colspan='6'>Tematik Kawasan</th>
+            </tr>
+            <tr>
+                <th class='text-center'>Pertumbuhan</th>
+                <th class='text-center'>Swasembada</th>
+                <th class='text-center'>Afirmasi</th>
+                <th class='text-center'>Konservasi/Rawan Bencana</th>
+                <th class='text-center'>Komoditas Unggulan</th>
+                <th class='text-center'>Total</th>
             </tr>
         </thead><tbody>";
 foreach ($kawasan_per_provinsi as $kp) : ?>
     <?php
-    $total_kawasan += $kp->kawasan;
-    $total_pekerjaan += $kp->pekerjaan;
-    $total_anggaran += $kp->anggaran;
-
-    $tahun = $kp->tahun;
-    if ($tahun === '2529') {
-        $tahun = '2025 - 2029';
-    }
+    $total_kawasan += $kp->jml_kawasan ?? 0;
+    // $total_pekerjaan += $kp->jml_pertumbuhan ?? 0;
+    // $total_anggaran += $kp->anggaran ?? 0;
+    $total_tematik = $kp->jml_pertumbuhan + $kp->jml_swasembada + $kp->jml_afirmasi + $kp->jml_unggulan;
 
     $table .= "<tr>
         <td>$a</td>
         <td>$kp->provinsi</td>
-        <td class='text-right'>$kp->kawasan</td>
-        <td class='text-right'>$kp->tematik</td>
-        <td class='text-right'>$kp->pekerjaan</td>
-        <td class='text-right'>" . $format->formatCurrency($kp->anggaran, 'IDR') . "</td>
-        <td>$tahun</td>
+        <td class='text-right'>$kp->jml_kawasan</td>
+        <td class='text-right'>$kp->jml_pertumbuhan</td>
+        <td class='text-right'>$kp->jml_swasembada</td>
+        <td class='text-right'>$kp->jml_afirmasi</td>
+        <td class='text-right'>$kp->jml_konservasi</td>
+        <td class='text-right'>$kp->jml_unggulan</td>
+        <td class='text-right'>$total_tematik</td>
     </tr>";
     $a++;
     ?>
@@ -48,10 +47,7 @@ foreach ($kawasan_per_provinsi as $kp) : ?>
 $table .= "</tbody><tfoot><tr style='font-weight:bold;'>
     <td colspan='2' class='text-center'>Total</td>
     <td class='text-right'>$total_kawasan</td>
-    <td class='text-right'>-</td>
-    <td class='text-right'>$total_pekerjaan</td>
-    <td class='text-right'>" . $format->formatCurrency($total_anggaran, 'IDR') . "</td>
-    <td>$tahun</td>
+    <td colspan='6' class='text-right'></td>
 </tr></tfoot>";
 
 echo $table;

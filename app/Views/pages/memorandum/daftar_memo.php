@@ -121,7 +121,7 @@
                                         <th>Nama Kegiatan </th>
                                         <th>Kawasan</th>
                                         <th>Mulai - Selesai</th>
-                                        <th style="width:20%">Aksi </th>
+                                        <th>Aksi </th>
                                     </tr>
                                 </thead>
                                 <!-- <tfoot>

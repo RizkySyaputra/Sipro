@@ -2,9 +2,7 @@
 $format = new NumberFormatter('id_ID', NumberFormatter::CURRENCY);
 $format->setAttribute(NumberFormatter::FRACTION_DIGITS, 0);
 
-$unorList = ['BM', 'CK', 'SDA', 'PS'];
 $a = 1;
-
 $total_pkrjn_rpm = 0;
 $total_pkrjn_phln = 0;
 $total_pkrjn_sbsn = 0;
