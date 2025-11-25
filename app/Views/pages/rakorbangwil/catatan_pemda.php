@@ -53,10 +53,7 @@
                                 </div>
                                 <div class="col-md-11">
                                     <select class="form-control" name="provinsi" id="filter-provinsi">
-                                        <option value="">Semua Provinsi</option>
-                                        <?php foreach ($provinsi as $p): ?>
-                                            <option value="<?= $p->id ?>"><?= $p->provinsi ?></option>
-                                        <?php endforeach; ?>
+                                        <option value="<?= $provinsi['id'] ?>" selected><?= $provinsi['provinsi'] ?></option>
                                     </select>
                                 </div>
                             </div>

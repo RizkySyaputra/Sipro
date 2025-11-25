@@ -128,8 +128,9 @@ class Rakorbangwil extends BaseController
     }
     public function catatan_pemda()
     {
+        $id_provinsi = user()->id_provinsi;
         $dataKawasan = $this->kawasanRpiwModel->getKawasan();
-        $dataProvinsi = $this->provinsiModel->getProvinsi();
+        $dataProvinsi = $this->provinsiModel->where('id', $id_provinsi)->first();
         $dataUnor = $this->unorModel->getUnor();
         $data = [
             'kawasan' => $dataKawasan,
@@ -159,8 +160,8 @@ class Rakorbangwil extends BaseController
     }
     public function get_daftar_program_tahunan_catatan_pemda()
     {
+        $provinsi_id = user()->id_provinsi;
         $id_role = user()->id_role;
-        $provinsi_id = $this->request->getPost('provinsi');
         $unor_id = $this->request->getPost('unor');
         $sumber = $this->request->getPost('sumber');
         $pn = $this->request->getPost('pn');
