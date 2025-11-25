@@ -657,9 +657,10 @@ class Rakorbangwil extends BaseController
         $provinsi_id = $this->request->getPost('provinsi');
         $unor_id = $this->request->getPost('unor');
         $sumber = $this->request->getPost('sumber');
+        $pn = $this->request->getPost('pn');
 
         // Ambil data berdasarkan filter
-        $daftar_program_tahunan = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, $unor_id, $sumber);
+        $daftar_program_tahunan = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, $unor_id, $sumber, $pn);
 
         // Buat Spreadsheet baru
         $spreadsheet = new Spreadsheet();
@@ -704,10 +705,12 @@ class Rakorbangwil extends BaseController
         $sheet->setCellValue('AJ1', 'Catatan Memorandum');
         $sheet->setCellValue('AK1', 'KL');
         $sheet->setCellValue('AL1', 'Kebutuhan Dukungan KL');
+        $sheet->setCellValue('AM1', 'Catatan Pra Rakorbangwil');
+        $sheet->setCellValue('AN1', 'Catatan Pemda');
         // $sheet->setCellValue('AM1', 'Reviu Puswil');
 
         // Membuat teks header menjadi bold
-        $sheet->getStyle('A1:AM1')->getFont()->setBold(true);
+        $sheet->getStyle('A1:AN1')->getFont()->setBold(true);
 
         // Atur kolom agar auto size
         // foreach (range('A', 'AM') as $col) {
@@ -766,6 +769,8 @@ class Rakorbangwil extends BaseController
             $sheet->setCellValue('AJ' . $row, $dt->catatan_memorandum);
             $sheet->setCellValue('AK' . $row, $dt->kl);
             $sheet->setCellValue('AL' . $row, $dt->kebutuhan_dukungan_kl);
+            $sheet->setCellValue('AM' . $row, $dt->catatan_pra_rakorbangwil);
+            $sheet->setCellValue('AN' . $row, $dt->catatan_pemda);
             // $sheet->setCellValue('AM' . $row, $dt->reviu_puswil);
             $row++;
         }
