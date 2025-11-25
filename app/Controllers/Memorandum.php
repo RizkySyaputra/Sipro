@@ -937,9 +937,9 @@ class Memorandum extends BaseController
         $provinsi_id = $this->request->getPost('provinsi');
         $unor_id = $this->request->getPost('unor');
         $sumber = $this->request->getPost('sumber');
-
+        $pn = $this->request->getPost('pn');
         // Ambil data berdasarkan filter
-        $daftar_memo = $this->daftarMemoModel->getDaftarMemo($provinsi_id, $unor_id, $sumber);
+        $daftar_memo = $this->daftarMemoModel->getDaftarMemo($provinsi_id, $unor_id, $sumber, $pn);
 
         // Buat Spreadsheet baru
         $spreadsheet = new Spreadsheet();
