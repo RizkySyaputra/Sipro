@@ -130,6 +130,7 @@ $routes->post('rakorbangwil/exportToExcel', 'Rakorbangwil::export_to_excel');
 $routes->get('/rakorbangwil/catatan_pemda', 'Rakorbangwil::catatan_pemda', ['filter' => 'permission']);
 
 $routes->post('/rakorbangwil/get_daftar_program_tahunan', 'Rakorbangwil::get_daftar_program_tahunan');
+$routes->post('/rakorbangwil/get_daftar_program_tahunan_catatan_pemda', 'Rakorbangwil::get_daftar_program_tahunan_catatan_pemda');
 $routes->get('rakorbangwil/view/(:segment)', 'Rakorbangwil::view/$1');
 $routes->get('rakorbangwil/edit/(:segment)', 'Rakorbangwil::edit/$1');
 $routes->post('rakorbangwil/update/(:segment)', 'Rakorbangwil::update/$1');

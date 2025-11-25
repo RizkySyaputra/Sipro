@@ -157,7 +157,24 @@ class Rakorbangwil extends BaseController
         ];
         return view('/pages/rakorbangwil/tabel/tabel_daftar_program_tahunan', $data);
     }
+    public function get_daftar_program_tahunan_catatan_pemda()
+    {
+        $id_role = user()->id_role;
+        $provinsi_id = $this->request->getPost('provinsi');
+        $unor_id = $this->request->getPost('unor');
+        $sumber = $this->request->getPost('sumber');
+        $pn = $this->request->getPost('pn');
+        $daftar_program_tahunan = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, $unor_id, $sumber, $pn, 'x', 1);
 
+
+        $data = [
+            'daftar_program_tahunan' => $daftar_program_tahunan,
+            'can_view' => has_permission_menu($id_role, '/rakorbangwil/program_tahunan', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/rakorbangwil/program_tahunan', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/rakorbangwil/program_tahunan', 'can_delete')
+        ];
+        return view('/pages/rakorbangwil/tabel/tabel_daftar_program_tahunan', $data);
+    }
     // // --- VIEW DETAIL ---
     public function view($id)
     {
