@@ -277,7 +277,7 @@
                         <textarea class="form-control" name="catatan_pra_rakorbangwil"><?= esc($progTahunan->catatan_pra_rakorbangwil ?? '-') ?></textarea>
                     </div>
                     <div class="form-group">
-                        <label class="catatan-text"><strong>Catatan Konfirmasi Pemda</strong></label>
+                        <label class="catatan-text"><strong>Kebutuhan Dukungan Pemda</strong></label>
                         <textarea class="form-control" name="catatan_konfrm_pemda"><?= esc($progTahunan->catatan_konfrm_pemda ?? '-') ?></textarea>
                     </div>
                     <div class="form-group">
