@@ -231,7 +231,7 @@
 
 
         // Inisialisasi Select2 untuk semua dropdown
-        $('#filter-unor, #filter-provinsi, #filter-pn,  #filter-sumber').select2();
+        $('#filter-unor, #filter-provinsi, #filter-pn, #filter-sumber').select2();
         // Restore values from local storage
         $('#filter-unor').val(localStorage.getItem('selectedUnor'));
         $('#filter-provinsi').val(localStorage.getItem('selectedProvinsi'));
