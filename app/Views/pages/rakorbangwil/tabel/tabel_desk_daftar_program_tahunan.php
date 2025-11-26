@@ -29,13 +29,13 @@ foreach ($daftar_program_tahunan as $data) : ?>
         <td>
             <?php
             if ($data->desk_rakorbangwil === "1") {
-                echo '<span class="badge-green" style="text-alig:center;">Diakomodasi</span>';
+                echo '<span class="badge-green" style="text-align:center;">Diakomodasi</span>';
             } elseif ($data->desk_rakorbangwil === "2") {
-                echo '<span class="badge-oranye" style="text-alig:center; >Ditangguhkan (Pergeseran Tahun Pelaksanaan)</span>';
+                echo '<span class="badge-oranye" style="text-align:center;" >Ditangguhkan (Pergeseran Tahun Pelaksanaan)</span>';
             } elseif ($data->desk_rakorbangwil === "3") {
-                echo '<span class="badge-oranye" style="text-alig:center;>Ditangguhkan (Selesai)</span>';
+                echo '<span class="badge-oranye" style="text-align:center;">Ditangguhkan (Selesai)</span>';
             } elseif ($data->desk_rakorbangwil === "0") {
-                echo '<span class="badge-grey" style="text-alig:center;>Belum Dibahas</span>';
+                echo '<span class="badge-grey" style="text-align:center;">Belum Dibahas</span>';
             } else {
                 echo '<span class="text-muted">-</span>';
             }
