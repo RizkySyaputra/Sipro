@@ -810,4 +810,136 @@ class Rakorbangwil extends BaseController
         $writer->save('php://output');
         exit;
     }
+
+    //desk
+    public function desk_daftar_pn()
+    {
+        $id_role = user()->id_role;
+        $dataPn = $this->pnModel->findAll();
+        $dataKl = $this->pnModel->getKl();
+
+        $klByPn = [];
+        foreach ($dataKl as $kl) {
+            $klByPn[$kl->id_pn][] = $kl->nama_kl;
+        }
+
+        $data = [
+            'dataPn' => $dataPn,
+            'klByPn' => $klByPn,
+            'can_view' => has_permission_menu($id_role, '/rakorbangwil/desk_rakorbangwil', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/rakorbangwil/desk_rakorbangwil', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/rakorbangwil/desk_rakorbangwil', 'can_delete')
+        ];
+
+        $this->template->write('title', 'Desk Rakorbangwil');
+        $this->template->load('/templates/main', '/pages/rakorbangwil/desk_daftar_pn', $data);
+    }
+    public function desk_view_pn($id)
+    {
+        $dataProvinsi = $this->provinsiModel->getProvinsi();
+        $dataUnor = $this->unorModel->getUnor();
+        $id_role = user()->id_role;
+        $pn = $this->pnModel->find($id);
+        $stackholder = $this->stakholderModel->orderBy('id_kategori')->orderBy('id_stakeholder')->findAll();
+        $namaList = array_column($stackholder, 'stakeholder');
+        $program = $this->praRakorModel->where('id_pn', $id)->findAll();
+        $kebutuhan_dukungan_kl = $this->kebutuhan_kl_Model->getKebutuhanKl($id);
+        $catatan_pn = $this->praRakorModel->getCatatan($id);
+        $this->template->write('title', 'Detail Prioritas Nasional');
+        $this->template->load('/templates/main', '/pages/rakorbangwil/desk_view_pn', [
+            'provinsi' => $dataProvinsi,
+            'unor' => $dataUnor,
+            'program' => $program,
+            'pn' => $pn,
+            'catatan_pn' => $catatan_pn,
+            'namaList' => $namaList,
+            'kebutuhan_dukungan_kl' => $kebutuhan_dukungan_kl,
+            'can_view' => has_permission_menu($id_role, '/rakorbangwil/desk_rakorbangwil', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/rakorbangwil/desk_rakorbangwil', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/rakorbangwil/desk_rakorbangwil', 'can_delete')
+        ]);
+    }
+    public function get_desk_daftar_program_tahunan()
+    {
+        $id_role = user()->id_role;
+        $provinsi_id = $this->request->getPost('provinsi');
+        $unor_id = $this->request->getPost('unor');
+        $tipe = $this->request->getPost('tipe');
+        $catatan_rakorbangwil = $this->request->getPost('catatan_rakorbangwil');
+        $catatan_pemda = $this->request->getPost('catatan_pemda');
+        $konfirmasi_pemda = $this->request->getPost('konfirmasi_pemda');
+        $kesepakatan = $this->request->getPost('kesepakatan');
+        $sumber = $this->request->getPost('sumber');
+        $daftar_program_tahunan = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, $unor_id, $sumber, null, null, null, $tipe, $catatan_rakorbangwil, $catatan_pemda, $konfirmasi_pemda, $kesepakatan);
+
+
+        $data = [
+            'daftar_program_tahunan' => $daftar_program_tahunan,
+            'can_view' => has_permission_menu($id_role, '/rakorbangwil/desk_rakorbangwil', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/rakorbangwil/desk_rakorbangwil', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/rakorbangwil/desk_rakorbangwil', 'can_delete')
+        ];
+        return view('/pages/rakorbangwil/tabel/tabel_desk_daftar_program_tahunan', $data);
+    }
+    public function edit_desk($id)
+    {
+        $t_prog = $this->progTahunanModel->find($id);
+
+        $progTahunan = $this->daftarProgTahunanModel->find($id);
+        $selectedKawasan = [];
+
+        if (!empty($progTahunan->kawasan)) {
+            $selectedKawasan = array_map('trim', explode(',', $progTahunan->kawasan));
+        }
+        $selectedKabkot = [];
+
+        if (!empty($progTahunan->kabkot)) {
+            $selectedKabkot = array_map('trim', explode(',', $progTahunan->kabkot));
+        }
+        $stackholder = $this->stakholderModel->orderBy('id_kategori')->orderBy('id_stakeholder')->findAll();
+        $namaList = array_column($stackholder, 'short_stakeholder');
+        $id_prov = $t_prog->id_provinsi;
+        $kabkotProgTahunan = $this->kabkotProgramTahunanModel->getKabkotProgTahunan($id);
+        $kabkot = $this->kabkotModel->where('id_prov', $id_prov)->findAll();
+        $program = $this->programModel->where('id_unor', $progTahunan->id_unor)->findAll();
+        $kegiatan = $this->kegiatanModel->where('id_program', $progTahunan->id_program)->findAll();
+        $kro = $this->kroModel->findAll();
+        $ro = $this->roModel->findAll();
+        $pendanaan = $this->pendanaanModel->findAll();
+        $kawasan = $this->kawasanModel->where('id_provinsi', $id_prov)->findAll();
+
+        if (!$progTahunan) {
+            return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
+        }
+        return view('/pages/rakorbangwil/ModalEditRakorbangwil', ['selectedKabkot' => $selectedKabkot, 'selectedKawasan' => $selectedKawasan, 'kawasan' => $kawasan, 'progTahunan' => $progTahunan, 't_prog' => $t_prog, 'namaList' => $namaList, 'kabkot' => $kabkot, 'pendanaan' => $pendanaan, 'program' => $program, 'kegiatan' => $kegiatan, 'kro' => $kro, 'ro' => $ro, 'kabkotProgTahunan' => $kabkotProgTahunan]);
+    }
+    public function update_desk($id)
+    {
+
+        $progTahunanModel = new progTahunanModel();
+
+        // Ambil input lain
+        $catatan_desk_rakorbangwil = $this->request->getPost('catatan_desk_rakorbangwil');
+        $tipe_pekerjaan = $this->request->getPost('tipe_pekerjaan');
+        $kesepakatan = $this->request->getPost('kesepakatan');
+
+        // Data yang akan diupdate
+        $dataToUpdate = [
+            'catatan_desk_rakorbangwil' => $catatan_desk_rakorbangwil,
+            'tipe_pekerjaan' => $tipe_pekerjaan,
+            'desk_rakorbangwil' => $kesepakatan
+        ];
+
+        if ($progTahunanModel->update($id, $dataToUpdate)) {
+            return $this->response->setJSON([
+                'status' => true,
+                'message' => 'Data berhasil disimpan.'
+            ]);
+        } else {
+            return $this->response->setJSON([
+                'status' => false,
+                'message' => 'Terjadi kesalahan saat menyimpan.'
+            ]);
+        }
+    }
 }

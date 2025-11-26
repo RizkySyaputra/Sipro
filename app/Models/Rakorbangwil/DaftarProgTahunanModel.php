@@ -11,7 +11,7 @@ class DaftarProgTahunanModel extends Model
     protected $returnType = 'object';
 
 
-    public function getDaftarProgramTahunan($id_provinsi, $id_unor, $sumber, $pn = "ALL", $catatan_kl = null, $pembiayaan = null)
+    public function getDaftarProgramTahunan($id_provinsi, $id_unor, $sumber, $pn = "ALL", $catatan_kl = null, $pembiayaan = null, $tipe = null, $catatan_pra_rakorbangwil = null, $catatan_pemda = null, $konfirmasi_pemda = null, $kesepakatan = null)
     {
         $tahun_pelaksanaan = session('tahun_pelaksana');
         $builder = $this->db->table('view_prog_tahunan as a');
@@ -41,6 +41,45 @@ class DaftarProgTahunanModel extends Model
             } else {
                 $builder->where('a.id_pn', $pn);
             }
+        }
+        if ($tipe) {
+            $builder->where('a.tipe_pekerjaan', $tipe);
+        }
+        if ($catatan_pra_rakorbangwil) {
+            if ($catatan_pra_rakorbangwil == "ya") {
+                $builder->where('a.catatan_pra_rakorbangwil IS NOT NULL', null, false)
+                    ->where('a.catatan_pra_rakorbangwil !=', '-');
+            } elseif ($catatan_pra_rakorbangwil == "tidak") {
+                $builder->groupStart()
+                    ->where('a.catatan_pra_rakorbangwil', null)
+                    ->orWhere('a.catatan_pra_rakorbangwil', '-')
+                    ->groupEnd();
+            }
+        }
+        if ($catatan_pemda) {
+            if ($catatan_pemda == "ya") {
+                $builder->where('a.catatan_pemda IS NOT NULL', null, false)
+                    ->where('a.catatan_pemda !=', '-');
+            } elseif ($catatan_pemda == "tidak") {
+                $builder->groupStart()
+                    ->where('a.catatan_pemda', null)
+                    ->orWhere('a.catatan_pemda', '-')
+                    ->groupEnd();
+            }
+        }
+        if ($konfirmasi_pemda) {
+            if ($konfirmasi_pemda == "ya") {
+                $builder->where('a.catatan_konfrm_pemda IS NOT NULL', null, false)
+                    ->where('a.catatan_konfrm_pemda !=', '-');
+            } elseif ($konfirmasi_pemda == "tidak") {
+                $builder->groupStart()
+                    ->where('a.catatan_konfrm_pemda', null)
+                    ->orWhere('a.catatan_konfrm_pemda', '-')
+                    ->groupEnd();
+            }
+        }
+        if ($kesepakatan) {
+            $builder->where('a.desk_rakorbangwil', $kesepakatan);
         }
         $builder->where('a.thn_pelaksanaan', $tahun_pelaksanaan);
         $builder->orderBy('a.id_prog_tahunan', 'ASC');

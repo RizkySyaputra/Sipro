@@ -124,7 +124,22 @@
                         <p><?= esc($prog_tahunan->catatan_konfrm_pemda ?? '-') ?></p>
                         <label class="catatan-text"><strong>Catatan Pemda:</strong></label>
                         <p><?= esc($prog_tahunan->catatan_pemda ?? '-') ?></p>
+                        <label class="catatan-text"><strong>Catatan Rakorbangwil:</strong></label>
+                        <p><?= esc($prog_tahunan->catatan_desk_rakorbangwil ?? '-') ?></p>
+                        <label class="catatan-text"><strong>Tipe Pekerjaan:</strong></label>
+                        <p><?= esc($prog_tahunan->tipe_pekerjaan ?? '-') ?></p>
+                        <label class="catatan-text"><strong>Kesepakatan Rakorbangwil:</strong></label>
+                        <?php
+                        $statusMap = [
+                            "1" => "Diakomodir",
+                            "2" => "Ditangguhkan",
+                            "0" => "Belum dibahas"
+                        ];
 
+                        $val = $prog_tahunan->desk_rakorbangwil ?? '';
+
+                        echo "<p>" . ($statusMap[$val] ?? "-") . "</p>";
+                        ?>
                     </ul>
                 </div>
                 <div class="col-md-12">
