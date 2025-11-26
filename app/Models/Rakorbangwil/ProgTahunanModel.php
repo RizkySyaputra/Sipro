@@ -37,7 +37,10 @@ class ProgTahunanModel extends Model
         'kebutuhan_dukungan_kl',
         'catatan_pra_rakorbangwil',
         'catatan_konfrm_pemda',
-        'catatan_pemda'
+        'catatan_pemda',
+        'catatan_desk_rakorbangwil',
+        'desk_rakorbangwil',
+        'tipe_pekerjaan'
     ];
 
     protected $useTimestamps = true;

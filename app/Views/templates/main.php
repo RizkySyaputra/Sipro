@@ -626,7 +626,7 @@
                     $('#loading-overlay').fadeIn(200);
 
                     $.ajax({
-                        url: "<?= base_url('set_tahun') ?>", // ganti sesuai controller kamu
+                        url: "<?= base_url('set_tahun') ?>",
                         type: "POST",
                         data: {
                             tahun_pelaksana: tahun,
