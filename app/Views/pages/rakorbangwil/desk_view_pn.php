@@ -168,6 +168,31 @@
                                     <form id="filter-form">
 
                                         <div class="row filter-group">
+                                            <input type="text" value="<?= $pn['id_pn']  ?>" name="id_pn" hidden>
+
+                                            <!-- PROVINSI -->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="filter-label">Provinsi</label>
+                                                    <select class="form-control" name="provinsi" id="filter-provinsi">
+                                                        <option value="">Semua Provinsi</option>
+                                                        <?php foreach ($provinsi as $p): ?>
+                                                            <option value="<?= $p->id ?>"><?= $p->provinsi ?></option>
+                                                        <?php endforeach; ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!-- CATATAN RAKORBANGWIL -->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="filter-label">Catatan Pra Rakorbangwil</label>
+                                                    <select class="form-control" name="catatan_rakorbangwil" id="filter-catatan_rakorbangwil">
+                                                        <option value="">Semua Catatan</option>
+                                                        <option value="ya">Ya</option>
+                                                        <option value="tidak">Tidak</option>
+                                                    </select>
+                                                </div>
+                                            </div>
 
                                             <!-- UNOR -->
                                             <div class="col-md-6">
@@ -181,16 +206,14 @@
                                                     </select>
                                                 </div>
                                             </div>
-
-                                            <!-- PROVINSI -->
+                                            <!-- KONFIRMASI PEMDA -->
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="filter-label">Provinsi</label>
-                                                    <select class="form-control" name="provinsi" id="filter-provinsi">
-                                                        <option value="">Semua Provinsi</option>
-                                                        <?php foreach ($provinsi as $p): ?>
-                                                            <option value="<?= $p->id ?>"><?= $p->provinsi ?></option>
-                                                        <?php endforeach; ?>
+                                                    <label class="filter-label">Catatan Konfirmasi Pemda</label>
+                                                    <select class="form-control" name="konfirmasi_pemda" id="filter-konfirmasi_pemda">
+                                                        <option value="">Semua Konfirmasi</option>
+                                                        <option value="ya">Ya</option>
+                                                        <option value="tidak">Tidak</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -206,19 +229,6 @@
                                                     </select>
                                                 </div>
                                             </div>
-
-                                            <!-- CATATAN RAKORBANGWIL -->
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="filter-label">Catatan Pra Rakorbangwil</label>
-                                                    <select class="form-control" name="catatan_rakorbangwil" id="filter-catatan_rakorbangwil">
-                                                        <option value="">Semua Catatan</option>
-                                                        <option value="ya">Ya</option>
-                                                        <option value="tidak">Tidak</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
                                             <!-- CATATAN PEMDA -->
                                             <div class="col-md-6">
                                                 <div class="form-group">
@@ -231,17 +241,7 @@
                                                 </div>
                                             </div>
 
-                                            <!-- KONFIRMASI PEMDA -->
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="filter-label">Konfirmasi Pemda</label>
-                                                    <select class="form-control" name="konfirmasi_pemda" id="filter-konfirmasi_pemda">
-                                                        <option value="">Semua Konfirmasi</option>
-                                                        <option value="ya">Ya</option>
-                                                        <option value="tidak">Tidak</option>
-                                                    </select>
-                                                </div>
-                                            </div>
+
 
                                             <!-- KESEPAKATAN -->
                                             <div class="col-md-6">
@@ -249,9 +249,11 @@
                                                     <label class="filter-label">Kesepakatan</label>
                                                     <select class="form-control" name="kesepakatan" id="filter-kesepakatan">
                                                         <option value="">Semua Kesepakatan</option>
-                                                        <option value="1">Diakomodir</option>
-                                                        <option value="2">Ditangguhkan</option>
-                                                        <option value="0">Belum Dibahas</option>
+                                                        <?php foreach ($kesepakatan as $item): ?>
+                                                            <option value="<?= esc($item['id_kesepakatan']) ?>">
+                                                                <?= esc($item['kesepakatan']) ?>
+                                                            </option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                             </div>

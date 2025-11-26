@@ -237,29 +237,12 @@
                         <select class="form-control" name="kesepakatan" id="select-kesepakatan">
 
                             <!-- Selected Current Value -->
-                            <?php
-                            $curr = $progTahunan->desk_rakorbangwil;
-                            $mapping = [
-                                "0" => "Belum dibahas",
-                                "1" => "Diakomodir",
-                                "2" => "Ditangguhkan"
-                            ];
-                            ?>
-                            <option value="<?= esc($curr) ?>">
-                                <?= esc($mapping[$curr] ?? '-') ?>
-                            </option>
-
-                            <?php if ($curr !== "0"): ?>
-                                <option value="0">Belum dibahas</option>
-                            <?php endif; ?>
-
-                            <?php if ($curr !== "1"): ?>
-                                <option value="1">Diakomodir</option>
-                            <?php endif; ?>
-
-                            <?php if ($curr !== "2"): ?>
-                                <option value="2">Ditangguhkan</option>
-                            <?php endif; ?>
+                            <?php foreach ($kesepakatan as $item): ?>
+                                <option value="<?= esc($item['id_kesepakatan']) ?>"
+                                    <?= ($progTahunan->desk_rakorbangwil ?? '') == $item['id_kesepakatan'] ? 'selected' : '' ?>>
+                                    <?= esc($item['kesepakatan']) ?>
+                                </option>
+                            <?php endforeach; ?>
 
                         </select>
                     </div>
