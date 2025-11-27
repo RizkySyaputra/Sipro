@@ -203,7 +203,7 @@
 
                     <label class="catatan-text"><strong>Catatan Pra Rakorbangwil:</strong></label>
                     <p><?= esc($progTahunan->catatan_pra_rakorbangwil ?? '-') ?></p>
-                    <label class="catatan-text"><strong>Catatan Konfirmasi Pemda:</strong></label>
+                    <label class="catatan-text"><strong>Kebutuhan Dukungan Pemda:</strong></label>
                     <p><?= esc($progTahunan->catatan_konfrm_pemda ?? '-') ?></p>
                     <div class="form-group">
                         <label class="catatan-text"><strong>Catatan Pemda</strong></label>
