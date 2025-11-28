@@ -217,28 +217,28 @@
     <!-- Catatan Memorandum -->
     <div class="col-md-12">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-                <label class="catatan-text"><strong>Catatan Memorandum</strong></label>
-                <?php if (!empty($prog_tahunan->catatan_memorandum)): ?>
-                    <?php
-                    $catatanList = json_decode($prog_tahunan->catatan_memorandum, true);
-                    ?>
-                    <?php if (!empty($catatanList)): ?>
-                        <div class="mt-2">
-                            <?php foreach ($catatanList as $item): ?>
-                                <div class="catatan-item">
-                                    <div class="catatan-nama"><?= esc($item['nama']) ?>:</div>
-                                    <p class="catatan-text"><?= esc($item['catatan']) ?></p>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    <?php else: ?>
-                        <div class="text-muted mt-1">-</div>
-                    <?php endif; ?>
+            <!-- <li class="list-group-item"> -->
+            <label class="catatan-text"><strong>Catatan Memorandum</strong></label>
+            <?php if (!empty($prog_tahunan->catatan_memorandum)): ?>
+                <?php
+                $catatanList = json_decode($prog_tahunan->catatan_memorandum, true);
+                ?>
+                <?php if (!empty($catatanList)): ?>
+                    <div class="mt-2">
+                        <?php foreach ($catatanList as $item): ?>
+                            <div class="catatan-item">
+                                <div class="catatan-nama"><?= esc($item['nama']) ?>:</div>
+                                <p class="catatan-text"><?= esc($item['catatan']) ?></p>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
                 <?php else: ?>
                     <div class="text-muted mt-1">-</div>
                 <?php endif; ?>
-            </li>
+            <?php else: ?>
+                <div class="text-muted mt-1">-</div>
+            <?php endif; ?>
+            <!-- </li> -->
         </ul>
     </div>
 
