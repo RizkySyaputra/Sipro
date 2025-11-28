@@ -201,9 +201,9 @@
                     <label class="catatan-text"><strong>Kebutuhan Dukungan KL</strong></label>
                     <p><?= esc($progTahunan->kebutuhan_dukungan_kl ?? '-') ?></p>
 
-                    <label class="catatan-text"><strong>Catatan Pra Rakorbangwil:</strong></label>
+                    <label class="catatan-text"><strong>Catatan Pra Rakorbangwil</strong></label>
                     <p><?= esc($progTahunan->catatan_pra_rakorbangwil ?? '-') ?></p>
-                    <label class="catatan-text"><strong>Kebutuhan Dukungan Pemda:</strong></label>
+                    <label class="catatan-text"><strong>Kebutuhan Dukungan Pemda</strong></label>
                     <p><?= esc($progTahunan->catatan_konfrm_pemda ?? '-') ?></p>
                     <div class="form-group">
                         <label class="catatan-text"><strong>Catatan Pemda</strong></label>
@@ -218,7 +218,7 @@
     <div class="col-md-12">
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
-                <label class="catatan-text"><strong>Catatan Memorandum:</strong></label>
+                <label class="catatan-text"><strong>Catatan Memorandum</strong></label>
                 <?php if (!empty($prog_tahunan->catatan_memorandum)): ?>
                     <?php
                     $catatanList = json_decode($prog_tahunan->catatan_memorandum, true);

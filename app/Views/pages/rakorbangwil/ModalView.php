@@ -118,17 +118,17 @@
                         <label class="catatan-text"><strong>Kebutuhan Dukungan KL</strong></label>
                         <p><?= esc($prog_tahunan->kebutuhan_dukungan_kl ?? '-') ?></p>
 
-                        <label class="catatan-text"><strong>Catatan Pra Rakorbangwil:</strong></label>
+                        <label class="catatan-text"><strong>Catatan Pra Rakorbangwil</strong></label>
                         <p><?= esc($prog_tahunan->catatan_pra_rakorbangwil ?? '-') ?></p>
-                        <label class="catatan-text"><strong>Kebutuhan Dukungan Pemda:</strong></label>
+                        <label class="catatan-text"><strong>Kebutuhan Dukungan Pemda</strong></label>
                         <p><?= esc($prog_tahunan->catatan_konfrm_pemda ?? '-') ?></p>
                         <label class="catatan-text"><strong>Catatan Pemda:</strong></label>
                         <p><?= esc($prog_tahunan->catatan_pemda ?? '-') ?></p>
-                        <label class="catatan-text"><strong>Catatan Rakorbangwil:</strong></label>
+                        <label class="catatan-text"><strong>Catatan Rakorbangwil</strong></label>
                         <p><?= esc($prog_tahunan->catatan_desk_rakorbangwil ?? '-') ?></p>
-                        <label class="catatan-text"><strong>Tipe Pekerjaan:</strong></label>
+                        <label class="catatan-text"><strong>Tipe Pekerjaan</strong></label>
                         <p><?= esc($prog_tahunan->tipe_pekerjaan ?? '-') ?></p>
-                        <label class="catatan-text"><strong>Kesepakatan Rakorbangwil:</strong></label>
+                        <label class="catatan-text"><strong>Kesepakatan Rakorbangwil</strong></label>
                         <?php
                         $statusMap = [
                             "1" => "Diakomodir",
@@ -145,7 +145,7 @@
                 <div class="col-md-12">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            <label class="catatan-text"><strong>Catatan Memorandum:</strong></label>
+                            <label class="catatan-text"><strong>Catatan Memorandum</strong></label>
                             <?php if (!empty($prog_tahunan->catatan_memorandum)): ?>
                                 <?php
                                 $catatanList = json_decode($prog_tahunan->catatan_memorandum, true);
