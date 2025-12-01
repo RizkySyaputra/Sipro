@@ -167,7 +167,11 @@ class Rakorbangwil extends BaseController
     }
     public function get_daftar_program_tahunan_catatan_pemda()
     {
-        $provinsi_id = user()->id_provinsi;
+        if (user()->id_provinsi) {
+            $provinsi_id = user()->id_provinsi;
+        } else {
+            $provinsi_id = $this->request->getPost('provinsi');
+        }
         $id_role = user()->id_role;
         $unor_id = $this->request->getPost('unor');
         $sumber = $this->request->getPost('sumber');
