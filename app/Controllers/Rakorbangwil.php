@@ -254,8 +254,32 @@ class Rakorbangwil extends BaseController
         if (!$prog_tahunan) {
             return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
         }
-        return view('/pages/rakorbangwil/ModalView', ['prog_tahunan' => $prog_tahunan, 'kabkot' => $kabkot]);
+
+        // --- Ambil peta kawasan berdasarkan nama kawasan di view_prog_tahunan ---
+        $selectedKawasan = [];
+        if (!empty($prog_tahunan->kawasan)) {
+            // diasumsikan disimpan: "Kawasan A, Kawasan B"
+            $selectedKawasan = array_map('trim', explode(',', $prog_tahunan->kawasan));
+        }
+
+        $petaKawasan = [];
+        foreach ($selectedKawasan as $nama) {
+            $row = $this->kawasanModel
+                ->where('nama_kawasan', $nama)
+                ->first();
+
+            if ($row && !empty($row['peta_kawasan'])) {
+                $petaKawasan[] = $row['peta_kawasan'];   // nama file geojson-nya
+            }
+        }
+
+        return view('/pages/rakorbangwil/ModalView', [
+            'prog_tahunan' => $prog_tahunan,
+            'kabkot'       => $kabkot,
+            'petaKawasan'  => $petaKawasan,
+        ]);
     }
+
 
     public function edit($id)
     {
@@ -288,6 +312,7 @@ class Rakorbangwil extends BaseController
         if (!$progTahunan) {
             return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
         }
+
         return view('/pages/rakorbangwil/ModalEdit', ['selectedKabkot' => $selectedKabkot, 'selectedKawasan' => $selectedKawasan, 'kawasan' => $kawasan, 'progTahunan' => $progTahunan, 't_prog' => $t_prog, 'namaList' => $namaList, 'kabkot' => $kabkot, 'pendanaan' => $pendanaan, 'program' => $program, 'kegiatan' => $kegiatan, 'kro' => $kro, 'ro' => $ro, 'kabkotProgTahunan' => $kabkotProgTahunan]);
     }
 
@@ -388,9 +413,20 @@ class Rakorbangwil extends BaseController
 
         $progTahunan = $this->daftarProgTahunanModel->find($id);
         $selectedKawasan = [];
+        // --- Ambil file geojson kawasan berdasarkan nama kawasan yg dipilih ---
 
         if (!empty($progTahunan->kawasan)) {
             $selectedKawasan = array_map('trim', explode(',', $progTahunan->kawasan));
+        }
+        $petaKawasan = [];
+        foreach ($selectedKawasan as $nama) {
+            $row = $this->kawasanModel
+                ->where('nama_kawasan', $nama)
+                ->first();
+
+            if ($row && !empty($row['peta_kawasan'])) {
+                $petaKawasan[] = $row['peta_kawasan'];
+            }
         }
         $selectedKabkot = [];
 
@@ -412,7 +448,22 @@ class Rakorbangwil extends BaseController
         if (!$progTahunan) {
             return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
         }
-        return view('/pages/rakorbangwil/ModalEditPemda', ['selectedKabkot' => $selectedKabkot, 'selectedKawasan' => $selectedKawasan, 'kawasan' => $kawasan, 'progTahunan' => $progTahunan, 't_prog' => $t_prog, 'namaList' => $namaList, 'kabkot' => $kabkot, 'pendanaan' => $pendanaan, 'program' => $program, 'kegiatan' => $kegiatan, 'kro' => $kro, 'ro' => $ro, 'kabkotProgTahunan' => $kabkotProgTahunan]);
+        return view('/pages/rakorbangwil/ModalEditPemda', [
+            'selectedKabkot' => $selectedKabkot,
+            'selectedKawasan' => $selectedKawasan,
+            'kawasan' => $kawasan,
+            'progTahunan' => $progTahunan,
+            't_prog' => $t_prog,
+            'namaList' => $namaList,
+            'kabkot' => $kabkot,
+            'pendanaan' => $pendanaan,
+            'program' => $program,
+            'kegiatan' => $kegiatan,
+            'kro' => $kro,
+            'ro' => $ro,
+            'kabkotProgTahunan' => $kabkotProgTahunan,
+            'petaKawasan' => $petaKawasan  // ← TAMBAHKAN INI
+        ]);
     }
 
     public function update_pemda($id)

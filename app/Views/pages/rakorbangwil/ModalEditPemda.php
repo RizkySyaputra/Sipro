@@ -149,6 +149,12 @@
 
                     <label class="catatan-text"><strong>Kawasan</strong></label>
                     <p><?= esc($progTahunan->kawasan ?? '-') ?></p>
+                    <?php if (!empty($petaKawasan)): ?>
+                        <div id="mapKawasanEdit"
+                            style="height: 350px; width: 100%; border-radius:8px; border:1px solid #ccc; margin-bottom:15px;">
+                        </div>
+                    <?php endif; ?>
+
                     <label class="catatan-text"><strong>Tematik</strong></label>
                     <p><?= esc($progTahunan->tematik ?? '-') ?></p>
                     <label class="catatan-text"><strong>Kab/kot</strong></label>
@@ -249,6 +255,47 @@
         </button>
     </div>
 </form>
+<script>
+    (function() {
+        const hasMap = <?= !empty($petaKawasan) ? 'true' : 'false' ?>;
+        if (!hasMap) return;
+
+        let mapKawasan = L.map('mapKawasanEdit').setView([-2.5, 118], 5);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18
+        }).addTo(mapKawasan);
+
+        // daftar file geojson
+        const kawasanFiles = <?= json_encode(
+                                    array_map(fn($file) => base_url('geojson/' . $file), $petaKawasan)
+                                ); ?>;
+
+        const bounds = L.latLngBounds([]);
+
+        kawasanFiles.forEach(url => {
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    const layer = L.geoJSON(data, {
+                        style: {
+                            color: "#2ecc71",
+                            weight: 2,
+                            fillColor: "#2ecc71",
+                            fillOpacity: 0.25
+                        }
+                    }).addTo(mapKawasan);
+
+                    bounds.extend(layer.getBounds());
+                    mapKawasan.fitBounds(bounds);
+                });
+        });
+
+        // perbaiki layout saat modal baru muncul
+        setTimeout(() => mapKawasan.invalidateSize(), 400);
+
+    })();
+</script>
 
 <!-- <div class="modal fade" id="modalMap" tabindex="-1">
     <div class="modal-dialog modal-lg">
