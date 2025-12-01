@@ -1066,4 +1066,79 @@ class Rakorbangwil extends BaseController
             ]);
         }
     }
+    public function berita_acara()
+    {
+        $dataProvinsi = $this->provinsiModel->getProvinsi();
+        $dataPn = $this->pnModel->getAll();
+        $this->template->write('title', 'Berita Acara Kesepakatan');
+        $this->template->load('/templates/main', '/pages/rakorbangwil/berita_acara', [
+            'provinsi' => $dataProvinsi,
+            'pn' => $dataPn
+        ]);
+    }
+
+    public function get_data_berita_acara()
+    {
+        $id_pn = $this->request->getPost('pn');
+        $provinsi_id = $this->request->getPost('provinsi');
+
+        $kawasan = $this->praRakorModel->getKawasanList($provinsi_id, null, $id_pn);
+        $diakomodasi = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 1);
+        $ditangguhkan = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 2);
+        $tidakTerbahas = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 0);
+
+        return $this->response->setJSON([
+            'kawasan'        => $kawasan,
+            'diakomodasi'    => $diakomodasi,
+            'ditangguhkan'   => $ditangguhkan,
+            'tidakTerbahas'  => $tidakTerbahas
+        ]);
+    }
+    public function create_bak()
+    {
+        $id_pn = $this->request->getPost('pn_id');
+        $provinsi_id = $this->request->getPost('provinsi_id');
+        $provinsi = $this->provinsiModel->find($provinsi_id); // Ganti dengan nama tabel Anda
+        $pn = $this->pnModel->find($id_pn); // Ganti dengan nama tabel Anda
+        // $kawasandesk = $this->programModel->getProgramKawasan($id_provinsi);
+        // $catatan_provinsi = $this->catatanModel->getCatatanbyProvinsi($id_provinsi);
+        // $pejabat = $this->baModel->getPejabatById($id_provinsi, $id_unor);
+        $kawasan = $this->praRakorModel->getKawasanList($provinsi_id, null, $id_pn);
+        $diakomodasi = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 1);
+        $ditangguhkan2 = $this->daftarProgTahunanModel
+            ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 2);
+        $ditangguhkan3 = $this->daftarProgTahunanModel
+            ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 3);
+        $ditangguhkan = array_merge($ditangguhkan2, $ditangguhkan3);
+
+        $tidakTerbahas = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 0);
+        $html = view('/pages/rakorbangwil/berita_acara_pdf', [
+            'kawasan' => $kawasan,
+            'diakomodasi' => $diakomodasi,
+            'ditangguhkan' => $ditangguhkan,
+            'tidakTerbahas' => $tidakTerbahas,
+            'provinsi' => $provinsi,
+            'pn' => $pn
+        ]);
+
+
+        // Inisialisasi mPDF
+        $mpdf = new \Mpdf\Mpdf([
+            'mode' => 'utf-8',
+            'format' => 'A4',
+            'orientation' => 'L',
+            'margin_bottom' => 15,
+        ]);
+
+        // Load HTML ke dalam mPDF // Menentukan footer sebagai fallback
+        $mpdf->SetWatermarkImage('assets/img/pu-transparan.png', 0.2);
+        $mpdf->showWatermarkImage = true;
+
+        $mpdf->SetHTMLFooter('<div style="text-align: center;">© 2025 - Berita Acara Kesepakatan Provinsi ' . ucwords($provinsi["provinsi"]) . ' | Prioritas Nasional ' .  ucwords($pn["id_pn"]) . ' | Halaman {PAGENO} dari {nbpg}</div>');
+        $mpdf->WriteHTML($html);
+
+        // Output PDF ke browser
+        return $this->response->setHeader('Content-Type', 'application/pdf')
+            ->setBody($mpdf->Output('berita_acara_kesepakatan_rakorbangwil.pdf', 'I')); // 'I' untuk menampilkan, 'D' untuk mengunduh
+    }
 }

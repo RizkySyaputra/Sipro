@@ -278,6 +278,9 @@ $routes->get('rakorbangwil/detail_program/(:segment)', 'KonregController::progra
 $routes->get('rakorbangwil/edit_program/(:segment)', 'KonregController::programDeskEdit/$1', ['filter' => 'permission']);
 $routes->post('/prosesRakorbangwil', 'KonregController::inputRakorbangwil', ['filter' => 'permission']);
 $routes->get('/sitebaru', 'KonregController::fungsibaru', ['filter' => 'permission']);
+$routes->get('/rakorbangwil/berita_acara', 'Rakorbangwil::berita_acara');
+$routes->post('/rakorbangwil/get_data_berita_acara', 'Rakorbangwil::get_data_berita_acara');
+$routes->post('/rakorbangwil/create_berita_acara', 'Rakorbangwil::create_bak');
 
 //Program Konreg
 $routes->get('/program-konreg/fkw', 'KonregController::program_fkw', ['filter' => 'permission']);
