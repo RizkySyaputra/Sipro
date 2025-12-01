@@ -50,12 +50,12 @@ class AuthController extends Controller
         if ($this->auth->check()) {
             $redirectURL = session('redirect_url') ?? site_url('/memorandum');
             unset($_SESSION['redirect_url']);
-
+            session()->set('tahun_pelaksana', '2027');
             return redirect()->to($redirectURL);
         }
 
         // Set a return URL if none is specified
-
+        session()->set('tahun_pelaksana', '2027');
         $_SESSION['redirect_url'] = session('redirect_url') ?? previous_url() ?? site_url('/');
 
         return $this->_render($this->config->views['login'], ['config' => $this->config]);

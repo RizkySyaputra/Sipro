@@ -28,25 +28,13 @@ class DaftarProgTahunanModel extends Model
         if ($sumber) {
             $builder->where('a.sumber', $sumber);
         }
-        if ($catatan_kl) {
-            $builder->groupStart() // buka grup OR
-                ->groupStart()
-                ->where('a.kebutuhan_dukungan_kl IS NOT NULL', null, false)
-                ->where('a.kebutuhan_dukungan_kl !=', '-')
-                ->groupEnd()
-                ->orGroupStart()
-                ->where('a.catatan_konfrm_pemda IS NOT NULL', null, false)
-                ->where('a.catatan_konfrm_pemda !=', '-')
-                ->groupEnd()
-                ->groupEnd(); // tutup grup OR
-        }
 
         if ($pembiayaan) {
             $builder->where('a.id_pendanaan', $pembiayaan);
         }
         if ($pn) {
-            if ($pn == "NON") {
-                $builder->where('a.id_pn', null);
+            if ($pn == "ALLPN") {
+                $builder->where('a.id_pn is not null', null, false);
             } else {
                 $builder->where('a.id_pn', $pn);
             }
@@ -91,6 +79,19 @@ class DaftarProgTahunanModel extends Model
             $builder->where('a.desk_rakorbangwil', $kesepakatan);
         }
         $builder->where('a.thn_pelaksanaan', $tahun_pelaksanaan);
+        if ($catatan_kl) {
+            $builder->groupStart() // buka grup OR
+                ->groupStart()
+                ->where('a.kebutuhan_dukungan_kl IS NOT NULL', null, false)
+                ->where('a.kebutuhan_dukungan_kl !=', '-')
+                ->groupEnd()
+                ->orGroupStart()
+                ->where('a.catatan_konfrm_pemda IS NOT NULL', null, false)
+                ->where('a.catatan_konfrm_pemda !=', '-')
+                ->groupEnd()
+                ->groupEnd(); // tutup grup OR
+            $builder->orderBy('a.catatan_pemda', 'ASC');
+        }
         $builder->orderBy('a.id_prog_tahunan', 'ASC');
         // Eksekusi
         $query = $builder->get();

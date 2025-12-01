@@ -167,26 +167,84 @@ class Rakorbangwil extends BaseController
     }
     public function get_daftar_program_tahunan_catatan_pemda()
     {
+        // Ambil provinsi
         if (user()->id_provinsi) {
             $provinsi_id = user()->id_provinsi;
         } else {
             $provinsi_id = $this->request->getPost('provinsi');
         }
+
         $id_role = user()->id_role;
         $unor_id = $this->request->getPost('unor');
         $sumber = $this->request->getPost('sumber');
-        $pn = $this->request->getPost('pn');
-        $daftar_program_tahunan = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, $unor_id, $sumber, $pn, 'x', 1);
+        if ($this->request->getPost('pn')) {
+            $pn = $this->request->getPost('pn');
+        } else {
+            $pn = "ALLPN";
+        }
+        // Ambil data utama
+        $daftar_program_tahunan = $this->daftarProgTahunanModel->getDaftarProgramTahunan(
+            $provinsi_id,
+            $unor_id,
+            $sumber,
+            $pn,
+            'x',     // catatan_kl
+            1        // pembiayaan
+        );
 
+        // ===========================
+        //   HITUNG SUMMARY SECTION  
+        // ===========================
 
+        $jumlah_total = count($daftar_program_tahunan);
+
+        $memerlukan_catatan = 0;   // null atau '-'
+        $jumlah_ada = 0;           // catatan terisi
+
+        $kawasan_list = [];        // untuk hitung distinct kawasan
+
+        foreach ($daftar_program_tahunan as $row) {
+
+            // hitung kawasan unik
+            if (!empty($row->kawasan)) {
+                $kawasan_list[] = $row->kawasan;
+            }
+
+            // status catatan pemda
+            if ($row->catatan_pemda === null || $row->catatan_pemda == '-') {
+                $memerlukan_catatan++;
+            } else {
+                $jumlah_ada++;
+            }
+        }
+
+        $jumlah_kawasan = count(array_unique($kawasan_list));
+
+        // ===========================
+        //  END SUMMARY SECTION
+        // ===========================
+
+        // hak akses
         $data = [
             'daftar_program_tahunan' => $daftar_program_tahunan,
             'can_view' => has_permission_menu($id_role, '/rakorbangwil/program_tahunan', 'can_view'),
             'can_edit' => has_permission_menu($id_role, '/rakorbangwil/program_tahunan', 'can_edit'),
             'can_delete' => has_permission_menu($id_role, '/rakorbangwil/program_tahunan', 'can_delete')
         ];
-        return view('/pages/rakorbangwil/tabel/tabel_daftar_program_tahunan', $data);
+
+        // kembalikan JSON untuk ajax
+
+        return $this->response->setJSON([
+            'table' => view('pages/rakorbangwil/tabel/tabel_daftar_program_tahunan_pemda', $data),
+            'summary' => [
+                'memerlukan_catatan' => $memerlukan_catatan,
+                'jumlah_kawasan' => $jumlah_kawasan,
+                'jumlah_ada_catatan' => $jumlah_ada,
+                'jumlah_total' => $jumlah_total
+            ]
+        ]);
     }
+
     // // --- VIEW DETAIL ---
     public function view($id)
     {

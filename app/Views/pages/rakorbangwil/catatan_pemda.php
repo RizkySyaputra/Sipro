@@ -1,3 +1,26 @@
+<style>
+    .badge-green {
+        background: #00d084;
+        color: white;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 4px;
+    }
+
+    .badge-grey {
+        background: #606060ff;
+        color: white;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 4px;
+    }
+</style>
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -12,6 +35,42 @@
             <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
             <div class="container mt-4">
+                <!-- ===== SUMMARY MINI DASHBOARD ===== -->
+                <div class="row mt-3 mb-4">
+
+                    <!-- Jumlah Pekerjaan yang Memerlukan Catatan Pemda -->
+                    <div class="col-md-4">
+                        <div class="card shadow-sm" style="border-left: 6px solid #00a8ff;">
+                            <div class="card-body">
+                                <h6 class="text-muted mb-1">Pekerjaan yang Memerlukan Catatan Pemda</h6>
+                                <h3 id="sum-memerlukan-catatan" class="m-0 fw-bold">0</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Jumlah Kawasan -->
+                    <div class="col-md-4">
+                        <div class="card shadow-sm" style="border-left: 6px solid #00d084;">
+                            <div class="card-body">
+                                <h6 class="text-muted mb-1">Jumlah Kawasan</h6>
+                                <h3 id="sum-kawasan" class="m-0 fw-bold">0</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Status Input Catatan Pemda -->
+                    <div class="col-md-4">
+                        <div class="card shadow-sm" style="border-left: 6px solid #fbc531;">
+                            <div class="card-body">
+                                <h6 class="text-muted mb-1">Status Input Catatan Pemda</h6>
+                                <h3 id="sum-status-catatan" class="m-0 fw-bold">0 / 0</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- ===== END SUMMARY ===== -->
+
                 <div class="card shadow-md">
                     <!-- <div class="card-header">
                         <h5 class="mb-0">Filter Data Memorandum</h5>
@@ -71,8 +130,7 @@
                                 </div>
                                 <div class="col-md-11">
                                     <select class="form-control" name="pn" id="filter-pn">
-                                        <option value="">Semua PN dan Non PN</option>
-                                        <option value="NON">NON PN</option>
+                                        <option value="ALLPN">Semua PN</option>
                                         <option value="2">PN 2</option>
                                         <option value="3">PN 3</option>
                                         <option value="4">PN 4</option>
@@ -136,6 +194,7 @@
                                         <th>Kawasan</th>
                                         <th>Tematik</th>
                                         <th>Tahun</th>
+                                        <th>Status Isi Catatan</th>
                                         <th>Aksi </th>
                                     </tr>
                                 </thead>
@@ -238,29 +297,36 @@
         $('#filter-sumber').val(localStorage.getItem('selectedSumber'));
 
         // On form submit, save the selected values
-        $('#filter-form').on('submit', function() {
+        $('#filter-form').on('submit', function(event) {
             event.preventDefault();
 
             $('#loading-spinner').show();
             $('#button-text').hide();
-            // Ambil data filter dari form
+
             var filterData = $(this).serialize();
-            // Kirim request AJAX
+
             $.ajax({
-                url: '<?= base_url('/rakorbangwil/get_daftar_program_tahunan_catatan_pemda') ?>', // URL untuk memproses filter
+                url: '<?= base_url('/rakorbangwil/get_daftar_program_tahunan_catatan_pemda') ?>',
                 type: 'POST',
                 data: filterData,
                 success: function(response) {
-                    // Hapus inisialisasi DataTables yang lama
-                    if ($.fn.DataTable.isDataTable('#datatables')) {
-                        $('#datatables').DataTable().destroy();
+
+                    if (typeof response === "string") {
+                        response = JSON.parse(response);
                     }
-                    // Update tabel dengan data yang diterima
-                    $('#datatables tbody').html(response);
 
+                    // ===== SIMPAN HALAMAN SEBELUMNYA =====
+                    let currentPage = 0;
+                    if ($.fn.DataTable.isDataTable('#datatables')) {
+                        let oldTable = $('#datatables').DataTable();
+                        currentPage = oldTable.page(); // simpan halaman aktif
+                        oldTable.destroy();
+                    }
 
-                    //Inisialisasi DataTables kembali
-                    $('#datatables').DataTable({
+                    // ===== UPDATE TABEL =====
+                    $('#datatables tbody').html(response.table);
+
+                    let newTable = $('#datatables').DataTable({
                         "pagingType": "full_numbers",
                         "lengthMenu": [
                             [10, 25, 50, -1],
@@ -273,17 +339,27 @@
                             zeroRecords: "Data tidak ditemukan"
                         }
                     });
+
+                    // ===== KEMBALIKAN KE HALAMAN SEBELUMNYA =====
+                    newTable.page(currentPage).draw(false);
+
+                    // ===== UPDATE SUMMARY =====
+                    $('#sum-memerlukan-catatan').text(response.summary.memerlukan_catatan);
+                    $('#sum-kawasan').text(response.summary.jumlah_kawasan);
+                    $('#sum-status-catatan').text(
+                        response.summary.jumlah_ada_catatan + " / " + response.summary.jumlah_total
+                    );
                 },
                 error: function() {
                     alert('Error loading data');
                 },
                 complete: function() {
-                    // Sembunyikan spinner dan kembalikan teks tombol
                     $('#loading-spinner').hide();
                     $('#button-text').show();
                 }
             });
         });
+
 
         $('#reset-filters').on('click', function() {
             // Reset dropdowns to their default values

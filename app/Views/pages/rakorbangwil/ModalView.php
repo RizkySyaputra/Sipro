@@ -124,7 +124,7 @@
                         <p><?= esc($prog_tahunan->catatan_konfrm_pemda ?? '-') ?></p>
                         <label class="catatan-text"><strong>Catatan Pemda</strong></label>
                         <p><?= esc($prog_tahunan->catatan_pemda ?? '-') ?></p>
-                        <label class="catatan-text"><strong>Catatan Rakorbangwil</strong></label>
+                        <label class="catatan-text"><strong>Catatan Desk Rakorbangwil</strong></label>
                         <p><?= esc($prog_tahunan->catatan_desk_rakorbangwil ?? '-') ?></p>
                         <label class="catatan-text"><strong>Tipe Pekerjaan</strong></label>
                         <p><?= esc($prog_tahunan->tipe_pekerjaan ?? '-') ?></p>
