@@ -963,4 +963,22 @@ class Rakorbangwil extends BaseController
             'pn' => $dataPn
         ]);
     }
+    public function get_data_berita_acara()
+    {
+        // $id_pn = $this->request->getPost('id_pn');
+        // $provinsi_id = $this->request->getPost('provinsi');
+        $id_pn = 2;
+        $provinsi_id = 11;
+        $kawasan = $this->praRakorModel->getKawasanList($provinsi_id, null, $id_pn);
+        $diakomodasi = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 1);
+        $ditangguhkan2 = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 2);
+        $ditangguhkan3 = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 3);
+        $belumDibahas = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 0);
+        $pejabat = "";
+        d($kawasan);
+        d($diakomodasi);
+        d($ditangguhkan2);
+        d($ditangguhkan3);
+        dd($belumDibahas);
+    }
 }

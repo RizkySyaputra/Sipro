@@ -118,8 +118,6 @@
                                                     <th>No</th>
                                                     <th>Kawasan</th>
                                                     <th>Tematik Kawasan</th>
-                                                    <th>Catatan</th>
-                                                    <th style="text-align: center;">Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -167,7 +165,6 @@
                                                     <th>Kesepakatan</th>
                                                     <th>Sumber Pendanaan</th>
                                                     <th>Catatan Rakorbangwil</th>
-                                                    <th style="text-align: center;">Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -215,7 +212,6 @@
                                                     <th>Kesepakatan</th>
                                                     <th>Sumber Pendanaan</th>
                                                     <th>Catatan Rakorbangwil</th>
-                                                    <th style="text-align: center;">Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -263,7 +259,6 @@
                                                     <th>Kesepakatan</th>
                                                     <th>Sumber Pendanaan</th>
                                                     <th>Catatan Rakorbangwil</th>
-                                                    <th style="text-align: center;">Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

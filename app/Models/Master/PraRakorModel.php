@@ -27,7 +27,7 @@ class PraRakorModel extends Model
         $query = $builder->get();
         return $query->getFirstRow();
     }
-    public function getKawasanList($id_provinsi = null, $id_tematik, $id_pn)
+    public function getKawasanList($id_provinsi = null, $id_tematik = null, $id_pn = null)
     {
         $tahun_pelaksanaan = session('tahun_pelaksana');
         $builder = $this->db->table('trx_prog_tahunan_pra_rakorbangwil as a');
