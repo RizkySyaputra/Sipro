@@ -953,4 +953,14 @@ class Rakorbangwil extends BaseController
             ]);
         }
     }
+    public function berita_acara()
+    {
+        $dataProvinsi = $this->provinsiModel->getProvinsi();
+        $dataPn = $this->pnModel->getAll();
+        $this->template->write('title', 'Berita Acara Kesepakatan');
+        $this->template->load('/templates/main', '/pages/rakorbangwil/berita_acara', [
+            'provinsi' => $dataProvinsi,
+            'pn' => $dataPn
+        ]);
+    }
 }

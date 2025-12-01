@@ -153,6 +153,7 @@ $routes->get('/rakorbangwil/view_pn/(:segment)', 'Rakorbangwil::view_pn/$1');
 $routes->get('/rakorbangwil/desk_rakorbangwil', 'Rakorbangwil::desk_daftar_pn');
 $routes->get('/rakorbangwil/desk_view_pn/(:segment)', 'Rakorbangwil::desk_view_pn/$1');
 $routes->post('/rakorbangwil/desk_get_list_program', 'Rakorbangwil::desk_get_list_program');
+$routes->get('/rakorbangwil/berita_acara', 'Rakorbangwil::berita_acara');
 
 
 // adding sendi 20251107
