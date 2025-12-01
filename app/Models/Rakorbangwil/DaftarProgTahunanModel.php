@@ -29,9 +29,18 @@ class DaftarProgTahunanModel extends Model
             $builder->where('a.sumber', $sumber);
         }
         if ($catatan_kl) {
-            $builder->where('a.kebutuhan_dukungan_kl IS NOT NULL', null, false)
-                ->where('a.kebutuhan_dukungan_kl !=', '-');
+            $builder->groupStart() // buka grup OR
+                ->groupStart()
+                ->where('a.kebutuhan_dukungan_kl IS NOT NULL', null, false)
+                ->where('a.kebutuhan_dukungan_kl !=', '-')
+                ->groupEnd()
+                ->orGroupStart()
+                ->where('a.catatan_konfrm_pemda IS NOT NULL', null, false)
+                ->where('a.catatan_konfrm_pemda !=', '-')
+                ->groupEnd()
+                ->groupEnd(); // tutup grup OR
         }
+
         if ($pembiayaan) {
             $builder->where('a.id_pendanaan', $pembiayaan);
         }
