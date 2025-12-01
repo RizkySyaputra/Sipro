@@ -138,8 +138,32 @@ class Rakorbangwil extends BaseController
         if (!$prog_tahunan) {
             return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
         }
-        return view('/pages/rakorbangwil/ModalView', ['prog_tahunan' => $prog_tahunan, 'kabkot' => $kabkot]);
+
+        // --- Ambil peta kawasan berdasarkan nama kawasan di view_prog_tahunan ---
+        $selectedKawasan = [];
+        if (!empty($prog_tahunan->kawasan)) {
+            // diasumsikan disimpan: "Kawasan A, Kawasan B"
+            $selectedKawasan = array_map('trim', explode(',', $prog_tahunan->kawasan));
+        }
+
+        $petaKawasan = [];
+        foreach ($selectedKawasan as $nama) {
+            $row = $this->kawasanModel
+                ->where('nama_kawasan', $nama)
+                ->first();
+
+            if ($row && !empty($row['peta_kawasan'])) {
+                $petaKawasan[] = $row['peta_kawasan'];   // nama file geojson-nya
+            }
+        }
+
+        return view('/pages/rakorbangwil/ModalView', [
+            'prog_tahunan' => $prog_tahunan,
+            'kabkot'       => $kabkot,
+            'petaKawasan'  => $petaKawasan,
+        ]);
     }
+
 
     public function edit($id)
     {

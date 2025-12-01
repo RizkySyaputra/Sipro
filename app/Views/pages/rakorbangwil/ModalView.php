@@ -67,6 +67,14 @@
 
                         <label class="catatan-text"><strong>Kawasan</strong></label>
                         <p><?= esc($prog_tahunan->kawasan ?? '-') ?></p>
+
+                        <?php if (!empty($petaKawasan)): ?>
+                            <div id="mapKawasanDetail"
+                                style="height: 350px; width: 100%; border-radius:8px; margin-bottom: 15px; border:1px solid #ddd;">
+                            </div>
+                        <?php endif; ?>
+
+
                         <label class="catatan-text"><strong>Tematik</strong></label>
                         <p><?= esc($prog_tahunan->tematik ?? '-') ?></p>
                         <label class="catatan-text"><strong>Kab/kot</strong></label>
@@ -158,3 +166,49 @@
 
 
 </div>
+<script>
+    (function() {
+        // kalau tidak ada peta kawasan, jangan inisialisasi map
+        const hasMap = <?= !empty($petaKawasan) ? 'true' : 'false' ?>;
+        if (!hasMap) return;
+
+        // pastikan Leaflet sudah ada (dipakai juga di edit)
+        var mapKawasan = L.map('mapKawasanDetail').setView([-2.5, 118], 5);
+
+        // basemap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18
+        }).addTo(mapKawasan);
+
+        // daftar file geojson kawasan dari PHP
+        const kawasanFiles = <?= json_encode(
+                                    array_map(fn($file) => base_url('geojson/' . $file), $petaKawasan)
+                                ); ?>;
+
+        const bounds = L.latLngBounds([]);
+
+        kawasanFiles.forEach(url => {
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    const layer = L.geoJSON(data, {
+                        style: {
+                            color: "#2ecc71",
+                            weight: 2,
+                            fillColor: "#2ecc71",
+                            fillOpacity: 0.25
+                        }
+                    }).addTo(mapKawasan);
+
+                    bounds.extend(layer.getBounds());
+                    mapKawasan.fitBounds(bounds);
+                })
+                .catch(err => console.error("Gagal load geojson kawasan:", err));
+        });
+
+        // untuk jaga-jaga kalau container awalnya sempit
+        setTimeout(() => {
+            mapKawasan.invalidateSize();
+        }, 300);
+    })();
+</script>
