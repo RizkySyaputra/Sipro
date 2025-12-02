@@ -41,35 +41,44 @@
                 <!-- ===== SUMMARY MINI DASHBOARD ===== -->
                 <div class="row mt-3 mb-4">
 
-                    <!-- Jumlah Pekerjaan yang Memerlukan Catatan Pemda -->
-                    <div class="col-md-4">
+                    <!-- Total Pekerjaan -->
+                    <div class="col-md-3">
                         <div class="card shadow-sm" style="border-left: 6px solid #00a8ff;">
                             <div class="card-body">
-                                <h6 class="text-muted mb-1">Pekerjaan yang Memerlukan Catatan Pemda</h6>
-                                <h3 id="sum-memerlukan-catatan" class="m-0 fw-bold">0</h3>
+                                <h6 class="text-muted mb-1">Jumlah Pekerjaan </h6>
+                                <h3 id="sum-total-pekerjaan" class="m-0 fw-bold">0 Pekerjaan</h3>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Pekerjaan yang Memerlukan Catatan Pemda -->
+                    <div class="col-md-3">
+                        <div class="card shadow-sm" style="border-left: 6px solid #525150ff;">
+                            <div class="card-body">
+                                <h6 class="text-muted mb-1">Belum Ada Catatan Pemda</h6>
+                                <h3 id="sum-memerlukan-catatan" class="m-0 fw-bold">0 Pekerjaan</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pekerjaan yang Sudah Memiliki Catatan Pemda -->
+                    <div class="col-md-3">
+                        <div class="card shadow-sm" style="border-left: 6px solid #07a126ff;">
+                            <div class="card-body">
+                                <h6 class="text-muted mb-1">Terdapat Catatan Pemda</h6>
+                                <h3 id="sum-ada-catatan" class="m-0 fw-bold">0 Pekerjaan</h3>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Jumlah Kawasan -->
-                    <div class="col-md-4">
-                        <div class="card shadow-sm" style="border-left: 6px solid #00d084;">
+                    <div class="col-md-3">
+                        <div class="card shadow-sm" style="border-left: 6px solid #eaa400ff;">
                             <div class="card-body">
                                 <h6 class="text-muted mb-1">Jumlah Kawasan</h6>
-                                <h3 id="sum-kawasan" class="m-0 fw-bold">0</h3>
+                                <h3 id="sum-kawasan" class="m-0 fw-bold">0 Pekerjaan</h3>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Status Input Catatan Pemda -->
-                    <div class="col-md-4">
-                        <div class="card shadow-sm" style="border-left: 6px solid #fbc531;">
-                            <div class="card-body">
-                                <h6 class="text-muted mb-1">Status Input Catatan Pemda</h6>
-                                <h3 id="sum-status-catatan" class="m-0 fw-bold">0 / 0</h3>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
                 <!-- ===== END SUMMARY ===== -->
@@ -347,11 +356,10 @@
                     newTable.page(currentPage).draw(false);
 
                     // ===== UPDATE SUMMARY =====
-                    $('#sum-memerlukan-catatan').text(response.summary.memerlukan_catatan);
-                    $('#sum-kawasan').text(response.summary.jumlah_kawasan);
-                    $('#sum-status-catatan').text(
-                        response.summary.jumlah_ada_catatan + " / " + response.summary.jumlah_total
-                    );
+                    $('#sum-total-pekerjaan').text(response.summary.jumlah_total + "  Pekerjaan");
+                    $('#sum-memerlukan-catatan').text(response.summary.memerlukan_catatan + "  Pekerjaan");
+                    $('#sum-ada-catatan').text(response.summary.jumlah_ada_catatan + "  Pekerjaan");
+                    $('#sum-kawasan').text(response.summary.jumlah_kawasan + "  Pekerjaan");
                 },
                 error: function() {
                     alert('Error loading data');
