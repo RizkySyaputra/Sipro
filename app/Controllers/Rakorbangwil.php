@@ -855,7 +855,7 @@ class Rakorbangwil extends BaseController
         $sheet->setCellValue('AI1', 'Sumber');
         $sheet->setCellValue('AJ1', 'Catatan Memorandum');
         $sheet->setCellValue('AK1', 'KL');
-        $sheet->setCellValue('AL1', 'Kebutuhan Dukungan KL');
+        $sheet->setCellValue('AL1', 'Kebutuhan Dukungan K/L');
         $sheet->setCellValue('AM1', 'Catatan Pra Rakorbangwil');
         $sheet->setCellValue('AN1', 'Catatan Pemda');
         // $sheet->setCellValue('AM1', 'Reviu Puswil');
@@ -979,7 +979,7 @@ class Rakorbangwil extends BaseController
         $program = $this->praRakorModel->where('id_pn', $id)->findAll();
         $kebutuhan_dukungan_kl = $this->kebutuhan_kl_Model->getKebutuhanKl($id);
         $catatan_pn = $this->praRakorModel->getCatatan($id);
-        $daftar_program_tahunan_usulan = $this->programTahunanUsulanModel->findAll();
+        $daftar_program_tahunan_usulan = $this->programTahunanUsulanModel->where('id_pn', $id)->findAll();
         $this->template->write('title', 'Detail Prioritas Nasional');
         $this->template->load('/templates/main', '/pages/rakorbangwil/desk_view_pn', [
             'provinsi' => $dataProvinsi,

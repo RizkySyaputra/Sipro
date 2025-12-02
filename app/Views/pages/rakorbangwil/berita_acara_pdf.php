@@ -305,11 +305,11 @@
 
                     <?php
                     // Path image absolute (FPATH)
-                    $ttd_file = FCPATH . $p->tanda_tangan;
+                    $ttd_file = FCPATH . 'assets/ttd/' . $p->tanda_tangan;
                     ?>
 
                     <?php if (!empty($p->tanda_tangan) && file_exists($ttd_file)): ?>
-                        <img src="assets/ttd/<?= $ttd_file ?>" style="width:100px; height:100px; object-fit:contain; margin-bottom:10px;">
+                        <img src="<?= $ttd_file ?>" style="width:100px; height:100px; object-fit:contain; margin-bottom:10px;">
                     <?php else: ?>
                         <img src="assets/ttd/nonttd.png" style="width:100px; height:100px; opacity:0.3;">
                     <?php endif; ?>
