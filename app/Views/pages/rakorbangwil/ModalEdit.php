@@ -269,7 +269,7 @@
                         <input type="text" class="form-control" name="sumber" value="<?= esc($progTahunan->sumber ?? '-') ?>" hidden>
                     </div>
                     <div class="form-group">
-                        <label class="catatan-text"><strong>Kebutuhan Dukungan KL</strong></label>
+                        <label class="catatan-text"><strong>Kebutuhan Dukungan K/L</strong></label>
                         <textarea class="form-control" name="kebutuhan_dukungan_kl"><?= esc($progTahunan->kebutuhan_dukungan_kl ?? '-') ?></textarea>
                     </div>
                     <div class="form-group">

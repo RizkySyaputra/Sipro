@@ -201,10 +201,10 @@
                     <label class="catatan-text"><strong>Sumber Data</strong></label>
                     <p><?= esc($progTahunan->sumber ?? '-') ?></p>
 
-                    <label class="catatan-text"><strong>KL terkait</strong></label>
+                    <label class="catatan-text"><strong>K/L terkait</strong></label>
                     <p><?= esc($progTahunan->kl ?? '-') ?></p>
 
-                    <label class="catatan-text"><strong>Kebutuhan Dukungan KL</strong></label>
+                    <label class="catatan-text"><strong>Kebutuhan Dukungan K/L</strong></label>
                     <p><?= esc($progTahunan->kebutuhan_dukungan_kl ?? '-') ?></p>
 
                     <label class="catatan-text"><strong>Catatan Pra Rakorbangwil</strong></label>

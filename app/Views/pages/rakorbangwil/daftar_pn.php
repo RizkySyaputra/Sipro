@@ -60,7 +60,7 @@
                                                         <span class="badge badge-success me-1"><?= esc($kl) ?></span>
                                                     <?php endforeach; ?>
                                                 <?php else: ?>
-                                                    <em class="text-muted">Belum ada data KL</em>
+                                                    <em class="text-muted">Belum ada data K/L</em>
                                                 <?php endif; ?>
                                             </td>
                                             <td><?= session('tahun_pelaksana') ?></td>
