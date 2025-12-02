@@ -5,6 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berita Acara Kesepakatan</title>
+    <style>
+        .ttd-container {
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .ttd-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        .ttd-box {
+            width: 32%;
+            text-align: center;
+            font-size: 11px;
+        }
+
+        .ttd-name {
+            margin-top: 3px;
+            font-weight: bold;
+        }
+
+        .ttd-position {
+            font-size: 10px;
+            margin-bottom: 40px;
+        }
+
+        .ttd-line {
+            margin-top: 40px;
+            border-top: 1px dotted #000;
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 
     <style>
         body {
@@ -253,21 +289,49 @@
         dengan memperhatikan readiness criteria, ketersediaan alokasi anggaran, dan tingkat prioritasnya.
     </p>
 
-    <p class="date">Jakarta, Desember 2025</p>
+    <p style="text-align:center; margin-bottom:40px;">
+        Jakarta, <?= date('d F Y', strtotime($tanggal_bak)) ?>
+    </p>
+    <h3 class="new-page">Tanda Tangan Pejabat</h3>
 
+    <table style="width: 100%; border-collapse: collapse; text-align: center;">
+        <?php
+        $count = 0;
+        foreach ($pejabat_bak as $p):
+            if ($count % 3 === 0) echo "<tr>";
+        ?>
+            <td style="text-align:center; padding:20px; border:none; width:33%;">
+                <div style="display:flex; flex-direction:column; align-items:center; height:200px;">
 
-    <!-- ======== TANDA TANGAN ======== -->
-    <table style="margin-top:30px;">
-        <thead>
-            <tr>
-                <th>Nama dan Jabatan</th>
-                <th width="200px">Tanda Tangan</th>
-            </tr>
-        </thead>
-        <tbody>
+                    <?php
+                    // Path image absolute (FPATH)
+                    $ttd_file = FCPATH . $p->tanda_tangan;
+                    ?>
 
-        </tbody>
+                    <?php if (!empty($p->tanda_tangan) && file_exists($ttd_file)): ?>
+                        <img src="assets/ttd/<?= $ttd_file ?>" style="width:100px; height:100px; object-fit:contain; margin-bottom:10px;">
+                    <?php else: ?>
+                        <img src="assets/ttd/nonttd.png" style="width:100px; height:100px; opacity:0.3;">
+                    <?php endif; ?>
+
+                    <p style="margin:0; font-size:14px; font-weight:bold;">
+                        <?= htmlspecialchars($p->nama_pejabat) ?>
+                    </p>
+                    <p style="margin:0; font-size:12px; font-style:italic;">
+                        <?= htmlspecialchars($p->jabatan) ?>
+                    </p>
+                </div>
+            </td>
+        <?php
+            $count++;
+            if ($count % 3 === 0) echo "</tr>";
+        endforeach;
+
+        if ($count % 3 !== 0) echo "</tr>";
+        ?>
     </table>
+
+
 
 </body>
 

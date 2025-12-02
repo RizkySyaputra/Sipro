@@ -191,26 +191,6 @@
 
                     <label class="catatan-text"><strong>Geotagging</strong></label>
                     <p><?= esc($progTahunan->geotag ?? '-') ?></p>
-
-                    <label class="catatan-text"><strong>Sumber Data</strong></label>
-                    <p><?= esc($progTahunan->sumber ?? '-') ?></p>
-
-                    <label class="catatan-text"><strong>KL terkait</strong></label>
-                    <p><?= esc($progTahunan->kl ?? '-') ?></p>
-
-                    <label class="catatan-text"><strong>Kebutuhan Dukungan KL</strong></label>
-                    <p><?= esc($progTahunan->kebutuhan_dukungan_kl ?? '-') ?></p>
-
-                    <label class="catatan-text"><strong>Catatan Pra Rakorbangwil</strong></label>
-                    <p><?= esc($progTahunan->catatan_pra_rakorbangwil ?? '-') ?></p>
-                    <label class="catatan-text"><strong>Catatan Konfirmasi Pemda</strong></label>
-                    <p><?= esc($progTahunan->catatan_konfrm_pemda ?? '-') ?></p>
-                    <label class="catatan-text"><strong>Catatan Pemda</strong></label>
-                    <p><?= esc($progTahunan->catatan_pemda ?? '-') ?></p>
-                    <div class="form-group">
-                        <label class="catatan-text"><strong>Catatan Rakorbangwil</strong></label>
-                        <textarea class="form-control" name="catatan_desk_rakorbangwil"><?= esc($progTahunan->catatan_desk_rakorbangwil ?? '-') ?></textarea>
-                    </div>
                     <div class="form-group">
                         <label class="catatan-text"><strong>Tipe Pekerjaan</strong></label>
                         <select class="form-control" name="tipe_pekerjaan" id="select-tipe">
@@ -231,6 +211,26 @@
 
                         </select>
                     </div>
+                    <label class="catatan-text"><strong>Sumber Data</strong></label>
+                    <p><?= esc($progTahunan->sumber ?? '-') ?></p>
+
+                    <label class="catatan-text"><strong>KL terkait</strong></label>
+                    <p><?= esc($progTahunan->kl ?? '-') ?></p>
+
+                    <label class="catatan-text"><strong>Kebutuhan Dukungan KL</strong></label>
+                    <p><?= esc($progTahunan->kebutuhan_dukungan_kl ?? '-') ?></p>
+
+                    <label class="catatan-text"><strong>Catatan Pra Rakorbangwil</strong></label>
+                    <p><?= esc($progTahunan->catatan_pra_rakorbangwil ?? '-') ?></p>
+                    <label class="catatan-text"><strong>Catatan Konfirmasi Pemda</strong></label>
+                    <p><?= esc($progTahunan->catatan_konfrm_pemda ?? '-') ?></p>
+                    <label class="catatan-text"><strong>Catatan Pemda</strong></label>
+                    <p><?= esc($progTahunan->catatan_pemda ?? '-') ?></p>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Catatan Desk Rakorbangwil</strong></label>
+                        <textarea class="form-control" name="catatan_desk_rakorbangwil"><?= esc($progTahunan->catatan_desk_rakorbangwil ?? '-') ?></textarea>
+                    </div>
+
 
                     <div class="form-group">
                         <label class="catatan-text"><strong>Kesepakatan</strong></label>

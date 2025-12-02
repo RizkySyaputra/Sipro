@@ -115,7 +115,8 @@
 
                         <label class="catatan-text"><strong>Geotagging</strong></label>
                         <p><?= esc($prog_tahunan->geotag ?? '-') ?></p>
-
+                        <label class="catatan-text"><strong>Tipe Pekerjaan</strong></label>
+                        <p><?= esc($prog_tahunan->tipe_pekerjaan ?? '-') ?></p>
                         <label class="catatan-text"><strong>Sumber Data</strong></label>
                         <p><?= esc($prog_tahunan->sumber ?? '-') ?></p>
 
@@ -133,8 +134,6 @@
                         <p><?= esc($prog_tahunan->catatan_pemda ?? '-') ?></p>
                         <label class="catatan-text"><strong>Catatan Desk Rakorbangwil</strong></label>
                         <p><?= esc($prog_tahunan->catatan_desk_rakorbangwil ?? '-') ?></p>
-                        <label class="catatan-text"><strong>Tipe Pekerjaan</strong></label>
-                        <p><?= esc($prog_tahunan->tipe_pekerjaan ?? '-') ?></p>
                         <label class="catatan-text"><strong>Kesepakatan Rakorbangwil</strong></label>
                         <?php
                         $statusMap = [

@@ -281,6 +281,10 @@ $routes->get('/sitebaru', 'KonregController::fungsibaru', ['filter' => 'permissi
 $routes->get('/rakorbangwil/berita_acara', 'Rakorbangwil::berita_acara');
 $routes->post('/rakorbangwil/get_data_berita_acara', 'Rakorbangwil::get_data_berita_acara');
 $routes->post('/rakorbangwil/create_berita_acara', 'Rakorbangwil::create_bak');
+$routes->post('/rakorbangwil/get_pejabat_bak', 'Rakorbangwil::get_pejabat_bak');
+$routes->post('/rakorbangwil/addPejabatBAK', 'Rakorbangwil::addPejabatBAK');
+$routes->post('/rakorbangwil/delete_pejabat_bak', 'Rakorbangwil::delete_pejabat_bak');
+
 
 //Program Konreg
 $routes->get('/program-konreg/fkw', 'KonregController::program_fkw', ['filter' => 'permission']);

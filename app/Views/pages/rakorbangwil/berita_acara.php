@@ -204,38 +204,41 @@
 
                         </div>
                         <!-- END TAB Diakomodasi -->
-                        <!-- ================= TAB Diakomodasi ================= -->
                         <div class="tab-pane fade show" id="bak" role="tabpanel">
                             <!-- DATATABLE -->
                             <div class="card shadow-sm">
                                 <div class="card-body">
                                     <div class="table-responsive">
+
                                         <div class="mb-3 text-right">
+                                            <button id="btn-add-pejabat" class="btn btn-primary">
+                                                <i class="fa fa-plus"></i> Tambah Pejabat
+                                            </button>
                                             <button id="btn-generate-bak" class="btn btn-success">
                                                 <i class="fa fa-file-alt"></i> Generate Berita Acara
                                             </button>
                                         </div>
 
-                                        <table id="table-tidakterbahas" class="table table-striped table-hover">
+                                        <table id="table-pejabat-bak" class="table table-striped table-hover">
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Kawasan</th>
-                                                    <th>Pekerjaan</th>
-                                                    <th>Unor</th>
-                                                    <th>Kesepakatan</th>
-                                                    <th>Sumber Pendanaan</th>
-                                                    <th>Catatan Rakorbangwil</th>
+                                                    <th>Nama Pejabat</th>
+                                                    <th>Jabatan</th>
+                                                    <th>Provinsi</th>
+                                                    <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-
+                                                <!-- akan diisi via AJAX -->
                                             </tbody>
                                         </table>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                         <!-- END TAB Diakomodasi -->
                     </div><!-- END TAB CONTENT -->
                 </div> <!-- card-body -->
@@ -265,7 +268,45 @@
             </div>
         </div>
     </div>
-    <form id="form-generate-bak" action="<?= base_url('rakorbangwil/create_berita_acara') ?>" method="POST" style="display:none;">
+    <!-- Modal Tambah Pejabat -->
+    <div class="modal fade" id="modalAddPejabat" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <form id="form-tambah-pejabat" method="POST" action="<?= base_url('rakorbangwil/addPejabatBAK') ?>">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Tambah Pejabat Penandatangan</h5>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label>Nama Pejabat</label>
+                            <select class="form-control" style="width: 100%;" name="pejabat_id" id="select-pejabat" required>
+                                <option value="" disabled selected>Pilih Pejabat</option>
+                                <?php foreach ($pejabat as $pj): ?>
+                                    <option value="<?= $pj['id_pejabat'] ?>"><?= $pj['nama_pejabat'] ?> - <?= $pj['jabatan'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+
+                        <input type="hidden" name="provinsi_id" id="input-provinsi-id">
+                        <input type="hidden" name="pn_id" id="input-pn-id">
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary">Tambah Pejabat</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <form id="form-generate-bak" action="<?= base_url('rakorbangwil/create_berita_acara') ?>" method="POST" style="display:none;" target="_blank">
         <input type="hidden" name="provinsi_id" id="post-provinsi">
         <input type="hidden" name="pn_id" id="post-pn">
         <input type="hidden" name="tanggal" id="post-tanggal">
@@ -295,7 +336,7 @@
             }
 
             // Inisialisasi Select2 untuk semua dropdown
-            $('#filter-pn, #filter-provinsi').select2();
+            $('#filter-pn, #filter-provinsi ,#select-pejabat').select2();
 
             // Restore value dari localStorage
             $('#filter-pn').val(localStorage.getItem('selectedPn')).trigger('change');
@@ -490,6 +531,166 @@
                 // Submit form ke controller
                 $('#form-generate-bak').submit();
             });
+
+            // Buka modal tambah pejabat
+            $('#btn-add-pejabat').on('click', function() {
+
+                let provinsi = $('#filter-provinsi').val();
+                let pn = $('#filter-pn').val();
+
+                if (!provinsi || !pn) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Filter Belum Dipilih',
+                        text: 'Silakan pilih Provinsi dan PN terlebih dahulu.'
+                    });
+                    return;
+                }
+
+                // Simpan value ke hidden input
+                $('#input-provinsi-id').val(provinsi);
+                $('#input-pn-id').val(pn);
+
+                $('#modalAddPejabat').modal('show');
+            });
+
+            $(document).ready(function() {
+
+                // ========= FUNGSI LOAD DATA PEJABAT BAK =========
+                function loadPejabatBAK() {
+                    let provinsi = $('#filter-provinsi').val();
+                    let pn = $('#filter-pn').val();
+
+                    if (!provinsi || !pn) {
+                        $('#table-pejabat-bak tbody').html(`
+                <tr>
+                    <td colspan="5" class="text-center text-muted">
+                        Silakan pilih Provinsi dan PN terlebih dahulu.
+                    </td>
+                </tr>
+            `);
+                        return;
+                    }
+
+                    $.ajax({
+                        url: '<?= base_url("/rakorbangwil/get_pejabat_bak") ?>',
+                        type: 'POST',
+                        dataType: 'json',
+                        data: {
+                            provinsi: provinsi,
+                            pn: pn
+                        },
+                        success: function(response) {
+                            let html = "";
+
+                            if (!response || response.length === 0) {
+                                html = `
+                        <tr>
+                            <td colspan="5" class="text-center text-muted">
+                                Belum ada pejabat untuk kombinasi Provinsi & PN Terpilih.
+                            </td>
+                        </tr>`;
+                            } else {
+                                response.forEach((item, i) => {
+                                    html += `
+                            <tr>
+                                <td>${i + 1}</td>
+                                <td>${item.nama_pejabat}</td>
+                                <td>${item.jabatan}</td>
+                                <td>${item.provinsi}</td>
+                                <td>
+                                    <button class="btn btn-danger btn-sm btn-delete-pejabat" data-id="${item.id}">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        `;
+                                });
+                            }
+
+                            $('#table-pejabat-bak tbody').html(html);
+                        }
+                    });
+                }
+
+                // ========= PANGGIL loadPejabatBAK SETELAH FILTER DI-SUBMIT =========
+                $('#filter-form').on('submit', function() {
+                    setTimeout(() => {
+                        loadPejabatBAK();
+                    }, 300);
+                });
+
+                // ========= BUKA MODAL TAMBAH PEJABAT =========
+                $('#btn-add-pejabat').on('click', function() {
+                    let provinsi = $('#filter-provinsi').val();
+                    let pn = $('#filter-pn').val();
+
+                    if (!provinsi || !pn) {
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Filter Belum Dipilih',
+                            text: 'Silakan pilih Provinsi dan PN terlebih dahulu.'
+                        });
+                        return;
+                    }
+
+                    $('#input-provinsi-id').val(provinsi);
+                    $('#input-pn-id').val(pn);
+
+                    $('#modalAddPejabat').modal('show');
+                });
+
+                // ========= SUBMIT TAMBAH PEJABAT =========
+                $('#form-tambah-pejabat').on('submit', function(e) {
+                    e.preventDefault();
+
+                    $.ajax({
+                        url: $(this).attr("action"),
+                        type: "POST",
+                        data: $(this).serialize(),
+                        success: function(res) {
+                            $('#modalAddPejabat').modal('hide');
+                            Swal.fire('Berhasil', 'Pejabat berhasil ditambahkan', 'success');
+                            loadPejabatBAK();
+                        }
+                    });
+                });
+
+                // ========= HAPUS PEJABAT =========
+                $(document).on('click', '.btn-delete-pejabat', function() {
+                    let id = $(this).data('id');
+
+                    Swal.fire({
+                        title: 'Hapus Pejabat?',
+                        text: "Data akan dihapus dari daftar penandatangan.",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'Ya, hapus',
+                        cancelButtonText: 'Batal'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            $.ajax({
+                                url: '<?= base_url("/rakorbangwil/delete_pejabat_bak") ?>',
+                                type: 'POST',
+                                data: {
+                                    id: id
+                                },
+                                success: function() {
+                                    Swal.fire('Berhasil', 'Pejabat dihapus', 'success');
+                                    loadPejabatBAK();
+                                }
+                            });
+                        }
+                    });
+                });
+
+                // Opsional: ketika tab BAK diklik, reload daftar pejabat
+                $('a[href="#bak"]').on('shown.bs.tab', function() {
+                    loadPejabatBAK();
+                });
+            });
+
+
 
         });
     </script>

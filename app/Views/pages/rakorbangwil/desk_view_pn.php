@@ -341,6 +341,40 @@
                         <!-- ================= TAB USULAN ================= -->
                         <div class="tab-pane fade" id="usulan" role="tabpanel">
                             <strong>Usulan Program/Kegiatan</strong>
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table id="datatables" class="table table-striped table-hover" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Provinsi</th>
+                                                    <th>Unor</th>
+                                                    <th>Pekerjaan</th>
+                                                    <th>Kawasan</th>
+                                                    <th>Justifikasi</th>
+                                                    <th>Catatan Kebutuhan Pemda</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                $a = 1;
+                                                foreach ($daftar_program_tahunan_usulan as $data) : ?>
+                                                    <tr>
+                                                        <td><?= $a++; ?></td>
+                                                        <td><?= $data->provinsi ?></td>
+                                                        <td><?= $data->unor ?></td>
+                                                        <td><?= $data->pekerjaan ?></td>
+                                                        <td><?= $data->kawasan_prioritas ?></td>
+                                                        <td><?= $data->justifikasi ?></td>
+                                                        <td><?= $data->catatan_konfrm_pemda ?></td>
+                                                    </tr>
+                                                <?php endforeach; ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- ================= TAB CATATAN ================= -->
