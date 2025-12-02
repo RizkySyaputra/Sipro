@@ -131,6 +131,9 @@
                                 <tbody>
 
                                 </tbody>
+                                <tfoot>
+
+                                </tfoot>
                             </table>
                         </div>
                     </div>
@@ -250,6 +253,8 @@
 
             var table = $('#datatables').DataTable();
             table.clear().draw();
+
+            $('#datatables tfoot').remove();
         });
 
         $(function() {

@@ -24,11 +24,11 @@ class ReportMemoModel extends Model
         $builder->select(
             "provinsi, 
             COUNT(DISTINCT(IF(id_kawasan!=0,id_kawasan,NULL))) AS jml_kawasan,
-            COUNT(DISTINCT(IF(id_tematik='1',id_tematik,NULL))) AS jml_afirmasi,
-            COUNT(DISTINCT(IF(id_tematik='2',id_tematik,NULL))) AS jml_unggulan,
-            COUNT(DISTINCT(IF(id_tematik='3',id_tematik,NULL))) AS jml_konservasi,
-            COUNT(DISTINCT(IF(id_tematik='4',id_tematik,NULL))) AS jml_pertumbuhan,
-            COUNT(DISTINCT(IF(id_tematik='5',id_tematik,NULL))) AS jml_swasembada"
+            COUNT(DISTINCT(IF(id_tematik='1',id_kawasan,NULL))) AS jml_afirmasi,
+            COUNT(DISTINCT(IF(id_tematik='2',id_kawasan,NULL))) AS jml_unggulan,
+            COUNT(DISTINCT(IF(id_tematik='3',id_kawasan,NULL))) AS jml_konservasi,
+            COUNT(DISTINCT(IF(id_tematik='4',id_kawasan,NULL))) AS jml_pertumbuhan,
+            COUNT(DISTINCT(IF(id_tematik='5',id_kawasan,NULL))) AS jml_swasembada"
         );
 
         $builder->where('tahun', "$tahun_anggaran");

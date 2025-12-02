@@ -5,6 +5,11 @@ $format->setAttribute(NumberFormatter::FRACTION_DIGITS, 0);
 $a = 1;
 $total_kawasan = 0;
 $total_tematik = 0;
+$total_pertumbuhan = 0;
+$total_swasembada = 0;
+$total_afirmasi = 0;
+$total_konservasi = 0;
+$total_unggulan = 0;
 $table = '';
 $table .= "<thead>
             <tr>
@@ -25,8 +30,11 @@ $table .= "<thead>
 foreach ($kawasan_per_provinsi as $kp) : ?>
     <?php
     $total_kawasan += $kp->jml_kawasan ?? 0;
-    // $total_pekerjaan += $kp->jml_pertumbuhan ?? 0;
-    // $total_anggaran += $kp->anggaran ?? 0;
+    $total_pertumbuhan += $kp->jml_pertumbuhan ?? 0;
+    $total_swasembada += $kp->jml_swasembada ?? 0;
+    $total_afirmasi += $kp->jml_afirmasi ?? 0;
+    $total_konservasi += $kp->jml_konservasi ?? 0;
+    $total_unggulan += $kp->jml_unggulan ?? 0;
     $total_tematik = $kp->jml_pertumbuhan + $kp->jml_swasembada + $kp->jml_afirmasi + $kp->jml_unggulan;
 
     $table .= "<tr>
@@ -47,7 +55,12 @@ foreach ($kawasan_per_provinsi as $kp) : ?>
 $table .= "</tbody><tfoot><tr style='font-weight:bold;'>
     <td colspan='2' class='text-center'>Total</td>
     <td class='text-right'>$total_kawasan</td>
-    <td colspan='6' class='text-right'></td>
+    <td class='text-right'>$total_pertumbuhan</td>
+    <td class='text-right'>$total_swasembada</td>
+    <td class='text-right'>$total_afirmasi</td>
+    <td class='text-right'>$total_konservasi</td>
+    <td class='text-right'>$total_unggulan</td>
+    <td class='text-right'>$total_kawasan</td>
 </tr></tfoot>";
 
 echo $table;
