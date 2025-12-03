@@ -61,7 +61,7 @@ class RoleController extends BaseController
         $permModel = new PermissionModel();
         $roleModel = new RoleModel();
         $id_role = user()->id_role;
-        $menus = $menuModel->orderBy('parent_id ASC, id_menu ASC')->where('m_menu.is_active', 1)->findAll();
+        $menus = $menuModel->orderBy('parent_id ASC, prioritas ASC')->where('m_menu.is_active', 1)->findAll();
         $permissions = $permModel->getPermissionsByRole($role_id);
         $role = $roleModel->where('id', $role_id)->first();
         // Format: [menu_id => [can_view, can_edit, can_delete]]

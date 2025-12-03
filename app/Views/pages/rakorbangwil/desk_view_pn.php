@@ -344,16 +344,18 @@
                             <div class="card shadow-sm">
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                        <table id="datatables" class="table table-striped table-hover" width="100%">
+                                        <table id="datatables_usulan" class="table table-striped table-hover" width="100%">
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
+                                                    <th>K/L Pnegusul</th>
                                                     <th>Provinsi</th>
-                                                    <th>Unor</th>
                                                     <th>Pekerjaan</th>
-                                                    <th>Kawasan</th>
+                                                    <th>Unor</th>
                                                     <th>Justifikasi</th>
-                                                    <th>Catatan Kebutuhan Pemda</th>
+                                                    <th>Reviu BPIW</th>
+                                                    <th>Status Pekerjaan</th>
+                                                    <th>Kebutuhan Dukungan Pemda</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -362,12 +364,14 @@
                                                 foreach ($daftar_program_tahunan_usulan as $data) : ?>
                                                     <tr>
                                                         <td><?= $a++; ?></td>
+                                                        <td><?= $data->kl_pengusul ?></td>
                                                         <td><?= $data->provinsi ?></td>
-                                                        <td><?= $data->unor ?></td>
                                                         <td><?= $data->pekerjaan ?></td>
-                                                        <td><?= $data->kawasan_prioritas ?></td>
-                                                        <td><?= $data->justifikasi ?></td>
-                                                        <td><?= $data->catatan_konfrm_pemda ?></td>
+                                                        <td><?= $data->unor ?></td>
+                                                        <td><?= nl2br($data->justifikasi) ?></td>
+                                                        <td><?= nl2br($data->reviu_bpiw) ?></td>
+                                                        <td><?= $data->status_pekerjaan ?></td>
+                                                        <td><?= nl2br($data->kebutuhan_dukungan_pemda)  ?></td>
                                                     </tr>
                                                 <?php endforeach; ?>
                                             </tbody>

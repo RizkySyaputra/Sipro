@@ -147,6 +147,7 @@ $routes->post('/rakorbangwil/get_list_kawasan/', 'Rakorbangwil::get_list_kawasan
 $routes->post('/rakorbangwil/get_list_program/', 'Rakorbangwil::get_list_program');
 $routes->post('/rakorbangwil/update_usulan/', 'Rakorbangwil::update_usulan');
 $routes->post('/rakorbangwil/update_catatan/', 'Rakorbangwil::update_catatan');
+$routes->post('/rakorbangwil/get_rekap_kawasan/', 'Rakorbangwil::get_rekap_kawasan');
 
 $routes->get('/rakorbangwil/view_pn/(:segment)', 'Rakorbangwil::view_pn/$1');
 //Desk Rakorbangwil

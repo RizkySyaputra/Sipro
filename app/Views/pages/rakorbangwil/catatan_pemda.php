@@ -40,6 +40,15 @@
             <div class="container mt-4">
                 <!-- ===== SUMMARY MINI DASHBOARD ===== -->
                 <div class="row mt-3 mb-4">
+                    <!-- Jumlah Kawasan -->
+                    <div class="col-md-3">
+                        <div class="card shadow-sm" style="border-left: 6px solid #eaa400ff;">
+                            <div class="card-body">
+                                <h6 class="text-muted mb-1">Kawasan/Lokus Prioritas</h6>
+                                <h3 id="sum-kawasan" class="m-0 fw-bold">0 Kawasan/Lokus</h3>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- Total Pekerjaan -->
                     <div class="col-md-3">
@@ -69,19 +78,34 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Jumlah Kawasan -->
-                    <div class="col-md-3">
-                        <div class="card shadow-sm" style="border-left: 6px solid #eaa400ff;">
-                            <div class="card-body">
-                                <h6 class="text-muted mb-1">Jumlah Kawasan</h6>
-                                <h3 id="sum-kawasan" class="m-0 fw-bold">0 Pekerjaan</h3>
-                            </div>
-                        </div>
-                    </div>
+
 
 
                 </div>
                 <!-- ===== END SUMMARY ===== -->
+                <!-- ===================== REKAP KAWASAN ===================== -->
+                <div class="card shadow-sm mt-3">
+                    <div class="card-body">
+                        <h5><strong>Rekap Kawasan per Provinsi</strong></h5>
+
+                        <div class="table-responsive mt-3">
+                            <table id="rekap-kawasan" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 5%; text-align : center;">No</th>
+                                        <th style="width: 55%;text-align : center;">Kawasan / Lokus</th>
+                                        <th style="width: 40%;text-align : center;">Jumlah Pekerjaan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="3" class="text-center text-muted">Belum ada data</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="card shadow-md">
                     <!-- <div class="card-header">
@@ -199,12 +223,12 @@
                                 <thead>
                                     <tr>
                                         <th>No </th>
-                                        <th>Sumber </th>
                                         <th>Provinsi</th>
-                                        <th>Unor</th>
-                                        <th>Pekerjaan </th>
+                                        <th>Tematik Kawasan</th>
                                         <th>Kawasan</th>
-                                        <th>Tematik</th>
+                                        <th>Pekerjaan </th>
+                                        <th>Unor</th>
+                                        <th>Sumber </th>
                                         <th>Tahun</th>
                                         <th>Status Isi Catatan</th>
                                         <th>Aksi </th>
@@ -359,7 +383,47 @@
                     $('#sum-total-pekerjaan').text(response.summary.jumlah_total + "  Pekerjaan");
                     $('#sum-memerlukan-catatan').text(response.summary.memerlukan_catatan + "  Pekerjaan");
                     $('#sum-ada-catatan').text(response.summary.jumlah_ada_catatan + "  Pekerjaan");
-                    $('#sum-kawasan').text(response.summary.jumlah_kawasan + "  Pekerjaan");
+                    $('#sum-kawasan').text(response.summary.jumlah_kawasan + "  Kawasan/Lokus");
+
+                    // ===== LOAD REKAP KAWASAN =====
+                    $.ajax({
+                        url: "<?= base_url('/rakorbangwil/get_rekap_kawasan') ?>",
+                        type: "POST",
+                        data: filterData,
+                        success: function(rekap) {
+
+                            let htmlRekap = "";
+
+                            if (rekap.length === 0) {
+                                htmlRekap = `
+                <tr>
+                    <td colspan="2" class="text-center text-muted">Data tidak tersedia</td>
+                </tr>
+            `;
+                            } else {
+                                rekap.forEach((row, i) => {
+                                    htmlRekap += `
+                    <tr>
+                        <td>
+                            ${i + 1}
+                        </td>
+                        <td>
+                        ${row.kawasan}
+                        </td>
+                        <td class="text-center">
+                            <span class="text-primary fw-bold" style="font-size: 1.1rem;">
+                                ${row.jumlah}
+                            </span>
+                        </td>
+                    </tr>
+                `;
+                                });
+                            }
+
+                            $("#rekap-kawasan tbody").html(htmlRekap);
+                        }
+                    });
+
                 },
                 error: function() {
                     alert('Error loading data');

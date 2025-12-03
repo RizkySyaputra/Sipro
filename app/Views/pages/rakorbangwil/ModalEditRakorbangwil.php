@@ -1,4 +1,14 @@
 <style>
+    /* fancy kesepakatan */
+    .fancy-kesepakatan {
+        font-size: 18px !important;
+        padding: 14px 18px !important;
+        border-radius: 10px !important;
+        font-weight: bold;
+        border: 2px solid #0d6efd !important;
+        background: #f0f6ff !important;
+    }
+
     /* Hilangkan ruang kosong (search box) di Select2 multiple yang tertutup */
     .select2-container--default .select2-search--inline .select2-search__field {
         width: 0 !important;
@@ -226,27 +236,6 @@
                     <p><?= esc($progTahunan->catatan_konfrm_pemda ?? '-') ?></p>
                     <label class="catatan-text"><strong>Catatan Pemda</strong></label>
                     <p><?= esc($progTahunan->catatan_pemda ?? '-') ?></p>
-                    <div class="form-group">
-                        <label class="catatan-text"><strong>Catatan Desk Rakorbangwil</strong></label>
-                        <textarea class="form-control" name="catatan_desk_rakorbangwil"><?= esc($progTahunan->catatan_desk_rakorbangwil ?? '-') ?></textarea>
-                    </div>
-
-
-                    <div class="form-group">
-                        <label class="catatan-text"><strong>Kesepakatan</strong></label>
-                        <select class="form-control" name="kesepakatan" id="select-kesepakatan">
-
-                            <!-- Selected Current Value -->
-                            <?php foreach ($kesepakatan as $item): ?>
-                                <option value="<?= esc($item['id_kesepakatan']) ?>"
-                                    <?= ($progTahunan->desk_rakorbangwil ?? '') == $item['id_kesepakatan'] ? 'selected' : '' ?>>
-                                    <?= esc($item['kesepakatan']) ?>
-                                </option>
-                            <?php endforeach; ?>
-
-                        </select>
-                    </div>
-
                 </ul>
             </div>
 
@@ -279,6 +268,64 @@
             </li>
         </ul>
     </div>
+    <!-- ============================ -->
+    <!-- BAGIAN CATATAN DESK RAKORBANGWIL -->
+    <!-- ============================ -->
+
+    <hr class="mt-4">
+
+    <h6><i class="fas fa-comments me-2"></i><strong>Catatan Desk Rakorbangwil</strong></h6>
+
+    <div id="deskWrapper">
+        <?php
+        $deskData = json_decode($progTahunan->catatan_desk_rakorbangwil ?? '[]', true);
+        if (!$deskData) $deskData = [];
+        foreach ($deskData as $item):
+        ?>
+            <div class="catatan-item mb-2">
+                <select class="form-select nama-pencatat-desk" name="desk_nama[]">
+                    <option value="">-- Pilih Pencatat --</option>
+                    <?php foreach ($namaList as $nama): ?>
+                        <option value="<?= esc($nama) ?>" <?= ($item['nama'] ?? '') === $nama ? 'selected' : '' ?>>
+                            <?= esc($nama) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+
+                <textarea class="form-control mt-1" name="desk_text[]" rows="2"><?= esc($item['catatan'] ?? '') ?></textarea>
+
+                <button type="button" class="btn btn-sm btn-danger mt-1 remove-desk">Hapus</button>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+    <button type="button" class="btn btn-sm btn-success mt-2" id="tambahDesk">
+        <i class="fas fa-plus"></i> Tambah Catatan Desk
+    </button>
+
+
+
+    <!-- ============================ -->
+    <!-- BAGIAN KESEPAKATAN -->
+    <!-- ============================ -->
+
+    <hr class="mt-4">
+
+    <h6><i class="fas fa-handshake me-2"></i><strong>Kesepakatan</strong></h6>
+
+    <select class="form-control form-control-lg fancy-kesepakatan"
+        name="kesepakatan" id="select-kesepakatan">
+
+        <?php foreach ($kesepakatan as $item): ?>
+            <option value="<?= esc($item['id_kesepakatan']) ?>"
+                <?= ($progTahunan->desk_rakorbangwil ?? '') == $item['id_kesepakatan'] ? 'selected' : '' ?>>
+                <?= esc($item['kesepakatan']) ?>
+            </option>
+        <?php endforeach; ?>
+
+    </select>
+
+
 
 
     <div class="text-end mt-3">
@@ -287,215 +334,31 @@
         </button>
     </div>
 </form>
-
-<!-- <div class="modal fade" id="modalMap" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header bg-success text-white">
-                <h5 class="modal-title">Pilih Lokasi Geotag</h5>
-                <button type="button" class="btn-close text-white" data-bs-dismiss="modal">×</button>
-            </div>
-            <div class="modal-body" style="height: 450px;">
-                <div id="mapSelect" style="height: 100%; width: 100%; border-radius:8px;"></div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
-<script src="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script> -->
-<!-- Leaflet -->
-<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> -->
-
-<!-- Leaflet Draw -->
-<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
-<script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script> -->
 <script>
-    // document.addEventListener("DOMContentLoaded", initMap);
+    // Hilangkan select2 dari kesepakatan (WAJIB)
+    $('#select-tipe, #select-kegiatan, #select-kro, #select-ro').select2();
 
-    // $('#modalMap').on('hide.bs.modal', function() {
-    //     // Hapus fokus dari peta atau elemen lain di dalam modal
-    //     if (document.activeElement) {
-    //         document.activeElement.blur();
-    //     }
-    // });
-
-    // // === GEOTAGGING MAP (POINT / LINE / POLYGON) ===
-    // var map, drawnItems, drawControl;
-    // var savedGeo = document.getElementById('geotag').value;
-
-    // function initMap() {
-    //     map = L.map('mapSelect').setView([-2.5489, 118.0149], 5); // Indonesia center
-
-    //     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    //         maxZoom: 19
-    //     }).addTo(map);
-
-    //     // Layer tampung gambar
-    //     drawnItems = new L.FeatureGroup();
-    //     map.addLayer(drawnItems);
-
-    //     // Jika sudah ada geotag tersimpan → gambarkan ulang
-    //     if (savedGeo) {
-    //         try {
-    //             let geo = JSON.parse(savedGeo);
-    //             let layer = L.geoJSON(geo).addTo(drawnItems);
-    //             map.fitBounds(layer.getBounds());
-    //         } catch (e) {
-    //             console.log("GeoJSON tidak valid");
-    //         }
-    //     }
-
-    //     // Toolbar draw control
-    //     drawControl = new L.Control.Draw({
-    //         edit: {
-    //             featureGroup: drawnItems
-    //         },
-    //         draw: {
-    //             polygon: true,
-    //             polyline: true,
-    //             rectangle: true,
-    //             marker: true,
-    //             circle: false
-    //         }
-    //     });
-    //     map.addControl(drawControl);
-
-    //     // Event saat menggambar baru
-    //     map.on(L.Draw.Event.CREATED, function(e) {
-    //         drawnItems.clearLayers(); // hanya simpan 1 objek
-    //         drawnItems.addLayer(e.layer);
-    //         saveGeo();
-    //     });
-
-    //     // Event edit/delete
-    //     map.on(L.Draw.Event.EDITSTOP, saveGeo);
-    //     map.on(L.Draw.Event.DELETED, saveGeo);
-    // }
-
-    // function saveGeo() {
-    //     let geojson = drawnItems.toGeoJSON();
-    //     document.getElementById('geotag').value = JSON.stringify(geojson);
-    // }
-
-    // document.getElementById('btnOpenMap').addEventListener('click', () => {
-    //     $('#modalMap').modal('show');
-
-    //     setTimeout(() => {
-    //         if (!map) initMap();
-    //         else map.invalidateSize();
-    //     }, 300);
-    // });
-
-
-    $(document).ready(function() {
-        // Saat pilih PROGRAM → ambil KEGIATAN
-        $('#select-program').on('change', function() {
-            const id_program = $(this).val();
-            $('#select-kegiatan').html('<option value="">Loading...</option>');
-            $('#select-kro').html('<option value="">Pilih KRO</option>');
-            $('#select-ro').html('<option value="">Pilih RO</option>');
-
-            if (id_program) {
-                $.getJSON('<?= base_url("memorandum/getKegiatanByProgram") ?>/' + id_program, function(data) {
-                    let options = '<option value="">Pilih Kegiatan</option>';
-                    $.each(data, function(i, item) {
-                        options += `<option value="${item.id_kegiatan}">${item.id_kegiatan} - ${item.nm_kegiatan}</option>`;
-                    });
-                    $('#select-kegiatan').html(options);
-                });
-            } else {
-                $('#select-kegiatan').html('<option value="">Pilih Kegiatan</option>');
-            }
-        });
-
-        // Saat pilih KEGIATAN → ambil KRO
-        $('#select-kegiatan').on('change', function() {
-            const id_kegiatan = $(this).val();
-            $('#select-kro').html('<option value="">Loading...</option>');
-            $('#select-ro').html('<option value="">Pilih RO</option>');
-
-            if (id_kegiatan) {
-                $.getJSON('<?= base_url("memorandum/getKroByKegiatan") ?>/' + id_kegiatan, function(data) {
-                    let options = '<option value="">Pilih KRO</option>';
-                    $.each(data, function(i, item) {
-                        options += `<option value="${item.id_kro}">${item.id_kro} - ${item.nm_kro}</option>`;
-                    });
-                    $('#select-kro').html(options);
-                });
-            } else {
-                $('#select-kro').html('<option value="">Pilih KRO</option>');
-            }
-        });
-
-        // Saat pilih KRO → ambil RO
-        $('#select-kro').on('change', function() {
-            const id_kro = $(this).val();
-            $('#select-ro').html('<option value="">Loading...</option>');
-
-            if (id_kro) {
-                $.getJSON('<?= base_url("memorandum/getRoByKro") ?>/' + id_kro, function(data) {
-                    let options = '<option value="">Pilih RO</option>';
-                    $.each(data, function(i, item) {
-                        options += `<option value="${item.id_ro}">${item.id_ro} - ${item.nm_ro}</option>`;
-                    });
-                    $('#select-ro').html(options);
-                });
-            } else {
-                $('#select-ro').html('<option value="">Pilih RO</option>');
-            }
-        });
-    });
-
-    $('#select-ro').on('change', function() {
-        const id_ro = $(this).val();
-
-        // Kosongkan dulu field satuan
-        $('input[name="nama_satuan"]').val('');
-        $('input[name="id_satuan"]').val('');
-
-        if (id_ro) {
-            $.getJSON('<?= base_url("memorandum/getSatuanByRo") ?>/' + id_ro)
-                .done(function(data) {
-                    if (data) {
-                        $('input[name="nama_satuan"]').val(data.nama_satuan);
-                        $('input[name="id_satuan"]').val(data.id_satuan);
-                    } else {
-                        $('input[name="nama_satuan"]').val('Tidak ditemukan');
-                    }
-                })
-                .fail(function() {
-                    $('input[name="nama_satuan"]').val('Gagal memuat data');
-                });
-        }
-    });
-</script>
-
-<script>
-    $('#select-tipe, #select-kesepakatan, #select-kegiatan, #select-kro, #select-ro, #select-pendanaan1,#select-pendanaan2,#select-pendanaan3,#select-pendanaan4,#select-pendanaan5').select2();
+    // ============================
+    // DINAMIS: CATATAN DESK RAKORBANGWIL
+    // ============================
     (function() {
-        // Cek apakah namaList sudah ada, jika belum buat
-        if (typeof window.namaList === 'undefined') {
+
+        if (typeof window.namaList === "undefined") {
             window.namaList = <?= json_encode($namaList) ?>;
         }
 
-        const wrapper = document.getElementById('catatanWrapper');
-        const tambahBtn = document.getElementById('tambahCatatan');
+        const deskWrapper = document.getElementById('deskWrapper');
+        const tambahDesk = document.getElementById('tambahDesk');
 
-        // Fungsi untuk buat satu item catatan
-        function createCatatanItem(nama = '', catatan = '') {
-            const div = document.createElement('div');
-            div.classList.add('catatan-item', 'mb-2');
+        function createDeskItem(nama = "", catatan = "") {
 
-            const select = document.createElement('select');
-            select.classList.add('form-select', 'nama-pencatat');
-            select.name = "catatan_nama[]";
+            const div = document.createElement("div");
+            div.classList.add("catatan-item", "mb-2");
+
+            // select nama
+            const select = document.createElement("select");
+            select.classList.add("form-select", "nama-pencatat-desk");
+            select.name = "desk_nama[]";
 
             let options = '<option value="">-- Pilih Nama --</option>';
             window.namaList.forEach(n => {
@@ -503,112 +366,52 @@
             });
             select.innerHTML = options;
 
-            const textarea = document.createElement('textarea');
-            textarea.classList.add('form-control', 'mt-1');
-            textarea.name = "catatan_text[]";
+            // textarea catatan
+            const textarea = document.createElement("textarea");
+            textarea.classList.add("form-control", "mt-1");
+            textarea.name = "desk_text[]";
             textarea.rows = 2;
             textarea.value = catatan;
 
-            const removeBtn = document.createElement('button');
-            removeBtn.type = 'button';
-            removeBtn.classList.add('btn', 'btn-sm', 'btn-danger', 'mt-1', 'remove-catatan');
-            removeBtn.innerText = 'Hapus';
-
-            // removeBtn.addEventListener('click', () => {
-            //     $(select).select2('destroy'); // destroy sebelum hapus
-            //     div.remove();
-            // });
+            // tombol hapus
+            const removeBtn = document.createElement("button");
+            removeBtn.type = "button";
+            removeBtn.classList.add("btn", "btn-sm", "btn-danger", "mt-1", "remove-desk");
+            removeBtn.innerText = "Hapus";
 
             div.appendChild(select);
             div.appendChild(textarea);
             div.appendChild(removeBtn);
 
-            wrapper.appendChild(div);
+            deskWrapper.appendChild(div);
 
-            // Inisialisasi Select2
+            // aktifkan select2
             $(select).select2({
                 placeholder: "-- Pilih Nama --",
-                width: '100%',
+                width: "100%",
                 allowClear: true
             });
         }
 
-        // Tambah catatan baru
-        tambahBtn.addEventListener('click', () => {
-            createCatatanItem();
-        });
-        // 🔹 Event delegation — tombol hapus catatan lama & baru
-        $(document).on('click', '.remove-catatan', function() {
-            const parentDiv = $(this).closest('.catatan-item');
-            const select = parentDiv.find('select');
-            if (select.data('select2')) {
-                select.select2('destroy');
-            }
-            parentDiv.remove();
+        // Tombol tambah desk
+        tambahDesk.addEventListener("click", function() {
+            createDeskItem();
         });
 
-        // Inisialisasi select2 untuk semua select lama
-        $('.nama-pencatat').select2({
+        // Tombol hapus desk
+        $(document).on("click", ".remove-desk", function() {
+            const parent = $(this).closest(".catatan-item");
+            const sel = parent.find("select");
+            if (sel.data("select2")) sel.select2("destroy");
+            parent.remove();
+        });
+
+        // select2 untuk catatan desk lama
+        $('.nama-pencatat-desk').select2({
             placeholder: "-- Pilih Nama --",
             width: '100%',
             allowClear: true
         });
 
     })();
-
-    $(document).ready(function() {
-        $('#select-kabkot').select2({
-            placeholder: "-- Pilih Kabupaten / Kota --",
-            width: '100%',
-            allowClear: true
-        });
-    });
-    $(document).ready(function() {
-        $('#select-kawasan').select2({
-            placeholder: "-- Pilih Kawasan --",
-            width: '100%',
-            allowClear: true
-        });
-    });
-    $(document).ready(function() {
-
-        // 🔹 Format semua nilai awal saat halaman dimuat
-        $('.anggaran-format').each(function() {
-            let val = $(this).val().toString().replace(/\D/g, '');
-            if (val) {
-                $(this).val(new Intl.NumberFormat('id-ID').format(val));
-            }
-        });
-
-        // 🔹 Format saat user mengetik
-        $(document).on('input', '.anggaran-format', function() {
-            let input = this;
-
-            // Ambil angka saja
-            let clean = input.value.replace(/[^\d]/g, "");
-
-            // Format ribuan
-            if (clean) {
-                input.value = new Intl.NumberFormat('id-ID').format(clean);
-            } else {
-                input.value = "";
-            }
-
-            // Cursor selalu di akhir
-            input.setSelectionRange(input.value.length, input.value.length);
-        });
-
-
-
-
-
-        // 🔹 Sebelum submit form, ubah jadi angka mentah tanpa titik
-        $('#editMemoForm').on('submit', function() {
-            $('.anggaran-format').each(function() {
-                let raw = $(this).val().replace(/\./g, '');
-                $(this).val(raw);
-            });
-        });
-
-    });
 </script>

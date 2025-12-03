@@ -3,12 +3,12 @@ $a = 1;
 foreach ($daftar_program_tahunan as $data) : ?>
     <tr>
         <td><?= $a++; ?></td>
-        <td><?= $data->sumber ?></td>
         <td><?= $data->provinsi ?></td>
-        <td><?= $data->unor ?></td>
-        <td><?= $data->pekerjaan ?></td>
-        <td><?= $data->kawasan ?></td>
         <td><?= $data->tematik ?></td>
+        <td><?= $data->kawasan ?></td>
+        <td><?= $data->pekerjaan ?></td>
+        <td><?= $data->unor ?></td>
+        <td><?= $data->sumber ?></td>
         <td><?= $data->thn_pelaksanaan ?></td>
         <td style="text-align: center;"><?php
                                         if (($data->catatan_pemda == null) or ($data->catatan_pemda == '-')) {

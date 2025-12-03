@@ -97,4 +97,50 @@ class DaftarProgTahunanModel extends Model
         $query = $builder->get();
         return $query->getResult();
     }
+    public function countPekerjaanByKawasan($kawasan, $provinsi = null, $pn = null, $sumber = null, $unor = null, $catatan_kl = null, $pembiayaan = null)
+    {
+        $builder = $this->builder('view_prog_tahunan');
+
+        $builder->select('COUNT(*) as total')
+            ->where('kawasan', $kawasan);
+
+        // ===== FILTER PROVINSI =====
+        if (!empty($provinsi) && $provinsi !== "ALL") {
+            $builder->where('id_provinsi', $provinsi);
+        }
+
+        // ===== FILTER PN =====
+        if (!empty($pn) && $pn !== "ALLPN") {
+            $builder->where('pn', $pn);
+        }
+
+        // ===== FILTER SUMBER =====
+        if (!empty($sumber)) {
+            $builder->where('sumber_pendanaan', $sumber);
+        }
+
+        // ===== FILTER UNOR =====
+        if (!empty($unor)) {
+            $builder->where('id_unor', $unor);
+        }
+
+        if ($pembiayaan) {
+            $builder->where('id_pendanaan', $pembiayaan);
+        }
+        if ($catatan_kl) {
+            $builder->groupStart() // buka grup OR
+                ->groupStart()
+                ->where('kebutuhan_dukungan_kl IS NOT NULL', null, false)
+                ->where('kebutuhan_dukungan_kl !=', '-')
+                ->groupEnd()
+                ->orGroupStart()
+                ->where('catatan_konfrm_pemda IS NOT NULL', null, false)
+                ->where('catatan_konfrm_pemda !=', '-')
+                ->groupEnd()
+                ->groupEnd(); // tutup grup OR
+            $builder->orderBy('catatan_pemda', 'ASC');
+        }
+        $result = $builder->get()->getRow();
+        return $result ? $result->total : 0;
+    }
 }

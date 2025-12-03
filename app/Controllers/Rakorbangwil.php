@@ -979,7 +979,7 @@ class Rakorbangwil extends BaseController
         $program = $this->praRakorModel->where('id_pn', $id)->findAll();
         $kebutuhan_dukungan_kl = $this->kebutuhan_kl_Model->getKebutuhanKl($id);
         $catatan_pn = $this->praRakorModel->getCatatan($id);
-        $daftar_program_tahunan_usulan = $this->programTahunanUsulanModel->where('id_pn', $id)->findAll();
+        $daftar_program_tahunan_usulan = $this->programTahunanUsulanModel->where('pn', $id)->findAll();
         $this->template->write('title', 'Detail Prioritas Nasional');
         $this->template->load('/templates/main', '/pages/rakorbangwil/desk_view_pn', [
             'provinsi' => $dataProvinsi,
@@ -1053,34 +1053,52 @@ class Rakorbangwil extends BaseController
     }
     public function update_desk($id)
     {
-
         $progTahunanModel = new progTahunanModel();
 
-        // Ambil input lain
-        $catatan_desk_rakorbangwil = $this->request->getPost('catatan_desk_rakorbangwil');
+        // Ambil input utama
         $tipe_pekerjaan = $this->request->getPost('tipe_pekerjaan');
-        $kesepakatan = $this->request->getPost('kesepakatan');
+        $kesepakatan    = $this->request->getPost('kesepakatan');
+
+        // Ambil array catatan desk
+        $namaArr = $this->request->getPost('desk_nama');   // ← ini BENAR
+        $textArr = $this->request->getPost('desk_text');   // ← ini BENAR
+
+        // Susun catatan desk
+        $deskCatatan = [];
+
+        if ($namaArr && $textArr) {
+            foreach ($namaArr as $i => $nama) {
+                if (!empty($nama) && isset($textArr[$i]) && trim($textArr[$i]) !== '') {
+
+                    $deskCatatan[] = [
+                        'nama'    => $nama,
+                        'catatan' => $textArr[$i]
+                    ];
+                }
+            }
+        }
 
         // Data yang akan diupdate
         $dataToUpdate = [
-            'catatan_desk_rakorbangwil' => $catatan_desk_rakorbangwil,
-            'tipe_pekerjaan' => $tipe_pekerjaan,
-            'desk_rakorbangwil' => $kesepakatan
+            'catatan_desk_rakorbangwil' => json_encode($deskCatatan, JSON_UNESCAPED_UNICODE),
+            'tipe_pekerjaan'            => $tipe_pekerjaan,
+            'desk_rakorbangwil'         => $kesepakatan
         ];
 
-
+        // Update database
         if ($progTahunanModel->update($id, $dataToUpdate)) {
             return $this->response->setJSON([
-                'status' => true,
+                'status'  => true,
                 'message' => 'Data berhasil disimpan.'
             ]);
         } else {
             return $this->response->setJSON([
-                'status' => false,
+                'status'  => false,
                 'message' => 'Terjadi kesalahan saat menyimpan.'
             ]);
         }
     }
+
     public function berita_acara()
     {
         $dataProvinsi = $this->provinsiModel->getProvinsi();
@@ -1222,5 +1240,51 @@ class Rakorbangwil extends BaseController
         $this->pejabatBakModel->delete($id);
 
         return $this->response->setJSON(['status' => true]);
+    }
+    public function get_rekap_kawasan()
+    {
+        $provinsi = $this->request->getPost('provinsi');
+        $pn = $this->request->getPost('pn');
+        $sumber = $this->request->getPost('sumber');
+        $unor = $this->request->getPost('unor');
+        if ($this->request->getPost('pn')) {
+            $pn = $this->request->getPost('pn');
+        } else {
+            $pn = "ALLPN";
+        }
+        // Ambil data Pekerjaan SAMA PERSIS seperti dashboard
+        $dataPekerjaan = $this->daftarProgTahunanModel->getDaftarProgramTahunan(
+            $provinsi,
+            $unor,
+            $sumber,
+            $pn,
+            'x',
+            1
+        );
+
+        // GROUP BY kawasan
+        $rekap = [];
+
+        foreach ($dataPekerjaan as $p) {
+
+            if (empty($p->kawasan)) continue;
+
+            if (!isset($rekap[$p->kawasan])) {
+                $rekap[$p->kawasan] = 0;
+            }
+
+            $rekap[$p->kawasan]++;
+        }
+
+        // Ubah ke array JSON
+        $result = [];
+        foreach ($rekap as $kawasan => $jumlah) {
+            $result[] = [
+                'kawasan' => $kawasan,
+                'jumlah' => $jumlah
+            ];
+        }
+
+        return $this->response->setJSON($result);
     }
 }
