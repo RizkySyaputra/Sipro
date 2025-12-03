@@ -89,7 +89,7 @@
                         <h5><strong>Rekap Kawasan</strong></h5>
 
                         <div class="table-responsive mt-3">
-                            <table id="rekap-kawasan" class="table table-bordered table-striped">
+                            <table id="rekap-kawasan" class="table table-bordered table-striped border">
                                 <thead>
                                     <tr>
                                         <th style="width: 5%; text-align :center">No</th>
