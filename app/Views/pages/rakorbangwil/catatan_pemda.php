@@ -86,7 +86,7 @@
                 <!-- ===================== REKAP KAWASAN ===================== -->
                 <div class="card shadow-sm mt-3">
                     <div class="card-body">
-                        <h5><strong>Rekap Kawasan per Provinsi</strong></h5>
+                        <h5><strong>Rekap Kawasan</strong></h5>
 
                         <div class="table-responsive mt-3">
                             <table id="rekap-kawasan" class="table table-bordered table-striped">

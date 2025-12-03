@@ -1243,7 +1243,11 @@ class Rakorbangwil extends BaseController
     }
     public function get_rekap_kawasan()
     {
-        $provinsi = $this->request->getPost('provinsi');
+        if (user()->id_provinsi) {
+            $provinsi = user()->id_provinsi;
+        } else {
+            $provinsi = $this->request->getPost('provinsi');
+        }
         $pn = $this->request->getPost('pn');
         $sumber = $this->request->getPost('sumber');
         $unor = $this->request->getPost('unor');
