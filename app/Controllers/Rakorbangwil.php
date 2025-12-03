@@ -1252,7 +1252,7 @@ class Rakorbangwil extends BaseController
         } else {
             $pn = "ALLPN";
         }
-        // Ambil data Pekerjaan SAMA PERSIS seperti dashboard
+        // Data pekerjaan (SAMA dengan dashboard)
         $dataPekerjaan = $this->daftarProgTahunanModel->getDaftarProgramTahunan(
             $provinsi,
             $unor,
@@ -1262,29 +1262,40 @@ class Rakorbangwil extends BaseController
             1
         );
 
-        // GROUP BY kawasan
         $rekap = [];
 
         foreach ($dataPekerjaan as $p) {
 
-            if (empty($p->kawasan)) continue;
+            if (empty($p->kawasan_panjang)) continue;
 
-            if (!isset($rekap[$p->kawasan])) {
-                $rekap[$p->kawasan] = 0;
+            $key = $p->kawasan_panjang;
+
+            if (!isset($rekap[$key])) {
+                $rekap[$key] = [
+                    'kawasan' => $p->kawasan_panjang,
+                    'tematik' => $p->tematik,
+                    'jumlah'  => 0
+                ];
             }
 
-            $rekap[$p->kawasan]++;
+            $rekap[$key]['jumlah']++;
         }
 
-        // Ubah ke array JSON
-        $result = [];
-        foreach ($rekap as $kawasan => $jumlah) {
-            $result[] = [
-                'kawasan' => $kawasan,
-                'jumlah' => $jumlah
-            ];
+        // TARUH NON KAWASAN DI BAWAH
+        $nonKawasan = null;
+        if (isset($rekap['Non Kawasan'])) {
+            $nonKawasan = $rekap['Non Kawasan'];
+            unset($rekap['Non Kawasan']);
         }
 
-        return $this->response->setJSON($result);
+        // Sort A-Z
+        usort($rekap, fn($a, $b) => strcmp($a['kawasan'], $b['kawasan']));
+
+        // Append Non Kawasan terakhir
+        if ($nonKawasan) {
+            $rekap[] = $nonKawasan;
+        }
+
+        return $this->response->setJSON(array_values($rekap));
     }
 }

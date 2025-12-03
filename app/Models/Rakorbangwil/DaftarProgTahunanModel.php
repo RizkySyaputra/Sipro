@@ -15,7 +15,6 @@ class DaftarProgTahunanModel extends Model
     {
         $tahun_pelaksanaan = session('tahun_pelaksana');
         $builder = $this->db->table('view_prog_tahunan as a');
-
         // SELECT clause
         $builder->select("a.*");
         // WHERE clause

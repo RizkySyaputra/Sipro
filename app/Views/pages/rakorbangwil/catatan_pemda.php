@@ -92,14 +92,16 @@
                             <table id="rekap-kawasan" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th style="width: 5%; text-align : center;">No</th>
-                                        <th style="width: 55%;text-align : center;">Kawasan / Lokus</th>
-                                        <th style="width: 40%;text-align : center;">Jumlah Pekerjaan</th>
+                                        <th style="width: 5%; text-align :center">No</th>
+                                        <th style="width: 35%; text-align :center">Tematik</th>
+                                        <th style="width: 40%; text-align :center">Kawasan / Lokus</th>
+                                        <th style="width: 10%; text-align :center">Jumlah Pekerjaan</th>
                                     </tr>
                                 </thead>
+
                                 <tbody>
                                     <tr>
-                                        <td colspan="3" class="text-center text-muted">Belum ada data</td>
+                                        <td colspan="4" class="text-center text-muted">Belum ada data</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -403,21 +405,19 @@
                             } else {
                                 rekap.forEach((row, i) => {
                                     htmlRekap += `
-                    <tr>
-                        <td>
-                            ${i + 1}
-                        </td>
-                        <td>
-                        ${row.kawasan}
-                        </td>
-                        <td class="text-center">
-                            <span class="text-primary fw-bold" style="font-size: 1.1rem;">
-                                ${row.jumlah}
-                            </span>
-                        </td>
-                    </tr>
-                `;
+        <tr>
+            <td>${i + 1}</td>
+            <td>${row.tematik ?? '-'}</td>
+            <td>${row.kawasan}</td>
+            <td class="text-center">
+                <span class="text-primary fw-bold" style="font-size: 1.1rem;">
+                    ${row.jumlah}
+                </span>
+            </td>
+        </tr>
+    `;
                                 });
+
                             }
 
                             $("#rekap-kawasan tbody").html(htmlRekap);
