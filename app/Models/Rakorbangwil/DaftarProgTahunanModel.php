@@ -29,7 +29,11 @@ class DaftarProgTahunanModel extends Model
         }
 
         if ($pembiayaan) {
-            $builder->where('a.id_pendanaan', $pembiayaan);
+            if ($pembiayaan == 'x') {
+                $builder->whereIn('a.id_pendanaan', [1, 3, 5, 6, 7]);
+            } else {
+                $builder->where('a.id_pendanaan', $pembiayaan);
+            }
         }
         if ($pn) {
             if ($pn == "ALLPN") {
@@ -77,12 +81,11 @@ class DaftarProgTahunanModel extends Model
         if ($kesepakatan) {
             $builder->where('a.desk_rakorbangwil', $kesepakatan);
         }
-        $builder->where('a.thn_pelaksanaan', $tahun_pelaksanaan);
-        if ($catatan_kl) {
+        if ($catatan_kl == 'x') {
             $builder->groupStart() // buka grup OR
                 ->groupStart()
-                ->where('a.kebutuhan_dukungan_kl IS NOT NULL', null, false)
-                ->where('a.kebutuhan_dukungan_kl !=', '-')
+                ->where('a.catatan_pra_rakorbangwil IS NOT NULL', null, false)
+                ->where('a.catatan_pra_rakorbangwil !=', '-')
                 ->groupEnd()
                 ->orGroupStart()
                 ->where('a.catatan_konfrm_pemda IS NOT NULL', null, false)
@@ -91,6 +94,7 @@ class DaftarProgTahunanModel extends Model
                 ->groupEnd(); // tutup grup OR
             $builder->orderBy('a.catatan_pemda', 'ASC');
         }
+        $builder->where('a.thn_pelaksanaan', $tahun_pelaksanaan);
         $builder->orderBy('a.id_prog_tahunan', 'ASC');
         // Eksekusi
         $query = $builder->get();

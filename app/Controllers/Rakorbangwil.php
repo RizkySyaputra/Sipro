@@ -202,7 +202,7 @@ class Rakorbangwil extends BaseController
             $sumber,
             $pn,
             'x',     // catatan_kl
-            1        // pembiayaan
+            'x'
         );
 
         // ===========================
@@ -1262,8 +1262,9 @@ class Rakorbangwil extends BaseController
             $unor,
             $sumber,
             $pn,
+            null,
             'x',
-            1
+            'x'
         );
 
         $rekap = [];

@@ -125,7 +125,7 @@
                                     <select class="form-control" name="sumber" id="filter-sumber">
                                         <option value="">Semua Sumber</option>
                                         <option value="RPIW">RPIW</option>
-                                        <option value="Non RPIW">Non RPIW</option>
+                                        <option value="NON RPIW">Non RPIW</option>
                                     </select>
                                 </div>
                             </div>
