@@ -130,12 +130,15 @@ $routes->post('rakorbangwil/exportToExcel', 'Rakorbangwil::export_to_excel');
 $routes->get('/rakorbangwil/catatan_pemda', 'Rakorbangwil::catatan_pemda', ['filter' => 'permission']);
 
 $routes->post('/rakorbangwil/get_daftar_program_tahunan', 'Rakorbangwil::get_daftar_program_tahunan');
+$routes->post('/rakorbangwil/get_desk_daftar_program_tahunan', 'Rakorbangwil::get_desk_daftar_program_tahunan');
 $routes->post('/rakorbangwil/get_daftar_program_tahunan_catatan_pemda', 'Rakorbangwil::get_daftar_program_tahunan_catatan_pemda');
 $routes->get('rakorbangwil/view/(:segment)', 'Rakorbangwil::view/$1');
 $routes->get('rakorbangwil/edit/(:segment)', 'Rakorbangwil::edit/$1');
 $routes->post('rakorbangwil/update/(:segment)', 'Rakorbangwil::update/$1');
 $routes->get('rakorbangwil/edit_pemda/(:segment)', 'Rakorbangwil::edit_pemda/$1');
+$routes->get('rakorbangwil/edit_desk/(:segment)', 'Rakorbangwil::edit_desk/$1');
 $routes->post('rakorbangwil/update_pemda/(:segment)', 'Rakorbangwil::update_pemda/$1');
+$routes->post('rakorbangwil/update_desk/(:segment)', 'Rakorbangwil::update_desk/$1');
 $routes->delete('/rakorbangwil/delete/(:segment)', 'Rakorbangwil::delete/$1');
 //pra_rakorbangwil
 $routes->get('/rakorbangwil/desk_pra_rakorbangwil', 'Rakorbangwil::daftar_pn');
@@ -144,9 +147,14 @@ $routes->post('/rakorbangwil/get_list_kawasan/', 'Rakorbangwil::get_list_kawasan
 $routes->post('/rakorbangwil/get_list_program/', 'Rakorbangwil::get_list_program');
 $routes->post('/rakorbangwil/update_usulan/', 'Rakorbangwil::update_usulan');
 $routes->post('/rakorbangwil/update_catatan/', 'Rakorbangwil::update_catatan');
+$routes->post('/rakorbangwil/get_rekap_kawasan/', 'Rakorbangwil::get_rekap_kawasan');
 
 $routes->get('/rakorbangwil/view_pn/(:segment)', 'Rakorbangwil::view_pn/$1');
-$routes->get('/rakorbangwil/view_pn/(:segment)', 'Rakorbangwil::view_pn/$1');
+//Desk Rakorbangwil
+$routes->get('/rakorbangwil/desk_rakorbangwil', 'Rakorbangwil::desk_daftar_pn');
+$routes->get('/rakorbangwil/desk_view_pn/(:segment)', 'Rakorbangwil::desk_view_pn/$1');
+$routes->post('/rakorbangwil/desk_get_list_program', 'Rakorbangwil::desk_get_list_program');
+
 
 // adding sendi 20251107
 $routes->get('/rakorbangwil/laporan1', 'Rakorbangwil::laporan1', ['filter' => 'permission']);
@@ -271,6 +279,13 @@ $routes->get('rakorbangwil/detail_program/(:segment)', 'KonregController::progra
 $routes->get('rakorbangwil/edit_program/(:segment)', 'KonregController::programDeskEdit/$1', ['filter' => 'permission']);
 $routes->post('/prosesRakorbangwil', 'KonregController::inputRakorbangwil', ['filter' => 'permission']);
 $routes->get('/sitebaru', 'KonregController::fungsibaru', ['filter' => 'permission']);
+$routes->get('/rakorbangwil/berita_acara', 'Rakorbangwil::berita_acara');
+$routes->post('/rakorbangwil/get_data_berita_acara', 'Rakorbangwil::get_data_berita_acara');
+$routes->post('/rakorbangwil/create_berita_acara', 'Rakorbangwil::create_bak');
+$routes->post('/rakorbangwil/get_pejabat_bak', 'Rakorbangwil::get_pejabat_bak');
+$routes->post('/rakorbangwil/addPejabatBAK', 'Rakorbangwil::addPejabatBAK');
+$routes->post('/rakorbangwil/delete_pejabat_bak', 'Rakorbangwil::delete_pejabat_bak');
+
 
 //Program Konreg
 $routes->get('/program-konreg/fkw', 'KonregController::program_fkw', ['filter' => 'permission']);

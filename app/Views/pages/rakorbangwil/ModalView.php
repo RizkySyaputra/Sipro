@@ -67,6 +67,13 @@
 
                         <label class="catatan-text"><strong>Kawasan</strong></label>
                         <p><?= esc($prog_tahunan->kawasan ?? '-') ?></p>
+
+                        <?php if (!empty($petaKawasan)): ?>
+                            <div id="mapKawasanDetail"
+                                style="height: 350px; width: 100%; border-radius:8px; margin-bottom: 15px; border:1px solid #ddd;">
+                            </div>
+                        <?php endif; ?>
+
                         <label class="catatan-text"><strong>Tematik</strong></label>
                         <p><?= esc($prog_tahunan->tematik ?? '-') ?></p>
                         <label class="catatan-text"><strong>Kab/kot</strong></label>
@@ -108,49 +115,63 @@
 
                         <label class="catatan-text"><strong>Geotagging</strong></label>
                         <p><?= esc($prog_tahunan->geotag ?? '-') ?></p>
-
+                        <label class="catatan-text"><strong>Tipe Pekerjaan</strong></label>
+                        <p><?= esc($prog_tahunan->tipe_pekerjaan ?? '-') ?></p>
                         <label class="catatan-text"><strong>Sumber Data</strong></label>
                         <p><?= esc($prog_tahunan->sumber ?? '-') ?></p>
 
-                        <label class="catatan-text"><strong>KL terkait</strong></label>
+                        <label class="catatan-text"><strong>K/L terkait</strong></label>
                         <p><?= esc($prog_tahunan->kl ?? '-') ?></p>
 
-                        <label class="catatan-text"><strong>Kebutuhan Dukungan KL</strong></label>
+                        <label class="catatan-text"><strong>Kebutuhan Dukungan K/L</strong></label>
                         <p><?= esc($prog_tahunan->kebutuhan_dukungan_kl ?? '-') ?></p>
 
-                        <label class="catatan-text"><strong>Catatan Pra Rakorbangwil:</strong></label>
+                        <label class="catatan-text"><strong>Catatan Pra Rakorbangwil</strong></label>
                         <p><?= esc($prog_tahunan->catatan_pra_rakorbangwil ?? '-') ?></p>
-                        <label class="catatan-text"><strong>Kebutuhan Dukungan Pemda:</strong></label>
+                        <label class="catatan-text"><strong>Kebutuhan Dukungan Pemda</strong></label>
                         <p><?= esc($prog_tahunan->catatan_konfrm_pemda ?? '-') ?></p>
-                        <label class="catatan-text"><strong>Catatan Pemda:</strong></label>
+                        <label class="catatan-text"><strong>Catatan Pemda</strong></label>
                         <p><?= esc($prog_tahunan->catatan_pemda ?? '-') ?></p>
+                        <label class="catatan-text"><strong>Catatan Desk Rakorbangwil</strong></label>
+                        <p><?= esc($prog_tahunan->catatan_desk_rakorbangwil ?? '-') ?></p>
+                        <label class="catatan-text"><strong>Kesepakatan Rakorbangwil</strong></label>
+                        <?php
+                        $statusMap = [
+                            "1" => "Diakomodir",
+                            "2" => "Ditangguhkan",
+                            "0" => "Belum dibahas"
+                        ];
 
+                        $val = $prog_tahunan->desk_rakorbangwil ?? '';
+
+                        echo "<p>" . ($statusMap[$val] ?? "-") . "</p>";
+                        ?>
                     </ul>
                 </div>
                 <div class="col-md-12">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <label class="catatan-text"><strong>Catatan Memorandum:</strong></label>
-                            <?php if (!empty($prog_tahunan->catatan_memorandum)): ?>
-                                <?php
-                                $catatanList = json_decode($prog_tahunan->catatan_memorandum, true);
-                                ?>
-                                <?php if (!empty($catatanList)): ?>
-                                    <div class="mt-2">
-                                        <?php foreach ($catatanList as $item): ?>
-                                            <div class="catatan-item">
-                                                <div class="catatan-nama"><?= esc($item['nama']) ?>:</div>
-                                                <p class="catatan-text"><?= esc($item['catatan']) ?></p>
-                                            </div>
-                                        <?php endforeach; ?>
-                                    </div>
-                                <?php else: ?>
-                                    <div class="text-muted mt-1">-</div>
-                                <?php endif; ?>
+                        <!-- <li class="list-group-item"> -->
+                        <label class="catatan-text"><strong>Catatan Memorandum</strong></label>
+                        <?php if (!empty($prog_tahunan->catatan_memorandum)): ?>
+                            <?php
+                            $catatanList = json_decode($prog_tahunan->catatan_memorandum, true);
+                            ?>
+                            <?php if (!empty($catatanList)): ?>
+                                <div class="mt-2">
+                                    <?php foreach ($catatanList as $item): ?>
+                                        <div class="catatan-item">
+                                            <div class="catatan-nama"><?= esc($item['nama']) ?>:</div>
+                                            <p class="catatan-text"><?= esc($item['catatan']) ?></p>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
                             <?php else: ?>
                                 <div class="text-muted mt-1">-</div>
                             <?php endif; ?>
-                        </li>
+                        <?php else: ?>
+                            <div class="text-muted mt-1">-</div>
+                        <?php endif; ?>
+                        <!-- </li> -->
                     </ul>
                 </div>
             </div>
@@ -159,3 +180,49 @@
 
 
 </div>
+<script>
+    (function() {
+        // kalau tidak ada peta kawasan, jangan inisialisasi map
+        const hasMap = <?= !empty($petaKawasan) ? 'true' : 'false' ?>;
+        if (!hasMap) return;
+
+        // pastikan Leaflet sudah ada (dipakai juga di edit)
+        var mapKawasan = L.map('mapKawasanDetail').setView([-2.5, 118], 5);
+
+        // basemap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18
+        }).addTo(mapKawasan);
+
+        // daftar file geojson kawasan dari PHP
+        const kawasanFiles = <?= json_encode(
+                                    array_map(fn($file) => base_url('geojson/' . $file), $petaKawasan)
+                                ); ?>;
+
+        const bounds = L.latLngBounds([]);
+
+        kawasanFiles.forEach(url => {
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    const layer = L.geoJSON(data, {
+                        style: {
+                            color: "#2ecc71",
+                            weight: 2,
+                            fillColor: "#2ecc71",
+                            fillOpacity: 0.25
+                        }
+                    }).addTo(mapKawasan);
+
+                    bounds.extend(layer.getBounds());
+                    mapKawasan.fitBounds(bounds);
+                })
+                .catch(err => console.error("Gagal load geojson kawasan:", err));
+        });
+
+        // untuk jaga-jaga kalau container awalnya sempit
+        setTimeout(() => {
+            mapKawasan.invalidateSize();
+        }, 300);
+    })();
+</script>

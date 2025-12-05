@@ -27,15 +27,22 @@ class PraRakorModel extends Model
         $query = $builder->get();
         return $query->getFirstRow();
     }
-    public function getKawasanList($id_provinsi = null, $id_tematik, $id_pn)
+    public function getKawasanList($id_provinsi = null, $id_tematik = null, $id_pn = null)
     {
         $tahun_pelaksanaan = session('tahun_pelaksana');
         $builder = $this->db->table('trx_prog_tahunan_pra_rakorbangwil as a');
-        $builder->select('DISTINCT(a.kawasan) as kawasan, a.provinsi');
-        $builder->where('a.id_provinsi', $id_provinsi);
-        $builder->where('a.id_tematik_kawasan', $id_tematik);
-        $builder->where('a.id_pn', $id_pn);
+        $builder->select('DISTINCT(a.kawasan) as kawasan, a.provinsi, a.tematik');
+        if ($id_provinsi) {
+            $builder->where('a.id_provinsi', $id_provinsi);
+        }
+        if ($id_tematik) {
+            $builder->where('a.id_tematik_kawasan', $id_tematik);
+        }
+        if ($id_pn) {
+            $builder->where('a.id_pn', $id_pn);
+        }
         $builder->where('a.thn_pelaksanaan', $tahun_pelaksanaan);
+        $builder->where('a.kawasan is not null', null);
         $builder->orderBy('a.id_kawasan', 'ASC');
 
         $query = $builder->get();

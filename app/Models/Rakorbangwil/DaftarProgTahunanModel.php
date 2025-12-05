@@ -11,11 +11,10 @@ class DaftarProgTahunanModel extends Model
     protected $returnType = 'object';
 
 
-    public function getDaftarProgramTahunan($id_provinsi, $id_unor, $sumber, $pn = "ALL", $catatan_kl = null, $pembiayaan = null)
+    public function getDaftarProgramTahunan($id_provinsi, $id_unor, $sumber, $pn = "ALL", $catatan_kl = null, $pembiayaan = null, $tipe = null, $catatan_pra_rakorbangwil = null, $catatan_pemda = null, $konfirmasi_pemda = null, $kesepakatan = null)
     {
         $tahun_pelaksanaan = session('tahun_pelaksana');
         $builder = $this->db->table('view_prog_tahunan as a');
-
         // SELECT clause
         $builder->select("a.*");
         // WHERE clause
@@ -28,24 +27,123 @@ class DaftarProgTahunanModel extends Model
         if ($sumber) {
             $builder->where('a.sumber', $sumber);
         }
-        if ($catatan_kl) {
-            $builder->where('a.kebutuhan_dukungan_kl IS NOT NULL', null, false)
-                ->where('a.kebutuhan_dukungan_kl !=', '-');
-        }
+
         if ($pembiayaan) {
-            $builder->where('a.id_pendanaan', $pembiayaan);
+            if ($pembiayaan == 'x') {
+                $builder->whereIn('a.id_pendanaan', [1, 3, 5, 6, 7]);
+            } else {
+                $builder->where('a.id_pendanaan', $pembiayaan);
+            }
         }
         if ($pn) {
-            if ($pn == "NON") {
-                $builder->where('a.id_pn', null);
+            if ($pn == "ALLPN") {
+                $builder->where('a.id_pn is not null', null, false);
             } else {
                 $builder->where('a.id_pn', $pn);
             }
+        }
+        if ($tipe) {
+            $builder->where('a.tipe_pekerjaan', $tipe);
+        }
+        if ($catatan_pra_rakorbangwil) {
+            if ($catatan_pra_rakorbangwil == "ya") {
+                $builder->where('a.catatan_pra_rakorbangwil IS NOT NULL', null, false)
+                    ->where('a.catatan_pra_rakorbangwil !=', '-');
+            } elseif ($catatan_pra_rakorbangwil == "tidak") {
+                $builder->groupStart()
+                    ->where('a.catatan_pra_rakorbangwil', null)
+                    ->orWhere('a.catatan_pra_rakorbangwil', '-')
+                    ->groupEnd();
+            }
+        }
+        if ($catatan_pemda) {
+            if ($catatan_pemda == "ya") {
+                $builder->where('a.catatan_pemda IS NOT NULL', null, false)
+                    ->where('a.catatan_pemda !=', '-');
+            } elseif ($catatan_pemda == "tidak") {
+                $builder->groupStart()
+                    ->where('a.catatan_pemda', null)
+                    ->orWhere('a.catatan_pemda', '-')
+                    ->groupEnd();
+            }
+        }
+        if ($konfirmasi_pemda) {
+            if ($konfirmasi_pemda == "ya") {
+                $builder->where('a.catatan_konfrm_pemda IS NOT NULL', null, false)
+                    ->where('a.catatan_konfrm_pemda !=', '-');
+            } elseif ($konfirmasi_pemda == "tidak") {
+                $builder->groupStart()
+                    ->where('a.catatan_konfrm_pemda', null)
+                    ->orWhere('a.catatan_konfrm_pemda', '-')
+                    ->groupEnd();
+            }
+        }
+        if ($kesepakatan) {
+            $builder->where('a.desk_rakorbangwil', $kesepakatan);
+        }
+        if ($catatan_kl == 'x') {
+            $builder->groupStart() // buka grup OR
+                ->groupStart()
+                ->where('a.catatan_pra_rakorbangwil IS NOT NULL', null, false)
+                ->where('a.catatan_pra_rakorbangwil !=', '-')
+                ->groupEnd()
+                ->orGroupStart()
+                ->where('a.catatan_konfrm_pemda IS NOT NULL', null, false)
+                ->where('a.catatan_konfrm_pemda !=', '-')
+                ->groupEnd()
+                ->groupEnd(); // tutup grup OR
+            $builder->orderBy('a.catatan_pemda', 'ASC');
         }
         $builder->where('a.thn_pelaksanaan', $tahun_pelaksanaan);
         $builder->orderBy('a.id_prog_tahunan', 'ASC');
         // Eksekusi
         $query = $builder->get();
         return $query->getResult();
+    }
+    public function countPekerjaanByKawasan($kawasan, $provinsi = null, $pn = null, $sumber = null, $unor = null, $catatan_kl = null, $pembiayaan = null)
+    {
+        $builder = $this->builder('view_prog_tahunan');
+
+        $builder->select('COUNT(*) as total')
+            ->where('kawasan', $kawasan);
+
+        // ===== FILTER PROVINSI =====
+        if (!empty($provinsi) && $provinsi !== "ALL") {
+            $builder->where('id_provinsi', $provinsi);
+        }
+
+        // ===== FILTER PN =====
+        if (!empty($pn) && $pn !== "ALLPN") {
+            $builder->where('pn', $pn);
+        }
+
+        // ===== FILTER SUMBER =====
+        if (!empty($sumber)) {
+            $builder->where('sumber_pendanaan', $sumber);
+        }
+
+        // ===== FILTER UNOR =====
+        if (!empty($unor)) {
+            $builder->where('id_unor', $unor);
+        }
+
+        if ($pembiayaan) {
+            $builder->where('id_pendanaan', $pembiayaan);
+        }
+        if ($catatan_kl) {
+            $builder->groupStart() // buka grup OR
+                ->groupStart()
+                ->where('kebutuhan_dukungan_kl IS NOT NULL', null, false)
+                ->where('kebutuhan_dukungan_kl !=', '-')
+                ->groupEnd()
+                ->orGroupStart()
+                ->where('catatan_konfrm_pemda IS NOT NULL', null, false)
+                ->where('catatan_konfrm_pemda !=', '-')
+                ->groupEnd()
+                ->groupEnd(); // tutup grup OR
+            $builder->orderBy('catatan_pemda', 'ASC');
+        }
+        $result = $builder->get()->getRow();
+        return $result ? $result->total : 0;
     }
 }

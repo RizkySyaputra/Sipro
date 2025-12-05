@@ -1,3 +1,26 @@
+<style>
+    .badge-green {
+        background: #00d084;
+        color: white;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 4px;
+    }
+
+    .badge-grey {
+        background: #606060ff;
+        color: white;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 4px;
+    }
+</style>
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -11,7 +34,81 @@
             <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
             <div class="container mt-4">
+                <!-- ===== SUMMARY MINI DASHBOARD ===== -->
+                <div class="row mt-3 mb-4">
+                    <!-- Jumlah Kawasan -->
+                    <div class="col-md-3">
+                        <div class="card shadow-sm" style="border-left: 6px solid #eaa400ff;">
+                            <div class="card-body">
+                                <h6 class="text-muted mb-1">Kawasan/Lokus Prioritas</h6>
+                                <h3 id="sum-kawasan" class="m-0 fw-bold">0 Kawasan/Lokus</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Total Pekerjaan -->
+                    <div class="col-md-3">
+                        <div class="card shadow-sm" style="border-left: 6px solid #00a8ff;">
+                            <div class="card-body">
+                                <h6 class="text-muted mb-1">Jumlah Pekerjaan </h6>
+                                <h3 id="sum-total-pekerjaan" class="m-0 fw-bold">0 Pekerjaan</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pekerjaan yang Memerlukan Catatan Pemda -->
+                    <div class="col-md-3">
+                        <div class="card shadow-sm" style="border-left: 6px solid #525150ff;">
+                            <div class="card-body">
+                                <h6 class="text-muted mb-1">Belum Ada Catatan Pemda</h6>
+                                <h3 id="sum-memerlukan-catatan" class="m-0 fw-bold">0 Pekerjaan</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pekerjaan yang Sudah Memiliki Catatan Pemda -->
+                    <div class="col-md-3">
+                        <div class="card shadow-sm" style="border-left: 6px solid #07a126ff;">
+                            <div class="card-body">
+                                <h6 class="text-muted mb-1">Terdapat Catatan Pemda</h6>
+                                <h3 id="sum-ada-catatan" class="m-0 fw-bold">0 Pekerjaan</h3>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <!-- ===== END SUMMARY ===== -->
+                <!-- ===================== REKAP KAWASAN ===================== -->
+                <div class="card shadow-sm mt-3">
+                    <div class="card-body">
+                        <h5><strong>Rekap Kawasan</strong></h5>
+
+                        <div class="table-responsive mt-3">
+                            <table id="rekap-kawasan" class="table table-bordered table-striped border">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 5%; text-align :center">No</th>
+                                        <th style="width: 35%; text-align :center">Tematik</th>
+                                        <th style="width: 40%; text-align :center">Kawasan / Lokus</th>
+                                        <th style="width: 10%; text-align :center">Jumlah Pekerjaan</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td colspan="4" class="text-center text-muted">Belum ada data</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card shadow-md">
                     <!-- <div class="card-header">
                         <h5 class="mb-0">Filter Data Memorandum</h5>
@@ -28,7 +125,7 @@
                                     <select class="form-control" name="sumber" id="filter-sumber">
                                         <option value="">Semua Sumber</option>
                                         <option value="RPIW">RPIW</option>
-                                        <option value="Non RPIW">Non RPIW</option>
+                                        <option value="NON RPIW">Non RPIW</option>
                                     </select>
                                 </div>
                             </div>
@@ -53,7 +150,15 @@
                                 </div>
                                 <div class="col-md-11">
                                     <select class="form-control" name="provinsi" id="filter-provinsi">
-                                        <option value="<?= $provinsi['id'] ?>" selected><?= $provinsi['provinsi'] ?></option>
+                                        <?php
+                                        if (user()->id_provinsi) : ?>
+                                            <option value=""><?= $provinsi['provinsi'] ?></option>
+                                        <?php else : ?>
+                                            <option value="">Semua Provinsi</option>
+                                            <?php foreach ($provinsi as $p): ?>
+                                                <option value="<?= $p->id ?>"><?= $p->provinsi ?></option>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
                                     </select>
                                 </div>
                             </div>
@@ -63,8 +168,7 @@
                                 </div>
                                 <div class="col-md-11">
                                     <select class="form-control" name="pn" id="filter-pn">
-                                        <option value="">Semua PN dan Non PN</option>
-                                        <option value="NON">NON PN</option>
+                                        <option value="ALLPN">Semua PN</option>
                                         <option value="2">PN 2</option>
                                         <option value="3">PN 3</option>
                                         <option value="4">PN 4</option>
@@ -121,13 +225,14 @@
                                 <thead>
                                     <tr>
                                         <th>No </th>
-                                        <th>Sumber </th>
                                         <th>Provinsi</th>
-                                        <th>Unor</th>
-                                        <th>Pekerjaan </th>
+                                        <th>Tematik Kawasan</th>
                                         <th>Kawasan</th>
-                                        <th>Tematik</th>
+                                        <th>Pekerjaan </th>
+                                        <th>Unor</th>
+                                        <th>Sumber </th>
                                         <th>Tahun</th>
+                                        <th>Status Isi Catatan</th>
                                         <th>Aksi </th>
                                     </tr>
                                 </thead>
@@ -230,29 +335,36 @@
         $('#filter-sumber').val(localStorage.getItem('selectedSumber'));
 
         // On form submit, save the selected values
-        $('#filter-form').on('submit', function() {
+        $('#filter-form').on('submit', function(event) {
             event.preventDefault();
 
             $('#loading-spinner').show();
             $('#button-text').hide();
-            // Ambil data filter dari form
+
             var filterData = $(this).serialize();
-            // Kirim request AJAX
+
             $.ajax({
-                url: '<?= base_url('/rakorbangwil/get_daftar_program_tahunan_catatan_pemda') ?>', // URL untuk memproses filter
+                url: '<?= base_url('/rakorbangwil/get_daftar_program_tahunan_catatan_pemda') ?>',
                 type: 'POST',
                 data: filterData,
                 success: function(response) {
-                    // Hapus inisialisasi DataTables yang lama
-                    if ($.fn.DataTable.isDataTable('#datatables')) {
-                        $('#datatables').DataTable().destroy();
+
+                    if (typeof response === "string") {
+                        response = JSON.parse(response);
                     }
-                    // Update tabel dengan data yang diterima
-                    $('#datatables tbody').html(response);
 
+                    // ===== SIMPAN HALAMAN SEBELUMNYA =====
+                    let currentPage = 0;
+                    if ($.fn.DataTable.isDataTable('#datatables')) {
+                        let oldTable = $('#datatables').DataTable();
+                        currentPage = oldTable.page(); // simpan halaman aktif
+                        oldTable.destroy();
+                    }
 
-                    //Inisialisasi DataTables kembali
-                    $('#datatables').DataTable({
+                    // ===== UPDATE TABEL =====
+                    $('#datatables tbody').html(response.table);
+
+                    let newTable = $('#datatables').DataTable({
                         "pagingType": "full_numbers",
                         "lengthMenu": [
                             [10, 25, 50, -1],
@@ -265,17 +377,64 @@
                             zeroRecords: "Data tidak ditemukan"
                         }
                     });
+
+                    // ===== KEMBALIKAN KE HALAMAN SEBELUMNYA =====
+                    newTable.page(currentPage).draw(false);
+
+                    // ===== UPDATE SUMMARY =====
+                    $('#sum-total-pekerjaan').text(response.summary.jumlah_total + "  Pekerjaan");
+                    $('#sum-memerlukan-catatan').text(response.summary.memerlukan_catatan + "  Pekerjaan");
+                    $('#sum-ada-catatan').text(response.summary.jumlah_ada_catatan + "  Pekerjaan");
+                    $('#sum-kawasan').text(response.summary.jumlah_kawasan + "  Kawasan/Lokus");
+
+                    // ===== LOAD REKAP KAWASAN =====
+                    $.ajax({
+                        url: "<?= base_url('/rakorbangwil/get_rekap_kawasan') ?>",
+                        type: "POST",
+                        data: filterData,
+                        success: function(rekap) {
+
+                            let htmlRekap = "";
+
+                            if (rekap.length === 0) {
+                                htmlRekap = `
+                <tr>
+                    <td colspan="2" class="text-center text-muted">Data tidak tersedia</td>
+                </tr>
+            `;
+                            } else {
+                                rekap.forEach((row, i) => {
+                                    htmlRekap += `
+        <tr>
+            <td>${i + 1}</td>
+            <td>${row.tematik ?? '-'}</td>
+            <td>${row.kawasan}</td>
+            <td class="text-center">
+                <span class="text-primary fw-bold" style="font-size: 1.1rem;">
+                    ${row.jumlah}
+                </span>
+            </td>
+        </tr>
+    `;
+                                });
+
+                            }
+
+                            $("#rekap-kawasan tbody").html(htmlRekap);
+                        }
+                    });
+
                 },
                 error: function() {
                     alert('Error loading data');
                 },
                 complete: function() {
-                    // Sembunyikan spinner dan kembalikan teks tombol
                     $('#loading-spinner').hide();
                     $('#button-text').show();
                 }
             });
         });
+
 
         $('#reset-filters').on('click', function() {
             // Reset dropdowns to their default values

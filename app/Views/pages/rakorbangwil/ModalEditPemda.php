@@ -149,6 +149,12 @@
 
                     <label class="catatan-text"><strong>Kawasan</strong></label>
                     <p><?= esc($progTahunan->kawasan ?? '-') ?></p>
+                    <?php if (!empty($petaKawasan)): ?>
+                        <div id="mapKawasanEdit"
+                            style="height: 350px; width: 100%; border-radius:8px; border:1px solid #ccc; margin-bottom:15px;">
+                        </div>
+                    <?php endif; ?>
+
                     <label class="catatan-text"><strong>Tematik</strong></label>
                     <p><?= esc($progTahunan->tematik ?? '-') ?></p>
                     <label class="catatan-text"><strong>Kab/kot</strong></label>
@@ -195,15 +201,15 @@
                     <label class="catatan-text"><strong>Sumber Data</strong></label>
                     <p><?= esc($progTahunan->sumber ?? '-') ?></p>
 
-                    <label class="catatan-text"><strong>KL terkait</strong></label>
+                    <label class="catatan-text"><strong>K/L terkait</strong></label>
                     <p><?= esc($progTahunan->kl ?? '-') ?></p>
 
-                    <label class="catatan-text"><strong>Kebutuhan Dukungan KL</strong></label>
+                    <label class="catatan-text"><strong>Kebutuhan Dukungan K/L</strong></label>
                     <p><?= esc($progTahunan->kebutuhan_dukungan_kl ?? '-') ?></p>
 
-                    <label class="catatan-text"><strong>Catatan Pra Rakorbangwil:</strong></label>
+                    <label class="catatan-text"><strong>Catatan Pra Rakorbangwil</strong></label>
                     <p><?= esc($progTahunan->catatan_pra_rakorbangwil ?? '-') ?></p>
-                    <label class="catatan-text"><strong>Catatan Konfirmasi Pemda:</strong></label>
+                    <label class="catatan-text"><strong>Kebutuhan Dukungan Pemda</strong></label>
                     <p><?= esc($progTahunan->catatan_konfrm_pemda ?? '-') ?></p>
                     <div class="form-group">
                         <label class="catatan-text"><strong>Catatan Pemda</strong></label>
@@ -217,28 +223,28 @@
     <!-- Catatan Memorandum -->
     <div class="col-md-12">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-                <label class="catatan-text"><strong>Catatan Memorandum:</strong></label>
-                <?php if (!empty($prog_tahunan->catatan_memorandum)): ?>
-                    <?php
-                    $catatanList = json_decode($prog_tahunan->catatan_memorandum, true);
-                    ?>
-                    <?php if (!empty($catatanList)): ?>
-                        <div class="mt-2">
-                            <?php foreach ($catatanList as $item): ?>
-                                <div class="catatan-item">
-                                    <div class="catatan-nama"><?= esc($item['nama']) ?>:</div>
-                                    <p class="catatan-text"><?= esc($item['catatan']) ?></p>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    <?php else: ?>
-                        <div class="text-muted mt-1">-</div>
-                    <?php endif; ?>
+            <!-- <li class="list-group-item"> -->
+            <label class="catatan-text"><strong>Catatan Memorandum</strong></label>
+            <?php if (!empty($prog_tahunan->catatan_memorandum)): ?>
+                <?php
+                $catatanList = json_decode($prog_tahunan->catatan_memorandum, true);
+                ?>
+                <?php if (!empty($catatanList)): ?>
+                    <div class="mt-2">
+                        <?php foreach ($catatanList as $item): ?>
+                            <div class="catatan-item">
+                                <div class="catatan-nama"><?= esc($item['nama']) ?>:</div>
+                                <p class="catatan-text"><?= esc($item['catatan']) ?></p>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
                 <?php else: ?>
                     <div class="text-muted mt-1">-</div>
                 <?php endif; ?>
-            </li>
+            <?php else: ?>
+                <div class="text-muted mt-1">-</div>
+            <?php endif; ?>
+            <!-- </li> -->
         </ul>
     </div>
 
@@ -249,6 +255,47 @@
         </button>
     </div>
 </form>
+<script>
+    (function() {
+        const hasMap = <?= !empty($petaKawasan) ? 'true' : 'false' ?>;
+        if (!hasMap) return;
+
+        let mapKawasan = L.map('mapKawasanEdit').setView([-2.5, 118], 5);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18
+        }).addTo(mapKawasan);
+
+        // daftar file geojson
+        const kawasanFiles = <?= json_encode(
+                                    array_map(fn($file) => base_url('geojson/' . $file), $petaKawasan)
+                                ); ?>;
+
+        const bounds = L.latLngBounds([]);
+
+        kawasanFiles.forEach(url => {
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    const layer = L.geoJSON(data, {
+                        style: {
+                            color: "#2ecc71",
+                            weight: 2,
+                            fillColor: "#2ecc71",
+                            fillOpacity: 0.25
+                        }
+                    }).addTo(mapKawasan);
+
+                    bounds.extend(layer.getBounds());
+                    mapKawasan.fitBounds(bounds);
+                });
+        });
+
+        // perbaiki layout saat modal baru muncul
+        setTimeout(() => mapKawasan.invalidateSize(), 400);
+
+    })();
+</script>
 
 <!-- <div class="modal fade" id="modalMap" tabindex="-1">
     <div class="modal-dialog modal-lg">

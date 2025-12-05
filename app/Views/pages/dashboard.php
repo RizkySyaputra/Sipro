@@ -21,7 +21,7 @@
                         <div class="card pt-2 pl-2 pr-2">
                             <p style="font-size: 18px;">
                                 <strong>
-                                    Hai <span style="color: #5200cc; font-size: inherit; text-transform: capitalize;"><?= user()->username ?></span>, Selamat Datang di Halaman Sistem Informasi Pemrograman (Sipro).
+                                    Hai <span style="color: #5200cc; font-size: inherit; text-transform: capitalize;"><?= user()->username ?></span>, Selamat Datang di Halaman Sistem Informasi Pemrograman (SIPro).
                                 </strong>
                             </p>
                         </div>
