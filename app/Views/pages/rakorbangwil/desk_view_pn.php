@@ -269,6 +269,20 @@
                                                     </select>
                                                 </div>
                                             </div>
+                                            <!-- Pendanaan -->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="filter-label">Sumber Pendanaan</label>
+                                                    <select class="form-control" name="pendanaan" id="filter-pendanaan">
+                                                        <option value="">Semua Sumber Pendanaan</option>
+                                                        <?php foreach ($pendanaan as $item): ?>
+                                                            <option value="<?= esc($item['id_pendanaan']) ?>">
+                                                                <?= esc($item['sumber_pendanaan']) ?>
+                                                            </option>
+                                                        <?php endforeach; ?>
+                                                    </select>
+                                                </div>
+                                            </div>
 
                                         </div>
 
@@ -431,7 +445,7 @@
     $(document).ready(function() {
 
         // Inisialisasi Select2 untuk semua dropdown
-        $('#filter-unor, #filter-provinsi, #filter-tipe, #filter-catatan_rakorbangwil, #filter-catatan_pemda, #filter-konfirmasi_pemda, #filter-kesepakatan, #filter-sumber').select2();
+        $('#filter-unor, #filter-provinsi, #filter-tipe, #filter-catatan_rakorbangwil, #filter-catatan_pemda, #filter-konfirmasi_pemda, #filter-kesepakatan, #filter-sumber, #filter-pendanaan').select2();
 
         // Restore value dari localStorage
         $('#filter-unor').val(localStorage.getItem('selectedUnor')).trigger('change');
@@ -442,6 +456,7 @@
         $('#filter-konfirmasi_pemda').val(localStorage.getItem('selectedKonfirmasiPemda')).trigger('change');
         $('#filter-kesepakatan').val(localStorage.getItem('selectedKesepakatan')).trigger('change');
         $('#filter-sumber').val(localStorage.getItem('selectedSumber')).trigger('change');
+        $('#filter-pendanaan').val(localStorage.getItem('selectedPendanaan')).trigger('change');
 
 
         // Submit filter (pakai ajax)
@@ -457,6 +472,7 @@
             localStorage.setItem('selectedKonfirmasiPemda', $('#filter-konfirmasi_pemda').val());
             localStorage.setItem('selectedKesepakatan', $('#filter-kesepakatan').val());
             localStorage.setItem('selectedSumber', $('#filter-sumber').val());
+            localStorage.setItem('selectedPendanaan', $('#filter-pendanaan').val());
 
             $('#loading-spinner').show();
             $('#button-text').hide();
@@ -506,7 +522,7 @@
         $('#reset-filters').on('click', function() {
 
             // Reset semua dropdown
-            $('#filter-unor, #filter-provinsi, #filter-tipe, #filter-catatan_rakorbangwil, #filter-catatan_pemda, #filter-konfirmasi_pemda, #filter-kesepakatan, #filter-sumber')
+            $('#filter-unor, #filter-provinsi, #filter-tipe, #filter-catatan_rakorbangwil, #filter-catatan_pemda, #filter-konfirmasi_pemda, #filter-kesepakatan, #filter-sumber, #filter-pendanaan')
                 .val('')
                 .trigger('change');
 

@@ -550,6 +550,7 @@ class Rakorbangwil extends BaseController
         $stackholder = $this->stakholderModel->orderBy('id_kategori')->orderBy('id_stakeholder')->findAll();
         $namaList = array_column($stackholder, 'stakeholder');
         $program = $this->praRakorModel->where('id_pn', $id)->findAll();
+        $pendanaan = $this->pendanaanModel->findAll();
         $rekap_kawasan = $this->rekapKawasanModel->where('id_pn', $id)->findAll();
         $rekap_program = $this->rekapProgRakorbangwilModel->where('id_pn', $id)->findAll();
         $kebutuhan_dukungan_kl = $this->kebutuhan_kl_Model->getKebutuhanKl($id);
@@ -559,6 +560,7 @@ class Rakorbangwil extends BaseController
             'kawasanData' => $rekap_kawasan,
             'programData' => $rekap_program,
             'pn' => $pn,
+            'pendanaan' => $pendanaan,
             'catatan_pn' => $catatan_pn,
             'namaList' => $namaList,
             'kebutuhan_dukungan_kl' => $kebutuhan_dukungan_kl,
@@ -973,6 +975,7 @@ class Rakorbangwil extends BaseController
         $dataProvinsi = $this->provinsiModel->getProvinsi();
         $dataUnor = $this->unorModel->getUnor();
         $id_role = user()->id_role;
+        $pendanaan = $this->pendanaanModel->findAll();
         $pn = $this->pnModel->find($id);
         $stackholder = $this->stakholderModel->orderBy('id_kategori')->orderBy('id_stakeholder')->findAll();
         $namaList = array_column($stackholder, 'stakeholder');
@@ -986,6 +989,7 @@ class Rakorbangwil extends BaseController
             'daftar_program_tahunan_usulan' => $daftar_program_tahunan_usulan,
             'kesepakatan' => $dataKesepakatan,
             'unor' => $dataUnor,
+            'pendanaan' => $pendanaan,
             'program' => $program,
             'pn' => $pn,
             'catatan_pn' => $catatan_pn,
@@ -1001,6 +1005,7 @@ class Rakorbangwil extends BaseController
         $id_pn = $this->request->getPost('id_pn');
         $id_role = user()->id_role;
         $provinsi_id = $this->request->getPost('provinsi');
+        $id_pendanaan = $this->request->getPost('pendanaan');
         $unor_id = $this->request->getPost('unor');
         $tipe = $this->request->getPost('tipe');
         $catatan_rakorbangwil = $this->request->getPost('catatan_rakorbangwil');
@@ -1008,15 +1013,13 @@ class Rakorbangwil extends BaseController
         $konfirmasi_pemda = $this->request->getPost('konfirmasi_pemda');
         $kesepakatan = $this->request->getPost('kesepakatan');
         $sumber = $this->request->getPost('sumber');
-        $daftar_program_tahunan = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, $unor_id, $sumber, $id_pn, null, null, $tipe, $catatan_rakorbangwil, $catatan_pemda, $konfirmasi_pemda, $kesepakatan);
-        $daftar_program_tahunan_usulan =
-
-            $data = [
-                'daftar_program_tahunan' => $daftar_program_tahunan,
-                'can_view' => has_permission_menu($id_role, '/rakorbangwil/desk_rakorbangwil', 'can_view'),
-                'can_edit' => has_permission_menu($id_role, '/rakorbangwil/desk_rakorbangwil', 'can_edit'),
-                'can_delete' => has_permission_menu($id_role, '/rakorbangwil/desk_rakorbangwil', 'can_delete')
-            ];
+        $daftar_program_tahunan = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, $unor_id, $sumber, $id_pn, null, $id_pendanaan, $tipe, $catatan_rakorbangwil, $catatan_pemda, $konfirmasi_pemda, $kesepakatan);
+        $data = [
+            'daftar_program_tahunan' => $daftar_program_tahunan,
+            'can_view' => has_permission_menu($id_role, '/rakorbangwil/desk_rakorbangwil', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/rakorbangwil/desk_rakorbangwil', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/rakorbangwil/desk_rakorbangwil', 'can_delete')
+        ];
         return view('/pages/rakorbangwil/tabel/tabel_desk_daftar_program_tahunan', $data);
     }
     public function edit_desk($id)
