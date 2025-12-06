@@ -171,7 +171,7 @@
 
 
     <!-- ======== B. DIKOMODASI ======== -->
-    <h5>B. Disepakati program/kegiatan infrastruktur PU TA 2027 yang diakomodasi di Provinsi <?= $provinsi['provinsi'] ?>sebagai berikut :</h5>
+    <h5>B. Disepakati program/kegiatan infrastruktur PU TA 2027 yang diakomodasi di Provinsi <?= $provinsi['provinsi'] ?> sebagai berikut :</h5>
 
     <table>
         <thead>
@@ -207,7 +207,7 @@
 
 
     <!-- ======== C. DITANGGUHKAN ======== -->
-    <h5>C. Disepakati program/kegiatan infrastruktur PU TA 2027 yang ditangguhkan di Provinsi <?= $provinsi['provinsi'] ?>sebagai berikut :</h5>
+    <h5>C. Disepakati program/kegiatan infrastruktur PU TA 2027 yang ditangguhkan di Provinsi <?= $provinsi['provinsi'] ?> sebagai berikut :</h5>
 
     <table>
         <thead>
