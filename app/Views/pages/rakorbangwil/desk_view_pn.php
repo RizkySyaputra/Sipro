@@ -217,18 +217,21 @@
                                                     </select>
                                                 </div>
                                             </div>
-
-                                            <!-- TIPE -->
+                                            <!-- Pendanaan -->
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="filter-label">Tipe Pekerjaan</label>
-                                                    <select class="form-control" name="tipe" id="filter-tipe">
-                                                        <option value="">Semua Tipe</option>
-                                                        <option value="FISIK">Fisik</option>
-                                                        <option value="NON FISIK">Non Fisik</option>
+                                                    <label class="filter-label">Sumber Pendanaan</label>
+                                                    <select class="form-control" name="pendanaan" id="filter-pendanaan">
+                                                        <option value="">Semua Sumber Pendanaan</option>
+                                                        <?php foreach ($pendanaan as $item): ?>
+                                                            <option value="<?= esc($item['id_pendanaan']) ?>">
+                                                                <?= esc($item['sumber_pendanaan']) ?>
+                                                            </option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                             </div>
+
                                             <!-- CATATAN PEMDA -->
                                             <div class="col-md-6">
                                                 <div class="form-group">
@@ -242,21 +245,18 @@
                                             </div>
 
 
-
-                                            <!-- KESEPAKATAN -->
+                                            <!-- TIPE -->
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="filter-label">Kesepakatan</label>
-                                                    <select class="form-control" name="kesepakatan" id="filter-kesepakatan">
-                                                        <option value="">Semua Kesepakatan</option>
-                                                        <?php foreach ($kesepakatan as $item): ?>
-                                                            <option value="<?= esc($item['id_kesepakatan']) ?>">
-                                                                <?= esc($item['kesepakatan']) ?>
-                                                            </option>
-                                                        <?php endforeach; ?>
+                                                    <label class="filter-label">Tipe Pekerjaan</label>
+                                                    <select class="form-control" name="tipe" id="filter-tipe">
+                                                        <option value="">Semua Tipe</option>
+                                                        <option value="FISIK">Fisik</option>
+                                                        <option value="NON FISIK">Non Fisik</option>
                                                     </select>
                                                 </div>
                                             </div>
+
 
                                             <!-- SUMBER -->
                                             <div class="col-md-6">
@@ -269,15 +269,15 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <!-- Pendanaan -->
+                                            <!-- KESEPAKATAN -->
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="filter-label">Sumber Pendanaan</label>
-                                                    <select class="form-control" name="pendanaan" id="filter-pendanaan">
-                                                        <option value="">Semua Sumber Pendanaan</option>
-                                                        <?php foreach ($pendanaan as $item): ?>
-                                                            <option value="<?= esc($item['id_pendanaan']) ?>">
-                                                                <?= esc($item['sumber_pendanaan']) ?>
+                                                    <label class="filter-label">Kesepakatan</label>
+                                                    <select class="form-control" name="kesepakatan" id="filter-kesepakatan">
+                                                        <option value="">Semua Kesepakatan</option>
+                                                        <?php foreach ($kesepakatan as $item): ?>
+                                                            <option value="<?= esc($item['id_kesepakatan']) ?>">
+                                                                <?= esc($item['kesepakatan']) ?>
                                                             </option>
                                                         <?php endforeach; ?>
                                                     </select>

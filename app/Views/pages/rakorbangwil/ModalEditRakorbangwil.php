@@ -139,17 +139,40 @@
                     <label class="catatan-text"><strong>Program</strong></label>
                     <p><?= esc($progTahunan->id_program . '-' . $progTahunan->nm_program ?? ' - ') ?></p>
 
-                    <label class="catatan-text"><strong>Kegiatan</strong></label>
-                    <p><?= esc($progTahunan->id_kegiatan . '-' . $progTahunan->nm_kegiatan ?? ' - ') ?></p>
-
-                    <label class="catatan-text"><strong>KRO</strong></label>
-                    <p><?= esc($progTahunan->id_kro . '-' . $progTahunan->nm_kro ?? ' - ') ?></p>
-
-                    <label class="catatan-text"><strong>RO</strong></label>
-                    <p><?= esc($progTahunan->id_ro . '-' . $progTahunan->nm_ro ?? ' - ') ?></p>
-
-                    <label class="catatan-text"><strong>Pekerjaan</strong></label>
-                    <p><?= esc($progTahunan->pekerjaan ?? '-') ?></p>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Kegiatan</strong></label>
+                        <select class="form-control" name="id_kegiatan" id="select-kegiatan">
+                            <!-- <option value="<?= $progTahunan->id_kegiatan ?>">
+                                <?= $progTahunan->id_kegiatan . ' - ' . $progTahunan->nm_kegiatan ?> -->
+                            <?php foreach ($kegiatan as $item): ?>
+                                <option value="<?= esc($item['id_kegiatan']) ?>"
+                                    <?= ($progTahunan->id_kegiatan ?? '') == $item['id_kegiatan'] ? 'selected' : '' ?>>
+                                    <?= esc($item['id_kegiatan'] . ' - ' . $item['nm_kegiatan']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>KRO</strong></label>
+                        <select class="form-control" name="id_kro" id="select-kro">
+                            <option value="<?= $progTahunan->id_kro ?>">
+                                <?= $progTahunan->id_kro . ' - ' . $progTahunan->nm_kro ?>
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>RO</strong></label>
+                        <select class="form-control" name="id_ro" id="select-ro">
+                            <option value="<?= $progTahunan->id_ro ?>">
+                                <?= $progTahunan->id_ro . ' - ' . $progTahunan->nm_ro ?>
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Pekerjaan</strong></label>
+                        <input type="text" class="form-control" name="pekerjaan" value="<?= esc($progTahunan->pekerjaan ?? '') ?>">
+                    </div>
 
                     <label class="catatan-text"><strong>Unit Organisasi</strong></label>
                     <p><?= esc($progTahunan->unor ?? '-') ?></p>
@@ -157,25 +180,37 @@
                     <label class="catatan-text"><strong>Provinsi</strong></label>
                     <p><?= esc($progTahunan->provinsi ?? '-') ?></p>
 
-                    <label class="catatan-text"><strong>Kawasan</strong></label>
-                    <p><?= esc($progTahunan->kawasan ?? '-') ?></p>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Kawasan</strong></label>
+                        <select class="form-control" name="kawasan[]" id="select-kawasan" multiple>
+                            <?php foreach ($kawasan as $item): ?>
+                                <!-- <option value="<?= $item['kode_kawasan'] ?>"><?= $item['nama_kawasan'] ?></option> -->
+                                <option value="<?= $item['kode_kawasan'] ?>"
+                                    <?= in_array($item['nama_kawasan'], $selectedKawasan) ? 'selected' : '' ?>>
+                                    <?= esc($item['nama_kawasan']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                        <small class="text-muted">Tekan <b>Ctrl</b> (atau <b>Cmd</b> di Mac) untuk memilih lebih dari satu.</small>
+                    </div>
                     <label class="catatan-text"><strong>Tematik</strong></label>
                     <p><?= esc($progTahunan->tematik ?? '-') ?></p>
-                    <label class="catatan-text"><strong>Kab/kot</strong></label>
-                    <p><?= esc($progTahunan->kabkot ?? '-') ?></p>
-
-                    <!-- <label class="catatan-text"><strong>Kab/Kot</strong></label>
-                        <?php if (!empty($kabkot)): ?>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Kabupaten / Kota</strong></label> <br>
+                        <small class="text-muted">Tekan <b>Ctrl</b> (atau <b>Cmd</b> di Mac) untuk memilih lebih dari satu.</small>
+                        <select class="form-control" name="kabkot[]" id="select-kabkot" multiple>
                             <?php foreach ($kabkot as $item): ?>
-                                <p><?= esc($item->kab_kot ?? '-') ?></p>
+                                <option value="<?= $item['id'] ?>"
+                                    <?= in_array($item['kab_kot'], $selectedKabkot) ? 'selected' : '' ?>>
+                                    <?= esc($item['kab_kot']) ?>
+                                </option>
                             <?php endforeach; ?>
-                        <?php else: ?>
-                            <p>-</p>
-                        <?php endif; ?> -->
-
-
-                    <label class="catatan-text"><strong>Lokasi</strong></label>
-                    <p><?= esc($progTahunan->lokasi ?? '-') ?></p>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Lokasi</strong></label>
+                        <input type="text" class="form-control" name="lokasi" value="<?= esc($progTahunan->lokasi ?? '') ?>">
+                    </div>
 
                 </ul>
             </div>
@@ -190,15 +225,35 @@
                     <p><?= esc($progTahunan->thn_pelaksanaan ?? '-') ?></p>
 
 
-                    <label class="catatan-text"><strong>Sumber Pendanaan</strong></label>
-                    <p><?= esc($progTahunan->sumber_pendanaan ?? '-') ?></p>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Sumber Pendaan</strong></label>
+                        <select style="width: 100%;" class="form-control form-control-sm" name="id_pendanaan" id="select-pendanaan">
+                            <option value="<?= ($progTahunan->id_pendanaan ?? '') ?>" selected><?= ($progTahunan->sumber_pendanaan ?? '') ?></option>
+                            <?php foreach ($pendanaan as $item): ?>
+                                <?php if ($item['id_pendanaan'] == $progTahunan->id_pendanaan ?? '') continue; ?>
+                                <option value="<?= esc($item['id_pendanaan']) ?>"><?= esc($item['sumber_pendanaan']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
 
-                    <label class="catatan-text"><strong>Anggaran (ribu)</strong></label>
-                    <p>Rp. <?= number_format($progTahunan->anggaran, 0, ',', '.') ?></p>
-
-                    <label class="catatan-text"><strong>Volume</strong></label>
-                    <p><?= esc($progTahunan->volume . ' ' . $progTahunan->nama_satuan ?? '-') ?></p>
-
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Anggaran(ribu)</strong></label>
+                        <input type="text" class="form-control anggaran-format" name="anggaran" value="<?= esc($progTahunan->anggaran ?? '') ?>">
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Satuan</strong></label>
+                        <input type="text" class="form-control-plaintext" name="nama_satuan"
+                            value="<?= esc($progTahunan->nama_satuan ?? '') ?>" disabled>
+                        <input type="text" class="form-control-plaintext" name="id_satuan"
+                            value="<?= esc($progTahunan->id_satuan ?? '') ?>" hidden>
+                    </div>
+                    <div class="form-group">
+                        <label class="catatan-text"><strong>Volume</strong></label>
+                        <input type="number" step="0.01" min="0" class="form-control form-control-sm"
+                            name="volume"
+                            value="<?= esc($progTahunan->volume ?? '') ?>">
+                    </div>
                     <label class="catatan-text"><strong>Geotagging</strong></label>
                     <p><?= esc($progTahunan->geotag ?? '-') ?></p>
                     <div class="form-group">
@@ -336,7 +391,7 @@
 </form>
 <script>
     // Hilangkan select2 dari kesepakatan (WAJIB)
-    $('#select-tipe, #select-kegiatan, #select-kro, #select-ro').select2();
+    $('#select-tipe, #select-kegiatan, #select-kro, #select-ro, #select-pendanaan').select2();
 
     // ============================
     // DINAMIS: CATATAN DESK RAKORBANGWIL
@@ -414,4 +469,142 @@
         });
 
     })();
+
+    $(document).ready(function() {
+        // Saat pilih PROGRAM → ambil KEGIATAN
+        $('#select-program').on('change', function() {
+            const id_program = $(this).val();
+            $('#select-kegiatan').html('<option value="">Loading...</option>');
+            $('#select-kro').html('<option value="">Pilih KRO</option>');
+            $('#select-ro').html('<option value="">Pilih RO</option>');
+
+            if (id_program) {
+                $.getJSON('<?= base_url("memorandum/getKegiatanByProgram") ?>/' + id_program, function(data) {
+                    let options = '<option value="">Pilih Kegiatan</option>';
+                    $.each(data, function(i, item) {
+                        options += `<option value="${item.id_kegiatan}">${item.id_kegiatan} - ${item.nm_kegiatan}</option>`;
+                    });
+                    $('#select-kegiatan').html(options);
+                });
+            } else {
+                $('#select-kegiatan').html('<option value="">Pilih Kegiatan</option>');
+            }
+        });
+
+        // Saat pilih KEGIATAN → ambil KRO
+        $('#select-kegiatan').on('change', function() {
+            const id_kegiatan = $(this).val();
+            $('#select-kro').html('<option value="">Loading...</option>');
+            $('#select-ro').html('<option value="">Pilih RO</option>');
+
+            if (id_kegiatan) {
+                $.getJSON('<?= base_url("memorandum/getKroByKegiatan") ?>/' + id_kegiatan, function(data) {
+                    let options = '<option value="">Pilih KRO</option>';
+                    $.each(data, function(i, item) {
+                        options += `<option value="${item.id_kro}">${item.id_kro} - ${item.nm_kro}</option>`;
+                    });
+                    $('#select-kro').html(options);
+                });
+            } else {
+                $('#select-kro').html('<option value="">Pilih KRO</option>');
+            }
+        });
+
+        // Saat pilih KRO → ambil RO
+        $('#select-kro').on('change', function() {
+            const id_kro = $(this).val();
+            $('#select-ro').html('<option value="">Loading...</option>');
+
+            if (id_kro) {
+                $.getJSON('<?= base_url("memorandum/getRoByKro") ?>/' + id_kro, function(data) {
+                    let options = '<option value="">Pilih RO</option>';
+                    $.each(data, function(i, item) {
+                        options += `<option value="${item.id_ro}">${item.id_ro} - ${item.nm_ro}</option>`;
+                    });
+                    $('#select-ro').html(options);
+                });
+            } else {
+                $('#select-ro').html('<option value="">Pilih RO</option>');
+            }
+        });
+
+
+        $('#select-ro').on('change', function() {
+            const id_ro = $(this).val();
+
+            // Kosongkan dulu field satuan
+            $('input[name="nama_satuan"]').val('');
+            $('input[name="id_satuan"]').val('');
+
+            if (id_ro) {
+                $.getJSON('<?= base_url("memorandum/getSatuanByRo") ?>/' + id_ro)
+                    .done(function(data) {
+                        if (data) {
+                            $('input[name="nama_satuan"]').val(data.nama_satuan);
+                            $('input[name="id_satuan"]').val(data.id_satuan);
+                        } else {
+                            $('input[name="nama_satuan"]').val('Tidak ditemukan');
+                        }
+                    })
+                    .fail(function() {
+                        $('input[name="nama_satuan"]').val('Gagal memuat data');
+                    });
+            }
+        });
+    });
+    $(document).ready(function() {
+        $('#select-kabkot').select2({
+            placeholder: "-- Pilih Kabupaten / Kota --",
+            width: '100%',
+            allowClear: true
+        });
+    });
+    $(document).ready(function() {
+        $('#select-kawasan').select2({
+            placeholder: "-- Pilih Kawasan --",
+            width: '100%',
+            allowClear: true
+        });
+    });
+    $(document).ready(function() {
+
+        // 🔹 Format semua nilai awal saat halaman dimuat
+        $('.anggaran-format').each(function() {
+            let val = $(this).val().toString().replace(/\D/g, '');
+            if (val) {
+                $(this).val(new Intl.NumberFormat('id-ID').format(val));
+            }
+        });
+
+        // 🔹 Format saat user mengetik
+        $(document).on('input', '.anggaran-format', function() {
+            let input = this;
+
+            // Ambil angka saja
+            let clean = input.value.replace(/[^\d]/g, "");
+
+            // Format ribuan
+            if (clean) {
+                input.value = new Intl.NumberFormat('id-ID').format(clean);
+            } else {
+                input.value = "";
+            }
+
+            // Cursor selalu di akhir
+            input.setSelectionRange(input.value.length, input.value.length);
+        });
+
+
+
+
+
+        // 🔹 Sebelum submit form, ubah jadi angka mentah tanpa titik
+        $('#editMemoForm').on('submit', function() {
+            $('.anggaran-format').each(function() {
+                let raw = $(this).val().replace(/\./g, '');
+                $(this).val(raw);
+            });
+        });
+
+    });
 </script>

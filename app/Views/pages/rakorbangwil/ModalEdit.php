@@ -489,29 +489,30 @@
                 $('#select-ro').html('<option value="">Pilih RO</option>');
             }
         });
-    });
 
-    $('#select-ro').on('change', function() {
-        const id_ro = $(this).val();
 
-        // Kosongkan dulu field satuan
-        $('input[name="nama_satuan"]').val('');
-        $('input[name="id_satuan"]').val('');
+        $('#select-ro').on('change', function() {
+            const id_ro = $(this).val();
 
-        if (id_ro) {
-            $.getJSON('<?= base_url("memorandum/getSatuanByRo") ?>/' + id_ro)
-                .done(function(data) {
-                    if (data) {
-                        $('input[name="nama_satuan"]').val(data.nama_satuan);
-                        $('input[name="id_satuan"]').val(data.id_satuan);
-                    } else {
-                        $('input[name="nama_satuan"]').val('Tidak ditemukan');
-                    }
-                })
-                .fail(function() {
-                    $('input[name="nama_satuan"]').val('Gagal memuat data');
-                });
-        }
+            // Kosongkan dulu field satuan
+            $('input[name="nama_satuan"]').val('');
+            $('input[name="id_satuan"]').val('');
+
+            if (id_ro) {
+                $.getJSON('<?= base_url("memorandum/getSatuanByRo") ?>/' + id_ro)
+                    .done(function(data) {
+                        if (data) {
+                            $('input[name="nama_satuan"]').val(data.nama_satuan);
+                            $('input[name="id_satuan"]').val(data.id_satuan);
+                        } else {
+                            $('input[name="nama_satuan"]').val('Tidak ditemukan');
+                        }
+                    })
+                    .fail(function() {
+                        $('input[name="nama_satuan"]').val('Gagal memuat data');
+                    });
+            }
+        });
     });
 </script>
 

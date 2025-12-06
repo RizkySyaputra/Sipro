@@ -132,8 +132,6 @@
                         <p><?= esc($prog_tahunan->catatan_konfrm_pemda ?? '-') ?></p>
                         <label class="catatan-text"><strong>Catatan Pemda</strong></label>
                         <p><?= esc($prog_tahunan->catatan_pemda ?? '-') ?></p>
-                        <label class="catatan-text"><strong>Catatan Desk Rakorbangwil</strong></label>
-                        <p><?= esc($prog_tahunan->catatan_desk_rakorbangwil ?? '-') ?></p>
                         <label class="catatan-text"><strong>Kesepakatan Rakorbangwil</strong></label>
                         <?php
                         $statusMap = [
@@ -172,6 +170,32 @@
                             <div class="text-muted mt-1">-</div>
                         <?php endif; ?>
                         <!-- </li> -->
+                    </ul>
+                </div>
+                <div class="col-md-12">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <label class="catatan-text"><strong>Catatan Desk Rakorbangwil:</strong></label>
+                            <?php if (!empty($prog_tahunan->catatan_desk_rakorbangwil)): ?>
+                                <?php
+                                $catatanList = json_decode($prog_tahunan->catatan_desk_rakorbangwil, true);
+                                ?>
+                                <?php if (!empty($catatanList)): ?>
+                                    <div class="mt-2">
+                                        <?php foreach ($catatanList as $item): ?>
+                                            <div class="catatan-item">
+                                                <div class="catatan-nama"><?= esc($item['nama']) ?>:</div>
+                                                <p class="catatan-text"><?= esc($item['catatan']) ?></p>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                <?php else: ?>
+                                    <div class="text-muted mt-1">-</div>
+                                <?php endif; ?>
+                            <?php else: ?>
+                                <div class="text-muted mt-1">-</div>
+                            <?php endif; ?>
+                        </li>
                     </ul>
                 </div>
             </div>

@@ -178,6 +178,30 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="row mb-3">
+                                <div class="col-md-1">
+                                    <label for="catatan-pra-rakorbangwil"><strong>Catatan Pra Rakorbangwil</strong></label>
+                                </div>
+                                <div class="col-md-11">
+                                    <select class="form-control" name="catatan_rakorbangwil" id="filter-catatan_rakorbangwil">
+                                        <option value="">Semua Catatan</option>
+                                        <option value="ya">Ya</option>
+                                        <option value="tidak">Tidak</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-1">
+                                    <label for="catatan-konfirmasi-pemda"><strong>Catatan Konfirmasi Pemda</strong></label>
+                                </div>
+                                <div class="col-md-11">
+                                    <select class="form-control" name="konfirmasi_pemda" id="filter-konfirmasi_pemda">
+                                        <option value="">Semua Konfirmasi</option>
+                                        <option value="ya">Ya</option>
+                                        <option value="tidak">Tidak</option>
+                                    </select>
+                                </div>
+                            </div>
                             <!-- Dropdown Kawasan -->
                             <!-- <div class="col-md-3 mb-3">
                                     <label for="kawasan"><strong>Kawasan</strong></label>
@@ -327,7 +351,7 @@
 
 
         // Inisialisasi Select2 untuk semua dropdown
-        $('#filter-unor, #filter-provinsi, #filter-pn,  #filter-sumber').select2();
+        $('#filter-unor, #filter-provinsi, #filter-pn,  #filter-sumber,#filter-catatan_rakorbangwil, #filter-konfirmasi_pemda').select2();
         // Restore values from local storage
         $('#filter-unor').val(localStorage.getItem('selectedUnor'));
         $('#filter-provinsi').val(localStorage.getItem('selectedProvinsi'));
