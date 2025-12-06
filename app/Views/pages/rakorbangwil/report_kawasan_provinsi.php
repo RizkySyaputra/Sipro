@@ -75,6 +75,10 @@
                                     <button type="button" id="reset-filters" class="btn btn-info">
                                         <i class="fa fa-undo"></i>
                                     </button>
+                                    <button type="button" id="download-excel" class="btn btn-success" title="Download Excel">
+                                        <img id="img-excel" src="https://cdn-icons-png.flaticon.com/512/732/732220.png" alt="Excel Icon" style="width: 20px; height: 20px; vertical-align: middle;">
+                                        <span id="loading-spinner-excel" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
+                                    </button>
                                 </div>
                             </div>
                             <!-- </div> -->
@@ -223,6 +227,85 @@
             table.clear().draw();
 
             $('#datatables tfoot').remove();
+        });
+
+        $('#download-excel').on('click', function() {
+            $('#loading-spinner-excel').show();
+            $('#img-excel').hide();
+            // Ambil data filter
+            // let tahun_pelaksanaan = '<?= session()->get('tahun_pelaksana') ?>';
+            // var filterData = $('#filter-form').serialize(); // Serialize data dari form filter
+            let tahun_pelaksanaan = '<?= session()->get('tahun_pelaksana') ?>';
+            let id_provinsi = $('#filter-provinsi').val();
+            let id_unor = $('#filter-unor').val();
+            let id_pn = $('#filter-pn').val();
+            let prov = $('#filter-provinsi').val();
+
+            var hasFilter = (prov && Array.isArray(prov) && prov.filter(v => v !== "").length > 0) ||
+
+                ($('#filter-unor').val() !== "" &&
+                    $('#filter-unor').val() !== "0" &&
+                    $('#filter-unor').val() !== null) ||
+
+                ($('#filter-pn').val() !== "" &&
+                    $('#filter-pn').val() !== "0" &&
+                    $('#filter-pn').val() !== null);
+
+            // console.log('filter ' + filterData);
+            // exit;
+
+            console.log('filter id_provinsi ' + $('#filter-provinsi').val());
+            console.log('filter hasFilter ' + hasFilter);
+
+            // Kirim request AJAX
+            $.ajax({
+                url: '<?= base_url('rakorbangwil/exportToExcelReportKawasan') ?>', // Endpoint controller
+                type: 'POST',
+                data: {
+                    tahun_pelaksanaan: tahun_pelaksanaan,
+                    id_provinsi: id_provinsi,
+                    id_unor: id_unor,
+                    id_pn: id_pn
+                },
+                xhrFields: {
+                    responseType: 'blob' // Terima file sebagai blob
+                },
+                success: function(response) {
+                    // Buat link unduh file
+                    var blob = new Blob([response], {
+                        type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+                    });
+                    var link = document.createElement('a');
+                    var date = new Date();
+                    var timestamp = date.getFullYear() +
+                        (date.getMonth() + 1).toString().padStart(2, '0') +
+                        date.getDate().toString().padStart(2, '0') + '_' +
+                        date.getHours().toString().padStart(2, '0') +
+                        date.getMinutes().toString().padStart(2, '0') +
+                        date.getSeconds().toString().padStart(2, '0');
+                    link.href = window.URL.createObjectURL(blob);
+
+                    var filename = (hasFilter ?
+                        'Filter_Laporan_Program_Tahunan_Kawasan_Per_Provinsi' :
+                        'Laporan_Program_Tahunan_Kawasan_Per_Provinsi') + timestamp + '.xlsx';
+
+                    link.download = filename; // Nama file unduhan
+                    link.click();
+                },
+                error: function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Gagal mengunduh file Excel. Silakan coba lagi.',
+                        confirmButtonText: 'OK'
+                    });
+                },
+                complete: function() {
+                    // Sembunyikan spinner dan kembalikan teks tombol
+                    $('#loading-spinner-excel').hide();
+                    $('#img-excel').show();
+                }
+            });
         });
 
         $(function() {

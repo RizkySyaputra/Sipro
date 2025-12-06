@@ -75,6 +75,10 @@
                                     <button type="button" id="reset-filters" class="btn btn-info">
                                         <i class="fa fa-undo"></i>
                                     </button>
+                                    <button type="button" id="download-excel" class="btn btn-success" title="Download Excel">
+                                        <img id="img-excel" src="https://cdn-icons-png.flaticon.com/512/732/732220.png" alt="Excel Icon" style="width: 20px; height: 20px; vertical-align: middle;">
+                                        <span id="loading-spinner-excel" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
+                                    </button>
                                 </div>
                             </div>
                             <!-- </div> -->

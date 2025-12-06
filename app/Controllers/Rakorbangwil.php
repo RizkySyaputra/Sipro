@@ -810,4 +810,114 @@ class Rakorbangwil extends BaseController
         $writer->save('php://output');
         exit;
     }
+
+    public function export_to_excel_report_kawasan()
+    {
+        // Ambil data filter dari request POST
+        $tahun_pelaksanaan = $this->request->getPost('tahun_pelaksanaan');
+        $id_provinsi = $this->request->getPost('id_provinsi');
+        $id_unor = $this->request->getPost('id_unor');
+        $id_pn = $this->request->getPost('id_pn');
+
+        // $total_kawasan = 0;
+        $total_tematik = 0;
+        // $total_pertumbuhan = 0;
+        // $total_swasembada = 0;
+        // $total_afirmasi = 0;
+        // $total_konservasi = 0;
+        // $total_unggulan = 0;
+
+        $kawasanPerProvinsi = $this->reportProgTahunanPerProvinsiModel->getReportKawasanPerProvinsi($tahun_pelaksanaan, $id_provinsi, $id_unor, $id_pn);
+
+        // Buat Spreadsheet baru
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+
+        // Header kolom
+        $sheet->setCellValue('A1', 'No');
+        $sheet->setCellValue('B1', 'Provinsi');
+        $sheet->setCellValue('C1', 'Kawasan');
+        $sheet->setCellValue('D1', 'Tematik Kawasan');
+
+        // Baris 2 (turunan)
+        $sheet->setCellValue('D2', 'Pertumbuhan');
+        $sheet->setCellValue('E2', 'Swasembada');
+        $sheet->setCellValue('F2', 'Afimasi');
+        $sheet->setCellValue('G2', 'Konservasi/Rawan Bencana');
+        $sheet->setCellValue('H2', 'Komoditas Unggulan');
+        $sheet->setCellValue('I2', 'Total');
+
+        // ROWSPAN untuk No, Provinsi, Kawasan
+        $sheet->mergeCells('A1:A2');  // No
+        $sheet->mergeCells('B1:B2');  // Provinsi
+        $sheet->mergeCells('C1:C2');  // Kawasan
+
+        // COLSPAN untuk NAMA
+        $sheet->mergeCells('D1:I1');  // NAMA punya 3 turunan
+
+
+        // Membuat teks header menjadi bold
+        $sheet->getStyle('A1:AI1')->getFont()->setBold(true);
+        $sheet->getStyle('D2:I2')->getFont()->setBold(true);
+
+        // Rata tengah semua header A1 sampai I2
+        $sheet->getStyle('A1:I2')->getAlignment()->setHorizontal('center');
+        $sheet->getStyle('A1:I2')->getAlignment()->setVertical('center');
+
+        // Atur kolom agar auto size
+        // foreach (range('A', 'AM') as $col) {
+        //     $sheet->getColumnDimension($col)->setAutoSize(true);
+        // }
+
+        // Atur semua kolom agar auto size (termasuk kolom di atas 'Z')
+        foreach ($sheet->getColumnIterator() as $column) {
+            $columnIndex = $column->getColumnIndex();
+            $sheet->getColumnDimension($columnIndex)->setAutoSize(true);
+        }
+
+        // Recalculate lebar kolom agar pas
+        $sheet->calculateColumnWidths();
+
+        // Isi data ke dalam sheet
+        $row = 3; // Baris data dimulai dari baris ke-2
+        foreach ($kawasanPerProvinsi as $index => $kp) {
+
+            // $total_kawasan += $kp->jml_kawasan ?? 0;
+            // $total_pertumbuhan += $kp->jml_pertumbuhan ?? 0;
+            // $total_swasembada += $kp->jml_swasembada ?? 0;
+            // $total_afirmasi += $kp->jml_afirmasi ?? 0;
+            // $total_konservasi += $kp->jml_konservasi ?? 0;
+            // $total_unggulan += $kp->jml_unggulan ?? 0;
+            $total_tematik = $kp->jml_pertumbuhan + $kp->jml_swasembada + $kp->jml_afirmasi + $kp->jml_unggulan;
+
+            //
+            $sheet->setCellValue('A' . $row, $index + 1);
+            $sheet->setCellValue('B' . $row, $kp->provinsi);
+            $sheet->setCellValue('C' . $row, $kp->jml_kawasan);
+            $sheet->setCellValue('D' . $row, $kp->jml_pertumbuhan);
+            $sheet->setCellValue('E' . $row, $kp->jml_swasembada);
+            $sheet->setCellValue('F' . $row, $kp->jml_afirmasi);
+            $sheet->setCellValue('G' . $row, $kp->jml_konservasi);
+            $sheet->setCellValue('H' . $row, $kp->jml_unggulan);
+            $sheet->setCellValue('I' . $row, $total_tematik);
+            $row++;
+        }
+
+        // Simpan file sebagai output langsung
+        $writer = new Xlsx($spreadsheet);
+        $filename = 'Laporan_Program_Tahunan_Kawasan_Per_Provinsi_' . date('Y-m-d_H-i-s') . '.xlsx';
+
+        // Header untuk download file Excel
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment; filename="' . $filename . '"');
+        header('Cache-Control: max-age=0');
+
+        // clean output buffer
+        while (ob_get_level()) {
+            ob_end_clean();
+        }
+        // Tulis file ke output
+        $writer->save('php://output');
+        exit;
+    }
 }

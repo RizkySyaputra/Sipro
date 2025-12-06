@@ -124,9 +124,8 @@ $routes->post('/memorandum/filter_laporan5', 'Memorandum::filter_laporan5');
 //routes rakorbangwil
 //proram_tahunan
 $routes->get('/rakorbangwil/program_tahunan', 'Rakorbangwil::daftar_program_tahunan', ['filter' => 'permission']);
-
 $routes->post('rakorbangwil/exportToExcel', 'Rakorbangwil::export_to_excel');
-
+$routes->post('rakorbangwil/exportToExcelReportKawasan', 'Rakorbangwil::export_to_excel_report_kawasan');
 $routes->get('/rakorbangwil/catatan_pemda', 'Rakorbangwil::catatan_pemda', ['filter' => 'permission']);
 
 $routes->post('/rakorbangwil/get_daftar_program_tahunan', 'Rakorbangwil::get_daftar_program_tahunan');
