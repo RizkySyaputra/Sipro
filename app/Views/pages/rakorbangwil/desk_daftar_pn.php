@@ -27,7 +27,7 @@
                     <i class="material-icons">source</i>
                 </div>
                 <!-- <h4 class="card-title">Program Jangka Menengah</h4> -->
-                <h4 class="card-title">Pembahasan Pra-Rakorbangwil</h4>
+                <h4 class="card-title">Pembahasan Rakorbangwil</h4>
             </div>
             <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
@@ -298,7 +298,7 @@
         $(document).on('click', '.btn-view', function() {
             let id = $(this).data('id');
             // 🔹 Buka halaman detail di tab baru
-            window.open("<?= base_url('rakorbangwil/view_pn') ?>/" + id, '_blank');
+            window.open("<?= base_url('rakorbangwil/desk_view_pn') ?>/" + id, '_blank');
         });
     });
 

@@ -28,8 +28,14 @@ function renderMenuVisibility($menus, $parent_id = 0, &$group = 0, $groupColors 
                 </td>
                 <td class="text-center">
                     <label class="switch">
-                        <input type="checkbox" name="is_active[]" value="<?= $menu['id_menu'] ?>"
+                        <input type="checkbox"
+                            class="menu-toggle"
+                            data-id="<?= $menu['id_menu'] ?>"
+                            data-parent="<?= $menu['parent_id'] ?>"
+                            name="is_active[]"
+                            value="<?= $menu['id_menu'] ?>"
                             <?= $menu['is_active'] ? 'checked' : '' ?>>
+
                         <span class="slider"></span>
                     </label>
                 </td>
@@ -80,6 +86,54 @@ function renderMenuVisibility($menus, $parent_id = 0, &$group = 0, $groupColors 
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        const toggles = document.querySelectorAll(".menu-toggle");
+        const childMap = {};
+
+        // Buat mapping: parentId → list of childId
+        toggles.forEach(t => {
+            const id = t.dataset.id;
+            const parent = t.dataset.parent;
+
+            if (!childMap[parent]) {
+                childMap[parent] = [];
+            }
+            childMap[parent].push(id);
+        });
+
+        // Fungsi cascade OFF ke seluruh anak
+        function turnOffChildren(parentId) {
+            if (!childMap[parentId]) return;
+
+            childMap[parentId].forEach(childId => {
+                const checkbox = document.querySelector(`.menu-toggle[data-id="${childId}"]`);
+                if (checkbox) {
+                    checkbox.checked = false;
+
+                    // Rekursif → matikan cucu & cicit
+                    turnOffChildren(childId);
+                }
+            });
+        }
+
+        // Event listener toggle
+        toggles.forEach(toggle => {
+            toggle.addEventListener("change", function() {
+                const id = this.dataset.id;
+
+                // Jika parent OFF → semua anak ikut OFF
+                if (!this.checked) {
+                    turnOffChildren(id);
+                }
+
+                // Jika parent ON → tidak menyentuh anak
+            });
+        });
+
+    });
+</script>
 
 <style>
     .switch {

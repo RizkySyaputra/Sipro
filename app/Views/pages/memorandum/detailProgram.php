@@ -122,7 +122,7 @@
                         </div>
                     </div>
                     <!-- <div class="row mb-3">
-                        <div class="col-sm-3 font-weight-bold">Catatan KL</div>
+                        <div class="col-sm-3 font-weight-bold">Catatan K/L</div>
                         <div class="col-sm-9">
                             <textarea name="" class="form-control"></textarea>
                         </div>

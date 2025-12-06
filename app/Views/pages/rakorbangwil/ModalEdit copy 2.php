@@ -245,7 +245,7 @@
                     <p><?= esc($progTahunan->sumber ?? '-') ?></p>
                     <input type="text" class="form-control" name="sumber" value="<?= esc($progTahunan->sumber ?? '-') ?>" hidden>
 
-                    <label class="catatan-text"><strong>Kebutuhan Dukungan KL</strong></label>
+                    <label class="catatan-text"><strong>Kebutuhan Dukungan K/L</strong></label>
                     <textarea class="form-control" name="kebutuhan_dukungan_kl"><?= esc($progTahunan->kebutuhan_dukungan_kl ?? '-') ?></textarea>
 
                     <label class="catatan-text"><strong>Reviu Puswil</strong></label>
