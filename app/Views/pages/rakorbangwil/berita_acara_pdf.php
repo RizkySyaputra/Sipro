@@ -141,7 +141,7 @@
 
 
     <!-- ======== A. KAWASAN PRIORITAS ======== -->
-    <h5>A. Disepakati Kawasan Prioritas di Provinsi <?= $provinsi['provinsi'] ?></h5>
+    <h5>A. Disepakati Kawasan Prioritas di Provinsi <?= $provinsi['provinsi'] ?> </h5>
 
     <table>
         <thead>
@@ -171,7 +171,7 @@
 
 
     <!-- ======== B. DIKOMODASI ======== -->
-    <h5>B. Disepakati Program/Kegiatan Infrastruktur PU TA 2027 yang Diakomodasi di Provinsi <?= $provinsi['provinsi'] ?></h5>
+    <h5>B. Disepakati program/kegiatan infrastruktur PU TA 2027 yang diakomodasi di Provinsi <?= $provinsi['provinsi'] ?>sebagai berikut :</h5>
 
     <table>
         <thead>
@@ -207,7 +207,7 @@
 
 
     <!-- ======== C. DITANGGUHKAN ======== -->
-    <h5>C. Disepakati Program/Kegiatan Infrastruktur PU TA 2027 yang Ditangguhkan di Provinsi <?= $provinsi['provinsi'] ?></h5>
+    <h5>C. Disepakati program/kegiatan infrastruktur PU TA 2027 yang ditangguhkan di Provinsi <?= $provinsi['provinsi'] ?>sebagai berikut :</h5>
 
     <table>
         <thead>
@@ -247,7 +247,7 @@
 
 
     <!-- ======== D. TIDAK TERBAHAS ======== -->
-    <h5>D. Program/Kegiatan Infrastruktur PU TA 2027 yang Tidak Terbahas di Provinsi Aceh akan dilanjutkan pada Konsultasi Regional (Konreg) TA 2026 sebagai berikut:</h5>
+    <h5>D. Disepakati program/kegiatan infrastruktur PU TA 2027 yang tidak terbahas di Provinsi <?= $provinsi['provinsi'] ?> akan dilanjutkan pada Pra Desk Konsultasi Regional (Konreg) TA 2026 atau menjadi Input pada Forum Pemrograman di Luar APBN sebagai berikut:</h5>
 
     <table>
         <thead>
@@ -285,15 +285,12 @@
     <!-- ======== PARAGRAF PENUTUP ======== -->
     <p style="margin-top:25px;">
         Program/kegiatan infrastruktur PU TA 2027 di Provinsi <?= $provinsi['provinsi'] ?>
-        akan dibahas lebih lanjut dalam Konsultasi Regional dan forum pemrograman lainnya
-        dengan memperhatikan readiness criteria, ketersediaan alokasi anggaran, dan tingkat prioritasnya.
+        akan dibahas lebih lanjut dalam Konsultasi Regional (Konreg) Kementerian PU dan forum pemrograman dan penganggaran tingkat nasional dengan memperhatikan kesiapan readiness criteria, ketersedian alokasi anggaran, dan tingkat prioritasnya.
     </p>
 
     <p style="text-align:center; margin-bottom:40px;">
         Jakarta, <?= date('d F Y', strtotime($tanggal_bak)) ?>
     </p>
-    <h3 class="new-page">Tanda Tangan Pejabat</h3>
-
     <table style="width: 100%; border-collapse: collapse; text-align: center;">
         <?php
         $count = 0;
