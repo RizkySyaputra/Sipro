@@ -865,11 +865,13 @@ class Rakorbangwil extends BaseController
         $sheet->setCellValue('AK1', 'KL');
         $sheet->setCellValue('AL1', 'Kebutuhan Dukungan K/L');
         $sheet->setCellValue('AM1', 'Catatan Pra Rakorbangwil');
-        $sheet->setCellValue('AN1', 'Catatan Pemda');
+        $sheet->setCellValue('AN1', 'Kebutuhan Dukungan Pemda');
+        $sheet->setCellValue('AO1', 'Catatan Pemda');
+        $sheet->setCellValue('AP1', 'Catatan Desk Rakorbangwil');
         // $sheet->setCellValue('AM1', 'Reviu Puswil');
 
         // Membuat teks header menjadi bold
-        $sheet->getStyle('A1:AN1')->getFont()->setBold(true);
+        $sheet->getStyle('A1:AP1')->getFont()->setBold(true);
 
         // Atur kolom agar auto size
         // foreach (range('A', 'AM') as $col) {
@@ -877,10 +879,10 @@ class Rakorbangwil extends BaseController
         // }
 
         // Atur semua kolom agar auto size (termasuk kolom di atas 'Z')
-        foreach ($sheet->getColumnIterator() as $column) {
-            $columnIndex = $column->getColumnIndex();
-            $sheet->getColumnDimension($columnIndex)->setAutoSize(true);
-        }
+        // foreach ($sheet->getColumnIterator() as $column) {
+        //     $columnIndex = $column->getColumnIndex();
+        //     $sheet->getColumnDimension($columnIndex)->setAutoSize(true);
+        // }
 
         // Recalculate lebar kolom agar pas
         $sheet->calculateColumnWidths();
@@ -929,7 +931,9 @@ class Rakorbangwil extends BaseController
             $sheet->setCellValue('AK' . $row, $dt->kl);
             $sheet->setCellValue('AL' . $row, $dt->kebutuhan_dukungan_kl);
             $sheet->setCellValue('AM' . $row, $dt->catatan_pra_rakorbangwil);
-            $sheet->setCellValue('AN' . $row, $dt->catatan_pemda);
+            $sheet->setCellValue('AN' . $row, $dt->catatan_konfrm_pemda);
+            $sheet->setCellValue('AO' . $row, $dt->catatan_pemda);
+            $sheet->setCellValue('AP' . $row, $dt->catatan_desk_rakorbangwil);
             // $sheet->setCellValue('AM' . $row, $dt->reviu_puswil);
             $row++;
         }
@@ -1349,5 +1353,103 @@ class Rakorbangwil extends BaseController
         }
 
         return $this->response->setJSON(array_values($rekap));
+    }
+
+    public function laporan5()
+    {
+        if (user()->id_provinsi) {
+            $id_provinsi = user()->id_provinsi;
+            $dataProvinsi = $this->provinsiModel->where('id', $id_provinsi)->first();
+        } else {
+            $dataProvinsi = $this->provinsiModel->getProvinsi();
+        }
+        // $dataKawasan = $this->kawasanRpiwModel->getKawasan();
+        // $dataUnor = $this->unorModel->getUnor();
+        $data = [
+            // 'kawasan' => $dataKawasan,
+            'provinsi' => $dataProvinsi,
+            // 'unor' => $dataUnor
+        ];
+        $this->template->write('title', 'Program Tahunan');
+        $this->template->load('/templates/main', '/pages/rakorbangwil/report_desk_kawasan_pekerjaan', $data);
+    }
+
+    public function filter_laporan5()
+    {
+        if (user()->id_provinsi) {
+            $provinsi = user()->id_provinsi;
+        } else {
+            $provinsi = $this->request->getPost('id_provinsi');
+        }
+        $pn = $this->request->getPost('id_pn');
+        // $sumber = $this->request->getPost('sumber');
+        // $unor = $this->request->getPost('unor');
+        if ($this->request->getPost('id_pn')) {
+            $pn = $this->request->getPost('id_pn');
+        } else {
+            $pn = "ALLPN";
+        }
+
+        $dataPekerjaan = $this->reportProgTahunanPerProvinsiModel->getReportDeskRakorbangwilKawasanPekerjaan(
+            $provinsi,
+            $pn,
+            null,
+            'x'
+        );
+
+        $rekap = [];
+
+        foreach ($dataPekerjaan as $p) {
+
+            if (empty($p->kawasan_panjang)) continue;
+
+            // $key = $p->kawasan_panjang;
+
+            // key unik per provinsi dan kawasan panjang untuk mengcover value yang sama (contoh: Non Kawasan)
+            $key = $p->provinsi . '|' . $p->kawasan_panjang;
+
+            if (!isset($rekap[$key])) {
+                $rekap[$key] = [
+                    'provinsi' => $p->provinsi,
+                    'tematik' => $p->tematik,
+                    'kawasan' => $p->kawasan_panjang,
+                    'pekerjaan_belum_dibahas'   => 0,
+                    'pekerjaan_sudah_dibahas'   => 0,
+                    'jumlah_pekerjaan'  => 0
+                ];
+            }
+
+            if ($p->desk_rakorbangwil == 0) {
+                $rekap[$key]['pekerjaan_belum_dibahas']++;
+            } else {
+                $rekap[$key]['pekerjaan_sudah_dibahas']++;
+            }
+
+            $rekap[$key]['jumlah_pekerjaan']++;
+        }
+
+        // Sort A-Z
+        usort($rekap, function ($a, $b) {
+            // 1. Sort berdasarkan provinsi dulu
+            $cmp = strcmp($a['provinsi'], $b['provinsi']);
+            if ($cmp !== 0) return $cmp;
+            // 2. Jika provinsi sama, non-kawasan selalu terakhir
+            $isA = ($a['kawasan'] === 'Non Kawasan');
+            $isB = ($b['kawasan'] === 'Non Kawasan');
+
+            // A muncul setelah B karena A > B
+            if ($isA && !$isB) return 1;
+            // A muncul sebelum B karena A < B
+            if ($isB && !$isA) return -1;
+
+            // 3. Selain itu urutkan kawasan A–Z
+            return strcmp($a['kawasan'], $b['kawasan']);
+        });
+
+        $data = [
+            'rekap' => $rekap
+        ];
+
+        return view('/pages/rakorbangwil/tabel/tabel_report_desk_kawasan_pekerjaan', $data);
     }
 }
