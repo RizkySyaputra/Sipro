@@ -96,4 +96,59 @@ class ReportProgTahunanPerProvinsiModel extends Model
         $query = $builder->get();
         return $query->getResult();
     }
+
+    public function getReportDeskRakorbangwilKawasanPekerjaan($id_provinsi, $pn = "ALL", $catatan_kl = null, $pembiayaan = null)
+    {
+        $tahun_pelaksanaan = session('tahun_pelaksana');
+        $builder = $this->db->table('view_prog_tahunan as a');
+        // SELECT clause
+        $builder->select("a.*");
+        // WHERE clause
+        if ($id_provinsi) {
+            $builder->whereIn('a.id_provinsi', $id_provinsi);
+        }
+        // if ($id_unor) {
+        //     $builder->where('a.id_unor', $id_unor);
+        // }
+        // if ($sumber) {
+        //     $builder->where('a.sumber', $sumber);
+        // }
+
+        if ($pembiayaan) {
+            if ($pembiayaan == 'x') {
+                $builder->whereIn('a.id_pendanaan', [1, 3, 5, 6, 7]);
+            } else {
+                $builder->where('a.id_pendanaan', $pembiayaan);
+            }
+        }
+        if ($pn) {
+            if ($pn == "ALLPN") {
+                $builder->where('a.id_pn is not null', null, false);
+            } else {
+                $builder->where('a.id_pn', $pn);
+            }
+        }
+
+        if ($catatan_kl == 'x') {
+            $builder->groupStart() // buka grup OR
+                ->groupStart()
+                ->where('a.catatan_pra_rakorbangwil IS NOT NULL', null, false)
+                ->where('a.catatan_pra_rakorbangwil !=', '-')
+                ->groupEnd()
+                ->orGroupStart()
+                ->where('a.catatan_konfrm_pemda IS NOT NULL', null, false)
+                ->where('a.catatan_konfrm_pemda !=', '-')
+                ->groupEnd()
+                ->groupEnd(); // tutup grup OR
+            $builder->orderBy('a.catatan_pemda', 'ASC');
+        }
+        $builder->where('a.thn_pelaksanaan', $tahun_pelaksanaan);
+        $builder->orderBy('a.id_provinsi', 'ASC');
+        // Eksekusi
+
+        // echo $builder->getCompiledSelect();
+        // exit;
+        $query = $builder->get();
+        return $query->getResult();
+    }
 }

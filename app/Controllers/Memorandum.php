@@ -1005,10 +1005,10 @@ class Memorandum extends BaseController
         // }
 
         // Atur semua kolom agar auto size (termasuk kolom di atas 'Z')
-        foreach ($sheet->getColumnIterator() as $column) {
-            $columnIndex = $column->getColumnIndex();
-            $sheet->getColumnDimension($columnIndex)->setAutoSize(true);
-        }
+        // foreach ($sheet->getColumnIterator() as $column) {
+        //     $columnIndex = $column->getColumnIndex();
+        //     $sheet->getColumnDimension($columnIndex)->setAutoSize(true);
+        // }
 
         // Recalculate lebar kolom agar pas
         $sheet->calculateColumnWidths();
