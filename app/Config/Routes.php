@@ -291,6 +291,8 @@ $routes->post('/rakorbangwil/create_berita_acara', 'Rakorbangwil::create_bak');
 $routes->post('/rakorbangwil/get_pejabat_bak', 'Rakorbangwil::get_pejabat_bak');
 $routes->post('/rakorbangwil/addPejabatBAK', 'Rakorbangwil::addPejabatBAK');
 $routes->post('/rakorbangwil/delete_pejabat_bak', 'Rakorbangwil::delete_pejabat_bak');
+$routes->post('/rakorbangwil/update_prioritas_pejabat', 'Rakorbangwil::updatePrioritasPejabat');
+
 
 
 //Program Konreg

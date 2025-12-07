@@ -1167,7 +1167,7 @@ class Rakorbangwil extends BaseController
         $diakomodasi = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 1);
         $ditangguhkan = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 2);
         $tidakTerbahas = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 0);
-        $pejabat_bak = $this->pejabatBakModel->where('id_provinsi', $provinsi_id)->where('id_pn', $id_pn)->findAll();
+        $pejabat_bak = $this->pejabatBakModel->where('id_provinsi', $provinsi_id)->where('id_pn', $id_pn)->orderBy('prioritas', 'ASC')->findAll();
         return $this->response->setJSON([
             'kawasan'        => $kawasan,
             'diakomodasi'    => $diakomodasi,
@@ -1250,11 +1250,13 @@ class Rakorbangwil extends BaseController
             ->select('m_ttd_ba_rakorbangwil.id,
                   m_pejabat.nama_pejabat,
                   m_pejabat.jabatan,
-                  m_provinsi.provinsi')
+                  m_provinsi.provinsi,
+                  m_ttd_ba_rakorbangwil.prioritas')
             ->join('m_pejabat', 'm_pejabat.id_pejabat = m_ttd_ba_rakorbangwil.id_pejabat')
             ->join('m_provinsi', 'm_provinsi.id = m_ttd_ba_rakorbangwil.id_provinsi')
             ->where('m_ttd_ba_rakorbangwil.id_provinsi', $provinsi_id)
             ->where('m_ttd_ba_rakorbangwil.id_pn', $pn_id)
+            ->orderBy('prioritas', 'ASC')
             ->findAll();
 
         return $this->response->setJSON($data);
@@ -1271,14 +1273,31 @@ class Rakorbangwil extends BaseController
             return redirect()->back()->with('error', 'Data tidak lengkap.');
         }
 
+        // ===========================================
+        // 1. CARI PRIORITAS TERAKHIR UNTUK PROVINSI + PN
+        // ===========================================
+        $last = $this->pejabatBakModel
+            ->where('id_provinsi', $provinsi_id)
+            ->where('id_pn', $pn_id)
+            ->orderBy('prioritas', 'DESC')
+            ->first();
+
+        // Jika belum ada data → mulai dari prioritas 1
+        $newPrioritas = $last ? $last->prioritas + 1 : 1;
+
+        // ===========================================
+        // 2. INSERT PEJABAT DENGAN PRIORITAS OTOMATIS
+        // ===========================================
         $this->pejabatBakModel->insert([
             'id_pejabat'  => $pejabat_id,
             'id_provinsi' => $provinsi_id,
-            'id_pn'       => $pn_id
+            'id_pn'       => $pn_id,
+            'prioritas'   => $newPrioritas
         ]);
 
         return redirect()->back()->with('success', 'Pejabat berhasil ditambahkan.');
     }
+
 
     public function delete_pejabat_bak()
     {
@@ -1287,6 +1306,24 @@ class Rakorbangwil extends BaseController
 
         return $this->response->setJSON(['status' => true]);
     }
+    public function updatePrioritasPejabat()
+    {
+        $orderData = $this->request->getPost('order');
+
+        if (!$orderData) {
+            return $this->response->setJSON(['status' => 'error']);
+        }
+
+        foreach ($orderData as $row) {
+            $this->pejabatBakModel
+                ->where('id', $row['id'])
+                ->set(['prioritas' => $row['prioritas']])
+                ->update();
+        }
+
+        return $this->response->setJSON(['status' => 'success']);
+    }
+
     public function get_rekap_kawasan()
     {
         if (user()->id_provinsi) {

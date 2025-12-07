@@ -21,7 +21,38 @@
         margin: 0;
         white-space: pre-line;
     }
+
+    /* Efek saat baris di-drag */
+    .drag-active {
+        background: #d9ecff !important;
+        transition: background 0.3s ease;
+    }
+
+    /* Animasi saat baris lain bergeser */
+    .sortable-pejabat tr {
+        transition: transform 200ms ease, background 200ms ease;
+    }
+
+    /* Hover untuk feedback */
+    .sortable-pejabat tr:hover {
+        background: #f5faff;
+    }
 </style>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="<?= base_url('assets/js/jquery-ui.min.js') ?>"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap4.min.css">
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
+<script>
+    console.log("Check jQuery:", typeof jQuery);
+    console.log("Check jQuery UI:", typeof $.ui);
+    console.log("Check Sortable:", typeof $.fn.sortable);
+</script>
+
 <div class="row">
     <div class="col-md-12">
         <div class="card shadow-sm">
@@ -222,14 +253,14 @@
                                         <table id="table-pejabat-bak" class="table table-striped table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th>No</th>
+                                                    <th style="width:40px;"></th>
                                                     <th>Nama Pejabat</th>
                                                     <th>Jabatan</th>
                                                     <th>Provinsi</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody class="sortable-pejabat">
                                                 <!-- akan diisi via AJAX -->
                                             </tbody>
                                         </table>
@@ -298,7 +329,11 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-primary">Tambah Pejabat</button>
+                        <button type="submit" class="btn btn-primary" id="btn-submit-pejabat">
+                            <span class="text-label">Tambah Pejabat</span>
+                            <span class="spinner-border spinner-border-sm d-none" id="spinner-pejabat"></span>
+                        </button>
+
                     </div>
                 </form>
 
@@ -312,13 +347,6 @@
         <input type="hidden" name="tanggal" id="post-tanggal">
     </form>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap4.min.css">
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
     <script>
         window.currentCatatanData = <?= json_encode(json_decode($catatan_pn->catatan_pra_rakorbangwil ?? '[]')) ?>;
     </script>
@@ -585,31 +613,37 @@
 
                             if (!response || response.length === 0) {
                                 html = `
-                        <tr>
-                            <td colspan="5" class="text-center text-muted">
-                                Belum ada pejabat untuk kombinasi Provinsi & PN Terpilih.
-                            </td>
-                        </tr>`;
+            <tr>
+                <td colspan="5" class="text-center text-muted">
+                    Belum ada pejabat untuk kombinasi Provinsi & PN Terpilih.
+                </td>
+            </tr>`;
                             } else {
                                 response.forEach((item, i) => {
                                     html += `
-                            <tr>
-                                <td>${i + 1}</td>
-                                <td>${item.nama_pejabat}</td>
-                                <td>${item.jabatan}</td>
-                                <td>${item.provinsi}</td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm btn-delete-pejabat" data-id="${item.id}">
-                                        <i class="fa fa-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                        `;
+                <tr data-id="${item.id}">
+                    <td class="drag-handle text-center" title="Geser urutan">
+    <i class="fa fa-bars"></i>
+        </td>
+                    <td>${item.nama_pejabat}</td>
+                    <td>${item.jabatan}</td>
+                    <td>${item.provinsi}</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm btn-delete-pejabat" data-id="${item.id}">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            `;
                                 });
                             }
 
                             $('#table-pejabat-bak tbody').html(html);
+
+                            // ===== AKTIFKAN SORTABLE ULANG SESUDAH TABEL DI UPDATE =====
+                            enableSortable();
                         }
+
                     });
                 }
 
@@ -644,17 +678,41 @@
                 $('#form-tambah-pejabat').on('submit', function(e) {
                     e.preventDefault();
 
+                    // ====== AKTIFKAN SPINNER ======
+                    $("#btn-submit-pejabat").prop("disabled", true);
+                    $("#btn-submit-pejabat .text-label").addClass("d-none");
+                    $("#spinner-pejabat").removeClass("d-none");
+
                     $.ajax({
                         url: $(this).attr("action"),
                         type: "POST",
                         data: $(this).serialize(),
                         success: function(res) {
+
+                            // reset tombol
+                            $("#btn-submit-pejabat").prop("disabled", false);
+                            $("#btn-submit-pejabat .text-label").removeClass("d-none");
+                            $("#spinner-pejabat").addClass("d-none");
+
                             $('#modalAddPejabat').modal('hide');
+
                             Swal.fire('Berhasil', 'Pejabat berhasil ditambahkan', 'success');
+
+                            // reload tabel
                             loadPejabatBAK();
+                        },
+
+                        error: function() {
+                            // reset tombol
+                            $("#btn-submit-pejabat").prop("disabled", false);
+                            $("#btn-submit-pejabat .text-label").removeClass("d-none");
+                            $("#spinner-pejabat").addClass("d-none");
+
+                            Swal.fire('Error', 'Gagal menambah pejabat', 'error');
                         }
                     });
                 });
+
 
                 // ========= HAPUS PEJABAT =========
                 $(document).on('click', '.btn-delete-pejabat', function() {
@@ -693,6 +751,72 @@
 
 
         });
+        // ===================================================
+        // Fitur Drag & Drop Urutan Pejabat Penandatangan BAK
+        // ===================================================
+        function enableSortable() {
+
+            const $el = $(".sortable-pejabat");
+
+            // Hanya destroy jika sebelumnya sudah pernah sortable
+            if ($el.data("ui-sortable")) {
+                $el.sortable("destroy");
+            }
+
+            $el.sortable({
+                handle: ".drag-handle",
+                cursor: "move",
+                axis: "y",
+                opacity: 0.8,
+                revert: 150,
+
+                helper: function(e, tr) {
+                    var originals = tr.children();
+                    var helper = tr.clone();
+                    helper.children().each(function(index) {
+                        $(this).width(originals.eq(index).width());
+                    });
+                    helper.css({
+                        "background": "#eef6ff",
+                        "box-shadow": "0 4px 12px rgba(0,0,0,0.15)"
+                    });
+                    return helper;
+                },
+
+                start: function(e, ui) {
+                    ui.item.addClass("drag-active");
+                },
+
+                stop: function(e, ui) {
+                    ui.item.removeClass("drag-active");
+                },
+
+                update: function() {
+                    let newOrder = [];
+
+                    $(".sortable-pejabat tr").each(function(index) {
+                        let id = $(this).data("id");
+                        if (id) {
+                            newOrder.push({
+                                id: id,
+                                prioritas: index + 1
+                            });
+                        }
+                    });
+
+                    $.ajax({
+                        url: "<?= base_url('/rakorbangwil/update_prioritas_pejabat') ?>",
+                        type: "POST",
+                        data: {
+                            order: newOrder
+                        },
+                        success: function() {
+                            console.log("Prioritas updated");
+                        }
+                    });
+                }
+            });
+        }
     </script>
 
     <script>
@@ -769,5 +893,19 @@
         .table th {
             background-color: #f1f3f5;
             color: #333;
+        }
+
+        .drag-handle {
+            cursor: grab;
+            font-size: 18px;
+            color: #6c757d;
+        }
+
+        .drag-handle:active {
+            cursor: grabbing;
+        }
+
+        .drag-handle i {
+            pointer-events: none;
         }
     </style>
