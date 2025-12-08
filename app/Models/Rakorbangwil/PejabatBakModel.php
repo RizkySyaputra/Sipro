@@ -19,7 +19,8 @@ class PejabatBakModel extends Model
         'id_provinsi',
         'id_desk',
         'id_pn',
-        'prioritas'
+        'prioritas',
+        'thn_pelaksanaan'
     ];
 
 

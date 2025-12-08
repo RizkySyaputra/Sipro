@@ -1197,6 +1197,7 @@ class Rakorbangwil extends BaseController
             ->join('m_pejabat pejabat', 'pejabat.id_pejabat = m_ttd_ba_rakorbangwil.id_pejabat')
             ->where('m_ttd_ba_rakorbangwil.id_provinsi', $provinsi_id)
             ->where('m_ttd_ba_rakorbangwil.id_pn', $id_pn)
+            ->where('m_ttd_ba_rakorbangwil.thn_pelaksanaan', session('tahun_pelaksana'))
             ->orderBy('m_ttd_ba_rakorbangwil.prioritas')
             ->findAll();
 
@@ -1272,6 +1273,7 @@ class Rakorbangwil extends BaseController
             ->join('m_provinsi', 'm_provinsi.id = m_ttd_ba_rakorbangwil.id_provinsi')
             ->where('m_ttd_ba_rakorbangwil.id_provinsi', $provinsi_id)
             ->where('m_ttd_ba_rakorbangwil.id_pn', $pn_id)
+            ->where('m_ttd_ba_rakorbangwil.thn_pelaksanaan', session('tahun_pelaksana'))
             ->orderBy('prioritas', 'ASC')
             ->findAll();
 
@@ -1295,6 +1297,7 @@ class Rakorbangwil extends BaseController
         $last = $this->pejabatBakModel
             ->where('id_provinsi', $provinsi_id)
             ->where('id_pn', $pn_id)
+            ->where('thn_pelaksanaan',  session('tahun_pelaksana'))
             ->orderBy('prioritas', 'DESC')
             ->first();
 
@@ -1308,7 +1311,8 @@ class Rakorbangwil extends BaseController
             'id_pejabat'  => $pejabat_id,
             'id_provinsi' => $provinsi_id,
             'id_pn'       => $pn_id,
-            'prioritas'   => $newPrioritas
+            'prioritas'   => $newPrioritas,
+            'thn_pelaksanaan'   => session('tahun_pelaksana')
         ]);
 
         return redirect()->back()->with('success', 'Pejabat berhasil ditambahkan.');
