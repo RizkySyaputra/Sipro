@@ -35,13 +35,7 @@ class DaftarProgTahunanModel extends Model
                 $builder->where('a.id_pendanaan', $pembiayaan);
             }
         }
-        if ($pn) {
-            if ($pn == "ALLPN") {
-                $builder->where('a.id_pn is not null', null, false);
-            } else {
-                $builder->where('a.id_pn', $pn);
-            }
-        }
+
         if ($tipe) {
             $builder->where('a.tipe_pekerjaan', $tipe);
         }
@@ -95,6 +89,15 @@ class DaftarProgTahunanModel extends Model
             $builder->orderBy('a.catatan_pemda', 'ASC');
         }
         $builder->where('a.thn_pelaksanaan', $tahun_pelaksanaan);
+        if ($pn) {
+            if ($pn == "ALLPN") {
+                $builder->where('a.id_pn is not null', null, false);
+                $builder->orderBy('a.catatan_konfrm_pemda', 'DESC');
+                $builder->orderBy('a.catatan_pemda', 'DESC');
+            } else {
+                $builder->where('a.id_pn', $pn);
+            }
+        }
         $builder->orderBy('a.id_prog_tahunan', 'ASC');
         // Eksekusi
         $query = $builder->get();

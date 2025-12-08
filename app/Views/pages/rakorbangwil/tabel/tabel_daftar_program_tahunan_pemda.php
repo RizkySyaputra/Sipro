@@ -10,13 +10,23 @@ foreach ($daftar_program_tahunan as $data) : ?>
         <td><?= $data->unor ?></td>
         <td><?= $data->sumber ?></td>
         <td><?= $data->thn_pelaksanaan ?></td>
-        <td style="text-align: center;"><?php
-                                        if (($data->catatan_pemda == null) or ($data->catatan_pemda == '-')) {
-                                            echo '<span class="badge-grey" style="text-align:center;">Belum Ada</span>';
-                                        } else {
-                                            echo '<span class="badge-green" style="text-align:center;" >Ada</span>';
-                                        }
-                                        ?></td>
+        <td style="text-align: center;">
+            <?php
+            // Jika catatan_konfrm_pemda kosong → tidak tampil apa-apa
+            if ($data->catatan_konfrm_pemda === null || $data->catatan_konfrm_pemda === '-') {
+                echo ''; // kolom dibiarkan kosong
+            } else {
+                // Jika melewati kondisi di atas berarti catatan_konfrm_pemda ADA
+                // Sekarang cek catatan_pemda
+                if ($data->catatan_pemda === null || $data->catatan_pemda === '-') {
+                    echo '<span class="badge-grey">Belum Ada</span>';
+                } else {
+                    echo '<span class="badge-green">Ada</span>';
+                }
+            }
+            ?>
+        </td>
+
         <td style="width:20%">
             <?php if ($can_view == true) : ?>
                 <button
