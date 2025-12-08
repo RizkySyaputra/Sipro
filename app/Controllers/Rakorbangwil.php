@@ -1164,8 +1164,18 @@ class Rakorbangwil extends BaseController
         $provinsi_id = $this->request->getPost('provinsi');
 
         $kawasan = $this->praRakorModel->getKawasanList($provinsi_id, null, $id_pn);
-        $diakomodasi = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 1);
-        $ditangguhkan = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 2);
+        $diakomodasi1 = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 1);
+        $diakomodasi2 = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 2);
+        $ditangguhkan3 = $this->daftarProgTahunanModel
+            ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 3);
+        $ditangguhkan4 = $this->daftarProgTahunanModel
+            ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 4);
+        $ditangguhkan5 = $this->daftarProgTahunanModel
+            ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 5);
+        $ditangguhkan6 = $this->daftarProgTahunanModel
+            ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 6);
+        $ditangguhkan = array_merge($ditangguhkan3, $ditangguhkan4, $ditangguhkan5, $ditangguhkan6);
+        $diakomodasi = array_merge($diakomodasi1, $diakomodasi2);
         $tidakTerbahas = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 0);
         $pejabat_bak = $this->pejabatBakModel->where('id_provinsi', $provinsi_id)->where('id_pn', $id_pn)->orderBy('prioritas', 'ASC')->findAll();
         return $this->response->setJSON([
@@ -1196,12 +1206,18 @@ class Rakorbangwil extends BaseController
         // $catatan_provinsi = $this->catatanModel->getCatatanbyProvinsi($id_provinsi);
         // $pejabat = $this->baModel->getPejabatById($id_provinsi, $id_unor);
         $kawasan = $this->praRakorModel->getKawasanList($provinsi_id, null, $id_pn);
-        $diakomodasi = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 1);
-        $ditangguhkan2 = $this->daftarProgTahunanModel
-            ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 2);
+        $diakomodasi1 = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 1);
+        $diakomodasi2 = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 2);
         $ditangguhkan3 = $this->daftarProgTahunanModel
             ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 3);
-        $ditangguhkan = array_merge($ditangguhkan2, $ditangguhkan3);
+        $ditangguhkan4 = $this->daftarProgTahunanModel
+            ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 4);
+        $ditangguhkan5 = $this->daftarProgTahunanModel
+            ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 5);
+        $ditangguhkan6 = $this->daftarProgTahunanModel
+            ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 6);
+        $ditangguhkan = array_merge($ditangguhkan3, $ditangguhkan4, $ditangguhkan5, $ditangguhkan6);
+        $diakomodasi = array_merge($diakomodasi1, $diakomodasi2);
 
         $tidakTerbahas = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 0);
         $html = view('/pages/rakorbangwil/berita_acara_pdf', [
@@ -1234,7 +1250,7 @@ class Rakorbangwil extends BaseController
 
         // Output PDF ke browser
         return $this->response->setHeader('Content-Type', 'application/pdf')
-            ->setBody($mpdf->Output('berita_acara_kesepakatan_rakorbangwil.pdf', 'I')); // 'I' untuk menampilkan, 'D' untuk mengunduh
+            ->setBody($mpdf->Output('BERITA ACARA RAKORBANGIWL.pdf', 'I')); // 'I' untuk menampilkan, 'D' untuk mengunduh
     }
     public function get_pejabat_bak()
     {

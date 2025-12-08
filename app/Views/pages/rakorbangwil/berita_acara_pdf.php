@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berita Acara Kesepakatan</title>
     <style>
+        .section-block {
+            page-break-inside: avoid !important;
+        }
+
         .ttd-container {
             width: 100%;
             margin-top: 40px;
@@ -116,7 +120,7 @@
 
     <!-- ======== HEADER DOKUMEN ======== -->
     <h2>BERITA ACARA KESEPAKATAN<br>
-        PROGRAM KETERPADUAN PEMBANGUNAN INFRASTRUKTUR PU TA 2025<br>
+        PROGRAM KETERPADUAN PEMBANGUNAN INFRASTRUKTUR PU TA 2027<br>
         MENDUKUNG PRIORITAS NASIONAL (PN) RPJMN 2025–2029<br>
         DI PROVINSI <?= strtoupper($provinsi['provinsi']) ?>
     </h2>
@@ -141,146 +145,216 @@
 
 
     <!-- ======== A. KAWASAN PRIORITAS ======== -->
-    <h5>A. Disepakati Kawasan Prioritas di Provinsi <?= $provinsi['provinsi'] ?> </h5>
+    <div class="section-block">
+        <h5>A. Disepakati Kawasan Prioritas di Provinsi <?= $provinsi['provinsi'] ?> </h5>
 
-    <table>
-        <thead>
-            <tr>
-                <th width="5%">No</th>
-                <th width="45%">Kawasan</th>
-                <th width="50%">Tematik</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php if (!empty($kawasan)): ?>
-                <?php $no = 1;
-                foreach ($kawasan as $row): ?>
-                    <tr>
-                        <td align="center"><?= $no++ ?></td>
-                        <td><?= $row->kawasan ?></td>
-                        <td><?= $row->tematik ?: '-' ?></td>
-                    </tr>
-                <?php endforeach ?>
-            <?php else: ?>
+        <table>
+            <thead>
                 <tr>
-                    <td colspan="3" align="center">Tidak Ada Data</td>
+                    <th width="5%">No</th>
+                    <th width="45%">Kawasan</th>
+                    <th width="50%">Tematik</th>
                 </tr>
-            <?php endif; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php if (!empty($kawasan)): ?>
+                    <?php $no = 1;
+                    foreach ($kawasan as $row): ?>
+                        <tr>
+                            <td align="center"><?= $no++ ?></td>
+                            <td><?= $row->kawasan ?></td>
+                            <td><?= $row->tematik ?: '-' ?></td>
+                        </tr>
+                    <?php endforeach ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="3" align="center">Tidak Ada Data</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
 
-
+    </div>
     <!-- ======== B. DIKOMODASI ======== -->
-    <h5>B. Disepakati program/kegiatan infrastruktur PU TA 2027 yang diakomodasi di Provinsi <?= $provinsi['provinsi'] ?> sebagai berikut :</h5>
+    <div class="section-block">
+        <h5>B. Disepakati program/kegiatan infrastruktur PU TA 2027 yang diakomodasi di Provinsi <?= $provinsi['provinsi'] ?> sebagai berikut :</h5>
 
-    <table>
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>Kawasan</th>
-                <th>Program/Kegiatan</th>
-                <th>Unit Organisasi</th>
-                <th>Kesepakatan</th>
-                <th>Catatan</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php if (!empty($diakomodasi)): ?>
-                <?php $no = 1;
-                foreach ($diakomodasi as $row): ?>
-                    <tr>
-                        <td align="center"><?= $no++ ?></td>
-                        <td><?= $row->kawasan ?></td>
-                        <td><?= $row->pekerjaan ?></td>
-                        <td><?= $row->unor ?></td>
-                        <td>Diakomodasi</td>
-                        <td><?= $row->catatan_desk_rakorbangwil ?: '-' ?></td>
-                    </tr>
-                <?php endforeach ?>
-            <?php else: ?>
+        <table>
+            <thead>
                 <tr>
-                    <td colspan="6" align="center">Tidak Ada Data</td>
+                    <th>No</th>
+                    <th>Kawasan</th>
+                    <th>Program/Kegiatan</th>
+                    <th>Unit Organisasi</th>
+                    <th>Kesepakatan</th>
+                    <th>Catatan</th>
                 </tr>
-            <?php endif; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php if (!empty($diakomodasi)): ?>
+                    <?php $no = 1;
+                    foreach ($diakomodasi as $row): ?>
+                        <tr>
+                            <td align="center"><?= $no++ ?></td>
+                            <td><?= $row->kawasan ?></td>
+                            <td><?= $row->pekerjaan ?></td>
+                            <td><?= $row->unor ?></td>
+                            <td><?php if ($row->desk_rakorbangwil == '1') {
+                                    echo "Diakomodasi";
+                                } elseif ($row->desk_rakorbangwil == '2') {
+                                    echo "Diakomodasi (Pra Desk Konreg)";
+                                }  ?></td>
+                            <td style="width: 30%;">
+                                <?php
+                                if (!empty($row->catatan_desk_rakorbangwil)) {
 
+                                    // Decode JSON
+                                    $catatanList = json_decode($row->catatan_desk_rakorbangwil, true);
 
-    <!-- ======== C. DITANGGUHKAN ======== -->
-    <h5>C. Disepakati program/kegiatan infrastruktur PU TA 2027 yang ditangguhkan di Provinsi <?= $provinsi['provinsi'] ?> sebagai berikut :</h5>
+                                    // Cek apakah valid array
+                                    if (is_array($catatanList)) {
+                                        foreach ($catatanList as $item) {
+                                            echo esc($item['nama']) . " : " . esc($item['catatan']) . "<br>";
+                                        }
+                                    } else {
+                                        echo "-";
+                                    }
+                                } else {
+                                    echo "-";
+                                }
+                                ?>
+                            </td>
 
-    <table>
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>Kawasan</th>
-                <th>Program/Kegiatan</th>
-                <th>Unit Organisasi</th>
-                <th>Kesepakatan</th>
-                <th>Catatan</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php if (!empty($ditangguhkan)): ?>
-                <?php $no = 1;
-                foreach ($ditangguhkan as $row): ?>
+                        </tr>
+                    <?php endforeach ?>
+                <?php else: ?>
                     <tr>
-                        <td align="center"><?= $no++ ?></td>
-                        <td><?= $row->kawasan ?></td>
-                        <td><?= $row->pekerjaan ?></td>
-                        <td><?= $row->unor ?></td>
-                        <td><?php if ($row->desk_rakorbangwil == '2') {
-                                echo "Direncanakan ke tahun berikutnya";
-                            } elseif ($row->desk_rakorbangwil == '3') {
-                                echo "Telah dilaksanakan";
-                            } ?></td>
-                        <td><?= $row->catatan_desk_rakorbangwil ?: '-' ?></td>
+                        <td colspan="6" align="center">Tidak Ada Data</td>
                     </tr>
-                <?php endforeach ?>
-            <?php else: ?>
+                <?php endif; ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="section-block">
+        <!-- ======== C. DITANGGUHKAN ======== -->
+        <h5>C. Disepakati program/kegiatan infrastruktur PU TA 2027 yang ditangguhkan di Provinsi <?= $provinsi['provinsi'] ?> sebagai berikut :</h5>
+
+        <table>
+            <thead>
                 <tr>
-                    <td colspan="6" align="center">Tidak Ada Data</td>
+                    <th>No</th>
+                    <th>Kawasan</th>
+                    <th>Program/Kegiatan</th>
+                    <th>Unit Organisasi</th>
+                    <th>Kesepakatan</th>
+                    <th>Catatan</th>
                 </tr>
-            <?php endif; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php if (!empty($ditangguhkan)): ?>
+                    <?php $no = 1;
+                    foreach ($ditangguhkan as $row): ?>
+                        <tr>
+                            <td align="center"><?= $no++ ?></td>
+                            <td><?= $row->kawasan ?></td>
+                            <td><?= $row->pekerjaan ?></td>
+                            <td><?= $row->unor ?></td>
+                            <td><?php if ($row->desk_rakorbangwil == '3') {
+                                    echo "Ditangguhkan";
+                                } elseif ($row->desk_rakorbangwil == '4') {
+                                    echo "Ditangguhkan (Geser Tahun)";
+                                } elseif ($row->desk_rakorbangwil == '5') {
+                                    echo "Ditangguhkan (Skema KPBU)";
+                                } elseif ($row->desk_rakorbangwil == '6') {
+                                    echo "Ditangguhkan (Sumber Pendanaan Lainnya)";
+                                } ?></td>
+                            <td style="width: 30%;">
+                                <?php
+                                if (!empty($row->catatan_desk_rakorbangwil)) {
 
+                                    // Decode JSON
+                                    $catatanList = json_decode($row->catatan_desk_rakorbangwil, true);
 
-    <!-- ======== D. TIDAK TERBAHAS ======== -->
-    <h5>D. Disepakati program/kegiatan infrastruktur PU TA 2027 yang tidak terbahas di Provinsi <?= $provinsi['provinsi'] ?> akan dilanjutkan pada Pra Desk Konsultasi Regional (Konreg) TA 2026 atau menjadi Input pada Forum Pemrograman di Luar APBN sebagai berikut:</h5>
+                                    // Cek apakah valid array
+                                    if (is_array($catatanList)) {
+                                        foreach ($catatanList as $item) {
+                                            echo esc($item['nama']) . " : " . esc($item['catatan']) . "<br>";
+                                        }
+                                    } else {
+                                        echo "-";
+                                    }
+                                } else {
+                                    echo "-";
+                                }
+                                ?>
+                            </td>
 
-    <table>
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>Kawasan</th>
-                <th>Program/Kegiatan</th>
-                <th>Unit Organisasi</th>
-                <th>Kesepakatan</th>
-                <th>Catatan</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php if (!empty($tidakTerbahas)): ?>
-                <?php $no = 1;
-                foreach ($tidakTerbahas as $row): ?>
+                        </tr>
+                    <?php endforeach ?>
+                <?php else: ?>
                     <tr>
-                        <td align="center"><?= $no++ ?></td>
-                        <td><?= $row->kawasan ?></td>
-                        <td><?= $row->pekerjaan ?></td>
-                        <td><?= $row->unor ?></td>
-                        <td>Tidak Terbahas</td>
-                        <td><?= $row->catatan_desk_rakorbangwil ?: '-' ?></td>
+                        <td colspan="6" align="center">Tidak Ada Data</td>
                     </tr>
-                <?php endforeach ?>
-            <?php else: ?>
-                <tr>
-                    <td colspan="6" align="center">Tidak Ada Data</td>
-                </tr>
-            <?php endif; ?>
-        </tbody>
-    </table>
+                <?php endif; ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="section-block">
+        <!-- ======== D. TIDAK TERBAHAS ======== -->
+        <h5>D. Disepakati program/kegiatan infrastruktur PU TA 2027 yang tidak terbahas di Provinsi <?= $provinsi['provinsi'] ?> akan dilanjutkan pada Pra Desk Konsultasi Regional (Konreg) TA 2026 atau menjadi Input pada Forum Pemrograman di Luar APBN sebagai berikut:</h5>
 
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Kawasan</th>
+                    <th>Program/Kegiatan</th>
+                    <th>Unit Organisasi</th>
+                    <th>Kesepakatan</th>
+                    <th>Catatan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if (!empty($tidakTerbahas)): ?>
+                    <?php $no = 1;
+                    foreach ($tidakTerbahas as $row): ?>
+                        <tr>
+                            <td align="center"><?= $no++ ?></td>
+                            <td><?= $row->kawasan ?></td>
+                            <td><?= $row->pekerjaan ?></td>
+                            <td><?= $row->unor ?></td>
+                            <td>Tidak Terbahas</td>
+                            <td style="width: 30%;">
+                                <?php
+                                if (!empty($row->catatan_desk_rakorbangwil)) {
+
+                                    // Decode JSON
+                                    $catatanList = json_decode($row->catatan_desk_rakorbangwil, true);
+
+                                    // Cek apakah valid array
+                                    if (is_array($catatanList)) {
+                                        foreach ($catatanList as $item) {
+                                            echo esc($item['nama']) . " : " . esc($item['catatan']) . "<br>";
+                                        }
+                                    } else {
+                                        echo "-";
+                                    }
+                                } else {
+                                    echo "-";
+                                }
+                                ?>
+                            </td>
+
+                        </tr>
+                    <?php endforeach ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="6" align="center">Tidak Ada Data</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
+    </div>
 
     <!-- ======== PARAGRAF PENUTUP ======== -->
     <p style="margin-top:25px;">

@@ -31,9 +31,15 @@ foreach ($daftar_program_tahunan as $data) : ?>
             if ($data->desk_rakorbangwil === "1") {
                 echo '<span class="badge-green" style="text-align:center;">Diakomodasi</span>';
             } elseif ($data->desk_rakorbangwil === "2") {
-                echo '<span class="badge-oranye" style="text-align:center;" >Ditangguhkan (Pergeseran Tahun Pelaksanaan)</span>';
+                echo '<span class="badge-green" style="text-align:center;" >Diakomodasi (Pra Desk Konreg)</span>';
             } elseif ($data->desk_rakorbangwil === "3") {
-                echo '<span class="badge-oranye" style="text-align:center;">Ditangguhkan (Selesai)</span>';
+                echo '<span class="badge-oranye" style="text-align:center;">Ditangguhkan</span>';
+            } elseif ($data->desk_rakorbangwil === "4") {
+                echo '<span class="badge-oranye" style="text-align:center;">Ditangguhkan (Geser Tahun)</span>';
+            } elseif ($data->desk_rakorbangwil === "5") {
+                echo '<span class="badge-oranye" style="text-align:center;">Ditangguhkan (Skema KPBU)</span>';
+            } elseif ($data->desk_rakorbangwil === "6") {
+                echo '<span class="badge-oranye" style="text-align:center;">Ditangguhkan (Sumber Pendanaan Lainnya)</span>';
             } elseif ($data->desk_rakorbangwil === "0") {
                 echo '<span class="badge-grey" style="text-align:center;">Belum Dibahas</span>';
             } else {

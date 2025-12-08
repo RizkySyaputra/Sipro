@@ -353,6 +353,38 @@
 
     <script>
         $(document).ready(function() {
+            function getStatusDesk(value) {
+                switch (value) {
+                    case '1':
+                        return "Diakomodasi";
+                    case '2':
+                        return "Diakomodasi (Pra Desk Konreg)";
+                    case '3':
+                        return "Ditangguhkan";
+                    case '4':
+                        return "Ditangguhkan (Geser Tahun)";
+                    case '5':
+                        return "Ditangguhkan (Skema KPBU)";
+                    case '6':
+                        return "Ditangguhkan (Sumber Pendanaan Lainnya)";
+                    default:
+                        return "-";
+                }
+            }
+
+            function formatCatatan(jsonString) {
+                if (!jsonString) return '-';
+
+                try {
+                    const list = JSON.parse(jsonString); // decode JSON
+
+                    return list.map(i => `${i.nama} : ${i.catatan}`).join('<br>');
+                } catch (e) {
+                    return jsonString; // jika JSON rusak, tampilkan apa adanya
+                }
+            }
+
+
             function emptyRow(colspan) {
                 return `
         <tr>
@@ -429,9 +461,9 @@
                 <td>${item.kawasan }</td>
                 <td>${item.pekerjaan}</td>
                 <td>${item.unor}</td>
-                <td>Diakomodasi</td>
+                 <td>${getStatusDesk(item.desk_rakorbangwil)}</td>
                 <td>${item.sumber_pendanaan ?? '-'}</td>
-                <td>${item.catatan_desk_rakorbangwil ?? '-'}</td>
+                <td style="width: 30%;">${formatCatatan(item.catatan_desk_rakorbangwil)}</td>
             </tr>
         `;
                             });
@@ -453,9 +485,9 @@
                 <td>${item.kawasan}</td>
                 <td>${item.pekerjaan}</td>
                 <td>${item.unor}</td>
-                <td>${item.desk_rakorbangwil}</td>
+              <td>${getStatusDesk(item.desk_rakorbangwil)}</td>
                 <td>${item.sumber_pendanaan?? '-'}</td>
-                <td>${item.catatan_desk_rakorbangwil ?? '-'}</td>
+              <td style="width: 30%;">${formatCatatan(item.catatan_desk_rakorbangwil)}</td>
             </tr>
         `;
                             });
@@ -479,7 +511,7 @@
                 <td>${item.unor}</td>
                 <td>Tidak Terbahas</td>
                 <td>${item.sumber_pendanaan ?? '-'}</td>
-                <td>${item.catatan_desk_rakorbangwil ?? '-'}</td>
+              <td style="width: 30%;">${formatCatatan(item.catatan_desk_rakorbangwil)}</td>
             </tr>
         `;
                             });
