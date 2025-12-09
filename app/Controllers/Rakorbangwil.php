@@ -231,9 +231,9 @@ class Rakorbangwil extends BaseController
             }
 
             // status catatan pemda
-            if ($row->catatan_pemda === null || $row->catatan_pemda == '-') {
+            if (($row->catatan_pemda === null || $row->catatan_pemda == '-') & ($row->catatan_konfrm_pemda !== null & $row->catatan_konfrm_pemda !== '-')) {
                 $memerlukan_catatan++;
-            } else {
+            } elseif (($row->catatan_pemda !== null || $row->catatan_pemda != '-') & ($row->catatan_konfrm_pemda !== null & $row->catatan_konfrm_pemda !== '-')) {
                 $jumlah_ada++;
             }
         }
