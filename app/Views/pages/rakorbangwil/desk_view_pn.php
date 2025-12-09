@@ -146,6 +146,9 @@
                     <!-- TABS -->
                     <ul class="nav nav-tabs" id="pnTabs" role="tablist">
                         <li class="nav-item">
+                            <a class="nav-link " data-toggle="tab" href="#kawasan" role="tab">Kawasan Prioritas <?= session('tahun_pelaksana'); ?></a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link active" data-toggle="tab" href="#program" role="tab">Program/Pekerjaan <?= session('tahun_pelaksana'); ?></a>
                         </li>
                         <li class="nav-item">
@@ -158,7 +161,54 @@
 
                     <!-- TAB CONTENT -->
                     <div class="tab-content mt-3 p-3 border rounded bg-white">
+                        <!-- TAB KAWASAN -->
+                        <div class="tab-pane fade" id="kawasan">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <div>
+                                        <table id="datatables_kawasan" class="table table-striped table-hover" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th style="text-align: center;">No</th>
+                                                    <th style="text-align: center;">Provinsi</th>
+                                                    <th style="text-align: center;">Kawasan</th>
+                                                    <th style="text-align: center;">Jumlah Pekerjaan</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                $a = 1;
+                                                foreach ($rekap_program_kawasan as $data) : ?>
+                                                    <tr>
+                                                        <td><?= $a++; ?></td>
+                                                        <td><?= $data['provinsi'] ?></td>
+                                                        <td style="width: 40%;"><?= $data['kawasan'] ?></td>
+                                                        <td style="text-align: center;"><?= $data['jumlah_pekerjaan'] ?></td>
+                                                    </tr>
+                                                <?php endforeach; ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- CATATAN -->
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <h6><strong>Catatan Kawasan Prioritas</strong></h6>
 
+                                    <form id="formCatatanKawasan">
+                                        <textarea name="catatan_kawasan" class="form-control" rows="4"
+                                            placeholder="Tambahkan catatan keseluruhan terkait kawasan..."><?= esc($catatan_kws->catatan_kws_desk_rakorbangwil ?? '') ?></textarea>
+                                        <input type="text" name="id_pn" value="<?= esc($pn['id_pn'] ?? '-') ?>" hidden>
+                                        <button type="submit" id="btnSaveCatatan" class="btn btn-success mt-3">
+                                            <span id="textSave">Simpan Catatan</span>
+                                            <span id="spinnerSave" class="spinner-border spinner-border-sm ml-2" style="display:none;"></span>
+                                        </button>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                         <!-- ================= TAB PROGRAM ================= -->
                         <div class="tab-pane fade show active" id="program" role="tabpanel">
 
@@ -221,8 +271,8 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="filter-label">Sumber Pendanaan</label>
-                                                    <select class="form-control" name="pendanaan" id="filter-pendanaan">
-                                                        <option value="">Semua Sumber Pendanaan</option>
+                                                    <select class="form-control" name="pendanaan[]" id="filter-pendanaan" multiple="multiple">
+                                                        <option value="" selected disabled>Semua Sumber Pendanaan</option>
                                                         <?php foreach ($pendanaan as $item): ?>
                                                             <option value="<?= esc($item['id_pendanaan']) ?>">
                                                                 <?= esc($item['sumber_pendanaan']) ?>
@@ -517,6 +567,19 @@
                 }
             });
         });
+        $('#datatables_kawasan').DataTable({
+            pagingType: "full_numbers",
+            lengthMenu: [
+                [10, 25, 50, -1],
+                [10, 25, 50, "All"]
+            ],
+            responsive: true,
+            language: {
+                search: "_INPUT_",
+                searchPlaceholder: "Search...",
+                zeroRecords: "Data tidak ditemukan"
+            }
+        });
 
         // Reset filter
         $('#reset-filters').on('click', function() {
@@ -620,6 +683,44 @@
                     $btn.prop('disabled', false).html(originalText);
                 }
             });
+        });
+    });
+    $('#formCatatanKawasan').on('submit', function(e) {
+        e.preventDefault();
+
+        let btn = $('#btnSaveCatatan');
+
+        // MUNCULKAN LOADING
+        $('#textSave').hide();
+        $('#spinnerSave').show();
+        btn.prop('disabled', true);
+
+        $.ajax({
+            url: "<?= base_url('rakorbangwil/save_catatan_kawasan') ?>",
+            type: "POST",
+            data: $(this).serialize(),
+            success: function(res) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Tersimpan!',
+                    text: 'Catatan kawasan berhasil diperbarui.',
+                    timer: 1800,
+                    showConfirmButton: false
+                });
+            },
+            error: function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Gagal!',
+                    text: 'Terjadi kesalahan saat menyimpan catatan.'
+                });
+            },
+            complete: function() {
+                // KEMBALIKAN TOMBOL
+                $('#textSave').show();
+                $('#spinnerSave').hide();
+                btn.prop('disabled', false);
+            }
         });
     });
 </script>

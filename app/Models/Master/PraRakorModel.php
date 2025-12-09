@@ -31,7 +31,8 @@ class PraRakorModel extends Model
     {
         $tahun_pelaksanaan = session('tahun_pelaksana');
         $builder = $this->db->table('trx_prog_tahunan_pra_rakorbangwil as a');
-        $builder->select('DISTINCT(a.kawasan) as kawasan, a.provinsi, a.tematik');
+        $builder->select('DISTINCT(a.kawasan) as kawasan, a.provinsi, a.tematik, b.nama_kawasan_rpjmn');
+        $builder->join('m_kawasan as b', 'b.nama_kawasan = a.kawasan', 'left');
         if ($id_provinsi) {
             $builder->where('a.id_provinsi', $id_provinsi);
         }

@@ -438,7 +438,7 @@
                                 htmlKawasan += `
             <tr>
                 <td>${index + 1}</td>
-                <td>${item.kawasan?? '-'}</td>
+                <td>${item.nama_kawasan_rpjmn?? '-'}</td>
                 <td>${item.tematik}</td>
             </tr>
         `;
@@ -458,7 +458,7 @@
                                 htmlDiakomodasi += `
             <tr>
                 <td>${index + 1}</td>
-                <td>${item.kawasan }</td>
+                <td>${item.kawasan_panjang }</td>
                 <td>${item.pekerjaan}</td>
                 <td>${item.unor}</td>
                  <td>${getStatusDesk(item.desk_rakorbangwil)}</td>
@@ -482,7 +482,7 @@
                                 htmlTangguh += `
             <tr>
                 <td>${index + 1}</td>
-                <td>${item.kawasan}</td>
+                <td>${item.kawasan_panjang}</td>
                 <td>${item.pekerjaan}</td>
                 <td>${item.unor}</td>
               <td>${getStatusDesk(item.desk_rakorbangwil)}</td>
@@ -506,7 +506,7 @@
                                 htmlTidak += `
             <tr>
                 <td>${index + 1}</td>
-                <td>${item.kawasan}</td>
+                <td>${item.kawasan_panjang}</td>
                 <td>${item.pekerjaan}</td>
                 <td>${item.unor}</td>
                 <td>Tidak Terbahas</td>

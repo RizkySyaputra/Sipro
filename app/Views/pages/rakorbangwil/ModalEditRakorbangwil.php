@@ -370,8 +370,12 @@
 
     <select class="form-control form-control-lg fancy-kesepakatan"
         name="kesepakatan" id="select-kesepakatan">
-
+        <option value="" disabled selected> Pilih Kesepakatan </option>
+        </option>
         <?php foreach ($kesepakatan as $item): ?>
+            <?php if ($item['id_kesepakatan'] == '0') {
+                continue;
+            }  ?>
             <option value="<?= esc($item['id_kesepakatan']) ?>"
                 <?= ($progTahunan->desk_rakorbangwil ?? '') == $item['id_kesepakatan'] ? 'selected' : '' ?>>
                 <?= esc($item['kesepakatan']) ?>

@@ -32,7 +32,7 @@ class DaftarProgTahunanModel extends Model
             if ($pembiayaan == 'x') {
                 $builder->whereIn('a.id_pendanaan', [1, 3, 5, 6, 7]);
             } else {
-                $builder->where('a.id_pendanaan', $pembiayaan);
+                $builder->whereIn('a.id_pendanaan', $pembiayaan);
             }
         }
 

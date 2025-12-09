@@ -41,6 +41,7 @@ use App\Models\Rpiw\RenaksiModel;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
+use function PHPUnit\Framework\isEmpty;
 use function PHPUnit\Framework\returnCallback;
 
 class Rakorbangwil extends BaseController
@@ -992,10 +993,40 @@ class Rakorbangwil extends BaseController
         $program = $this->praRakorModel->where('id_pn', $id)->findAll();
         $kebutuhan_dukungan_kl = $this->kebutuhan_kl_Model->getKebutuhanKl($id);
         $catatan_pn = $this->praRakorModel->getCatatan($id);
+        $rekap_program_kawasan = $this->praRakorModel->where('id_pn', $id)->orderBy('id_provinsi', 'ASC')->orderBy('id_kawasan', 'ASC')->findAll();
+        $rekap = [];
+
+        foreach ($rekap_program_kawasan as $row) {
+
+            // Normalisasi kawasan null → Non Kawasan
+            $kawasanNama = (!empty($row['kawasan'])) ? $row['kawasan'] : 'Non Kawasan';
+
+            // Key grouping berdasarkan provinsi + kawasan
+            $key = $row['provinsi'] . '|' . $kawasanNama;
+
+            if (!isset($rekap[$key])) {
+                $rekap[$key] = [
+                    'provinsi' => $row['provinsi'],
+                    'kawasan' => $kawasanNama,
+                    'jumlah_pekerjaan' => 0
+                ];
+            }
+
+            // Jumlahkan pekerjaan
+            $rekap[$key]['jumlah_pekerjaan'] += (int) $row['pekerjaan'];
+        }
+
+
         $daftar_program_tahunan_usulan = $this->programTahunanUsulanModel->where('pn', $id)->findAll();
+        $catatan_kws = $this->proPraRakorModel
+            ->select('catatan_kws_desk_rakorbangwil')
+            ->where('id_pn', $id)
+            ->limit(1)
+            ->get()->getRow();
         $this->template->write('title', 'Detail Prioritas Nasional');
         $this->template->load('/templates/main', '/pages/rakorbangwil/desk_view_pn', [
             'provinsi' => $dataProvinsi,
+            'rekap_program_kawasan' => $rekap,
             'daftar_program_tahunan_usulan' => $daftar_program_tahunan_usulan,
             'kesepakatan' => $dataKesepakatan,
             'unor' => $dataUnor,
@@ -1005,6 +1036,7 @@ class Rakorbangwil extends BaseController
             'catatan_pn' => $catatan_pn,
             'namaList' => $namaList,
             'kebutuhan_dukungan_kl' => $kebutuhan_dukungan_kl,
+            'catatan_kws' => $catatan_kws,
             'can_view' => has_permission_menu($id_role, '/rakorbangwil/desk_rakorbangwil', 'can_view'),
             'can_edit' => has_permission_menu($id_role, '/rakorbangwil/desk_rakorbangwil', 'can_edit'),
             'can_delete' => has_permission_menu($id_role, '/rakorbangwil/desk_rakorbangwil', 'can_delete')
@@ -1024,6 +1056,8 @@ class Rakorbangwil extends BaseController
         $kesepakatan = $this->request->getPost('kesepakatan');
         $sumber = $this->request->getPost('sumber');
         $daftar_program_tahunan = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, $unor_id, $sumber, $id_pn, null, $id_pendanaan, $tipe, $catatan_rakorbangwil, $catatan_pemda, $konfirmasi_pemda, $kesepakatan);
+
+
         $data = [
             'daftar_program_tahunan' => $daftar_program_tahunan,
             'can_view' => has_permission_menu($id_role, '/rakorbangwil/desk_rakorbangwil', 'can_view'),
@@ -1082,6 +1116,9 @@ class Rakorbangwil extends BaseController
         // Ambil input utama
         $tipe_pekerjaan = $this->request->getPost('tipe_pekerjaan');
         $kesepakatan    = $this->request->getPost('kesepakatan');
+        if (!$kesepakatan) {
+            $kesepakatan = "0";
+        }
 
         // Ambil array catatan desk
         $namaArr = $this->request->getPost('desk_nama');   // ← ini BENAR
@@ -1143,6 +1180,18 @@ class Rakorbangwil extends BaseController
                 'message' => 'Terjadi kesalahan saat menyimpan.'
             ]);
         }
+    }
+    public function save_catatan_kawasan()
+    {
+        $id_pn = $this->request->getPost('id_pn');
+        $catatan = $this->request->getPost('catatan_kawasan');
+
+        $this->proPraRakorModel
+            ->where('id_pn', $id_pn)
+            ->set('catatan_kws_desk_rakorbangwil', $catatan)
+            ->update();
+
+        return $this->response->setJSON(['status' => true]);
     }
 
     public function berita_acara()

@@ -162,7 +162,7 @@
                     foreach ($kawasan as $row): ?>
                         <tr>
                             <td align="center"><?= $no++ ?></td>
-                            <td><?= $row->kawasan ?></td>
+                            <td><?= $row->nama_kawasan_rpjmn ?></td>
                             <td><?= $row->tematik ?: '-' ?></td>
                         </tr>
                     <?php endforeach ?>
@@ -196,7 +196,7 @@
                     foreach ($diakomodasi as $row): ?>
                         <tr>
                             <td align="center"><?= $no++ ?></td>
-                            <td><?= $row->kawasan ?></td>
+                            <td><?= $row->kawasan_panjang ?></td>
                             <td><?= $row->pekerjaan ?></td>
                             <td><?= $row->unor ?></td>
                             <td><?php if ($row->desk_rakorbangwil == '1') {
@@ -256,7 +256,7 @@
                     foreach ($ditangguhkan as $row): ?>
                         <tr>
                             <td align="center"><?= $no++ ?></td>
-                            <td><?= $row->kawasan ?></td>
+                            <td><?= $row->kawasan_panjang ?></td>
                             <td><?= $row->pekerjaan ?></td>
                             <td><?= $row->unor ?></td>
                             <td><?php if ($row->desk_rakorbangwil == '3') {
@@ -320,7 +320,7 @@
                     foreach ($tidakTerbahas as $row): ?>
                         <tr>
                             <td align="center"><?= $no++ ?></td>
-                            <td><?= $row->kawasan ?></td>
+                            <td><?= $row->kawasan_panjang ?></td>
                             <td><?= $row->pekerjaan ?></td>
                             <td><?= $row->unor ?></td>
                             <td>Tidak Terbahas</td>
