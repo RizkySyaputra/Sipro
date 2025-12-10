@@ -152,7 +152,7 @@
                             <a class="nav-link active" data-toggle="tab" href="#program" role="tab">Program/Pekerjaan <?= session('tahun_pelaksana'); ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#usulan" role="tab">Usulan Program</a>
+                            <a class="nav-link" data-toggle="tab" href="#usulan" role="tab">Usulan Kegiatan Pra Rakorbangwil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#catatan" role="tab">Catatan Pra Rakorbangwil</a>
@@ -412,7 +412,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>K/L Pnegusul</th>
+                                                    <th>K/L Pengusul</th>
                                                     <th>Provinsi</th>
                                                     <th>Pekerjaan</th>
                                                     <th>Unor</th>
