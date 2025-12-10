@@ -123,6 +123,21 @@
         margin: 0;
         white-space: pre-line;
     }
+
+    .textarea-catatan {
+        border: 2px solid #ced4da !important;
+        border-radius: 8px !important;
+        padding: 12px !important;
+        background: #ffffff;
+        font-size: 14px;
+        color: #333;
+        min-height: 140px;
+    }
+
+    .textarea-catatan:focus {
+        border-color: #00b37d !important;
+        box-shadow: 0 0 0 0.15rem rgba(0, 179, 125, 0.25) !important;
+    }
 </style>
 
 <div class="row">
@@ -197,8 +212,13 @@
                                     <h6><strong>Catatan Kawasan Prioritas</strong></h6>
 
                                     <form id="formCatatanKawasan">
-                                        <textarea name="catatan_kawasan" class="form-control" rows="4"
-                                            placeholder="Tambahkan catatan keseluruhan terkait kawasan..."><?= esc($catatan_kws->catatan_kws_desk_rakorbangwil ?? '') ?></textarea>
+                                        <textarea name="catatan_kawasan"
+                                            class="form-control textarea-catatan"
+                                            rows="4"
+                                            placeholder="Tambahkan catatan keseluruhan terkait kawasan...">
+    <?= esc($catatan_kws->catatan_kws_desk_rakorbangwil ?? '') ?>
+</textarea>
+
                                         <input type="text" name="id_pn" value="<?= esc($pn['id_pn'] ?? '-') ?>" hidden>
                                         <button type="submit" id="btnSaveCatatan" class="btn btn-success mt-3">
                                             <span id="textSave">Simpan Catatan</span>
