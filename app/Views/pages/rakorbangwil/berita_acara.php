@@ -364,7 +364,7 @@
                     case '4':
                         return "Ditangguhkan (Geser Tahun)";
                     case '5':
-                        return "Ditangguhkan (Skema KPBU - Terbahas)";
+                        return "Ditangguhkan (Skema KPBU)";
                     case '6':
                         return "Ditangguhkan (Sumber Pendanaan Lainnya)";
                     case '7':
