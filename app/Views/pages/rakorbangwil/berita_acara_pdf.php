@@ -200,9 +200,7 @@
                             <td><?= $row->pekerjaan ?></td>
                             <td><?= $row->unor ?></td>
                             <td><?php if ($row->desk_rakorbangwil == '1') {
-                                    echo "Diakomodasi";
-                                } elseif ($row->desk_rakorbangwil == '2') {
-                                    echo "Diakomodasi (Pra Desk Konreg)";
+                                    echo "Diakomodasi untuk Dilanjutkan pada Desk Konreg";
                                 }  ?></td>
                             <td style="width: 30%;">
                                 <?php
@@ -260,14 +258,12 @@
                             <td><?= $row->pekerjaan ?></td>
                             <td><?= $row->unor ?></td>
                             <td><?php if ($row->desk_rakorbangwil == '3') {
-                                    echo "Ditangguhkan";
+                                    echo "Ditangguhkan karena kegiatan fisik telah dilaksanakan";
                                 } elseif ($row->desk_rakorbangwil == '4') {
-                                    echo "Ditangguhkan (Geser Tahun)";
+                                    echo "Ditangguhkan karena Kegiatan fisik digeser ke tahun selanjutnya";
                                 } elseif ($row->desk_rakorbangwil == '5') {
-                                    echo "Ditangguhkan (Skema KPBU)";
-                                } elseif ($row->desk_rakorbangwil == '6') {
-                                    echo "Ditangguhkan (Sumber Pendanaan Lainnya)";
-                                } ?></td>
+                                    echo "Ditangguhkan karena menggunakan skema KPBU, menjadi input Forum Pemrograman di luar APBN";
+                                }  ?></td>
                             <td style="width: 30%;">
                                 <?php
                                 if (!empty($row->catatan_desk_rakorbangwil)) {
@@ -323,7 +319,15 @@
                             <td><?= $row->kawasan_panjang ?></td>
                             <td><?= $row->pekerjaan ?></td>
                             <td><?= $row->unor ?></td>
-                            <td>Tidak Terbahas</td>
+                            <td><?php if ($row->desk_rakorbangwil == '2') {
+                                    echo "Diakomodasi untuk Dibahas pada Pra Konreg";
+                                } elseif ($row->desk_rakorbangwil == '6') {
+                                    echo "Ditangguhkan karena menggunakan Sumber Pendanaan Lainnya, menjadii input Forum Pemrograman di luar APBN";
+                                } elseif ($row->desk_rakorbangwil == '7') {
+                                    echo "Ditangguhkan karena menggunakan skema KPBU, menjadi input Forum Pemrograman di luar APBN";
+                                } else {
+                                    echo "Tidak Terbahas";
+                                }  ?></td>
                             <td style="width: 30%;">
                                 <?php
                                 if (!empty($row->catatan_desk_rakorbangwil)) {

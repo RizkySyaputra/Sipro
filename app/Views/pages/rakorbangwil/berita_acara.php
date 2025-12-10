@@ -358,15 +358,19 @@
                     case '1':
                         return "Diakomodasi";
                     case '2':
-                        return "Diakomodasi (Pra Desk Konreg)";
+                        return "Diakomodasi (Pra Konreg)";
                     case '3':
                         return "Ditangguhkan";
                     case '4':
                         return "Ditangguhkan (Geser Tahun)";
                     case '5':
-                        return "Ditangguhkan (Skema KPBU)";
+                        return "Ditangguhkan (Skema KPBU - Terbahas)";
                     case '6':
                         return "Ditangguhkan (Sumber Pendanaan Lainnya)";
+                    case '7':
+                        return "Ditangguhkan (Skema KPBU - Tidak Terbahas)";
+                    case '0':
+                        return "Tidak Terbahas";
                     default:
                         return "-";
                 }
@@ -509,7 +513,7 @@
                 <td>${item.kawasan_panjang}</td>
                 <td>${item.pekerjaan}</td>
                 <td>${item.unor}</td>
-                <td>Tidak Terbahas</td>
+                 <td>${getStatusDesk(item.desk_rakorbangwil)}</td>
                 <td>${item.sumber_pendanaan ?? '-'}</td>
               <td style="width: 30%;">${formatCatatan(item.catatan_desk_rakorbangwil)}</td>
             </tr>
