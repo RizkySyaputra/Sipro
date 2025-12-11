@@ -72,10 +72,12 @@ class DaftarProgTahunanModel extends Model
                     ->groupEnd();
             }
         }
-        if ($kesepakatan == 99) {
-            $builder->where('a.desk_rakorbangwil', 0);
-        } else {
-            $builder->where('a.desk_rakorbangwil', $kesepakatan);
+        if ($kesepakatan) {
+            if ($kesepakatan == 99) {
+                $builder->where('a.desk_rakorbangwil', 0);
+            } else {
+                $builder->where('a.desk_rakorbangwil', $kesepakatan);
+            }
         }
         // if ($kesepakatan) {
         //     $builder->where('a.desk_rakorbangwil', $kesepakatan);
