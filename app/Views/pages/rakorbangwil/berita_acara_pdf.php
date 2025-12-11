@@ -212,7 +212,7 @@
                                     // Cek apakah valid array
                                     if (is_array($catatanList)) {
                                         foreach ($catatanList as $item) {
-                                            echo esc($item['nama']) . " : " . esc($item['catatan']) . "<br>";
+                                            echo esc($item['nama']) . " : <br> " . nl2br(esc($item['catatan'])) . "<br>";
                                         }
                                     } else {
                                         echo "-";
@@ -274,7 +274,7 @@
                                     // Cek apakah valid array
                                     if (is_array($catatanList)) {
                                         foreach ($catatanList as $item) {
-                                            echo esc($item['nama']) . " : " . esc($item['catatan']) . "<br>";
+                                            echo esc($item['nama']) . " : <br> " . nl2br(esc($item['catatan'])) . "<br>";
                                         }
                                     } else {
                                         echo "-";
@@ -338,7 +338,7 @@
                                     // Cek apakah valid array
                                     if (is_array($catatanList)) {
                                         foreach ($catatanList as $item) {
-                                            echo esc($item['nama']) . " : " . esc($item['catatan']) . "<br>";
+                                            echo esc($item['nama']) . " : <br> " . nl2br(esc($item['catatan'])) . "<br>";
                                         }
                                     } else {
                                         echo "-";
