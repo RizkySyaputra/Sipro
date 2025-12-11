@@ -124,14 +124,14 @@
                         <p><?= esc($prog_tahunan->kl ?? '-') ?></p>
 
                         <label class="catatan-text"><strong>Kebutuhan Dukungan K/L</strong></label>
-                        <p><?= esc($prog_tahunan->kebutuhan_dukungan_kl ?? '-') ?></p>
+                        <p><?= nl2br(esc($prog_tahunan->kebutuhan_dukungan_kl ?? '-')) ?></p>
 
                         <label class="catatan-text"><strong>Catatan Pra Rakorbangwil</strong></label>
-                        <p><?= esc($prog_tahunan->catatan_pra_rakorbangwil ?? '-') ?></p>
+                        <p><?= nl2br(esc($prog_tahunan->catatan_pra_rakorbangwil ?? '-')) ?></p>
                         <label class="catatan-text"><strong>Kebutuhan Dukungan Pemda</strong></label>
-                        <p><?= esc($prog_tahunan->catatan_konfrm_pemda ?? '-') ?></p>
+                        <p><?= nl2br(esc($prog_tahunan->catatan_konfrm_pemda ?? '-')) ?></p>
                         <label class="catatan-text"><strong>Catatan Pemda</strong></label>
-                        <p><?= esc($prog_tahunan->catatan_pemda ?? '-') ?></p>
+                        <p><?= nl2br(esc($prog_tahunan->catatan_pemda ?? '-')) ?></p>
                         <label class="catatan-text"><strong>Kesepakatan Rakorbangwil</strong></label>
                         <?php
                         $statusMap = [

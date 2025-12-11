@@ -205,12 +205,12 @@
                     <p><?= esc($progTahunan->kl ?? '-') ?></p>
 
                     <label class="catatan-text"><strong>Kebutuhan Dukungan K/L</strong></label>
-                    <p><?= esc($progTahunan->kebutuhan_dukungan_kl ?? '-') ?></p>
+                    <p><?= nl2br(esc($progTahunan->kebutuhan_dukungan_kl ?? '-')) ?></p>
 
                     <label class="catatan-text"><strong>Catatan Pra Rakorbangwil</strong></label>
-                    <p><?= esc($progTahunan->catatan_pra_rakorbangwil ?? '-') ?></p>
+                    <p><?= nl2br(esc($progTahunan->catatan_pra_rakorbangwil ?? '-')) ?></p>
                     <label class="catatan-text"><strong>Kebutuhan Dukungan Pemda</strong></label>
-                    <p><?= esc($progTahunan->catatan_konfrm_pemda ?? '-') ?></p>
+                    <p><?= nl2br(esc($progTahunan->catatan_konfrm_pemda ?? '-')) ?></p>
                     <div class="form-group">
                         <label class="catatan-text"><strong>Catatan Pemda</strong></label>
                         <textarea class="form-control" name="catatan_pemda"><?= esc($progTahunan->catatan_pemda ?? '-') ?></textarea>
