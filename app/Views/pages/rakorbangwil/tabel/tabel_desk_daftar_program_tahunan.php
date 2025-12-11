@@ -1,4 +1,7 @@
 <?php
+
+use PhpParser\Node\Stmt\Echo_;
+
 $a = 1;
 foreach ($daftar_program_tahunan as $data) : ?>
     <tr>
@@ -25,23 +28,23 @@ foreach ($daftar_program_tahunan as $data) : ?>
                 <span class="text-muted">-</span>
             <?php endif; ?>
         </td>
-
+        <!-- <td><?= $data->kesepakatan ?></td> -->
         <td>
             <?php
             if ($data->desk_rakorbangwil === "1") {
-                echo '<span class="badge-green" style="text-align:center;">Diakomodasi</span>';
+                echo '<span class="badge-green" style="text-align:center;">' . $data->kesepakatan . '</span>';
             } elseif ($data->desk_rakorbangwil === "2") {
-                echo '<span class="badge-green" style="text-align:center;" >Diakomodasi (Pra Desk Konreg)</span>';
+                echo '<span class="badge-green" style="text-align:center;" >' . $data->kesepakatan . '</span>';
             } elseif ($data->desk_rakorbangwil === "3") {
-                echo '<span class="badge-oranye" style="text-align:center;">Ditangguhkan</span>';
+                echo '<span class="badge-oranye" style="text-align:center;">' . $data->kesepakatan . '</span>';
             } elseif ($data->desk_rakorbangwil === "4") {
-                echo '<span class="badge-oranye" style="text-align:center;">Ditangguhkan (Geser Tahun)</span>';
+                echo '<span class="badge-oranye" style="text-align:center;">' . $data->kesepakatan . '</span>';
             } elseif ($data->desk_rakorbangwil === "5") {
-                echo '<span class="badge-oranye" style="text-align:center;">Ditangguhkan (Skema KPBU)</span>';
+                echo '<span class="badge-oranye" style="text-align:center;">' . $data->kesepakatan . '</span>';
             } elseif ($data->desk_rakorbangwil === "6") {
-                echo '<span class="badge-oranye" style="text-align:center;">Ditangguhkan (Sumber Pendanaan Lainnya)</span>';
+                echo '<span class="badge-oranye" style="text-align:center;">' . $data->kesepakatan . '</span>';
             } elseif ($data->desk_rakorbangwil === "0") {
-                echo '<span class="badge-grey" style="text-align:center;">Belum Dibahas</span>';
+                echo '<span class="badge-grey" style="text-align:center;">' . $data->kesepakatan . '</span>';
             } else {
                 echo '<span class="text-muted">-</span>';
             }
