@@ -135,8 +135,12 @@
                         <label class="catatan-text"><strong>Kesepakatan Rakorbangwil</strong></label>
                         <?php
                         $statusMap = [
-                            "1" => "Diakomodir",
-                            "2" => "Ditangguhkan",
+                            "1" => "Diakomodasi",
+                            "2" => "Diakomodasi (Pra Desk Konreg)",
+                            "3" => "Ditangguhkan",
+                            "4" => "Ditangguhkan (Geser Tahun)",
+                            "5" => "Ditangguhkan (Skema KPBU)",
+                            "6" => "Ditangguhkan (Sumber Pendanaan Lainnya)",
                             "0" => "Belum dibahas"
                         ];
 
