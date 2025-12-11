@@ -69,4 +69,15 @@ class PraRakorModel extends Model
         $query = $builder->get();
         return $query->getResult();
     }
+    public function rekapKawasan($id_pn)
+    {
+        $builder = $this->db->table('trx_prog_tahunan_pra_rakorbangwil as a');
+        $builder->select('a.*, b.nama_kawasan_rpjmn');
+        $builder->join('m_kawasan as b', 'a.kawasan = b.nama_kawasan', 'left');
+        $builder->where('a.id_pn', $id_pn);
+        $builder->orderBy('a.id_provinsi', 'ASC');
+        $builder->orderBy('a.id_kawasan', 'ASC');
+        $query = $builder->get();
+        return $query->getResult();
+    }
 }

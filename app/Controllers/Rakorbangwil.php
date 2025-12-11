@@ -993,27 +993,28 @@ class Rakorbangwil extends BaseController
         $program = $this->praRakorModel->where('id_pn', $id)->findAll();
         $kebutuhan_dukungan_kl = $this->kebutuhan_kl_Model->getKebutuhanKl($id);
         $catatan_pn = $this->praRakorModel->getCatatan($id);
-        $rekap_program_kawasan = $this->praRakorModel->where('id_pn', $id)->orderBy('id_provinsi', 'ASC')->orderBy('id_kawasan', 'ASC')->findAll();
+        $rekap_program_kawasan = $this->praRakorModel->rekapKawasan($id);
+        // $rekap_program_kawasan = $this->praRakorModel->where('id_pn', $id)->orderBy('id_provinsi', 'ASC')->orderBy('id_kawasan', 'ASC')->findAll();
         $rekap = [];
 
         foreach ($rekap_program_kawasan as $row) {
 
             // Normalisasi kawasan null → Non Kawasan
-            $kawasanNama = (!empty($row['kawasan'])) ? $row['kawasan'] : 'Non Kawasan';
+            $kawasanNama = (!empty($row->nama_kawasan_rpjmn)) ? $row->nama_kawasan_rpjmn : 'Non Kawasan';
 
             // Key grouping berdasarkan provinsi + kawasan
-            $key = $row['provinsi'] . '|' . $kawasanNama;
+            $key = $row->provinsi . '|' . $kawasanNama;
 
             if (!isset($rekap[$key])) {
                 $rekap[$key] = [
-                    'provinsi' => $row['provinsi'],
+                    'provinsi' => $row->provinsi,
                     'kawasan' => $kawasanNama,
                     'jumlah_pekerjaan' => 0
                 ];
             }
 
             // Jumlahkan pekerjaan
-            $rekap[$key]['jumlah_pekerjaan'] += (int) $row['pekerjaan'];
+            $rekap[$key]['jumlah_pekerjaan'] += (int) $row->pekerjaan;
         }
 
 

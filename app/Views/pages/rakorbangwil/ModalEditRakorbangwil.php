@@ -171,7 +171,7 @@
                     </div>
                     <div class="form-group">
                         <label class="catatan-text"><strong>Pekerjaan</strong></label>
-                        <input type="text" class="form-control" name="pekerjaan" value="<?= esc($progTahunan->pekerjaan ?? '') ?>">
+                        <textarea type="text" class="form-control" name="pekerjaan"><?= esc($progTahunan->pekerjaan ?? '') ?></textarea>
                     </div>
 
                     <label class="catatan-text"><strong>Unit Organisasi</strong></label>
