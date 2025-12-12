@@ -1296,7 +1296,7 @@ class Rakorbangwil extends BaseController
         ]);
 
         // Load HTML ke dalam mPDF // Menentukan footer sebagai fallback
-        $mpdf->SetWatermarkImage('assets/img/pu-transparan.png', 0.2);
+        $mpdf->SetWatermarkImage('assets/img/pu-transparan.png', 0.1);
         $mpdf->showWatermarkImage = true;
 
         $mpdf->SetHTMLFooter('<div style="text-align: center;">© 2025 - Berita Acara Kesepakatan Rakorbangwil Provinsi ' . ucwords($provinsi["provinsi"]) . ' | Prioritas Nasional ' .  ucwords($pn["id_pn"]) . ' | Halaman {PAGENO} dari {nbpg}</div>');
@@ -1304,7 +1304,7 @@ class Rakorbangwil extends BaseController
 
         // Output PDF ke browser
         return $this->response->setHeader('Content-Type', 'application/pdf')
-            ->setBody($mpdf->Output('BERITA ACARA RAKORBANGIWL.pdf', 'I')); // 'I' untuk menampilkan, 'D' untuk mengunduh
+            ->setBody($mpdf->Output('BAK_' . $provinsi['provinsi'] . '_PN' . $id_pn . '.pdf', 'I')); // 'I' untuk menampilkan, 'D' untuk mengunduh
     }
     public function get_pejabat_bak()
     {

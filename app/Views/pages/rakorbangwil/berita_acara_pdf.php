@@ -135,7 +135,7 @@
     <div style="margin-top:25px;">
         <p>Dengan memperhatikan:</p>
         <ol>
-            <li>Rencana Pembangunan Jangka Panjang Nasional (RPJPN) 2045;</li>
+            <li>Rencana Pembangunan Jangka Panjang Nasional (RPJPN) 2025 - 2045;</li>
             <li>Rencana Pembangunan Jangka Menengah (RPJMN) 2025–2029;</li>
             <li>Rancangan Rencana Strategis Kementerian Pekerjaan Umum 2025–2029;</li>
             <li>Rencana Pembangunan Infrastruktur Wilayah (RPIW) 2025–2034 di 38 Provinsi; dan</li>
