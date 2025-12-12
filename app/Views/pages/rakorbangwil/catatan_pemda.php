@@ -192,7 +192,7 @@
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-1">
-                                    <label for="catatan-konfirmasi-pemda"><strong>Catatan Konfirmasi Pemda</strong></label>
+                                    <label for="catatan-konfirmasi-pemda"><strong>Catatan Kebutuhan Dukungan Pemda</strong></label>
                                 </div>
                                 <div class="col-md-11">
                                     <select class="form-control" name="konfirmasi_pemda" id="filter-konfirmasi_pemda">

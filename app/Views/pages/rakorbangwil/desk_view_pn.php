@@ -279,7 +279,7 @@
                                             <!-- KONFIRMASI PEMDA -->
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="filter-label">Catatan Konfirmasi Pemda</label>
+                                                    <label class="filter-label">Catatan Kebutuhan Dukungan Pemda</label>
                                                     <select class="form-control" name="konfirmasi_pemda" id="filter-konfirmasi_pemda">
                                                         <option value="">Semua Konfirmasi</option>
                                                         <option value="ya">Ya</option>
