@@ -990,10 +990,18 @@ class Rakorbangwil extends BaseController
         $pn = $this->pnModel->find($id);
         $stackholder = $this->stakholderModel->orderBy('id_kategori')->orderBy('id_stakeholder')->findAll();
         $namaList = array_column($stackholder, 'stakeholder');
-        $program = $this->praRakorModel->where('id_pn', $id)->findAll();
-        $kebutuhan_dukungan_kl = $this->kebutuhan_kl_Model->getKebutuhanKl($id);
-        $catatan_pn = $this->praRakorModel->getCatatan($id);
-        $rekap_program_kawasan = $this->praRakorModel->rekapKawasan($id);
+        if ($id == "0") {
+            $program = $this->praRakorModel->where('id_pn', null)->findAll();
+            $kebutuhan_dukungan_kl = $this->kebutuhan_kl_Model->getKebutuhanKl("x");
+            $catatan_pn = $this->praRakorModel->getCatatan("x");
+            $rekap_program_kawasan = $this->praRakorModel->rekapKawasan("x");
+        } else {
+            $kebutuhan_dukungan_kl = $this->kebutuhan_kl_Model->getKebutuhanKl($id);
+            $catatan_pn = $this->praRakorModel->getCatatan($id);
+            $rekap_program_kawasan = $this->praRakorModel->rekapKawasan($id);
+            $program = $this->praRakorModel->where('id_pn', $id)->findAll();
+        }
+
         // $rekap_program_kawasan = $this->praRakorModel->where('id_pn', $id)->orderBy('id_provinsi', 'ASC')->orderBy('id_kawasan', 'ASC')->findAll();
         $rekap = [];
 
@@ -1056,8 +1064,11 @@ class Rakorbangwil extends BaseController
         $konfirmasi_pemda = $this->request->getPost('konfirmasi_pemda');
         $kesepakatan = $this->request->getPost('kesepakatan');
         $sumber = $this->request->getPost('sumber');
-        $daftar_program_tahunan = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, $unor_id, $sumber, $id_pn, null, $id_pendanaan, $tipe, $catatan_rakorbangwil, $catatan_pemda, $konfirmasi_pemda, $kesepakatan);
-
+        if ($id_pn == "0") {
+            $daftar_program_tahunan = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, $unor_id, $sumber, "x", null, $id_pendanaan, $tipe, $catatan_rakorbangwil, $catatan_pemda, $konfirmasi_pemda, $kesepakatan);
+        } else {
+            $daftar_program_tahunan = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, $unor_id, $sumber, $id_pn, null, $id_pendanaan, $tipe, $catatan_rakorbangwil, $catatan_pemda, $konfirmasi_pemda, $kesepakatan);
+        }
 
         $data = [
             'daftar_program_tahunan' => $daftar_program_tahunan,
@@ -1212,7 +1223,9 @@ class Rakorbangwil extends BaseController
     {
         $id_pn = $this->request->getPost('pn');
         $provinsi_id = $this->request->getPost('provinsi');
-
+        if ($id_pn == "0") {
+            $id_pn = "x";
+        }
         $kawasan = $this->praRakorModel->getKawasanList($provinsi_id, null, $id_pn);
         $diakomodasi = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 1);
         $diakomodasi2 = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 2);
@@ -1241,6 +1254,9 @@ class Rakorbangwil extends BaseController
     public function create_bak()
     {
         $id_pn = $this->request->getPost('pn_id');
+        if ($id_pn == "0") {
+            $id_pn = "x";
+        }
         $provinsi_id = $this->request->getPost('provinsi_id');
         $tanggal = $this->request->getPost('tanggal');
         $pejabat_bak = $this->pejabatBakModel
@@ -1298,8 +1314,11 @@ class Rakorbangwil extends BaseController
         // Load HTML ke dalam mPDF // Menentukan footer sebagai fallback
         $mpdf->SetWatermarkImage('assets/img/pu-transparan.png', 0.1);
         $mpdf->showWatermarkImage = true;
-
-        $mpdf->SetHTMLFooter('<div style="text-align: center;">© 2025 - Berita Acara Kesepakatan Rakorbangwil Provinsi ' . ucwords($provinsi["provinsi"]) . ' | Prioritas Nasional ' .  ucwords($pn["id_pn"]) . ' | Halaman {PAGENO} dari {nbpg}</div>');
+        if ($pn["id_pn"] == 0) {
+            $mpdf->SetHTMLFooter('<div style="text-align: center;">© 2025 - Berita Acara Kesepakatan Rakorbangwil Provinsi ' . ucwords($provinsi["provinsi"]) . ' |Non Prioritas Nasional | Halaman {PAGENO} dari {nbpg}</div>');
+        } else {
+            $mpdf->SetHTMLFooter('<div style="text-align: center;">© 2025 - Berita Acara Kesepakatan Rakorbangwil Provinsi ' . ucwords($provinsi["provinsi"]) . ' | Prioritas Nasional ' .  ucwords($pn["id_pn"]) . ' | Halaman {PAGENO} dari {nbpg}</div>');
+        }
         $mpdf->WriteHTML($html);
 
         // Output PDF ke browser
@@ -1311,9 +1330,9 @@ class Rakorbangwil extends BaseController
         $provinsi_id = $this->request->getPost('provinsi');
         $pn_id       = $this->request->getPost('pn');
 
-        if (!$provinsi_id || !$pn_id) {
-            return $this->response->setJSON([]);
-        }
+        // if (!$provinsi_id || !$pn_id) {
+        //     return $this->response->setJSON([]);
+        // }
 
         // join ke master pejabat + provinsi
         $data = $this->pejabatBakModel
@@ -1340,10 +1359,11 @@ class Rakorbangwil extends BaseController
         $provinsi_id = $this->request->getPost('provinsi_id');
         $pn_id       = $this->request->getPost('pn_id');
 
-        if (!$pejabat_id || !$provinsi_id || !$pn_id) {
-            return redirect()->back()->with('error', 'Data tidak lengkap.');
-        }
-
+        // if (!$pejabat_id || !$provinsi_id || !$pn_id) {
+        //     echo "pn aneh";
+        //     die;
+        //     return redirect()->back()->with('error', 'Data tidak lengkap.');
+        // }
         // ===========================================
         // 1. CARI PRIORITAS TERAKHIR UNTUK PROVINSI + PN
         // ===========================================

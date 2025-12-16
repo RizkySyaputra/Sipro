@@ -152,7 +152,11 @@
                         <div class="pn-number"><?= esc($pn['id_pn'] ?? '-') ?></div>
                         <div class="pn-text">
                             <strong style="font-weight: 900; color: #00b37d; font-size: 1.2rem;">
-                                Prioritas Nasional <?= esc($pn['id_pn'] ?? '-') ?>
+                                <?php if ($pn['id_pn'] == "0") { ?>
+                                    Non Prioritas Nasional
+                                <?php } else { ?>
+                                    Prioritas Nasional <?= esc($pn['id_pn'] ?? '-') ?>
+                                <?php } ?>
                             </strong><br>
                             <?= esc($pn['nama_pn'] ?? 'Deskripsi belum tersedia') ?>
                         </div>

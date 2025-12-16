@@ -22,7 +22,12 @@ class PraRakorModel extends Model
     {
         $builder = $this->db->table('prog_tahunan_pra_rakorbangwil as b');
         $builder->select(' b.*');
-        $builder->where('b.id_pn', $id);
+        if ($id == "x") {
+            $builder->where('b.id_pn', null);
+        } else {
+            $builder->where('b.id_pn', $id);
+        }
+        // $builder->where('b.id_pn', $id);
 
         $query = $builder->get();
         return $query->getFirstRow();
@@ -40,7 +45,11 @@ class PraRakorModel extends Model
             $builder->where('a.id_tematik_kawasan', $id_tematik);
         }
         if ($id_pn) {
-            $builder->where('a.id_pn', $id_pn);
+            if ($id_pn == "x") {
+                $builder->where('a.id_pn', null);
+            } else {
+                $builder->where('a.id_pn', $id_pn);
+            }
         }
         $builder->where('a.thn_pelaksanaan', $tahun_pelaksanaan);
         $builder->where('a.kawasan is not null', null);
@@ -74,7 +83,12 @@ class PraRakorModel extends Model
         $builder = $this->db->table('trx_prog_tahunan_pra_rakorbangwil as a');
         $builder->select('a.*, b.nama_kawasan_rpjmn');
         $builder->join('m_kawasan as b', 'a.kawasan = b.nama_kawasan', 'left');
-        $builder->where('a.id_pn', $id_pn);
+        if ($id_pn == "x") {
+            $builder->where('a.id_pn', null);
+        } else {
+            $builder->where('a.id_pn', $id_pn);
+        }
+        // $builder->where('a.id_pn', $id_pn);
         $builder->orderBy('a.id_provinsi', 'ASC');
         $builder->orderBy('a.id_kawasan', 'ASC');
         $query = $builder->get();

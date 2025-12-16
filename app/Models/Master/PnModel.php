@@ -21,6 +21,7 @@ class PnModel extends Model
         $builder->join('m_kl_pn as b', 'a.id_pn = b.id_pn', 'left');
         $builder->join('m_kl as c', 'b.id_kl = c.id_kl', 'left');
         $builder->select(' c.nama_kl ,c.short_kl , b.id_pn');
+        $builder->orderBy('b.id_pn', 'DESC');
         $query = $builder->get();
         return $query->getResult();
     }

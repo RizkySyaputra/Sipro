@@ -192,7 +192,7 @@
                     </select>
                 </div>
                 <label class="catatan-text"><strong>Lokasi</strong></label>
-                <input type="text" class="form-control" name="lokasi" value="<?= esc($progTahunan->lokasi ?? '') ?>">
+                <textarea type="text" class="form-control" name="lokasi"><?= esc($progTahunan->lokasi ?? '') ?></textarea>
                 </ul>
             </div>
 

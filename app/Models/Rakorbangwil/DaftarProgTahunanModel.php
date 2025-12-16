@@ -101,6 +101,8 @@ class DaftarProgTahunanModel extends Model
                 $builder->where('a.id_pn is not null', null, false);
                 $builder->orderBy('a.catatan_konfrm_pemda', 'DESC');
                 $builder->orderBy('a.catatan_pemda', 'DESC');
+            } elseif ($pn == "x") {
+                $builder->where('a.id_pn', null);
             } else {
                 $builder->where('a.id_pn', $pn);
             }
