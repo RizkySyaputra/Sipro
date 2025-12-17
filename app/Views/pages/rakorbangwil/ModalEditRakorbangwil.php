@@ -119,6 +119,7 @@
 <form id="editMemoForm">
     <?= csrf_field() ?>
     <input type="hidden" name="id_prog_tahunan" value="<?= $progTahunan->id_prog_tahunan ?? '' ?>">
+    <input type="hidden" name="id_pn" value="<?= $progTahunan->id_pn ?? '' ?>">
 
     <div class="card-body">
         <div class="row g-3">

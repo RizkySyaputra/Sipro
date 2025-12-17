@@ -40,6 +40,7 @@ class ProgTahunanModel extends Model
         'catatan_pemda',
         'catatan_desk_rakorbangwil',
         'desk_rakorbangwil',
+        'pn_lama',
         'tipe_pekerjaan'
     ];
 

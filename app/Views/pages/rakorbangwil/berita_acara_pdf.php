@@ -359,6 +359,64 @@
             </tbody>
         </table>
     </div>
+    <div class="section-block">
+        <!-- ======== D. TIDAK TERBAHAS ======== -->
+        <h5>E. Disepakati perubahan program/kegiatan infrastruktur PU TA 2027 yang diakomodasi di Provinsi <?= $provinsi['provinsi'] ?> sebagai berikut:</h5>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Kawasan</th>
+                    <th>Program/Kegiatan Mendukung Prioritas Nasional (PN)</th>
+                    <th>Program/Kegiatan Non Prioritas Nasional (Non PN)</th>
+                    <th>Unit Organisasi</th>
+                    <th>Kesepakatan</th>
+                    <th>Catatan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if (!empty($perubahanPn)): ?>
+                    <?php $no = 1;
+                    foreach ($perubahanPn as $row): ?>
+                        <tr>
+                            <td align="center"><?= $no++ ?></td>
+                            <td><?= $row->kawasan_panjang ?></td>
+                            <td><?= $row->pekerjaan ?></td>
+                            <td><?= $row->pekerjaan ?></td>
+                            <td><?= $row->unor ?></td>
+                            <td>Diakomodasi Perubahan menjadi Non PN dilanjutkan pada Pra Konreg</td>
+                            <td style="width: 30%;">
+                                <?php
+                                if (!empty($row->catatan_desk_rakorbangwil)) {
+
+                                    // Decode JSON
+                                    $catatanList = json_decode($row->catatan_desk_rakorbangwil, true);
+
+                                    // Cek apakah valid array
+                                    if (is_array($catatanList)) {
+                                        foreach ($catatanList as $item) {
+                                            echo esc($item['nama']) . " : <br> " . nl2br(esc($item['catatan'])) . "<br>";
+                                        }
+                                    } else {
+                                        echo "-";
+                                    }
+                                } else {
+                                    echo "-";
+                                }
+                                ?>
+                            </td>
+
+                        </tr>
+                    <?php endforeach ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="6" align="center">Tidak Ada Data</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
+    </div>
 
     <!-- ======== PARAGRAF PENUTUP ======== -->
     <p style="margin-top:25px;">

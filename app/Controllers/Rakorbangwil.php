@@ -1123,6 +1123,7 @@ class Rakorbangwil extends BaseController
         $lokasi        = $this->request->getPost('lokasi');
         $id_pendanaan   = $this->request->getPost('id_pendanaan');
         $anggaran   = $this->request->getPost('anggaran');
+        $id_pn   = $this->request->getPost('id_pn');
         $id_satuan   = $this->request->getPost('id_satuan');
         $volume   = $this->request->getPost('volume');
         // Ambil input utama
@@ -1131,6 +1132,12 @@ class Rakorbangwil extends BaseController
         if (!$kesepakatan) {
             $kesepakatan = "0";
         }
+        if ($kesepakatan == 7) {
+            $pn_lama = $id_pn;
+        } else {
+            $pn_lama = null;
+        }
+
 
         // Ambil array catatan desk
         $namaArr = $this->request->getPost('desk_nama');   // ← ini BENAR
@@ -1151,6 +1158,7 @@ class Rakorbangwil extends BaseController
             }
         }
 
+
         // Data yang akan diupdate
         $dataToUpdate = [
             'catatan_desk_rakorbangwil' => json_encode($deskCatatan, JSON_UNESCAPED_UNICODE),
@@ -1164,7 +1172,8 @@ class Rakorbangwil extends BaseController
             'id_pendanaan'      => $id_pendanaan,
             'anggaran'          => $anggaran,
             'id_satuan'         => $id_satuan,
-            'volume'            => $volume
+            'volume'            => $volume,
+            'pn_lama'         => $pn_lama
         ];
         // Update data
         $this->kabkotProgramTahunanModel->where('id_prog_tahunan', $id)->delete();
@@ -1237,11 +1246,11 @@ class Rakorbangwil extends BaseController
             ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 5);
         $ditangguhkan6 = $this->daftarProgTahunanModel
             ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 6);
-        $ditangguhkan7 = $this->daftarProgTahunanModel
-            ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 7);
+        $nonPn = $this->daftarProgTahunanModel
+            ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 7, $id_pn);
         $ditangguhkan = array_merge($ditangguhkan3, $ditangguhkan4, $ditangguhkan5);
         $tidakTerbahas0 = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 99);
-        $tidakTerbahas = array_merge($diakomodasi2, $tidakTerbahas0, $ditangguhkan6, $ditangguhkan7);
+        $tidakTerbahas = array_merge($diakomodasi2, $tidakTerbahas0, $ditangguhkan6);
         $pejabat_bak = $this->pejabatBakModel->where('id_provinsi', $provinsi_id)->where('id_pn', $id_pn)->orderBy('prioritas', 'ASC')->findAll();
         return $this->response->setJSON([
             'kawasan'        => $kawasan,
@@ -1249,6 +1258,7 @@ class Rakorbangwil extends BaseController
             'ditangguhkan'   => $ditangguhkan,
             'tidakTerbahas'  => $tidakTerbahas,
             'pejabat_bak'  => $pejabat_bak,
+            'perubahanPn'  => $nonPn
         ]);
     }
     public function create_bak()
@@ -1284,17 +1294,18 @@ class Rakorbangwil extends BaseController
             ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 5);
         $ditangguhkan6 = $this->daftarProgTahunanModel
             ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 6);
-        $ditangguhkan7 = $this->daftarProgTahunanModel
-            ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 7);
+        $nonPn = $this->daftarProgTahunanModel
+            ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 7, $id_pn);
         $ditangguhkan = array_merge($ditangguhkan3, $ditangguhkan4, $ditangguhkan5);
         $tidakTerbahas0 = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 99);
-        $tidakTerbahas = array_merge($diakomodasi2, $tidakTerbahas0, $ditangguhkan6, $ditangguhkan7);
+        $tidakTerbahas = array_merge($diakomodasi2, $tidakTerbahas0, $ditangguhkan6);
 
         $html = view('/pages/rakorbangwil/berita_acara_pdf', [
             'kawasan' => $kawasan,
             'diakomodasi' => $diakomodasi,
             'ditangguhkan' => $ditangguhkan,
             'tidakTerbahas' => $tidakTerbahas,
+            'perubahanPn'  => $nonPn,
             'provinsi' => $provinsi,
             'pn' => $pn,
             'pejabat_bak' => $pejabat_bak,

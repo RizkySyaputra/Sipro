@@ -1,4 +1,37 @@
 <style>
+    .tabs-wrapper {
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+
+    .tabs-wrapper::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .tabs-wrapper::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 10px;
+    }
+
+    .tabs-wrapper::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .nav-tabs {
+        flex-wrap: nowrap !important;
+    }
+
+    .nav-tabs .nav-item {
+        flex: 0 0 auto;
+    }
+
+    .nav-tabs .nav-link {
+        white-space: nowrap;
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+
     .catatan-item {
         background-color: #f8f9fa;
         /* warna abu lembut */
@@ -118,13 +151,16 @@
 
                     </div>
                     <!-- Tabs -->
-                    <ul class="nav nav-tabs" id="pnTabs">
-                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#kawasan">Kawasan Prioritas</a></li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#diakomodasi">Program Diakomodasi</a></li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#ditangguhkan">Program Ditangguhkan</a></li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tidak_terbahas">Program Tidak Terbahas</a></li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#bak">Pejabat Penandatangan & Generate BA</a></li>
-                    </ul>
+                    <div class="tabs-wrapper">
+                        <ul class="nav nav-tabs" id="pnTabs">
+                            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#kawasan">Kawasan Prioritas</a></li>
+                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#diakomodasi">Program Diakomodasi</a></li>
+                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#ditangguhkan">Program Ditangguhkan</a></li>
+                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tidak_terbahas">Program Tidak Terbahas</a></li>
+                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#perubahanPn">Perubahan Program Diakomodasi</a></li>
+                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#bak">Pejabat Penandatangan & Generate BA</a></li>
+                        </ul>
+                    </div>
                     <div class="tab-content mt-3 p-3 border rounded bg-white">
 
                         <!-- ================= TAB PROGRAM ================= -->
@@ -232,7 +268,33 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <!-- END TAB Diakomodasi -->
+                        <!-- ================= TAB Diakomodasi ================= -->
+                        <div class="tab-pane fade show" id="perubahanPn" role="tabpanel">
+                            <!-- DATATABLE -->
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table id="table-perubahanPn" class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Kawasan</th>
+                                                    <th>Pekerjaan</th>
+                                                    <th>Unor</th>
+                                                    <th>Kesepakatan</th>
+                                                    <th>Sumber Pendanaan</th>
+                                                    <th>Catatan Rakorbangwil</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
 
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <!-- END TAB Diakomodasi -->
                         <div class="tab-pane fade show" id="bak" role="tabpanel">
@@ -368,7 +430,7 @@
                     case '6':
                         return "Ditangguhkan (Sumber Pendanaan Lainnya)";
                     case '7':
-                        return "Ditangguhkan (Skema KPBU - Tidak Terbahas)";
+                        return "Diakomodasi (Perubahan Menjadi Non PN)";
                     case '0':
                         return "Tidak Terbahas";
                     default:
@@ -522,7 +584,28 @@
                         }
 
                         $('#tidak_terbahas table tbody').html(htmlTidak);
+                        // ========== TABEL PERUBAHAN PN ==========
+                        let htmlPerubahan = "";
 
+                        if (response.perubahanPn.length === 0) {
+                            htmlPerubahan = emptyRow(7);
+                        } else {
+                            response.perubahanPn.forEach((item, index) => {
+                                htmlPerubahan += `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${item.kawasan_panjang}</td>
+                <td>${item.pekerjaan}</td>
+                <td>${item.unor}</td>
+                 <td>${getStatusDesk(item.desk_rakorbangwil)}</td>
+                <td>${item.sumber_pendanaan ?? '-'}</td>
+              <td style="width: 30%;">${formatCatatan(item.catatan_desk_rakorbangwil)}</td>
+            </tr>
+        `;
+                            });
+                        }
+
+                        $('#perubahanPn table tbody').html(htmlPerubahan);
 
                     },
                     complete: function() {
