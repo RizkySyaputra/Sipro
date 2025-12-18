@@ -368,7 +368,6 @@
                 <tr>
                     <th>No</th>
                     <th>Kawasan</th>
-                    <th>Program/Kegiatan Mendukung Prioritas Nasional (PN)</th>
                     <th>Program/Kegiatan Non Prioritas Nasional (Non PN)</th>
                     <th>Unit Organisasi</th>
                     <th>Kesepakatan</th>
@@ -382,7 +381,6 @@
                         <tr>
                             <td align="center"><?= $no++ ?></td>
                             <td><?= $row->kawasan_panjang ?></td>
-                            <td><?= $row->pekerjaan ?></td>
                             <td><?= $row->pekerjaan ?></td>
                             <td><?= $row->unor ?></td>
                             <td>Diakomodasi Perubahan menjadi Non PN dilanjutkan pada Pra Konreg</td>
@@ -411,7 +409,7 @@
                     <?php endforeach ?>
                 <?php else: ?>
                     <tr>
-                        <td colspan="7" align="center">Tidak Ada Data</td>
+                        <td colspan="6" align="center">Tidak Ada Data</td>
                     </tr>
                 <?php endif; ?>
             </tbody>
