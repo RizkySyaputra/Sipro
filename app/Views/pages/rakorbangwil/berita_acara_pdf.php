@@ -383,7 +383,7 @@
                             <td><?= $row->kawasan_panjang ?></td>
                             <td><?= $row->pekerjaan ?></td>
                             <td><?= $row->unor ?></td>
-                            <td>Diakomodasi Perubahan menjadi Non PN dilanjutkan pada Pra Konreg</td>
+                            <td>Diakomodasi Perubahan menjadi Non PN dilanjutkan pada Desk Konreg</td>
                             <td style="width: 30%;">
                                 <?php
                                 if (!empty($row->catatan_desk_rakorbangwil)) {
@@ -419,7 +419,7 @@
     <!-- ======== PARAGRAF PENUTUP ======== -->
     <p style="margin-top:25px;">
         Program/kegiatan infrastruktur PU TA 2027 di Provinsi <?= $provinsi['provinsi'] ?>
-        akan dibahas lebih lanjut dalam Konsultasi Regional (Konreg) Kementerian PU dan forum pemrograman dan penganggaran tingkat nasional dengan memperhatikan kesiapan readiness criteria, ketersedian alokasi anggaran, dan tingkat prioritasnya.
+        akan dibahas lebih lanjut dalam Konsultasi Regional (Konreg) Kementerian PU dan forum pemrograman dan penganggaran tingkat nasional dengan memperhatikan kesiapan readiness criteria, ketersediaan alokasi anggaran, dan tingkat prioritasnya.
     </p>
 
     <p style="text-align:center; margin-bottom:40px;">
