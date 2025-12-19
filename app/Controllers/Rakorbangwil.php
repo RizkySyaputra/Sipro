@@ -1263,7 +1263,7 @@ class Rakorbangwil extends BaseController
         $ditangguhkan6 = $this->daftarProgTahunanModel
             ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 6);
         $nonPn = $this->daftarProgTahunanModel
-            ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 7, $id_pn);
+            ->getDaftarProgramTahunan($provinsi_id, null, null, null, null, null, null, null, null, null, 7, $id_pn);
         $ditangguhkan = array_merge($ditangguhkan3, $ditangguhkan4, $ditangguhkan5);
         $tidakTerbahas0 = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 99);
         $tidakTerbahas = array_merge($diakomodasi2, $tidakTerbahas0, $ditangguhkan6);
@@ -1316,7 +1316,7 @@ class Rakorbangwil extends BaseController
         $ditangguhkan6 = $this->daftarProgTahunanModel
             ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 6);
         $nonPn = $this->daftarProgTahunanModel
-            ->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 7, $id_pn);
+            ->getDaftarProgramTahunan($provinsi_id, null, null, null, null, null, null, null, null, null, 7, $id_pn);
         $ditangguhkan = array_merge($ditangguhkan3, $ditangguhkan4, $ditangguhkan5);
         $tidakTerbahas0 = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 99);
         $tidakTerbahas = array_merge($diakomodasi2, $tidakTerbahas0, $ditangguhkan6);

@@ -119,9 +119,9 @@
 <body>
 
     <!-- ======== HEADER DOKUMEN ======== -->
-    <h2>BERITA ACARA KESEPAKATAN<br>
+    <h2 style="width: 70%;">BERITA ACARA KESEPAKATAN<br>
         PROGRAM KETERPADUAN PEMBANGUNAN INFRASTRUKTUR PU TA 2027<br>
-        MENDUKUNG PRIORITAS NASIONAL (PN) RPJMN 2025–2029<br>
+        MENDUKUNG PRIORITAS NASIONAL <?= $pn['id_pn'] . ' ' . $pn['nama_pn'] . '(PN ' . $pn['id_pn'] . ')' ?> RPJMN 2025–2029<br>
         DI PROVINSI <?= strtoupper($provinsi['provinsi']) ?>
     </h2>
 
