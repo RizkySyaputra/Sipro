@@ -1217,21 +1217,37 @@ class Rakorbangwil extends BaseController
 
     public function berita_acara()
     {
-        $dataProvinsi = $this->provinsiModel->getProvinsi();
+        $id_role = user()->id_role;
+        if (user()->id_provinsi) {
+            $id_provinsi = user()->id_provinsi;
+            $dataProvinsi = $this->provinsiModel->where('id', $id_provinsi)->first();
+        } else {
+            $dataProvinsi = $this->provinsiModel->getProvinsi();
+        }
+        // $dataProvinsi = $this->provinsiModel->getProvinsi();
         $dataPn = $this->pnModel->getAll();
         $pejabat = $this->pejabatModel->findAll();
         $this->template->write('title', 'Berita Acara Kesepakatan');
         $this->template->load('/templates/main', '/pages/rakorbangwil/berita_acara', [
             'provinsi' => $dataProvinsi,
             'pn' => $dataPn,
-            'pejabat' => $pejabat
+            'pejabat' => $pejabat,
+            'can_view' => has_permission_menu($id_role, '/rakorbangwil/berita_acara', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/rakorbangwil/berita_acara', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/rakorbangwil/berita_acara', 'can_delete')
         ]);
     }
 
     public function get_data_berita_acara()
     {
         $id_pn = $this->request->getPost('pn');
-        $provinsi_id = $this->request->getPost('provinsi');
+        if (user()->id_provinsi) {
+            $provinsi_id = user()->id_provinsi;
+        } else {
+            $provinsi_id = $this->request->getPost('provinsi');
+        }
+        // $provinsi_id = $this->request->getPost('provinsi');
+
         if ($id_pn == "0") {
             $id_pn = "x";
         }
@@ -1267,7 +1283,12 @@ class Rakorbangwil extends BaseController
         if ($id_pn == "0") {
             $id_pn = "x";
         }
-        $provinsi_id = $this->request->getPost('provinsi_id');
+        if (user()->id_provinsi) {
+            $provinsi_id = user()->id_provinsi;
+        } else {
+            $provinsi_id = $this->request->getPost('provinsi_id');
+        }
+        // $provinsi_id = $this->request->getPost('provinsi_id');
         $tanggal = $this->request->getPost('tanggal');
         $pejabat_bak = $this->pejabatBakModel
             ->select('m_ttd_ba_rakorbangwil.*, pejabat.nama_pejabat, pejabat.jabatan, pejabat.instansi, pejabat.tanda_tangan')
@@ -1338,7 +1359,13 @@ class Rakorbangwil extends BaseController
     }
     public function get_pejabat_bak()
     {
-        $provinsi_id = $this->request->getPost('provinsi');
+        if (user()->id_provinsi) {
+            $provinsi_id = user()->id_provinsi;
+        } else {
+            $provinsi_id = $this->request->getPost('provinsi');
+        }
+        // $provinsi_id = $this->request->getPost('provinsi');
+
         $pn_id       = $this->request->getPost('pn');
 
         // if (!$provinsi_id || !$pn_id) {

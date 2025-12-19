@@ -113,9 +113,15 @@
                                         <label class="filter-label">Provinsi</label>
                                         <select class="form-control" name="provinsi" id="filter-provinsi">
                                             <option value="" disabled>Pilih Provinsi</option>
-                                            <?php foreach ($provinsi as $p): ?>
-                                                <option value="<?= $p->id ?>"><?= $p->provinsi ?></option>
-                                            <?php endforeach; ?>
+                                            <?php
+                                            if (user()->id_provinsi) : ?>
+                                                <option value="<?= $provinsi['provinsi'] ?>"><?= $provinsi['provinsi'] ?></option>
+                                            <?php else : ?>
+                                                <option value="">Semua Provinsi</option>
+                                                <?php foreach ($provinsi as $p): ?>
+                                                    <option value="<?= $p->id ?>"><?= $p->provinsi ?></option>
+                                                <?php endforeach; ?>
+                                            <?php endif; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -304,9 +310,11 @@
                                     <div class="table-responsive">
 
                                         <div class="mb-3 text-right">
-                                            <button id="btn-add-pejabat" class="btn btn-primary">
-                                                <i class="fa fa-plus"></i> Tambah Pejabat
-                                            </button>
+                                            <?php if ($can_edit == true) : ?>
+                                                <button id="btn-add-pejabat" class="btn btn-primary">
+                                                    <i class="fa fa-plus"></i> Tambah Pejabat
+                                                </button>
+                                            <?php endif ?>
                                             <button id="btn-generate-bak" class="btn btn-success">
                                                 <i class="fa fa-file-alt"></i> Generate Berita Acara
                                             </button>
@@ -411,6 +419,9 @@
 
     <script>
         window.currentCatatanData = <?= json_encode(json_decode($catatan_pn->catatan_pra_rakorbangwil ?? '[]')) ?>;
+    </script>
+    <script>
+        const canDelete = <?= $can_delete ? 'true' : 'false' ?>;
     </script>
 
     <script>
@@ -748,10 +759,11 @@
                     <td>${item.jabatan}</td>
                     <td>${item.provinsi}</td>
                     <td>
-                        <button class="btn btn-danger btn-sm btn-delete-pejabat" data-id="${item.id}">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </td>
+        ${canDelete ? `
+        <button class="btn btn-danger btn-sm btn-delete-pejabat" data-id="${item.id}">
+            <i class="fa fa-trash"></i>
+        </button>` : ''}
+    </td>
                 </tr>
             `;
                                 });
