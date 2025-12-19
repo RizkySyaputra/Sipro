@@ -34,7 +34,7 @@
                                         <th>Unit Kerja</th>
                                         <th>Unit Organisasi</th>
                                         <th>Instansi</th>
-                                        <th>Aksi</th>
+                                        <th style="width:20%">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>

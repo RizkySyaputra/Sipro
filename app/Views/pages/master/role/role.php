@@ -20,13 +20,13 @@
                                 <th class="text-center">Actions</th>
                             </tr>
                         </thead>
-                        <tfoot>
+                        <!-- <tfoot>
                             <tr>
                                 <th>No</th>
                                 <th>Nama Role</th>
                                 <th class="text-center">Actions</th>
                             </tr>
-                        </tfoot>
+                        </tfoot> -->
                         <tbody>
                             <?php
                             $no = 1;
