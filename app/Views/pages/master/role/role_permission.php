@@ -73,7 +73,7 @@ function renderEditPermissions($menus, $permMap, $parent_id = 0, &$group = 0, $g
                 </div>
                 <?php if ($can_edit == true) : ?>
                     <a href="<?= site_url('role/edit_permission/' . $id_role) ?>" class="btn btn-warning btn-sm">
-                        <i class="material-icons">edit</i> Edit Akses
+                        <i class="material-icons">edit</i> Ubah Akses
                     </a>
                 <?php endif ?>
             </div>

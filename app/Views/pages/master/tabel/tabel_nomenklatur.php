@@ -9,7 +9,7 @@ foreach ($nomenklaturs as $nm) : ?>
         <td><?= $nm->nm_ro ?></td>
         <td><?= $nm->nama_satuan ?></td>
         <td>
-            <button class="btn btn-sm btn-success btn-view" data-id="<?= esc($nm->id_ro)  ?>" title="Lihat">
+            <button class="btn btn-sm btn-info btn-view" data-id="<?= esc($nm->id_ro)  ?>" title="Lihat">
                 <i class="fas fa-eye"></i>
             </button>
         </td>

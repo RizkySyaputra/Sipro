@@ -50,8 +50,8 @@
                                     <td><?= $user->username; ?></td>
                                     <td><?= $user->name; ?></td>
                                     <td class="text-center">
-                                        <?php if ($can_edit == true) : ?><button class="btn btn-warning btn-sm" onclick="openUpdateRoleModal('<?= $user->id_user; ?>', '<?= $user->name; ?>')">Edit</button> <?php endif ?>
-                                        <?php if ($can_delete == true) : ?> <button class="btn btn-danger btn-sm" onclick="confirmDelete('<?= $user->id_user; ?>')">Delete</button> <?php endif ?>
+                                        <?php if ($can_edit == true) : ?><button class="btn btn-warning btn-sm" onclick="openUpdateRoleModal('<?= $user->id_user; ?>', '<?= $user->name; ?>')"><i class="fas fa-edit"></i></button> <?php endif ?>
+                                        <?php if ($can_delete == true) : ?> <button class="btn btn-danger btn-sm" onclick="confirmDelete('<?= $user->id_user; ?>')"><i class="fas fa-trash"></i></button> <?php endif ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
