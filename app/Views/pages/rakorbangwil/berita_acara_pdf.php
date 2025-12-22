@@ -10,6 +10,11 @@
             page-break-inside: avoid !important;
         }
 
+        .page-break {
+            page-break-before: always;
+            break-before: page;
+        }
+
         .ttd-container {
             width: 100%;
             margin-top: 40px;
@@ -415,7 +420,7 @@
             </tbody>
         </table>
     </div>
-
+    <div class="page-break"></div>
     <!-- ======== PARAGRAF PENUTUP ======== -->
     <p style="margin-top:25px;">
         Program/kegiatan infrastruktur PU TA 2027 di Provinsi <?= $provinsi['provinsi'] ?>
@@ -423,7 +428,33 @@
     </p>
 
     <p style="text-align:center; margin-bottom:40px;">
-        Jakarta, <?= date('d F Y', strtotime($tanggal_bak)) ?>
+        <?php
+        function bulanIndoByNumber($bulan)
+        {
+            $bulan = (int)$bulan;
+            $namaBulan = [
+                1 => 'Januari',
+                2 => 'Februari',
+                3 => 'Maret',
+                4 => 'April',
+                5 => 'Mei',
+                6 => 'Juni',
+                7 => 'Juli',
+                8 => 'Agustus',
+                9 => 'September',
+                10 => 'Oktober',
+                11 => 'November',
+                12 => 'Desember',
+            ];
+
+            return $namaBulan[$bulan] ?? '';
+        }
+
+        $t = strtotime($tanggal_bak);
+
+        echo 'Jakarta, ' . date('d', $t) . ' ' . bulanIndoByNumber(date('m', $t)) . ' ' . date('Y', $t);
+        ?>
+        <!-- Jakarta, <?= date('d F Y', strtotime($tanggal_bak)) ?> -->
     </p>
     <table style="width: 100%; border-collapse: collapse; text-align: center;">
         <?php
