@@ -20,13 +20,13 @@
                                 <th class="text-center">Actions</th>
                             </tr>
                         </thead>
-                        <tfoot>
+                        <!-- <tfoot>
                             <tr>
                                 <th>No</th>
                                 <th>Nama Role</th>
                                 <th class="text-center">Actions</th>
                             </tr>
-                        </tfoot>
+                        </tfoot> -->
                         <tbody>
                             <?php
                             $no = 1;
@@ -35,9 +35,9 @@
                                     <td><?= $no++; ?></td>
                                     <td><?= $role['name']; ?></td>
                                     <td class="text-center">
-                                        <a href="<?= site_url('role/permission/' . $role['id']) ?>" class="btn btn-info btn-sm">Lihat Akses</a>
+                                        <a href="<?= site_url('role/permission/' . $role['id']) ?>" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
                                         <!-- <a href="<?= site_url('role/edit_permission/' . $role['id']) ?>" class="btn btn-warning btn-sm">Edit Permission</a> -->
-                                        <?php if ($can_delete == true) : ?> <button class="btn btn-danger btn-sm" onclick="confirmDeleteRole('<?= $role['id']; ?>')">Delete</button><?php endif ?>
+                                        <?php if ($can_delete == true) : ?> <button class="btn btn-danger btn-sm" onclick="confirmDeleteRole('<?= $role['id']; ?>')"><i class="fas fa-trash"></i></button><?php endif ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
