@@ -383,7 +383,7 @@ $routes->get('/addBakKonreg/(:segment)/(:segment)/(:segment)', 'KonregController
 // $routes->get('proses/api_to_fkw', 'KonregController::api_to_fkw');
 // $routes->get('proses/api_to_fkb', 'KonregController::api_to_fkb');
 
-$routes->get('register', 'AuthController::register');
-$routes->post('register', 'AuthController::attemptRegister');
+$routes->get('register', 'AuthController::register', ['filter' => 'permission']);
+$routes->post('register', 'AuthController::attemptRegister', ['filter' => 'permission']);
 
 $routes->get('profile', 'ProfileController::index');
