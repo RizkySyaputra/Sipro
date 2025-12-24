@@ -515,8 +515,9 @@
                                 htmlKawasan += `
             <tr>
                 <td>${index + 1}</td>
-                <td>${item.nama_kawasan_rpjmn?? '-'}</td>
-                <td>${item.tematik}</td>
+               <td>${item.kawasan_panjang ?? '-'}</td>
+<td>${item.tematik}</td>
+
             </tr>
         `;
                             });
