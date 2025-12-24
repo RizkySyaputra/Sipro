@@ -294,8 +294,8 @@ $routes->post('/rakorbangwil/addPejabatBAK', 'Rakorbangwil::addPejabatBAK');
 $routes->post('/rakorbangwil/delete_pejabat_bak', 'Rakorbangwil::delete_pejabat_bak');
 $routes->post('/rakorbangwil/update_prioritas_pejabat', 'Rakorbangwil::updatePrioritasPejabat');
 
-
-
+//Program Konreg 2025
+$routes->get('/konreg/pra_konred/rakorbangwil', 'KonregController::index');
 //Program Konreg
 $routes->get('/program-konreg/fkw', 'KonregController::program_fkw', ['filter' => 'permission']);
 $routes->get('/program-konreg/fkb', 'KonregController::program_fkb', ['filter' => 'permission']);
@@ -383,7 +383,7 @@ $routes->get('/addBakKonreg/(:segment)/(:segment)/(:segment)', 'KonregController
 // $routes->get('proses/api_to_fkw', 'KonregController::api_to_fkw');
 // $routes->get('proses/api_to_fkb', 'KonregController::api_to_fkb');
 
-$routes->get('register', 'AuthController::register', ['filter' => 'permission']);
-$routes->post('register', 'AuthController::attemptRegister', ['filter' => 'permission']);
+$routes->get('register', 'AuthController::register');
+$routes->post('register', 'AuthController::attemptRegister');
 
 $routes->get('profile', 'ProfileController::index');

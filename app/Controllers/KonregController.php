@@ -11,6 +11,7 @@ use App\Models\Master\PropModel;
 use App\Models\Master\ProvinsiModel;
 use App\Models\Master\UnorModel;
 use App\Models\Api\ApiRakortekModel;
+use App\Models\Master\StackholderModel;
 use App\Models\Api\ApiUnorModel;
 use App\Models\Memorandum\ProgramModel;
 use App\Models\Master\PendanaanModel;
@@ -28,6 +29,7 @@ use App\Models\Master\PejabatModel;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use App\Models\Konreg\BaModel;
+use App\Models\Master\KesepakatanModel;
 
 class KonregController extends BaseController
 {
@@ -43,6 +45,7 @@ class KonregController extends BaseController
     protected $programModel;
     protected $pendanaanModel;
     protected $kawasanRpiwModel;
+    protected $kesepakatanModel;
     protected $satuanModel;
     protected $FkwModel;
     protected $FkbModel;
@@ -54,11 +57,15 @@ class KonregController extends BaseController
     protected $roModel;
     protected $kegiatanModel;
     protected $pejabatModel;
+    protected $stakholderModel;
     protected $baModel;
 
 
     public function __construct()
     {
+
+        $this->stakholderModel = new StackholderModel();
+        $this->kesepakatanModel = new KesepakatanModel();
         $this->usulanProvinsiModel = new UsulanProvinsiModel();
         $this->PpModel = new PpModel();
         $this->kpModel = new KpModel();
@@ -82,6 +89,7 @@ class KonregController extends BaseController
         $this->kegiatanModel = new KegiatanModel();
         $this->pejabatModel = new PejabatModel();
         $this->baModel = new BaModel();
+        helper('permission');
     }
 
     public function dataRakortek()
@@ -2249,5 +2257,32 @@ class KonregController extends BaseController
             'program' => $programs
         ];
         return view('/pages/konreg/rekap/tabel_program_ditangguhkan', $data);
+    }
+
+    //2025
+
+    public function index()
+    {
+        $dataKesepakatan = $this->kesepakatanModel->where('kegiatan', 'Rakorbangwil')->findAll();
+        $dataProvinsi = $this->provinsiModel->getProvinsi();
+        $dataUnor = $this->unorModel->getUnor();
+        $id_role = user()->id_role;
+        $pendanaan = $this->pendanaanModel->findAll();
+        $stackholder = $this->stakholderModel->orderBy('id_kategori')->orderBy('id_stakeholder')->findAll();
+        $namaList = array_column($stackholder, 'stakeholder');
+        $id_pn = $this->pnModel->findAll();
+
+        $this->template->write('title', 'Pra Konreg Rakorbangwil');
+        $this->template->load('/templates/main', '/pages/konreg/praKonreg/rakorbangwil', [
+            'provinsi' => $dataProvinsi,
+            'kesepakatan' => $dataKesepakatan,
+            'unor' => $dataUnor,
+            'pendanaan' => $pendanaan,
+            'namaList' => $namaList,
+            'pn' => $id_pn,
+            'can_view' => has_permission_menu($id_role, '/konreg/pra_konred/rakorbangwil', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/konreg/pra_konred/rakorbangwil', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/konreg/pra_konred/rakorbangwil', 'can_delete')
+        ]);
     }
 }
