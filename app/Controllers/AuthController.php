@@ -12,6 +12,10 @@ class AuthController extends MythAuthController
 
     public function register()
     {
+        if (! logged_in()) {
+            return redirect()->to(route_to('login'));
+        }
+
         // Load data provinsi dan unor
         $provinsiModel = new \App\Models\Master\ProvinsiModel();
         $unorModel     = new \App\Models\Master\UnorModel();

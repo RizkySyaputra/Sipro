@@ -19,6 +19,7 @@ $routes->group('', ['namespace' => 'Myth\Auth\Controllers'], static function ($r
     $routes->get($reservedRoutes['logout'], 'AuthController::logout');
 
     // Registration
+
     $routes->get($reservedRoutes['register'], 'AuthController::register', ['as' => $reservedRoutes['register']]);
     $routes->post($reservedRoutes['register'], 'AuthController::attemptRegister');
 

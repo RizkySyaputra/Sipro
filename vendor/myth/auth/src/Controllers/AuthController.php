@@ -134,6 +134,10 @@ class AuthController extends Controller
      */
     public function register()
     {
+        if (! logged_in()) {
+            return redirect()->to(route_to('login'));
+        }
+
         // check if already logged in.
         if ($this->auth->check()) {
             return redirect()->back();
@@ -163,6 +167,10 @@ class AuthController extends Controller
      */
     public function attemptRegister()
     {
+        if (! logged_in()) {
+            return redirect()->to(route_to('login'));
+        }
+
         if (! $this->config->allowRegistration) {
             return redirect()->back()->withInput()->with('error', lang('Auth.registerDisabled'));
         }
