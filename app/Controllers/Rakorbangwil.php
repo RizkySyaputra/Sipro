@@ -133,13 +133,19 @@ class Rakorbangwil extends BaseController
     public function daftar_program_tahunan()
     {
         $dataKawasan = $this->kawasanRpiwModel->getKawasan();
+        $id_role = user()->id_role;
         $id_user = user()->id;
         $userpuswil = $this->userProvinsiModel->where('id_user', $id_user)->find();
         if ($userpuswil != null) {
             $dataProvinsi = $this->userProvinsiModel->getProvinsi($id_user);
             $dataProvinsi = (object) $dataProvinsi;
         } else {
-            $dataProvinsi = $this->provinsiModel->getProvinsi();
+            if (user()->id_provinsi) {
+                $id_provinsi = user()->id_provinsi;
+                $dataProvinsi = $this->provinsiModel->where('id', $id_provinsi)->first();
+            } else {
+                $dataProvinsi = $this->provinsiModel->getProvinsi();
+            }
         }
 
         $dataUnor = $this->unorModel->getUnor();
@@ -153,13 +159,19 @@ class Rakorbangwil extends BaseController
     }
     public function catatan_pemda()
     {
+        $id_role = user()->id_role;
         $id_user = user()->id;
         $userpuswil = $this->userProvinsiModel->where('id_user', $id_user)->find();
         if ($userpuswil != null) {
             $dataProvinsi = $this->userProvinsiModel->getProvinsi($id_user);
             $dataProvinsi = (object) $dataProvinsi;
         } else {
-            $dataProvinsi = $this->provinsiModel->getProvinsi();
+            if (user()->id_provinsi) {
+                $id_provinsi = user()->id_provinsi;
+                $dataProvinsi = $this->provinsiModel->where('id', $id_provinsi)->first();
+            } else {
+                $dataProvinsi = $this->provinsiModel->getProvinsi();
+            }
         }
         $dataKawasan = $this->kawasanRpiwModel->getKawasan();
         $dataUnor = $this->unorModel->getUnor();
@@ -671,7 +683,20 @@ class Rakorbangwil extends BaseController
 
     public function laporan1()
     {
-        $dataProvinsi = $this->provinsiModel->getProvinsi();
+        $id_role = user()->id_role;
+        $id_user = user()->id;
+        $userpuswil = $this->userProvinsiModel->where('id_user', $id_user)->find();
+        if ($userpuswil != null) {
+            $dataProvinsi = $this->userProvinsiModel->getProvinsi($id_user);
+            $dataProvinsi = (object) $dataProvinsi;
+        } else {
+            if (user()->id_provinsi) {
+                $id_provinsi = user()->id_provinsi;
+                $dataProvinsi = $this->provinsiModel->where('id', $id_provinsi)->first();
+            } else {
+                $dataProvinsi = $this->provinsiModel->getProvinsi();
+            }
+        }
         $dataUnor = $this->unorModel->getUnor();
 
         $data = [
@@ -714,7 +739,20 @@ class Rakorbangwil extends BaseController
 
     public function laporan2()
     {
-        $dataProvinsi = $this->provinsiModel->getProvinsi();
+        $id_role = user()->id_role;
+        $id_user = user()->id;
+        $userpuswil = $this->userProvinsiModel->where('id_user', $id_user)->find();
+        if ($userpuswil != null) {
+            $dataProvinsi = $this->userProvinsiModel->getProvinsi($id_user);
+            $dataProvinsi = (object) $dataProvinsi;
+        } else {
+            if (user()->id_provinsi) {
+                $id_provinsi = user()->id_provinsi;
+                $dataProvinsi = $this->provinsiModel->where('id', $id_provinsi)->first();
+            } else {
+                $dataProvinsi = $this->provinsiModel->getProvinsi();
+            }
+        }
 
         $data = [
             'provinsi'  => $dataProvinsi
@@ -748,7 +786,20 @@ class Rakorbangwil extends BaseController
 
     public function laporan3()
     {
-        $dataProvinsi = $this->provinsiModel->getProvinsi();
+        $id_role = user()->id_role;
+        $id_user = user()->id;
+        $userpuswil = $this->userProvinsiModel->where('id_user', $id_user)->find();
+        if ($userpuswil != null) {
+            $dataProvinsi = $this->userProvinsiModel->getProvinsi($id_user);
+            $dataProvinsi = (object) $dataProvinsi;
+        } else {
+            if (user()->id_provinsi) {
+                $id_provinsi = user()->id_provinsi;
+                $dataProvinsi = $this->provinsiModel->where('id', $id_provinsi)->first();
+            } else {
+                $dataProvinsi = $this->provinsiModel->getProvinsi();
+            }
+        }
 
         $data = [
             'provinsi'  => $dataProvinsi
@@ -783,7 +834,20 @@ class Rakorbangwil extends BaseController
 
     public function laporan4()
     {
-        $dataProvinsi = $this->provinsiModel->getProvinsi();
+        $id_role = user()->id_role;
+        $id_user = user()->id;
+        $userpuswil = $this->userProvinsiModel->where('id_user', $id_user)->find();
+        if ($userpuswil != null) {
+            $dataProvinsi = $this->userProvinsiModel->getProvinsi($id_user);
+            $dataProvinsi = (object) $dataProvinsi;
+        } else {
+            if (user()->id_provinsi) {
+                $id_provinsi = user()->id_provinsi;
+                $dataProvinsi = $this->provinsiModel->where('id', $id_provinsi)->first();
+            } else {
+                $dataProvinsi = $this->provinsiModel->getProvinsi();
+            }
+        }
         $dataUnor = $this->unorModel->getUnor();
 
         $data = [
@@ -991,7 +1055,20 @@ class Rakorbangwil extends BaseController
     public function desk_view_pn($id)
     {
         $dataKesepakatan = $this->kesepakatanModel->where('kegiatan', 'Rakorbangwil')->findAll();
-        $dataProvinsi = $this->provinsiModel->getProvinsi();
+        $id_role = user()->id_role;
+        $id_user = user()->id;
+        $userpuswil = $this->userProvinsiModel->where('id_user', $id_user)->find();
+        if ($userpuswil != null) {
+            $dataProvinsi = $this->userProvinsiModel->getProvinsi($id_user);
+            $dataProvinsi = (object) $dataProvinsi;
+        } else {
+            if (user()->id_provinsi) {
+                $id_provinsi = user()->id_provinsi;
+                $dataProvinsi = $this->provinsiModel->where('id', $id_provinsi)->first();
+            } else {
+                $dataProvinsi = $this->provinsiModel->getProvinsi();
+            }
+        }
         $dataUnor = $this->unorModel->getUnor();
         $id_role = user()->id_role;
         $pendanaan = $this->pendanaanModel->findAll();
@@ -1700,11 +1777,19 @@ class Rakorbangwil extends BaseController
 
     public function laporan5()
     {
-        if (user()->id_provinsi) {
-            $id_provinsi = user()->id_provinsi;
-            $dataProvinsi = $this->provinsiModel->where('id', $id_provinsi)->first();
+        $id_role = user()->id_role;
+        $id_user = user()->id;
+        $userpuswil = $this->userProvinsiModel->where('id_user', $id_user)->find();
+        if ($userpuswil != null) {
+            $dataProvinsi = $this->userProvinsiModel->getProvinsi($id_user);
+            $dataProvinsi = (object) $dataProvinsi;
         } else {
-            $dataProvinsi = $this->provinsiModel->getProvinsi();
+            if (user()->id_provinsi) {
+                $id_provinsi = user()->id_provinsi;
+                $dataProvinsi = $this->provinsiModel->where('id', $id_provinsi)->first();
+            } else {
+                $dataProvinsi = $this->provinsiModel->getProvinsi();
+            }
         }
         // $dataKawasan = $this->kawasanRpiwModel->getKawasan();
         // $dataUnor = $this->unorModel->getUnor();
