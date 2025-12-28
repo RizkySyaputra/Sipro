@@ -1,0 +1,690 @@
+<style>
+    .badge-green {
+        background: #00d084;
+        color: white;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 4px;
+    }
+
+    .badge-oranye {
+        background: #f49c31ff;
+        color: white;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 4px;
+    }
+
+    .badge-blue {
+        background: #007bff;
+        color: white;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 4px;
+    }
+
+    .badge-grey {
+        background: #606060ff;
+        color: white;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 4px;
+    }
+
+    /* --- FILTER AREA --- */
+    .filter-group .form-group {
+        margin-bottom: 15px;
+    }
+
+    .filter-label {
+        font-weight: 600;
+        color: #444;
+        margin-bottom: 4px;
+    }
+
+    /* Make the tab look modern */
+    .nav-tabs .nav-link.active {
+        background-color: #00b37d !important;
+        color: #fff !important;
+        border: none;
+        font-weight: 600;
+    }
+
+    .nav-tabs .nav-link {
+        background: #d7d7d7 !important;
+        color: #fff !important;
+        font-weight: 500;
+        border: none;
+    }
+
+    .nav-tabs .nav-link:hover {
+        background: #bbb !important;
+        color: #fff !important;
+    }
+
+    /* Program Header */
+    .pn-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 15px;
+        border-left: 5px solid #00b37d;
+    }
+
+    .pn-number {
+        background: #007bff;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        border-radius: 10px;
+        padding: 15px 20px;
+        min-width: 60px;
+        text-align: center;
+    }
+
+    .pn-text {
+        font-size: 0.95rem;
+        color: #333;
+        flex: 1;
+    }
+
+    /* Catatan style */
+    .catatan-item {
+        background-color: #f8f9fa;
+        border-left: 4px solid #0d6efd;
+        padding: 10px 15px;
+        border-radius: 8px;
+        margin-bottom: 8px;
+    }
+
+    .catatan-nama {
+        font-weight: 600;
+        color: #0d6efd;
+        margin-bottom: 4px;
+    }
+
+    .catatan-text {
+        text-align: justify;
+        color: #333;
+        margin: 0;
+        white-space: pre-line;
+    }
+
+    .textarea-catatan {
+        border: 2px solid #ced4da !important;
+        border-radius: 8px !important;
+        padding: 12px !important;
+        background: #ffffff;
+        font-size: 14px;
+        color: #333;
+        min-height: 140px;
+    }
+
+    .textarea-catatan:focus {
+        border-color: #00b37d !important;
+        box-shadow: 0 0 0 0.15rem rgba(0, 179, 125, 0.25) !important;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="card-header card-header-primary card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">source</i>
+                    </div>
+                    <!-- <h4 class="card-title">Program Jangka Menengah</h4> -->
+                    <h4 class="card-title">Data Pra Konreg</h4>
+                </div>
+
+                <div class="container-fluid">
+
+                    <!-- HEADER PN -->
+
+                    <!-- TAB CONTENT -->
+
+                    <div class="card shadow-sm mb-3">
+                        <div class="card-body">
+
+                            <form id="filter-form">
+
+                                <div class="row filter-group">
+
+                                    <!-- PROVINSI -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="filter-label">Provinsi</label>
+                                            <select class="form-control" name="provinsi" id="filter-provinsi">
+                                                <option value="">Semua Provinsi</option>
+                                                <?php foreach ($provinsi as $p): ?>
+                                                    <option value="<?= $p->id ?>"><?= $p->provinsi ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- CATATAN RAKORBANGWIL -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="filter-label">Catatan Pra Rakorbangwil</label>
+                                            <select class="form-control" name="catatan_rakorbangwil" id="filter-catatan_rakorbangwil">
+                                                <option value="">Semua Catatan</option>
+                                                <option value="ya">Ya</option>
+                                                <option value="tidak">Tidak</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- UNOR -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="filter-label">Unor</label>
+                                            <select class="form-control" name="unor" id="filter-unor">
+                                                <option value="">Semua Unor</option>
+                                                <?php foreach ($unor as $u): ?>
+                                                    <option value="<?= $u->id ?>"><?= $u->unor ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- KONFIRMASI PEMDA -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="filter-label">Catatan Kebutuhan Dukungan Pemda</label>
+                                            <select class="form-control" name="konfirmasi_pemda" id="filter-konfirmasi_pemda">
+                                                <option value="">Semua Konfirmasi</option>
+                                                <option value="ya">Ya</option>
+                                                <option value="tidak">Tidak</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- Pendanaan -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="filter-label">Sumber Pendanaan</label>
+                                            <select class="form-control" name="pendanaan[]" id="filter-pendanaan" multiple="multiple">
+                                                <option value="" selected disabled>Semua Sumber Pendanaan</option>
+                                                <?php foreach ($pendanaan as $item): ?>
+                                                    <option value="<?= esc($item['id_pendanaan']) ?>">
+                                                        <?= esc($item['sumber_pendanaan']) ?>
+                                                    </option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- CATATAN PEMDA -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="filter-label">Catatan Pemda</label>
+                                            <select class="form-control" name="catatan_pemda" id="filter-catatan_pemda">
+                                                <option value="">Semua Catatan</option>
+                                                <option value="ya">Ya</option>
+                                                <option value="tidak">Tidak</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- TIPE -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="filter-label">Tipe Pekerjaan</label>
+                                            <select class="form-control" name="tipe" id="filter-tipe">
+                                                <option value="">Semua Tipe</option>
+                                                <option value="FISIK">Fisik</option>
+                                                <option value="NON FISIK">Non Fisik</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- SUMBER -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="filter-label">Sumber</label>
+                                            <select class="form-control" name="sumber" id="filter-sumber">
+                                                <option value="">Semua Sumber</option>
+                                                <option value="rpiw">RPIW</option>
+                                                <option value="non_rpiw">NON RPIW</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- KESEPAKATAN -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="filter-label">Kesepakatan</label>
+                                            <select class="form-control" name="kesepakatan" id="filter-kesepakatan">
+                                                <option value="">Semua Kesepakatan</option>
+                                                <?php foreach ($kesepakatan as $item): ?>
+                                                    <option value="<?= esc($item['id_kesepakatan']) ?>">
+                                                        <?= esc($item['kesepakatan']) ?>
+                                                    </option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="filter-label">PN</label>
+                                            <select class="form-control" name="id_pn" id="filter-pn">
+                                                <option value="">Semua PN</option>
+                                                <?php foreach ($pn as $data): ?>
+                                                    <option value="<?= $data['id_pn'] ?>"><?= $data['id_pn'] . ' ' . $data['nama_pn'] ?></option>
+                                                <?php endforeach; ?>
+                                                <option value="0">Non PN</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- BUTTON ROW -->
+                                <div class="mt-2">
+                                    <button type="submit" class="btn btn-primary mr-2">
+                                        <i id="button-text" class="fa fa-search"></i>
+                                        <span id="loading-spinner" class="spinner-border spinner-border-sm" style="display:none;"></span>
+                                    </button>
+
+                                    <button type="button" id="reset-filters" class="btn btn-info">
+                                        <i class="fa fa-undo"></i>
+                                    </button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+
+                    <!-- DATATABLE -->
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="datatables" class="table table-striped table-hover" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Provinsi</th>
+                                            <th>Unor</th>
+                                            <th>Pekerjaan</th>
+                                            <th>Kawasan</th>
+                                            <th>Tematik Kawasan</th>
+                                            <th>Status Catatan</th>
+                                            <th>Kesepakatan</th>
+                                            <th style="text-align: center;">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                                <!-- Modal View/Edit -->
+                                <div class="modal fade" id="memoModal" tabindex="-1" role="dialog" aria-labelledby="memoModalLabel" aria-hidden="true" data-backdrop="static"
+                                    data-keyboard="false">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="memoModalLabel">Loading...</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span>&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="text-center p-3">
+                                                    <div class="spinner-border text-primary" role="status"></div>
+                                                    <p>Memuat data...</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- END container -->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap4.min.css">
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    window.currentCatatanData = <?= json_encode(json_decode($catatan_pn->catatan_pra_rakorbangwil ?? '[]')) ?>;
+</script>
+
+<script>
+    $(document).ready(function() {
+
+        // Inisialisasi Select2 untuk semua dropdown
+        $('#filter-unor, #filter-provinsi, #filter-tipe, #filter-catatan_rakorbangwil, #filter-catatan_pemda, #filter-konfirmasi_pemda, #filter-kesepakatan, #filter-sumber, #filter-pendanaan, #filter-pn').select2();
+
+        // Restore value dari localStorage
+        $('#filter-unor').val(localStorage.getItem('selectedUnor')).trigger('change');
+        $('#filter-provinsi').val(localStorage.getItem('selectedProvinsi')).trigger('change');
+        $('#filter-tipe').val(localStorage.getItem('selectedTipe')).trigger('change');
+        $('#filter-catatan_rakorbangwil').val(localStorage.getItem('selectedRakorbangwil')).trigger('change');
+        $('#filter-catatan_pemda').val(localStorage.getItem('selectedCatatanPemda')).trigger('change');
+        $('#filter-konfirmasi_pemda').val(localStorage.getItem('selectedKonfirmasiPemda')).trigger('change');
+        $('#filter-kesepakatan').val(localStorage.getItem('selectedKesepakatan')).trigger('change');
+        $('#filter-sumber').val(localStorage.getItem('selectedSumber')).trigger('change');
+        $('#filter-pendanaan').val(localStorage.getItem('selectedPendanaan')).trigger('change');
+        $('#filter-pn').val(localStorage.getItem('selectedPn')).trigger('change');
+
+
+        // Submit filter (pakai ajax)
+        $('#filter-form').on('submit', function(event) {
+            event.preventDefault();
+
+            // Simpan setiap filter ke localStorage
+            localStorage.setItem('selectedUnor', $('#filter-unor').val());
+            localStorage.setItem('selectedProvinsi', $('#filter-provinsi').val());
+            localStorage.setItem('selectedTipe', $('#filter-tipe').val());
+            localStorage.setItem('selectedRakorbangwil', $('#filter-catatan_rakorbangwil').val());
+            localStorage.setItem('selectedCatatanPemda', $('#filter-catatan_pemda').val());
+            localStorage.setItem('selectedKonfirmasiPemda', $('#filter-konfirmasi_pemda').val());
+            localStorage.setItem('selectedKesepakatan', $('#filter-kesepakatan').val());
+            localStorage.setItem('selectedSumber', $('#filter-sumber').val());
+            localStorage.setItem('selectedPendanaan', $('#filter-pendanaan').val());
+            localStorage.setItem('selectedPn', $('#filter-pn').val());
+
+            $('#loading-spinner').show();
+            $('#button-text').hide();
+
+            var filterData = $(this).serialize();
+
+            $.ajax({
+                url: '<?= base_url('/konreg/get_pra_konreg_rakorbangwil') ?>',
+                type: 'POST',
+                data: filterData,
+                success: function(response) {
+
+                    // Destroy DataTable lama
+                    if ($.fn.DataTable.isDataTable('#datatables')) {
+                        $('#datatables').DataTable().destroy();
+                    }
+
+                    // Update tabel baru
+                    $('#datatables tbody').html(response);
+
+                    // Reinit DataTable
+                    $('#datatables').DataTable({
+                        pagingType: "full_numbers",
+                        lengthMenu: [
+                            [10, 25, 50, -1],
+                            [10, 25, 50, "All"]
+                        ],
+                        responsive: true,
+                        language: {
+                            search: "_INPUT_",
+                            searchPlaceholder: "Search...",
+                            zeroRecords: "Data tidak ditemukan"
+                        }
+                    });
+                },
+                error: function() {
+                    alert('Error loading data');
+                },
+                complete: function() {
+                    $('#loading-spinner').hide();
+                    $('#button-text').show();
+                }
+            });
+        });
+        $('#datatables_kawasan').DataTable({
+            pagingType: "full_numbers",
+            lengthMenu: [
+                [10, 25, 50, -1],
+                [10, 25, 50, "All"]
+            ],
+            responsive: true,
+            language: {
+                search: "_INPUT_",
+                searchPlaceholder: "Search...",
+                zeroRecords: "Data tidak ditemukan"
+            }
+        });
+
+        // Reset filter
+        $('#reset-filters').on('click', function() {
+
+            // Reset semua dropdown
+            $('#filter-unor, #filter-provinsi, #filter-tipe, #filter-catatan_rakorbangwil, #filter-catatan_pemda, #filter-konfirmasi_pemda, #filter-kesepakatan, #filter-sumber, #filter-pendanaan, #filter-pn ')
+                .val('')
+                .trigger('change');
+
+            // Hapus localStorage
+            localStorage.removeItem('selectedUnor');
+            localStorage.removeItem('selectedProvinsi');
+            localStorage.removeItem('selectedTipe');
+            localStorage.removeItem('selectedRakorbangwil');
+            localStorage.removeItem('selectedCatatanPemda');
+            localStorage.removeItem('selectedKonfirmasiPemda');
+            localStorage.removeItem('selectedKesepakatan');
+            localStorage.removeItem('selectedSumber');
+
+            // Bersihkan tabel
+            var table = $('#datatables').DataTable();
+            table.clear().draw();
+        });
+
+        $(document).on('click', '.btn-view', function() {
+            let id = $(this).data('id');
+            $('#memoModalLabel').text('Detail Program Tahunan');
+            $('#memoModal .modal-body').html('<div class="text-center p-3"><div class="spinner-border"></div></div>');
+            $('#memoModal').modal('show');
+
+            $.get("<?= base_url('/konreg/pra_konreg/rakorbangwil/view') ?>/" + id, function(data) {
+                $('#memoModal .modal-body').html(data);
+            });
+        });
+
+        // ====== EDIT ======
+        $(document).on('click', '.btn-edit', function() {
+            let id = $(this).data('id');
+            $('#memoModalLabel').text('Edit Program Tahunan');
+            $('#memoModal .modal-body').html('<div class="text-center p-3"><div class="spinner-border"></div></div>');
+            $('#memoModal').modal('show');
+
+            $.get("<?= base_url('/konreg/pra_konreg/rakorbangwil/edit_desk') ?>/" + id, function(data) {
+                $('#memoModal .modal-body').html(data);
+            });
+        });
+
+        $(document).on('submit', '#editMemoForm', function(e) {
+            e.preventDefault();
+
+            let form = $(this);
+            let id = form.find('input[name="id_prog_tahunan"]').val();
+
+            // 🔹 Ambil tombol submit di dalam form
+            const $btn = form.find('button[type="submit"]');
+            const originalText = $btn.html(); // simpan teks asli tombol
+
+            // 🔹 Ubah tombol jadi loading spinner & disable
+            $btn.prop('disabled', true).html(`
+        <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+        Menyimpan...
+    `);
+
+            $.ajax({
+                url: "<?= base_url('/konreg/pra_konreg/rakorbangwil/update_rakorbangwil') ?>/" + id,
+                type: "POST",
+                data: form.serialize(),
+                success: function(res) {
+                    if (res.status) {
+                        $('#memoModal').modal('hide');
+
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Berhasil!',
+                            text: 'Data Program Tahunan berhasil diperbarui.',
+                            showConfirmButton: false,
+                            timer: 2000
+                        });
+
+                        // reload tabel dengan submit filter
+                        $('#button-text').submit();
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Gagal!',
+                            text: res.message || 'Terjadi kesalahan saat memperbarui data.',
+                            showConfirmButton: true
+                        });
+                    }
+                },
+                error: function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error!',
+                        text: 'Gagal menghubungi server.',
+                        showConfirmButton: true
+                    });
+                },
+                complete: function() {
+                    // 🔹 Kembalikan tombol seperti semula
+                    $btn.prop('disabled', false).html(originalText);
+                }
+            });
+        });
+    });
+    $('#formCatatanKawasan').on('submit', function(e) {
+        e.preventDefault();
+
+        let btn = $('#btnSaveCatatan');
+
+        // MUNCULKAN LOADING
+        $('#textSave').hide();
+        $('#spinnerSave').show();
+        btn.prop('disabled', true);
+
+        $.ajax({
+            url: "<?= base_url('konreg/pra_konreg/rakorbangwil/save_catatan_kawasan') ?>",
+            type: "POST",
+            data: $(this).serialize(),
+            success: function(res) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Tersimpan!',
+                    text: 'Catatan kawasan berhasil diperbarui.',
+                    timer: 1800,
+                    showConfirmButton: false
+                });
+            },
+            error: function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Gagal!',
+                    text: 'Terjadi kesalahan saat menyimpan catatan.'
+                });
+            },
+            complete: function() {
+                // KEMBALIKAN TOMBOL
+                $('#textSave').show();
+                $('#spinnerSave').hide();
+                btn.prop('disabled', false);
+            }
+        });
+    });
+</script>
+
+<script>
+    window.namaList = <?= json_encode($namaList ?? []) ?>;
+</script>
+
+<style>
+    .pn-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 15px;
+        border-left: 5px solid #00b37d;
+    }
+
+    .pn-number {
+        background: #007bff;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        border-radius: 10px;
+        padding: 15px 20px;
+        min-width: 60px;
+        text-align: center;
+    }
+
+    .pn-text {
+        font-size: 0.95rem;
+        color: #333;
+        flex: 1;
+    }
+
+    /* TAB ACTIVE = Hijau */
+    .nav-tabs .nav-link.active {
+        background-color: #00b37d !important;
+        /* hijau */
+        color: white !important;
+        font-weight: 600;
+        border: none !important;
+    }
+
+    /* TAB NON ACTIVE = Abu */
+    .nav-tabs .nav-link {
+        background-color: #d7d7d7 !important;
+        /* abu */
+        color: white !important;
+        font-weight: 500;
+        border: none !important;
+    }
+
+    /* Hover effect optional */
+    .nav-tabs .nav-link:hover {
+        background-color: #bbbbbb !important;
+        color: white !important;
+    }
+
+
+
+
+    .btn-save {
+        background-color: #00bff0;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 8px 14px;
+    }
+
+    .btn-save:hover {
+        background-color: #009dcc;
+    }
+
+    .table th {
+        background-color: #f1f3f5;
+        color: #333;
+    }
+</style>

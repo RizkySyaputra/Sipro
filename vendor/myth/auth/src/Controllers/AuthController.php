@@ -7,6 +7,7 @@ use CodeIgniter\Session\Session;
 use Myth\Auth\Config\Auth as AuthConfig;
 use Myth\Auth\Entities\User;
 use Myth\Auth\Models\UserModel;
+use Myth\Auth\Models\UserProvinsiModel;
 use App\Models\Master\ProvinsiModel;
 use App\Models\Master\UnorModel;
 
@@ -162,28 +163,35 @@ class AuthController extends Controller
      */
     public function attemptRegister()
     {
-        // Check if registration is allowed
         if (! $this->config->allowRegistration) {
             return redirect()->back()->withInput()->with('error', lang('Auth.registerDisabled'));
         }
 
         $users = model(UserModel::class);
 
-        // Validasi dasar
-        $rules = config('Validation')->registrationRules ?? [
-            'username'     => 'required|alpha_numeric_space|min_length[3]|max_length[30]|is_unique[users.username]',
-            'email'        => 'required|valid_email|is_unique[users.email]',
-            'user'        => 'required|alpha_numeric_space|min_length[3]|max_length[30]|is_unique[users.username]',
-            'id_provinsi'  => 'permit_empty|integer',
-            'id_unor'      => 'permit_empty|integer',
-            'id_role'      => 'required|permit_empty|integer',
+        // =========================
+        // VALIDASI DASAR
+        // =========================
+        $rules = [
+            'username' => 'required|alpha_numeric_space|min_length[3]|max_length[30]|is_unique[users.username]',
+            'email'    => 'required|valid_email|is_unique[users.email]',
+            'user'     => 'required|min_length[3]|max_length[50]',
+            'id_role'  => 'required|integer',
+
+            // untuk role 6 (single)
+            'id_provinsi' => 'permit_empty|integer',
+
+            // untuk role 4 (multi)
+            'id_provinsi_multi' => 'permit_empty'
         ];
 
         if (! $this->validate($rules)) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
-        // Validasi password
+        // =========================
+        // VALIDASI PASSWORD
+        // =========================
         $rules = [
             'password'     => 'required|strong_password',
             'pass_confirm' => 'required|matches[password]',
@@ -193,35 +201,80 @@ class AuthController extends Controller
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
-        // Ambil input yang diperbolehkan
-        $allowedPostFields = array_merge(['password', 'id_provinsi', 'id_role', 'id_unor', 'user'], $this->config->validFields, $this->config->personalFields);
+        // =========================
+        // AMBIL DATA USER
+        // =========================
+        $allowedPostFields = array_merge(
+            ['password', 'id_role', 'id_unor', 'user'],
+            $this->config->validFields,
+            $this->config->personalFields
+        );
+
         $postData = $this->request->getPost($allowedPostFields);
 
-        // Buat instance User
         $user = new User($postData);
 
-        // Atur aktivasi
+        // Aktivasi
         $this->config->requireActivation === null
             ? $user->activate()
             : $user->generateActivateHash();
 
-        // Assign group default (jika ada)
+        // Group default
         if (! empty($this->config->defaultUserGroup)) {
             $users = $users->withGroup($this->config->defaultUserGroup);
         }
 
-        // Simpan user
+        // =========================
+        // SIMPAN USER
+        // =========================
         if (! $users->save($user)) {
             return redirect()->back()->withInput()->with('errors', $users->errors());
         }
 
-        // Kirim email aktivasi jika diperlukan
+        // DAPATKAN ID USER BARU
+        $userId = $users->getInsertID();
+
+        // =========================
+        // SIMPAN PROVINSI
+        // =========================
+        $userProvinsiModel = new UserProvinsiModel();
+
+        $roleId = $this->request->getPost('id_role');
+
+        // ROLE 4 → MULTI PROVINSI
+        if ($roleId == 4) {
+            $provinsiMulti = $this->request->getPost('id_provinsi_multi'); // array
+
+            if (is_array($provinsiMulti)) {
+                foreach ($provinsiMulti as $provId) {
+                    $userProvinsiModel->insert([
+                        'id_user'     => $userId,
+                        'id_provinsi' => $provId
+                    ]);
+                }
+            }
+        }
+
+        // ROLE 6 → SINGLE PROVINSI
+        if ($roleId == 6) {
+            $provId = $this->request->getPost('id_provinsi');
+
+            if ($provId) {
+                $userProvinsiModel->insert([
+                    'id_user'     => $userId,
+                    'id_provinsi' => $provId
+                ]);
+            }
+        }
+
+        // =========================
+        // AKTIVASI EMAIL
+        // =========================
         if ($this->config->requireActivation !== null) {
             $activator = service('activator');
-            $sent      = $activator->send($user);
-
-            if (! $sent) {
-                return redirect()->back()->withInput()->with('error', $activator->error() ?? lang('Auth.unknownError'));
+            if (! $activator->send($user)) {
+                return redirect()->back()->withInput()
+                    ->with('error', $activator->error() ?? lang('Auth.unknownError'));
             }
 
             return redirect()->route('user')->with('message', lang('Auth.activationSuccess'));
@@ -229,6 +282,7 @@ class AuthController extends Controller
 
         return redirect()->route('user')->with('message', lang('Auth.registerSuccess'));
     }
+
 
 
     //--------------------------------------------------------------------

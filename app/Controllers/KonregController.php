@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Master\UsulanProvinsiModel;
+use App\Models\Master\UserProvinsiModel;
 use App\Models\Master\PnModel;
 use App\Models\Master\PpModel;
 use App\Models\Master\KpModel;
@@ -11,8 +12,12 @@ use App\Models\Master\PropModel;
 use App\Models\Master\ProvinsiModel;
 use App\Models\Master\UnorModel;
 use App\Models\Api\ApiRakortekModel;
+use App\Models\Master\StackholderModel;
+use App\Models\Master\KawasanProgTahunanModel;
 use App\Models\Api\ApiUnorModel;
-use App\Models\Memorandum\ProgramModel;
+use App\Models\Master\KabkotModel;
+use App\Models\Master\ProgramModel;
+// use App\Models\Memorandum\ProgramModel;
 use App\Models\Master\PendanaanModel;
 use App\Models\Master\SatuanModel;
 use App\Models\Rpiw\KawasanRpiwModel;
@@ -28,11 +33,22 @@ use App\Models\Master\PejabatModel;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use App\Models\Konreg\BaModel;
+use App\Models\Master\KesepakatanModel;
+use App\Models\Rakorbangwil\DaftarProgTahunanModel;
+use App\Models\Master\KabkotMemoModel;
+use App\Models\Rakorbangwil\ProgTahunanModel;
+use App\Models\Master\KawasanModel;
+use App\Models\Master\KabkotProgTahunanModel;
+use App\Models\UserProvinsiModel\UserProvinsiModel as ModelsUserProvinsiModel;
 
 class KonregController extends BaseController
 {
+    protected $kabkotModel;
+    protected $userProvinsiModel;
+    protected $kawasanModel;
     protected $usulanProvinsiModel;
     protected $PpModel;
+    protected $progTahunanModel;
     protected $kpModel;
     protected $propModel;
     protected $provinsiModel;
@@ -43,6 +59,7 @@ class KonregController extends BaseController
     protected $programModel;
     protected $pendanaanModel;
     protected $kawasanRpiwModel;
+    protected $kesepakatanModel;
     protected $satuanModel;
     protected $FkwModel;
     protected $FkbModel;
@@ -54,11 +71,24 @@ class KonregController extends BaseController
     protected $roModel;
     protected $kegiatanModel;
     protected $pejabatModel;
+    protected $stakholderModel;
     protected $baModel;
+    protected $daftarProgTahunanModel;
+    protected $kabkotMemoModel;
+    protected $kabkotProgramTahunanModel;
+    protected $kawasanProgramTahunanModel;
 
 
     public function __construct()
     {
+
+        $this->userProvinsiModel = new UserProvinsiModel();
+        $this->kawasanProgramTahunanModel = new KawasanProgTahunanModel();
+        $this->kabkotModel = new KabkotModel();
+        $this->kabkotProgramTahunanModel = new KabkotProgTahunanModel();
+        $this->kawasanModel = new KawasanModel();
+        $this->stakholderModel = new StackholderModel();
+        $this->kesepakatanModel = new KesepakatanModel();
         $this->usulanProvinsiModel = new UsulanProvinsiModel();
         $this->PpModel = new PpModel();
         $this->kpModel = new KpModel();
@@ -82,6 +112,10 @@ class KonregController extends BaseController
         $this->kegiatanModel = new KegiatanModel();
         $this->pejabatModel = new PejabatModel();
         $this->baModel = new BaModel();
+        $this->daftarProgTahunanModel = new DaftarProgTahunanModel();
+        $this->kabkotMemoModel = new KabkotMemoModel();
+        $this->progTahunanModel = new ProgTahunanModel();
+        helper('permission');
     }
 
     public function dataRakortek()
@@ -2249,5 +2283,220 @@ class KonregController extends BaseController
             'program' => $programs
         ];
         return view('/pages/konreg/rekap/tabel_program_ditangguhkan', $data);
+    }
+
+    //2025
+
+    public function pra_rakorbangwil()
+    {
+        $dataKesepakatan = $this->kesepakatanModel->where('kegiatan', 'Pra Konreg')->findAll();
+        $id_user = user()->id;
+        $userpuswil = $this->userProvinsiModel->where('id_user', $id_user)->find();
+        if ($userpuswil != null) {
+            $dataProvinsi = $this->userProvinsiModel->getProvinsi($id_user);
+            $dataProvinsi = (object) $dataProvinsi;
+        } else {
+            $dataProvinsi = $this->provinsiModel->getProvinsi();
+        }
+        $dataUnor = $this->unorModel->getUnor();
+        $id_role = user()->id_role;
+        $pendanaan = $this->pendanaanModel->findAll();
+        $stackholder = $this->stakholderModel->orderBy('id_kategori')->orderBy('id_stakeholder')->findAll();
+        $namaList = array_column($stackholder, 'stakeholder');
+        $id_pn = $this->pnModel->findAll();
+
+        $this->template->write('title', 'Pra Konreg Rakorbangwil');
+        $this->template->load('/templates/main', '/pages/konreg/praKonreg/rakorbangwil', [
+            'provinsi' => $dataProvinsi,
+            'kesepakatan' => $dataKesepakatan,
+            'unor' => $dataUnor,
+            'pendanaan' => $pendanaan,
+            'namaList' => $namaList,
+            'pn' => $id_pn,
+            'can_view' => has_permission_menu($id_role, '/konreg/pra_konreg/rakorbangwil', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/konreg/pra_konreg/rakorbangwil', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/konreg/pra_konreg/rakorbangwil', 'can_delete')
+        ]);
+    }
+    public function get_pra_konreg_rakorbangwil()
+    {
+        $id_pn = $this->request->getPost('id_pn');
+        $id_role = user()->id_role;
+        $provinsi_id = $this->request->getPost('provinsi');
+        $id_pendanaan = $this->request->getPost('pendanaan');
+        $unor_id = $this->request->getPost('unor');
+        $tipe = $this->request->getPost('tipe');
+        $catatan_pemda = $this->request->getPost('catatan_pemda');
+        $catatan_rakorbangwil = $this->request->getPost('catatan_rakorbangwil');
+        $konfirmasi_pemda = $this->request->getPost('konfirmasi_pemda');
+        $kesepakatan = $this->request->getPost('kesepakatan');
+        $sumber = $this->request->getPost('sumber');
+        $daftar_program_tahunan = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, $unor_id, $sumber, $id_pn, null, $id_pendanaan, $tipe, $catatan_rakorbangwil, $catatan_pemda, $konfirmasi_pemda, 2, $kesepakatan);
+        $data = [
+            'daftar_program_tahunan' => $daftar_program_tahunan,
+            'can_view' => has_permission_menu($id_role, '/konreg/pra_konreg/rakorbangwil', 'can_view'),
+            'can_edit' => has_permission_menu($id_role, '/konreg/pra_konreg/rakorbangwil', 'can_edit'),
+            'can_delete' => has_permission_menu($id_role, '/konreg/pra_konreg/rakorbangwil', 'can_delete')
+        ];
+        return view('/pages/konreg/praKonreg/tabel/tabel_desk_daftar_program_tahunan', $data);
+    }
+
+    public function view_rakorbangwil($id)
+    {
+        $prog_tahunan = $this->daftarProgTahunanModel->find($id);
+        $kabkot = $this->kabkotMemoModel->getKabkotMemo($id);
+
+        if (!$prog_tahunan) {
+            return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
+        }
+
+        // --- Ambil peta kawasan berdasarkan nama kawasan di view_prog_tahunan ---
+        $selectedKawasan = [];
+        if (!empty($prog_tahunan->kawasan)) {
+            // diasumsikan disimpan: "Kawasan A, Kawasan B"
+            $selectedKawasan = array_map('trim', explode(',', $prog_tahunan->kawasan));
+        }
+
+        $petaKawasan = [];
+        foreach ($selectedKawasan as $nama) {
+            $row = $this->kawasanModel
+                ->where('nama_kawasan', $nama)
+                ->first();
+
+            if ($row && !empty($row['peta_kawasan'])) {
+                $petaKawasan[] = $row['peta_kawasan'];   // nama file geojson-nya
+            }
+        }
+
+        return view('/pages/konreg/praKonreg/ModalView', [
+            'prog_tahunan' => $prog_tahunan,
+            'kabkot'       => $kabkot,
+            'petaKawasan'  => $petaKawasan,
+        ]);
+    }
+
+    public function edit_rakorbangwil($id)
+    {
+        $t_prog = $this->progTahunanModel->find($id);
+        $dataKesepakatan = $this->kesepakatanModel->where('kegiatan', 'Pra Konreg')->findAll();
+        $progTahunan = $this->daftarProgTahunanModel->find($id);
+        $selectedKawasan = [];
+
+        if (!empty($progTahunan->kawasan)) {
+            $selectedKawasan = array_map('trim', explode(',', $progTahunan->kawasan));
+        }
+        $selectedKabkot = [];
+
+        if (!empty($progTahunan->kabkot)) {
+            $selectedKabkot = array_map('trim', explode(',', $progTahunan->kabkot));
+        }
+        $stackholder = $this->stakholderModel->orderBy('id_kategori')->orderBy('id_stakeholder')->findAll();
+        $namaList = array_column($stackholder, 'stakeholder');
+        $id_prov = $t_prog->id_provinsi;
+        $kabkotProgTahunan = $this->kabkotProgramTahunanModel->getKabkotProgTahunan($id);
+        $kabkot = $this->kabkotModel->where('id_prov', $id_prov)->findAll();
+        $program = $this->programModel->where('id_unor', $progTahunan->id_unor)->findAll();
+        $kegiatan = $this->kegiatanModel->where('id_program', $progTahunan->id_program)->findAll();
+        $kro = $this->kroModel->findAll();
+        $ro = $this->roModel->findAll();
+        $pendanaan = $this->pendanaanModel->findAll();
+        $kawasan = $this->kawasanModel->where('id_provinsi', $id_prov)->findAll();
+
+        if (!$progTahunan) {
+            return $this->response->setStatusCode(404)->setBody('Data tidak ditemukan');
+        }
+        return view('/pages/konreg/praKonreg/ModalEditRakorbangwil', ['selectedKabkot' => $selectedKabkot, 'kesepakatan' => $dataKesepakatan, 'selectedKawasan' => $selectedKawasan, 'kawasan' => $kawasan, 'progTahunan' => $progTahunan, 't_prog' => $t_prog, 'namaList' => $namaList, 'kabkot' => $kabkot, 'pendanaan' => $pendanaan, 'program' => $program, 'kegiatan' => $kegiatan, 'kro' => $kro, 'ro' => $ro, 'kabkotProgTahunan' => $kabkotProgTahunan]);
+    }
+    public function update_rakorbangwil($id)
+    {
+        $progTahunanModel = new progTahunanModel();
+        // Ambil input lain
+        $id_kegiatan = $this->request->getPost('id_kegiatan');
+        $id_kro = $this->request->getPost('id_kro');
+        $id_ro = $this->request->getPost('id_ro');
+        $kabkot = $this->request->getPost('kabkot');
+        $kawasan = $this->request->getPost('kawasan');
+        $pekerjaan     = $this->request->getPost('pekerjaan');
+        $lokasi        = $this->request->getPost('lokasi');
+        $id_pendanaan   = $this->request->getPost('id_pendanaan');
+        $anggaran   = $this->request->getPost('anggaran');
+        $id_pn   = $this->request->getPost('id_pn');
+        $id_satuan   = $this->request->getPost('id_satuan');
+        $volume   = $this->request->getPost('volume');
+        // Ambil input utama
+        $tipe_pekerjaan = $this->request->getPost('tipe_pekerjaan');
+        $kesepakatan    = $this->request->getPost('kesepakatan');
+        if (!$kesepakatan) {
+            $kesepakatan = "0";
+        }
+        if ($kesepakatan == 6) {
+            $pn_lama = $id_pn;
+        } else {
+            $pn_lama = null;
+        }
+
+
+        // Ambil array catatan desk
+        $namaArr = $this->request->getPost('desk_nama');   // ← ini BENAR
+        $textArr = $this->request->getPost('desk_text');   // ← ini BENAR
+
+        // Susun catatan desk
+        $Catatan = [];
+
+        if ($namaArr && $textArr) {
+            foreach ($namaArr as $i => $nama) {
+                if (!empty($nama) && isset($textArr[$i]) && trim($textArr[$i]) !== '') {
+
+                    $Catatan[] = [
+                        'nama'    => $nama,
+                        'catatan' => $textArr[$i]
+                    ];
+                }
+            }
+        }
+
+
+        // Data yang akan diupdate
+        $dataToUpdate = [
+            'catatan_pra_konreg' => json_encode($Catatan, JSON_UNESCAPED_UNICODE),
+            'tipe_pekerjaan'            => $tipe_pekerjaan,
+            'pra_konreg'         => $kesepakatan,
+            'id_kegiatan'       => $id_kegiatan,
+            'id_kro'            => $id_kro,
+            'id_ro'             => $id_ro,
+            'pekerjaan'         => $pekerjaan,
+            'lokasi'            => $lokasi,
+            'id_pendanaan'      => $id_pendanaan,
+            'anggaran'          => $anggaran,
+            'id_satuan'         => $id_satuan,
+            'volume'            => $volume,
+            'pn_lama'         => $pn_lama
+        ];
+        // Update data
+        $this->kabkotProgramTahunanModel->where('id_prog_tahunan', $id)->delete();
+        $this->kawasanProgramTahunanModel->where('id_prog_tahunan', $id)->delete();
+        if ($kabkot) {
+            foreach ($kabkot as $data) {
+                $this->kabkotProgramTahunanModel->insert(['id_prog_tahunan' => $id, 'id_kabkot' => $data]);
+            }
+        }
+        if ($kawasan) {
+            foreach ($kawasan as $data) {
+                $this->kawasanProgramTahunanModel->insert(['id_prog_tahunan' => $id, 'id_kawasan' => $data]);
+            }
+        }
+
+        // Update database
+        if ($progTahunanModel->update($id, $dataToUpdate)) {
+            return $this->response->setJSON([
+                'status'  => true,
+                'message' => 'Data berhasil disimpan.'
+            ]);
+        } else {
+            return $this->response->setJSON([
+                'status'  => false,
+                'message' => 'Terjadi kesalahan saat menyimpan.'
+            ]);
+        }
     }
 }
