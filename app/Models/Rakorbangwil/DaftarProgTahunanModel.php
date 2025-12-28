@@ -11,7 +11,7 @@ class DaftarProgTahunanModel extends Model
     protected $returnType = 'object';
 
 
-    public function getDaftarProgramTahunan($id_provinsi, $id_unor, $sumber, $pn = "ALL", $catatan_kl = null, $pembiayaan = null, $tipe = null, $catatan_pra_rakorbangwil = null, $catatan_pemda = null, $konfirmasi_pemda = null, $kesepakatan = null, $pn_lama = null)
+    public function getDaftarProgramTahunan($id_provinsi, $id_unor, $sumber, $pn = "ALL", $catatan_kl = null, $pembiayaan = null, $tipe = null, $catatan_pra_rakorbangwil = null, $catatan_pemda = null, $konfirmasi_pemda = null, $kesepakatan = null, $pn_lama = null, $prakonreg = null)
     {
         $tahun_pelaksanaan = session('tahun_pelaksana');
         $builder = $this->db->table('view_prog_tahunan as a');
@@ -39,6 +39,9 @@ class DaftarProgTahunanModel extends Model
         if ($tipe) {
             $builder->where('a.tipe_pekerjaan', $tipe);
         }
+        // if ($prakonreg) {
+        //     $builder->where('a.pra_konreg', $prakonreg);
+        // }
         if ($pn_lama) {
             $builder->where('pn_lama', $pn_lama);
         }

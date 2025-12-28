@@ -41,7 +41,9 @@ class ProgTahunanModel extends Model
         'catatan_desk_rakorbangwil',
         'desk_rakorbangwil',
         'pn_lama',
-        'tipe_pekerjaan'
+        'tipe_pekerjaan',
+        'pra_konreg',
+        'catatan_pra_konreg'
     ];
 
     protected $useTimestamps = true;

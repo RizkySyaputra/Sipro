@@ -136,8 +136,8 @@ $routes->get('rakorbangwil/view/(:segment)', 'Rakorbangwil::view/$1');
 $routes->get('rakorbangwil/edit/(:segment)', 'Rakorbangwil::edit/$1');
 $routes->post('rakorbangwil/update/(:segment)', 'Rakorbangwil::update/$1');
 $routes->get('rakorbangwil/edit_pemda/(:segment)', 'Rakorbangwil::edit_pemda/$1');
-$routes->get('rakorbangwil/edit_desk/(:segment)', 'Rakorbangwil::edit_desk/$1');
 $routes->post('rakorbangwil/update_pemda/(:segment)', 'Rakorbangwil::update_pemda/$1');
+$routes->get('rakorbangwil/edit_desk/(:segment)', 'Rakorbangwil::edit_desk/$1');
 $routes->post('rakorbangwil/update_desk/(:segment)', 'Rakorbangwil::update_desk/$1');
 $routes->delete('/rakorbangwil/delete/(:segment)', 'Rakorbangwil::delete/$1');
 //pra_rakorbangwil
@@ -293,9 +293,22 @@ $routes->post('/rakorbangwil/get_pejabat_bak', 'Rakorbangwil::get_pejabat_bak');
 $routes->post('/rakorbangwil/addPejabatBAK', 'Rakorbangwil::addPejabatBAK');
 $routes->post('/rakorbangwil/delete_pejabat_bak', 'Rakorbangwil::delete_pejabat_bak');
 $routes->post('/rakorbangwil/update_prioritas_pejabat', 'Rakorbangwil::updatePrioritasPejabat');
+$routes->get('/rakorbangwil/berita_acara_unor', 'Rakorbangwil::berita_acara_unor');
+$routes->post('/rakorbangwil/get_data_berita_acara_unor', 'Rakorbangwil::get_data_berita_acara_unor');
+$routes->get('/rakorbangwil/create_berita_acara_unor', 'Rakorbangwil::create_bak_unor');
+$routes->post('/rakorbangwil/create_berita_acara_unor', 'Rakorbangwil::create_bak_unor');
+$routes->post('/rakorbangwil/get_pejabat_bak_unor', 'Rakorbangwil::get_pejabat_bak_unor');
+$routes->post('/rakorbangwil/addPejabatBAK_unor', 'Rakorbangwil::addPejabatBAK_unor');
+$routes->post('/rakorbangwil/delete_pejabat_bak_unor', 'Rakorbangwil::delete_pejabat_bak_unor');
+$routes->post('/rakorbangwil/update_prioritas_pejabat_unor', 'Rakorbangwil::updatePrioritasPejabat_unor');
 
 //Program Konreg 2025
-$routes->get('/konreg/pra_konred/rakorbangwil', 'KonregController::index');
+$routes->get('/konreg/pra_konreg/rakorbangwil', 'KonregController::pra_rakorbangwil');
+$routes->post('/konreg/get_pra_konreg_rakorbangwil', 'KonregController::get_pra_konreg_rakorbangwil');
+$routes->get('/konreg/pra_konreg/rakorbangwil/view/(:segment)', 'KonregController::view_rakorbangwil/$1');
+$routes->get('/konreg/pra_konreg/rakorbangwil/edit_desk/(:segment)', 'KonregController::edit_rakorbangwil/$1');
+$routes->post('/konreg/pra_konreg/rakorbangwil/update_rakorbangwil/(:segment)', 'KonregController::update_rakorbangwil/$1');
+$routes->delete('/konreg/pra_konreg/rakorbangwil/delete/(:segment)', 'KonregController::delete_rakorbangwil/$1');
 //Program Konreg
 $routes->get('/program-konreg/fkw', 'KonregController::program_fkw', ['filter' => 'permission']);
 $routes->get('/program-konreg/fkb', 'KonregController::program_fkb', ['filter' => 'permission']);

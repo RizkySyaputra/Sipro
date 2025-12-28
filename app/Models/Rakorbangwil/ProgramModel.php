@@ -9,7 +9,7 @@ class ProgramModel extends Model
 {
     protected $table = 'memorandum_program';
     protected $primaryKey = 'id_mprogram';
-    protected $allowedFields = ['id_mprogram', 'id_rpiw', 'id_provinsi', 'id_unor', 'nama_program', 'lokasi', 'justifikasi', 'kesiapan_rc', 'volume', 'id_satuan', 'biaya', 'id_pendanaan', 'tagging_mp', 'catatan_bpiw', 'catatan_unor', 'catatan_kl',  'geojson', 'tahun_anggaran', 'source_data', 'desk', 'desk2', 'catatan_desk2', 'pradesk_konreg', 'catatan_pradesk_konreg'];
+    protected $allowedFields = ['id_mprogram', 'id_rpiw', 'id_provinsi', 'id_unor', 'nama_program', 'lokasi', 'justifikasi', 'kesiapan_rc', 'volume', 'id_satuan', 'biaya', 'id_pendanaan', 'tagging_mp', 'catatan_bpiw', 'catatan_unor', 'catatan_kl',  'geojson', 'tahun_anggaran', 'source_data', 'desk', 'desk2', 'catatan_desk2', 'pradesk_konreg', 'catatan_pradesk_konreg', 'pra_konreg', 'catatan_pra_konreg'];
 
     protected $cache;
     protected $useTimestamps = true;

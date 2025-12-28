@@ -282,7 +282,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="filter-label">PN</label>
-                                            <select class="form-control" name="pn" id="filter-pn">
+                                            <select class="form-control" name="id_pn" id="filter-pn">
                                                 <option value="">Semua PN</option>
                                                 <?php foreach ($pn as $data): ?>
                                                     <option value="<?= $data['id_pn'] ?>"><?= $data['id_pn'] . ' ' . $data['nama_pn'] ?></option>
@@ -497,7 +497,7 @@
             $('#memoModal .modal-body').html('<div class="text-center p-3"><div class="spinner-border"></div></div>');
             $('#memoModal').modal('show');
 
-            $.get("<?= base_url('rakorbangwil/view') ?>/" + id, function(data) {
+            $.get("<?= base_url('/konreg/pra_konreg/rakorbangwil/view') ?>/" + id, function(data) {
                 $('#memoModal .modal-body').html(data);
             });
         });
@@ -509,7 +509,7 @@
             $('#memoModal .modal-body').html('<div class="text-center p-3"><div class="spinner-border"></div></div>');
             $('#memoModal').modal('show');
 
-            $.get("<?= base_url('rakorbangwil/edit_desk') ?>/" + id, function(data) {
+            $.get("<?= base_url('/konreg/pra_konreg/rakorbangwil/edit_desk') ?>/" + id, function(data) {
                 $('#memoModal .modal-body').html(data);
             });
         });
@@ -531,7 +531,7 @@
     `);
 
             $.ajax({
-                url: "<?= base_url('rakorbangwil/update_desk') ?>/" + id,
+                url: "<?= base_url('/konreg/pra_konreg/rakorbangwil/update_rakorbangwil') ?>/" + id,
                 type: "POST",
                 data: form.serialize(),
                 success: function(res) {
@@ -583,7 +583,7 @@
         btn.prop('disabled', true);
 
         $.ajax({
-            url: "<?= base_url('rakorbangwil/save_catatan_kawasan') ?>",
+            url: "<?= base_url('konreg/pra_konreg/rakorbangwil/save_catatan_kawasan') ?>",
             type: "POST",
             data: $(this).serialize(),
             success: function(res) {

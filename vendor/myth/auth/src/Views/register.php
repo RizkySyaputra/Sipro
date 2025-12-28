@@ -57,6 +57,19 @@
                                 <?php endforeach; ?>
                             </select>
                         </div>
+                        <div class="form-group" id="provinsi-multi-group" style="display:none;">
+                            <label>Provinsi</label>
+                            <select id="id_provinsi_multi"
+                                name="id_provinsi_multi[]"
+                                class="form-control"
+                                multiple>
+                                <?php foreach ($provinsi as $p): ?>
+                                    <option value="<?= $p['id'] ?>"><?= $p['provinsi'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+
+
 
                         <div class="form-group" id="unor-group" style="display: none;">
                             <label for="id_unor">UNOR</label>
@@ -84,36 +97,66 @@
 </div>
 <script>
     const id_roleSelect = document.getElementById('id_role');
+
     const unorGroup = document.getElementById('unor-group');
     const provinsiGroup = document.getElementById('provinsi-group');
+    const provinsiMultiGroup = document.getElementById('provinsi-multi-group');
+
     const unorSelect = unorGroup.querySelector('select');
     const provinsiSelect = provinsiGroup.querySelector('select');
+    const provinsiMultiSelect = provinsiMultiGroup.querySelector('select');
 
-    function toggleFields(id_roleId) {
-        // reset semua
+    function resetFields() {
         unorGroup.style.display = 'none';
         provinsiGroup.style.display = 'none';
+        provinsiMultiGroup.style.display = 'none';
+
         unorSelect.removeAttribute('required');
         provinsiSelect.removeAttribute('required');
-
-        // tampilkan & jadikan required sesuai id_role
-        if (id_roleId == '5') {
-            unorGroup.style.display = 'block';
-            unorSelect.setAttribute('required', 'required');
-        } else if (id_roleId == '6') {
-            provinsiGroup.style.display = 'block';
-            provinsiSelect.setAttribute('required', 'required');
-        }
+        provinsiMultiSelect.removeAttribute('required');
     }
 
-    // Event listener
+    function toggleFields(roleId) {
+        resetFields();
+
+        if (roleId == '5') {
+            // UNOR
+            unorGroup.style.display = 'block';
+            unorSelect.setAttribute('required', 'required');
+
+        } else if (roleId == '6') {
+            // Provinsi SINGLE
+            provinsiGroup.style.display = 'block';
+            provinsiSelect.setAttribute('required', 'required');
+
+        } else if (roleId == '4') {
+            provinsiMultiGroup.style.display = 'block';
+            $('#id_provinsi_multi').select2('open').select2('close');
+        }
+
+    }
+
     id_roleSelect.addEventListener('change', function() {
         toggleFields(this.value);
     });
 
-    // Jalankan sekali saat halaman load (untuk old value dari validasi)
+    // Load awal (old value)
     toggleFields("<?= old('id_role') ?>");
 </script>
 
+<?= $this->section('pageScripts') ?>
+<script>
+    $(document).ready(function() {
+        $('#id_provinsi_multi').select2({
+            placeholder: 'Pilih Provinsi',
+            closeOnSelect: false,
+            width: '100%'
+        });
+    });
 </script>
+<?= $this->endSection() ?>
+
+
+
+
 <?= $this->endSection() ?>
