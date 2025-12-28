@@ -13,17 +13,20 @@
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
             <div class="container mt-4">
                 <div class="card shadow-sm">
-                    <div class="card-header">
+                    <!-- <div class="card-header">
                         <h5 class="mb-0">Filter Kawasan RPIW</h5>
-                    </div>
+                    </div> -->
                     <div class="card-body">
                         <form id="filter-form" ?>
-                            <div class="form-row align-items-center">
-                                <!-- Dropdown Unor -->
+                            <!-- <div class="form-row align-items-center"> -->
+                            <!-- Dropdown Unor -->
 
-                                <!-- Dropdown Provinsi -->
-                                <div class="col-md-3 mb-3">
+                            <!-- Dropdown Provinsi -->
+                            <div class="row mb-3">
+                                <div class="col-md-1">
                                     <label for="provinsi"><strong>Provinsi</strong></label>
+                                </div>
+                                <div class="col-md-11">
                                     <select class="form-control" name="provinsi" id="filter-provinsi">
                                         <option value="">Semua Provinsi</option>
                                         <?php foreach ($provinsi as $p): ?>
@@ -31,36 +34,50 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
-                                <div class="col-md-3 mb-3">
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-1">
                                     <label for="tematik"><strong>Tematik</strong></label>
-                                    <select class="form-control" name="tematik" id="filter-unor">
+                                </div>
+                                <div class="col-md-11">
+                                    <select class="form-control" name="tematik" id="filter-tematik">
                                         <option value="">Semua Tematik</option>
                                         <?php foreach ($tematik as $u): ?>
                                             <option value="<?= $u['id_tematik'] ?>"><?= $u['tematik'] ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
+                            </div>
 
-                                <!-- Button Filter -->
-                                <div class="col-md-2 d-flex align-items-end gap-2">
-                                    <!-- Reset Filter -->
-                                    <button type="button" id="reset-filters" class="btn btn-warning" title="Reset Filter">
+                            <!-- Button Filter -->
+                            <div class="row">
+                                <!-- Reset Filter -->
+                                <!-- <button type="button" id="reset-filters" class="btn btn-warning" title="Reset Filter">
                                         <i class="fa fa-eraser"></i>
-                                    </button>
+                                    </button> -->
+                                <!-- Cari (Search) -->
+                                <div class="col-md-1">
 
-                                    <!-- Cari (Search) -->
+                                </div>
+                                <div class="col-md-11">
                                     <button type="submit" class="btn btn-primary" title="Cari">
                                         <i id="button-text" class="fa fa-search"></i>
                                         <span id="loading-spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
                                     </button>
 
-                                    <!-- Refresh -->
-                                    <button type="submit" id="button-text" class="btn btn-success" title="Refresh Data">
-                                        <i class="fas fa-sync-alt"></i> <!-- icon refresh -->
+                                    <!-- Reset Filter -->
+                                    <button type="button" id="reset-filters" class="btn btn-info" title="Reset Filter">
+                                        <!-- <i class="fa fa-eraser"></i> -->
+                                        <i class="fa fa-undo"></i>
                                     </button>
-                                </div>
 
+                                    <!-- Refresh -->
+                                    <!-- <button type="submit" id="button-text" class="btn btn-success" title="Refresh Data">
+                                        <i class="fas fa-sync-alt"></i>
+                                    </button> -->
+                                </div>
                             </div>
+                            <!-- </div> -->
                         </form>
                     </div>
                 </div>
@@ -155,12 +172,12 @@
 
 
         // Inisialisasi Select2 untuk semua dropdown
-        $('#filter-unor, #filter-provinsi, #filter-kawasan,  #filter-sumber').select2();
+        $('#filter-tematik, #filter-provinsi').select2();
         // Restore values from local storage
-        $('#filter-unor').val(localStorage.getItem('selectedUnor'));
+        $('#filter-tematik').val(localStorage.getItem('selectedTematik'));
         $('#filter-provinsi').val(localStorage.getItem('selectedProvinsi'));
-        $('#filter-kawasan').val(localStorage.getItem('selectedKawasan'));
-        $('#filter-sumber').val(localStorage.getItem('selectedSumber'));
+        // $('#filter-kawasan').val(localStorage.getItem('selectedKawasan'));
+        // $('#filter-sumber').val(localStorage.getItem('selectedSumber'));
 
         // On form submit, save the selected values
         $('#filter-form').on('submit', function() {
@@ -211,19 +228,22 @@
 
         $('#reset-filters').on('click', function() {
             // Reset dropdowns to their default values
-            $('#filter-unor').val('').trigger('change');
+            $('#filter-tematik').val('').trigger('change');
             $('#filter-provinsi').val('').trigger('change');
-            $('#filter-kawasan').val('').trigger('change');
-            $('#filter-sumber').val('').trigger('change');
+            // $('#filter-kawasan').val('').trigger('change');
+            // $('#filter-sumber').val('').trigger('change');
 
             // Optionally clear the table data
             //$('#datatables tbody').empty();
 
             // Optionally, you could also clear the local storage if needed
-            localStorage.removeItem('selectedUnor');
+            localStorage.removeItem('selectedTematik');
             localStorage.removeItem('selectedProvinsi');
-            localStorage.removeItem('selectedKawasan');
-            localStorage.removeItem('selectedSumber');
+            // localStorage.removeItem('selectedKawasan');
+            // localStorage.removeItem('selectedSumber');
+
+            var table = $('#datatables').DataTable();
+            table.clear().draw();
         });
     });
 </script>

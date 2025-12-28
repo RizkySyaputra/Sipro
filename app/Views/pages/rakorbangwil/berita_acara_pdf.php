@@ -167,8 +167,8 @@
                     foreach ($kawasan as $row): ?>
                         <tr>
                             <td align="center"><?= $no++ ?></td>
-                            <td><?= $row->nama_kawasan_rpjmn ?></td>
-                            <td><?= $row->tematik ?: '-' ?></td>
+                            <td><?= $row['kawasan_panjang'] ?></td>
+                            <td><?= $row['tematik'] ?: '-' ?></td>
                         </tr>
                     <?php endforeach ?>
                 <?php else: ?>
