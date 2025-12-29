@@ -1676,7 +1676,29 @@ class Rakorbangwil extends BaseController
     }
 
 
+    public function get_pejabat_bak()
+    {
+        $provinsi_id = $this->request->getPost('provinsi');
+        $pn_id       = $this->request->getPost('pn');
 
+        if (!$provinsi_id || !$pn_id) {
+            return $this->response->setJSON([]);
+        }
+
+        // join ke master pejabat + provinsi
+        $data = $this->pejabatBakModel
+            ->select('m_ttd_ba_rakorbangwil.id,
+                  m_pejabat.nama_pejabat,
+                  m_pejabat.jabatan,
+                  m_provinsi.provinsi')
+            ->join('m_pejabat', 'm_pejabat.id_pejabat = m_ttd_ba_rakorbangwil.id_pejabat')
+            ->join('m_provinsi', 'm_provinsi.id = m_ttd_ba_rakorbangwil.id_provinsi')
+            ->where('m_ttd_ba_rakorbangwil.id_provinsi', $provinsi_id)
+            ->where('m_ttd_ba_rakorbangwil.id_pn', $pn_id)
+            ->findAll();
+
+        return $this->response->setJSON($data);
+    }
     public function addPejabatBAK()
     {
         $pejabat_id  = $this->request->getPost('pejabat_id');
