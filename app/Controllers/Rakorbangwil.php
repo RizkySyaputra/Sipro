@@ -1555,8 +1555,8 @@ class Rakorbangwil extends BaseController
     public function create_bak_unor()
     {
 
-        dd($this->daftarProgTahunanModel->getRekapKegiatanAnggaranByProvinsiUnor(2, 4));
-        die;
+        // dd($this->daftarProgTahunanModel->getRekapKegiatanAnggaranByProvinsiUnor(2, 4));
+        // die;
         // ===============================
         // 1. PARAMETER DASAR
         // ===============================

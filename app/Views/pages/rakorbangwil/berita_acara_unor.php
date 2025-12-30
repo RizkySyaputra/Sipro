@@ -101,241 +101,40 @@
                             </strong><br>
                         </div>
                     </div>
-                    <div class="card-body">
-
-                        <form id="filter-form">
-
-                            <div class="row filter-group">
-
-                                <!-- PROVINSI -->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="filter-label">Provinsi</label>
-                                        <select class="form-control" name="provinsi" id="filter-provinsi">
-                                            <option value="" disabled>Pilih Provinsi</option>
-                                            <?php
-                                            if (user()->id_provinsi) : ?>
-                                                <option value="<?= $provinsi['provinsi'] ?>"><?= $provinsi['provinsi'] ?></option>
-                                            <?php else : ?>
-                                                <option value="">Semua Provinsi</option>
-                                                <?php foreach ($provinsi as $p): ?>
-                                                    <option value="<?= $p->id ?>"><?= $p->provinsi ?></option>
-                                                <?php endforeach; ?>
-                                            <?php endif; ?>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <!-- SUMBER -->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="filter-label">Prioritas Nasional</label>
-                                        <select class="form-control" name="pn" id="filter-pn">
-                                            <option value="" disabled>Pilih PN</option>
-                                            <?php foreach ($pn as $p): ?>
-                                                <option value="<?= $p['id_pn'] ?>"><?= 'PN' . $p['id_pn'] . ' - ' . $p['nama_pn'] ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <!-- BUTTON ROW -->
-                            <div class="mt-2">
-                                <button type="submit" class="btn btn-primary mr-2">
-                                    <i id="button-text" class="fa fa-search"></i>
-                                    <span id="loading-spinner" class="spinner-border spinner-border-sm" style="display:none;"></span>
-                                </button>
-
-                                <button type="button" id="reset-filters" class="btn btn-info">
-                                    <i class="fa fa-undo"></i>
-                                </button>
-                            </div>
-
-                        </form>
-
-                    </div>
-                    <!-- Tabs -->
-                    <div class="tabs-wrapper">
-                        <ul class="nav nav-tabs" id="pnTabs">
-                            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#kawasan">Kawasan Prioritas</a></li>
-                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#diakomodasi">Program Diakomodasi</a></li>
-                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#ditangguhkan">Program Ditangguhkan</a></li>
-                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tidak_terbahas">Program Tidak Terbahas</a></li>
-                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#perubahanPn">Perubahan Program Diakomodasi</a></li>
-                            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#bak">Pejabat Penandatangan & Generate BA</a></li>
-                        </ul>
-                    </div>
                     <div class="tab-content mt-3 p-3 border rounded bg-white">
 
-                        <!-- ================= TAB PROGRAM ================= -->
-                        <div class="tab-pane fade show active" id="kawasan" role="tabpanel">
-                            <!-- DATATABLE -->
-                            <div class="card shadow-sm">
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table id="table-kawasan" class="table table-striped table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Kawasan</th>
-                                                    <th>Tematik Kawasan</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- END TAB PROGRAM -->
-                        <!-- ================= TAB Diakomodasi ================= -->
-                        <div class="tab-pane fade show" id="diakomodasi" role="tabpanel">
-                            <!-- DATATABLE -->
-                            <div class="card shadow-sm">
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table id="table-diakomodasi" class="table table-striped table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Kawasan</th>
-                                                    <th>Pekerjaan</th>
-                                                    <th>Unor</th>
-                                                    <th>Kesepakatan</th>
-                                                    <th>Sumber Pendanaan</th>
-                                                    <th>Catatan Rakorbangwil</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
                         <!-- END TAB Diakomodasi -->
-                        <!-- ================= TAB Diakomodasi ================= -->
-                        <div class="tab-pane fade show" id="ditangguhkan" role="tabpanel">
-                            <!-- DATATABLE -->
-                            <div class="card shadow-sm">
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table id="table-ditangguhkan" class="table table-striped table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Kawasan</th>
-                                                    <th>Pekerjaan</th>
-                                                    <th>Unor</th>
-                                                    <th>Kesepakatan</th>
-                                                    <th>Sumber Pendanaan</th>
-                                                    <th>Catatan Rakorbangwil</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
+                        <!-- DATATABLE -->
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <div class="table-responsive">
 
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- END TAB Diakomodasi -->
-                        <!-- ================= TAB Diakomodasi ================= -->
-                        <div class="tab-pane fade show" id="tidak_terbahas" role="tabpanel">
-                            <!-- DATATABLE -->
-                            <div class="card shadow-sm">
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table id="table-tidakterbahas" class="table table-striped table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Kawasan</th>
-                                                    <th>Pekerjaan</th>
-                                                    <th>Unor</th>
-                                                    <th>Kesepakatan</th>
-                                                    <th>Sumber Pendanaan</th>
-                                                    <th>Catatan Rakorbangwil</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- END TAB Diakomodasi -->
-                        <!-- ================= TAB Diakomodasi ================= -->
-                        <div class="tab-pane fade show" id="perubahanPn" role="tabpanel">
-                            <!-- DATATABLE -->
-                            <div class="card shadow-sm">
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table id="table-perubahanPn" class="table table-striped table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>No</th>
-                                                    <th>Kawasan</th>
-                                                    <th>Pekerjaan</th>
-                                                    <th>Unor</th>
-                                                    <th>Kesepakatan</th>
-                                                    <th>Sumber Pendanaan</th>
-                                                    <th>Catatan Rakorbangwil</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- END TAB Diakomodasi -->
-                        <div class="tab-pane fade show" id="bak" role="tabpanel">
-                            <!-- DATATABLE -->
-                            <div class="card shadow-sm">
-                                <div class="card-body">
-                                    <div class="table-responsive">
-
-                                        <div class="mb-3 text-right">
-                                            <?php if ($can_edit == true) : ?>
-                                                <button id="btn-add-pejabat" class="btn btn-primary">
-                                                    <i class="fa fa-plus"></i> Tambah Pejabat
-                                                </button>
-                                            <?php endif ?>
-                                            <button id="btn-generate-bak" class="btn btn-success">
-                                                <i class="fa fa-file-alt"></i> Generate Berita Acara
+                                    <div class="mb-3 text-right">
+                                        <?php if ($can_edit == true) : ?>
+                                            <button id="btn-add-pejabat" class="btn btn-primary">
+                                                <i class="fa fa-plus"></i> Tambah Pejabat
                                             </button>
-                                        </div>
-
-                                        <table id="table-pejabat-bak" class="table table-striped table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th style="width:40px;"></th>
-                                                    <th>Nama Pejabat</th>
-                                                    <th>Jabatan</th>
-                                                    <th>Provinsi</th>
-                                                    <th>Aksi</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="sortable-pejabat">
-                                                <!-- akan diisi via AJAX -->
-                                            </tbody>
-                                        </table>
-
+                                        <?php endif ?>
+                                        <button id="btn-generate-bak" class="btn btn-success">
+                                            <i class="fa fa-file-alt"></i> Generate Berita Acara
+                                        </button>
                                     </div>
+
+                                    <table id="table-pejabat-bak" class="table table-striped table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:40px;"></th>
+                                                <th>Nama Pejabat</th>
+                                                <th>Jabatan</th>
+                                                <th>Provinsi</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="sortable-pejabat">
+                                            <!-- akan diisi via AJAX -->
+                                        </tbody>
+                                    </table>
+
                                 </div>
                             </div>
                         </div>
@@ -411,9 +210,7 @@
         </div>
     </div>
 
-    <form id="form-generate-bak" action="<?= base_url('rakorbangwil/create_berita_acara') ?>" method="POST" style="display:none;" target="_blank">
-        <input type="hidden" name="provinsi_id" id="post-provinsi">
-        <input type="hidden" name="pn_id" id="post-pn">
+    <form id="form-generate-bak" action="<?= base_url('rakorbangwil/create_berita_acara_unor') ?>" method="POST" style="display:none;" target="_blank">
         <input type="hidden" name="tanggal" id="post-tanggal">
     </form>
 
@@ -426,264 +223,17 @@
 
     <script>
         $(document).ready(function() {
-            function getStatusDesk(value) {
-                switch (value) {
-                    case '1':
-                        return "Diakomodasi";
-                    case '2':
-                        return "Diakomodasi (Pra Konreg)";
-                    case '3':
-                        return "Ditangguhkan";
-                    case '4':
-                        return "Ditangguhkan (Geser Tahun)";
-                    case '5':
-                        return "Ditangguhkan (Skema KPBU)";
-                    case '6':
-                        return "Ditangguhkan (Sumber Pendanaan Lainnya)";
-                    case '7':
-                        return "Diakomodasi (Perubahan Menjadi Non PN)";
-                    case '0':
-                        return "Tidak Terbahas";
-                    default:
-                        return "-";
-                }
-            }
-
-            function formatCatatan(jsonString) {
-                if (!jsonString) return '-';
-
-                try {
-                    const list = JSON.parse(jsonString); // decode JSON
-
-                    return list.map(i => `${i.nama} : ${i.catatan}`).join('<br>');
-                } catch (e) {
-                    return jsonString; // jika JSON rusak, tampilkan apa adanya
-                }
-            }
-
-
-            function emptyRow(colspan) {
-                return `
-        <tr>
-            <td colspan="${colspan}" class="text-center text-muted">
-                Tidak ada data
-            </td>
-        </tr>
-    `;
-            }
-
-            // Inisialisasi Select2 untuk semua dropdown
-            $('#filter-pn, #filter-provinsi ,#select-pejabat').select2();
-
-            // Restore value dari localStorage
-            $('#filter-pn').val(localStorage.getItem('selectedPn')).trigger('change');
-            $('#filter-provinsi').val(localStorage.getItem('selectedProvinsi')).trigger('change');
-
-
-            // Submit filter (pakai ajax)
-            $('#filter-form').on('submit', function(event) {
-                event.preventDefault();
-                let provinsi = $('#filter-provinsi').val();
-                let pn = $('#filter-pn').val();
-
-                // === VALIDASI WAJIB DIISI ===
-                if (!provinsi || !pn) {
-                    Swal.fire({
-                        icon: 'warning',
-                        title: 'Filter Belum Lengkap',
-                        text: 'Silakan pilih Provinsi dan Prioritas Nasional terlebih dahulu.',
-                        confirmButtonColor: '#3085d6'
-                    });
-                    return; // stop AJAX
-                }
-                $('#loading-spinner').show();
-                $('#button-text').hide();
-
-                $.ajax({
-                    url: '<?= base_url('/rakorbangwil/get_data_berita_acara') ?>',
-                    type: 'POST',
-                    data: $(this).serialize(),
-                    success: function(response) {
-
-                        // ========== TABEL KAWASAN ==========
-                        let htmlKawasan = "";
-
-                        if (response.kawasan.length === 0) {
-                            htmlKawasan = emptyRow(3);
-                        } else {
-                            response.kawasan.forEach((item, index) => {
-                                htmlKawasan += `
-            <tr>
-                <td>${index + 1}</td>
-                <td>${item.nama_kawasan_rpjmn?? '-'}</td>
-                <td>${item.tematik}</td>
-            </tr>
-        `;
-                            });
-                        }
-
-                        $('#kawasan table tbody').html(htmlKawasan);
-
-
-                        // ========== TABEL DIAKOMODASI ==========
-                        let htmlDiakomodasi = "";
-
-                        if (response.diakomodasi.length === 0) {
-                            htmlDiakomodasi = emptyRow(7);
-                        } else {
-                            response.diakomodasi.forEach((item, index) => {
-                                htmlDiakomodasi += `
-            <tr>
-                <td>${index + 1}</td>
-                <td>${item.kawasan_panjang }</td>
-                <td>${item.pekerjaan}</td>
-                <td>${item.unor}</td>
-                 <td>${getStatusDesk(item.desk_rakorbangwil)}</td>
-                <td>${item.sumber_pendanaan ?? '-'}</td>
-                <td style="width: 30%;">${formatCatatan(item.catatan_desk_rakorbangwil)}</td>
-            </tr>
-        `;
-                            });
-                        }
-
-                        $('#diakomodasi table tbody').html(htmlDiakomodasi);
-
-
-                        // ========== TABEL DITANGGUHKAN ==========
-                        let htmlTangguh = "";
-
-                        if (response.ditangguhkan.length === 0) {
-                            htmlTangguh = emptyRow(7);
-                        } else {
-                            response.ditangguhkan.forEach((item, index) => {
-                                htmlTangguh += `
-            <tr>
-                <td>${index + 1}</td>
-                <td>${item.kawasan_panjang}</td>
-                <td>${item.pekerjaan}</td>
-                <td>${item.unor}</td>
-              <td>${getStatusDesk(item.desk_rakorbangwil)}</td>
-                <td>${item.sumber_pendanaan?? '-'}</td>
-              <td style="width: 30%;">${formatCatatan(item.catatan_desk_rakorbangwil)}</td>
-            </tr>
-        `;
-                            });
-                        }
-
-                        $('#ditangguhkan table tbody').html(htmlTangguh);
-
-
-                        // ========== TABEL TIDAK TERBAHAS ==========
-                        let htmlTidak = "";
-
-                        if (response.tidakTerbahas.length === 0) {
-                            htmlTidak = emptyRow(7);
-                        } else {
-                            response.tidakTerbahas.forEach((item, index) => {
-                                htmlTidak += `
-            <tr>
-                <td>${index + 1}</td>
-                <td>${item.kawasan_panjang}</td>
-                <td>${item.pekerjaan}</td>
-                <td>${item.unor}</td>
-                 <td>${getStatusDesk(item.desk_rakorbangwil)}</td>
-                <td>${item.sumber_pendanaan ?? '-'}</td>
-              <td style="width: 30%;">${formatCatatan(item.catatan_desk_rakorbangwil)}</td>
-            </tr>
-        `;
-                            });
-                        }
-
-                        $('#tidak_terbahas table tbody').html(htmlTidak);
-                        // ========== TABEL PERUBAHAN PN ==========
-                        let htmlPerubahan = "";
-
-                        if (response.perubahanPn.length === 0) {
-                            htmlPerubahan = emptyRow(7);
-                        } else {
-                            response.perubahanPn.forEach((item, index) => {
-                                htmlPerubahan += `
-            <tr>
-                <td>${index + 1}</td>
-                <td>${item.kawasan_panjang}</td>
-                <td>${item.pekerjaan}</td>
-                <td>${item.unor}</td>
-                 <td>${getStatusDesk(item.desk_rakorbangwil)}</td>
-                <td>${item.sumber_pendanaan ?? '-'}</td>
-              <td style="width: 30%;">${formatCatatan(item.catatan_desk_rakorbangwil)}</td>
-            </tr>
-        `;
-                            });
-                        }
-
-                        $('#perubahanPn table tbody').html(htmlPerubahan);
-
-                    },
-                    complete: function() {
-                        $('#loading-spinner').hide();
-                        $('#button-text').show();
-                    }
-                });
-
-            });
-
-
-            // Reset filter
-            $('#reset-filters').on('click', function() {
-
-                // Reset semua dropdown
-                $('#filter-pn, #filter-provinsi')
-                    .val('')
-                    .trigger('change');
-
-                // Hapus localStorage
-                localStorage.removeItem('selectedPn');
-                localStorage.removeItem('selectedProvinsi');
-
-                // Bersihkan tabel
-                var table = $('#datatables').DataTable();
-                table.clear().draw();
-            });
-        });
-        $(document).ready(function() {
 
             // Klik tombol generate BAK
             $('#btn-generate-bak').on('click', function() {
-
-                let provinsi = $('#filter-provinsi').val();
-                let pn = $('#filter-pn').val();
-
-                if (!provinsi || !pn) {
-                    Swal.fire({
-                        icon: 'warning',
-                        title: 'Filter Belum Dipilih',
-                        text: 'Silakan pilih Provinsi dan PN terlebih dahulu pada form filter.'
-                    });
-                    return;
-                }
 
                 $('#modalTanggalBAK').modal('show');
             });
 
             // Submit tanggal
             $('#btn-submit-tanggal-bak').on('click', function() {
-
                 let tanggal = $('#tanggal-bak').val();
-                let provinsi = $('#filter-provinsi').val();
-                let pn = $('#filter-pn').val();
-
-                if (!tanggal) {
-                    Swal.fire({
-                        icon: 'warning',
-                        title: 'Tanggal Belum Dipilih',
-                        text: 'Harap pilih tanggal Berita Acara!'
-                    });
-                    return;
-                }
-
                 // Isi hidden form
-                $('#post-provinsi').val(provinsi);
-                $('#post-pn').val(pn);
                 $('#post-tanggal').val(tanggal);
 
                 // Submit form ke controller
@@ -692,9 +242,6 @@
 
             // Buka modal tambah pejabat
             $('#btn-add-pejabat').on('click', function() {
-
-                let provinsi = $('#filter-provinsi').val();
-                let pn = $('#filter-pn').val();
 
                 if (!provinsi || !pn) {
                     Swal.fire({
@@ -712,176 +259,42 @@
                 $('#modalAddPejabat').modal('show');
             });
 
-            $(document).ready(function() {
 
-                // ========= FUNGSI LOAD DATA PEJABAT BAK =========
-                function loadPejabatBAK() {
-                    let provinsi = $('#filter-provinsi').val();
-                    let pn = $('#filter-pn').val();
 
-                    if (!provinsi || !pn) {
-                        $('#table-pejabat-bak tbody').html(`
-                <tr>
-                    <td colspan="5" class="text-center text-muted">
-                        Silakan pilih Provinsi dan PN terlebih dahulu.
-                    </td>
-                </tr>
-            `);
-                        return;
-                    }
+            // ========= HAPUS PEJABAT =========
+            $(document).on('click', '.btn-delete-pejabat', function() {
+                let id = $(this).data('id');
 
-                    $.ajax({
-                        url: '<?= base_url("/rakorbangwil/get_pejabat_bak") ?>',
-                        type: 'POST',
-                        dataType: 'json',
-                        data: {
-                            provinsi: provinsi,
-                            pn: pn
-                        },
-                        success: function(response) {
-                            let html = "";
-
-                            if (!response || response.length === 0) {
-                                html = `
-            <tr>
-                <td colspan="5" class="text-center text-muted">
-                    Belum ada pejabat untuk kombinasi Provinsi & PN Terpilih.
-                </td>
-            </tr>`;
-                            } else {
-                                response.forEach((item, i) => {
-                                    html += `
-                <tr data-id="${item.id}">
-                    <td class="drag-handle text-center" title="Geser urutan">
-    <i class="fa fa-bars"></i>
-        </td>
-                    <td>${item.nama_pejabat}</td>
-                    <td>${item.jabatan}</td>
-                    <td>${item.provinsi}</td>
-                    <td>
-        ${canDelete ? `
-        <button class="btn btn-danger btn-sm btn-delete-pejabat" data-id="${item.id}">
-            <i class="fa fa-trash"></i>
-        </button>` : ''}
-    </td>
-                </tr>
-            `;
-                                });
+                Swal.fire({
+                    title: 'Hapus Pejabat?',
+                    text: "Data akan dihapus dari daftar penandatangan.",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Ya, hapus',
+                    cancelButtonText: 'Batal'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: '<?= base_url("/rakorbangwil/delete_pejabat_bak") ?>',
+                            type: 'POST',
+                            data: {
+                                id: id
+                            },
+                            success: function() {
+                                Swal.fire('Berhasil', 'Pejabat dihapus', 'success');
+                                loadPejabatBAK();
                             }
-
-                            $('#table-pejabat-bak tbody').html(html);
-
-                            // ===== AKTIFKAN SORTABLE ULANG SESUDAH TABEL DI UPDATE =====
-                            enableSortable();
-                        }
-
-                    });
-                }
-
-                // ========= PANGGIL loadPejabatBAK SETELAH FILTER DI-SUBMIT =========
-                $('#filter-form').on('submit', function() {
-                    setTimeout(() => {
-                        loadPejabatBAK();
-                    }, 300);
-                });
-
-                // ========= BUKA MODAL TAMBAH PEJABAT =========
-                $('#btn-add-pejabat').on('click', function() {
-                    let provinsi = $('#filter-provinsi').val();
-                    let pn = $('#filter-pn').val();
-
-                    if (!provinsi || !pn) {
-                        Swal.fire({
-                            icon: 'warning',
-                            title: 'Filter Belum Dipilih',
-                            text: 'Silakan pilih Provinsi dan PN terlebih dahulu.'
                         });
-                        return;
                     }
-
-                    $('#input-provinsi-id').val(provinsi);
-                    $('#input-pn-id').val(pn);
-
-                    $('#modalAddPejabat').modal('show');
-                });
-
-                // ========= SUBMIT TAMBAH PEJABAT =========
-                $('#form-tambah-pejabat').on('submit', function(e) {
-                    e.preventDefault();
-
-                    // ====== AKTIFKAN SPINNER ======
-                    $("#btn-submit-pejabat").prop("disabled", true);
-                    $("#btn-submit-pejabat .text-label").addClass("d-none");
-                    $("#spinner-pejabat").removeClass("d-none");
-
-                    $.ajax({
-                        url: $(this).attr("action"),
-                        type: "POST",
-                        data: $(this).serialize(),
-                        success: function(res) {
-
-                            // reset tombol
-                            $("#btn-submit-pejabat").prop("disabled", false);
-                            $("#btn-submit-pejabat .text-label").removeClass("d-none");
-                            $("#spinner-pejabat").addClass("d-none");
-
-                            $('#modalAddPejabat').modal('hide');
-
-                            Swal.fire('Berhasil', 'Pejabat berhasil ditambahkan', 'success');
-
-                            // reload tabel
-                            loadPejabatBAK();
-                        },
-
-                        error: function() {
-                            // reset tombol
-                            $("#btn-submit-pejabat").prop("disabled", false);
-                            $("#btn-submit-pejabat .text-label").removeClass("d-none");
-                            $("#spinner-pejabat").addClass("d-none");
-
-                            Swal.fire('Error', 'Gagal menambah pejabat', 'error');
-                        }
-                    });
-                });
-
-
-                // ========= HAPUS PEJABAT =========
-                $(document).on('click', '.btn-delete-pejabat', function() {
-                    let id = $(this).data('id');
-
-                    Swal.fire({
-                        title: 'Hapus Pejabat?',
-                        text: "Data akan dihapus dari daftar penandatangan.",
-                        icon: 'warning',
-                        showCancelButton: true,
-                        confirmButtonText: 'Ya, hapus',
-                        cancelButtonText: 'Batal'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            $.ajax({
-                                url: '<?= base_url("/rakorbangwil/delete_pejabat_bak") ?>',
-                                type: 'POST',
-                                data: {
-                                    id: id
-                                },
-                                success: function() {
-                                    Swal.fire('Berhasil', 'Pejabat dihapus', 'success');
-                                    loadPejabatBAK();
-                                }
-                            });
-                        }
-                    });
-                });
-
-                // Opsional: ketika tab BAK diklik, reload daftar pejabat
-                $('a[href="#bak"]').on('shown.bs.tab', function() {
-                    loadPejabatBAK();
                 });
             });
 
-
-
+            // Opsional: ketika tab BAK diklik, reload daftar pejabat
+            $('a[href="#bak"]').on('shown.bs.tab', function() {
+                loadPejabatBAK();
+            });
         });
+
         // ===================================================
         // Fitur Drag & Drop Urutan Pejabat Penandatangan BAK
         // ===================================================
