@@ -5,6 +5,39 @@
     <meta charset="UTF-8">
     <title>Berita Acara Rakorbangwil 2025</title>
     <style>
+        .ttd-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            font-size: 12px;
+        }
+
+        .ttd-table td {
+            height: 90px;
+        }
+
+        .ttd-table td {
+            padding: 16px 10px;
+            vertical-align: middle;
+        }
+
+        .ttd-title {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .ttd-center {
+            text-align: center;
+        }
+
+        .ttd-name {
+            font-weight: bold;
+        }
+
+        .ttd-jabatan {
+            margin-top: 4px;
+        }
+
         p,
         li {
             text-align: justify;
@@ -700,20 +733,94 @@
     </table>
 
     <br><br>
-    <!-- <table class="no-border">
+
+    <table class="ttd-table">
         <tr>
-            <td width="50%">
-                <strong>Kementerian Pekerjaan Umum</strong><br><br><br><br>
-                <u>Wida Nurfaida, S.T., M.T.</u><br>
-                Sekretaris Jenderal
-            </td>
-            <td width="50%">
-                <br><br><br><br>
-                <u>Ir. Bob Arthur Lombogia, M.Si.</u><br>
-                Kepala Badan Pengembangan Infrastruktur Wilayah
+            <td colspan="2" class="ttd-center">
+                <?php
+                function bulanIndoByNumber($bulan)
+                {
+                    $bulan = (int)$bulan;
+                    $namaBulan = [
+                        1 => 'Januari',
+                        2 => 'Februari',
+                        3 => 'Maret',
+                        4 => 'April',
+                        5 => 'Mei',
+                        6 => 'Juni',
+                        7 => 'Juli',
+                        8 => 'Agustus',
+                        9 => 'September',
+                        10 => 'Oktober',
+                        11 => 'November',
+                        12 => 'Desember',
+                    ];
+
+                    return $namaBulan[$bulan] ?? '';
+                }
+
+                $t = strtotime($tanggal_bak);
+
+                echo 'Jakarta, ' . date('d', $t) . ' ' . bulanIndoByNumber(date('m', $t)) . ' ' . date('Y', $t);
+                ?>
             </td>
         </tr>
-    </table> -->
+
+        <tr>
+            <td colspan="2" class="ttd-title">
+                Kementerian Pekerjaan Umum
+            </td>
+        </tr>
+
+        <tr>
+            <td class="ttd-center">
+                <div class="ttd-name">Wida Nurfida, S.T., M.T.</div>
+                <div class="ttd-jabatan">Sekretaris Jenderal</div>
+            </td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td class="ttd-center">
+                <div class="ttd-name">Ir. Bob Arthur Lombogia, M.Si.</div>
+                <div class="ttd-jabatan">Kepala Badan Pengembangan Infrastruktur Wilayah</div>
+            </td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td class="ttd-center">
+                <div class="ttd-name">Dr. Dwi Purwantoro, S.T., M.T.</div>
+                <div class="ttd-jabatan">Direktur Jenderal Sumber Daya Air</div>
+            </td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td class="ttd-center">
+                <div class="ttd-name">Dr. Ir. Roy Rizali Anwar, S.T., M.T.</div>
+                <div class="ttd-jabatan">Direktur Jenderal Bina Marga</div>
+            </td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td class="ttd-center">
+                <div class="ttd-name">Dewi Chomistriana, S.T., M.Sc.</div>
+                <div class="ttd-jabatan">Direktur Jenderal Cipta Karya</div>
+            </td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td class="ttd-center">
+                <div class="ttd-name">Bisma Santiarto, S.T., M.Sc.</div>
+                <div class="ttd-jabatan">Direktur Jenderal Prasarana Strategis</div>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+
 
 </body>
 

@@ -1568,7 +1568,7 @@ class Rakorbangwil extends BaseController
         // $provinsi_id = user()->id_provinsi
         //     ?? $this->request->getPost('provinsi_id');
 
-        // $tanggal = $this->request->getPost('tanggal');
+        $tanggal = $this->request->getPost('tanggal');
         // $tahun   = session('tahun_pelaksana');
 
         // // ===============================
@@ -1637,7 +1637,7 @@ class Rakorbangwil extends BaseController
         $html = view('pages/rakorbangwil/berita_acara_unor_pdf', [
             // 'provinsi'       => $provinsi,
             // 'pn'             => $pn,
-            // 'tanggal_bak'    => $tanggal,
+            'tanggal_bak'    => $tanggal,
             // 'kawasan'        => $kawasan,
             // 'rekapPN'        => $rekapPN,
             // 'programDitjen'  => $programDitjen,
