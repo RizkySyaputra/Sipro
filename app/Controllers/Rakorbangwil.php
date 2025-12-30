@@ -1554,91 +1554,94 @@ class Rakorbangwil extends BaseController
     }
     public function create_bak_unor()
     {
+
+        dd($this->daftarProgTahunanModel->getRekapKegiatanAnggaranByProvinsiUnor(2, 4));
+        die;
         // ===============================
         // 1. PARAMETER DASAR
         // ===============================
-        $id_pn = $this->request->getPost('pn_id') ?? 'x';
-        if ($id_pn == '0') {
-            $id_pn = 'x';
-        }
+        // $id_pn = $this->request->getPost('pn_id') ?? 'x';
+        // if ($id_pn == '0') {
+        //     $id_pn = 'x';
+        // }
 
-        $provinsi_id = user()->id_provinsi
-            ?? $this->request->getPost('provinsi_id');
+        // $provinsi_id = user()->id_provinsi
+        //     ?? $this->request->getPost('provinsi_id');
 
-        $tanggal = $this->request->getPost('tanggal');
-        $tahun   = session('tahun_pelaksana');
+        // $tanggal = $this->request->getPost('tanggal');
+        // $tahun   = session('tahun_pelaksana');
 
-        // ===============================
-        // 2. MASTER DATA
-        // ===============================
-        $provinsi = $this->provinsiModel->find($provinsi_id);
-        $pn       = $this->pnModel->find($id_pn);
+        // // ===============================
+        // // 2. MASTER DATA
+        // // ===============================
+        // $provinsi = $this->provinsiModel->find($provinsi_id);
+        // $pn       = $this->pnModel->find($id_pn);
 
-        // ===============================
-        // 3. PEJABAT PENANDATANGAN
-        // ===============================
-        $pejabat_bak = $this->pejabatBakModel
-            ->select('m_ttd_ba_rakorbangwil.*,
-                  pejabat.nama_pejabat,
-                  pejabat.jabatan,
-                  pejabat.instansi,
-                  pejabat.tanda_tangan')
-            ->join('m_pejabat pejabat', 'pejabat.id_pejabat = m_ttd_ba_rakorbangwil.id_pejabat')
-            ->where('m_ttd_ba_rakorbangwil.id_provinsi', $provinsi_id)
-            ->where('m_ttd_ba_rakorbangwil.id_pn', $id_pn)
-            ->where('m_ttd_ba_rakorbangwil.thn_pelaksanaan', $tahun)
-            ->orderBy('m_ttd_ba_rakorbangwil.prioritas', 'ASC')
-            ->findAll();
+        // // ===============================
+        // // 3. PEJABAT PENANDATANGAN
+        // // ===============================
+        // $pejabat_bak = $this->pejabatBakModel
+        //     ->select('m_ttd_ba_rakorbangwil.*,
+        //           pejabat.nama_pejabat,
+        //           pejabat.jabatan,
+        //           pejabat.instansi,
+        //           pejabat.tanda_tangan')
+        //     ->join('m_pejabat pejabat', 'pejabat.id_pejabat = m_ttd_ba_rakorbangwil.id_pejabat')
+        //     ->where('m_ttd_ba_rakorbangwil.id_provinsi', $provinsi_id)
+        //     ->where('m_ttd_ba_rakorbangwil.id_pn', $id_pn)
+        //     ->where('m_ttd_ba_rakorbangwil.thn_pelaksanaan', $tahun)
+        //     ->orderBy('m_ttd_ba_rakorbangwil.prioritas', 'ASC')
+        //     ->findAll();
 
-        // ===============================
-        // 4. A. KAWASAN / LOKUS PRIORITAS
-        // ===============================
-        $kawasan = $this->praRakorModel
-            ->getKawasanList($provinsi_id, null, $id_pn);
+        // // ===============================
+        // // 4. A. KAWASAN / LOKUS PRIORITAS
+        // // ===============================
+        // $kawasan = $this->praRakorModel
+        //     ->getKawasanList($provinsi_id, null, $id_pn);
 
-        // ===============================
-        // 5. B–G. REKAP PROGRAM PER PN
-        // ===============================
-        $rekapPN = [
-            2 => $this->daftarProgTahunanModel->getRekapPerPN($provinsi_id, 2),
-            3 => $this->daftarProgTahunanModel->getRekapPerPN($provinsi_id, 3),
-            4 => $this->daftarProgTahunanModel->getRekapPerPN($provinsi_id, 4),
-            5 => $this->daftarProgTahunanModel->getRekapPerPN($provinsi_id, 5),
-            6 => $this->daftarProgTahunanModel->getRekapPerPN($provinsi_id, 6),
-            8 => $this->daftarProgTahunanModel->getRekapPerPN($provinsi_id, 8),
-        ];
+        // // ===============================
+        // // 5. B–G. REKAP PROGRAM PER PN
+        // // ===============================
+        // $rekapPN = [
+        //     2 => $this->daftarProgTahunanModel->getRekapPerPN($provinsi_id, 2),
+        //     3 => $this->daftarProgTahunanModel->getRekapPerPN($provinsi_id, 3),
+        //     4 => $this->daftarProgTahunanModel->getRekapPerPN($provinsi_id, 4),
+        //     5 => $this->daftarProgTahunanModel->getRekapPerPN($provinsi_id, 5),
+        //     6 => $this->daftarProgTahunanModel->getRekapPerPN($provinsi_id, 6),
+        //     8 => $this->daftarProgTahunanModel->getRekapPerPN($provinsi_id, 8),
+        // ];
 
-        /**
-         * getRekapPerPN() → hasil ideal:
-         * [
-         *   'sda' => ['kegiatan'=>10, 'anggaran'=>100000],
-         *   'bm'  => ['kegiatan'=>5,  'anggaran'=>50000],
-         *   'ck'  => ['kegiatan'=>7,  'anggaran'=>70000],
-         *   'ps'  => ['kegiatan'=>3,  'anggaran'=>30000],
-         * ]
-         */
+        // /**
+        //  * getRekapPerPN() → hasil ideal:
+        //  * [
+        //  *   'sda' => ['kegiatan'=>10, 'anggaran'=>100000],
+        //  *   'bm'  => ['kegiatan'=>5,  'anggaran'=>50000],
+        //  *   'ck'  => ['kegiatan'=>7,  'anggaran'=>70000],
+        //  *   'ps'  => ['kegiatan'=>3,  'anggaran'=>30000],
+        //  * ]
+        //  */
 
-        // ===============================
-        // 6. H–K. PROGRAM PER DITJEN
-        // ===============================
-        $programDitjen = [
-            'sda' => $this->daftarProgTahunanModel->getProgramPerDitjen($provinsi_id, 'SDA'),
-            'bm'  => $this->daftarProgTahunanModel->getProgramPerDitjen($provinsi_id, 'BM'),
-            'ck'  => $this->daftarProgTahunanModel->getProgramPerDitjen($provinsi_id, 'CK'),
-            'ps'  => $this->daftarProgTahunanModel->getProgramPerDitjen($provinsi_id, 'PS'),
-        ];
+        // // ===============================
+        // // 6. H–K. PROGRAM PER DITJEN
+        // // ===============================
+        // $programDitjen = [
+        //     'sda' => $this->daftarProgTahunanModel->getProgramPerDitjen($provinsi_id, 'SDA'),
+        //     'bm'  => $this->daftarProgTahunanModel->getProgramPerDitjen($provinsi_id, 'BM'),
+        //     'ck'  => $this->daftarProgTahunanModel->getProgramPerDitjen($provinsi_id, 'CK'),
+        //     'ps'  => $this->daftarProgTahunanModel->getProgramPerDitjen($provinsi_id, 'PS'),
+        // ];
 
         // ===============================
         // 7. RENDER HTML (VIEW FINAL PDF)
         // ===============================
-        $html = view('pages/rakorbangwil/berita_acara_rakorbangwil_pdf', [
-            'provinsi'       => $provinsi,
-            'pn'             => $pn,
-            'tanggal_bak'    => $tanggal,
-            'kawasan'        => $kawasan,
-            'rekapPN'        => $rekapPN,
-            'programDitjen'  => $programDitjen,
-            'pejabat_bak'    => $pejabat_bak,
+        $html = view('pages/rakorbangwil/berita_acara_unor_pdf', [
+            // 'provinsi'       => $provinsi,
+            // 'pn'             => $pn,
+            // 'tanggal_bak'    => $tanggal,
+            // 'kawasan'        => $kawasan,
+            // 'rekapPN'        => $rekapPN,
+            // 'programDitjen'  => $programDitjen,
+            // 'pejabat_bak'    => $pejabat_bak,
         ]);
 
         // ===============================
@@ -1657,11 +1660,11 @@ class Rakorbangwil extends BaseController
         $mpdf->SetWatermarkImage('assets/img/pu-transparan.png', 0.1);
         $mpdf->showWatermarkImage = true;
 
-        $footer = '© 2025 - Berita Acara Kesepakatan Rakorbangwil Provinsi '
-            . ucwords($provinsi['provinsi'])
-            . ' | Halaman {PAGENO} dari {nbpg}';
+        // $footer = '© 2025 - Berita Acara Kesepakatan Rakorbangwil Provinsi '
+        //     . ucwords($provinsi['provinsi'])
+        //     . ' | Halaman {PAGENO} dari {nbpg}';
 
-        $mpdf->SetHTMLFooter('<div style="text-align:center;font-size:9px;">' . $footer . '</div>');
+        // $mpdf->SetHTMLFooter('<div style="text-align:center;font-size:9px;">' . $footer . '</div>');
 
         $mpdf->WriteHTML($html);
 
@@ -1669,7 +1672,7 @@ class Rakorbangwil extends BaseController
             ->setHeader('Content-Type', 'application/pdf')
             ->setBody(
                 $mpdf->Output(
-                    'BAK_RAKORBANGWIL_' . $provinsi['provinsi'] . '_TA2027.pdf',
+                    'BAK ESELON II.pdf',
                     'I'
                 )
             );

@@ -327,7 +327,7 @@
                             <td><?php if ($row->desk_rakorbangwil == '2') {
                                     echo "Diakomodasi untuk Dibahas pada Pra Konreg";
                                 } elseif ($row->desk_rakorbangwil == '6') {
-                                    echo "Ditangguhkan karena menggunakan Sumber Pendanaan Lainnya, menjadii input Forum Pemrograman di luar APBN";
+                                    echo "Ditangguhkan karena menggunakan Sumber Pendanaan Lainnya, menjadi input Forum Pemrograman di luar APBN";
                                 } elseif ($row->desk_rakorbangwil == '7') {
                                     echo "Ditangguhkan karena menggunakan skema KPBU, menjadi input Forum Pemrograman di luar APBN";
                                 } else {
@@ -364,10 +364,10 @@
             </tbody>
         </table>
     </div>
+    <div class="page-break"></div>
     <div class="section-block">
         <!-- ======== D. TIDAK TERBAHAS ======== -->
         <h5>E. Disepakati perubahan program/kegiatan infrastruktur PU TA 2027 yang diakomodasi di Provinsi <?= $provinsi['provinsi'] ?> sebagai berikut:</h5>
-
         <table>
             <thead>
                 <tr>

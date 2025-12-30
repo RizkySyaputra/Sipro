@@ -164,4 +164,36 @@ class DaftarProgTahunanModel extends Model
         $result = $builder->get()->getRow();
         return $result ? $result->total : 0;
     }
+    public function countKawasanByProvinsi($provinsi, $id_pn)
+    {
+        $builder = $this->builder('view_prog_tahunan');
+
+        $builder->select('COUNT(DISTINCT kawasan_panjang) AS total')
+            ->where('id_pn', $id_pn)
+            ->where('kawasan_panjang IS NOT NULL', null, false);
+
+        $result = $builder->get()->getRow();
+
+        return $result ? (int) $result->total : 0;
+    }
+    public function getRekapKegiatanAnggaranByProvinsiUnor($id_pn, $id_unor)
+    {
+        $builder = $this->builder('view_prog_tahunan');
+
+        $builder->select('
+            provinsi,
+            unor,
+            COUNT(DISTINCT id_prog_tahunan) AS jumlah_kegiatan,
+            SUM(anggaran) AS total_anggaran
+        ')
+            ->where('id_pn', $id_pn)
+            ->where('id_unor', $id_unor)
+            ->groupBy('provinsi, unor')
+            ->orderBy('provinsi')
+            ->orderBy('unor');
+
+        $result = $builder->get()->getResult();
+
+        return $result ?? [];
+    }
 }

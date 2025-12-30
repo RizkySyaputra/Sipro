@@ -3,63 +3,49 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Berita Acara Kesepakatan Rakorbangwil</title>
-
+    <title>Berita Acara Rakorbangwil 2025</title>
     <style>
-        body {
-            font-family: "Times New Roman", serif;
-            font-size: 11px;
-            margin: 30px;
-            line-height: 1.4;
-        }
-
-        h2,
-        h3 {
-            text-align: center;
-            font-weight: bold;
-            margin: 0;
-            text-transform: uppercase;
-        }
-
-        h2 {
-            font-size: 16px;
-        }
-
-        h3 {
-            font-size: 13px;
-            margin-top: 6px;
-        }
-
-        h4 {
-            font-size: 12px;
-            margin-top: 20px;
-            margin-bottom: 6px;
-            font-weight: bold;
-        }
-
-        p {
+        p,
+        li {
             text-align: justify;
-            margin: 6px 0;
+            text-justify: inter-word;
         }
 
         ol {
-            margin-left: 18px;
+            margin-left: 20px;
+        }
+
+        ol li {
+            margin-bottom: 6px;
+        }
+
+        body {
+            font-family: "Times New Roman", serif;
+            font-size: 12px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-right {
+            text-align: right;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 8px;
+            margin-top: 10px;
         }
 
-        table th,
-        table td {
+        th,
+        td {
             border: 1px solid #000;
-            padding: 5px;
-            vertical-align: top;
+            padding: 4px;
+            vertical-align: middle;
         }
 
-        table th {
+        th {
             text-align: center;
             font-weight: bold;
         }
@@ -68,8 +54,9 @@
             border: none;
         }
 
-        .center {
-            text-align: center;
+        .section-title {
+            margin-top: 20px;
+            font-weight: bold;
         }
 
         .page-break {
@@ -80,27 +67,21 @@
 
 <body>
 
-    <!-- ===================================================== -->
-    <!-- HALAMAN 1 : JUDUL & PENDAHULUAN -->
-    <!-- ===================================================== -->
-
-    <h2>
-        BERITA ACARA KESEPAKATAN<br>
+    <h3 class="text-center">BERITA ACARA KESEPAKATAN</h3>
+    <h4 class="text-center">
         RAPAT KOORDINASI KETERPADUAN PENGEMBANGAN INFRASTRUKTUR WILAYAH<br>
         (RAKORBANGWIL) TAHUN 2025
-    </h2>
+    </h4>
 
-    <h3>
-        Pemrograman Infrastruktur Pekerjaan Umum<br>
-        Tahun Anggaran 2027
-    </h3>
-
-    <br>
+    <p class="text-center">
+        Pemrograman Infrastruktur Pekerjaan Umum Tahun Anggaran 2027
+    </p>
 
     <p>
-        Pada tanggal <b>11–17 Desember 2025</b>, telah dilaksanakan Pembahasan
-        Keterpaduan Program Infrastruktur Pekerjaan Umum TA 2027 berdasarkan
-        Prioritas Nasional RPJMN 2025–2029 dalam Forum Desk Rakorbangwil Tahun 2025,
+        Pada tanggal <strong>11–17 Desember 2025</strong>, telah dilaksanakan Pembahasan
+        Keterpaduan Program Infrastruktur Pekerjaan Umum Tahun Anggaran 2027 berdasarkan
+        Prioritas Nasional RPJMN Tahun 2025–2029 dalam Forum Desk Rapat Koordinasi
+        Keterpaduan Pengembangan Infrastruktur Wilayah (Rakorbangwil) Tahun 2025,
         dengan rincian sebagai berikut:
     </p>
 
@@ -108,132 +89,631 @@
         <li>
             Desk Rakorbangwil Tahun 2025 dihadiri oleh perwakilan dari:
             <ol type="a">
-                <li>38 Bappeda/Bapelitbangda/Bapperinda Provinsi;</li>
                 <li>
-                    17 Kementerian/Lembaga, antara lain Kementerian Koordinator Bidang
-                    Infrastruktur dan Pembangunan Kewilayahan, Kementerian PPN/Bappenas,
-                    Kementerian PU, dan kementerian/lembaga terkait lainnya;
+                    38 Bappeda/Bapelitbangda/Bapperinda Provinsi;
                 </li>
                 <li>
-                    Unit Organisasi di lingkungan Kementerian PU:
-                    Direktorat Jenderal Sumber Daya Air, Direktorat Jenderal Bina Marga,
-                    Direktorat Jenderal Cipta Karya, Direktorat Jenderal Prasarana Strategis,
-                    Sekretariat Jenderal, dan Badan Pengembangan Infrastruktur Wilayah.
+                    17 Kementerian/Lembaga, yaitu:
+                    Kementerian Koordinator Bidang Infrastruktur dan Pembangunan Kewilayahan,
+                    Kementerian Perencanaan Pembangunan Nasional/Badan Perencanaan Pembangunan Nasional,
+                    Kementerian Agraria dan Tata Ruang/Badan Pertanahan Nasional,
+                    Kementerian Pertanian,
+                    Kementerian Perindustrian,
+                    Kementerian Perumahan dan Kawasan Permukiman,
+                    Kementerian Perhubungan,
+                    Kementerian Kelautan dan Perikanan,
+                    Kementerian Lingkungan Hidup/Badan Pengendalian Lingkungan Hidup,
+                    Kementerian Kehutanan,
+                    Kementerian Pariwisata,
+                    Kementerian Desa dan Pembangunan Daerah Tertinggal,
+                    Kementerian Sosial,
+                    Kementerian Agama,
+                    Kementerian Perdagangan,
+                    Badan Nasional Pengelola Perbatasan, dan
+                    Badan Nasional Penanggulangan Bencana;
+                </li>
+                <li>
+                    Unit Organisasi di lingkungan Kementerian Pekerjaan Umum, meliputi:
+                    Direktorat Jenderal Sumber Daya Air,
+                    Direktorat Jenderal Bina Marga,
+                    Direktorat Jenderal Cipta Karya,
+                    Direktorat Jenderal Prasarana Strategis,
+                    Direktorat Jenderal Pembiayaan Infrastruktur,
+                    Sekretariat Jenderal, dan
+                    Badan Pengembangan Infrastruktur Wilayah.
                 </li>
             </ol>
         </li>
+
         <li>
-            Dalam Desk Rakorbangwil Tahun 2025 dibahas dan disepakati indikasi
-            kawasan/lokus prioritas beserta kebutuhan program/kegiatan infrastruktur
-            PU yang akan dilaksanakan pada TA 2027.
+            Dalam Desk Rakorbangwil Tahun 2025 dibahas dan disepakati indikasi kawasan prioritas
+            beserta kebutuhan program/kegiatan yang memerlukan dukungan Kementerian Pekerjaan Umum,
+            serta integrasinya dengan rencana program/kegiatan dari Kementerian/Lembaga lain dan
+            pemerintah daerah pada Tahun Anggaran 2027. Hasil Rakorbangwil Tahun 2025 tersebut
+            akan menjadi bahan masukan bagi forum perencanaan dan pemrograman lainnya, dengan
+            menyesuaikan Peraturan Presiden tentang Rencana Pembangunan Jangka Menengah Nasional
+            (RPJMN) Tahun 2025–2029 dan Rancangan Rencana Kerja Pemerintah (RKP) Tahun 2027.
+        </li>
+
+        <li>
+            Berita Acara Kesepakatan Rakorbangwil Tahun 2025 masing-masing provinsi
+            dapat diakses melalui tautan sebagaimana tercantum dalam sistem.
         </li>
     </ol>
 
-    <div class="page-break"></div>
 
-    <!-- ===================================================== -->
-    <!-- A. KAWASAN / LOKUS PRIORITAS -->
-    <!-- ===================================================== -->
-
-    <h4>
-        A. Kawasan/Lokus Prioritas yang Akan Didukung Infrastruktur PU TA 2027<br>
-        Provinsi <?= esc($provinsi['provinsi']) ?>
-    </h4>
+    <p class="section-title">
+        A. Rekapitulasi Kawasan/Lokus Prioritas yang akan Didukung Infrastruktur PU TA 2027
+    </p>
 
     <table>
         <thead>
             <tr>
-                <th width="5%">No</th>
-                <th width="55%">Kawasan/Lokus Prioritas</th>
-                <th width="40%">Prioritas Nasional</th>
+                <th rowspan="2">No</th>
+                <th rowspan="2">Provinsi</th>
+                <th>Prioritas Nasional 2</th>
+                <th>Prioritas Nasional 3</th>
+                <th>Prioritas Nasional 4</th>
+                <th>Prioritas Nasional 5</th>
+                <th>Prioritas Nasional 6</th>
+                <th>Prioritas Nasional 8</th>
+            </tr>
+            <tr>
+                <th>Kawasan/Lokus Prioritas</th>
+                <th>Kawasan/Lokus Prioritas</th>
+                <th>Kawasan/Lokus Prioritas</th>
+                <th>Kawasan/Lokus Prioritas</th>
+                <th>Kawasan/Lokus Prioritas</th>
+                <th>Kawasan/Lokus Prioritas</th>
             </tr>
         </thead>
         <tbody>
-            <?php if (!empty($kawasan)): $no = 1;
-                foreach ($kawasan as $k): ?>
-                    <tr>
-                        <td class="center"><?= $no++ ?></td>
-                        <td><?= esc($k->nama_kawasan_rpjmn) ?></td>
-                        <td><?= esc($k->tematik ?? '-') ?></td>
-                    </tr>
-                <?php endforeach;
-            else: ?>
-                <tr>
-                    <td colspan="3" class="center">Tidak Ada Data</td>
-                </tr>
-            <?php endif; ?>
+            <tr>
+                <td class="text-center">1</td>
+                <td>Aceh</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="text-center">2</td>
+                <td>Sumatera Utara</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2"><strong>Jumlah</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="section-title">
+        B. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
+        Mendukung Prioritas Nasional 2
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">No</th>
+                <th rowspan="2">Provinsi</th>
+                <th colspan="2">Ditjen SDA</th>
+                <th colspan="2">Ditjen Bina Marga</th>
+                <th colspan="2">Ditjen Cipta Karya</th>
+                <th colspan="2">Ditjen Prasarana Strategis</th>
+                <th colspan="2">Total</th>
+            </tr>
+            <tr>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">1</td>
+                <td>Aceh</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2"><strong>Jumlah</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="section-title">
+        C. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
+        Mendukung Prioritas Nasional 3
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">No</th>
+                <th rowspan="2">Provinsi</th>
+                <th colspan="2">Ditjen SDA</th>
+                <th colspan="2">Ditjen Bina Marga</th>
+                <th colspan="2">Ditjen Cipta Karya</th>
+                <th colspan="2">Ditjen Prasarana Strategis</th>
+                <th colspan="2">Total</th>
+            </tr>
+            <tr>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">1</td>
+                <td>Aceh</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2"><strong>Jumlah</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="section-title">
+        D. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
+        Mendukung Prioritas Nasional 4
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">No</th>
+                <th rowspan="2">Provinsi</th>
+                <th colspan="2">Ditjen SDA</th>
+                <th colspan="2">Ditjen Bina Marga</th>
+                <th colspan="2">Ditjen Cipta Karya</th>
+                <th colspan="2">Ditjen Prasarana Strategis</th>
+                <th colspan="2">Total</th>
+            </tr>
+            <tr>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">1</td>
+                <td>Aceh</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2"><strong>Jumlah</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="section-title">
+        E. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
+        Mendukung Prioritas Nasional 5
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">No</th>
+                <th rowspan="2">Provinsi</th>
+                <th colspan="2">Ditjen SDA</th>
+                <th colspan="2">Ditjen Bina Marga</th>
+                <th colspan="2">Ditjen Cipta Karya</th>
+                <th colspan="2">Ditjen Prasarana Strategis</th>
+                <th colspan="2">Total</th>
+            </tr>
+            <tr>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">1</td>
+                <td>Aceh</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2"><strong>Jumlah</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
         </tbody>
     </table>
 
-    <div class="page-break"></div>
-
-    <!-- ===================================================== -->
-    <!-- B – G : REKAP PROGRAM PER PRIORITAS NASIONAL -->
-    <!-- ===================================================== -->
-
-    <?php
-    $sections = [
-        'B' => 'Prioritas Nasional 2',
-        'C' => 'Prioritas Nasional 3',
-        'D' => 'Prioritas Nasional 4',
-        'E' => 'Prioritas Nasional 5',
-        'F' => 'Prioritas Nasional 6',
-        'G' => 'Prioritas Nasional 8',
-    ];
-    ?>
-
-    <?php foreach ($sections as $kode => $judul): ?>
-        <h4><?= $kode ?>. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br><?= $judul ?></h4>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Provinsi</th>
-                    <th>Ditjen SDA</th>
-                    <th>Ditjen BM</th>
-                    <th>Ditjen CK</th>
-                    <th>Ditjen PS</th>
-                    <th>Total Kegiatan</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="center">1</td>
-                    <td><?= esc($provinsi['provinsi']) ?></td>
-                    <td class="center">-</td>
-                    <td class="center">-</td>
-                    <td class="center">-</td>
-                    <td class="center">-</td>
-                    <td class="center">-</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="page-break"></div>
-    <?php endforeach; ?>
-
-    <!-- ===================================================== -->
-    <!-- HALAMAN TANDA TANGAN -->
-    <!-- ===================================================== -->
-
-    <p class="center">
-        Jakarta, Desember 2025<br>
-        <b>Kementerian Pekerjaan Umum</b>
+    <p class="section-title">
+        F. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
+        Mendukung Prioritas Nasional 6
     </p>
 
-    <br><br>
-
-    <table class="no-border">
-        <?php foreach ($pejabat_bak as $p): ?>
+    <table>
+        <thead>
             <tr>
-                <td class="center" style="padding-top:25px;">
-                    <b><?= esc($p->nama_pejabat) ?></b><br>
-                    <?= esc($p->jabatan) ?>
-                </td>
+                <th rowspan="2">No</th>
+                <th rowspan="2">Provinsi</th>
+                <th colspan="2">Ditjen SDA</th>
+                <th colspan="2">Ditjen Bina Marga</th>
+                <th colspan="2">Ditjen Cipta Karya</th>
+                <th colspan="2">Ditjen Prasarana Strategis</th>
+                <th colspan="2">Total</th>
             </tr>
-        <?php endforeach; ?>
+            <tr>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">1</td>
+                <td>Aceh</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2"><strong>Jumlah</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
     </table>
+    <p class="section-title">
+        G. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
+        Mendukung Prioritas Nasional 8
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">No</th>
+                <th rowspan="2">Provinsi</th>
+                <th colspan="2">Ditjen SDA</th>
+                <th colspan="2">Ditjen Bina Marga</th>
+                <th colspan="2">Ditjen Cipta Karya</th>
+                <th colspan="2">Ditjen Prasarana Strategis</th>
+                <th colspan="2">Total</th>
+            </tr>
+            <tr>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center">1</td>
+                <td>Aceh</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2"><strong>Jumlah</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="section-title">
+        H. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
+        Direktorat Jenderal Sumber Daya Air Kementerian PU
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>PN</th>
+                <th>Provinsi</th>
+                <th>Program/Kegiatan</th>
+                <th>Kawasan Prioritas</th>
+                <th>Volume</th>
+                <th>Indikasi Anggaran<br>(Rp. Ribu)</th>
+                <th>Kesepakatan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center">1</td>
+                <td align="center">2</td>
+                <td>Aceh</td>
+                <td></td>
+                <td></td>
+                <td align="center"></td>
+                <td align="right"></td>
+                <td>Diakomodasi</td>
+            </tr>
+            <tr>
+                <td colspan="6"><strong>Jumlah</strong></td>
+                <td align="right"></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="section-title">
+        I. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
+        Direktorat Jenderal Bina Marga Kementerian PU
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>PN</th>
+                <th>Provinsi</th>
+                <th>Program/Kegiatan</th>
+                <th>Kawasan Prioritas</th>
+                <th>Volume</th>
+                <th>Indikasi Anggaran<br>(Rp. Ribu)</th>
+                <th>Kesepakatan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center">1</td>
+                <td align="center">2</td>
+                <td>Aceh</td>
+                <td></td>
+                <td></td>
+                <td align="center"></td>
+                <td align="right"></td>
+                <td>Diakomodasi</td>
+            </tr>
+            <tr>
+                <td colspan="6"><strong>Jumlah</strong></td>
+                <td align="right"></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="section-title">
+        J. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
+        Direktorat Jenderal Cipta Karya Kementerian PU
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>PN</th>
+                <th>Provinsi</th>
+                <th>Program/Kegiatan</th>
+                <th>Kawasan Prioritas</th>
+                <th>Volume</th>
+                <th>Indikasi Anggaran<br>(Rp. Ribu)</th>
+                <th>Kesepakatan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center">1</td>
+                <td align="center">2</td>
+                <td>Aceh</td>
+                <td></td>
+                <td></td>
+                <td align="center"></td>
+                <td align="right"></td>
+                <td>Diakomodasi</td>
+            </tr>
+            <tr>
+                <td colspan="6"><strong>Jumlah</strong></td>
+                <td align="right"></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="section-title">
+        K. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
+        Direktorat Jenderal Prasarana Strategis Kementerian PU
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>PN</th>
+                <th>Provinsi</th>
+                <th>Program/Kegiatan</th>
+                <th>Kawasan Prioritas</th>
+                <th>Volume</th>
+                <th>Indikasi Anggaran<br>(Rp. Ribu)</th>
+                <th>Kesepakatan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center">1</td>
+                <td align="center">2</td>
+                <td>Aceh</td>
+                <td></td>
+                <td></td>
+                <td align="center"></td>
+                <td align="right"></td>
+                <td>Diakomodasi</td>
+            </tr>
+            <tr>
+                <td colspan="6"><strong>Jumlah</strong></td>
+                <td align="right"></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br><br>
+    <!-- <table class="no-border">
+        <tr>
+            <td width="50%">
+                <strong>Kementerian Pekerjaan Umum</strong><br><br><br><br>
+                <u>Wida Nurfaida, S.T., M.T.</u><br>
+                Sekretaris Jenderal
+            </td>
+            <td width="50%">
+                <br><br><br><br>
+                <u>Ir. Bob Arthur Lombogia, M.Si.</u><br>
+                Kepala Badan Pengembangan Infrastruktur Wilayah
+            </td>
+        </tr>
+    </table> -->
 
 </body>
 

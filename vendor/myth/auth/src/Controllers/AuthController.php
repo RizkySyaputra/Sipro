@@ -185,7 +185,7 @@ class AuthController extends Controller
             'email'    => 'required|valid_email|is_unique[users.email]',
             'user'     => 'required|min_length[3]|max_length[50]',
             'id_role'  => 'required|integer',
-
+            'id_unor' => 'permit_empty|integer',
             // untuk role 6 (single)
             'id_provinsi' => 'permit_empty|integer',
 
