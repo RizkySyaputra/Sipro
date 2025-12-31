@@ -1555,88 +1555,35 @@ class Rakorbangwil extends BaseController
     public function create_bak_unor()
     {
 
-        // dd($this->daftarProgTahunanModel->getRekapKegiatanAnggaranByProvinsiUnor(2, 4));
-        // die;
-        // ===============================
-        // 1. PARAMETER DASAR
-        // ===============================
-        // $id_pn = $this->request->getPost('pn_id') ?? 'x';
-        // if ($id_pn == '0') {
-        //     $id_pn = 'x';
-        // }
-
-        // $provinsi_id = user()->id_provinsi
-        //     ?? $this->request->getPost('provinsi_id');
+        $A = $this->daftarProgTahunanModel->getRekapKawasanPnPerProvinsi();
+        $B = $this->daftarProgTahunanModel->getRekapKegiatanAnggaranPerProvinsi(2);
+        $C = $this->daftarProgTahunanModel->getRekapKegiatanAnggaranPerProvinsi(3);
+        $D = $this->daftarProgTahunanModel->getRekapKegiatanAnggaranPerProvinsi(4);
+        $E = $this->daftarProgTahunanModel->getRekapKegiatanAnggaranPerProvinsi(5);
+        $F = $this->daftarProgTahunanModel->getRekapKegiatanAnggaranPerProvinsi(6);
+        $G = $this->daftarProgTahunanModel->getRekapKegiatanAnggaranPerProvinsi(8);
+        $H = $this->daftarProgTahunanModel->getListKegiatanPerUnor(6);
+        $I = $this->daftarProgTahunanModel->getListKegiatanPerUnor(4);
+        $J = $this->daftarProgTahunanModel->getListKegiatanPerUnor(5);
+        $K = $this->daftarProgTahunanModel->getListKegiatanPerUnor(8);
 
         $tanggal = $this->request->getPost('tanggal');
-        // $tahun   = session('tahun_pelaksana');
-
-        // // ===============================
-        // // 2. MASTER DATA
-        // // ===============================
-        // $provinsi = $this->provinsiModel->find($provinsi_id);
-        // $pn       = $this->pnModel->find($id_pn);
-
-        // // ===============================
-        // // 3. PEJABAT PENANDATANGAN
-        // // ===============================
-        // $pejabat_bak = $this->pejabatBakModel
-        //     ->select('m_ttd_ba_rakorbangwil.*,
-        //           pejabat.nama_pejabat,
-        //           pejabat.jabatan,
-        //           pejabat.instansi,
-        //           pejabat.tanda_tangan')
-        //     ->join('m_pejabat pejabat', 'pejabat.id_pejabat = m_ttd_ba_rakorbangwil.id_pejabat')
-        //     ->where('m_ttd_ba_rakorbangwil.id_provinsi', $provinsi_id)
-        //     ->where('m_ttd_ba_rakorbangwil.id_pn', $id_pn)
-        //     ->where('m_ttd_ba_rakorbangwil.thn_pelaksanaan', $tahun)
-        //     ->orderBy('m_ttd_ba_rakorbangwil.prioritas', 'ASC')
-        //     ->findAll();
-
-        // // ===============================
-        // // 4. A. KAWASAN / LOKUS PRIORITAS
-        // // ===============================
-        // $kawasan = $this->praRakorModel
-        //     ->getKawasanList($provinsi_id, null, $id_pn);
-
-        // // ===============================
-        // // 5. B–G. REKAP PROGRAM PER PN
-        // // ===============================
-        // $rekapPN = [
-        //     2 => $this->daftarProgTahunanModel->getRekapPerPN($provinsi_id, 2),
-        //     3 => $this->daftarProgTahunanModel->getRekapPerPN($provinsi_id, 3),
-        //     4 => $this->daftarProgTahunanModel->getRekapPerPN($provinsi_id, 4),
-        //     5 => $this->daftarProgTahunanModel->getRekapPerPN($provinsi_id, 5),
-        //     6 => $this->daftarProgTahunanModel->getRekapPerPN($provinsi_id, 6),
-        //     8 => $this->daftarProgTahunanModel->getRekapPerPN($provinsi_id, 8),
-        // ];
-
-        // /**
-        //  * getRekapPerPN() → hasil ideal:
-        //  * [
-        //  *   'sda' => ['kegiatan'=>10, 'anggaran'=>100000],
-        //  *   'bm'  => ['kegiatan'=>5,  'anggaran'=>50000],
-        //  *   'ck'  => ['kegiatan'=>7,  'anggaran'=>70000],
-        //  *   'ps'  => ['kegiatan'=>3,  'anggaran'=>30000],
-        //  * ]
-        //  */
-
-        // // ===============================
-        // // 6. H–K. PROGRAM PER DITJEN
-        // // ===============================
-        // $programDitjen = [
-        //     'sda' => $this->daftarProgTahunanModel->getProgramPerDitjen($provinsi_id, 'SDA'),
-        //     'bm'  => $this->daftarProgTahunanModel->getProgramPerDitjen($provinsi_id, 'BM'),
-        //     'ck'  => $this->daftarProgTahunanModel->getProgramPerDitjen($provinsi_id, 'CK'),
-        //     'ps'  => $this->daftarProgTahunanModel->getProgramPerDitjen($provinsi_id, 'PS'),
-        // ];
 
         // ===============================
         // 7. RENDER HTML (VIEW FINAL PDF)
         // ===============================
         $html = view('pages/rakorbangwil/berita_acara_unor_pdf', [
-            // 'provinsi'       => $provinsi,
-            // 'pn'             => $pn,
+            'A' => $A,
+            'B' => $B,
+            'C' => $C,
+            'D' => $D,
+            'E' => $E,
+            'F' => $F,
+            'G' => $G,
+            'H' => $H,
+            'I' => $I,
+            'J' => $J,
+            'K' => $K,
             'tanggal_bak'    => $tanggal,
             // 'kawasan'        => $kawasan,
             // 'rekapPN'        => $rekapPN,

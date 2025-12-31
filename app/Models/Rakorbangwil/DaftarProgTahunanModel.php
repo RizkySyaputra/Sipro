@@ -164,36 +164,83 @@ class DaftarProgTahunanModel extends Model
         $result = $builder->get()->getRow();
         return $result ? $result->total : 0;
     }
-    public function countKawasanByProvinsi($provinsi, $id_pn)
+    public function getRekapKawasanPnPerProvinsi()
     {
-        $builder = $this->builder('view_prog_tahunan');
+        $db = \Config\Database::connect();
 
-        $builder->select('COUNT(DISTINCT kawasan_panjang) AS total')
-            ->where('id_pn', $id_pn)
-            ->where('kawasan_panjang IS NOT NULL', null, false);
+        $sql = "
+       SELECT e.provinsi,
+COUNT(DISTINCT(IF(d.id_pn='2',c.kode_kawasan,NULL))) pn2_kawasan,
+COUNT(DISTINCT(IF(d.id_pn='3',c.kode_kawasan,NULL))) pn3_kawasan,
+COUNT(DISTINCT(IF(d.id_pn='4',c.kode_kawasan,NULL))) pn4_kawasan,
+COUNT(DISTINCT(IF(d.id_pn='5',c.kode_kawasan,NULL))) pn5_kawasan,
+COUNT(DISTINCT(IF(d.id_pn='6',c.kode_kawasan,NULL))) pn6_kawasan,
+COUNT(DISTINCT(IF(d.id_pn='8',c.kode_kawasan,NULL))) pn8_kawasan,
+COUNT(DISTINCT(c.kode_kawasan)) kawasan
+FROM prog_tahunan a LEFT JOIN prog_tahunan_kwsn b ON a.id_prog_tahunan=b.id_prog_tahunan
+LEFT JOIN m_kawasan c ON b.id_kawasan=c.kode_kawasan
+LEFT JOIN m_sk_ro d ON a.id_ro=d.id_ro
+LEFT JOIN m_provinsi e ON a.id_provinsi=e.id
+WHERE a.thn_pelaksanaan='2027' AND d.id_pn IN ('2','3','4','5','6','8') AND a.desk_rakorbangwil='1'
+GROUP BY a.id_provinsi
+ORDER BY a.id_provinsi
+    ";
 
-        $result = $builder->get()->getRow();
-
-        return $result ? (int) $result->total : 0;
+        return $db->query($sql)->getResult();
     }
-    public function getRekapKegiatanAnggaranByProvinsiUnor($id_pn, $id_unor)
+
+    public function getRekapKegiatanAnggaranPerProvinsi($id_pn)
     {
-        $builder = $this->builder('view_prog_tahunan');
+        $db = \Config\Database::connect();
 
-        $builder->select('
-            provinsi,
-            unor,
-            COUNT(DISTINCT id_prog_tahunan) AS jumlah_kegiatan,
-            SUM(anggaran) AS total_anggaran
-        ')
-            ->where('id_pn', $id_pn)
-            ->where('id_unor', $id_unor)
-            ->groupBy('provinsi, unor')
-            ->orderBy('provinsi')
-            ->orderBy('unor');
+        $sql = "
+        SELECT a.provinsi,
+            COUNT(IF(a.id_unor='6',a.pekerjaan,NULL)) AS sda_pekerjaan,
+            SUM(IF(a.id_unor='6',a.anggaran,NULL)) AS sda_anggaran,
+            COUNT(IF(a.id_unor='4',a.pekerjaan,NULL)) AS bm_pekerjaan,
+            SUM(IF(a.id_unor='4',a.anggaran,NULL)) AS bm_anggaran,
+            COUNT(IF(a.id_unor='5',a.pekerjaan,NULL)) AS ck_pekerjaan,
+            SUM(IF(a.id_unor='5',a.anggaran,NULL)) AS ck_anggaran,
+            COUNT(IF(a.id_unor='8',a.pekerjaan,NULL)) AS ps_pekerjaan,
+            SUM(IF(a.id_unor='8',a.anggaran,NULL)) AS ps_anggaran,
+            COUNT(*) AS pekerjaan,
+            SUM(a.anggaran) AS anggaran
+        FROM view_prog_tahunan a
+        WHERE a.thn_pelaksanaan = '2027'
+          AND a.desk_rakorbangwil = '1'
+          AND a.id_pn = ?
+        GROUP BY a.provinsi
+        ORDER BY a.id_provinsi
+    ";
 
-        $result = $builder->get()->getResult();
+        return $db->query($sql, [$id_pn])->getResult();
+    }
+    public function getListKegiatanPerUnor($id_unor)
+    {
+        $db = \Config\Database::connect();
 
-        return $result ?? [];
+        $sql = "
+        SELECT 
+            a.id_pn,
+            a.provinsi,
+            a.pekerjaan,
+            a.kawasan_panjang,
+            a.volume,
+            a.nama_satuan,
+            a.anggaran,
+            a.kesepakatan
+        FROM view_prog_tahunan a
+        WHERE a.thn_pelaksanaan = '2027'
+          AND a.id_pn IN ('2','3','4','5','6','8')
+          AND a.desk_rakorbangwil = '1'
+          AND a.id_unor = ?
+        ORDER BY 
+            a.id_provinsi,
+            a.id_pn,
+            a.kawasan_panjang,
+            a.pekerjaan
+    ";
+
+        return $db->query($sql, [$id_unor])->getResult();
     }
 }
