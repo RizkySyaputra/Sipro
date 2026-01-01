@@ -1450,7 +1450,7 @@ class Rakorbangwil extends BaseController
             ->orderBy('prioritas', 'DESC')
             ->first();
 
-        $prioritas = $last ? $last['prioritas'] + 1 : 1;
+        $prioritas = $last ? $last->prioritas + 1 : 1;
 
         $this->bakUnorPejabatModel->insert([
             'thn_pelaksanaan' => session('tahun_pelaksana'),
@@ -1726,7 +1726,6 @@ class Rakorbangwil extends BaseController
     }
     public function create_bak_unor()
     {
-
         $A = $this->daftarProgTahunanModel->getRekapKawasanPnPerProvinsi();
         $B = $this->daftarProgTahunanModel->getRekapKegiatanAnggaranPerProvinsi(2);
         $C = $this->daftarProgTahunanModel->getRekapKegiatanAnggaranPerProvinsi(3);
