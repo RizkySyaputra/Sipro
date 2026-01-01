@@ -10,10 +10,12 @@
             border-collapse: collapse;
             margin-top: 30px;
             font-size: 12px;
+            border: 1px dotted #000;
         }
 
         .ttd-table td {
             height: 90px;
+            border: 1px dotted #000;
         }
 
         .ttd-table td {
@@ -28,6 +30,7 @@
 
         .ttd-center {
             text-align: center;
+            width: 60%;
         }
 
         .ttd-name {
@@ -38,19 +41,28 @@
             margin-top: 4px;
         }
 
-        p,
-        li {
+        p {
+            margin-left: 0;
             text-align: justify;
-            text-justify: inter-word;
         }
 
         ol {
-            margin-left: 20px;
+            margin-left: 0;
+            padding-left: 22px;
+            /* indent kecil, sejajar paragraf */
         }
 
-        ol li {
-            margin-bottom: 6px;
+        ol ol {
+            padding-left: 18px;
+            /* sub-list (a, b, c) lebih kecil */
         }
+
+        li {
+            padding-left: 4px;
+            /* jarak angka ke teks */
+            text-align: justify;
+        }
+
 
         body {
             font-family: "Times New Roman", serif;
@@ -170,12 +182,12 @@
 
         <li>
             Berita Acara Kesepakatan Rakorbangwil Tahun 2025 masing-masing provinsi
-            dapat diakses melalui tautan sebagaimana tercantum dalam sistem.
+            dapat diakses melalui tautan <a href="https://s.pu.go.id/MTcyOQ/BAKRakorbangwil2025">https://s.pu.go.id/MTcyOQ/BAKRakorbangwil2025.</a>
         </li>
     </ol>
 
 
-    <p class="section-title">
+    <p class="section-title text-center">
         A. Rekapitulasi Kawasan/Lokus Prioritas yang akan Didukung Infrastruktur PU TA 2027
     </p>
 
@@ -246,9 +258,9 @@
         </tfoot>
 
     </table>
-    <p class="section-title">
+    <p class="section-title text-center">
         B. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
-        Mendukung Prioritas Nasional 2
+        Mendukung Prioritas Nasional 2 <?= $PN[0]['nama_pn'] ?>
     </p>
 
     <table>
@@ -351,9 +363,9 @@
         </tfoot>
 
     </table>
-    <p class="section-title">
+    <p class="section-title text-center">
         C. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
-        Mendukung Prioritas Nasional 3
+        Mendukung Prioritas Nasional 3 <?= $PN[1]['nama_pn'] ?>
     </p>
 
     <table>
@@ -456,9 +468,9 @@
         </tfoot>
 
     </table>
-    <p class="section-title">
+    <p class="section-title text-center">
         D. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
-        Mendukung Prioritas Nasional 4
+        Mendukung Prioritas Nasional 4 <?= $PN[2]['nama_pn'] ?>
     </p>
 
     <table>
@@ -561,9 +573,9 @@
         </tfoot>
 
     </table>
-    <p class="section-title">
+    <p class="section-title text-center">
         E. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
-        Mendukung Prioritas Nasional 5
+        Mendukung Prioritas Nasional 5 <?= $PN[3]['nama_pn'] ?>
     </p>
 
     <table>
@@ -667,9 +679,9 @@
 
     </table>
 
-    <p class="section-title">
+    <p class="section-title text-center">
         F. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
-        Mendukung Prioritas Nasional 6
+        Mendukung Prioritas Nasional 6 <?= $PN[4]['nama_pn'] ?>
     </p>
 
     <table>
@@ -772,9 +784,9 @@
         </tfoot>
 
     </table>
-    <p class="section-title">
+    <p class="section-title text-center">
         G. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
-        Mendukung Prioritas Nasional 8
+        Mendukung Prioritas Nasional 8 <?= $PN[5]['nama_pn'] ?>
     </p>
 
     <table>
@@ -877,7 +889,7 @@
         </tfoot>
 
     </table>
-    <p class="section-title">
+    <p class="section-title text-center">
         H. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Direktorat Jenderal Sumber Daya Air Kementerian PU
     </p>
@@ -923,7 +935,7 @@
         </tbody>
 
     </table>
-    <p class="section-title">
+    <p class="section-title text-center">
         I. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Direktorat Jenderal Bina Marga Kementerian PU
     </p>
@@ -968,7 +980,7 @@
             </tr>
         </tbody>
     </table>
-    <p class="section-title">
+    <p class="section-title text-center">
         J. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Direktorat Jenderal Cipta Karya Kementerian PU
     </p>
@@ -1013,7 +1025,7 @@
             </tr>
         </tbody>
     </table>
-    <p class="section-title">
+    <p class="section-title text-center">
         K. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Direktorat Jenderal Prasarana Strategis Kementerian PU
     </p>
@@ -1061,7 +1073,7 @@
 
     <br><br>
 
-    <table class="ttd-table">
+    <table style=" border: 1px dotted #000;" class="ttd-table">
         <tr>
             <td colspan="2" class="ttd-center">
                 <?php
@@ -1092,60 +1104,26 @@
                 ?>
             </td>
         </tr>
+        <?php $currentKL = null;
 
-        <tr>
-            <td colspan="2" class="ttd-title">
-                Kementerian Pekerjaan Umum
-            </td>
-        </tr>
+        foreach ($ttd as $row) {
 
-        <tr>
-            <td class="ttd-center">
-                <div class="ttd-name">Wida Nurfida, S.T., M.T.</div>
-                <div class="ttd-jabatan">Sekretaris Jenderal</div>
-            </td>
-            <td></td>
-        </tr>
+            if ($currentKL !== $row->nama_kl) {
+                echo '<tr><td align="center" colspan="2"><strong>'
+                    . $row->nama_kl .
+                    '</strong></td></tr>';
+                $currentKL = $row->nama_kl;
+            }
 
-        <tr>
-            <td class="ttd-center">
-                <div class="ttd-name">Ir. Bob Arthur Lombogia, M.Si.</div>
-                <div class="ttd-jabatan">Kepala Badan Pengembangan Infrastruktur Wilayah</div>
-            </td>
-            <td></td>
-        </tr>
-
-        <tr>
-            <td class="ttd-center">
-                <div class="ttd-name">Dr. Dwi Purwantoro, S.T., M.T.</div>
-                <div class="ttd-jabatan">Direktur Jenderal Sumber Daya Air</div>
-            </td>
-            <td></td>
-        </tr>
-
-        <tr>
-            <td class="ttd-center">
-                <div class="ttd-name">Dr. Ir. Roy Rizali Anwar, S.T., M.T.</div>
-                <div class="ttd-jabatan">Direktur Jenderal Bina Marga</div>
-            </td>
-            <td></td>
-        </tr>
-
-        <tr>
-            <td class="ttd-center">
-                <div class="ttd-name">Dewi Chomistriana, S.T., M.Sc.</div>
-                <div class="ttd-jabatan">Direktur Jenderal Cipta Karya</div>
-            </td>
-            <td></td>
-        </tr>
-
-        <tr>
-            <td class="ttd-center">
-                <div class="ttd-name">Bisma Santiarto, S.T., M.Sc.</div>
-                <div class="ttd-jabatan">Direktur Jenderal Prasarana Strategis</div>
-            </td>
-            <td></td>
-        </tr>
+            echo '<tr>
+        <td align="center" width="70%">
+            ' . $row->nama_pejabat . '<br>
+            <small>' . $row->jabatan . '</small>
+        </td>
+        <td width="30%" align="center">
+        </td>
+    </tr>';
+        } ?>
     </table>
 
 

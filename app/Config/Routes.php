@@ -301,6 +301,12 @@ $routes->post('/rakorbangwil/get_pejabat_bak_unor', 'Rakorbangwil::get_pejabat_b
 $routes->post('/rakorbangwil/addPejabatBAK_unor', 'Rakorbangwil::addPejabatBAK_unor');
 $routes->post('/rakorbangwil/delete_pejabat_bak_unor', 'Rakorbangwil::delete_pejabat_bak_unor');
 $routes->post('/rakorbangwil/update_prioritas_pejabat_unor', 'Rakorbangwil::updatePrioritasPejabat_unor');
+$routes->post('/rakorbangwil/update_prioritas_kl', 'Rakorbangwil::update_prioritas_kl');
+$routes->post('/rakorbangwil/get_pejabat_by_kl', 'Rakorbangwil::get_pejabat_by_kl');
+$routes->post('/rakorbangwil/add_pejabat_bak', 'Rakorbangwil::add_pejabat_bak_unor');
+$routes->post('/rakorbangwil/delete_pejabat_bak', 'Rakorbangwil::delete_pejabat_bak_unor');
+$routes->post('/rakorbangwil/update_prioritas_pejabat', 'Rakorbangwil::update_prioritas_pejabat');
+$routes->post('rakorbangwil/add_kl_bak', 'Rakorbangwil::add_kl_bak');
 
 //Program Konreg 2025
 $routes->get('/konreg/pra_konreg/rakorbangwil', 'KonregController::pra_rakorbangwil');

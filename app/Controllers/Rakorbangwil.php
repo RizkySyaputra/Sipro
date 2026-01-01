@@ -12,6 +12,8 @@ use App\Models\Rakorbangwil\KebutuhanKLModel;
 use App\Models\Rakorbangwil\ReportProgTahunanPerProvinsiModel;
 use App\Models\Rakorbangwil\ReportProgTahunanPerProvinsiPerPNModel;
 use App\Models\Rakorbangwil\ReportProgTahunanPerProvinsiPerUnorModel;
+use App\Models\Rakorbangwil\BakUnorModel;
+use App\Models\Rakorbangwil\BakUnorPejabatModel;
 use App\Models\Master\ProvinsiModel;
 use App\Models\Master\UnorModel;
 use App\Models\Master\PendanaanModel;
@@ -26,6 +28,7 @@ use App\Models\Master\KabkotProgTahunanModel;
 use App\Models\Master\KawasanModel;
 use App\Models\Master\ProgramModel;
 use App\Models\Master\KegiatanModel;
+use App\Models\Master\KLModel;
 use App\Models\Master\KroModel;
 use App\Models\Master\RoModel;
 use App\Models\Master\PnModel;
@@ -47,7 +50,11 @@ use function PHPUnit\Framework\returnCallback;
 
 class Rakorbangwil extends BaseController
 {
+
+    protected $bakUnorModel;
+    protected $bakUnorPejabatModel;
     protected $userProvinsiModel;
+    protected $klModel;
     protected $pejabatModel;
     protected $pejabatBakModel;
     protected $programRpiwModel;
@@ -88,6 +95,9 @@ class Rakorbangwil extends BaseController
     public function __construct()
 
     {
+        $this->bakUnorPejabatModel = new BakUnorPejabatModel();
+        $this->bakUnorModel = new BakUnorModel();
+        $this->klModel = new KLModel();
         $this->userProvinsiModel = new UserProvinsiModel();
         $this->pejabatModel = new PejabatModel();
         $this->pejabatBakModel = new PejabatBakModel();
@@ -1334,6 +1344,7 @@ class Rakorbangwil extends BaseController
     {
         $id_role = user()->id_role;
         $id_user = user()->id;
+        $pejabat = $this->pejabatModel->findAll();
         $userpuswil = $this->userProvinsiModel->where('id_user', $id_user)->find();
         if ($userpuswil != null) {
             $dataProvinsi = $this->userProvinsiModel->getProvinsi($id_user);
@@ -1348,18 +1359,179 @@ class Rakorbangwil extends BaseController
         }
 
         // $dataProvinsi = $this->provinsiModel->getProvinsi();
-        $dataPn = $this->pnModel->getAll();
-        $pejabat = $this->pejabatModel->findAll();
+        $dataKL = $this->bakUnorModel->getKl();
+        $KL = $this->klModel->findAll();
         $this->template->write('title', 'Berita Acara Kesepakatan');
         $this->template->load('/templates/main', '/pages/rakorbangwil/berita_acara_unor', [
             'provinsi' => $dataProvinsi,
-            'pn' => $dataPn,
+            'kl' => $dataKL,
             'pejabat' => $pejabat,
+            'KL' => $KL,
             'can_view' => has_permission_menu($id_role, '/rakorbangwil/berita_acara_unor', 'can_view'),
             'can_edit' => has_permission_menu($id_role, '/rakorbangwil/berita_acara_unor', 'can_edit'),
             'can_delete' => has_permission_menu($id_role, '/rakorbangwil/berita_acara_unor', 'can_delete')
         ]);
     }
+    public function add_kl_bak()
+    {
+        $id_kl = $this->request->getPost('id_kl');
+
+        if (!$id_kl) {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => 'K/L belum dipilih'
+            ]);
+        }
+
+        // Cegah duplikat K/L di BAK
+        $exists = $this->bakUnorModel
+            ->where('id_kl', $id_kl)
+            ->where('thn_pelaksanaan', session('tahun_pelaksana'))
+            ->where('kegiatan', 'Rakorbangwil')
+            ->first();
+
+        if ($exists) {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => 'K/L sudah ada di daftar'
+            ]);
+        }
+
+        // Cari prioritas terakhir
+        $last = $this->bakUnorModel
+            ->where('thn_pelaksanaan', session('tahun_pelaksana'))
+            ->where('kegiatan', 'Rakorbangwil')
+            ->orderBy('prioritas', 'DESC')
+            ->first();
+
+        $prioritas = $last ? $last->prioritas + 1 : 1;
+
+        $this->bakUnorModel->insert([
+            'thn_pelaksanaan' => session('tahun_pelaksana'),
+            'kegiatan'        => 'Rakorbangwil',
+            'id_kl'           => $id_kl,
+            'prioritas'       => $prioritas
+        ]);
+
+        return $this->response->setJSON([
+            'status' => 'success',
+            'message' => 'K/L berhasil ditambahkan'
+        ]);
+    }
+
+    public function get_pejabat_by_kl()
+    {
+        $id_kl = $this->request->getPost('id_kl');
+
+        $data = $this->bakUnorPejabatModel
+            ->select('
+                m_ttd_ba_unor_pejabat.id,
+                m_pejabat.nama_pejabat,
+                m_pejabat.jabatan
+            ')
+            ->join(
+                'm_pejabat',
+                'm_pejabat.id_pejabat = m_ttd_ba_unor_pejabat.id_pejabat'
+            )
+            ->where('m_ttd_ba_unor_pejabat.id_kl', $id_kl)
+            ->orderBy('m_ttd_ba_unor_pejabat.prioritas', 'ASC')
+            ->findAll();
+
+        return $this->response->setJSON($data);
+    }
+    public function add_pejabat_bak_unor()
+    {
+        $id_kl      = $this->request->getPost('id_kl');
+        $id_pejabat = $this->request->getPost('id_pejabat');
+
+        // Cari prioritas terakhir
+        $last = $this->bakUnorPejabatModel
+            ->where('id_kl', $id_kl)
+            ->orderBy('prioritas', 'DESC')
+            ->first();
+
+        $prioritas = $last ? $last['prioritas'] + 1 : 1;
+
+        $this->bakUnorPejabatModel->insert([
+            'thn_pelaksanaan' => session('tahun_pelaksana'),
+            'kegiatan'        => 'Rakorbangwil',
+            'id_kl'           => $id_kl,
+            'id_pejabat'      => $id_pejabat,
+            'prioritas'       => $prioritas
+        ]);
+
+        return $this->response->setJSON([
+            'status' => 'success',
+            'message' => 'Pejabat berhasil ditambahkan'
+        ]);
+    }
+
+    /* =====================================================
+     * HAPUS PEJABAT DARI BAK
+     * ===================================================== */
+    public function delete_pejabat_bak_unor()
+    {
+        $id = $this->request->getPost('id');
+
+        $this->bakUnorPejabatModel->delete($id);
+
+        return $this->response->setJSON([
+            'status' => 'success',
+            'message' => 'Pejabat berhasil dihapus'
+        ]);
+    }
+    public function update_prioritas_kl()
+    {
+        $order = $this->request->getPost('order');
+
+        if (!is_array($order)) {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => 'Invalid data'
+            ]);
+        }
+
+        foreach ($order as $row) {
+            $this->bakUnorModel->update(
+                $row['id'],
+                ['prioritas' => $row['prioritas']]
+            );
+        }
+
+        return $this->response->setJSON([
+            'status' => 'success'
+        ]);
+    }
+
+
+    /* =====================================================
+     * UPDATE PRIORITAS (DRAG & DROP)
+     * ===================================================== */
+    public function updatePrioritasPejabat_unor()
+    {
+        $order = $this->request->getPost('order');
+
+        if (!is_array($order)) {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => 'Invalid data'
+            ]);
+        }
+        foreach ($order as $row) {
+            $this->bakUnorPejabatModel->update(
+                (int) $row['id'],
+                [
+                    'prioritas' => (int) $row['prioritas']
+                ]
+            );
+        }
+
+
+        return $this->response->setJSON([
+            'status' => 'success'
+        ]);
+    }
+
     public function get_data_berita_acara()
     {
         $id_pn = $this->request->getPost('pn');
@@ -1566,7 +1738,8 @@ class Rakorbangwil extends BaseController
         $I = $this->daftarProgTahunanModel->getListKegiatanPerUnor(4);
         $J = $this->daftarProgTahunanModel->getListKegiatanPerUnor(5);
         $K = $this->daftarProgTahunanModel->getListKegiatanPerUnor(8);
-
+        $ttd = $this->bakUnorModel->getPejabatKl();
+        $PN = $this->pnModel->findAll();
         $tanggal = $this->request->getPost('tanggal');
 
         // ===============================
@@ -1584,7 +1757,9 @@ class Rakorbangwil extends BaseController
             'I' => $I,
             'J' => $J,
             'K' => $K,
-            'tanggal_bak'    => $tanggal,
+            'tanggal_bak' => $tanggal,
+            'PN' => $PN,
+            'ttd' => $ttd
             // 'kawasan'        => $kawasan,
             // 'rekapPN'        => $rekapPN,
             // 'programDitjen'  => $programDitjen,
@@ -1597,7 +1772,7 @@ class Rakorbangwil extends BaseController
         $mpdf = new \Mpdf\Mpdf([
             'mode'          => 'utf-8',
             'format'        => 'A4',
-            'orientation'   => 'P',
+            'orientation'   => 'L',
             'margin_top'    => 20,
             'margin_bottom' => 15,
             'margin_left'   => 15,
