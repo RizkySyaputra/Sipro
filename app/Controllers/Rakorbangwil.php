@@ -1459,7 +1459,8 @@ class Rakorbangwil extends BaseController
             'kegiatan'        => 'Rakorbangwil',
             'id_kl'           => $id_kl,
             'id_pejabat'      => $id_pejabat,
-            'prioritas'       => $prioritas
+            'prioritas'       => $prioritas,
+            'thn_pelaksanaan' => session('tahun_pelaksana')
         ]);
 
         return $this->response->setJSON([
