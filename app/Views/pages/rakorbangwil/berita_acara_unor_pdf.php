@@ -196,12 +196,12 @@
             <tr>
                 <th rowspan="2">No</th>
                 <th rowspan="2">Provinsi</th>
-                <th>Prioritas Nasional 2</th>
-                <th>Prioritas Nasional 3</th>
-                <th>Prioritas Nasional 4</th>
-                <th>Prioritas Nasional 5</th>
-                <th>Prioritas Nasional 6</th>
-                <th>Prioritas Nasional 8</th>
+                <th>Prioritas Nasional <br>2</th>
+                <th>Prioritas Nasional<br> 3</th>
+                <th>Prioritas Nasional<br> 4</th>
+                <th>Prioritas Nasional<br> 5</th>
+                <th>Prioritas Nasional<br> 6</th>
+                <th>Prioritas Nasional<br> 8</th>
             </tr>
             <tr>
                 <th>Kawasan/Lokus Prioritas</th>
@@ -468,6 +468,7 @@
         </tfoot>
 
     </table>
+    <div class="page-break"></div>
     <p class="section-title text-center">
         D. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Mendukung Prioritas Nasional 4 <?= $PN[2]['nama_pn'] ?>
@@ -678,7 +679,7 @@
         </tfoot>
 
     </table>
-
+    <div class="page-break"></div>
     <p class="section-title text-center">
         F. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Mendukung Prioritas Nasional 6 <?= $PN[4]['nama_pn'] ?>
@@ -1072,7 +1073,7 @@
     </table>
 
     <br><br>
-
+    <div class="page-break"></div>
     <table style=" border: 1px dotted #000;" class="ttd-table">
         <tr>
             <td colspan="2" class="ttd-center">

@@ -1344,7 +1344,7 @@ class Rakorbangwil extends BaseController
     {
         $id_role = user()->id_role;
         $id_user = user()->id;
-        $pejabat = $this->pejabatModel->findAll();
+        $pejabat = $this->pejabatModel->where('thn_pelaksanaan', session('tahun_pelaksana'))->findAll();
         $userpuswil = $this->userProvinsiModel->where('id_user', $id_user)->find();
         if ($userpuswil != null) {
             $dataProvinsi = $this->userProvinsiModel->getProvinsi($id_user);
@@ -1434,6 +1434,8 @@ class Rakorbangwil extends BaseController
                 'm_pejabat.id_pejabat = m_ttd_ba_unor_pejabat.id_pejabat'
             )
             ->where('m_ttd_ba_unor_pejabat.id_kl', $id_kl)
+            ->where('m_ttd_ba_unor_pejabat.thn_pelaksanaan', session('tahun_pelaksana'))
+            ->where('m_pejabat.thn_pelaksanaan', session('tahun_pelaksana'))
             ->orderBy('m_ttd_ba_unor_pejabat.prioritas', 'ASC')
             ->findAll();
 
@@ -1618,7 +1620,7 @@ class Rakorbangwil extends BaseController
         $ditangguhkan = array_merge($ditangguhkan3, $ditangguhkan4, $ditangguhkan5);
         $tidakTerbahas0 = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, null, null, $id_pn, null, null, null, null, null, null, 99);
         $tidakTerbahas = array_merge($diakomodasi2, $tidakTerbahas0, $ditangguhkan6);
-        $pejabat_bak = $this->pejabatBakModel->where('id_provinsi', $provinsi_id)->where('id_pn', $id_pn)->orderBy('prioritas', 'ASC')->findAll();
+        $pejabat_bak = $this->pejabatBakModel->where('thn_pelaksanaan', session('tahun_pelaksana'))->where('id_provinsi', $provinsi_id)->where('id_pn', $id_pn)->orderBy('prioritas', 'ASC')->findAll();
         return $this->response->setJSON([
             'kawasan'        => $kawasan,
             'diakomodasi'    => $diakomodasi,
@@ -1737,7 +1739,7 @@ class Rakorbangwil extends BaseController
         $I = $this->daftarProgTahunanModel->getListKegiatanPerUnor(4);
         $J = $this->daftarProgTahunanModel->getListKegiatanPerUnor(5);
         $K = $this->daftarProgTahunanModel->getListKegiatanPerUnor(8);
-        $ttd = $this->bakUnorModel->getPejabatKl();
+        $ttd = $this->bakUnorModel->getPejabatKl(session('tahun_pelaksana'));
         $PN = $this->pnModel->findAll();
         $tanggal = $this->request->getPost('tanggal');
 

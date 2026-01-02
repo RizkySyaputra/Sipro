@@ -25,7 +25,7 @@ class BakUnorModel extends Model
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';  // pastikan ada di tabel
     protected $updatedField  = 'updated_at';  // pastikan ada di tabel
-    public function getPejabatKl()
+    public function getPejabatKl($thn_pelaksanaan)
     {
         $db = \Config\Database::connect();
 
@@ -46,13 +46,17 @@ JOIN m_ttd_ba_unor_pejabat up
    AND up.kegiatan = uk.kegiatan
 JOIN m_pejabat pj 
     ON pj.id_pejabat = up.id_pejabat
-WHERE uk.thn_pelaksanaan = '2027'
+WHERE uk.thn_pelaksanaan = ?
   AND uk.kegiatan = 'Rakorbangwil'
+  AND pj.thn_pelaksanaan = ?
 ORDER BY
     uk.prioritas ASC,
     up.prioritas ASC;
 ";
-        return $db->query($sql)->getResult();
+        return $db->query($sql, [
+            $thn_pelaksanaan,
+            $thn_pelaksanaan
+        ])->getResult();
     }
 
 
