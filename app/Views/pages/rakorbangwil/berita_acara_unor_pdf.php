@@ -187,7 +187,7 @@
     </ol>
 
 
-    <p class="section-title text-center">
+    <p class="section-title">
         A. Rekapitulasi Kawasan/Lokus Prioritas yang akan Didukung Infrastruktur PU TA 2027
     </p>
 
@@ -258,7 +258,7 @@
         </tfoot>
 
     </table>
-    <p class="section-title text-center">
+    <p class="section-title">
         B. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Mendukung Prioritas Nasional 2 <?= $PN[0]['nama_pn'] ?>
     </p>
@@ -363,7 +363,7 @@
         </tfoot>
 
     </table>
-    <p class="section-title text-center">
+    <p class="section-title">
         C. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Mendukung Prioritas Nasional 3 <?= $PN[1]['nama_pn'] ?>
     </p>
@@ -469,7 +469,7 @@
 
     </table>
     <div class="page-break"></div>
-    <p class="section-title text-center">
+    <p class="section-title">
         D. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Mendukung Prioritas Nasional 4 <?= $PN[2]['nama_pn'] ?>
     </p>
@@ -574,7 +574,7 @@
         </tfoot>
 
     </table>
-    <p class="section-title text-center">
+    <p class="section-title">
         E. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Mendukung Prioritas Nasional 5 <?= $PN[3]['nama_pn'] ?>
     </p>
@@ -680,7 +680,7 @@
 
     </table>
     <div class="page-break"></div>
-    <p class="section-title text-center">
+    <p class="section-title">
         F. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Mendukung Prioritas Nasional 6 <?= $PN[4]['nama_pn'] ?>
     </p>
@@ -785,7 +785,7 @@
         </tfoot>
 
     </table>
-    <p class="section-title text-center">
+    <p class="section-title">
         G. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Mendukung Prioritas Nasional 8 <?= $PN[5]['nama_pn'] ?>
     </p>
@@ -890,7 +890,7 @@
         </tfoot>
 
     </table>
-    <p class="section-title text-center">
+    <p class="section-title">
         H. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Direktorat Jenderal Sumber Daya Air Kementerian PU
     </p>
@@ -936,7 +936,7 @@
         </tbody>
 
     </table>
-    <p class="section-title text-center">
+    <p class="section-title">
         I. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Direktorat Jenderal Bina Marga Kementerian PU
     </p>
@@ -981,7 +981,7 @@
             </tr>
         </tbody>
     </table>
-    <p class="section-title text-center">
+    <p class="section-title">
         J. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Direktorat Jenderal Cipta Karya Kementerian PU
     </p>
@@ -1026,7 +1026,7 @@
             </tr>
         </tbody>
     </table>
-    <p class="section-title text-center">
+    <p class="section-title">
         K. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Direktorat Jenderal Prasarana Strategis Kementerian PU
     </p>
