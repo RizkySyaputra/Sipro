@@ -31,22 +31,43 @@ foreach ($daftar_program_tahunan as $data) : ?>
         <!-- <td><?= $data->kesepakatan ?></td> -->
         <td>
             <?php
-            if ($data->pra_konreg === "1") {
+            if ($data->desk_rakorbangwil === "1") {
                 echo '<span class="badge-green" style="text-align:center;">' . $data->kesepakatan . '</span>';
-            } elseif ($data->pra_konreg === "2") {
+            } elseif ($data->desk_rakorbangwil === "2") {
                 echo '<span class="badge-green" style="text-align:center;" >' . $data->kesepakatan . '</span>';
-            } elseif ($data->pra_konreg === "3") {
+            } elseif ($data->desk_rakorbangwil === "3") {
                 echo '<span class="badge-oranye" style="text-align:center;">' . $data->kesepakatan . '</span>';
-            } elseif ($data->pra_konreg === "4") {
+            } elseif ($data->desk_rakorbangwil === "4") {
                 echo '<span class="badge-oranye" style="text-align:center;">' . $data->kesepakatan . '</span>';
-            } elseif ($data->pra_konreg === "5") {
+            } elseif ($data->desk_rakorbangwil === "5") {
                 echo '<span class="badge-oranye" style="text-align:center;">' . $data->kesepakatan . '</span>';
-            } elseif ($data->pra_konreg === "6") {
+            } elseif ($data->desk_rakorbangwil === "6") {
                 echo '<span class="badge-oranye" style="text-align:center;">' . $data->kesepakatan . '</span>';
-            } elseif ($data->pra_konreg === "0") {
+            } elseif ($data->desk_rakorbangwil === "0") {
                 echo '<span class="badge-grey" style="text-align:center;">' . $data->kesepakatan . '</span>';
             } else {
                 echo '<span class="text-muted">-</span>';
+            }
+            ?>
+        </td>
+        <td>
+            <?php
+            if ($data->pra_konreg === "1") {
+                echo '<span class="badge-green" style="text-align:center;">' . $data->kesepakatan_pra_konreg . '</span>';
+            } elseif ($data->pra_konreg === "2") {
+                echo '<span class="badge-green" style="text-align:center;" >' . $data->kesepakatan_pra_konreg . '</span>';
+            } elseif ($data->pra_konreg === "3") {
+                echo '<span class="badge-oranye" style="text-align:center;">' . $data->kesepakatan_pra_konreg . '</span>';
+            } elseif ($data->pra_konreg === "4") {
+                echo '<span class="badge-oranye" style="text-align:center;">' . $data->kesepakatan_pra_konreg . '</span>';
+            } elseif ($data->pra_konreg === "5") {
+                echo '<span class="badge-oranye" style="text-align:center;">' . $data->kesepakatan_pra_konreg . '</span>';
+            } elseif ($data->pra_konreg === "6") {
+                echo '<span class="badge-oranye" style="text-align:center;">' . $data->kesepakatan_pra_konreg . '</span>';
+            } elseif ($data->pra_konreg === "0") {
+                echo '<span class="badge-grey" style="text-align:center;"> Belum Dibahas </span>';
+            } else {
+                echo '<span class="text-muted"></span>';
             }
             ?>
         </td>

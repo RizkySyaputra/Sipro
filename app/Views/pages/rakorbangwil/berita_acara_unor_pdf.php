@@ -891,7 +891,95 @@
 
     </table>
     <p class="section-title">
-        H. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
+        H. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027 Yang Tidak Terbahas Dalam Desk Rakorbangwil 2025 dan Disepakati Akan Didiskusikan Dalam Forum Pra Konsultasi Regional Kementerian PU Tahun 2026<br>
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">No</th>
+                <th rowspan="2">Provinsi</th>
+                <th colspan="2">Ditjen Sumber Daya Air</th>
+                <th colspan="2">Ditjen Bina Marga </th>
+                <th colspan="2">Ditjen Cipta Karya </th>
+                <th rowspan="2">Total<br>Kegiatan</th>
+                <th rowspan="2">Total Anggaran<br>(Rp. Ribu)</th>
+            </tr>
+            <tr>
+                <th>Kegiatan</th>
+                <th>Anggaran</th>
+                <th>Kegiatan</th>
+                <th>Anggaran</th>
+                <th>Kegiatan</th>
+                <th>Anggaran</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            $no = 1;
+
+            $tot_sda_pekerjaan = 0;
+            $tot_sda_anggaran  = 0;
+            $tot_bm_pekerjaan  = 0;
+            $tot_bm_anggaran   = 0;
+            $tot_ck_pekerjaan  = 0;
+            $tot_ck_anggaran   = 0;
+            $tot_pekerjaan     = 0;
+            $tot_anggaran      = 0;
+
+            foreach ($NewH as $row):
+                $tot_sda_pekerjaan += (int) $row->sda_pekerjaan;
+                $tot_sda_anggaran  += (float) $row->sda_anggaran;
+
+                $tot_bm_pekerjaan  += (int) $row->bm_pekerjaan;
+                $tot_bm_anggaran   += (float) $row->bm_anggaran;
+
+                $tot_ck_pekerjaan  += (int) $row->ck_pekerjaan;
+                $tot_ck_anggaran   += (float) $row->ck_anggaran;
+
+                $tot_pekerjaan     += (int) $row->pekerjaan;
+                $tot_anggaran      += (float) $row->anggaran;
+            ?>
+                <tr>
+                    <td align="center"><?= $no++ ?></td>
+                    <td><?= $row->provinsi ?></td>
+
+                    <td align="right"><?= $row->sda_pekerjaan ?: '-' ?></td>
+                    <td align="right"><?= number_format($row->sda_anggaran, 0, ',', '.') ?: '-' ?></td>
+
+                    <td align="right"><?= $row->bm_pekerjaan ?: '-' ?></td>
+                    <td align="right"><?= number_format($row->bm_anggaran, 0, ',', '.') ?: '-' ?></td>
+
+                    <td align="right"><?= $row->ck_pekerjaan ?: '-' ?></td>
+                    <td align="right"><?= number_format($row->ck_anggaran, 0, ',', '.') ?: '-' ?></td>
+
+                    <td align="right"><?= $row->pekerjaan ?></td>
+                    <td align="right"><?= number_format($row->anggaran, 0, ',', '.') ?></td>
+                </tr>
+            <?php endforeach ?>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2"><strong>Jumlah</strong></td>
+
+                <td align="right"><strong><?= number_format($tot_sda_pekerjaan) ?></strong></td>
+                <td align="right"><strong><?= number_format($tot_sda_anggaran) ?></strong></td>
+
+                <td align="right"><strong><?= number_format($tot_bm_pekerjaan) ?></strong></td>
+                <td align="right"><strong><?= number_format($tot_bm_anggaran) ?></strong></td>
+
+                <td align="right"><strong><?= number_format($tot_ck_pekerjaan) ?></strong></td>
+                <td align="right"><strong><?= number_format($tot_ck_anggaran) ?></strong></td>
+
+                <td align="right"><strong><?= number_format($tot_pekerjaan) ?></strong></td>
+                <td align="right"><strong><?= number_format($tot_anggaran) ?></strong></td>
+            </tr>
+        </tfoot>
+
+
+    </table>
+    <p class="section-title">
+        I. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Direktorat Jenderal Sumber Daya Air Kementerian PU
     </p>
 
@@ -937,7 +1025,7 @@
 
     </table>
     <p class="section-title">
-        I. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
+        J. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Direktorat Jenderal Bina Marga Kementerian PU
     </p>
 
@@ -982,7 +1070,7 @@
         </tbody>
     </table>
     <p class="section-title">
-        J. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
+        K. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Direktorat Jenderal Cipta Karya Kementerian PU
     </p>
 
@@ -1027,7 +1115,7 @@
         </tbody>
     </table>
     <p class="section-title">
-        K. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
+        L. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Direktorat Jenderal Prasarana Strategis Kementerian PU
     </p>
 

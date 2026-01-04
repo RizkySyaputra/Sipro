@@ -267,7 +267,7 @@
                                     <!-- KESEPAKATAN -->
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="filter-label">Kesepakatan</label>
+                                            <label class="filter-label">Kesepakatan Pra Konreg</label>
                                             <select class="form-control" name="kesepakatan" id="filter-kesepakatan">
                                                 <option value="">Semua Kesepakatan</option>
                                                 <?php foreach ($kesepakatan as $item): ?>
@@ -325,7 +325,8 @@
                                             <th>Kawasan</th>
                                             <th>Tematik Kawasan</th>
                                             <th>Status Catatan</th>
-                                            <th>Kesepakatan</th>
+                                            <th>Kesepakatan Rakorbangwil</th>
+                                            <th>Kesepakatan Pra Konreg</th>
                                             <th style="text-align: center;">Aksi</th>
                                         </tr>
                                     </thead>

@@ -2331,7 +2331,7 @@ class KonregController extends BaseController
         $konfirmasi_pemda = $this->request->getPost('konfirmasi_pemda');
         $kesepakatan = $this->request->getPost('kesepakatan');
         $sumber = $this->request->getPost('sumber');
-        $daftar_program_tahunan = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, $unor_id, $sumber, $id_pn, null, $id_pendanaan, $tipe, $catatan_rakorbangwil, $catatan_pemda, $konfirmasi_pemda, 2, $kesepakatan);
+        $daftar_program_tahunan = $this->daftarProgTahunanModel->getDaftarProgramTahunan($provinsi_id, $unor_id, $sumber, $id_pn, null, $id_pendanaan, $tipe, $catatan_rakorbangwil, $catatan_pemda, $konfirmasi_pemda, 2, null, $kesepakatan);
         $data = [
             'daftar_program_tahunan' => $daftar_program_tahunan,
             'can_view' => has_permission_menu($id_role, '/konreg/pra_konreg/rakorbangwil', 'can_view'),

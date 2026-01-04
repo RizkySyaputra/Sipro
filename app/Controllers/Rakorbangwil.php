@@ -1740,6 +1740,7 @@ class Rakorbangwil extends BaseController
         $I = $this->daftarProgTahunanModel->getListKegiatanPerUnor(4);
         $J = $this->daftarProgTahunanModel->getListKegiatanPerUnor(5);
         $K = $this->daftarProgTahunanModel->getListKegiatanPerUnor(8);
+        $newH = $this->daftarProgTahunanModel->getRekapDiAkomodasi();
         $ttd = $this->bakUnorModel->getPejabatKl(session('tahun_pelaksana'));
         $PN = $this->pnModel->findAll();
         $tanggal = $this->request->getPost('tanggal');
@@ -1759,6 +1760,7 @@ class Rakorbangwil extends BaseController
             'I' => $I,
             'J' => $J,
             'K' => $K,
+            'NewH' => $newH,
             'tanggal_bak' => $tanggal,
             'PN' => $PN,
             'ttd' => $ttd

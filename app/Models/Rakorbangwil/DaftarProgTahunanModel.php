@@ -39,9 +39,9 @@ class DaftarProgTahunanModel extends Model
         if ($tipe) {
             $builder->where('a.tipe_pekerjaan', $tipe);
         }
-        // if ($prakonreg) {
-        //     $builder->where('a.pra_konreg', $prakonreg);
-        // }
+        if ($prakonreg) {
+            $builder->where('a.pra_konreg', $prakonreg);
+        }
         if ($pn_lama) {
             $builder->where('pn_lama', $pn_lama);
         }
@@ -181,7 +181,7 @@ FROM prog_tahunan a LEFT JOIN prog_tahunan_kwsn b ON a.id_prog_tahunan=b.id_prog
 LEFT JOIN m_kawasan c ON b.id_kawasan=c.kode_kawasan
 LEFT JOIN m_sk_ro d ON a.id_ro=d.id_ro
 LEFT JOIN m_provinsi e ON a.id_provinsi=e.id
-WHERE a.thn_pelaksanaan='2027' AND d.id_pn IN ('2','3','4','5','6','8') AND a.desk_rakorbangwil='1'
+WHERE a.thn_pelaksanaan='2027' AND d.id_pn IN ('2','3','4','5','6','8') AND a.desk_rakorbangwil IN ('1','2')
 GROUP BY a.id_provinsi
 ORDER BY a.id_provinsi
     ";
@@ -242,5 +242,26 @@ ORDER BY a.id_provinsi
     ";
 
         return $db->query($sql, [$id_unor])->getResult();
+    }
+    public function getRekapDiAkomodasi()
+    {
+        $db = \Config\Database::connect();
+
+        $sql = "
+        SELECT a.provinsi,
+COUNT(IF(a.id_unor='6',a.pekerjaan,NULL)) AS sda_pekerjaan,
+SUM(IF(a.id_unor='6',a.anggaran,0)) AS sda_anggaran,
+COUNT(IF(a.id_unor='4',a.pekerjaan,NULL)) AS bm_pekerjaan,
+SUM(IF(a.id_unor='4',a.anggaran,0)) AS bm_anggaran,
+COUNT(IF(a.id_unor='5',a.pekerjaan,NULL)) AS ck_pekerjaan,
+SUM(IF(a.id_unor='5',a.anggaran,0)) AS ck_anggaran,
+COUNT(*) pekerjaan,SUM(a.anggaran) anggaran
+FROM view_prog_tahunan a
+WHERE thn_pelaksanaan='2027' AND a.id_pn IN ('2','3','4','5','6','8') AND a.desk_rakorbangwil='2'
+GROUP BY a.id_provinsi
+ORDER BY a.id_provinsi
+    ";
+
+        return $db->query($sql)->getResult();
     }
 }
