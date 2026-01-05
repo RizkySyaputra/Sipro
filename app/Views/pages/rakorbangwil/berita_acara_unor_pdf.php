@@ -1024,6 +1024,7 @@
         </tbody>
 
     </table>
+    <div class="page-break"></div>
     <p class="section-title">
         J. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Direktorat Jenderal Bina Marga Kementerian PU
