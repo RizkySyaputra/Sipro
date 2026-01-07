@@ -473,7 +473,7 @@
                     <?php if (!empty($p->tanda_tangan) && file_exists($ttd_file)): ?>
                         <img src="<?= $ttd_file ?>" style="width:100px; height:100px; object-fit:contain; margin-bottom:10px;">
                     <?php else: ?>
-                        <img src="assets/ttd/nonttd.png" style="width:100px; height:100px; opacity:0.3;">
+                        <img src="assets/ttd/nonttd.png" style="width:150px; height:100px; opacity:0.3;">
                     <?php endif; ?>
 
                     <p style="margin:0; font-size:14px; font-weight:bold;">
