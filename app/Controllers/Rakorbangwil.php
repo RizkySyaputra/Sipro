@@ -1741,10 +1741,10 @@ class Rakorbangwil extends BaseController
         $J = $this->daftarProgTahunanModel->getListKegiatanPerUnor(5);
         $K = $this->daftarProgTahunanModel->getListKegiatanPerUnor(8);
         $newH = $this->daftarProgTahunanModel->getRekapDiAkomodasi();
+        $newA = $this->daftarProgTahunanModel->getRekapDiAkomodasiPN();
         $ttd = $this->bakUnorModel->getPejabatKl(session('tahun_pelaksana'));
         $PN = $this->pnModel->findAll();
         $tanggal = $this->request->getPost('tanggal');
-
         // ===============================
         // 7. RENDER HTML (VIEW FINAL PDF)
         // ===============================
@@ -1761,6 +1761,7 @@ class Rakorbangwil extends BaseController
             'J' => $J,
             'K' => $K,
             'NewH' => $newH,
+            'NewA' => $newA,
             'tanggal_bak' => $tanggal,
             'PN' => $PN,
             'ttd' => $ttd
