@@ -1742,6 +1742,7 @@ class Rakorbangwil extends BaseController
         $K = $this->daftarProgTahunanModel->getListKegiatanPerUnor(8);
         $newH = $this->daftarProgTahunanModel->getRekapDiAkomodasi();
         $newA = $this->daftarProgTahunanModel->getRekapDiAkomodasiPN();
+        $newB = $this->daftarProgTahunanModel->getRekapTidakTerbahasPN();
         $ttd = $this->bakUnorModel->getPejabatKl(session('tahun_pelaksana'));
         $PN = $this->pnModel->findAll();
         $tanggal = $this->request->getPost('tanggal');
@@ -1762,6 +1763,7 @@ class Rakorbangwil extends BaseController
             'K' => $K,
             'NewH' => $newH,
             'NewA' => $newA,
+            'NewB' => $newB,
             'tanggal_bak' => $tanggal,
             'PN' => $PN,
             'ttd' => $ttd
@@ -1787,11 +1789,10 @@ class Rakorbangwil extends BaseController
         $mpdf->SetWatermarkImage('assets/img/pu-transparan.png', 0.1);
         $mpdf->showWatermarkImage = true;
 
-        // $footer = '© 2025 - Berita Acara Kesepakatan Rakorbangwil Provinsi '
-        //     . ucwords($provinsi['provinsi'])
-        //     . ' | Halaman {PAGENO} dari {nbpg}';
+        $footer = '© 2025 - Berita Acara Kesepakatan Rakorbangwil'
+            . ' | Halaman {PAGENO} dari {nbpg}';
 
-        // $mpdf->SetHTMLFooter('<div style="text-align:center;font-size:9px;">' . $footer . '</div>');
+        $mpdf->SetHTMLFooter('<div style="text-align:center;font-size:9px;">' . $footer . '</div>');
 
         $mpdf->WriteHTML($html);
 

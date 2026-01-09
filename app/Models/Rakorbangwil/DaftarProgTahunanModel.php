@@ -280,7 +280,30 @@ COUNT(IF(a.id_unor='8',a.pekerjaan,NULL)) AS ps_pekerjaan,
 SUM(IF(a.id_unor='8',a.anggaran,0)) AS ps_anggaran,
 COUNT(*) pekerjaan,SUM(a.anggaran) anggaran
 FROM view_prog_tahunan a
-WHERE thn_pelaksanaan='2027' AND a.id_pn IN ('2','3','4','5','6','8') AND a.desk_rakorbangwil='1'
+WHERE thn_pelaksanaan='2027' AND a.id_pn IN ('2','3','4','5','6','8') AND a.desk_rakorbangwil= '1'
+GROUP BY a.id_pn
+ORDER BY a.id_pn
+    ";
+
+        return $db->query($sql)->getResult();
+    }
+    public function getRekapTidakTerbahasPN()
+    {
+        $db = \Config\Database::connect();
+
+        $sql = "
+        SELECT CONCAT('Prinoritas Nasional ',a.id_pn,' - ',a.nama_pn) AS pn,
+COUNT(IF(a.id_unor='6',a.pekerjaan,NULL)) AS sda_pekerjaan,
+SUM(IF(a.id_unor='6',a.anggaran,0)) AS sda_anggaran,
+COUNT(IF(a.id_unor='4',a.pekerjaan,NULL)) AS bm_pekerjaan,
+SUM(IF(a.id_unor='4',a.anggaran,0)) AS bm_anggaran,
+COUNT(IF(a.id_unor='5',a.pekerjaan,NULL)) AS ck_pekerjaan,
+SUM(IF(a.id_unor='5',a.anggaran,0)) AS ck_anggaran,
+COUNT(IF(a.id_unor='8',a.pekerjaan,NULL)) AS ps_pekerjaan,
+SUM(IF(a.id_unor='8',a.anggaran,0)) AS ps_anggaran,
+COUNT(*) pekerjaan,SUM(a.anggaran) anggaran
+FROM view_prog_tahunan a
+WHERE thn_pelaksanaan='2027' AND a.id_pn IN ('2','3','4','5','6','8') AND a.desk_rakorbangwil = '2'
 GROUP BY a.id_pn
 ORDER BY a.id_pn
     ";

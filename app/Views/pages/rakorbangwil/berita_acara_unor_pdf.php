@@ -187,7 +187,7 @@
     </ol>
     <div class="page-break"></div>
     <p class="section-title">
-        A. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027 Mendukung Prioritas Nasional
+        A. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027 Mendukung Prioritas Nasional (Diakomodasi dalam Desk Rakorbangwil dan Dilanjutkan ke Forum Konreg Tahun 2026)
     </p>
 
     <table>
@@ -290,9 +290,114 @@
         </tfoot>
 
     </table>
-
+    <div class="page-break"></div>
     <p class="section-title">
-        B. Rekapitulasi Kawasan/Lokus Prioritas yang akan Didukung Infrastruktur PU TA 2027
+        B. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027 Mendukung Prioritas Nasional (Tidak Terbahas dalam Desk Rakorbangwil dan Dilanjutkan keForum Pra Konreg Tahun 2026)
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">No</th>
+                <th rowspan="2">Prioritas Nasional</th>
+                <th colspan="2">Ditjen SDA</th>
+                <th colspan="2">Ditjen Bina Marga</th>
+                <th colspan="2">Ditjen Cipta Karya</th>
+                <th colspan="2">Ditjen Prasarana Strategis</th>
+                <th colspan="2">Total</th>
+            </tr>
+            <tr>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+                <th>Kegiatan</th>
+                <th>Anggaran<br>(Rp. Ribu)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            $no = 1;
+
+            // inisialisasi total
+            $tot_sda_pekerjaan = 0;
+            $tot_sda_anggaran  = 0;
+            $tot_bm_pekerjaan  = 0;
+            $tot_bm_anggaran   = 0;
+            $tot_ck_pekerjaan  = 0;
+            $tot_ck_anggaran   = 0;
+            $tot_ps_pekerjaan  = 0;
+            $tot_ps_anggaran   = 0;
+            $tot_pekerjaan     = 0;
+            $tot_anggaran      = 0;
+
+            foreach ($NewB as $row):
+                $tot_sda_pekerjaan += (int)   $row->sda_pekerjaan;
+                $tot_sda_anggaran  += (float) $row->sda_anggaran;
+
+                $tot_bm_pekerjaan  += (int)   $row->bm_pekerjaan;
+                $tot_bm_anggaran   += (float) $row->bm_anggaran;
+
+                $tot_ck_pekerjaan  += (int)   $row->ck_pekerjaan;
+                $tot_ck_anggaran   += (float) $row->ck_anggaran;
+
+                $tot_ps_pekerjaan  += (int)   $row->ps_pekerjaan;
+                $tot_ps_anggaran   += (float) $row->ps_anggaran;
+
+                $tot_pekerjaan     += (int)   $row->pekerjaan;
+                $tot_anggaran      += (float) $row->anggaran;
+            ?>
+                <tr>
+                    <td align="center"><?= $no++ ?></td>
+                    <td><?= $row->pn ?></td>
+
+                    <td align="right"><?= $row->sda_pekerjaan ?: '-' ?></td>
+                    <td align="right"><?= number_format($row->sda_anggaran, 0, ',', '.') ?: '-' ?></td>
+
+                    <td align="right"><?= $row->bm_pekerjaan ?: '-' ?></td>
+                    <td align="right"><?= number_format($row->bm_anggaran, 0, ',', '.') ?: '-' ?></td>
+
+                    <td align="right"><?= $row->ck_pekerjaan ?: '-' ?></td>
+                    <td align="right"><?= number_format($row->ck_anggaran, 0, ',', '.') ?: '-' ?></td>
+
+                    <td align="right"><?= $row->ps_pekerjaan ?: '-' ?></td>
+                    <td align="right"><?= number_format($row->ps_anggaran, 0, ',', '.') ?: '-' ?></td>
+
+                    <td align="right"><?= $row->pekerjaan ?: '-' ?></td>
+                    <td align="right"><?= number_format($row->anggaran, 0, ',', '.') ?: '-' ?></td>
+                </tr>
+            <?php endforeach ?>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="2"><strong>Jumlah</strong></td>
+
+                <td align="right"><strong><?= number_format($tot_sda_pekerjaan, 0, ',', '.') ?></strong></td>
+                <td align="right"><strong><?= number_format($tot_sda_anggaran, 0, ',', '.') ?></strong></td>
+
+                <td align="right"><strong><?= number_format($tot_bm_pekerjaan, 0, ',', '.') ?></strong></td>
+                <td align="right"><strong><?= number_format($tot_bm_anggaran, 0, ',', '.') ?></strong></td>
+
+                <td align="right"><strong><?= number_format($tot_ck_pekerjaan, 0, ',', '.') ?></strong></td>
+                <td align="right"><strong><?= number_format($tot_ck_anggaran, 0, ',', '.') ?></strong></td>
+
+                <td align="right"><strong><?= number_format($tot_ps_pekerjaan, 0, ',', '.') ?></strong></td>
+                <td align="right"><strong><?= number_format($tot_ps_anggaran, 0, ',', '.') ?></strong></td>
+
+                <td align="right"><strong><?= number_format($tot_pekerjaan, 0, ',', '.') ?></strong></td>
+                <td align="right"><strong><?= number_format($tot_anggaran, 0, ',', '.') ?></strong></td>
+            </tr>
+        </tfoot>
+
+    </table>
+    <div class="page-break"></div>
+    <p class="section-title">
+        C. Rekapitulasi Kawasan/Lokus Prioritas yang akan Didukung Infrastruktur PU TA 2027
     </p>
 
     <table>
@@ -362,728 +467,9 @@
         </tfoot>
 
     </table>
-    <p class="section-title">
-        C. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
-        Mendukung Prioritas Nasional 2 <?= $PN[0]['nama_pn'] ?>
-    </p>
-
-    <table>
-        <thead>
-            <tr>
-                <th rowspan="2">No</th>
-                <th rowspan="2">Provinsi</th>
-                <th colspan="2">Ditjen SDA</th>
-                <th colspan="2">Ditjen Bina Marga</th>
-                <th colspan="2">Ditjen Cipta Karya</th>
-                <th colspan="2">Ditjen Prasarana Strategis</th>
-                <th colspan="2">Total</th>
-            </tr>
-            <tr>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            $no = 1;
-
-            // inisialisasi total
-            $tot_sda_pekerjaan = 0;
-            $tot_sda_anggaran  = 0;
-            $tot_bm_pekerjaan  = 0;
-            $tot_bm_anggaran   = 0;
-            $tot_ck_pekerjaan  = 0;
-            $tot_ck_anggaran   = 0;
-            $tot_ps_pekerjaan  = 0;
-            $tot_ps_anggaran   = 0;
-            $tot_pekerjaan     = 0;
-            $tot_anggaran      = 0;
-
-            foreach ($B as $row):
-                $tot_sda_pekerjaan += (int)   $row->sda_pekerjaan;
-                $tot_sda_anggaran  += (float) $row->sda_anggaran;
-
-                $tot_bm_pekerjaan  += (int)   $row->bm_pekerjaan;
-                $tot_bm_anggaran   += (float) $row->bm_anggaran;
-
-                $tot_ck_pekerjaan  += (int)   $row->ck_pekerjaan;
-                $tot_ck_anggaran   += (float) $row->ck_anggaran;
-
-                $tot_ps_pekerjaan  += (int)   $row->ps_pekerjaan;
-                $tot_ps_anggaran   += (float) $row->ps_anggaran;
-
-                $tot_pekerjaan     += (int)   $row->pekerjaan;
-                $tot_anggaran      += (float) $row->anggaran;
-            ?>
-                <tr>
-                    <td align="center"><?= $no++ ?></td>
-                    <td><?= $row->provinsi ?></td>
-
-                    <td align="right"><?= $row->sda_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->sda_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->bm_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->bm_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->ck_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->ck_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->ps_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->ps_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->anggaran, 0, ',', '.') ?: '-' ?></td>
-                </tr>
-            <?php endforeach ?>
-        </tbody>
-
-        <tfoot>
-            <tr>
-                <td colspan="2"><strong>Jumlah</strong></td>
-
-                <td align="right"><strong><?= number_format($tot_sda_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_sda_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_bm_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_bm_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_ck_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_ck_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_ps_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_ps_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_anggaran, 0, ',', '.') ?></strong></td>
-            </tr>
-        </tfoot>
-
-    </table>
-    <p class="section-title">
-        D. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
-        Mendukung Prioritas Nasional 3 <?= $PN[1]['nama_pn'] ?>
-    </p>
-
-    <table>
-        <thead>
-            <tr>
-                <th rowspan="2">No</th>
-                <th rowspan="2">Provinsi</th>
-                <th colspan="2">Ditjen SDA</th>
-                <th colspan="2">Ditjen Bina Marga</th>
-                <th colspan="2">Ditjen Cipta Karya</th>
-                <th colspan="2">Ditjen Prasarana Strategis</th>
-                <th colspan="2">Total</th>
-            </tr>
-            <tr>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            $no = 1;
-
-            // inisialisasi total
-            $tot_sda_pekerjaan = 0;
-            $tot_sda_anggaran  = 0;
-            $tot_bm_pekerjaan  = 0;
-            $tot_bm_anggaran   = 0;
-            $tot_ck_pekerjaan  = 0;
-            $tot_ck_anggaran   = 0;
-            $tot_ps_pekerjaan  = 0;
-            $tot_ps_anggaran   = 0;
-            $tot_pekerjaan     = 0;
-            $tot_anggaran      = 0;
-
-            foreach ($C as $row):
-                $tot_sda_pekerjaan += (int)   $row->sda_pekerjaan;
-                $tot_sda_anggaran  += (float) $row->sda_anggaran;
-
-                $tot_bm_pekerjaan  += (int)   $row->bm_pekerjaan;
-                $tot_bm_anggaran   += (float) $row->bm_anggaran;
-
-                $tot_ck_pekerjaan  += (int)   $row->ck_pekerjaan;
-                $tot_ck_anggaran   += (float) $row->ck_anggaran;
-
-                $tot_ps_pekerjaan  += (int)   $row->ps_pekerjaan;
-                $tot_ps_anggaran   += (float) $row->ps_anggaran;
-
-                $tot_pekerjaan     += (int)   $row->pekerjaan;
-                $tot_anggaran      += (float) $row->anggaran;
-            ?>
-                <tr>
-                    <td align="center"><?= $no++ ?></td>
-                    <td><?= $row->provinsi ?></td>
-
-                    <td align="right"><?= $row->sda_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->sda_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->bm_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->bm_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->ck_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->ck_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->ps_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->ps_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->anggaran, 0, ',', '.') ?: '-' ?></td>
-                </tr>
-            <?php endforeach ?>
-        </tbody>
-
-        <tfoot>
-            <tr>
-                <td colspan="2"><strong>Jumlah</strong></td>
-
-                <td align="right"><strong><?= number_format($tot_sda_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_sda_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_bm_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_bm_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_ck_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_ck_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_ps_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_ps_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_anggaran, 0, ',', '.') ?></strong></td>
-            </tr>
-        </tfoot>
-
-    </table>
     <div class="page-break"></div>
     <p class="section-title">
-        E. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
-        Mendukung Prioritas Nasional 4 <?= $PN[2]['nama_pn'] ?>
-    </p>
-
-    <table>
-        <thead>
-            <tr>
-                <th rowspan="2">No</th>
-                <th rowspan="2">Provinsi</th>
-                <th colspan="2">Ditjen SDA</th>
-                <th colspan="2">Ditjen Bina Marga</th>
-                <th colspan="2">Ditjen Cipta Karya</th>
-                <th colspan="2">Ditjen Prasarana Strategis</th>
-                <th colspan="2">Total</th>
-            </tr>
-            <tr>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            $no = 1;
-
-            // inisialisasi total
-            $tot_sda_pekerjaan = 0;
-            $tot_sda_anggaran  = 0;
-            $tot_bm_pekerjaan  = 0;
-            $tot_bm_anggaran   = 0;
-            $tot_ck_pekerjaan  = 0;
-            $tot_ck_anggaran   = 0;
-            $tot_ps_pekerjaan  = 0;
-            $tot_ps_anggaran   = 0;
-            $tot_pekerjaan     = 0;
-            $tot_anggaran      = 0;
-
-            foreach ($D as $row):
-                $tot_sda_pekerjaan += (int)   $row->sda_pekerjaan;
-                $tot_sda_anggaran  += (float) $row->sda_anggaran;
-
-                $tot_bm_pekerjaan  += (int)   $row->bm_pekerjaan;
-                $tot_bm_anggaran   += (float) $row->bm_anggaran;
-
-                $tot_ck_pekerjaan  += (int)   $row->ck_pekerjaan;
-                $tot_ck_anggaran   += (float) $row->ck_anggaran;
-
-                $tot_ps_pekerjaan  += (int)   $row->ps_pekerjaan;
-                $tot_ps_anggaran   += (float) $row->ps_anggaran;
-
-                $tot_pekerjaan     += (int)   $row->pekerjaan;
-                $tot_anggaran      += (float) $row->anggaran;
-            ?>
-                <tr>
-                    <td align="center"><?= $no++ ?></td>
-                    <td><?= $row->provinsi ?></td>
-
-                    <td align="right"><?= $row->sda_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->sda_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->bm_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->bm_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->ck_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->ck_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->ps_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->ps_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->anggaran, 0, ',', '.') ?: '-' ?></td>
-                </tr>
-            <?php endforeach ?>
-        </tbody>
-
-        <tfoot>
-            <tr>
-                <td colspan="2"><strong>Jumlah</strong></td>
-
-                <td align="right"><strong><?= number_format($tot_sda_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_sda_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_bm_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_bm_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_ck_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_ck_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_ps_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_ps_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_anggaran, 0, ',', '.') ?></strong></td>
-            </tr>
-        </tfoot>
-
-    </table>
-    <p class="section-title">
-        F. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
-        Mendukung Prioritas Nasional 5 <?= $PN[3]['nama_pn'] ?>
-    </p>
-
-    <table>
-        <thead>
-            <tr>
-                <th rowspan="2">No</th>
-                <th rowspan="2">Provinsi</th>
-                <th colspan="2">Ditjen SDA</th>
-                <th colspan="2">Ditjen Bina Marga</th>
-                <th colspan="2">Ditjen Cipta Karya</th>
-                <th colspan="2">Ditjen Prasarana Strategis</th>
-                <th colspan="2">Total</th>
-            </tr>
-            <tr>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            $no = 1;
-
-            // inisialisasi total
-            $tot_sda_pekerjaan = 0;
-            $tot_sda_anggaran  = 0;
-            $tot_bm_pekerjaan  = 0;
-            $tot_bm_anggaran   = 0;
-            $tot_ck_pekerjaan  = 0;
-            $tot_ck_anggaran   = 0;
-            $tot_ps_pekerjaan  = 0;
-            $tot_ps_anggaran   = 0;
-            $tot_pekerjaan     = 0;
-            $tot_anggaran      = 0;
-
-            foreach ($E as $row):
-                $tot_sda_pekerjaan += (int)   $row->sda_pekerjaan;
-                $tot_sda_anggaran  += (float) $row->sda_anggaran;
-
-                $tot_bm_pekerjaan  += (int)   $row->bm_pekerjaan;
-                $tot_bm_anggaran   += (float) $row->bm_anggaran;
-
-                $tot_ck_pekerjaan  += (int)   $row->ck_pekerjaan;
-                $tot_ck_anggaran   += (float) $row->ck_anggaran;
-
-                $tot_ps_pekerjaan  += (int)   $row->ps_pekerjaan;
-                $tot_ps_anggaran   += (float) $row->ps_anggaran;
-
-                $tot_pekerjaan     += (int)   $row->pekerjaan;
-                $tot_anggaran      += (float) $row->anggaran;
-            ?>
-                <tr>
-                    <td align="center"><?= $no++ ?></td>
-                    <td><?= $row->provinsi ?></td>
-
-                    <td align="right"><?= $row->sda_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->sda_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->bm_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->bm_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->ck_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->ck_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->ps_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->ps_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->anggaran, 0, ',', '.') ?: '-' ?></td>
-                </tr>
-            <?php endforeach ?>
-        </tbody>
-
-        <tfoot>
-            <tr>
-                <td colspan="2"><strong>Jumlah</strong></td>
-
-                <td align="right"><strong><?= number_format($tot_sda_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_sda_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_bm_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_bm_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_ck_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_ck_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_ps_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_ps_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_anggaran, 0, ',', '.') ?></strong></td>
-            </tr>
-        </tfoot>
-
-    </table>
-    <div class="page-break"></div>
-    <p class="section-title">
-        G. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
-        Mendukung Prioritas Nasional 6 <?= $PN[4]['nama_pn'] ?>
-    </p>
-
-    <table>
-        <thead>
-            <tr>
-                <th rowspan="2">No</th>
-                <th rowspan="2">Provinsi</th>
-                <th colspan="2">Ditjen SDA</th>
-                <th colspan="2">Ditjen Bina Marga</th>
-                <th colspan="2">Ditjen Cipta Karya</th>
-                <th colspan="2">Ditjen Prasarana Strategis</th>
-                <th colspan="2">Total</th>
-            </tr>
-            <tr>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            $no = 1;
-
-            // inisialisasi total
-            $tot_sda_pekerjaan = 0;
-            $tot_sda_anggaran  = 0;
-            $tot_bm_pekerjaan  = 0;
-            $tot_bm_anggaran   = 0;
-            $tot_ck_pekerjaan  = 0;
-            $tot_ck_anggaran   = 0;
-            $tot_ps_pekerjaan  = 0;
-            $tot_ps_anggaran   = 0;
-            $tot_pekerjaan     = 0;
-            $tot_anggaran      = 0;
-
-            foreach ($F as $row):
-                $tot_sda_pekerjaan += (int)   $row->sda_pekerjaan;
-                $tot_sda_anggaran  += (float) $row->sda_anggaran;
-
-                $tot_bm_pekerjaan  += (int)   $row->bm_pekerjaan;
-                $tot_bm_anggaran   += (float) $row->bm_anggaran;
-
-                $tot_ck_pekerjaan  += (int)   $row->ck_pekerjaan;
-                $tot_ck_anggaran   += (float) $row->ck_anggaran;
-
-                $tot_ps_pekerjaan  += (int)   $row->ps_pekerjaan;
-                $tot_ps_anggaran   += (float) $row->ps_anggaran;
-
-                $tot_pekerjaan     += (int)   $row->pekerjaan;
-                $tot_anggaran      += (float) $row->anggaran;
-            ?>
-                <tr>
-                    <td align="center"><?= $no++ ?></td>
-                    <td><?= $row->provinsi ?></td>
-
-                    <td align="right"><?= $row->sda_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->sda_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->bm_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->bm_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->ck_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->ck_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->ps_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->ps_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->anggaran, 0, ',', '.') ?: '-' ?></td>
-                </tr>
-            <?php endforeach ?>
-        </tbody>
-
-        <tfoot>
-            <tr>
-                <td colspan="2"><strong>Jumlah</strong></td>
-
-                <td align="right"><strong><?= number_format($tot_sda_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_sda_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_bm_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_bm_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_ck_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_ck_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_ps_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_ps_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_anggaran, 0, ',', '.') ?></strong></td>
-            </tr>
-        </tfoot>
-
-    </table>
-    <p class="section-title">
-        H. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
-        Mendukung Prioritas Nasional 8 <?= $PN[5]['nama_pn'] ?>
-    </p>
-
-    <table>
-        <thead>
-            <tr>
-                <th rowspan="2">No</th>
-                <th rowspan="2">Provinsi</th>
-                <th colspan="2">Ditjen SDA</th>
-                <th colspan="2">Ditjen Bina Marga</th>
-                <th colspan="2">Ditjen Cipta Karya</th>
-                <th colspan="2">Ditjen Prasarana Strategis</th>
-                <th colspan="2">Total</th>
-            </tr>
-            <tr>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-                <th>Kegiatan</th>
-                <th>Anggaran<br>(Rp. Ribu)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            $no = 1;
-
-            // inisialisasi total
-            $tot_sda_pekerjaan = 0;
-            $tot_sda_anggaran  = 0;
-            $tot_bm_pekerjaan  = 0;
-            $tot_bm_anggaran   = 0;
-            $tot_ck_pekerjaan  = 0;
-            $tot_ck_anggaran   = 0;
-            $tot_ps_pekerjaan  = 0;
-            $tot_ps_anggaran   = 0;
-            $tot_pekerjaan     = 0;
-            $tot_anggaran      = 0;
-
-            foreach ($G as $row):
-                $tot_sda_pekerjaan += (int)   $row->sda_pekerjaan;
-                $tot_sda_anggaran  += (float) $row->sda_anggaran;
-
-                $tot_bm_pekerjaan  += (int)   $row->bm_pekerjaan;
-                $tot_bm_anggaran   += (float) $row->bm_anggaran;
-
-                $tot_ck_pekerjaan  += (int)   $row->ck_pekerjaan;
-                $tot_ck_anggaran   += (float) $row->ck_anggaran;
-
-                $tot_ps_pekerjaan  += (int)   $row->ps_pekerjaan;
-                $tot_ps_anggaran   += (float) $row->ps_anggaran;
-
-                $tot_pekerjaan     += (int)   $row->pekerjaan;
-                $tot_anggaran      += (float) $row->anggaran;
-            ?>
-                <tr>
-                    <td align="center"><?= $no++ ?></td>
-                    <td><?= $row->provinsi ?></td>
-
-                    <td align="right"><?= $row->sda_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->sda_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->bm_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->bm_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->ck_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->ck_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->ps_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->ps_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->anggaran, 0, ',', '.') ?: '-' ?></td>
-                </tr>
-            <?php endforeach ?>
-        </tbody>
-
-        <tfoot>
-            <tr>
-                <td colspan="2"><strong>Jumlah</strong></td>
-
-                <td align="right"><strong><?= number_format($tot_sda_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_sda_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_bm_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_bm_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_ck_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_ck_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_ps_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_ps_anggaran, 0, ',', '.') ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_pekerjaan, 0, ',', '.') ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_anggaran, 0, ',', '.') ?></strong></td>
-            </tr>
-        </tfoot>
-
-    </table>
-    <p class="section-title">
-        I. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027 Yang Tidak Terbahas Dalam Desk Rakorbangwil 2025 dan Disepakati Akan Didiskusikan Dalam Forum Pra Konsultasi Regional Kementerian PU Tahun 2026<br>
-    </p>
-
-    <table>
-        <thead>
-            <tr>
-                <th rowspan="2">No</th>
-                <th rowspan="2">Provinsi</th>
-                <th colspan="2">Ditjen Sumber Daya Air</th>
-                <th colspan="2">Ditjen Bina Marga </th>
-                <th colspan="2">Ditjen Cipta Karya </th>
-                <th rowspan="2">Total<br>Kegiatan</th>
-                <th rowspan="2">Total Anggaran<br>(Rp. Ribu)</th>
-            </tr>
-            <tr>
-                <th>Kegiatan</th>
-                <th>Anggaran</th>
-                <th>Kegiatan</th>
-                <th>Anggaran</th>
-                <th>Kegiatan</th>
-                <th>Anggaran</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            $no = 1;
-
-            $tot_sda_pekerjaan = 0;
-            $tot_sda_anggaran  = 0;
-            $tot_bm_pekerjaan  = 0;
-            $tot_bm_anggaran   = 0;
-            $tot_ck_pekerjaan  = 0;
-            $tot_ck_anggaran   = 0;
-            $tot_pekerjaan     = 0;
-            $tot_anggaran      = 0;
-
-            foreach ($NewH as $row):
-                $tot_sda_pekerjaan += (int) $row->sda_pekerjaan;
-                $tot_sda_anggaran  += (float) $row->sda_anggaran;
-
-                $tot_bm_pekerjaan  += (int) $row->bm_pekerjaan;
-                $tot_bm_anggaran   += (float) $row->bm_anggaran;
-
-                $tot_ck_pekerjaan  += (int) $row->ck_pekerjaan;
-                $tot_ck_anggaran   += (float) $row->ck_anggaran;
-
-                $tot_pekerjaan     += (int) $row->pekerjaan;
-                $tot_anggaran      += (float) $row->anggaran;
-            ?>
-                <tr>
-                    <td align="center"><?= $no++ ?></td>
-                    <td><?= $row->provinsi ?></td>
-
-                    <td align="right"><?= $row->sda_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->sda_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->bm_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->bm_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->ck_pekerjaan ?: '-' ?></td>
-                    <td align="right"><?= number_format($row->ck_anggaran, 0, ',', '.') ?: '-' ?></td>
-
-                    <td align="right"><?= $row->pekerjaan ?></td>
-                    <td align="right"><?= number_format($row->anggaran, 0, ',', '.') ?></td>
-                </tr>
-            <?php endforeach ?>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="2"><strong>Jumlah</strong></td>
-
-                <td align="right"><strong><?= number_format($tot_sda_pekerjaan) ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_sda_anggaran) ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_bm_pekerjaan) ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_bm_anggaran) ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_ck_pekerjaan) ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_ck_anggaran) ?></strong></td>
-
-                <td align="right"><strong><?= number_format($tot_pekerjaan) ?></strong></td>
-                <td align="right"><strong><?= number_format($tot_anggaran) ?></strong></td>
-            </tr>
-        </tfoot>
-
-
-    </table>
-    <p class="section-title">
-        J. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
+        D. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Direktorat Jenderal Sumber Daya Air Kementerian PU
     </p>
 
@@ -1128,9 +514,9 @@
         </tbody>
 
     </table>
-    <div class="page-break"></div>
+
     <p class="section-title">
-        K. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
+        E. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Direktorat Jenderal Bina Marga Kementerian PU
     </p>
 
@@ -1174,8 +560,9 @@
             </tr>
         </tbody>
     </table>
+    <div class="page-break"></div>
     <p class="section-title">
-        L. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
+        F. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Direktorat Jenderal Cipta Karya Kementerian PU
     </p>
 
@@ -1220,7 +607,7 @@
         </tbody>
     </table>
     <p class="section-title">
-        M. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
+        G. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
         Direktorat Jenderal Prasarana Strategis Kementerian PU
     </p>
 
@@ -1266,7 +653,6 @@
     </table>
 
     <br><br>
-    <div class="page-break"></div>
     <table style=" border: 1px dotted #000;" class="ttd-table">
         <tr>
             <td colspan="2" class="ttd-center">
