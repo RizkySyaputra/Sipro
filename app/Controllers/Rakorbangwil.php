@@ -1714,8 +1714,8 @@ class Rakorbangwil extends BaseController
         ]);
 
         // Load HTML ke dalam mPDF // Menentukan footer sebagai fallback
-        $mpdf->SetWatermarkImage('assets/img/pu-transparan.png', 0.1);
-        $mpdf->showWatermarkImage = true;
+        // $mpdf->SetWatermarkImage('assets/img/pu-transparan.png', 0.1);
+        // $mpdf->showWatermarkImage = true;
         if ($pn["id_pn"] == 0) {
             $mpdf->SetHTMLFooter('<div style="text-align: center;">© 2025 - Berita Acara Kesepakatan Rakorbangwil Provinsi ' . ucwords($provinsi["provinsi"]) . ' |Non Prioritas Nasional | Halaman {PAGENO} dari {nbpg}</div>');
         } else {
@@ -1786,8 +1786,8 @@ class Rakorbangwil extends BaseController
             'margin_right'  => 15,
         ]);
 
-        $mpdf->SetWatermarkImage('assets/img/pu-transparan.png', 0.1);
-        $mpdf->showWatermarkImage = true;
+        // $mpdf->SetWatermarkImage('assets/img/pu-transparan.png', 0.1);
+        // $mpdf->showWatermarkImage = true;
 
         $footer = '© 2025 - Berita Acara Kesepakatan Rakorbangwil'
             . ' | Halaman {PAGENO} dari {nbpg}';
