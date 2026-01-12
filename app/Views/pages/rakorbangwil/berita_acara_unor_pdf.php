@@ -44,6 +44,7 @@
         p {
             margin-left: 0;
             text-align: justify;
+            line-height: 2;
         }
 
         ol {
@@ -113,16 +114,15 @@
 <body>
 
     <h3 class="text-center">BERITA ACARA KESEPAKATAN</h3>
-    <h4 class="text-center">
-        RAPAT KOORDINASI KETERPADUAN PENGEMBANGAN INFRASTRUKTUR WILAYAH<br>
+    <h3 class="text-center">
+        RAPAT KOORDINASI KETERPADUAN PENGEMBANGAN INFRASTRUKTUR WILAYAH
         (RAKORBANGWIL) TAHUN 2025
+    </h3>
+    <h4 class="text-center"><strong>
+            Pemrograman Infrastruktur Pekerjaan Umum Tahun Anggaran 2027</strong>
     </h4>
 
-    <p class="text-center">
-        Pemrograman Infrastruktur Pekerjaan Umum Tahun Anggaran 2027
-    </p>
-
-    <p>
+    <p style="line-height: 2;">
         Pada tanggal <strong>11–17 Desember 2025</strong>, telah dilaksanakan Pembahasan
         Keterpaduan Program Infrastruktur Pekerjaan Umum Tahun Anggaran 2027 berdasarkan
         Prioritas Nasional RPJMN Tahun 2025–2029 dalam Forum Desk Rapat Koordinasi
@@ -130,14 +130,14 @@
         dengan rincian sebagai berikut:
     </p>
 
-    <ol>
-        <li>
+    <ol style="line-height: 2;">
+        <li style="line-height: 2;">
             Desk Rakorbangwil Tahun 2025 dihadiri oleh perwakilan dari:
-            <ol type="a">
-                <li>
+            <ol type="a" s>
+                <li style="line-height: 2;">
                     38 Bappeda/Bapelitbangda/Bapperinda Provinsi;
                 </li>
-                <li>
+                <li style="line-height: 2;">
                     17 Kementerian/Lembaga, yaitu:
                     Kementerian Koordinator Bidang Infrastruktur dan Pembangunan Kewilayahan,
                     Kementerian Perencanaan Pembangunan Nasional/Badan Perencanaan Pembangunan Nasional,
@@ -157,7 +157,7 @@
                     Badan Nasional Pengelola Perbatasan, dan
                     Badan Nasional Penanggulangan Bencana;
                 </li>
-                <li>
+                <li style="line-height: 2;">
                     Unit Organisasi di lingkungan Kementerian Pekerjaan Umum, meliputi:
                     Direktorat Jenderal Sumber Daya Air,
                     Direktorat Jenderal Bina Marga,
@@ -170,7 +170,7 @@
             </ol>
         </li>
 
-        <li>
+        <li style="line-height: 2;">
             Dalam Desk Rakorbangwil Tahun 2025 dibahas dan disepakati indikasi kawasan prioritas
             beserta kebutuhan program/kegiatan yang memerlukan dukungan Kementerian Pekerjaan Umum,
             serta integrasinya dengan rencana program/kegiatan dari Kementerian/Lembaga lain dan
@@ -180,15 +180,18 @@
             (RPJMN) Tahun 2025–2029 dan Rancangan Rencana Kerja Pemerintah (RKP) Tahun 2027.
         </li>
 
-        <li>
+        <li style="line-height: 2;">
             Berita Acara Kesepakatan Rakorbangwil Tahun 2025 masing-masing provinsi
             dapat diakses melalui tautan <a href="https://s.pu.go.id/MTcyOQ/BAKRakorbangwil2025">https://s.pu.go.id/MTcyOQ/BAKRakorbangwil2025.</a>
         </li>
     </ol>
     <div class="page-break"></div>
-    <p class="section-title">
-        A. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027 Mendukung Prioritas Nasional (Diakomodasi dalam Desk Rakorbangwil dan Dilanjutkan ke Forum Konreg Tahun 2026)
-    </p>
+    <ol type="A">
+        <li style="line-height: 2; font-weight: bold;">
+            <strong> Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027 Mendukung Prioritas Nasional (Diakomodasi dalam Desk Rakorbangwil dan Dilanjutkan ke Forum Konreg Tahun 2026)
+            </strong>
+        </li>
+    </ol>
 
     <table>
         <thead>
@@ -291,9 +294,12 @@
 
     </table>
     <div class="page-break"></div>
-    <p class="section-title">
-        B. Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027 Mendukung Prioritas Nasional (Tidak Terbahas dalam Desk Rakorbangwil dan Dilanjutkan keForum Pra Konreg Tahun 2026)
-    </p>
+    <ol type="A" start="2">
+        <li style="line-height: 2; font-weight: bold;">
+            <strong> Rekapitulasi Program/Kegiatan Pembangunan Infrastruktur PU TA 2027 Mendukung Prioritas Nasional (Tidak Terbahas dalam Desk Rakorbangwil dan Dilanjutkan ke Forum Pra Konreg Tahun 2026)
+            </strong>
+        </li>
+    </ol>
 
     <table>
         <thead>
@@ -396,9 +402,12 @@
 
     </table>
     <div class="page-break"></div>
-    <p class="section-title">
-        C. Rekapitulasi Kawasan/Lokus Prioritas yang akan Didukung Infrastruktur PU TA 2027
-    </p>
+    <ol type="A" start="3">
+        <li style="line-height: 2; font-weight: bold;">
+            <strong> Rekapitulasi Kawasan/Lokus Prioritas yang akan Didukung Infrastruktur PU TA 2027
+            </strong>
+        </li>
+    </ol>
 
     <table>
         <thead>
@@ -469,8 +478,7 @@
     </table>
     <div class="page-break"></div>
     <p class="section-title">
-        D. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
-        Direktorat Jenderal Sumber Daya Air Kementerian PU
+        D. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027 Direktorat Jenderal Sumber Daya Air Kementerian PU
     </p>
 
     <table>
@@ -516,8 +524,7 @@
     </table>
 
     <p class="section-title">
-        E. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
-        Direktorat Jenderal Bina Marga Kementerian PU
+        E. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027 Direktorat Jenderal Bina Marga Kementerian PU
     </p>
 
     <table>
@@ -562,8 +569,7 @@
     </table>
     <div class="page-break"></div>
     <p class="section-title">
-        F. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
-        Direktorat Jenderal Cipta Karya Kementerian PU
+        F. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027 Direktorat Jenderal Cipta Karya Kementerian PU
     </p>
 
     <table>
@@ -607,8 +613,7 @@
         </tbody>
     </table>
     <p class="section-title">
-        G. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027<br>
-        Direktorat Jenderal Prasarana Strategis Kementerian PU
+        G. Program/Kegiatan Pembangunan Infrastruktur PU TA 2027 Direktorat Jenderal Prasarana Strategis Kementerian PU
     </p>
 
     <table>
