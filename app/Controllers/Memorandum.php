@@ -533,11 +533,15 @@ class Memorandum extends BaseController
         // Update data
         $this->kabkotMemoModel->where('id_memorandum', $id)->delete();
         $this->kawasanMemoModel->where('id_memorandum', $id)->delete();
-        foreach ($kabkot as $data) {
-            $this->kabkotMemoModel->insert(['id_memorandum' => $id, 'id_kabkot' => $data]);
+        if ($kabkot) {
+            foreach ($kabkot as $data) {
+                $this->kabkotMemoModel->insert(['id_memorandum' => $id, 'id_kabkot' => $data]);
+            }
         }
-        foreach ($kawasan as $data) {
-            $this->kawasanMemoModel->insert(['id_memorandum' => $id, 'id_kawasan' => $data]);
+        if ($kawasan) {
+            foreach ($kawasan as $data) {
+                $this->kawasanMemoModel->insert(['id_memorandum' => $id, 'id_kawasan' => $data]);
+            }
         }
         if ($memoModel->update($id, $dataToUpdate)) {
             return $this->response->setJSON([
