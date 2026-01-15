@@ -214,7 +214,9 @@
                 <?php
                 $tahunMulai   = isset($memo->tahun_mulai) ? (int)$memo->tahun_mulai : 0;
                 $tahunSelesai = isset($memo->tahun_selesai) ? (int)$memo->tahun_selesai : 0;
-
+                list($periodeMulai, $periodeSelesai) = explode('-', $memo->periode);
+                $periodeMulai   = (int) $periodeMulai;
+                $periodeSelesai = (int) $periodeSelesai;
                 if ($tahunMulai && $tahunSelesai && $tahunSelesai >= $tahunMulai):
                 ?>
                     <div class="card shadow-sm mt-3">
@@ -232,8 +234,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php for ($tahun = $tahunMulai; $tahun <= $tahunSelesai; $tahun++):
-                                        $index = $tahun - $tahunMulai + 1; ?>
+                                    <?php
+
+                                    for ($tahun = $tahunMulai; $tahun <= $tahunSelesai; $tahun++):
+                                        $index = $tahun - $periodeMulai + 1; ?>
                                         <tr>
                                             <td><?= $tahun ?></td>
                                             <td>
