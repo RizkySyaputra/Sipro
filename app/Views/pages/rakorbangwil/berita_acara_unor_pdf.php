@@ -177,7 +177,7 @@
         <li style="line-height: 2;">
             Hasil Rakorbangwil Tahun 2025 akan menjadi bahan masukan bagi forum perencanaan dan pemrograman lainnya, dengan menyesuaikan Peraturan
             Presiden tentang RPJMN Tahun 2025–2029 dan Rancangan Rencana Kerja Pemerintah (RKP) Tahun 2027, serta menjadi bahan masukan bagi
-            Kementerian/Lembaga terkait dalam melakukan sinkronisasi dan penyelarasan rencana program/kegiatan lintas sektor
+            Kementerian/Lembaga terkait dalam melakukan sinkronisasi dan penyelarasan rencana program/kegiatan lintas sektor.
         </li>
         <li style="line-height: 2;">
             Berita Acara Kesepakatan Rakorbangwil Tahun 2025 masing-masing provinsi
