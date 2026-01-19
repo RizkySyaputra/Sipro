@@ -188,6 +188,8 @@
                             value="<?= esc($memo->nama_satuan ?? '') ?>" disabled>
                         <input type="text" class="form-control-plaintext" name="id_satuan"
                             value="<?= esc($memo->id_satuan ?? '') ?>" hidden>
+                        <input type="text" class="form-control-plaintext" name="periode"
+                            value="<?= esc($memo->periode ?? '') ?>" hidden>
                     </div>
                     <label class="catatan-text"><strong>Justifikasi</strong></label>
                     <textarea class="form-control" name="justifikasi" rows="3"><?= esc($memo->justifikasi ?? '') ?></textarea>

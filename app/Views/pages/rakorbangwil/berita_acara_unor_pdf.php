@@ -164,25 +164,24 @@
                     Direktorat Jenderal Cipta Karya,
                     Direktorat Jenderal Prasarana Strategis,
                     Direktorat Jenderal Pembiayaan Infrastruktur,
-                    Sekretariat Jenderal, dan
+                    Sekretariat Jenderal,
                     Badan Pengembangan Infrastruktur Wilayah.
                 </li>
             </ol>
         </li>
 
         <li style="line-height: 2;">
-            Dalam Desk Rakorbangwil Tahun 2025 dibahas dan disepakati indikasi kawasan prioritas
-            beserta kebutuhan program/kegiatan yang memerlukan dukungan Kementerian Pekerjaan Umum,
-            serta integrasinya dengan rencana program/kegiatan dari Kementerian/Lembaga lain dan
-            pemerintah daerah pada Tahun Anggaran 2027. Hasil Rakorbangwil Tahun 2025 tersebut
-            akan menjadi bahan masukan bagi forum perencanaan dan pemrograman lainnya, dengan
-            menyesuaikan Peraturan Presiden tentang Rencana Pembangunan Jangka Menengah Nasional
-            (RPJMN) Tahun 2025–2029 dan Rancangan Rencana Kerja Pemerintah (RKP) Tahun 2027.
+            Dalam Desk Rakorbangwil Tahun 2025 dibahas dan disepakati indikasi kawasan prioritas beserta kebutuhan program/kegiatan yang memerlukan dukungan
+            Kementerian PU serta integrasinya dengan rencana program/kegiatan dari Kementerian/Lembaga lain dan pemerintah daerah pada TA 2027.
         </li>
-
+        <li style="line-height: 2;">
+            Hasil Rakorbangwil Tahun 2025 akan menjadi bahan masukan bagi forum perencanaan dan pemrograman lainnya, dengan menyesuaikan Peraturan
+            Presiden tentang RPJMN Tahun 2025–2029 dan Rancangan Rencana Kerja Pemerintah (RKP) Tahun 2027, serta menjadi bahan masukan bagi
+            Kementerian/Lembaga terkait dalam melakukan sinkronisasi dan penyelarasan rencana program/kegiatan lintas sektor
+        </li>
         <li style="line-height: 2;">
             Berita Acara Kesepakatan Rakorbangwil Tahun 2025 masing-masing provinsi
-            dapat diakses melalui tautan <a href="https://s.pu.go.id/MTcyOQ/BAKRakorbangwil2025">https://s.pu.go.id/MTcyOQ/BAKRakorbangwil2025.</a>
+            dapat diakses pada tautan <a href="https://s.pu.go.id/MTcyOQ/BAKRakorbangwil2025">https://s.pu.go.id/MTcyOQ/BAKRakorbangwil2025.</a>
         </li>
     </ol>
     <div class="page-break"></div>

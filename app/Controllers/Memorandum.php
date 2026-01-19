@@ -483,13 +483,17 @@ class Memorandum extends BaseController
         // Ambil volume dan anggaran per tahun
         $tahunMulai   = (int) $this->request->getPost('tahun_mulai');
         $tahunSelesai = (int) $this->request->getPost('tahun_selesai');
+        $periode = $this->request->getPost('periode');
 
         $volumeData = [];
         $anggaranData = [];
         $pendanaanData = [];
+        list($periodeMulai, $periodeSelesai) = explode('-', $periode);
+        $periodeMulai   = (int) $periodeMulai;
+        $periodeSelesai = (int) $periodeSelesai;
         if ($tahunMulai && $tahunSelesai && $tahunSelesai >= $tahunMulai) {
             for ($tahun = $tahunMulai; $tahun <= $tahunSelesai; $tahun++) {
-                $index = $tahun - $tahunMulai + 1;
+                $index = $tahun - $periodeMulai + 1;
 
                 $volumeKey = 'volume_' . $index;
                 $anggaranKey = 'anggaran_' . $index;
@@ -500,8 +504,6 @@ class Memorandum extends BaseController
                 $pendanaanData[$pendanaanKey] = $this->request->getPost($pendanaanKey);
             }
         }
-
-
 
         // Ambil catatan
         $namaArr = $this->request->getPost('catatan_nama');
